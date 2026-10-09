@@ -1,0 +1,57 @@
+\chapter*{附录使用说明}
+\addcontentsline{toc}{chapter}{附录使用说明}
+\markboth{附录使用说明}{}
+
+本附录影印了 2014--2022 年历年试题的原卷页面，用途有二：
+
+\begin{enumerate}
+  \item \textbf{看图}：正文中带 \texttt{〔图示〕} 的题目，其原图都在本附录对应年份的页面里；
+        正文的图示文字说明只描述与解题有关的几何关系，完整图形请对照原卷。
+  \item \textbf{核对}：若正文改写与你的记忆不符，以原卷为准。
+        扫描件的个别字迹在 OCR 时确实难以分辨，正文已在相应位置用提示框标注。
+\end{enumerate}
+
+\begin{tishi}
+\textbf{关于年份与科目代码：}
+2015 年的科目代码是 \textbf{819}，2018 年及以前沿用旧大纲（含判断、证明、作图题，并有明渠等超纲内容），
+2019 年起改为现行 818 大纲结构。这一点在正文每章的题目中都已标注。
+\end{tishi}
+
+\newcommand{\xhuscan}[1]{%
+  \IfFileExists{figures/#1.pdf}{%
+    \includepdf[pages=-,scale=0.94]{figures/#1.pdf}%
+  }{%
+    \begin{tishi}
+    本编译环境缺少 \texttt{figures/#1.pdf}，本年原卷影印页未显示。\\
+    该文件为扫描件，未随本仓库分发（见 README 的版权说明）；把原卷 PDF 放入
+    \texttt{latex/03-exams/figures/} 并命名为 \texttt{#1.pdf} 后重新编译即可恢复。
+    \end{tishi}%
+  }%
+}
+
+\chapter{2014 年试题原卷}
+\xhuscan{q2014}
+
+\chapter{2015 年试题原卷（819，旧大纲）}
+\xhuscan{q2015}
+
+\chapter{2016 年试题原卷}
+\xhuscan{q2016}
+
+\chapter{2017 年试题原卷}
+\xhuscan{q2017}
+
+\chapter{2018 年试题原卷（旧大纲）}
+\xhuscan{q2018}
+
+\chapter{2019 年试题原卷}
+\xhuscan{q2019}
+
+\chapter{2020 年试题原卷}
+\xhuscan{q2020}
+
+\chapter{2021 年试题原卷}
+\xhuscan{q2021}
+
+\chapter{2022 年试题原卷}
+\xhuscan{q2022}

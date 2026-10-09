@@ -1,0 +1,4 @@
+- insert:
+    - id: xhu818-exam-prep-latex
+      # Must be the package name — the loader imports this specifier.
+      name: "dsh-xhu818-skills"

@@ -1,0 +1,201 @@
+%% xhu818.sty —— 西华大学 818 工程流体力学复习资料通用样式
+%% 编译：xelatex / latexmk -xelatex  (必须 XeLaTeX)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{xhu818}[2026/10/10 v1.0 XHU818 fluid mechanics pack]
+
+%====================== 页面 ======================%
+\RequirePackage[a4paper,left=2.2cm,right=2.2cm,top=2.6cm,bottom=2.2cm,headheight=15pt,headsep=3mm,footskip=8mm]{geometry}
+
+%====================== 数学与符号 ======================%
+\RequirePackage{xeCJK}
+% 把常用符号区交给中文字体渲染，避免 "Missing character"（lmroman 无 ①②★→ 等）
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF}   % ① ② ③ …
+\xeCJKDeclareCharClass{CJK}{"2190 -> "21FF}   % ← → ↑ ↓
+\xeCJKDeclareCharClass{CJK}{"25A0 -> "25FF}   % ■ □ ▲ ★ 等几何图形
+\xeCJKDeclareCharClass{CJK}{"2600 -> "26FF}   % 杂项符号
+\xeCJKDeclareCharClass{CJK}{"3000 -> "303F}   % 全角标点、〔〕
+\xeCJKDeclareCharClass{CJK}{"FF00 -> "FFEF}   % 全角形式（＝ ＋ 等）
+\xeCJKDeclareCharClass{CJK}{"2000 -> "206F}   % — – … 等通用标点
+\xeCJKDeclareCharClass{CJK}{"2200 -> "22FF}   % ≥ ≤ ≈ ≡ ∈ ∑ 等数学算子
+\xeCJKDeclareCharClass{CJK}{"2700 -> "27BF}   % ✓ 等符号
+\xeCJKDeclareCharClass{CJK}{"3300 -> "33FF}   % ㎡ ㎥ ㎝ 等 CJK 兼容单位（教材 OCR 里常见）
+\RequirePackage{amsmath,amssymb,mathrsfs,bm}
+\IfFileExists{esint.sty}{\RequirePackage{esint}}{}
+\providecommand{\oiint}{\begingroup\setbox0=\hbox{$\textstyle\iint$}\dp0=0pt\raise\dp0\hbox to\wd0{\hss$\bigcirc$\hss}\box0\endgroup}
+
+%====================== 表格与图 ======================%
+\RequirePackage{graphicx}
+\RequirePackage{booktabs,array,longtable,tabularx,multirow,makecell}
+\RequirePackage{enumitem}
+\RequirePackage{caption}
+\captionsetup{font=small,labelfont={bf,sf},labelsep=quad}
+\RequirePackage{xcolor}
+
+%====================== 配色 ======================%
+\definecolor{xhubrand}{HTML}{1F4E79}   % 主色 深蓝
+\definecolor{xhulight}{HTML}{2E75B6}   % 亮蓝
+\definecolor{xhubg}{HTML}{F2F6FA}      % 浅蓝底
+\definecolor{xhugold}{HTML}{B8860B}    % 星标金
+\definecolor{xhured}{HTML}{9C2A2A}     % 强调红
+\definecolor{xhugreen}{HTML}{1E6B3A}   % 结论绿
+\definecolor{xhugray}{HTML}{6B6B6B}    % 次要灰
+\definecolor{xhugraybg}{HTML}{F5F5F5}
+
+%====================== 星级重要度 ======================%
+\newcommand{\xstar}{\textcolor{xhugold}{$\bigstar$}}
+\newcommand{\xstare}{\textcolor{black!22}{$\bigstar$}}
+% \xstarfull{3} -> ★★★☆☆
+\newcommand{\xstarfull}[1]{%
+  \ifcase#1\relax
+    \xstare\xstare\xstare\xstare\xstare\or
+    \xstar\xstare\xstare\xstare\xstare\or
+    \xstar\xstar\xstare\xstare\xstare\or
+    \xstar\xstar\xstar\xstare\xstare\or
+    \xstar\xstar\xstar\xstar\xstare\or
+    \xstar\xstar\xstar\xstar\xstar
+  \fi}
+% 依据标签：\yiju{2022 年真题第 3 题}
+\newcommand{\yiju}[1]{{\footnotesize\color{xhugray}〔依据：#1〕}}
+% 难度标签：\nandu{易}/中/难
+\newcommand{\nandu}[1]{{\footnotesize\color{xhulight}\textbf{[#1]}}}
+
+%====================== 盒子 ======================%
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% 考点框：\begin{kaodian}{3}{考点名} ... \end{kaodian}   （星数，标题）
+\newtcolorbox{kaodian}[2]{%
+  enhanced,breakable,colback=xhubg,colframe=xhubrand,boxrule=0.7pt,arc=1.2mm,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,
+  fonttitle=\bfseries\sffamily,coltitle=white,colbacktitle=xhubrand,
+  title={#2\hfill\xstarfull{#1}}}
+
+% 公式盒：\begin{gongshi}{公式含义一句话} 公式 + 适用条件 ... \end{gongshi}
+\newtcolorbox{gongshi}[1]{%
+  enhanced,breakable,colback=white,colframe=xhulight,boxrule=0.7pt,arc=1mm,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,
+  fonttitle=\bfseries\sffamily,
+  title={#1}}
+
+% 提示/重点/易错/结论
+\newtcolorbox{tishi}[1][]{enhanced,breakable,colback=xhugraybg,colframe=black!25,boxrule=0.5pt,arc=1mm,
+  left=5pt,right=5pt,top=3pt,bottom=3pt,#1}
+\newtcolorbox{yicuo}[1][]{enhanced,breakable,colback=xhured!5,colframe=xhured!70,boxrule=0.6pt,arc=1mm,
+  left=5pt,right=5pt,top=3pt,bottom=3pt,title={\bfseries\sffamily 易错点},fonttitle=\color{xhured},#1}
+\newtcolorbox{jielun}[1][]{enhanced,breakable,colback=xhugreen!5,colframe=xhugreen!70,boxrule=0.6pt,arc=1mm,
+  left=5pt,right=5pt,top=3pt,bottom=3pt,title={\bfseries\sffamily 结论},fonttitle=\color{xhugreen},#1}
+% 真题出处框：\begin{zhenti}{2022 年 818 第 3 题}{选择题}
+\newtcolorbox{zhenti}[2]{enhanced,breakable,colback=xhugold!6,colframe=xhugold!80,boxrule=0.7pt,arc=1mm,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,
+  fonttitle=\bfseries\sffamily,coltitle=white,colbacktitle=xhugold!85,
+  title={#1\hfill\normalfont\small #2}}
+% 书上没有的方法 / 应试技巧
+\newtcolorbox{banfa}[1][]{enhanced,breakable,colback=xhulight!4,colframe=xhulight!75,boxrule=0.6pt,arc=1mm,
+  left=5pt,right=5pt,top=3pt,bottom=3pt,title={\bfseries\sffamily 书上没有的方法},fonttitle=\color{xhulight},#1}
+% 依据框（可放多个出处）
+\newtcolorbox{yijubox}[1][]{enhanced,breakable,colback=black!3,colframe=black!30,boxrule=0.5pt,arc=1mm,
+  left=5pt,right=5pt,top=3pt,bottom=3pt,title={\bfseries\sffamily 重要度依据},#1}
+
+%====================== 标题格式 ======================%
+\RequirePackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\sffamily\color{xhubrand}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\sffamily\color{xhubrand!85}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\sffamily\color{xhubrand!70}}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{2.2ex plus .3ex}{1.1ex}
+\titlespacing*{\subsection}{0pt}{1.8ex plus .3ex}{0.8ex}
+
+%====================== 列表 ======================%
+\setlist{topsep=2pt,itemsep=1pt,parsep=0pt,leftmargin=1.6em}
+\setlist[enumerate]{label=\arabic*.}
+
+%====================== 页眉页脚 ======================%
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\small\sffamily\color{xhugray}\xhuheadname}
+\fancyhead[R]{\small\sffamily\color{xhugray}\leftmark}
+\fancyfoot[C]{\small\thepage}
+\newcommand{\xhuheadname}{西华大学 818 工程流体力学}
+\renewcommand{\chaptermark}[1]{\markboth{第\thechapter 章\quad #1}{}}
+
+%====================== 超链接 ======================%
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=xhubrand,citecolor=xhubrand,urlcolor=xhulight,
+  bookmarksnumbered=true,pdfstartview=FitH}
+
+%====================== 常用简写 ======================%
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\ee}{\mathrm{e}}
+\providecommand{\Rey}{\mathrm{Re}}   % 雷诺数（不覆盖 \Re）
+\providecommand{\Eu}{\mathrm{Eu}}
+\providecommand{\Fr}{\mathrm{Fr}}
+\providecommand{\bq}{\bm{q}}
+\providecommand{\bv}{\bm{v}}
+\providecommand{\bn}{\bm{n}}
+\providecommand{\bF}{\bm{F}}
+\providecommand{\bu}{\bm{u}}
+\providecommand{\bomega}{\bm{\omega}}
+\providecommand{\grad}{\nabla}
+\providecommand{\bR}{\bm{R}}
+\providecommand{\br}{\bm{r}}
+\providecommand{\bl}{\bm{l}}
+\providecommand{\bA}{\bm{A}}
+\providecommand{\bM}{\bm{M}}
+\providecommand{\bV}{\bm{V}}
+\providecommand{\bT}{\bm{T}}
+\providecommand{\bx}{\bm{x}}
+\providecommand{\by}{\bm{y}}
+\providecommand{\bz}{\bm{z}}
+\providecommand{\J}{J}
+
+%====================== 封面 / 题目环境 ======================%
+% \xhucover{主标题}{副标题}{说明段落}
+\newcommand{\xhucover}[3]{%
+\begin{titlepage}
+\centering
+\vspace*{2.2cm}
+{\sffamily\bfseries\fontsize{31}{40}\selectfont\color{xhubrand} #1\par}
+\vspace{0.5cm}
+{\color{xhugold}\rule{0.62\textwidth}{2pt}\par}
+\vspace{1.0cm}
+{\sffamily\fontsize{17}{24}\selectfont\color{xhulight} #2\par}
+\vspace{2.4cm}
+\begin{minipage}{0.82\textwidth}
+\centering\linespread{1.35}\selectfont #3
+\end{minipage}
+\vfill
+{\sffamily\small\color{xhugray} 西华大学 818 工程流体力学 · 考研复习资料\par}
+\vspace{0.5cm}
+\end{titlepage}}
+
+% 题目环境：\begin{ti} \item ... \end{ti}   紧凑编号
+\newenvironment{ti}{\begin{enumerate}[label=\arabic*.,leftmargin=2.1em,itemsep=4pt,topsep=3pt]}{\end{enumerate}}
+% 小问：\begin{xiaowen} \item ... \end{xiaowen}
+\newenvironment{xiaowen}{\begin{enumerate}[label=(\arabic*),leftmargin=1.8em,itemsep=2pt,topsep=2pt]}{\end{enumerate}}
+% 答案标题
+\newcommand{\anstitle}[1]{\par\medskip\noindent{\bfseries\sffamily\color{xhubrand} #1}\par\nobreak\vspace{1pt}\nobreak}
+
+%====================== 试卷专用 ======================%
+% 选择题选项：纵向紧凑
+% \begin{choices} \item xxx \end{choices}
+\newenvironment{choices}{\begin{enumerate}[label=(\Alph*),leftmargin=2.3em,itemsep=0.5pt,topsep=2pt,parsep=0pt]}{\end{enumerate}}
+% 四个选项都较短时用两列：\fourchoices{甲}{乙}{丙}{丁}
+\newcommand{\fourchoices}[4]{%
+  \par\vspace{1pt}\noindent
+  \begin{tabularx}{\linewidth}{@{}XX@{}}
+  (A)~#1 & (B)~#2\\[1.5pt]
+  (C)~#3 & (D)~#4
+  \end{tabularx}\par\vspace{2pt}}
+% 图示说明：原卷有图而本册用文字准确描述（原卷影印见附录）
+\newcommand{\tuyi}[1]{\par\vspace{1pt}\noindent{\footnotesize\color{xhugray}\textbf{〔图示〕}#1}\par\vspace{2pt}}
+% 解答：\begin{jie} ... \end{jie}
+\newenvironment{jie}{\par\smallskip\noindent{\bfseries\sffamily\color{xhubrand} 解：}\ignorespaces}{\par\smallskip}
+% 答案编号小节（用于真题答案段）
+\newcommand{\answ}[1]{\par\medskip\noindent{\bfseries\sffamily\color{xhubrand} #1}\par\nobreak\vspace{1pt}\nobreak}
+
+%====================== 重要度占位标记（由全科星表统一替换） ======================%
+% \xstarmark{K405} —— 第一遍撰稿只标考点码，第二遍由统一星表替换为 \xstarfull{n}\yiju{...}
+\newcommand{\xstarmark}[1]{{\footnotesize\color{xhugold}[★#1]}}
+\providecommand{\xstarmarkset}{}
+\endinput

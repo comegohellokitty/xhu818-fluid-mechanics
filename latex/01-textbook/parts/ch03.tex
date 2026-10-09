@@ -1,0 +1,649 @@
+\chapter{流体运动学}
+
+\begin{yijubox}
+E1 \texttt{8-1考情分析.pptx} slide33：第三章流体运动学＝\textbf{公式多、重点记忆}。\\
+E2 \texttt{9-1考点分析.pptx}：第 1--3 章偏概念，掌握基本公式与解释即可；本章不涉及"力"，只研究运动要素本身。\\
+\textbf{本章结论}：不出大综合题，但\textbf{出题面最宽}——选择、填空、判断的名词与辨析题大量来自本章，
+另有一类小计算（流线方程、加速度分量、连续性方程求流量/密度）。复习策略＝
+① 把"两种方法 / 系统与控制体 / 流线与迹线 / 湿周水力半径"四组对比表背下来；
+② 把质点导数、流线方程、连续性方程三个式子连同\textbf{适用条件}一起记住；
+③ 有旋无旋的三式判据必须能手写。
+\end{yijubox}
+
+\section{研究流体运动的两种方法}
+
+\begin{kaodian}{3}{拉格朗日法与欧拉法}
+\textbf{是什么：}描述同一流场有两种着眼点完全不同的方法。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+比较项 & 拉格朗日法（随波逐流） & 欧拉法（设站观流） \\
+\midrule
+研究对象 & 流体质点；跟踪某一个质点看它一辈子 & 空间点（固定点）；看每个点上依次来了谁 \\
+自变量 & 拉格朗日变量 $(a,b,c,t)$，$(a,b,c)$ 是 $t_0$ 时刻该质点的坐标，用来标识与区分不同质点 & 欧拉变量 $(x,y,z,t)$ \\
+运动方程 & $x=x(a,b,c,t)$，$y=y(a,b,c,t)$，$z=z(a,b,c,t)$ & $\bu=\bu(x,y,z,t)$，$p=p(x,y,z,t)$，$\rho=\rho(x,y,z,t)$ \\
+速度 & $u_x=\dfrac{\partial x(a,b,c,t)}{\partial t}$ & $u_x=u_x(x,y,z,t)$，是\textbf{场}（速度场） \\
+加速度 & $a_x=\dfrac{\partial u_x(a,b,c,t)}{\partial t}=\dfrac{\partial^2 x(a,b,c,t)}{\partial t^2}$ & $a_x=\dfrac{\partial u_x}{\partial t}+u_x\dfrac{\partial u_x}{\partial x}+u_y\dfrac{\partial u_x}{\partial y}+u_z\dfrac{\partial u_x}{\partial z}$ \\
+别名 & 随体法、质点法、系统法 & 空间点法、流场法、控制体法 \\
+优缺点 & 物理概念明确，能直接得轨迹与参数历程；但数学求解困难 & 只求几个控制断面上的量，工程上方便；但不能直接给出单个质点的历史 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{一句话抓住：}拉格朗日法把 $t$ 当唯一自变量、把 $(a,b,c)$ 当"身份"；
+欧拉法把 $(x,y,z)$ 当自变量，时间只负责让"同一位置上的人换了一茬"。
+
+\textbf{常考题型：}简答/填空（"研究流体运动有\rule{2cm}{0.4pt}、\rule{2cm}{0.4pt}两种方法"；
+"两种方法的区别"）；选择（给出一组物理量，问哪个是欧拉变量）。
+
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 选择/判断考概念辨析；E2「第 1--3 章偏概念，掌握基本公式与解释即可」；E1 slide33「第三章＝公式多、重点记忆」}\quad\nandu{易}
+
+\begin{banfa}
+两法区别答题时按\textbf{"三要素"顺序}写，条理立刻清楚：\textbf{① 研究对象}（质点 vs 空间点）→
+\textbf{② 自变量}（$(a,b,c,t)$ vs $(x,y,z,t)$）→ \textbf{③ 能否直接给出轨迹}（能 vs 不能，需再积分）。
+判"是哪种变量"的速算法：看式子里有没有那个起"身份编号"作用的\textbf{常数} $(a,b,c)$——
+有就是拉格朗日变量，只有 $(x,y,z,t)$ 就是欧拉变量。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{5}{质点导数（随体导数）与加速度的分解}
+\textbf{是什么：}欧拉法中，"跟着一个流体质点走"时该质点的物理量对时间的变化率，叫\textbf{随体导数}
+（又称质点导数、全导数、物质导数），教材式（3.9）--（3.11）。
+
+\begin{gongshi}{随体导数（式 3.9）}
+\[ \frac{\dd N}{\dd t}=\frac{\partial N}{\partial t}+(\bu\cdot\grad)N \]
+\textbf{含义：}任意物理量 $N$（可以是标量 $\rho$、$p$，也可以是矢量 $\bu$）的随体导数＝
+\textbf{局部导数（时变导数）}$\dfrac{\partial N}{\partial t}$ ＋ \textbf{位变导数（对流/迁移项）}$(\bu\cdot\grad)N$。\\
+\textbf{适用条件：}欧拉法描述下的\textbf{任何}运动流体，定常与非定常都成立；
+$N$ 为矢量的 $\bq$ 时 $(\bu\cdot\grad)\bq$ 要对三个分量分别作用。
+\end{gongshi}
+
+\begin{gongshi}{质点加速度（式 3.7、3.8）}
+\[ \bu\cdot\grad=u_x\frac{\partial}{\partial x}+u_y\frac{\partial}{\partial y}+u_z\frac{\partial}{\partial z} \]
+\[ a_x=\frac{\partial u_x}{\partial t}+u_x\frac{\partial u_x}{\partial x}+u_y\frac{\partial u_x}{\partial y}+u_z\frac{\partial u_x}{\partial z} \]
+\[ \bm{a}=\frac{\dd\bu}{\dd t}=\frac{\partial\bu}{\partial t}+(\bu\cdot\grad)\bu \]
+\textbf{含义：}加速度由两部分叠加。\textbf{当地加速度}（时变加速度）$\dfrac{\partial\bu}{\partial t}$——
+某固定空间点上速度随时间的变化率，由流场的\textbf{非恒定性}引起；
+\textbf{迁移加速度}（位变加速度）$(\bu\cdot\grad)\bu$——流体质点因空间位置改变而产生的速度变化率，
+由流场的\textbf{不均匀性}引起。\\
+\textbf{适用条件：}上式推导用了复合函数求导 $x=x(t)$、$y=y(t)$、$z=z(t)$，
+即"质点的坐标是时间的函数"，这正是欧拉法里"把空间点让质点穿过"的数学体现。
+\end{gongshi}
+
+\textbf{教材原例（式 3.8 后的图 3.2）：}水箱出流管路，$a$ 点在等径管上、$b$ 点在渐缩管轴心线上。
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\toprule
+情形 & 当地加速度 & 迁移加速度 & $a$、$b$ 两点的总加速度 \\
+\midrule
+有来水补充、水位 $H$ 不变 & $\dfrac{\partial\bu}{\partial t}=0$ & $b$ 点不为 0（渐缩管流速增大）；$a$ 点为 0 & $a$ 点 $a_x=0$；$b$ 点只有迁移加速度 \\
+无来水补充、水位 $H$ 下降 & 两点均不为 0（速度随时间减小）& 同上 & 两点都含当地加速度 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}计算题（给 $u_x,u_y,u_z$ 的解析式，求 $\dfrac{\dd u_x}{\dd t}$、$\dfrac{\dd u_y}{\dd t}$）；
+简答/填空（"质点的加速度由\rule{2cm}{0.4pt}和\rule{2cm}{0.4pt}组成"；
+"当地加速度是由流场的\rule{1.5cm}{0.4pt}性引起的"$\to$非恒定；"迁移加速度由\rule{1.5cm}{0.4pt}性引起"$\to$不均匀）。
+
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E1 slide33「第三章＝公式多、重点记忆」；E2「第 1--3 章……掌握基本公式与解释即可」；该式为第 4 章伯努利方程与欧拉运动微分方程（$\dfrac{\dd\bu}{\dd t}$ 项）的直接输入}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{① 加速度别用错公式。}给出 $u_x=u_x(x,y,z,t)$ 的解析式时，\emph{不能用} $\partial u_x/\partial t$ 当加速度，
+必须把 $x$、$y$、$z$ 当变量一起求偏导再乘上速度分量：
+$a_x=\dfrac{\partial u_x}{\partial t}+u_x\dfrac{\partial u_x}{\partial x}+u_y\dfrac{\partial u_x}{\partial y}+u_z\dfrac{\partial u_x}{\partial z}$。\\
+\textbf{② 定常判断"一句话"：}题中说"恒定""定常""稳定""$H$ 不变"$\to$ 立刻令 $\dfrac{\partial}{\partial t}=0$，
+只留三项迁移项。\\
+\textbf{③ 求加速度三步走：}(a) 写出三个速度分量与其偏导；(b) 判断 $\dfrac{\partial}{\partial t}$ 是否为 0；
+(c) 代入 $a_x,a_y,a_z$ 后把速度式子代回，结果写成 $(x,y,z,t)$ 的函数。\\
+\textbf{④ 单位与量纲自检：}$a$ 必须量纲为 $\mathrm{L/T^2}$，若算出来是 $\mathrm{L/T}$ 就把某一项漏乘了速度。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 1：}把 $\dfrac{\partial\bu}{\partial t}$ 说成"质点加速度"。它是\textbf{当地加速度}，
+只是在定常流时才恰好等于总加速度。\\
+\textbf{易错 2：}定常流动并不等于无加速度。定常只说明 $\dfrac{\partial(\cdot)}{\partial t}=0$，
+迁移加速度完全可能不为零（渐缩管就是典型）。\\
+\textbf{易错 3：}质点导数 $\dfrac{\dd N}{\dd t}$ 与偏导数 $\dfrac{\partial N}{\partial t}$ 是两个不同的东西，
+写的时候 $\dd$ 与 $\partial$ 不能互换。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{3}{流动的分类：定常与均匀、几元流动}
+\textbf{是什么：}按不同标准把流动分门别类。本章最常考的三组如下。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+分类标准 & 名称与判据 & 要点 \\
+\midrule
+按\textbf{时间} & 定常（恒定/稳定）流：$\dfrac{\partial A}{\partial t}=0$，$\bu=\bu(x,y,z)$；\newline 非定常（非恒定/不稳定）流：$\dfrac{\partial A}{\partial t}$ 不全为 0，$\bu=\bu(x,y,z,t)$ & 相对\textbf{时间}而言。严格说工程上绝大多数流动都是非定常，参数随时间变化不显著时按定常处理 \\
+按\textbf{空间} & 均匀流：流线是\textbf{相互平行的直线}；非均匀流：否则。非均匀流又分\newline 渐变流（流线近似平行直线，或曲率半径很大）\newline 急变流（流线不平行且夹角很大，或曲率半径很小）& 相对\textbf{空间}而言。均匀流中迁移加速度为零 \\
+按\textbf{坐标数} & 一元流（运动参数是 1 个坐标的函数）、二元流（2 个）、三元流（3 个） & "几元"＝需要几个空间坐标描述。圆管内实际流动因黏性也是二元流动 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{结论：}定常/非定常看 $\partial/\partial t$，均匀/非均匀看空间导数；两者互不隶属——
+\textbf{非定常也可以均匀，定常也可以非均匀}。
+
+\textbf{常考题型：}选择/判断（"均匀流当地加速度为零""定常流迁移加速度为零"哪个对）；
+填空（"渐变流是指\rule{3cm}{0.4pt}"）；简答（教材明确要求答"均匀流的特点"）。
+
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16「简答考水头损失分类及定义、均匀流特点等」；E2「第 1--3 章偏概念」}\quad\nandu{易}
+
+\begin{banfa}
+判别顺序写成\textbf{两问}："\emph{随时间变吗？}$\to$ 定常/非定常"；"\emph{流线平行且为直线吗？}$\to$ 均匀/非均匀"。
+选择题见到"均匀流"立刻想到\textbf{迁移加速度为 0}，见到"定常流"立刻想到\textbf{当地加速度为 0}，
+两者绝不能互换。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错（必背）：}均匀流时\textbf{迁移加速度为零，但当地加速度不一定为零}——
+非定常均匀流中速度全场处处相等、却随时间变化，此时当地加速度不为零。
+反过来，定常非均匀流中当地加速度为零、迁移加速度不为零。
+\end{yicuo}
+\end{kaodian}
+
+\section{流体运动的基本概念}
+
+\begin{kaodian}{5}{流线与迹线（定义、方程、异同）}
+\textbf{是什么：}
+\textbf{迹线}——一个流体质点在不同时刻运动的\textbf{轨迹}（拉格朗日观点的产物，
+教材式 $x=x(a,b,c,t)$ 就是迹线的参数方程）。迹线上各点的切线方向表示\textbf{同一质点在不同时刻}的速度方向。\\
+\textbf{流线}——某一瞬时流场中的一条曲线，该曲线上\textbf{任意一点的切线方向与该点流体质点的速度矢量方向重合}，
+即矢量场的矢量线；流线是对\textbf{某一时刻、多个质点}而言的。
+
+\begin{gongshi}{流线微分方程与迹线微分方程}
+\[ \text{流线：}\quad \frac{\dd x}{u_x(x,y,z,t)}=\frac{\dd y}{u_y(x,y,z,t)}=\frac{\dd z}{u_z(x,y,z,t)} \]
+\[ \text{迹线：}\quad \frac{\dd x}{u_x}=\frac{\dd y}{u_y}=\frac{\dd z}{u_z}=\dd t \]
+\textbf{含义：}两式形式几乎一样，但\textbf{积分时对 $t$ 的处理完全不同}：求流线时 $t$ 视为\textbf{常数}（因为只描述瞬时），
+积出的是含 $t$ 作参数的曲线族；求迹线时必须再补上 $\dd t$ 这一支，把 $x,y,z$ 都当 $t$ 的函数积出并消去 $t$。\\
+\textbf{适用条件：}流线方程要求 $u_x,u_y,u_z$ 不为零；遇到某个分量为零时，
+应改用"合比"形式或直接由 $u_y/u_x$ 写成 $\dfrac{\dd y}{\dd x}$ 求解。
+\end{gongshi}
+
+\textbf{流线的四个性质（必背）：}
+\begin{enumerate}[label=(\arabic*),leftmargin=2.1em,itemsep=2pt,topsep=3pt]
+\item 流线充满整个流场，构成某一时刻的\textbf{流谱}，给出该瞬时的流动方向；
+\item 流线\textbf{不能相交}（否则交点处切线有两个方向、速度矢量不唯一）、不能是折线，
+只能是\textbf{光滑曲线}；唯一例外是速度为零的\textbf{驻点}或速度为无穷的\textbf{奇点}；
+\item \textbf{定常流动}时流线的形状与位置\textbf{不随时间变化}，流体质点沿流线前进，
+此时流线与迹线\textbf{重合}；非定常流动时流线随时间变化，两者\textbf{不重合}；
+\item 对不可压缩流体，流线的\textbf{疏密}表示该时刻各点流速的大小：
+流线密处流速大、流线疏处流速小（由连续性方程 $vA=$常数可推出），
+对应压强则相反——流线疏处压强大。
+\end{enumerate}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+比较项 & 迹线 & 流线 \\
+\midrule
+观点 & 拉格朗日法 & 欧拉法 \\
+考察对象 & \textbf{同一个}质点，\textbf{一段时间}的动态 & \textbf{某一瞬时}、\textbf{多个}质点的运动趋势 \\
+时间含义 & 与过程同时进行的\textbf{时间}有关 & \textbf{无时间因素}的历史观，只代表瞬时 \\
+定常流动 & \multicolumn{2}{l}{两者\textbf{重合}：质点沿流线运动，流线就是它走过的路} \\
+非定常流动 & \multicolumn{2}{l}{两者\textbf{不重合}：迹线只与某一瞬时过该点的流线的微元段相切} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}计算题（给速度场求流线方程、判断流动方向）；简答（"流线有哪些性质""流线与迹线的异同"）；
+判断（"流线可以相交""定常流中流线与迹线不重合"均为错）。
+
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2015 年试题计算题第 1 题（流线方程与流动方向判断）；E1 slide33「第三章＝公式多、重点记忆」；E2「第 1--3 章偏概念」}\quad\nandu{中}
+
+\begin{zhenti}{2015 年试题计算题（第 1 题）}{计算题}
+已知流场速度分布，要求\textbf{建立流线方程并判断流动方向}。
+\end{zhenti}
+\noindent\textbf{答案要点：}列出 $\dfrac{\dd x}{u_x}=\dfrac{\dd y}{u_y}$，把 $t$ 当常数分离变量积分，
+得含积分常数的流线族；流动方向由 $u_x,u_y$ 在当前点的符号确定（速度矢量指向即前进方向）。
+
+\begin{banfa}
+\textbf{求流线方程的四步套路（可直接背）：}\\
+① 写出 $u_x,u_y$（二维）或 $u_x,u_y,u_z$（三维）的解析式；\\
+② 列 $\dfrac{\dd x}{u_x}=\dfrac{\dd y}{u_y}$，\textbf{把时间 $t$ 当常数}（这是与迹线区别的关键一步，也是最多人丢分处）；\\
+③ 交叉相乘、分离变量后积分，得到 $F(x,y)=C(t)$，写清 $C$ 或 $t$ 是参数；\\
+④ 若题目还问"过某点 $(x_0,y_0)$ 的流线"，把点代进去定出 $C$，
+再回答流动方向（把速度分量符号一比较即可）。\\
+\textbf{速记：}"流线积分 $t$ 不动，迹线积分 $t$ 要动"。\\
+\textbf{方向判断小技巧：}在给定点算出 $u_x,u_y$，若 $u_x>0,u_y>0$ 则流线沿一、三象限方向走，
+象限结论直接写"质点沿坐标轴正/负方向运动"即可。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 1：}流线\textbf{不能相交}（除驻点、奇点外）。选项里出现"流线可以相交"一律判错。\\
+\textbf{易错 2：}定常流时流线与迹线\textbf{重合}；非定常时\textbf{不}重合，此时迹线只是"与某时刻过该点的
+流线的微元段相切"。把非定常也说成"重合"是高频陷阱。\\
+\textbf{易错 3：}把"流线密处流速大"记反。由 $vA=$常数，流线密＝过流断面小＝流速大；
+再由伯努利关系，流速大处压强小，所以\textbf{流线疏的地方速度小、压强大}。\\
+\textbf{易错 4：}流线不是"质点的运动轨迹"。轨迹是迹线，流线是瞬时切线场。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{3}{脉线、色线、流管、元流与总流}
+\textbf{是什么：}
+\textbf{脉线（色线）}——在流场中某一固定点连续注入染色物质，这些染液点连成的线。
+三个"线"里只有它需要"持续投放染料"。\\
+\textbf{流管}——在流场中作一条不与流线重合的封闭曲线，通过这条曲线上每一点的流线
+所组成的管状曲面。\textbf{元流（微小流束）}——充满在流管内部的流体，断面无穷小；
+\textbf{总流}——管道内流动流体的集合，可看成无数元流之和。
+
+\textbf{流管的三条性质：}① 流管表面不可能有流体穿过（因为是流线组成的面，速度与面相切）；
+② 定常流动时流管的形状与位置不随时间变化，非定常时可能随时间变化；
+③ 流管不可能在流场内部中断（否则违反连续性）。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+名称 & 定义要点 & 是否随时间变 \\
+\midrule
+流线 & 瞬时曲线上各点切线与速度重合 & 定常不变、非定常变 \\
+迹线 & 同一质点不同时刻的运动轨迹 & 随过程展开 \\
+脉线（色线） & 固定点连续注入的染料连成的线 & 定常时三线重合 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{特别提醒：}定常流动时\textbf{流线、迹线、脉线三线重合}；非定常时三者一般互不重合。
+
+\textbf{常考题型：}填空（"在流场中作一条封闭曲线，通过其上任一点的所有流线构成\rule{3cm}{0.4pt}"$\to$流管）；
+选择（三线的区分）。
+
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16「选择/判断考概念辨析；填空考名词定义与小计算」；E2「第 1--3 章偏概念」}\quad\nandu{易}
+
+\begin{banfa}
+三线判别只用一句反问：\textbf{"它是一根线、一个质点画的，还是一个点喷出来的？"}
+一根瞬时切线场＝流线；一个质点画出来＝迹线；一个固定点持续喷出来＝脉线。
+记"定常三线合一"这个结论，遇到"非定常是否重合"就答"不重合"。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{4}{过流断面、流量与断面平均流速}
+\textbf{是什么：}
+\textbf{过流断面（有效断面）}——流束或总流上与\textbf{流线垂直}的断面，可能是平面也可能是曲面。
+\textbf{流量}——单位时间内流经过流断面的流体量；体积流量 $Q$（$\mathrm{m^3/s}$），
+质量流量 $Q_m$（$\mathrm{kg/s}$），重量流量 $Q_G$（$\mathrm{N/s}$）。
+
+\begin{gongshi}{流量与断面平均流速}
+\[ Q=\int_A \bu\cdot\bn\dd A\ \ (\mathrm{m^3/s}),\qquad Q_m=\rho Q\ \ (\mathrm{kg/s}),\qquad Q_G=\rho g Q\ \ (\mathrm{N/s}) \]
+\[ v=\frac{Q}{A}\ \ (\mathrm{m/s}) \]
+\textbf{含义：}$v$ 为断面平均流速——假想断面上各点速度都等于该值、
+而按此值流过的流量与真实不同速度分布流过的流量\textbf{正好相等}。工程管道中的"流速"都指断面平均流速。\\
+\textbf{适用条件：}过流断面必须与流线垂直；元流（断面无穷小）时断面上的速度可视为均匀，
+总流（断面有限）时必须引入断面平均流速。
+\end{gongshi}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+概念 & 尺度 & 断面上的速度 \\
+\midrule
+元流（微小流束） & 断面 $\dd A\to0$ & 视为处处相等，不需平均 \\
+总流 & 断面为有限值 $A$ & 速度不均，必须用断面平均流速 $v=Q/A$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}填空（"一元流动的断面平均流速 $v=$ \rule{2cm}{0.4pt}"$\to$ $Q/A$；
+"质量流量与体积流量的关系"）；计算（求 $Q$ 或 $v$）。
+
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2022 年 818 单选第 4 题（由断面面积与流速求质量流量）；E2「第 1--3 章……掌握基本公式」}\quad\nandu{易}
+
+\begin{banfa}
+三个流量切换口诀：\textbf{"体积乘 $\rho$ 得质量，再乘 $g$ 得重量"}。
+题目给的是体积流量却问质量流量，漏乘 $\rho$ 是最常见错误；
+给直径 $d$ 求面积时用 $A=\pi d^2/4$，别把 $d$ 当半径。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{湿周、水力半径、水力直径与当量直径}
+\textbf{是什么：}这四个量是"非圆形过流断面怎样折算成圆管"的桥梁，
+第 5 章的沿程水头损失、雷诺数与它们直接相关。
+
+\begin{gongshi}{湿周、水力半径与水力直径}
+\[ \chi=\text{过流断面上被流体润湿的固体壁面周线长度} \]
+\[ R=\frac{A}{\chi}\ \ (\mathrm{m}),\qquad d_H=\frac{4A}{\chi}=4R \]
+\[ \text{当量直径（含湿周部分与干周不同时）：}\quad d_e=\frac{4A}{\chi_{\text{湿}}} \]
+\textbf{含义：}湿周 $\chi$ 是"流体与固体接触的周界长"；水力半径 $R$ 是断面面积与湿周之比，
+它\textbf{不是几何半径的一半}；水力直径（当量直径）$d_H=4R$ 是把非圆断面换算成"等效圆管直径"，
+使 $\Rey=\dfrac{vd_H}{\nu}$ 中的 $d_H$ 可用。\\
+\textbf{适用条件：}湿周只统计\textbf{被流体润湿}的固体边壁。
+明渠（如梯形土渠）的湿周\textbf{不含}自由表面那一段空气界面；
+圆管满流时 $A=\pi d^2/4$、$\chi=\pi d$，故 $R=d/4$、$d_H=d$，与几何直径一致。
+\end{gongshi}
+
+\textbf{常用断面速查：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+断面 & 面积 $A$ & 水力半径 $R=A/\chi$ \\
+\midrule
+圆管满流，直径 $d$ & $\pi d^2/4$ & $d/4$ \\
+矩形断面，宽 $b$、水深 $h$ & $bh$ & $\dfrac{bh}{b+2h}$（湿周不含自由液面） \\
+圆管半满（水深 $d/2$） & $\pi d^2/8$ & $d/4$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}填空（"水力半径的定义式 $R=$ \rule{2cm}{0.4pt}"；"圆管满流时 $R=$ \rule{2cm}{0.4pt}"）；
+选择（明渠湿周是否含自由表面）。
+
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E2「第 1--3 章……掌握基本公式与解释即可」；该组量为第 5 章 $\Rey$ 判别与沿程损失的必备输入}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{①"湿周找壁不找面"：}沿断面转一圈，只数\textbf{与流体接触的固体}那段长度；
+明渠水面那一段是流体与空气的界面，不计入。\\
+\textbf{②防错检查：}把结果代回 $d_H=4R$ 看单位对不对；圆管满流必须能还原 $d_H=d$，
+若算出 $d_H=d/2$ 就是把湿周按半个周长算了。\\
+\textbf{③明渠最优断面题的入口：}凡是求"水力最佳断面"，本质都是让 $R=A/\chi$ 最大，
+第一个动作永远是写出 $A$ 与 $\chi$ 的表达式。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错：}把水力半径当成几何半径、或把 $R=d/4$ 写成 $R=d/2$。
+记死：\textbf{圆管满流 $R=d/4$，$d_H=d$}；明渠的湿周\textbf{一定不含自由表面}。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{4}{系统与控制体}
+\textbf{是什么：}分析流体运动时最常用的两个对象（教材 3.1.4 节，图 3.3）。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+比较项 & 系统 & 控制体 \\
+\midrule
+定义 & 包含\textbf{确定不变的物质的集合} & 欧拉法中研究流体运动的\textbf{连续空间区域} \\
+位置与形状 & 运动时位置、形状都\textbf{可能变化} & 位置、形状都\textbf{保持不变} \\
+所含质量 & 系统内所含流体\textbf{质量保持不变}（质量守恒） & 控制体内流体质点是\textbf{不固定的} \\
+表面 & 系统边界 & \textbf{控制面}：流体质点可自由穿越 \\
+质量交换 & 边界上可有\textbf{力}与\textbf{能量}交换，\textbf{不能}有质量交换 & 控制面上不仅可以有力与能量交换，\textbf{还可以有质量交换} \\
+对应方法 & 拉格朗日法（故又称系统法） & 欧拉法（故又称控制体法） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{结论：}讨论质点、轨迹、牛顿第二定律的"随体"形式用\textbf{系统}；
+讨论流量、进出口断面、守恒律的"体积分"形式用\textbf{控制体}——
+第 4 章动量方程与本章连续性方程全部建立在控制体之上。
+
+\textbf{常考题型：}选择/判断（"控制体内的流体质点是固定不变的"$\to$错；
+"系统边界上不能有质量交换"$\to$对）；简答（系统与控制体的区别）。
+
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E1 slide16「选择/判断考概念辨析」；E2「第 1--3 章偏概念，掌握基本公式与解释即可」；该对概念是第 4 章动量/能量方程建立的前提}\quad\nandu{易}
+
+\begin{banfa}
+区分口诀：\textbf{"系统＝挑一批人，跟到哪儿都是这批人；控制体＝圈一块地，人进人出但地不动。"}
+选择题只要出现"质量交换"就判给\textbf{控制体}；出现"质量不变、物质集合"就判给\textbf{系统}。
+\end{banfa}
+\end{kaodian}
+
+\section{连续性方程}
+
+\begin{kaodian}{5}{连续性方程（微元形式、总流形式与适用条件）}
+\textbf{是什么：}把\textbf{质量守恒定律}用于运动流体所得的数学关系式，
+是本章唯一必考的计算型公式。
+
+\begin{gongshi}{连续性方程——微元（微分）形式，教材式（3.25）、（3.26）}
+\[ \frac{\partial \rho}{\partial t}+\frac{\partial(\rho u_x)}{\partial x}+\frac{\partial(\rho u_y)}{\partial y}+\frac{\partial(\rho u_z)}{\partial z}=0
+   \qquad\text{即}\qquad \frac{\partial\rho}{\partial t}+\grad\cdot(\rho\bu)=0 \]
+\textbf{含义：}等式第二、三、四项（$\grad\cdot(\rho\bu)$）是单位时间内单位体积流出的\textbf{质量净通量}，
+第一项 $\dfrac{\partial\rho}{\partial t}$ 是单位体积内\textbf{质量的减少率}，两者之和为零，即
+"流出量＝减少量"，这就是质量守恒。\\
+\textbf{适用条件：}\textbf{任何}流体（可压缩与不可压缩、定常与非定常）都适用；
+前提是\textbf{连续介质假设成立}、流体内部无空隙。
+\end{gongshi}
+
+\begin{gongshi}{三种简化形式（必须按条件选对）}
+\[ \text{可压缩、定常：}\quad \frac{\partial(\rho u_x)}{\partial x}+\frac{\partial(\rho u_y)}{\partial y}+\frac{\partial(\rho u_z)}{\partial z}=0
+   \qquad\text{即}\qquad \grad\cdot(\rho\bu)=0 \]
+\[ \text{不可压缩（$\rho=$ 常数，不论定常与否）：}\quad \frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}=0
+   \qquad\text{即}\qquad \grad\cdot\bu=0 \]
+\[ \text{不可压缩平面流动：}\quad \frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}=0 \]
+\textbf{含义：}不可压缩时 $\rho$ 可约掉，方程只约束\textbf{速度场}——它同时是判定"给定速度场是否存在"
+的必要条件，也是第 7 章引入流函数的依据。\\
+\textbf{适用条件：}见每式左侧标注。注意 \textbf{不可压缩 $\Rightarrow$ 方程与时间无关}，
+所以不可压缩流体无论定常与否都用 $\grad\cdot\bu=0$。
+\end{gongshi}
+
+\begin{gongshi}{连续性方程——一元总流形式}
+\[ \rho_1 v_1 A_1=\rho_2 v_2 A_2=\text{常数}\qquad\text{（质量流量守恒）} \]
+\[ \text{不可压缩流体：}\qquad v_1 A_1=v_2 A_2=Q\qquad\text{（体积流量守恒）} \]
+\[ \text{气体一元定常流动微分形式：}\qquad \frac{\dd\rho}{\rho}+\frac{\dd A}{A}+\frac{\dd v}{v}=0 \]
+\textbf{含义：}沿一元定常流动的流程，各断面上的\textbf{质量流量处处相等}；
+不可压缩时进一步简化为体积流量不变。由 $vA=$ 常数可见\textbf{断面小则流速大}，
+这正是"流线密处流速大"的依据。\\
+\textbf{适用条件：}① 一元（\textbf{定常}或非定常均可，只要取同一时刻）、总流形状位置不随时间变化；
+② 两断面间无支流汇入或分出（有分流/汇流时要写成"进＝出"的代数和）；
+③ 断面为\textbf{过流断面}，$v$ 为断面平均流速；④ 无内空隙的连续介质。\\
+\textbf{物理意义：}沿一元稳定流动的流程质量流量不变。
+\end{gongshi}
+
+\textbf{常考题型：}计算（方管进口接压缩机求出口平均密度与质量流量、变径管求 $v_2$、
+由流量方程求未知断面或密度）；选择/判断（"不可压缩流体的连续性方程是 $\partial\rho/\partial t+\cdots=0$"$\to$错）；
+填空（"连续性方程的物理意义是\rule{3cm}{0.4pt}"）。
+
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2022 年 818 单选第 4 题（方管进口接压缩机，求出口平均密度 $\rho_2$ 与质量流量 $Q_m$）；E5 题库同类型题为「连续性方程＋状态方程联立」；E1 slide33「第三章＝公式多、重点记忆」；E2「第 1--3 章……掌握基本公式」}\quad\nandu{中}
+
+\begin{zhenti}{2022 年 818 单选第 4 题}{单项选择题}
+方管接进口截面进入压缩机，已知进口断面的面积与流速（及进口空气密度），
+求\textbf{出口断面的平均密度 $\rho_2$ 与质量流量 $Q_m$}。
+\end{zhenti}
+\noindent\textbf{答案要点：}先由 $Q_m=\rho_1 v_1 A_1$ 求质量流量（压缩机进口断面的质量流量即所求），
+再由 $\rho_1 v_1 A_1=\rho_2 v_2 A_2$ 求 $\rho_2$；若题目改为"气体经压缩机增压"，
+则须联立状态方程 $\rho=p/(RT)$ 才能封闭。
+
+\begin{banfa}
+\textbf{连续性方程解题四步套路：}\\
+① \textbf{先画两个断面}并标出已知量：$A_1\!-\!v_1\!-\!\rho_1$ 与 $A_2\!-\!v_2\!-\!\rho_2$，
+明确哪个是进口、哪个是出口；\\
+② \textbf{选式}：气体/可压缩$\to\rho_1v_1A_1=\rho_2v_2A_2$；
+液体/不可压缩$\to v_1A_1=v_2A_2$；有分流汇流$\to\sum Q_{\text{进}}=\sum Q_{\text{出}}$；\\
+③ \textbf{补辅助方程}：气体问题常需状态方程 $\rho=p/(RT)$ 或 $\rho=p/(RT)$ 的比值式
+$\dfrac{\rho_2}{\rho_1}=\dfrac{p_2T_1}{p_1T_2}$ 与温度关系式联立（这是题库同类型题的固定套路）；\\
+④ \textbf{校验单位与量级}：$Q_m$ 的单位必须是 $\mathrm{kg/s}$，$v$ 必须是 $\mathrm{m/s}$，
+面积换算成 $\mathrm{m^2}$（$1\ \mathrm{cm^2}=10^{-4}\ \mathrm{m^2}$，最常见的丢分点）。\\
+\textbf{一句话记：}"质量流量进＝出，密度用状态方程补。"
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错（连续性方程的适用条件，必须逐一辨清）：}\\
+① \textbf{可压缩 vs 不可压缩}：$\rho_1v_1A_1=\rho_2v_2A_2$ 对二者\textbf{都}成立；
+$v_1A_1=v_2A_2$ 只对\textbf{不可压缩}成立，对气体用它会出错。\\
+② \textbf{定常 vs 非定常}：一元总流式写在两断面之间，若流动非定常，
+则各断面的 $v$、$\rho$ 本身随时间变，但\textbf{同一瞬时}仍满足 $\rho_1v_1A_1=\rho_2v_2A_2$；
+真正不能用于非定常的是微元式里的省略写法——\textbf{不可压缩}时才可省去 $\partial\rho/\partial t$ 项。\\
+③ \textbf{别把"不可压缩"等同于"$\rho$ 处处相等"：}教材明确指出，
+不可压缩流体的密度随体导数 $\dfrac{\dd\rho}{\dd t}=0$ 表示\textbf{同一质点在运动全过程中密度不变}，
+但\textbf{不同质点可以有不同的密度}，所以不可压缩并不一定处处等密度；
+数学表达 $\dfrac{\dd\rho}{\dd t}=0$ 与 $\rho=C$ 是不同的，不可混淆。\\
+④ \textbf{有支流时不能直接用 $v_1A_1=v_2A_2$：}必须按"进＝出"的代数和写。
+\end{yicuo}
+\end{kaodian}
+
+\section{流体微团运动分析}
+
+\begin{kaodian}{3}{流体微团运动的分解}
+\textbf{是什么：}流体微团的运动可以分解为\textbf{四种}基本形式：
+\textbf{平移}、\textbf{转动}、\textbf{线变形}、\textbf{角变形}。
+与刚体运动相比，流体除平动与旋转外，通常还必须具有\textbf{十分复杂的变形运动}——
+这正是"流体不能保持形状"的数学表达。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+运动形式 & 特征量 & 表达式 \\
+\midrule
+平移 & 速度 $\bu$ & $u_x,u_y,u_z$ \\
+线变形 & 线变形率（拉伸/压缩） & $\varepsilon_{xx}=\dfrac{\partial u_x}{\partial x}$，$\varepsilon_{yy}=\dfrac{\partial u_y}{\partial y}$，$\varepsilon_{zz}=\dfrac{\partial u_z}{\partial z}$ \\
+角变形 & 角变形率（角速度的一半） & $\varepsilon_{xy}=\varepsilon_{yx}=\dfrac{1}{2}\!\left(\dfrac{\partial u_x}{\partial y}+\dfrac{\partial u_y}{\partial x}\right)$ 等三式 \\
+旋转 & 旋转角速度（有方向） & $\omega_x,\omega_y,\omega_z$ 三式（见下） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}填空（"流体微团的运动可分解为\rule{2cm}{0.4pt}、\rule{2cm}{0.4pt}、\rule{2cm}{0.4pt}、\rule{2cm}{0.4pt}"）；
+简答（流体运动与刚体运动的区别）。
+
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E2「第 1--3 章偏概念，掌握基本公式与解释即可」；E1 slide33「第三章＝公式多、重点记忆」}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{记"四件事"口诀：}"\textbf{走、长、歪、转}"——平动（走）、线变形（长/缩）、
+角变形（歪）、旋转（转）。答简答题时先说"四种分解"，再逐一给公式，
+最后补一句"刚体只有走和转，没有长和歪"，得分点就齐了。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{线变形率与角变形率}
+\textbf{是什么：}
+\textbf{线变形率}——单位时间内、单位长度上产生的线变形（即拉伸或压缩变化率）。
+\textbf{角变形率}——流体微团在某一平面内的\textbf{直角变为非直角}的变化速率；
+教材定义取"直角变化量的一半"为其角变形速度。
+
+\begin{gongshi}{线变形率（教材 3.4 节，见式（3.33）的式中说明）}
+\[ \varepsilon_{xx}=\frac{\partial u_x}{\partial x},\qquad
+   \varepsilon_{yy}=\frac{\partial u_y}{\partial y},\qquad
+   \varepsilon_{zz}=\frac{\partial u_z}{\partial z} \]
+\textbf{含义：}$\varepsilon_{xx}$ 表示 $x$ 方向线元在单位时间内单位长度的伸长（正）或压缩（负）。
+三个分量之和即体积膨胀率：
+$\varepsilon_{xx}+\varepsilon_{yy}+\varepsilon_{zz}=\grad\cdot\bu$，
+对不可压缩流体该和为零——这正好回到不可压缩连续性方程。\\
+\textbf{适用条件：}微团尺度足够小（可用线性化）；对不可压缩流体三个线变形率之和恒为零。
+\end{gongshi}
+
+\begin{gongshi}{角变形率（教材式 3.34）}
+\[ \varepsilon_{xy}=\varepsilon_{yx}=\frac{1}{2}\!\left(\frac{\partial u_x}{\partial y}+\frac{\partial u_y}{\partial x}\right) \]
+\[ \varepsilon_{yz}=\varepsilon_{zy}=\frac{1}{2}\!\left(\frac{\partial u_y}{\partial z}+\frac{\partial u_z}{\partial y}\right),\qquad
+   \varepsilon_{zx}=\varepsilon_{xz}=\frac{1}{2}\!\left(\frac{\partial u_x}{\partial z}+\frac{\partial u_z}{\partial x}\right) \]
+\textbf{含义：}表示 $xy$ 平面内微团直角的变化速率，取系数 $1/2$ 是教材约定
+（"直角变化量的一半"）；$\varepsilon_{xy}=\varepsilon_{yx}$ 说明角变形率\textbf{无方向性}，
+是二阶对称张量。\\
+\textbf{适用条件：}连续介质、小微团线性化；注意该系数 $1/2$ 是定义约定，
+不同教材可能把 $\partial u_x/\partial y$、$\partial u_y/\partial x$ 直接叫作变形速度，答题时以本题给定符号为准。
+\end{gongshi}
+
+\textbf{常考题型：}填空（"线变形率的表达式"、"角变形率是\rule{2cm}{0.4pt}的一半"）；
+选择（判断给定的 $\varepsilon_{xx}$ 是否为零）。
+
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E2「第 1--3 章偏概念，掌握基本公式与解释即可」；E1 slide33「第三章＝公式多、重点记忆」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{① 角变形率与切应力的联系：}牛顿内摩擦定律里出现的"角变形速度"就是它，
+所以第 5 章黏性力计算会回头用这两个式子——把 $\varepsilon_{xy}$ 与 $\tau=\mu\,\dd u/\dd y$ 一起记。\\
+\textbf{② 与旋转角速度的区分：}$\varepsilon_{xy}$ 用\textbf{加号}（两项相加，是对称的变形量），
+$\omega_z$ 用\textbf{减号}（两项相减，是对称的旋转量）。
+见"加号"想变形、见"减号"想旋转，是最快的判别法。\\
+\textbf{③ 线变形率求和：}$\varepsilon_{xx}+\varepsilon_{yy}+\varepsilon_{zz}=\grad\cdot\bu$，
+不可压缩流体时立刻得零——这是把"运动学"与"连续性方程"串起来的捷径。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{4}{旋转角速度、速度环量、有旋与无旋判据}
+\textbf{是什么：}流体微团在运动过程中\textbf{绕通过自身轴的转动}即为旋转。
+\textbf{有旋运动}：微团绕自身轴旋转，旋转角速度 $\bomega$ 不全为零；
+\textbf{无旋运动}：微团只有平移和变形、本身没有旋转，$\bomega=\bm{0}$。
+
+\begin{gongshi}{旋转角速度与涡量（教材式 3.35）}
+\[ \omega_x=\frac{1}{2}\!\left(\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z}\right),\qquad
+   \omega_y=\frac{1}{2}\!\left(\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x}\right),\qquad
+   \omega_z=\frac{1}{2}\!\left(\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}\right) \]
+\[ \bomega=\frac{1}{2}\grad\times\bu=\frac{1}{2}\operatorname{rot}\bu,\qquad
+   \Omega=2\bomega=\grad\times\bu\ \ (\text{称为涡量、旋度}) \]
+\textbf{含义：}三个分量分别描述微团绕 $x$、$y$、$z$ 轴的转动角速度；方向按右手法则，
+逆时针为正、顺时针为负——\textbf{旋转角速度是有方向性的矢量}，
+而角变形速度无方向性，这是两者的根本区别。\\
+\textbf{适用条件：}任何运动流体都可用它判断；转动角速度是\textbf{微团的局部特征}，
+与流线的形状无关（流线为直线未必无旋，流线为圆未必有旋）。
+\end{gongshi}
+
+\begin{gongshi}{有旋与无旋的判据}
+\[ \text{无旋（势流）：}\quad \omega_x=\omega_y=\omega_z=0
+   \ \Longleftrightarrow\
+   \frac{\partial u_z}{\partial y}=\frac{\partial u_y}{\partial z},\quad
+   \frac{\partial u_x}{\partial z}=\frac{\partial u_z}{\partial x},\quad
+   \frac{\partial u_y}{\partial x}=\frac{\partial u_x}{\partial y} \]
+\[ \text{有旋：}\quad \omega_x,\ \omega_y,\ \omega_z\ \text{三者中至少有一个不为零} \]
+\[ \text{速度环量：}\quad \Gamma=\oint_L \bu\cdot\dd\bm{l} \]
+\textbf{含义：}无旋的充要条件是上述三个"交叉偏导相等"；
+速度环量 $\Gamma$ 是沿封闭曲线一周的速度线积分，由斯托克斯定理
+$\Gamma=\oint_L\bu\cdot\dd\bm{l}=\iint_A\bomega\cdot\bn\dd A$，
+所以\textbf{环量为零即无旋}。无旋流动又称\textbf{势流}——
+只要 $\omega=0$ 必有速度势函数 $\varphi$ 存在，使 $\bu=\grad\varphi$（详见第 7 章）。\\
+\textbf{适用条件：}判据只针对\textbf{流体微团本身是否绕基点瞬时轴旋转}，
+与流动是定常还是非定常、均匀还是非均匀、轨迹是直是圆\textbf{均无关}。
+\end{gongshi}
+
+\textbf{两条必须记住的结论：}
+\begin{enumerate}[label=(\arabic*),leftmargin=2.1em,itemsep=2pt,topsep=3pt]
+\item \textbf{流体微团是否旋转与流线的形状无关。}例如圆管中黏性流体的有旋流动，
+微团沿圆周运动却在自转；相反，自由旋涡中流线是同心圆，微团却不自转。
+\item \textbf{无旋必有速度势。}$\bomega=0\ \Longleftrightarrow\ \bu=\grad\varphi$
+（区域单连通时），这就是第 7 章势流理论的全部入口。
+\end{enumerate}
+
+\textbf{常考题型：}选择/判断（给出速度场，判断是否"涡量为零"/有旋无旋）；
+填空（"无旋流动的充要条件"、"涡量与旋转角速度的关系 $\Omega=$ \rule{2cm}{0.4pt}"$\to$ $2\bomega$）；
+简答（有旋与无旋的区别）。
+
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E5 题库 \texttt{10.pdf} 选择第 13 题（"涡量为零"）；E2「第 1--3 章偏概念，掌握基本公式与解释即可」；第 7 章势流的必备判据}\quad\nandu{中}
+
+\begin{zhenti}{题库 \texttt{10.pdf} 选择第 13 题}{单项选择题}
+涉及"\textbf{涡量为零}"的判断（由速度场判断是否为无旋流动）。
+\end{zhenti}
+\noindent\textbf{答案要点：}把三个分量偏导代入 $\omega_x=\dfrac12\!\left(\dfrac{\partial u_z}{\partial y}-\dfrac{\partial u_y}{\partial z}\right)$
+等三式，只要有任意一个不为零即为有旋；三式全为零则涡量（旋度）$\Omega=2\bomega=0$，是无旋流动。
+
+\begin{banfa}
+\textbf{① 有旋无旋判别三步走（这是最省时的做题法）：}\\
+(a) \textbf{先看有没有现成的"减号"偏导}：把速度分量两两交叉相减，
+组出 $\left(\dfrac{\partial u_z}{\partial y}-\dfrac{\partial u_y}{\partial z}\right)$、$\left(\dfrac{\partial u_x}{\partial z}-\dfrac{\partial u_z}{\partial x}\right)$、
+$\left(\dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}\right)$；\\
+(b) 逐项算偏导，任一不为零 $\to$ \textbf{有旋}；三项全零 $\to$ \textbf{无旋}；
+(c) 无旋时立刻补一句"存在速度势 $\varphi$，且 $\bu=\grad\varphi$"，把第 7 章的结论一并写上，简答题给分点全拿。\\
+\textbf{② 常见快速结论（可直接背，省去算偏导）：}
+$\bu=(ay,ax)$ 型（如纯剪切场 $u_x=ky,u_y=0$）是\textbf{有旋}的——
+说明直线流线也可能有旋，这正是"有旋与流线形状无关"的经典例子；
+而纯拉伸场 $\bu=(ax,-ay)$ 中 $\omega_z=0$，是\textbf{无旋}的，虽有变形但不旋转。\\
+\textbf{③ 别被"圆"骗了：}平面圆周流动 $u_\theta=r$ 有旋，$u_\theta=1/r$ 无旋。
+判断依据永远是微团自身是否自转，而不是轨迹形状。\\
+\textbf{④ 与环量互推：}题目给"沿任一封闭曲线的速度环量为零"，等价于无旋，
+可直接当作判据使用。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错（本章最重要的两个"两回事"）：}\\
+① \textbf{无旋流与无黏流是两回事。}无旋只要求流体微团不自转，\textbf{并不要求黏度为 0}；
+黏性流体的层流完全可以是无旋的。简答题里把"无旋＝理想流体"写上去必扣分。\\
+② \textbf{无旋与"流线是直线"是两回事。}纯剪切流 $u_x=ky,\ u_y=0$ 的流线是直线，
+但 $\omega_z=\dfrac12\!\left(\dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}\right)=-\dfrac{k}{2}$，不为零，是有旋的；
+反之同心圆流线也可能无旋。
+\end{yicuo}
+\end{kaodian}
+
+\section{本章小结}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcclX@{}}
+\toprule
+考点 & 重要度 & 难度 & 一句话抓住 \\
+\midrule
+拉格朗日法与欧拉法 & \xstarfull{3} & 易 & 质点 vs 空间点；$(a,b,c,t)$ vs $(x,y,z,t)$ \\
+质点导数与加速度分解 & \xstarfull{5} & 中 & $a=\dfrac{\partial\bu}{\partial t}+(\bu\cdot\grad)\bu$：当地＋迁移 \\
+定常/非定常、均匀/非均匀 & \xstarfull{3} & 易 & 前者看时间，后者看空间 \\
+一元、二元、三元流动 & \xstarfull{3} & 易 & "几元"＝几个空间坐标 \\
+流线与迹线 & \xstarfull{5} & 中 & 定常重合、非定常不重合；流线不能相交 \\
+流线方程 & \xstarfull{5} & 中 & $\dfrac{\dd x}{u_x}=\dfrac{\dd y}{u_y}=\dfrac{\dd z}{u_z}$，积分时 $t$ 当常数 \\
+脉线、流管、元流与总流 & \xstarfull{3} & 易 & 定常时流线、迹线、脉线三线合一 \\
+过流断面、流量与平均流速 & \xstarfull{4} & 易 & $Q_m=\rho Q$，$v=Q/A$ \\
+湿周、水力半径与当量直径 & \xstarfull{3} & 易 & $R=A/\chi$，圆管满流 $R=d/4$，$d_H=4R$ \\
+系统与控制体 & \xstarfull{4} & 易 & 系统质量不变，控制体可交换质量 \\
+连续性方程 & \xstarfull{5} & 中 & $\rho_1v_1A_1=\rho_2v_2A_2$；可压缩也适用 \\
+流体微团运动的分解 & \xstarfull{3} & 易 & 走、长、歪、转（平动、线变形、角变形、旋转）\\
+线变形率与角变形率 & \xstarfull{3} & 中 & $\varepsilon_{xx}=\dfrac{\partial u_x}{\partial x}$；变形的和＝$\grad\cdot\bu$ \\
+旋转角速度与有旋无旋判据 & \xstarfull{4} & 中 & $\bomega=\dfrac12\grad\times\bu$，$\bomega=0\Rightarrow\bu=\grad\varphi$ \\
+\bottomrule
+\end{tabularx}
+\end{center}

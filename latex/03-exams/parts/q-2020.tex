@@ -1,0 +1,261 @@
+\chapter{2020 年工程流体力学入学考试试题（当年科目代码 818）}
+
+\begin{tishi}
+\textbf{关于科目代码：}原卷封面所印为「考试科目代码及名称：\textbf{818} 工程流体力学」，
+与现行 818 一致；本套试题内容全部落在现行 818 大纲第 1--8 章范围内
+（仅计算题第 4 题为旧大纲的明渠/堰流相关内容，已标 \textbf{X1}）。
+
+\textbf{试卷说明（原卷原文）：}试题附在答卷内交回，答案必须写在答题纸上，写在试题纸上无效。
+
+\textbf{结构：}选择题 20 分（10 小题，每小题 2 分）、判断题 10 分（10 小题，每小题 1 分）、
+填空题 20 分（按原卷「每空 2 分」计，共 10 个空口：第 1 题 2 空、第 2 题 1 空、第 3 题 1 空、
+第 4 题 3 空、第 5 题 2 空、第 6 题 1 空）、
+简答题 20 分（6 + 6 + 8 分）、证明题 20 分（2 小题，各 10 分）、
+计算题 60 分（6 小题，8、12、10、14、8、8 分）。满分 150 分。
+
+\textbf{关于图示：}原卷图一律不作想象重绘，正文中标注「原卷图 $N$」的文字图示说明，
+只是依据原卷写成的\emph{解题用文字描述}，\textbf{不等于原卷图形}；
+凡描述不到之处均注明"原卷图略，请对照原卷"，影印件见本册附录。
+
+\textbf{OCR 校订说明：}动力黏度原卷 OCR 作 u 或 $\mu$ 混用，本册统一为 $\mu$；
+运动黏度原卷 OCR 作「v」，本册统一为 $\nu$；沿程阻力系数原卷 OCR 作「2」「入」，统一为 $\lambda$；
+管长符号原卷 OCR 作 1，统一为 $\ell$；压强符号原卷 OCR 作 $P_0$，统一为 $p_0$；
+油运动黏度原卷 OCR 作 $v_2=8\times10^{-m^2/s}$，据原卷影印订为
+$\nu=8\times10^{-5}\,\mathrm{m^2/s}$；临界雷诺数原卷 OCR 作「$\Rey_{xcr}=10^\circ$」，
+据影印订为 $\Rey_{xcr}=10^{6}$。以上均属字形错读的改正，
+\textbf{各题题设数值一律未作改动}。
+\end{tishi}
+
+\section{一、选择题（共 20 分，每小题 2 分）}
+
+\begin{ti}
+  \item 单位质量力是指作用在单位\underline{\hspace{1.8cm}}流体上的质量力。\hfill\xstarfull{3}\yiju{E4 2018 选择 1（作用于流体的质量力）；E5 题库选择 3（体积力有势）}\nandu{易}
+  \fourchoices{面积}{体积}{质量}{重量}
+
+  \item 控制体是（\quad）。\hfill\xstarfull{5}\yiju{E4 各年选择/填空（质点导数与加速度）；E1 slide33"公式较多，重点记忆"}\nandu{中}
+  \fourchoices{包含一定质量的系统}{位置和形状都变化的空间体}{固定的空间体}{形状不变、位置移动的空间体}
+
+  \item 流管是在流场里取作管状假想表面，流体流动应是（\quad）。\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{易}
+  \fourchoices{流体能穿过管侧壁由管内向管外流动}{不能穿过侧壁流动}{流体能穿过管侧壁由管外向管内流动}{不确定}
+
+  \item 如果在同一时刻，流场内各点的物理量与空间坐标无关，则称此流场为（\quad）。\hfill\xstarfull{3}\yiju{E1 slide16 简答（均匀流的特点）}\nandu{中}
+  \fourchoices{定常场}{不定常场}{均匀场}{不均匀场}
+
+  \item 理想液体测压管水头线的沿程变化是（\quad）。\hfill\xstarfull{5}\yiju{E1 slide16"计算题：伯努利方程"；E1 slide33 与 E2 slide4"第四章＝考试计算题重点"}\nandu{中}
+  \fourchoices{沿程下降}{沿程上升}{保持水平}{前三种情况都有可能}
+
+  \item 连续性方程表示控制体的\underline{\hspace{1.8cm}}守恒。\hfill\xstarfull{5}\yiju{E4 2022 单选 4；E5 题库}\nandu{易}
+  \fourchoices{能量}{动量}{流量}{质量}
+
+  \item 已知水泵的输出功率 $N$ 与单位体积水的重量 $\gamma$、流量 $Q$ 和扬程 $H_m$ 有关，
+  运用量纲分析法得到输出功率 $N$ 的表达式为（\quad）。\hfill\xstarfull{4}\yiju{E4 2016 填空 3；E4 2018 选择 5；E4 2019 选择 5；E4 2020 选择 7}\nandu{中}
+  \begin{choices}
+    \item $N=k\gamma QH_m$
+    \item $N=k\gamma QH_m^{2}$
+    \item $N=k\gamma Q^{2}H_m$
+    \item $N=k\gamma Q^{2}H_m^{2}$
+  \end{choices}
+
+  \item 下列流体的作用力中，不属于质量力的是（\quad）。\hfill\xstarfull{3}\yiju{E4 2018 选择 1（作用于流体的质量力）；E5 题库选择 3（体积力有势）}\nandu{易}
+  \fourchoices{电磁力}{黏性内摩擦力}{重力}{惯性力}
+
+  \item 依据欧拉观点，以下表述恒定流动密度变化率数学表达式正确的是（\quad）。\hfill\xstarfull{5}\yiju{E4 各年选择/填空（质点导数与加速度）；E1 slide33"公式较多，重点记忆"}\nandu{难}
+  \begin{choices}
+    \item $\dfrac{\mathrm{d}\rho}{\mathrm{d}t}=0$
+    \item $\vec u\cdot\nabla\rho=0$
+    \item $\rho\nabla\cdot\vec u=0$
+    \item $\dfrac{\partial\rho}{\partial t}=0$
+  \end{choices}
+
+  \item 如图 1，在管路中有一水泵，水泵对水流作功，使水流能量增加，从 1-1 断面到 2-2 断面
+  单位重量水流获得的能量 $H_m$ 等于（\quad）。\hfill\xstarfull{4}\yiju{E5 题库计算 4（水泵工况点与节流调节）；E6 教材 4.2}\nandu{中}
+  \fourchoices{$H_m=z$}{$H_m=z-h_{w1\text{-}2}$}{$H_m=z+h_{w1\text{-}2}$}{不定}
+  \tuyi{原卷图 1：左下为水池（水面下为吸水管进口断面 1--1，管上串接水泵与电动机），
+  水经泵加压后沿管路送到右上方水池，右上水池液面为断面 2--2；
+  图中标出 1--1 断面与 2--2 断面之间的高差 $z$，泵前泵后管段分别标注 $d_1$、$\ell_1$ 与 $d_2$、$\ell_2$。
+  （原卷影印见本册附录）}
+\end{ti}
+
+\begin{tishi}
+\textbf{选择题第 9 题：}原卷四个选项 OCR 分解错乱（分别碎成 $\mathrm{d}\rho/\mathrm{d}t$、$\vec u\cdot\nabla\rho$、
+$\rho\nabla\cdot\vec u$、$\partial\rho/\partial t$ 等片段），此处按原卷影印逐字转写为四个完整表达式；
+选项 (C) OCR 另读作 $\rho\vec V\cdot\vec u=0$，按影印及连续性方程的常规写法订为 $\rho\nabla\cdot\vec u=0$。
+四个选项与 (A)(B)(C)(D) 的对应关系请对照原卷影印核实。
+\end{tishi}
+
+\section{二、判断题（正确打"√"，错误打"×"，共 10 分，每小题 1 分）}
+
+\begin{ti}
+  \item 理想流体中存在切应力。\hfill\xstarfull{3}\yiju{E4 2026 简答 2（理想流体）；E6 教材 1.3}\nandu{易}
+
+  \item 动力黏度 $\mu$ 和运动黏度 $\nu$ 之间的关系是 $\nu=\rho\mu$。\hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{易}
+
+  \item 速度为 $u_x=2x^{2}+y$、$u_y=2y^{2}+2z$、$u_z=-4(x+y)z+xy$ 的不可压缩流体的运动是不可能存在的。
+  \hfill\xstarfull{5}\yiju{E4 2022 单选 4；E5 题库}\nandu{中}
+
+  \item 流体可以穿越边界流进、流出流体系统。\hfill\xstarfull{5}\yiju{E4 各年选择/填空（质点导数与加速度）；E1 slide33"公式较多，重点记忆"}\nandu{易}
+
+  \item 流体绕流无限长圆柱体，可将该流动简化为平面流动。\hfill\xstarfull{4}\yiju{E4 2015 计算 8（均匀流＋点源叠加）；E1 slide33"概念为主"}\nandu{中}
+
+  \item 恒定流动中，流线的形状不随时间改变。\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{易}
+
+  \item 图 2 所示 $A$、$B$、$C$ 三条高程不同的坝身泄水管，其管长 $\ell$、管径 $d$ 及沿程阻力系数
+  $\lambda$ 均相同，这三条管道的流量均相同。\hfill\xstarfull{5}\yiju{E5 题库计算 2（水箱垂直管道出流 $Q$ 与管长 $l$）；E1 slide33}\nandu{中}
+  \tuyi{原卷图 2：一溢流坝剖面，坝上游为高水位；坝身内自上游向下游水平贯穿三条泄水管，
+  自上而下依次记为 $A$、$B$、$C$，三管出口均通向下游大气；图中标注坝上下游水位差 $z$。
+  （原卷影印见本册附录）}
+
+  \item 动力相似是流动相似的主导因素，只有动力相似才能达到流动相似。\hfill\xstarfull{3}\yiju{E4 2020 判断 8（动力相似是流动相似的主导因素）；E1 slide33}\nandu{中}
+
+  \item 可压缩气流流速接近或超过声速时，实现流动相似要求相应的柯西数相等。\hfill\xstarfull{4}\yiju{E4 2014 选择 10；E4 2016 填空 4；E4 2019 判断 2；E4 2022 单选 9；E5 题库选择 12}\nandu{难}
+
+  \item 量纲是物理量的实质，不受人为因素的影响。\hfill\xstarfull{4}\yiju{E1 slide33（量纲转化）；E2 slide5}\nandu{易}
+\end{ti}
+
+\begin{tishi}
+\textbf{判断题第 3 题：}原卷为「$u_x=2x^{2}+y$，$u_y=2y^{2}+2z$，$u_z=-4(x+y)z+xy$」，
+$\partial u_x/\partial x+\partial u_y/\partial y+\partial u_z/\partial z=4x+4y-4(x+y)=0$ 恰满足不可压缩连续性方程；
+本题命题为"该运动是不可能存在的"，属\textbf{原卷命题如此}，判断时请以原卷为准、勿自行改题。
+
+\textbf{判断题第 7 题：}管长符号原卷 OCR 作「1」，据影印订为 $\ell$；
+沿程阻力系数原卷 OCR 作「2」，据影印订为 $\lambda$。
+\end{tishi}
+
+\section{三、填空题（共 20 分，每空 2 分）}
+
+\begin{ti}
+  \item 已知不可压缩流体平面流动的速度场为 $u_x=x+3y$、$u_y=-x-y$，
+  则加速度的欧拉表示式为 $a_x=\underline{\hspace{2.5cm}}$，$a_y=\underline{\hspace{2.5cm}}$。
+  \hfill\xstarfull{5}\yiju{E4 各年选择/填空（质点导数与加速度）；E1 slide33"公式较多，重点记忆"}\nandu{中}
+
+  \item 已知二维速度场 $u_x=a$、$u_y=bt$，当 $t=0$ 时，过点 $(0,\,0)$ 的迹线方程为
+  \underline{\hspace{3.5cm}}。\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{中}
+
+  \item 动力黏度为 $\mu$ 的润滑油充满在两个同轴圆柱体的间隙中，外筒固定，间隙为 $h$，
+  内筒直径为 $d$，当内筒以转速 $n$ 旋转时，内筒表面的切应力等于 \underline{\hspace{3cm}}。
+  \hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{中}
+
+  \item 平面不可压缩流体速度势函数 $\varphi=x^{2}-y^{2}-x$，则速度分量
+  $u_x=\underline{\hspace{2.5cm}}$，$u_y=\underline{\hspace{2.5cm}}$，流函数 $\psi=\underline{\hspace{3cm}}$。
+  \hfill\xstarfull{5}\yiju{E4 2015 计算（流函数求速度与流线）；E4 2026 计算 4（证明势函数存在性）}\nandu{中}
+
+  \item 并联管路的流动特点是：总流量等于 \underline{\hspace{2.8cm}}，各段的 \underline{\hspace{2.8cm}} 相等。
+  \hfill\xstarfull{4}\yiju{E1 slide33；E6 教材 5.7}\nandu{易}
+
+  \item 油（$\nu=8\times10^{-5}\,\mathrm{m^2/s}$）以速度 $v_0=0.8\,\mathrm{m/s}$ 绕一块长
+  $L=2\,\mathrm{m}$ 的平板流动，边界层的转捩临界雷诺数 $\Rey_{xcr}=10^{6}$，
+  平板末端的边界层厚度等于 \underline{\hspace{2.5cm}}。\hfill\xstarfull{3}\yiju{E6 教材 8.2；E1 slide33}\nandu{难}
+\end{ti}
+
+\begin{tishi}
+\textbf{填空题第 6 题：}运动黏度原卷 OCR 作「$\nu=8\times10^{-m^2/s}$」，指数位字形残缺，
+据原卷影印订为 $\nu=8\times10^{-5}\,\mathrm{m^2/s}$；
+临界雷诺数原卷 OCR 作「$10^{\circ}$」，据影印订为 $\Rey_{xcr}=10^{6}$。
+两处均以影印为准，数值未作改动。
+
+\textbf{关于小数幂（$10^{-5}$、$10^{6}$）：}原卷上标字号很小，若与影印仍有出入，请对照本册附录影印复核。
+\end{tishi}
+
+\section{四、简答题（共 20 分）}
+
+\begin{ti}
+  \item 静止液体作用在平面上的总压力计算方法有哪两种？其适用条件分别是什么？（6 分）
+  \hfill\xstarfull{5}\yiju{E4 2015 计算（圆柱闸门）；E1 slide33}\nandu{中}
+
+  \item 对静止液体作用在平面上的总压力进行分析时会用到压力体，压力体可分为哪两种？如何区别的？（6 分）
+  \hfill\xstarfull{5}\yiju{E5 题库计算 1（弧形闸门 $F_x,F_z$ 与力矩）；E1 slide33}\nandu{中}
+
+  \item 绕流阻力有摩擦阻力和压差阻力，简述减小阻力有哪些措施？（8 分）
+  \hfill\xstarfull{3}\yiju{E6 教材 8.3、8.7；E1 slide33}\nandu{中}
+\end{ti}
+
+\section{五、证明题（共 20 分）}
+
+\begin{ti}
+  \item 图 3 为圆柱形外管嘴自由出流，由于管嘴内主流脱离壁面，在断面 $c$-$c$ 形成收缩，
+  试证明该管嘴内真空的存在。（10 分）\hfill\xstarfull{5}\yiju{E4 2022 单选 8（圆柱形直角外管嘴 $H_0\le 9$ m、$l=(3\sim4)d$）；E4 2026 计算 5}\nandu{难}
+  \tuyi{原卷图 3：一水箱（左上方自由液面为断面 1--1）底部接一段圆柱形外管嘴，
+  管嘴直径 $d$、长 $3\sim4d$；水流自管嘴自由射入大气，出口断面为 2--2；
+  管嘴内部因流股脱离壁面而收缩，收缩断面记为 $c$-$c$（流速 $v_c$，出口流速 $v$）。
+  （原卷影印见本册附录）}
+
+  \item 流体在圆管内做层流运动，已知通过断面的流速
+  $u=\dfrac{\Delta p}{4\mu l}\left(R^{2}-r^{2}\right)$，其中 $R$ 为管道半径，
+  试证明断面流速最大值是断面平均流速的 2 倍。（10 分）\hfill\xstarfull{5}\yiju{E4 2022 单选 10（管径减半压强损失 16 倍）；E4 2015 填空（层流平均速度＝0.5 倍最大速度）}\nandu{中}
+\end{ti}
+
+\begin{tishi}
+\textbf{证明题第 1 题：}原卷图 3 中收缩断面标为 $c$-$c$、管嘴长标为 $3\sim4d$，
+其中管嘴长度一行原卷 OCR 作「$4d$」，据影印此处写作 $3\sim4d$（管嘴长度达 $3\sim4$ 倍管径时
+收缩断面后才能重新贴壁），请对照原卷影印核实。
+
+\textbf{证明题第 2 题：}流速公式原卷 OCR 只拾得分子「$\Delta p$」与分母「$4\mu l$」两行而丢失对应关系，
+此处按圆管层流速度分布的常用表达式 $u=\dfrac{\Delta p}{4\mu l}(R^{2}-r^{2})$ 排写；
+\textbf{式中 $\Delta p$、$l$、$R$、$r$ 的原卷字形请对照影印核实}。
+\end{tishi}
+
+\section{六、计算题（共 60 分）}
+
+\begin{ti}
+  \item 如图 4 为一复式水银测压计，用以测量水箱中水的表面相对压强。根据图中读数（单位为 m）
+  计算水面相对压强值。（8 分）\hfill\xstarfull{4}\yiju{E4 2018 选择 3（U 形水银测压计）；E4 2015 填空（U 形压差计）}\nandu{中}
+  \tuyi{原卷图 4：左边为盛水的水箱，箱顶水面以上气室的压强记为 $p_0$，箱内水深 $3.0\,\mathrm{m}$；
+  箱底接一根向右的折管，折管中水银面与箱底的高差为 $1.4\,\mathrm{m}$；
+  折管向上再向右，右侧立管内水柱高度为 $2.5\,\mathrm{m}$，其间水银面高度为 $1.2\,\mathrm{m}$；
+  最右端接一开口测压管，管中水柱高出该处水银面 $2.3\,\mathrm{m}$；管内底部所充液体为水银。
+  （原卷影印见本册附录）}
+
+  \item 如图 5，一贮水容器，容器上有两个半球形的盖。设 $d=0.5\,\mathrm{m}$，$h=2.0\,\mathrm{m}$，
+  $H=2.5\,\mathrm{m}$，求作用在两个球盖上的液体总压力。（12 分）\hfill\xstarfull{5}\yiju{E5 题库计算 1（弧形闸门 $F_x,F_z$ 与力矩）；E1 slide33}\nandu{中}
+  \tuyi{原卷图 5：一贮水容器，容器左、右两侧各装一个半球形盖（左侧球盖凸向容器外，
+  右侧另有向上凸的半球形盖）；图中标注球盖直径 $d$，以及确定球盖中心位置的尺寸 $h$、$H$。
+  （原卷影印见本册附录）}
+
+  \item 有一大水箱，水箱面积很大，下接泄水管道流入大气，如图 6 所示。已知大管和收缩段管径
+  分别为 $d_1=5\,\mathrm{cm}$ 和 $d_2=4\,\mathrm{cm}$，水箱水面与管道出口中心的高差 $H=1\,\mathrm{m}$。
+  如不计水头损失，问容器 $A$ 中的水是否会沿管 $B$ 上升？如上升，上升高度 $h$ 为若干？（10 分）
+  \hfill\xstarfull{5}\yiju{E4 2022 单选 6（计算点选取）；E4 2026 计算 2（文丘里流量证明）}\nandu{中}
+  \tuyi{原卷图 6：上方一大水箱（自由液面），底部接一根水平泄水管自由出流，
+  管道出口中心与水箱水面的高差为 $H$；管路由管径 $d_1=5\,\mathrm{cm}$ 的直管段与管径
+  $d_2=4\,\mathrm{cm}$ 的收缩段串联而成；收缩断面处竖直向下接一根细管 $B$，
+  管 $B$ 的下端插入下方敞口容器 $A$ 的水中，细管内水柱上升高度记为 $h$。
+  （原卷影印见本册附录）}
+
+  \item 如图 7 所示，某平底矩形断面的河道中筑一溢流坝，坝高 $a=30\,\mathrm{m}$，坝上水头 $H=2.0\,\mathrm{m}$，
+  坝下游收缩断面处水深 $h_{c0}=0.8\,\mathrm{m}$，溢流坝水头损失为 $h_w=2.5\dfrac{v_c^{2}}{2g}$，
+  $v_c$ 为收缩断面流速，不计行近流速 $v_0$（取动能及动量校正系数为 1）。
+  求水流对单宽坝段上的水平作用力（包括大小和方向）。（14 分）\hfill\xstarmark{X1}\nandu{难}
+  \tuyi{原卷图 7：河道纵剖面，底部为水平河床，河床上筑一溢流坝（坝体剖面打阴影线），
+  坝高为 $a$；坝上游水位高出坝顶 $H$（坝上水头），行近流速 $v_0\approx0$；
+  坝下游水流跌落，收缩断面 $C$-$C$ 处的水深为 $h_{c0}$，收缩断面流速为 $v_c$。
+  （原卷影印见本册附录）}
+
+  \item 一平面均匀流速度大小为 $v_\infty$，速度方向与 $x$ 轴正向夹角为 $\alpha$，
+  求流动的势函数 $\phi$、流函数 $\psi$ 和复势 $W$。（8 分）\hfill\xstarfull{4}\yiju{E4 2015 计算 8（均匀流＋点源叠加）；E1 slide33"概念为主"}\nandu{中}
+
+  \item 如图 8 所示，水平突然缩小管路的 $d_1=15\,\mathrm{cm}$，$d_2=10\,\mathrm{cm}$，
+  水的流量 $Q=2\,\mathrm{m^3/min}$。用水银测压计测得 $h=8\,\mathrm{cm}$。求突然缩小的水头损失。（8 分）
+  \hfill\xstarfull{4}\yiju{E4 2015 计算 3（突然缩小水头损失）；E1 slide16}\nandu{中}
+  \tuyi{原卷图 8：水平放置的突然缩小管路，上游粗管直径 $d_1=15\,\mathrm{cm}$（流量 $Q$），
+  下游细管直径 $d_2=10\,\mathrm{cm}$，两断面用接管连接；
+  在突然缩小处前后两断面间接一水银压差计，测得水银面高差为 $h=8\,\mathrm{cm}$。
+  （原卷影印见本册附录）}
+\end{ti}
+
+\begin{tishi}
+\textbf{计算题第 3 题：}本题收缩断面处的压强低于大气压，故容器 $A$ 中的水会沿细管 $B$ 上升；
+原卷设问以「上升高度 $h$」作答，$h$ 的具体量法（自容器 $A$ 水面量起还是自管轴量起）请对照原卷影印核实。
+
+\textbf{计算题第 4 题：}坝高原卷 OCR 与影印均读作「$a=30\,\mathrm{m}$」，
+但坝高 30 m 与本题其余尺度（$H=2.0\,\mathrm{m}$、$h_{c0}=0.8\,\mathrm{m}$）量级不相称，
+\textbf{原卷数值 OCR 不清，疑为 $3.0\,\mathrm{m}$，此处照原卷字面转写为 $30\,\mathrm{m}$，未作改动}，
+请对照原卷影印复核。本题属\textbf{明渠流与堰流}内容（考点码 X1），
+为旧大纲 / 复试范围，现行 818 大纲不要求，按最低重要度处理。
+
+\textbf{计算题第 5 题：}来流速度原卷记作 $v_\infty$（OCR 曾作 $v_\alpha$ / $v_0$），
+据原卷影印订为 $v_\infty$；题中未给出 $v_\infty$ 的数值，答案以含 $v_\infty$、$\alpha$ 的表达式表示。
+
+\textbf{计算题第 6 题：}流量原卷 OCR 与影印均读作「$Q=2\,\mathrm{m^3/min}$」，
+按 $d_1=15\,\mathrm{cm}$、$d_2=10\,\mathrm{cm}$ 试算，该流量对应的管内流速与实测水银面高差 $h=8\,\mathrm{cm}$
+所反映的局部水头损数量级基本自洽；数值未作改动，仍请对照原卷影印复核。
+\end{tishi}

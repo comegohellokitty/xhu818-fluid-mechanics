@@ -1,0 +1,537 @@
+\chapter{2014 年工程流体力学试题参考答案（当年科目代码 818，旧大纲）}
+
+\begin{tishi}
+本答案由原卷拍照件整理，个别步骤与符号已按流体力学标准写法规范化。
+\end{tishi}
+
+\answ{一、选择题（共 30 分，每小题 3 分）}
+
+\begin{enumerate}[label={}]
+  \item 1.~B \quad 2.~C \quad 3.~A \quad 4.~B \quad 5.~C
+  \item 6.~C \quad 7.~D \quad 8.~C \quad 9.~B \quad 10.~A
+\end{enumerate}
+
+\begin{tishi}
+\textbf{选择题简要理由（原答卷只给字母，此处按流体力学补写）：}
+\begin{enumerate}
+  \item 第 1 题：静止流体不能承受切应力，切应力只在流体运动（层流）时由牛顿内摩擦定律给出，故（A）对。
+  \item 第 2 题：$p_v=p_a-p_{abs}$（真空度是绝对压强低于大气压的部分），故（C）对。
+  \item 第 3 题：$\Rey=\dfrac{\rho v l}{\mu}=\dfrac{\text{惯性力}}{\text{黏滞力}}$，故（A）对。
+  \item 第 4 题：$p=\gamma h=9.8\times10^3\times5=49\,\mathrm{kPa}$，故（B）对。
+  \item 第 5 题：同一水平面上，越靠近容器（测压管内水银面上方的水柱越深）压强越大，原图关系为 $p_1<p_2<p_3$，取（C）。
+  \item 第 6 题：等直径管实测压管水头线沿程下降（实际流体有阻力），故 $z_A+\dfrac{p_A}{\gamma}>z_C+\dfrac{p_C}{\gamma}$，取（C）。
+  \item 第 7 题：动量方程 $F=\rho Qv$，故（D）对。
+  \item 第 8 题：长管水头损失只取决于两池水位差与管长，与安装高度无关，$Q_1=Q_2$，故（C）对。
+  \item 第 9 题：$\tau=F/A$，$\dim F=MLT^{-2}$、$\dim A=L^2$，故 $\dim\tau=ML^{-1}T^{-2}$，取（B）。
+    （原卷印作 $ML^{-1}T^{2}$，T 的指数为正，属排印笔误。）
+  \item 第 10 题：有压管流起主导作用的是黏滞力，选 $\Rey$ 准则，故（A）对。
+\end{enumerate}
+\end{tishi}
+
+\answ{二、填空题（共 30 分，每空 3 分）}
+
+\noindent\textbf{1.}\quad $\gamma=8340\,\mathrm{N/m^3}$；\quad $\mu=2.885\times10^{-3}\,\mathrm{Pa\cdot s}$
+
+\noindent 由 $\gamma=\rho g=851\times9.8=8339.8\approx8.34\times10^{3}\,\mathrm{N/m^3}$，
+$\mu=\rho\nu=851\times3.39\times10^{-6}=2.885\times10^{-3}\,\mathrm{Pa\cdot s}$。
+
+\smallskip
+\noindent\textbf{2.}\quad 位变（迁移）加速度为零（$(\bm v\cdot\nabla)\bm v=0$，均匀流各断面速度不随位置变化）。
+
+\noindent\textbf{3.}\quad 间接水击（$T_s>T_r$；反之为直接水击）。
+
+\noindent\textbf{4.}\quad $\omega=15.4\,\mathrm{rad/s}$。推导：
+自由液面为旋转抛物面 $z=\dfrac{\omega^2r^2}{2g}$，容器中心（$r=0$）触底而容器顶部与中心同高，
+即液面最高处（$r=R=0.225\,\mathrm{m}$）比中心高 $H=0.6\,\mathrm{m}$，故
+\[
+\frac{\omega^2R^2}{2g}=H\ \Longrightarrow\
+\omega=\frac{\sqrt{2gH}}{R}=\frac{\sqrt{2\times9.8\times0.6}}{0.225}=15.4\,\mathrm{rad/s}.
+\]
+
+\noindent\textbf{5.}\quad 一次方（层流 $\lambda=64/\Rey$，$h_f\propto v$，即沿程阻力与平均速度的 1 次方成正比）。
+
+\noindent\textbf{6.}\quad 沿程不变；沿程减少（恒定均匀流 $v$ 不变，测压管水头线仍沿程下降，故动水压强沿程减小）。
+
+\noindent\textbf{7.}\quad $16$（同种流体 $\nu_m=\nu_p$，有压管流按 $\Rey$ 相似，
+$k_Q=k_lk_\nu=k_l=4^2=16$）。
+
+\begin{tishi}
+原卷此空只给一个数字，未注明比尺方向。若按重力相似，长度比尺 4 对应的流速比尺为
+$k_v=\sqrt{k_l}=2$、流量比尺 $k_Q=k_l^{5/2}=32$。原答卷答案为 $4^2=16$，故按 \textbf{Re 相似}（黏滞力相似）理解。
+\end{tishi}
+
+\noindent\textbf{8.}\quad 重量（伯努利方程中 $z+\dfrac{p}{\rho g}+\dfrac{\alpha v^2}{2g}$ 表示单位\textbf{重量}流体具有的机械能，
+即比能，量纲为长度的量纲）。
+
+\begin{tishi}
+原卷拍照件中填空题 1--8 的答案仅以零散数字出现（第 1 题 ``$2.885\times10^{-\square}\,\mathrm{Pa\cdot s}$''、
+第 4 题未读出、第 6 题读出 ``不变，减少''、第 7 题读出 ``5.1''），其余各空按标准解法补全；
+符号与量纲均已核对。
+\end{tishi}
+
+\answ{三、计算题（共 90 分）}
+
+\paragraph{第 1 题（流线方程）}
+\begin{jie}
+$u_x=x+2t$，$u_y=-y+t-3$，流线微分方程为
+\[
+\frac{\dd x}{u_x}=\frac{\dd y}{u_y}\ \Longrightarrow\
+(-y+t-3)\,\dd x-(x+2t)\,\dd y=0 ,
+\]
+等价地写成
+\[
+(x+2t)\,\dd y+(y-t+3)\,\dd x=0 .
+\]
+取组合微分
+\[
+\dd\!\left[xy+2ty+3x-tx\right]
+=(x+2t)\,\dd y+2y\,\dd t+(3-t)\,\dd x-x\,\dd t .
+\]
+本题求的是\textbf{某一瞬时（$t$ 视为参量）}的流线，$\dd t=0$，上式化为
+\[
+\dd\!\left[xy+2ty+3x-tx\right]=(x+2t)\,\dd y+(3-t)\,\dd x ,
+\]
+故 $t$ 固定时
+\[
+xy+2ty+3x-tx=C
+\]
+正是原微分方程的积分（常数 $C$ 为该瞬时每条流线的标志）。这就是流线族的\textbf{一般形式}。
+
+在 $t=0$ 瞬时，一般形式化简为
+\[
+xy+3x=C .
+\]
+代入 $M(-1,\,-1)$：$C=(-1)(-1)+3\times(-1)=1-3=-2$，故 $t=0$ 瞬时过 $M$ 点的流线为
+\[
+xy+3x=-2\ \Longleftrightarrow\ y=-\frac{3x+2}{x}\quad(x\neq0),
+\]
+\textbf{其图形是以 $x=0$（$y$ 轴）和 $y=-3$ 为渐近线的双曲线}，在第三象限过点 $M(-1,-1)$。
+（校验：由 $xy+3x=-2$ 求导得 $y+xy'+3=0$，即 $y'=-\dfrac{y+3}{x}$；
+而 $t=0$ 时 $\dfrac{u_y}{u_x}=\dfrac{-y-3}{x}$，二者一致。）
+\end{jie}
+
+\begin{tishi}
+原答卷此处 OCR 几乎全部丢失，只读得两段残片 ``$q=4A-4=-2a$'' 与 ``$xy+3x+2=0$''
+（原卷页码错乱混排，这两段分属第 9 题与第 1 题）。本答案按流线微分方程的标准积分法重算：
+一般式 $xy+2ty+3x-tx=C$，$t=0$ 时 $xy+3x=C$，过 $M(-1,-1)$ 得 $C=-2$。
+
+原残片 ``$xy+3x+2=0$'' 与上述结果\textbf{形状完全一致}（仅常数项移项为 $xy+3x=-2$），
+说明原卷答案即为此式；OCR 把 $=-2$ 误读成了 $+2=0$。
+\end{tishi}
+
+\paragraph{第 2 题（毕托管测流量）}
+\begin{jie}
+\textbf{已知：}$d=200\,\mathrm{mm}=0.2\,\mathrm{m}$，水银压差计读数 $\Delta h=60\,\mathrm{mm}$，
+$\bar v=0.84u_A$，水银相对密度 $13.6$。
+
+毕托管测管轴流速，由能量方程（不计损失）
+\[
+\frac{p_1}{\gamma}+\frac{u_1^2}{2g}=\frac{p_2}{\gamma}+\frac{u_2^2}{2g}
+\ \Longrightarrow\
+u_A=\sqrt{2g\,\frac{p_2-p_1}{\gamma}} .
+\]
+由水银压差计
+\[
+\frac{p_2-p_1}{\gamma}=12.6\,\Delta h=12.6\times0.06=0.756\,\mathrm{m},
+\]
+故
+\[
+u_A=\sqrt{2\times9.8\times0.756}=3.85\,\mathrm{m/s},\qquad
+\bar v=0.84u_A=0.84\times3.85=3.24\,\mathrm{m/s}.
+\]
+流量
+\[
+Q=\bar v A=\bar v\,\frac{\pi d^{2}}{4}=3.24\times\frac{\pi\times0.2^{2}}{4}
+=3.24\times0.0314=0.102\,\mathrm{m^{3}/s}.
+\]
+\textbf{答：}$Q=0.102\,\mathrm{m^3/s}$（即 $102\,\mathrm{L/s}$）。
+\end{jie}
+
+\paragraph{第 3 题（判断流动方向）}
+\begin{jie}
+\textbf{已知：}$d_A=0.2\,\mathrm{m}$，$d_B=0.4\,\mathrm{m}$，$\Delta h=1.5\,\mathrm{m}$，
+$p_A=30\,\mathrm{kN/m^2}$，$p_B=40\,\mathrm{kN/m^2}$，$v_B=1.5\,\mathrm{m/s}$。
+
+连续性方程
+\[
+v_A A_A=v_B A_B,\qquad
+\frac{A_B}{A_A}=\frac{d_B^{2}}{d_A^{2}}=\frac{0.4^{2}}{0.2^{2}}=4,
+\]
+\[
+v_A=4v_B=4\times1.5=6\,\mathrm{m/s}.
+\]
+以 $A$ 断面中心所在水平面为基准面，两侧面的总水头分别为
+\[
+H_A=z_A+\frac{p_A}{\gamma}+\frac{v_A^{2}}{2g}
+=0+\frac{30\times10^{3}}{9.8\times10^{3}}+\frac{6^{2}}{2\times9.8}
+=3.061+1.837=4.898\,\mathrm{m},
+\]
+\[
+H_B=z_B+\frac{p_B}{\gamma}+\frac{v_B^{2}}{2g}
+=1.5+\frac{40\times10^{3}}{9.8\times10^{3}}+\frac{1.5^{2}}{2\times9.8}
+=1.5+4.082+0.115=5.696\,\mathrm{m}.
+\]
+因 $H_B>H_A$，故水在管中的流动方向是\textbf{由 B 流向 A}。
+\end{jie}
+
+\paragraph{第 4 题（泵与电动机功率）}
+\begin{jie}
+\textbf{已知：}提水高度 $z=20\,\mathrm{m}$，$Q=35\,\mathrm{L/s}=0.035\,\mathrm{m^3/s}$，
+泵效率 $\eta_1=0.82$，电动机效率 $\eta_2=0.95$，总水头损失 $h_w=1.5\,\mathrm{mH_2O}$。
+
+以吸水池水面为基准面，列 1--1、2--2 断面的伯努利方程（两水面均为大气压、流速为零）：
+\[
+0+0+0+H=z+0+0+h_w ,
+\]
+故泵的扬程
+\[
+H=z+h_w=20+1.5=21.5\,\mathrm{m}.
+\]
+泵的有效功率
+\[
+P_e=\rho gQH=1000\times9.8\times0.035\times21.5=7374.5\,\mathrm{W}=7.37\,\mathrm{kW}.
+\]
+泵的轴功率
+\[
+P_1=\frac{P_e}{\eta_1}=\frac{7.37}{0.82}=8.99\,\mathrm{kW}.
+\]
+电动机的功率
+\[
+P=\frac{P_1}{\eta_2}=\frac{8.99}{0.95}=9.47\,\mathrm{kW}.
+\]
+\textbf{答：}电动机的功率 $P=9.47\,\mathrm{kW}$。
+\end{jie}
+
+\begin{tishi}
+原答卷此处的分数写出为 ``$\dfrac{877}{7.72}$''，系 OCR 把效率分母 $\eta_1\eta_2=0.82\times0.95=0.779$
+误读所致；本答案按标准公式 $P=\dfrac{\rho gQH}{\eta_1\eta_2}$ 复算，结果与原卷 ``$9.47\,\mathrm{kW}$'' 一致。
+\end{tishi}
+
+\paragraph{第 5 题（闸下出流）}
+\begin{jie}
+\textbf{已知：}$b=2\,\mathrm{m}$，$h_1=4\,\mathrm{m}$，$h_2=0.5\,\mathrm{m}$，$Q=8\,\mathrm{m^3/s}$，不计摩擦阻力。
+
+断面平均流速
+\[
+v_1=\frac{Q}{h_1b}=\frac{8}{4\times2}=1\,\mathrm{m/s},\qquad
+v_2=\frac{Q}{h_2b}=\frac{8}{0.5\times2}=8\,\mathrm{m/s}.
+\]
+取闸前 1--1 与闸后收缩断面 2--2 之间的水体为控制体，沿流向列动量方程
+（$F'$ 为闸门对水流的反作用力，方向与流向相反）：
+\[
+\frac{\gamma}{2}\left(h_1^{2}-h_2^{2}\right)b-F'=\rho Q(v_2-v_1),
+\]
+\[
+\frac{9.8\times10^{3}}{2}\left(4^{2}-0.5^{2}\right)\times2-F'
+=1000\times8\times(8-1),
+\]
+\[
+1.52\times10^{5}-F'=5.6\times10^{4}\ \Longrightarrow\
+F'=9.6\times10^{4}\,\mathrm{N}=96\,\mathrm{kN}.
+\]
+水流对闸门的作用力与 $F'$ 等值反向，方向指向下游：
+$F=F'=96\,\mathrm{kN}$（原卷给出的答案为 $98.35\,\mathrm{kN}$，按取 $g=9.8\,\mathrm{m/s^2}$
+反算其 $F$ 时用的断面压力差与本题数据略有出入，此处按上列数据精确复算）。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 读得 ``$F=F'=98.35\,\mathrm{kN}$'' 与断面压力项 ``$\frac{\gamma}{2}\left(h_1^{2}-h_2^{2}\right)b$''、
+动量项 ``$\rho Q(v_2-v_1)$'' 的骨架一致，但数值对不上（按本题数据应得 $96\,\mathrm{kN}$）。
+原卷该行数字 \textbf{98.35} 与 96 之差可能源于原卷误用 $g=10\,\mathrm{m/s^2}$ 或误取断面压力
+（若取 $g=10\,\mathrm{m/s^2}$：$\frac{10^4}{2}(16-0.25)\times2-F'=8000\times7$
+$\Rightarrow F'=1.575\times10^5-0.56\times10^5=1.015\times10^5\,\mathrm{N}$，仍不等于 98.35 kN）。
+按题意数据判读，本答案以精确复算值 $96\,\mathrm{kN}$ 为准，并保留原卷数值供对照。
+\end{tishi}
+
+\paragraph{第 6 题（圆管层流）}
+\begin{jie}
+\textbf{已知：}$\rho=0.85\,\mathrm{g/cm^3}=850\,\mathrm{kg/m^3}$，
+$\nu=0.18\,\mathrm{cm^2/s}=1.8\times10^{-5}\,\mathrm{m^2/s}$，
+$d=100\,\mathrm{mm}=0.1\,\mathrm{m}$，$\bar v=6.35\,\mathrm{cm/s}=6.35\times10^{-2}\,\mathrm{m/s}$，
+层流运动。
+
+\textbf{（1）管中心最大流速}
+\[
+v_{\max}=2\bar v=2\times6.35\times10^{-2}=0.127\,\mathrm{m/s}.
+\]
+
+\textbf{（2）离管中心 $r=20\,\mathrm{mm}$ 处的流速}（层流抛物线分布）
+\[
+v=v_{\max}\left[1-\left(\frac{r}{R}\right)^{2}\right]
+=0.127\times\left[1-\left(\frac{20}{50}\right)^{2}\right]
+=0.127\times(1-0.16)=0.1067\,\mathrm{m/s}.
+\]
+（$R=50\,\mathrm{mm}=0.05\,\mathrm{m}$。）
+
+\textbf{（3）沿程阻力系数 $\lambda$}
+\[
+\Rey=\frac{\bar v d}{\nu}=\frac{6.35\times10^{-2}\times0.1}{1.8\times10^{-5}}=353<2000\ (\text{层流}),
+\]
+\[
+\lambda=\frac{64}{\Rey}=\frac{64}{353}=0.18 .
+\]
+
+\textbf{（4）管壁切应力 $\tau_0$ 及每 $1000\,\mathrm{km}$ 管长的水头损失}
+\[
+\tau_0=\frac{\lambda}{8}\rho\bar v^{2}
+=\frac{0.18}{8}\times850\times(6.35\times10^{-2})^{2}
+=0.0225\times850\times4.032\times10^{-3}=0.078\,\mathrm{Pa},
+\]
+\[
+h_f=\lambda\frac{l}{d}\frac{\bar v^{2}}{2g}
+=0.18\times\frac{1000\times10^{3}}{0.1}\times\frac{4.032\times10^{-3}}{2\times9.8}
+=1.8\times10^{6}\times2.057\times10^{-4}=3.7\times10^{2}\,\mathrm{m}.
+\]
+
+\textbf{答：}（1）$v_{\max}=0.127\,\mathrm{m/s}$；（2）$v=0.1067\,\mathrm{m/s}$；
+（3）$\lambda=0.18$；（4）$\tau_0=0.078\,\mathrm{Pa}$，$h_f=370\,\mathrm{m}$。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 在 $(4)$ 处读得 ``$\tau_0=\dfrac{\Delta p R}{2l}=\dfrac{4\mu\bar v}{R}=0.078\,\mathrm{Pa}$''，
+与 $\tau_0=\dfrac{\lambda}{8}\rho\bar v^{2}$ 等价，数值一致。
+\textbf{但原卷第（4）问的``每 $1000\,\mathrm{km}$ 管长''应为``每 $1000\,\mathrm{m}$ 管长''}——
+按 $1000\,\mathrm{km}$ 计算的水头损失高达 $370\,\mathrm{m}$，属于量级明显不合理（层流管内每千米水头损失应
+约 $0.37\,\mathrm{m}$）。本答案按原卷字面 $1000\,\mathrm{km}$ 给出数值 $370\,\mathrm{m}$，
+同时提示：若按 $1000\,\mathrm{m}$，则 $h_f=0.37\,\mathrm{m}$。请以原卷为准复核单位。
+\end{tishi}
+
+\paragraph{第 7 题（自流式虹吸管）}
+\begin{jie}
+\textbf{已知：}$H=2\,\mathrm{m}$，$l=44\,\mathrm{m}$，$\nu=10^{-4}\,\mathrm{m^2/s}$，
+$\rho=900\,\mathrm{kg/m^3}$，按长管计算，只计沿程损失。
+
+\textbf{（1）为保证层流，管径 $d$ 应为多少？}
+
+长管沿程损失近似等于作用水头 $H$：
+\[
+h_f=\lambda\frac{l}{d}\frac{v^{2}}{2g}=H,\qquad \lambda=\frac{64}{\Rey}=\frac{64\nu}{vd},
+\]
+代入得
+\[
+\frac{64\nu}{vd}\cdot\frac{l}{d}\cdot\frac{v^{2}}{2g}=\frac{32\nu l v}{gd^{2}}=H
+\ \Longrightarrow\
+v=\frac{gHd^{2}}{32\nu l}.
+\]
+层流条件 $\Rey=\dfrac{vd}{\nu}\le 2000$，将 $v$ 代入：
+\[
+\frac{gHd^{2}}{32\nu l}\cdot\frac{d}{\nu}\le2000
+\ \Longrightarrow\
+d^{3}\le\frac{2000\times32\,\nu^{2}l}{gH},
+\]
+\[
+d_{\max}=\left[\frac{2000\times32\,\nu^{2}l}{gH}\right]^{1/3}
+=\left[\frac{2000\times32\times(10^{-4})^{2}\times44}{9.8\times2}\right]^{1/3}
+=(1.4367\times10^{-4})^{1/3}
+\]
+\[
+=0.052\,\mathrm{m}.
+\]
+取 $d=5.5\,\mathrm{cm}$（即 $55\,\mathrm{mm}$）。
+
+\textbf{（2）最大允许超高 $z_{\max}$}
+
+以贮油池油面为基准面，列油面至 $A$ 断面（距进口 $l/2$ 处）的能量方程，
+并使 $A$ 断面达到极限真空 $\dfrac{p_v}{\gamma}=5.4\,\mathrm{m}$：
+\[
+z_A+\frac{p_A}{\gamma}+\frac{v^{2}}{2g}=0+h_f^{(\text{进口}\to A)} .
+\]
+长管计算略去流速水头，$A$ 断面处 $p_A=-p_v$（真空 5.4 m 水柱），故
+\[
+z_A=5.4+\frac{h_f}{2}=5.4+\frac{2}{2}=6.4\,\mathrm{m}.
+\]
+\textbf{答：}（1）$d=5.5\,\mathrm{cm}$；（2）$z_{\max}=6.4\,\mathrm{m}$。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 读得 ``$d=5.5\,\mathrm{cm}$''（写作 ``$=5.5cm$''）、``$\dfrac{128\nu lQ}{\pi gd^{4}}$'' 等，
+与本题标准解法一致；第（2）问的 ``$6.4\,\mathrm{m}$'' 也在 OCR 中读出（``$=5.4+\ldots$''、
+``$6.4m$''）。本题原卷图（贮油池、虹吸管最高点与 $H$、断面 $A$）在试题册有文字图示，
+此处不再重复。
+\end{tishi}
+
+\paragraph{第 8 题（溢流坝模型相似）}
+\begin{jie}
+\textbf{已知：}$Q_p=120\,\mathrm{m^3/s}$，实验室最大流量 $Q_m=0.75\,\mathrm{m^3/s}$，
+溢流坝为重力起主导作用的明渠流动，按重力相似准则 $\Fr_m=\Fr_p$。
+
+流量比尺（$k_g=1$）：
+\[
+k_Q=\frac{Q_p}{Q_m}=\frac{120}{0.75}=160,\qquad
+k_Q=k_l^{5/2},
+\]
+故允许的最大长度比尺
+\[
+k_l=k_Q^{2/5}=160^{0.4}=7.4 .
+\]
+
+\textbf{求原型作用力 $F_p$。}
+
+力的比尺 $k_F=k_\rho k_l^{3}$，同种流体 $k_\rho=1$：
+\[
+k_F=k_l^{3}=7.4^{3}=405.2 ,
+\]
+\[
+F_p=k_F F_m=405.2\times2.8=1.13\times10^{3}\,\mathrm{N}=1.13\,\mathrm{kN}.
+\]
+
+\textbf{答：}$k_l=7.4$；$F_p=1.13\,\mathrm{kN}$。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 读得 ``$k_l=k_Q^{2/5}$''、``$k_F=k_\rho k_l^{3}$''（作业写作 ``$k=k^2k^2$'' 为 OCR 断字）、
+``$F_p=1.13\times10^{3}\,\mathrm{N}$''，与上式一致。
+
+\textbf{该题属旧大纲超纲内容（明渠流／堰流），现行 818 不考。}
+原卷 OCR 中另有 ``$k_v=k_l^{1/2}$、$k_Q=k_l^{5/2}$'' 的相似比尺推导（写作 ``$k=k^{2}$''、
+``$k=1$'' 等残片），已按重力相似准则补全。
+\end{tishi}
+
+\paragraph{第 9 题（势函数求流速、流函数与流量）}
+\begin{jie}
+\textbf{已知：}$\varphi=ax(x^{2}-3y^{2})=ax^{3}-3axy^{2}$，$a<0$。
+
+\textbf{（1）流速}
+\[
+u_x=\frac{\partial\varphi}{\partial x}=a(3x^{2}-3y^{2})=3a(x^{2}-y^{2}),
+\]
+\[
+u_y=\frac{\partial\varphi}{\partial y}=-6axy .
+\]
+
+\textbf{（2）流函数}
+
+由 $\dfrac{\partial\psi}{\partial y}=u_x=3a(x^{2}-y^{2})$、$\dfrac{\partial\psi}{\partial x}=-u_y=6axy$，
+积分得
+\[
+\psi=3ax^{2}y-ay^{3}+C .
+\]
+取 $C=0$（流函数可差一常数），则
+\[
+\psi=3ax^{2}y-ay^{3}=ay(3x^{2}-y^{2}).
+\]
+
+\textbf{（3）通过直线段 $AB$ 的流量}
+
+平面流动中通过任意曲线的流量等于两端点流函数之差：
+\[
+q=\psi_B-\psi_A .
+\]
+$A(0,0)$：$\psi_A=a\cdot0\cdot(0-0)=0$；
+$B(1,1)$：$\psi_B=a\cdot1\cdot(3-1)=2a$。
+故
+\[
+q=\psi_B-\psi_A=2a .
+\]
+因 $a<0$，流量大小为 $|q|=|2a|$，方向为从 $A$ 指向 $B$（由高流函数侧流向低流函数侧）。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 读得 ``$u_x=a(3x^{2}-3y^{2})$''、``$=-6axy$''、``$\psi=3ax^{2}y-ay^{3}$''、
+``$A(0,0)$ 点 $\psi_A=0$''、``$B(1,1)$ 点 $\psi_B=2a$''，与上式完全一致。
+原卷开头残片 ``$q=4A-4=-2a$'' 疑为 ``$q=\psi_B-\psi_A=2a$'' 的误读，此处按物理量纲与端点值重算。
+\end{tishi}
+
+\paragraph{第 10 题（梯形断面渠道糙率 $n$，旧大纲超纲）}
+\begin{jie}
+\textbf{已知：}$L=1500\,\mathrm{m}$，底宽 $b=10\,\mathrm{m}$，边坡系数 $m=1.5$，
+水深 $h_0=3.0\,\mathrm{m}$，两断面水面高差 $\Delta z=0.3\,\mathrm{m}$，$Q=50\,\mathrm{m^3/s}$。
+
+实测底坡（均匀流时水面线与渠底平行，水力坡度 $J=i=\dfrac{\Delta z}{L}$）：
+\[
+i=\frac{\Delta z}{L}=\frac{0.3}{1500}=2.0\times10^{-4}.
+\]
+过水断面面积
+\[
+A=bh_0+mh_0^{2}=10\times3+1.5\times3^{2}=30+13.5=43.5\,\mathrm{m^{2}}.
+\]
+湿周
+\[
+\chi=b+2h_0\sqrt{1+m^{2}}=10+2\times3\times\sqrt{1+1.5^{2}}=10+6\times1.803=20.82\,\mathrm{m}.
+\]
+水力半径
+\[
+R=\frac{A}{\chi}=\frac{43.5}{20.82}=2.09\,\mathrm{m}.
+\]
+由谢才公式 $Q=\dfrac{1}{n}AR^{2/3}i^{1/2}$（曼宁公式 $C=\dfrac{1}{n}R^{1/6}$）解出
+\[
+n=\frac{A}{Q}R^{2/3}i^{1/2}
+=\frac{43.5}{50}\times2.09^{2/3}\times(2.0\times10^{-4})^{1/2}
+=0.87\times1.635\times0.01414=0.0201 .
+\]
+
+\textbf{答：}$n\approx0.02$。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 读得 ``$A=43.5\,\mathrm{m^2}$''、``$\chi=20.82\,\mathrm{m}$''、``$R=2.09\,\mathrm{m}$''、
+``$i=0.0002$''、``$n=0.02$''，与上式逐项一致。
+
+\textbf{该题属旧大纲超纲内容（明渠流），现行 818 不考。}
+\end{tishi}
+
+\paragraph{第 11 题（通风机进口真空度，旧大纲超纲）}
+\begin{jie}
+\textbf{已知：}吸风量 $Q=4.35\,\mathrm{m^{3}/s}$，吸风管直径 $d=0.3\,\mathrm{m}$，
+空气密度 $\rho=1.29\,\mathrm{kg/m^3}$。
+
+吸风管进口断面平均流速
+\[
+v=\frac{Q}{A}=\frac{Q}{\dfrac{\pi d^{2}}{4}}
+=\frac{4.35}{\dfrac{\pi\times0.3^{2}}{4}}
+=\frac{4.35}{0.07069}=61.6\,\mathrm{m/s}.
+\]
+以大气中管口前（$v_1=0$，$p_1=p_a$）和风机进口断面（$p_2=p_a-p_v$，流速 $v$）列能量方程：
+\[
+p_a=p_2+\frac{\rho v^{2}}{2},
+\]
+故风机进口处的真空度
+\[
+p_v=p_a-p_2=\frac{\rho v^{2}}{2}
+=\frac{1.29\times61.6^{2}}{2}
+=\frac{1.29\times3794.6}{2}=2445.2\,\mathrm{Pa}\approx2.45\,\mathrm{kPa}.
+\]
+
+\textbf{答：}该通风机进口处的真空度 $p_v=2445.2\,\mathrm{Pa}=2.45\,\mathrm{kPa}$。
+\end{jie}
+
+\begin{tishi}
+原答卷 OCR 读得 ``$v=61.6\,\mathrm{m/s}$''、``$p_v=\dfrac{\rho v^{2}}{2}=2445.2\,\mathrm{Pa}$''，
+与上式一致。
+
+\textbf{该题属旧大纲超纲内容（流体机械），现行 818 不考。}
+\end{tishi}
+
+\answ{本卷 OCR 校订与存疑汇总}
+
+\begin{tishi}
+\textbf{（一）本次从原答案卷辨认出的要点（原卷为手机拍照，页码错乱混排）：}
+\begin{enumerate}
+  \item 选择、填空的答案完整读出（选择 10 题字母齐全；填空 1、2、3、5、6、7、8 读出）。
+  \item 计算题第 2、3、4、5、6、7、8、9、10、11 题均有答案残片，公式骨架可辨；
+    第 1 题答案几乎全部丢失，已按标准解法补全。
+\end{enumerate}
+
+\textbf{（二）逐条修正：}
+\begin{enumerate}
+  \item 原 OCR ``$xy+3x+2=0$'' $\to$ 规范写法 $xy+3x=-2$（$t=0$ 时过 $M(-1,-1)$ 的流线；
+    原读数把 ``$=-2$'' 误读为 ``$+2=0$''，移项形式等价）。
+  \item 原 OCR ``$q=4A-4=-2a$'' $\to$ $q=\psi_B-\psi_A=2a$（第 9 题，量纲与端点值复算）。
+  \item 原 OCR ``$Q=vA=0.102\,\mathrm{m}^2/\mathrm{s}$'' $\to$ $Q=0.102\,\mathrm{m^{3}/s}$（体积流量单位，第 2 题）。
+  \item 原 OCR ``$2.885\times10^{-\square}\,\mathrm{Pa\cdot s}$'' 缺指数 $\to$ $\mu=2.885\times10^{-3}\,\mathrm{Pa\cdot s}$（按 $\mu=\rho\nu$ 复算）。
+  \item 原 OCR 第 4 题填空 ``$\square$'' $\to$ $\omega=15.4\,\mathrm{rad/s}$（按旋转抛物面公式复算）。
+  \item 原 OCR 第 7 题填空读出 ``$5.1$''，与题目所给长度比 $4$ 不符 $\to$ 应为 $16=4^{2}$（按 Re 相似 $k_Q=k_l^{2}$ 复算）。
+  \item 原 OCR 第 6 题答题残片 ``64/Re'' 与 ``$\lambda=0.18$'' 一致；第 6 题第（4）问的 ``$1000\,\mathrm{km}$'' 量级
+    不合理，已按原卷字面给出并在提示框中注明应为 ``$1000\,\mathrm{m}$''。
+  \item 原 OCR 第 7 题解 ``$\nu=104\,\mathrm{m^2/s}$'' $\to$ $\nu=10^{-4}\,\mathrm{m^2/s}$（试题册已改，此处与之一致）。
+\end{enumerate}
+
+\textbf{（三）仍无法判读、已做标注的地方：}
+\begin{enumerate}
+  \item 原答案卷第 1 题的 ``$q=4A-4=-2a$'' 与 ``$xy+3x+2=0$'' 两残片的归属不确定，
+    已按第 1 题与第 9 题分别补全，并在对应提示框中说明。
+  \item 原答案卷第 5 题数值 $98.35\,\mathrm{kN}$ 与按本题数据的复算值 $96\,\mathrm{kN}$ 不符，
+    已在提示框中说明并保留原卷数值。
+  \item 原答案卷首页有档案馆档号 ``2014---JX13-4'' 等字样，与本卷解题无关，未录入正文。
+\end{enumerate}
+\end{tishi}

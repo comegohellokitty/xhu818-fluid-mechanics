@@ -1,0 +1,34 @@
+\documentclass[UTF8,a4paper,11pt,fontset=windows,openany]{ctexbook}
+\usepackage{xhu818}
+\renewcommand{\xhuheadname}{818 课后习题 · 赵琴《流体力学与流体机械》第 1--8 章}
+
+\begin{document}
+
+\xhucover{818 工程流体力学\\[6pt] 课后习题}{赵琴《流体力学与流体机械》第 1--8 章 · 课后习题与解答}{%
+历年真题"大部分都源于课后习题的改编"（见《西华大学 818 工程流体力学考研分析》），
+课后习题必须逐题过关。\\[6pt]
+本册收录教材第 1--8 章全部课后习题，\textbf{题目在前、解答统一置于书末}，
+每题标注\textbf{重要度星级}（依据见前言）。}
+
+\tableofcontents
+
+\input{parts/00-front}
+\InputIfFileExists{parts/q-ch01}{}{}
+\InputIfFileExists{parts/q-ch02}{}{}
+\InputIfFileExists{parts/q-ch03}{}{}
+\InputIfFileExists{parts/q-ch04}{}{}
+\InputIfFileExists{parts/q-ch05}{}{}
+\InputIfFileExists{parts/q-ch06}{}{}
+\InputIfFileExists{parts/q-ch07}{}{}
+\InputIfFileExists{parts/q-ch08}{}{}
+\part{课后习题解答}
+\InputIfFileExists{parts/a-ch01}{}{}
+\InputIfFileExists{parts/a-ch02}{}{}
+\InputIfFileExists{parts/a-ch03}{}{}
+\InputIfFileExists{parts/a-ch04}{}{}
+\InputIfFileExists{parts/a-ch05}{}{}
+\InputIfFileExists{parts/a-ch06}{}{}
+\InputIfFileExists{parts/a-ch07}{}{}
+\InputIfFileExists{parts/a-ch08}{}{}
+
+\end{document}

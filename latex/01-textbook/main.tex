@@ -1,0 +1,29 @@
+\documentclass[UTF8,a4paper,11pt,fontset=windows,openany]{ctexbook}
+\usepackage{xhu818}
+\renewcommand{\xhuheadname}{818 教材精讲 · 赵琴《流体力学与流体机械》第 1--8 章}
+
+\begin{document}
+
+\xhucover{818 工程流体力学\\[6pt] 教材精讲}{赵琴《流体力学与流体机械》第 1--8 章 · 考点精简}{%
+本讲义以赵琴主编《流体力学与流体机械》（中国水利水电出版社，2016 年 4 月第 1 版，
+ISBN 978-7-5170-4239-6）\textbf{第 1--8 章}为范围，按考点逐条精简。\\[6pt]
+每个考点给出：\textbf{概念是什么} $\to$ \textbf{核心公式及含义与适用条件}（不证）$\to$
+\textbf{常考题型与真题出处} $\to$ \textbf{重要度星级与难度} $\to$ \textbf{易错点} $\to$
+\textbf{教材上没有的应试技巧}。\\[6pt]
+全部星级都标注\textbf{文件依据}，见每处〔依据：$\cdots$〕与前言的星级判定表。}
+
+\tableofcontents
+
+\input{parts/00-kaoqing}
+\InputIfFileExists{parts/ch01}{}{}
+\InputIfFileExists{parts/ch02}{}{}
+\InputIfFileExists{parts/ch03}{}{}
+\InputIfFileExists{parts/ch04}{}{}
+\InputIfFileExists{parts/ch05}{}{}
+\InputIfFileExists{parts/ch06}{}{}
+\InputIfFileExists{parts/ch07}{}{}
+\InputIfFileExists{parts/ch08}{}{}
+\appendix
+\InputIfFileExists{parts/apA-evidence}{}{}
+
+\end{document}

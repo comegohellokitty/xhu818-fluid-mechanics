@@ -1,0 +1,1092 @@
+\chapter*{第 4 章 课后习题解答}
+\addcontentsline{toc}{chapter}{第 4 章 课后习题解答}
+\markboth{第 4 章 课后习题解答}{}
+
+\begin{tishi}
+本册解答由编者按教材正文公式与例题方法逐步推导而成（教材原书不附习题答案）。
+本章是全卷计算题的头号重点，故每题都按\textbf{已知 $\to$ 依据 $\to$ 步骤 $\to$ 结果 $\to$ 易错提醒}五段写足；
+伯努利方程类题一律写明\textbf{选断面、基准面、压强基准、方程适用条件}，动量方程类题一律写明
+\textbf{控制体、受力分析、投影正负号约定}。计算一律带单位，取 $g=9.8\ \mathrm{m/s^2}$、$\rho_{\text{水}}=1000\ \mathrm{kg/m^3}$。
+\end{tishi}
+
+\noindent\textbf{第 4.1 题\quad 基本概念选择题（4 小题）}
+
+\begin{jie}
+\textbf{（1）答案：A}\quad 由实际流体总流伯努利方程（教材式 4.17），对同一总流取 1-1、2-2 两断面：
+\[ z_1+\frac{p_1}{\rho g}+\frac{\alpha_1v_1^2}{2g}=z_2+\frac{p_2}{\rho g}+\frac{\alpha_2v_2^2}{2g}+h_w \]
+\textbf{分析：}$A$-$A$ 是与管轴垂直的\emph{过流断面}（即渐变流断面），其上 1、2 两点速度互为投影关系、
+动能项相同，故 $z+\dfrac{p}{\rho g}$ 在 $A$-$A$ 面上为常数，得
+$z_1+\dfrac{p_1}{\rho g}=z_2+\dfrac{p_2}{\rho g}$，即选项 A 正确、选项 D 错（$B$-$B$ 只是水平面、不是过流断面，
+3、4 两点分处管轴上下、流速不同，$z+\dfrac{p}{\rho g}$ \emph{不}相等）。
+选项 B（$p_3=p_4$）错：3、4 位于同一水平面但管中为有压流动，其压强还要受流速分布影响，一般 $p_3\neq p_4$；
+选项 C（$p_1=p_2$）错：1、2 在同一断面的不同高程上，由静压分布 $p_2-p_1=-\rho g(z_2-z_1)$，$z$ 不同则 $p$ 必不同。
+
+\textbf{（2）答案：B}\quad 全式 $z+\dfrac{p}{\rho g}+\dfrac{\alpha v^2}{2g}$ 的三项量纲都是长度（$\mathrm{m}$），
+物理意义是\textbf{单位重量流体}（$1\ \mathrm{N}$ 重的流体，即 $1/g$ kg 的流体）分别具有的位能、压能和动能之和，
+即单位重量流体的\textbf{总机械能}（单位 $\mathrm{m}$，等价于 $\mathrm{J/N}$）。
+选项 A 错（“单位\emph{质量}”应对应量纲 $\mathrm{J/kg}=\mathrm{m^2/s^2}$，即全式应乘 $g$）；
+选项 C 错（“单位\emph{体积}”应对应压强量纲 $\mathrm{Pa}$，即全式应乘 $\rho g$）；
+选项 D 错（它给的是整条断面上流体的总能量，那是全式的 $\rho gQ$ 倍）。
+
+\textbf{（3）答案：D}\quad 水流的运动方向由\textbf{单位重量流体机械能（总水头）由高向低}决定，
+这是能量方程的直接结论：真实流体沿流向总有 $h_w>0$，故 $H_{p1}>H_{p2}$，水从总水头高处流向低处。
+A 错（水泵可以把水从低处抽到高处）；B 错（渐扩管中压强沿程\emph{升高}，水照样向前流）；
+C 错（渐缩管中流速沿程\emph{增大}）。判据只有一条：\textbf{看总水头，不看单项}。
+
+\textbf{（4）答案：C}\quad 水平放置，故 $z_1=z_2$；忽略水头损失，故 $h_w=0$；取 $\alpha_1=\alpha_2=1$，
+由式（4.17）得
+\[ \frac{p_1}{\rho g}+\frac{v_1^2}{2g}=\frac{p_2}{\rho g}+\frac{v_2^2}{2g}
+   \quad\Longrightarrow\quad
+   \frac{p_1-p_2}{\rho g}=\frac{v_2^2-v_1^2}{2g} \]
+渐扩管 $A_2>A_1$，由连续性方程 $v_1A_1=v_2A_2$ 得 $v_2<v_1$，故 $v_2^2-v_1^2<0$，即 $p_1<p_2$：选 C。
+物理意义：渐扩管把\textbf{动能换成压能}，故压强沿程升高；反之渐缩管压强沿程降低。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：混淆“过流断面”与“水平面”。}第（1）题中 $A$-$A$ 是与流线垂直的过流断面，
+其上 $z+\dfrac{p}{\rho g}=$ 常数；$B$-$B$ 是\emph{水平面}，其上 $z=$ 常数，
+两点的 $z+\dfrac{p}{\rho g}$ 并不相等。这是 2022 年单选第 6 题“计算点应位于何处”的同一考点。\\
+\textbf{易错点二：三种“单位”分不清。}判据是量纲：
+“单位质量”$\to\mathrm{m^2/s^2}$（乘 $g$）、“单位重量”$\to\mathrm{m}$（本题原式）、“单位体积”$\to\mathrm{Pa}$（乘 $\rho g$）。
+题目给的就是“单位重量”，看到 $\rho g$ 在分母上（$p/\rho g$）就能确认。\\
+\textbf{易错点三：水流方向的判据。}不要用“高处往低处”“压强高处往压强低处”这类单项直觉，
+唯一正确的是“单位重量流体机械能高的地方流向低的地方”。
+\end{yicuo}
+
+\noindent\textbf{第 4.2 题\quad 毕托管测流量}
+
+\begin{jie}
+\textbf{已知：}输水管直径 $d=200\ \mathrm{mm}=0.2\ \mathrm{m}$；水银压差计读数 $\Delta h=60\ \mathrm{mm}=0.06\ \mathrm{m}$；
+断面平均流速 $v=0.84u_A$；水银密度 $\rho_{Hg}=13600\ \mathrm{kg/m^3}$，水 $\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}流量 $Q$。
+
+\textbf{依据：}毕托管测点流速——教材式（4.11）$u_A=\sqrt{2g\Delta h}$（原式 $u_A=\sqrt{2gh}$，此处 $h$ 即压差计的
+测压管水头差 $\Delta h$）；连续性方程 $Q=Av$。
+
+\textbf{第 1 步\quad 说明压差计读数与测压管水头差的关系}
+
+毕托管在管轴 $A$ 点测静压 $p$、在正对来流的驻点测总压 $p_0$。压差计两端分别接静压管与总压管，
+读数 $\Delta h$ 是\textbf{水银与水柱差}折算后的测压管水头差。对压差计左右两臂写等压面方程：
+\[ p_0-p=\left(\rho_{Hg}-\rho\right)g\Delta h \]
+将 $p_0-p=\dfrac{1}{2}\rho u_A^2$ 代入：
+\[ \frac{\rho u_A^2}{2}=\left(\rho_{Hg}-\rho\right)g\Delta h
+   \quad\Longrightarrow\quad
+   u_A=\sqrt{2g\Delta h\left(\frac{\rho_{Hg}}{\rho}-1\right)} \]
+
+\textbf{第 2 步\quad 求 $A$ 点流速}
+
+取 $\dfrac{\rho_{Hg}}{\rho}-1=13.6-1=12.6$：
+\[ u_A=\sqrt{2\times9.8\times0.06\times12.6}=\sqrt{14.818}\approx3.85\ \mathrm{m/s} \]
+（也可直接写成 $u_A=\sqrt{2g\times12.6\Delta h}$，即教材式（4.11）的水银压差计形式 $u=c\sqrt{2g\Delta h}$，
+其中把 $12.6$ 并入读数。）
+
+\textbf{第 3 步\quad 求断面平均流速}
+
+\[ v=0.84u_A=0.84\times3.85=3.23\ \mathrm{m/s} \]
+
+\textbf{第 4 步\quad 求流量}
+
+\[ A=\frac{\pi d^2}{4}=\frac{3.14\times0.2^2}{4}=0.0314\ \mathrm{m^2} \]
+\[ Q=Av=0.0314\times3.23=0.1015\ \mathrm{m^3/s}=101.5\ \mathrm{L/s} \]
+
+\textbf{结果：}$u_A\approx3.85\ \mathrm{m/s}$，断面平均流速 $v\approx3.23\ \mathrm{m/s}$，
+输水管流量 $Q\approx0.10\ \mathrm{m^3/s}$（约 $101\ \mathrm{L/s}$，约 $365\ \mathrm{m^3/h}$）。
+
+\textbf{量纲自检：}$\sqrt{\mathrm{m/s^2\times m}}=\mathrm{m/s}$；
+$\mathrm{m^2\times m/s}=\mathrm{m^3/s}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：毕托管测的是\emph{点}流速，不是断面平均流速。}
+题目专门给出 $v=0.84u_A$ 就是要你做这一步换算；若直接把 $u_A$ 当成 $v$ 去乘面积，流量会偏大 $19\%$。\\
+\textbf{易错点二：压差计的 $\Delta h$ 要乘 $(\rho_{Hg}/\rho-1)=12.6$。}
+漏掉这个因子只算 $\sqrt{2g\Delta h}=\sqrt{2\times9.8\times0.06}=1.08\ \mathrm{m/s}$，结果会小 $3.5$ 倍。
+记忆：\textbf{水银压差计的读数折算成水柱高要乘 $12.6$}。\\
+\textbf{易错点三：驻点与静压点的关系。}驻点处 $u=0$、压强为总压 $p_0$；上游未受扰动点为静压 $p$。
+总压高于静压，$p_0-p=\rho u_A^2/2$，\textbf{不要写反}。
+\end{yicuo}
+
+\noindent\textbf{第 4.3 题\quad 大水箱竖管加收缩喷嘴的泄流量与 $A$ 点压强}
+
+\begin{jie}
+\textbf{已知：}水箱液面高出喷嘴出口 $H=7\ \mathrm{m}$（由习题图读出：喷嘴出口所在水平面到箱中液面为 $7\ \mathrm{m}$）；
+$A$ 点高出喷嘴出口 $4\ \mathrm{m}$，即 $A$ 点在水面下 $h_A=7-4=3\ \mathrm{m}$；
+竖管直径 $d_1=200\ \mathrm{mm}=0.2\ \mathrm{m}$，喷嘴出口直径 $d_2=100\ \mathrm{mm}=0.1\ \mathrm{m}$；
+不计水头损失。
+
+\textbf{求：}泄流量 $Q$ 及 $A$ 点相对压强 $p_A$。
+
+\textbf{依据：}实际流体总流伯努利方程（教材式 4.17，本题 $h_w=0$ 退化为式 4.18）；
+连续性方程 $v_1A_1=v_2A_2$。
+
+\textbf{选断面与基准面：}\,断面 1-1 取\textbf{水箱自由液面}（大容器，$v_1\approx0$，$p_1=0$ 表压，是最省未知量的断面）；
+断面 2-2 取\textbf{喷嘴出口}（水流射入大气，$p_2=0$ 表压，出口断面为渐变流）；
+基准面取\textbf{喷嘴出口所在水平面}，则 $z_1=7\ \mathrm{m}$、$z_2=0$。
+两断面间无能量输入输出、无分流汇流，水头损失不计 $h_w=0$；取 $\alpha=1$；压强一律用\textbf{相对压强}。
+适用条件：不可压缩、恒定流、质量力只有重力、两断面为渐变流断面——本题全部满足。
+
+\textbf{第 1 步\quad 列 1-1、2-2 断面的伯努利方程求 $v_2$}
+
+\[ z_1+\frac{p_1}{\rho g}+\frac{v_1^2}{2g}=z_2+\frac{p_2}{\rho g}+\frac{v_2^2}{2g} \]
+代入 $z_1=7$、$p_1=0$、$v_1=0$、$z_2=0$、$p_2=0$：
+\[ 7=\frac{v_2^2}{2g}\quad\Longrightarrow\quad v_2=\sqrt{2g\times7}=\sqrt{2\times9.8\times7}=\sqrt{137.2}=11.71\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求流量 $Q$}
+
+\[ A_2=\frac{\pi d_2^2}{4}=\frac{3.14\times0.1^2}{4}=7.854\times10^{-3}\ \mathrm{m^2} \]
+\[ Q=A_2v_2=7.854\times10^{-3}\times11.71=9.20\times10^{-2}\ \mathrm{m^3/s}=92.0\ \mathrm{L/s} \]
+
+\textbf{第 3 步\quad 求竖管段流速 $v_1$}
+
+由连续性方程：
+\[ v_1=v_2\frac{A_2}{A_1}=v_2\left(\frac{d_2}{d_1}\right)^2=11.71\times\left(\frac{100}{200}\right)^2
+   =11.71\times0.25=2.93\ \mathrm{m/s} \]
+
+\textbf{第 4 步\quad 列水箱液面与 $A$ 点断面的伯努利方程求 $p_A$}
+
+断面 1-1 仍取水箱液面（$z_1=7$、$p_1=0$、$v_1\approx0$），断面 $A$-$A$ 取 $A$ 点所在断面
+（$z_A=4\ \mathrm{m}$、$v_A=v_1=2.93\ \mathrm{m/s}$）：
+\[ 7+0+0=4+\frac{p_A}{\rho g}+\frac{v_A^2}{2g} \]
+\[ \frac{p_A}{\rho g}=3-\frac{2.93^2}{2\times9.8}=3-0.438=2.562\ \mathrm{m} \]
+\[ p_A=\rho g\times2.562=1000\times9.8\times2.562=2.51\times10^4\ \mathrm{Pa}=25.1\ \mathrm{kPa} \]
+
+\textbf{结果：}泄流量 $Q\approx9.2\times10^{-2}\ \mathrm{m^3/s}$（约 $92\ \mathrm{L/s}$，约 $331\ \mathrm{m^3/h}$）；
+$A$ 点相对压强 $p_A\approx25.1\ \mathrm{kPa}$（正压，即高于大气压）。
+\textbf{校核：}$A$ 点在管内、位于喷嘴上游，流速 $2.93\ \mathrm{m/s}$ 远小于出口 $11.71\ \mathrm{m/s}$，
+压能由水箱的位能转化而来，应为正压，结果合理。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：基准面要取在同一处。}求 $Q$ 时取喷嘴出口为基准面（$z_1=7$），
+求 $p_A$ 时若不换基准面，$A$ 点的 $z_A$ 就要写成 $4\ \mathrm{m}$（仍在同一基准面上），不能写成 $3\ \mathrm{m}$——
+$3\ \mathrm{m}$ 是 $A$ 点在水面下的深度，是“液面与 $A$ 点的高差”，不是位置水头。\\
+\textbf{易错点二：$A$ 点流速不等于 $v_2$。}$A$ 点处管径为 $d_1=200\ \mathrm{mm}$，故 $v_A=v_1=2.93\ \mathrm{m/s}$，
+必须先用连续性方程换算，不能直接用 $11.71\ \mathrm{m/s}$。\\
+\textbf{易错点三：两断面压强基准一致。}液面与喷嘴出口都通大气，两个 $p$ 都取 $0$（表压），
+若一个用绝对压强、一个用表压，等式两边会差一个 $p_a$，结果全错。
+\end{yicuo}
+
+\noindent\textbf{第 4.4 题\quad 离心式通风机吸气管测压求吸气量}
+
+\begin{jie}
+\textbf{已知：}吸气管圆筒段直径 $d=200\ \mathrm{mm}=0.2\ \mathrm{m}$；测压管水面高差 $\Delta h=0.25\ \mathrm{m}$；
+空气的重度 $\gamma=12.6\ \mathrm{N/m^3}$；不计损失。
+
+\textbf{求：}每秒吸气量 $Q$。
+
+\textbf{依据：}毕托管（测压管）测点流速原理（教材式 4.11、4.12）；$Q=Av$；重度与密度关系 $\gamma=\rho g$。
+
+\textbf{第 1 步\quad 求空气密度}
+
+\[ \rho_{\text{空气}}=\frac{\gamma}{g}=\frac{12.6}{9.8}=1.286\ \mathrm{kg/m^3}=1.286\ \mathrm{N\cdot s^2/m^4} \]
+
+\textbf{第 2 步\quad 由测压管水面高差求气流速度}
+
+管壁静压孔内的静压 $p$ 低于大气压，测压管中的水被吸起高度 $\Delta h$，故管内外压差为
+\[ p_a-p=\rho_{\text{水}}g\Delta h \]
+气流自静止大气吸入管中（断面 1-1 取在远前方未受扰动的静止空气，$v_1=0$、$p_1=p_a$；
+断面 2-2 取测压孔所在断面，$v_2=v$、$p_2=p$，两断面等高），列理想流体伯努利方程：
+\[ p_a=p+\frac{1}{2}\rho_{\text{空气}}v^2 \]
+\[ \frac{1}{2}\rho_{\text{空气}}v^2=p_a-p=\rho_{\text{水}}g\Delta h \]
+\[ v=\sqrt{\frac{2\rho_{\text{水}}g\Delta h}{\rho_{\text{空气}}}}
+   =\sqrt{\frac{2\times1000\times9.8\times0.25}{1.286}}=\sqrt{3810}=61.7\ \mathrm{m/s} \]
+
+\textbf{第 3 步\quad 求吸气量}
+
+\[ A=\frac{\pi d^2}{4}=\frac{3.14\times0.2^2}{4}=3.14\times10^{-2}\ \mathrm{m^2} \]
+\[ Q=Av=3.14\times10^{-2}\times61.7=1.94\ \mathrm{m^3/s}=6980\ \mathrm{m^3/h} \]
+
+\textbf{结果：}$\rho_{\text{空气}}\approx1.29\ \mathrm{kg/m^3}$，管内平均流速 $v\approx61.7\ \mathrm{m/s}$，
+吸气量 $Q\approx1.94\ \mathrm{m^3/s}$（约 $7.0\times10^3\ \mathrm{m^3/h}$）。
+
+\textbf{量纲自检：}$\sqrt{\dfrac{\mathrm{kg/m^3\times m/s^2\times m}}{\mathrm{kg/m^3}}}=\mathrm{m/s}$；
+被开方量中 $\rho_{\text{水}}$ 与 $\rho_{\text{空气}}$ 的比值约 $778$，与 $g\Delta h=2.45\ \mathrm{m^2/s^2}$ 相乘得 $3810\ \mathrm{m^2/s^2}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}“重度”不是“密度”。重度 $\gamma$ 的单位是 $\mathrm{N/m^3}$，要先用 $\rho=\gamma/g$ 换成密度才能代入
+$\dfrac{1}{2}\rho v^2$。把 $12.6$ 当成密度代入，速度会小 $\sqrt{9.8}\approx3.1$ 倍。\\
+\textbf{易错点二：压差由\emph{水}柱给出、由\emph{空气}承受。}测压管里是水，管里是空气，
+故 $p_a-p=\rho_{\text{水}}g\Delta h$；代入伯努利方程时动能项用\emph{空气}密度。两个密度不要用混。\\
+\textbf{易错点三：这是“吸气”管，管内为负压。}水面被吸起说明管内压强\emph{低于}大气压，
+所以远前方大气的 $p_a$ 是“上游总压”，等式写 $p_a=p+\dfrac{1}{2}\rho v^2$（而不是反过来）。
+\end{yicuo}
+
+\noindent\textbf{第 4.5 题\quad 虹吸管的流速、$B$ 点绝对压强与最大虹吸高度}
+
+\begin{jie}
+\textbf{已知：}虹吸管最高点 $B$ 高出水池液面 $a=1.6\ \mathrm{m}$；出口 $C$ 低于水池液面 $b=3.6\ \mathrm{m}$；
+不计水头损失；水的汽化压强水头 $0.24\ \mathrm{m}$（绝对压强水头）。取 $\rho=1000\ \mathrm{kg/m^3}$、$p_a=98\ \mathrm{kPa}$。
+
+\textbf{求：}（1）管中流速 $v$ 及 $B$ 点绝对压强 $p_B$；（2）不发生汽化时 $a$ 的最大值。
+
+\textbf{依据：}理想流体（不计损失）总流伯努利方程（教材式 4.18）；连续性方程（等直径管各断面 $v$ 相同）。
+
+\textbf{选断面与基准面：}取\textbf{水池液面}为断面 1-1（大容器 $v_1\approx0$、$p_1=p_a$）；
+基准面取水池液面（$z_1=0$）。计算点取各断面中心；压强用\textbf{绝对压强}（因为汽化判据给的是绝对压强水头）。
+适用条件：不可压缩、恒定流、质量力只有重力、断面取渐变流（池面与管内各直管段断面）——满足。
+
+\textbf{第 1 问\quad 管中流速 $v$}
+
+取出口 $C$ 为断面 2-2：$z_2=-b=-3.6\ \mathrm{m}$，$p_2=p_a$（出口流入大气），$v_2=v$。列 1-1、2-2 的方程：
+\[ z_1+\frac{p_1}{\rho g}+\frac{v_1^2}{2g}=z_2+\frac{p_2}{\rho g}+\frac{v_2^2}{2g} \]
+\[ 0+\frac{p_a}{\rho g}+0=-3.6+\frac{p_a}{\rho g}+\frac{v^2}{2g}
+   \quad\Longrightarrow\quad \frac{v^2}{2g}=3.6\ \mathrm{m} \]
+\[ v=\sqrt{2\times9.8\times3.6}=\sqrt{70.56}=8.40\ \mathrm{m/s} \]
+（结论：\textbf{虹吸管的流速只由上游液面与出口的高差 $b$ 决定，与虹吸高度 $a$ 无关}。）
+
+\textbf{第 2 问\quad $B$ 点绝对压强 $p_B$}
+
+取 $B$ 点所在断面为断面 $B$：$z_B=+a=+1.6\ \mathrm{m}$，$v_B=v=8.40\ \mathrm{m/s}$，压强为 $p_B$。列 1-1、$B$ 的方程：
+\[ 0+\frac{p_a}{\rho g}+0=1.6+\frac{p_B}{\rho g}+\frac{v^2}{2g} \]
+\[ \frac{p_B}{\rho g}=\frac{p_a}{\rho g}-1.6-3.6=\frac{p_a}{\rho g}-5.2\ \mathrm{m} \]
+\[ p_B=p_a-\rho g\times5.2=98000-1000\times9.8\times5.2=98000-50960=4.90\times10^4\ \mathrm{Pa} \]
+即
+\[ p_B\approx49.0\ \mathrm{kPa}\ (\text{绝对压强})\ <\ p_a=98\ \mathrm{kPa} \]
+
+\textbf{第 3 问（第（2）小问）\quad 不发生汽化的最大 $a$}
+
+把 $B$ 点绝对压强水头记作 $p_B/(\rho g)$，汽化条件为
+\[ \frac{p_B}{\rho g}=0.24\ \mathrm{m}\quad(\text{绝对压强水头}) \]
+由上面同一方程（$v^2/(2g)=b=3.6\ \mathrm{m}$）：
+\[ \frac{p_a}{\rho g}=\frac{p_B}{\rho g}+a+\frac{v^2}{2g} \]
+即
+\[ 10.0=0.24+a+3.6\quad\Longrightarrow\quad a=10.0-3.6-0.24=6.16\ \mathrm{m} \]
+（其中 $\dfrac{p_a}{\rho g}=\dfrac{98000}{1000\times9.8}=10.0\ \mathrm{m}$。）
+
+\textbf{结果：}（1）管中流速 $v=8.40\ \mathrm{m/s}$，$B$ 点绝对压强 $p_B\approx4.9\times10^4\ \mathrm{Pa}$（$49\ \mathrm{kPa}$），
+\textbf{小于大气压}（这正是虹吸管的特征，也是 2022 年单选第 7 题的答案）；
+（2）欲不发生汽化，虹吸高度 $a\le6.16\ \mathrm{m}$，即 $a$ 最大为 $6.16\ \mathrm{m}$。
+
+\textbf{说明：}本题原书未给大气压值。若取 $p_a=98\ \mathrm{kPa}$ 则 $a_{\max}=6.16\ \mathrm{m}$；
+若取 $p_a=101.3\ \mathrm{kPa}$（标准大气压）则 $a_{\max}=6.50\ \mathrm{m}$。答题时按题目给定的大气压计算，并写出所取值。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：流速只与 $b$ 有关。}很多同学看到虹吸高度 $a$ 就以为 $a$ 越大流速越大——
+恰恰相反，$a$ 越大 $B$ 点负压越厉害（越容易汽化），\textbf{流速只由上下游液面高差 $b$ 决定}。\\
+\textbf{易错点二：$B$ 点在液面\emph{之上}，位置水头是 $+a$。}$z_B=+1.6\ \mathrm{m}$，不是 $-1.6\ \mathrm{m}$；
+出口 $C$ 在液面之下才是 $z_C=-3.6\ \mathrm{m}$。符号写错，$p_B$ 会算出大于大气压的荒谬结果。\\
+\textbf{易错点三：汽化判据是\emph{绝对}压强水头。}题目给“0.24 m”是绝对压强水头，
+所以 $p_a/(\rho g)$ 也必须用同一基准（$98\ \mathrm{kPa}\to10.0\ \mathrm{m}$ 绝对水头）。
+若方程一边用相对压强、一边用绝对压强，$a_{\max}$ 会差整整 $10\ \mathrm{m}$。\\
+\textbf{易错点四：$p_B$ 一定小于大气压。}虹吸管最高处压强小于大气压——这是必考结论；
+写成“大于”或“等于”都错。
+\end{yicuo}
+
+\noindent\textbf{第 4.6 题\quad 离心泵叶轮进口处的真空度}
+
+\begin{jie}
+\textbf{已知：}抽水量 $Q=24\ \mathrm{m^3/h}=\dfrac{24}{3600}=6.667\times10^{-3}\ \mathrm{m^3/s}$；
+水泵安装高程（泵轴心高于池中液面）$h_s=6\ \mathrm{m}$；吸水管直径 $d=100\ \mathrm{mm}=0.1\ \mathrm{m}$；
+吸水管路总水头损失 $h_w=0.4\ \mathrm{mH_2O}$；水池液面通大气。
+
+\textbf{求：}泵叶轮进口处的真空度 $p_v$（即该处相对压强的绝对值）。
+
+\textbf{依据：}实际流体总流伯努利方程（教材式 4.17）；连续性方程 $Q=Av$。
+
+\textbf{选断面与基准面：}断面 1-1 取\textbf{水池自由液面}（$v_1\approx0$、$p_1=0$ 表压）；
+断面 2-2 取\textbf{泵叶轮进口断面}（渐变流断面，$p_2=-p_v$，$v_2=v$）；
+基准面取\textbf{水池液面}，则 $z_1=0$、$z_2=h_s=6\ \mathrm{m}$。
+压强用\textbf{相对压强}（表压）；$h_w=0.4\ \mathrm{mH_2O}$ 写在方程下游端（式 4.17 右侧）。
+适用条件：不可压缩、恒定流、质量力只有重力、两断面为渐变流断面、两断面间无分流汇流但有水泵——
+本题两断面都在泵\emph{进口之前}，泵在断面 2-2 下游，故两断面间\textbf{无能量输入}，可直接用式（4.17）。
+
+\textbf{第 1 步\quad 求吸水管内流速}
+
+\[ A=\frac{\pi d^2}{4}=\frac{3.14\times0.1^2}{4}=7.854\times10^{-3}\ \mathrm{m^2},\qquad
+   v=\frac{Q}{A}=\frac{6.667\times10^{-3}}{7.854\times10^{-3}}=0.849\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求流速水头}
+
+\[ \frac{v^2}{2g}=\frac{0.849^2}{2\times9.8}=\frac{0.7208}{19.6}=0.0368\ \mathrm{m} \]
+
+\textbf{第 3 步\quad 列 1-1、2-2 断面的伯努利方程}
+
+\[ z_1+\frac{p_1}{\rho g}+\frac{\alpha_1v_1^2}{2g}=z_2+\frac{p_2}{\rho g}+\frac{\alpha_2v_2^2}{2g}+h_w \]
+取 $\alpha_1=\alpha_2=1$，代入 $z_1=0$、$p_1=0$、$v_1=0$、$z_2=6$、$p_2=-p_v$：
+\[ 0=6+\frac{-p_v}{\rho g}+\frac{v^2}{2g}+h_w \]
+\[ \frac{p_v}{\rho g}=6+\frac{v^2}{2g}+h_w=6+0.0368+0.4=6.437\ \mathrm{m} \]
+
+\textbf{第 4 步\quad 求真空度}
+
+\[ p_v=\rho g\times6.437=1000\times9.8\times6.437=6.31\times10^4\ \mathrm{Pa}=63.1\ \mathrm{kPa} \]
+
+\textbf{结果：}吸水管内流速 $v\approx0.85\ \mathrm{m/s}$；
+泵叶轮进口处真空度 $p_v\approx6.31\times10^4\ \mathrm{Pa}$（$63.1\ \mathrm{kPa}$），
+折合真空高度 $\dfrac{p_v}{\rho g}\approx6.44\ \mathrm{m}$ 水柱。
+\textbf{物理检查：}$h_s=6\ \mathrm{m}$ 是安装高度，加上流速水头与损失共 $6.44\ \mathrm{m}$，
+都靠大气压“顶着”水上升，故泵进口必须是相应的负压。该值小于水泵的允许吸上真空高度才不至于汽蚀。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$h_w$ 只算“两断面之间”的损失。}本题两断面是“池面 $\to$ 泵进口”，
+故只算吸水管路（底阀＋吸水管＋$90^\circ$ 弯头）的 $0.4\ \mathrm{m}$；
+不要把压水管路的损失也算进来。\\
+\textbf{易错点二：$Q$ 的单位要换算。}$24\ \mathrm{m^3/h}=6.667\times10^{-3}\ \mathrm{m^3/s}$，
+不换算就代入会得到荒谬的流速。\\
+\textbf{易错点三：“真空度”是相对压强的绝对值。}$p_v=|p_2|=-p_2$，
+答“真空度 $63.1\ \mathrm{kPa}$”时它是正值；若答“泵进口压强 $-63.1\ \mathrm{kPa}$（表压）”也对，但不能写成正压强。\\
+\textbf{易错点四：不要漏掉流速水头。}本题流速水头只有 $0.037\ \mathrm{m}$（管细但流量也不大），
+对结果影响小；但若管径更小、流量更大，漏掉它就会出错。规范做法是三项都写出来。
+\end{yicuo}
+
+\noindent\textbf{第 4.7 题\quad 高压水箱泄水管路的流量}
+
+\begin{jie}
+\textbf{已知：}阀门关闭时压力表读数 $p_1=280\ \mathrm{kPa}$；阀门开启后压力表读数 $p_2=60\ \mathrm{kPa}$；
+泄水管直径 $D=25\ \mathrm{mm}=0.025\ \mathrm{m}$；不计水头损失；$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}每小时的泄水流量 $Q$。
+
+\textbf{依据：}实际流体总流伯努利方程（教材式 4.17，$h_w=0$ 时用式 4.18)；连续性方程。
+
+\textbf{题意解读（关键）：}阀门关闭时管内流速为零，压力表所测即为该点的\textbf{静压} $p_1=280\ \mathrm{kPa}$；
+阀门开启后管内流速为 $v$，压力表读数降为 $p_2=60\ \mathrm{kPa}$，是\textbf{静压} $60\ \mathrm{kPa}$，
+余下的压能变成了动能。因为压力表所在断面与出口断面\emph{管径相同}，故压力表处的流速等于出口流速 $v$；
+又因不计水头损失且出口为自由出流，可取压力表所在断面 1-1 与出口断面 2-2 列方程。
+
+\textbf{第 1 步\quad 列两断面伯努利方程（取相对压强）}
+
+断面 1-1：压力表所在断面，$p_1=280\ \mathrm{kPa}$（表压）、$v_1=0$（阀门关闭时的状态作为“同一断面的静止状态”）；
+断面 2-2：出口断面，$p_2=60\ \mathrm{kPa}$（表压）、$v_2=v$。
+两断面等高（水平泄水管），$z_1=z_2$；$h_w=0$：
+\[ \frac{p_{\text{关}}}{\rho g}=\frac{p_{\text{开}}}{\rho g}+\frac{v^2}{2g} \]
+即
+\[ \frac{v^2}{2g}=\frac{p_1-p_2}{\rho g}=\frac{(280-60)\times10^3}{1000\times9.8}=\frac{220000}{9800}=22.45\ \mathrm{m} \]
+
+\textbf{第 2 步\quad 求流速}
+
+\[ v=\sqrt{2g\times22.45}=\sqrt{2\times9.8\times22.45}=\sqrt{440.0}=20.98\ \mathrm{m/s} \]
+（也可直接算：$v=\sqrt{\dfrac{2(p_1-p_2)}{\rho}}=\sqrt{\dfrac{2\times220000}{1000}}=\sqrt{440}=20.98\ \mathrm{m/s}$。）
+
+\textbf{第 3 步\quad 求流量}
+
+\[ A=\frac{\pi D^2}{4}=\frac{3.14\times0.025^2}{4}=4.909\times10^{-4}\ \mathrm{m^2} \]
+\[ Q=Av=4.909\times10^{-4}\times20.98=1.030\times10^{-2}\ \mathrm{m^3/s} \]
+换成每小时：
+\[ Q=1.030\times10^{-2}\times3600=37.1\ \mathrm{m^3/h} \]
+
+\textbf{结果：}管内流速 $v\approx21.0\ \mathrm{m/s}$，泄水流量 $Q\approx1.03\times10^{-2}\ \mathrm{m^3/s}$，
+即约 $37\ \mathrm{m^3/h}$。
+
+\textbf{说明：}本题解法等价于“把阀门关闭时压力表读到的静压 $280\ \mathrm{kPa}$ 视为压力表所在断面的总压
+（因为那时 $v=0$），开启后该断面静压降为 $60\ \mathrm{kPa}$，压差 $220\ \mathrm{kPa}$ 全部转化为流速水头”。
+同一水库供水时水箱水位在开、关两状态下近似不变，故这里没有计入箱中水位的影响；
+若题目给出水箱水位高度，则应按 $v=\sqrt{2g(\text{静压水头}+\text{水位高压水头})}$ 计入，
+本题未给水位高度，即按“静压水头差”计算。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：不要漏掉“阀门关闭”这一状态的意义。}很多人只看到 $p_1=280$、$p_2=60$ 两个数不知道怎么用。
+关键认识是：\textbf{关阀时 $v=0$，压力表读数是该断面的静压}；开阀后同一断面的静压下降，
+压差就是转化为动能的那部分能量。\\
+\textbf{易错点二：$h_w$ 是否为零。}题目明写“不计水头损失”，故 $h_w=0$；
+若给了损失，必须在方程右端加上它，此时流速会小一些。\\
+\textbf{易错点三：压力表读数单位是 kPa。}要乘 $10^3$ 换成 Pa 再代入 $\rho g$ 分式；
+直接代 $280$ 会差 $1000$ 倍。\\
+\textbf{易错点四：出口是否“自由出流”。}题目说“泄水流入大气”，故出口断面表压为零是相对\emph{大气}而言；
+本题用的是压力表所在断面的两个读数之差，不涉及出口压强，这一点不影响计算。
+\end{yicuo}
+
+\noindent\textbf{第 4.8 题\quad 等直径虹吸管各断面压强}
+
+\begin{jie}
+\textbf{已知：}虹吸管为等直径管；各点标高（以水池液面为基准面）为
+$H_A=0$、$H_B=6\ \mathrm{m}$、$H_C=7\ \mathrm{m}$、$H_D=-4\ \mathrm{m}$（题给 $H_D=4\ \mathrm{m}$ 为\emph{出口低于池中液面}的深度，
+按图 4.8 取 $z_D=-4\ \mathrm{m}$）；不计能量损失；取 $p_a=98\ \mathrm{kPa}$、$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}虹吸管的断面平均流速 $v$ 与 $A$、$B$、$C$ 各断面的绝对压强。
+
+\textbf{依据：}理想流体总流伯努利方程（教材式 4.18）；等直径管连续性方程（各断面 $v$ 相同）。
+
+\textbf{选断面与基准面：}断面 1-1 取\textbf{水池液面}（$v_1\approx0$、$p_1=p_a$、$z_1=0$）；
+断面 2-2 取\textbf{出口 $D$ 断面}（$p_D=p_a$、$z_D=-4\ \mathrm{m}$）。基准面取水池液面。
+压强用\textbf{绝对压强}；水头损失不计 $h_w=0$；$\alpha=1$。适用条件均满足。
+
+\textbf{第 1 步\quad 求断面平均流速 $v$}
+
+\[ z_1+\frac{p_1}{\rho g}+\frac{v_1^2}{2g}=z_D+\frac{p_D}{\rho g}+\frac{v^2}{2g} \]
+\[ 0+\frac{p_a}{\rho g}+0=-4+\frac{p_a}{\rho g}+\frac{v^2}{2g}
+   \quad\Longrightarrow\quad \frac{v^2}{2g}=4\ \mathrm{m} \]
+\[ v=\sqrt{2\times9.8\times4}=\sqrt{78.4}=8.85\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求 $A$ 点断面绝对压强}
+
+$A$ 点取在\emph{管内进口处}（断面 $A$ 已是管内的过流断面），$z_A=0$、$v_A=v=8.85\ \mathrm{m/s}$：
+\[ 0+\frac{p_a}{\rho g}+0=0+\frac{p_A}{\rho g}+\frac{v^2}{2g}
+   \quad\Longrightarrow\quad \frac{p_A}{\rho g}=\frac{p_a}{\rho g}-4\ \mathrm{m} \]
+\[ p_A=p_a-\rho g\times4=98000-1000\times9.8\times4=98000-39200=5.88\times10^4\ \mathrm{Pa}=58.8\ \mathrm{kPa} \]
+
+\textbf{第 3 步\quad 求 $B$ 点断面绝对压强}
+
+$z_B=6\ \mathrm{m}$、$v_B=v=8.85\ \mathrm{m/s}$：
+\[ 0+\frac{p_a}{\rho g}+0=6+\frac{p_B}{\rho g}+4
+   \quad\Longrightarrow\quad \frac{p_B}{\rho g}=\frac{p_a}{\rho g}-10.0\ \mathrm{m} \]
+\[ p_B=98000-1000\times9.8\times10.0=98000-98000=0\ \mathrm{Pa}\ (\text{绝对}) \]
+即 $B$ 点绝对压强为零（$p_B\approx0$，真空度达一个大气压）。
+
+\textbf{第 4 步\quad 求 $C$ 点断面绝对压强}
+
+$z_C=7\ \mathrm{m}$、$v_C=v=8.85\ \mathrm{m/s}$：
+\[ 0+\frac{p_a}{\rho g}+0=7+\frac{p_C}{\rho g}+4
+   \quad\Longrightarrow\quad \frac{p_C}{\rho g}=\frac{p_a}{\rho g}-11.0\ \mathrm{m} \]
+\[ p_C=98000-1000\times9.8\times11.0=98000-107800=-9800\ \mathrm{Pa}\approx-9.8\ \mathrm{kPa}\ (\text{绝对}) \]
+
+\textbf{结果：}虹吸管断面平均流速 $v=8.85\ \mathrm{m/s}$；
+$p_A=58.8\ \mathrm{kPa}$（绝对）、$p_B=0$（绝对）、$p_C=-9.8\ \mathrm{kPa}$（绝对）。
+三者沿程依次降低，且 $B$、$C$ 的绝对压强都\emph{小于}大气压，符合虹吸管“管内为负压”的规律；
+$C$ 点绝对压强算出负值，说明按本题数据（不计损失、$H_C=7\ \mathrm{m}$）管内早已发生汽化，
+工程上必须限制虹吸高度。\\
+\textbf{说明：}上述数值按 $p_a=98\ \mathrm{kPa}$ 计。若取 $p_a=101.3\ \mathrm{kPa}$，
+则 $p_A=62.1\ \mathrm{kPa}$、$p_B=3.3\ \mathrm{kPa}$、$p_C=-6.5\ \mathrm{kPa}$。
+$H_D$ 的符号以习题图为准（图中 $D$ 端低于池中液面 $4\ \mathrm{m}$，故取 $z_D=-4\ \mathrm{m}$）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$H_D$ 的正负号。}题中 $H_D=4\ \mathrm{m}$ 表示“出口比池中液面\emph{低} $4\ \mathrm{m}$”，
+代入方程必须取 $z_D=-4\ \mathrm{m}$（若取 $+4\ \mathrm{m}$，算出的 $v$ 与全题物理图像矛盾）。凡标注“标高”的题都要先看图中箭头方向。\\
+\textbf{易错点二：$A$ 点已是管内过流断面。}$A$ 点取在\emph{管内}进口处（$z_A=0$），流速为管内流速 $v$，
+不是池中的 $0$；若误把 $A$ 当成液面，$p_A$ 就会算出等于大气压。\\
+\textbf{易错点三：绝对值基准要统一。}本题问“绝对压强”，故 $p_1=p_D=p_a$，
+并用 $p_a=98\ \mathrm{kPa}$（或 $101.3\ \mathrm{kPa}$，需写明取值）。若混用表压，结果全错。\\
+\textbf{易错点四：负压强意味着汽化。}$C$ 点算出 $-9.8\ \mathrm{kPa}$（绝对）说明水根本不可能在那里保持液态，
+这是“计算值”，正是在提示你$H_C$ 已超过允许虹吸高度。答题时要指出这一点（工程含义），能得分。
+\end{yicuo}
+
+\noindent\textbf{第 4.9 题\quad 水泵与电动机功率}
+
+\begin{jie}
+\textbf{已知：}提水高度 $z=20\ \mathrm{m}$；抽水流量 $Q=35\ \mathrm{L/s}=0.035\ \mathrm{m^3/s}$；
+吸水管与压水管直径相同 $d=180\ \mathrm{mm}=0.18\ \mathrm{m}$；泵效率 $\eta_1=0.82$；电动机效率 $\eta_2=0.95$；
+总水头损失 $h_w=1.5\ \mathrm{mH_2O}$；$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}电动机应有的功率 $P$。
+
+\textbf{依据：}沿程有能量输入的伯努利方程（教材式 4.23、4.24）与泵的有效功率、效率式（教材式 4.25）。
+
+\textbf{选断面与基准面：}断面 1-1 取\textbf{吸水池液面}（$v_1\approx0$、$p_1=0$ 表压）；
+断面 2-2 取\textbf{压水管出口断面}（$v_2=v$、$p_2=0$ 表压）；基准面取吸水池液面，
+$z_1=0$、$z_2=z=20\ \mathrm{m}$。水泵在两断面\emph{之间}，故方程左端加泵的扬程 $H_m$（泵给流体能量）。
+压强用相对压强；适用条件（不可压缩、恒定流、只有重力、两断面渐变流）满足。
+
+\textbf{第 1 步\quad 求管内流速与流速水头}
+
+\[ A=\frac{\pi d^2}{4}=\frac{3.14\times0.18^2}{4}=2.543\times10^{-2}\ \mathrm{m^2} \]
+\[ v=\frac{Q}{A}=\frac{0.035}{2.543\times10^{-2}}=1.376\ \mathrm{m/s} \]
+\[ \frac{v^2}{2g}=\frac{1.376^2}{2\times9.8}=0.0966\ \mathrm{m} \]
+由于吸水、压水管直径相同，两断面流速相等，动能项在方程两端\textbf{相互抵消}（这正说明题给
+“直径相同”的用意）。
+
+\textbf{第 2 步\quad 列带泵的伯努利方程求扬程 $H_m$}
+
+\[ z_1+\frac{p_1}{\rho g}+\frac{v_1^2}{2g}+H_m=z_2+\frac{p_2}{\rho g}+\frac{v_2^2}{2g}+h_w \]
+\[ 0+0+0+H_m=20+0+0+1.5 \]
+\[ H_m=20+1.5=21.5\ \mathrm{m} \]
+（与教材例 4.2 一致：\textbf{扬程＝提水高度＋总水头损失}。）
+
+\textbf{第 3 步\quad 求泵的有效功率}
+
+\[ P_e=\rho gQH_m=1000\times9.8\times0.035\times21.5=7374.5\ \mathrm{W}=7.375\ \mathrm{kW} \]
+
+\textbf{第 4 步\quad 从有效功率反推到电动机功率（除两次效率）}
+
+泵的轴功率：
+\[ P_{\text{轴}}=\frac{P_e}{\eta_1}=\frac{7.375}{0.82}=8.994\ \mathrm{kW} \]
+电动机功率：
+\[ P=\frac{P_{\text{轴}}}{\eta_2}=\frac{8.994}{0.95}=9.468\ \mathrm{kW}\approx9.47\ \mathrm{kW} \]
+合并写成一式：
+\[ P=\frac{\rho gQH_m}{\eta_1\eta_2}=\frac{1000\times9.8\times0.035\times21.5}{0.82\times0.95}
+   =\frac{7374.5}{0.779}=9.47\ \mathrm{kW} \]
+
+\textbf{结果：}泵的扬程 $H_m=21.5\ \mathrm{m}$，有效功率 $P_e\approx7.38\ \mathrm{kW}$，
+轴功率 $\approx8.99\ \mathrm{kW}$，电动机应有功率 $P\approx9.47\ \mathrm{kW}$。
+（工程上选电动机还要留 $10\%\sim20\%$ 余量，可选 $11\ \mathrm{kW}$ 电机。）
+
+\textbf{说明：}教材例 4.2 与本题数据完全相同（$z=20\ \mathrm{m}$、$Q=35\ \mathrm{L/s}$、$\eta_1=0.82$、
+$\eta_2=0.95$、$h_w=1.5\ \mathrm{mH_2O}$），其结论为 $P\approx9.47\ \mathrm{kW}$，本题与之一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：效率要除两次。}题目问“电动机功率”，不能只除泵效率：
+$P_e/\eta_1$ 是\textbf{泵轴功率}，再除 $\eta_2$ 才是\textbf{电动机功率}。
+只除一次会得到 $8.99\ \mathrm{kW}$，答错了这一步就丢分。\\
+\textbf{易错点二：动能项是否抵消要先判断。}本题两管直径相同 $\to v_1=v_2\to$ 动能项相消；
+若题目说吸水管与压水管直径\emph{不同}，就必须把 $\dfrac{v_2^2-v_1^2}{2g}$ 计入扬程。\\
+\textbf{易错点三：$Q$ 的单位。}$35\ \mathrm{L/s}=0.035\ \mathrm{m^3/s}$，不能直接代 $35$。\\
+\textbf{易错点四：损失的位置。}水头损失属于“两断面之间”的管路损失，写在方程\emph{下游端}（右侧 $+h_w$），
+且本题 $1.5\ \mathrm{m}$ 是吸水与压水管路\emph{全部}损失，一次加完。
+\end{yicuo}
+
+\noindent\textbf{第 4.10 题\quad 闸下出流：水流对平板闸门的作用力}
+
+\begin{jie}
+\textbf{已知：}闸门宽 $b=2\ \mathrm{m}$；闸前水深 $h_1=4\ \mathrm{m}$；闸后水深 $h_2=0.5\ \mathrm{m}$；
+出流量 $Q=8\ \mathrm{m^3/s}$；不计摩擦阻力；$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}水流对平板闸门的作用力 $F$（水平方向）。
+
+\textbf{依据：}恒定总流动量方程及其分量式（教材式 4.30、4.31）。
+
+\textbf{控制体与受力分析：}取\textbf{闸前断面 1-1 与闸后断面 2-2 之间、宽 $b$ 的整段水体}为控制体（含闸门下方的射流段）。
+作用在控制体内流体上的外力（水平 $x$ 方向，取流向为正）有：
+\begin{xiaowen}
+\item 断面 1-1 的压力 $P_1=\rho g\dfrac{h_1^2}{2}b$，方向沿 $+x$（闸前水压力推流体向前）；
+\item 断面 2-2 的压力 $P_2=\rho g\dfrac{h_2^2}{2}b$，方向沿 $-x$（闸后水压力阻滞流体）；
+\item 底板与侧壁的摩擦阻力——题给“不计摩擦阻力”，取零；
+\item 闸门对水流的反力 $F'$：先按 $+x$ 方向假设（待求）。
+\end{xiaowen}
+\textbf{投影方向约定：}与 $+x$ 同向为正、反向为负；动量项按“\textbf{出减进}”写在方程右端，
+$\beta_1=\beta_2=1$。适用条件：恒定流、不可压缩、两断面取渐变流断面——满足。
+
+\textbf{第 1 步\quad 求两断面的平均流速}
+
+\[ v_1=\frac{Q}{bh_1}=\frac{8}{2\times4}=1.0\ \mathrm{m/s},\qquad
+   v_2=\frac{Q}{bh_2}=\frac{8}{2\times0.5}=8.0\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求两断面的压力}
+
+\[ P_1=\frac{1}{2}\rho gbh_1^2=\frac{1}{2}\times1000\times9.8\times2\times4^2
+   =1000\times9.8\times16=156800\ \mathrm{N}=156.8\ \mathrm{kN} \]
+\[ P_2=\frac{1}{2}\rho gbh_2^2=\frac{1}{2}\times1000\times9.8\times2\times0.5^2
+   =1000\times9.8\times0.25=2450\ \mathrm{N}=2.45\ \mathrm{kN} \]
+
+\textbf{第 3 步\quad 列 $x$ 方向动量方程}
+
+\[ P_1-P_2+F'=\rho Q\left(v_2-v_1\right) \]
+\[ 156.8-2.45+F'=1.0\times8\times(8.0-1.0)=56.0\ \mathrm{kN} \]
+\[ F'=56.0-156.8+2.45=-98.35\ \mathrm{kN} \]
+负号说明闸门对水流的力方向与 $+x$ \emph{相反}，即\textbf{指向 $-x$（上游方向）}，
+大小为 $98.35\ \mathrm{kN}$。
+
+\textbf{第 4 步\quad 求水流对闸门的作用力（作用力与反作用力）}
+
+\[ \vec{F}=-\vec{F}' \]
+故水流对闸门的作用力方向与 $+x$ \emph{相同}（即\textbf{指向下游}），大小
+\[ F=F'=98.35\ \mathrm{kN} \]
+
+\textbf{结果：}闸门对水流的力 $F'=98.35\ \mathrm{kN}$，方向指向\textbf{上游}；
+水流对闸门的作用力 $F=98.35\ \mathrm{kN}\approx98.4\ \mathrm{kN}$，方向指向\textbf{下游}（把闸门往下游推）。
+
+\textbf{量纲自检：}$\rho gbh^2$ 的量纲为 $\mathrm{kg/m^3\cdot m/s^2\cdot m\cdot m^2}=\mathrm{N}$，正确；
+$1\ \mathrm{m^3/s\times1\ kg/m^3\times m/s}=\mathrm{N}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：断面压力公式的系数。}渐变流断面上压强按静压三角形分布，
+$P=\dfrac{1}{2}\rho gbh^2$，\textbf{不要漏掉 $1/2$}（漏掉就等于把总压力算成了底面压强乘面积）。\\
+\textbf{易错点二：两个断面压力方向相反。}闸前压力推流体向前（$+x$）、闸后压力阻滞流体（$-x$），
+符号写错会得到两倍左右的误差。\\
+\textbf{易错点三：受力对象。}动量方程先求出的是“闸门对水流”的力 $F'$，
+题目问“\textbf{水流对闸门}的作用力”，必须再取反号并\textbf{说明方向}；
+只写大小不写方向最多得一半分。\\
+\textbf{易错点四：流速方向。}$v_2=8\ \mathrm{m/s}$ 远大于 $v_1=1\ \mathrm{m/s}$，是闸门下方的射流加速，
+这是闸下出流的典型特征；正因为 $v_2\gg v_1$，动量项 $56\ \mathrm{kN}$ 才不可忽略。
+\end{yicuo}
+
+\noindent\textbf{第 4.11 题\quad 溢流坝水平推力公式的推证}
+
+\begin{jie}
+\textbf{已知：}溢流坝宽 $B$（垂直于纸面）；上游水深 $h_1$、下游水深 $h_2$；不计水头损失；$\rho$ 为常数。
+
+\textbf{求：}推证坝体受到的水平推力
+\[ F=\frac{\rho gB(h_1-h_2)^3}{2(h_1+h_2)} \]
+
+\textbf{依据：}恒定总流动量方程（教材式 4.30）与其 $x$ 方向分量式（式 4.31）；连续性方程 $Q=Bv_1h_1=Bv_2h_2$。
+
+\textbf{控制体与受力分析：}取\textbf{坝前断面 1-1 与坝后断面 2-2 之间、坝面以下、底板上、宽 $B$ 的整段水体}为控制体。
+作用在控制体内流体上的外力（水平 $x$ 方向，取流向为正）：
+\begin{xiaowen}
+\item 断面 1-1 的压力 $P_1=\dfrac{1}{2}\rho gBh_1^2$，方向沿 $+x$；
+\item 断面 2-2 的压力 $P_2=\dfrac{1}{2}\rho gBh_2^2$，方向沿 $-x$；
+\item 坝体对水流的水平反力 $F'$，按 $+x$ 方向假设（待求）；
+\item 重力与底板压力沿竖直方向，$x$ 方向无分量，不进入 $x$ 向方程。
+\end{xiaowen}
+\textbf{投影方向约定：}与 $+x$（流向）同向为正；动量项按“出减进”写在右端，取 $\beta_1=\beta_2=1$；
+$\alpha$ 不出现（本题不用能量方程）。
+
+\textbf{第 1 步\quad 列 $x$ 方向动量方程}
+
+\[ P_1-P_2+F'=\rho Q(v_2-v_1) \]
+
+\textbf{第 2 步\quad 把 $P_1$、$P_2$、$Q$ 代入并整理}
+
+\[ F'=\rho Q(v_2-v_1)-\frac{\rho gB}{2}\left(h_1^2-h_2^2\right) \]
+先算动量项。由连续性方程 $v_1=\dfrac{Q}{Bh_1}$、$v_2=\dfrac{Q}{Bh_2}$，令流量单宽 $q=\dfrac{Q}{B}$，则
+\[ Q(v_2-v_1)=Bq\left(\frac{q}{h_2}-\frac{q}{h_1}\right)=Bq^2\left(\frac{1}{h_2}-\frac{1}{h_1}\right)
+   =Bq^2\frac{h_1-h_2}{h_1h_2} \]
+故
+\[ F'=\frac{\rho Bq^2(h_1-h_2)}{h_1h_2}-\frac{\rho gB\left(h_1^2-h_2^2\right)}{2} \]
+
+\textbf{第 3 步\quad 用伯努利方程（不计损失）消去 $q^2$}
+
+对断面 1-1、2-2 列理想流体总流伯努利方程（底高程相同，$z_1=h_1/2$ 与 $z_2=h_2/2$ 为断面形心高度）：
+\[ \frac{p_1}{\rho g}+\frac{v_1^2}{2g}=\frac{p_2}{\rho g}+\frac{v_2^2}{2g}\quad(\text{以同一高程基准，形心压强 } p=\rho g h/2) \]
+即
+\[ \frac{v_2^2-v_1^2}{2g}=\frac{p_1-p_2}{\rho g}=\frac{h_1-h_2}{2}
+   \quad\Longrightarrow\quad v_2^2-v_1^2=g(h_1-h_2) \]
+又 $v_2^2-v_1^2=q^2\left(\dfrac{1}{h_2^2}-\dfrac{1}{h_1^2}\right)
+=q^2\dfrac{(h_1-h_2)(h_1+h_2)}{h_1^2h_2^2}$，代入得
+\[ q^2\frac{(h_1-h_2)(h_1+h_2)}{h_1^2h_2^2}=g(h_1-h_2)
+   \quad\Longrightarrow\quad
+   q^2=\frac{g\,h_1^2h_2^2}{h_1+h_2} \]
+
+\textbf{第 4 步\quad 回代求 $F'$}
+
+\[ \frac{\rho Bq^2(h_1-h_2)}{h_1h_2}
+   =\frac{\rho B(h_1-h_2)}{h_1h_2}\cdot\frac{g h_1^2h_2^2}{h_1+h_2}
+   =\frac{\rho gB\,h_1h_2(h_1-h_2)}{h_1+h_2} \]
+\[ F'=\frac{\rho gB\,h_1h_2(h_1-h_2)}{h_1+h_2}-\frac{\rho gB(h_1-h_2)(h_1+h_2)}{2} \]
+提出公因式 $\dfrac{\rho gB(h_1-h_2)}{2(h_1+h_2)}$：
+\[ F'=\frac{\rho gB(h_1-h_2)}{2(h_1+h_2)}\left[2h_1h_2-(h_1+h_2)^2\right]
+   =\frac{\rho gB(h_1-h_2)}{2(h_1+h_2)}\left[-\left(h_1-h_2\right)^2\right] \]
+\[ F'=-\frac{\rho gB(h_1-h_2)^3}{2(h_1+h_2)} \]
+负号表示坝体对水流的水平反力指向\emph{上游}（$h_1>h_2$ 时括号内为正，故 $F'<0$）。
+
+\textbf{第 5 步\quad 取反作用力得坝体所受推力}
+
+水流对坝体的水平推力 $\vec F=-\vec F'$，方向与流向相同（指向下游），大小
+\[ F=\frac{\rho gB(h_1-h_2)^3}{2(h_1+h_2)} \]
+\textbf{证毕。}
+
+\textbf{结果：}坝体受到的水平推力 $F=\dfrac{\rho gB(h_1-h_2)^3}{2(h_1+h_2)}$，方向\textbf{指向下游}（与水流方向相同），
+大小与 $(h_1-h_2)^3$ 成正比。\\
+\textbf{物理校核：}① 当 $h_1=h_2$ 时 $F=0$（上下游水深相同时坝面受力为零），合理；
+② $F\propto(h_1-h_2)^3$，水深差增大时推力急剧增大，与工程直觉一致；
+③ 若把 $h_1=4\ \mathrm{m}$、$h_2=0.5\ \mathrm{m}$、$B=2\ \mathrm{m}$ 代入（类比第 4.10 题），
+得 $F=\dfrac{1000\times9.8\times2\times3.5^3}{2\times4.5}=9.33\times10^4\ \mathrm{N}\approx93\ \mathrm{kN}$，量级合理。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：断面压力只算\emph{压强}分布的一半。}$P=\frac{1}{2}\rho gBh^2$ 来自静压三角形分布，
+漏掉 $1/2$ 是最常见的错误。\\
+\textbf{易错点二：用能量方程消去 $q^2$ 时，形心压强取 $\rho g h/2$。}
+两断面的位置水头 $z_1=h_1/2$、$z_2=h_2/2$（取底面为基准）与压强水头 $p/(\rho g)=h/2$ 之和恰为 $h$，
+于是测压管水头差 $z+p/(\rho g)$ 之差为 $(h_1-h_2)$——这一步是本题的“题眼”，写成 $h_1-h_2$ 后
+才能与连续性方程联立消去 $q^2$。\\
+\textbf{易错点三：最后一步要取反号。}动量方程求出的 $F'$ 是\textbf{坝体对水流}的力（指向上游），
+题目要的是\textbf{水流对坝体}的推力（指向下游），必须取反号并说明方向。\\
+\textbf{易错点四：别把 $B$ 漏掉。}本题是“宽度为 $B$ 的坝”，所有力与流量都要乘（或含）$B$，
+漏掉 $B$ 会使量纲不成立，一检查就能发现。
+\end{yicuo}
+
+\noindent\textbf{第 4.12 题\quad 水平收缩弯管流入大气时水流对弯管的作用力}
+
+\begin{jie}
+\textbf{已知：}进口直径 $d_1=100\ \mathrm{mm}=0.1\ \mathrm{m}$，进口流速 $v_1=1.5\ \mathrm{m/s}$；
+出口直径 $d_2=75\ \mathrm{mm}=0.075\ \mathrm{m}$；出口与进口方向夹角 $\theta=30^\circ$；
+出口流入大气（表压 $p_2=0$）；不计水头损失；$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}水流对弯管的作用力 $F_x$、$F_y$。
+
+\textbf{依据：}连续性方程；实际流体总流伯努利方程（教材式 4.17，$h_w=0$）；
+总流动量方程分量式（教材式 4.31）。
+
+\textbf{控制体与坐标系：}取\textbf{进口断面 1-1 与出口断面 2-2 之间、管壁以内的整段水体}为控制体。
+取 $x$ 轴沿进口流速方向（水平向右），$y$ 轴在水平面内与 $x$ 轴垂直；
+出口流速与 $x$ 轴成 $\theta=30^\circ$（题图向右下方偏转，故 $x$ 分量正、$y$ 分量方向按题图取正为正向的相反侧）。
+作用在控制体内流体上的外力：
+\begin{xiaowen}
+\item 断面 1-1 的压力 $P_1=p_1A_1$，方向沿 $+x$；
+\item 断面 2-2 的压力 $P_2=p_2A_2=0$（出口流入大气，表压为零）；
+\item 弯管壁面对水流的反力 $R_x$、$R_y$，先按 $+x$、$+y$ 方向假设；
+\item 重力竖直向下，与 $xOy$ 水平面垂直，在 $x$、$y$ 方向均无分量，不进入分量式。
+\end{xiaowen}
+\textbf{投影正负号约定：}与坐标轴同向为正、反向为负；动量项写在右端且为“\textbf{出减进}”；
+取 $\beta_1=\beta_2=1$。
+
+\textbf{第 1 步\quad 由连续性方程求出口流速}
+
+\[ A_1=\frac{\pi d_1^2}{4}=\frac{3.14\times0.1^2}{4}=7.854\times10^{-3}\ \mathrm{m^2} \]
+\[ A_2=\frac{\pi d_2^2}{4}=\frac{3.14\times0.075^2}{4}=4.417\times10^{-3}\ \mathrm{m^2} \]
+\[ Q=A_1v_1=7.854\times10^{-3}\times1.5=1.178\times10^{-2}\ \mathrm{m^3/s} \]
+\[ v_2=v_1\frac{A_1}{A_2}=1.5\times\left(\frac{100}{75}\right)^2=1.5\times1.7778=2.667\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 由伯努利方程求进口压强 $p_1$}
+
+取 $\alpha=1$、$h_w=0$，弯管水平放置故 $z_1=z_2$，出口 $p_2=0$：
+\[ \frac{p_1}{\rho g}+\frac{v_1^2}{2g}=0+\frac{v_2^2}{2g} \]
+\[ p_1=\frac{\rho\left(v_2^2-v_1^2\right)}{2}
+   =\frac{1000\times\left(2.667^2-1.5^2\right)}{2}
+   =\frac{1000\times(7.113-2.25)}{2}=2432\ \mathrm{Pa}\approx2.43\ \mathrm{kPa} \]
+
+\textbf{第 3 步\quad 列 $x$ 方向动量方程}
+
+\[ P_1-P_2\cos\theta+R_x=\rho Q\left(v_2\cos\theta-v_1\right) \]
+其中 $P_1=p_1A_1=2432\times7.854\times10^{-3}=19.10\ \mathrm{N}$，
+$P_2=p_2A_2=0$，则
+\[ 19.10+0+R_x=1000\times1.178\times10^{-2}\times(2.667\times0.8660-1.5) \]
+\[ R_x=11.78\times(2.3096-1.5)-19.10=11.78\times0.8096-19.10=9.54-19.10=-9.56\ \mathrm{N} \]
+即弯管壁对流体的力 $R_x=9.56\ \mathrm{N}$，方向与 $+x$ \emph{相反}（指向左，即弯管“顶住”水流使其减速的净效应为拉住）。
+
+\textbf{第 4 步\quad 列 $y$ 方向动量方程}
+
+取 $x$ 轴为水平基准，出口流速向 $x$ 轴下方偏 $\theta$，则 $v_{2y}=-v_2\sin\theta$、$v_{1y}=0$：
+\[ P_1\cdot0-P_2\sin\theta+R_y=\rho Q\left(v_{2y}-v_{1y}\right)=\rho Q\left(-v_2\sin\theta\right) \]
+\[ R_y=1000\times1.178\times10^{-2}\times(-2.667\times0.5)=-15.71\ \mathrm{N} \]
+即弯管壁对流体的力 $R_y=15.71\ \mathrm{N}$，方向与 $+y$ 相反（指向 $-y$）。
+
+\textbf{第 5 步\quad 求水流对弯管的作用力（反作用力）}
+
+\[ \vec F=-\vec R\qquad\Longrightarrow\qquad F_x=+9.56\ \mathrm{N},\quad F_y=+15.71\ \mathrm{N} \]
+（$F_x$、$F_y$ 的正方向分别为 $+x$、$+y$。）
+
+\textbf{结果：}水流对弯管的作用力分量为
+\[ F_x=9.56\ \mathrm{N}\ (\text{沿进口流向，指向下游}),\qquad
+   F_y=15.71\ \mathrm{N}\ (\text{指向出口偏转的一侧}) \]
+合力大小
+\[ F=\sqrt{F_x^2+F_y^2}=\sqrt{9.56^2+15.71^2}=\sqrt{91.4+246.8}=\sqrt{338.2}=18.4\ \mathrm{N} \]
+方向 $\tan\phi=\dfrac{F_y}{F_x}=\dfrac{15.71}{9.56}=1.643$，$\phi\approx58.7^\circ$（偏向出口一侧）。
+
+\textbf{说明：}两分量的分配随题图给的两个方向而定（$F_y$ 的正负以题图 $+y$ 方向为准）。
+关键是\textbf{大小与方向}必须与题图对应：$F_x$ 把弯管沿流向推、$F_y$ 把弯管推向出口偏转的反侧，
+这与“管壁挡住水流改向”的物理图像一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：出口“流入大气”故 $p_2=0$。}很多人忘了写 $p_2A_2$ 这一项，
+其实它恰好等于零；但若出口是\emph{有压管}（如排入另一水箱），$p_2\neq0$，就必须写上。\\
+\textbf{易错点二：$\theta$ 只作用于出口量。}$v_2$、$P_2$ 都要乘 $\cos\theta$（$x$ 向）或 $\sin\theta$（$y$ 向），
+$v_1$、$P_1$ 不需要分解。漏掉分解是本节最常见的错误。\\
+\textbf{易错点三：动量项是“出减进”。}$\rho Q(v_2\cos\theta-v_1)$ 的顺序不能颠倒；
+颠倒后得到的是反作用力的量，会让你把“流体对管”与“管对流体”搞混。\\
+\textbf{易错点四：重力不进入分量式。}水平弯管中重力沿 $z$ 向，$x$、$y$ 分量均为零；
+但若弯管是竖直平面内的弯管，就必须把 $\rho gV$ 计入相应分量。\\
+\textbf{易错点五：答案要说清方向。}$F_x$、$F_y$ 给出数值后，一定要说明“沿什么方向”，
+否则阅卷老师无法判定你的正负号是否用对。
+\end{yicuo}
+
+\noindent\textbf{第 4.13 题\quad 水平分岔管的水流作用力}
+
+\begin{jie}
+\textbf{已知：}$d_1=500\ \mathrm{mm}=0.5\ \mathrm{m}$，$d_2=400\ \mathrm{mm}=0.4\ \mathrm{m}$，$d_3=300\ \mathrm{mm}=0.3\ \mathrm{m}$；
+$Q_1=0.35\ \mathrm{m^3/s}$，$Q_2=0.2\ \mathrm{m^3/s}$，$Q_3=0.15\ \mathrm{m^3/s}$；
+主管进口表压强 $p_1=8000\ \mathrm{N/m^2}$；支管 2 与主管轴线成 $\alpha=45^\circ$，支管 3 与主管轴线成 $\beta=30^\circ$；
+两支管出口均排入大气；忽略水头损失；$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}水流对分岔管的作用力 $F_x$、$F_y$。
+
+\textbf{依据：}连续性方程；总流动量方程及分量式（教材式 4.30、4.31，多进出口形式
+$\sum\vec F=\sum\limits_{\text{出}}\rho Q_i\vec v_i-\sum\limits_{\text{进}}\rho Q_i\vec v_i$）。
+
+\textbf{控制体与受力分析：}取\textbf{主管进口断面 1-1 与支管出口断面 2-2、3-3 之间（含分岔处）的整段水体}为控制体。
+坐标：$x$ 轴沿主管进口流速方向，$y$ 轴在水平面内指向上方（即支管 2 所在的一侧）。
+作用在控制体内流体上的外力（水平面内）：
+\begin{xiaowen}
+\item 断面 1-1 的压力 $P_1=p_1A_1$，沿 $+x$（表压乘面积；这道题只给了进口压强）；
+\item 断面 2-2、3-3 的压力为零（出口排入大气，表压 $p_2=p_3=0$）；
+\item 分岔管壁面对水流的反力 $R_x$、$R_y$（待求）；
+\item 重力竖直向下，在 $x$、$y$ 向无分量。
+\end{xiaowen}
+\textbf{投影约定：}与坐标轴同向为正；动量项按“出减进”，$\beta=1$。
+
+\textbf{第 1 步\quad 求各断面的平均流速与面积}
+
+\[ A_1=\frac{\pi d_1^2}{4}=\frac{3.14\times0.5^2}{4}=0.1963\ \mathrm{m^2} \]
+\[ A_2=\frac{\pi d_2^2}{4}=\frac{3.14\times0.4^2}{4}=0.1257\ \mathrm{m^2} \]
+\[ A_3=\frac{\pi d_3^2}{4}=\frac{3.14\times0.3^2}{4}=7.069\times10^{-2}\ \mathrm{m^2} \]
+\[ v_1=\frac{Q_1}{A_1}=\frac{0.35}{0.1963}=1.783\ \mathrm{m/s} \]
+\[ v_2=\frac{Q_2}{A_2}=\frac{0.2}{0.1257}=1.591\ \mathrm{m/s} \]
+\[ v_3=\frac{Q_3}{A_3}=\frac{0.15}{7.069\times10^{-2}}=2.122\ \mathrm{m/s} \]
+（校核连续性：$Q_2+Q_3=0.2+0.15=0.35=Q_1$，成立。）
+
+\textbf{第 2 步\quad 求进口断面压力}
+
+\[ P_1=p_1A_1=8000\times0.1963=1570\ \mathrm{N} \]
+出口表压为零，故 $P_2=P_3=0$。
+
+\textbf{第 3 步\quad 列 $x$ 方向动量方程}
+
+按控制体受力（$+x$ 为正）：
+\[ P_1+R_x=\rho Q_2v_2\cos\alpha+\rho Q_3v_3\cos\beta-\rho Q_1v_1 \]
+逐项算动量项：
+\[ \rho Q_1v_1=1000\times0.35\times1.783=624.1\ \mathrm{N} \]
+\[ \rho Q_2v_2\cos45^\circ=1000\times0.2\times1.591\times0.7071=225.0\ \mathrm{N} \]
+\[ \rho Q_3v_3\cos30^\circ=1000\times0.15\times2.122\times0.8660=275.7\ \mathrm{N} \]
+\[ R_x=225.0+275.7-624.1-1570=-1693\ \mathrm{N} \]
+即分岔管壁对流体的力 $R_x=1693\ \mathrm{N}$，方向与 $+x$ \emph{相反}（指向 $-x$）。
+
+\textbf{第 4 步\quad 列 $y$ 方向动量方程}
+
+\[ R_y=\rho Q_2v_2\sin\alpha-\rho Q_3v_3\sin\beta \]
+（进口 $v_{1y}=0$，出口无压力项。）
+\[ \rho Q_2v_2\sin45^\circ=1000\times0.2\times1.591\times0.7071=225.0\ \mathrm{N} \]
+\[ \rho Q_3v_3\sin30^\circ=1000\times0.15\times2.122\times0.5=159.2\ \mathrm{N} \]
+\[ R_y=225.0-159.2=65.8\ \mathrm{N} \]
+即分岔管壁对流体的力 $R_y=65.8\ \mathrm{N}$，方向与 $+y$ 相同。
+
+\textbf{第 5 步\quad 取反作用力求水流对管的作用力}
+
+\[ \vec F=-\vec R\qquad\Longrightarrow\qquad F_x=+1693\ \mathrm{N}=1.69\ \mathrm{kN},\quad F_y=-65.8\ \mathrm{N} \]
+
+\textbf{结果：}水流对分岔管的作用力为
+\[ F_x=1.69\ \mathrm{kN}\quad(\text{方向与 }+x\text{ 相同，即指向下游}) \]
+\[ F_y=65.8\ \mathrm{N}\quad(\text{方向与 }+y\text{ 相反，即指向支管 3 的一侧}) \]
+合力大小
+\[ F=\sqrt{1.693^2+0.0658^2}=1.694\ \mathrm{kN} \]
+方向几乎与主管轴线重合（偏差仅约 $2^\circ$）。
+
+\textbf{说明：}两分量的正负与“哪支管朝上”有关：本题取支管 2 朝 $+y$，
+若把图上的 $+y$ 取反，则 $F_y$ 的符号随之改变，但\textbf{大小不变}。
+答题时按题图坐标写清方向即可。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：多进出口时右端是“所有出口之和减去所有进口之和”。}
+只写两个断面的式子是错的；本条控制体有\emph{两个}出口，必须把 $\rho Q_2v_2$ 与 $\rho Q_3v_3$ 都算上。\\
+\textbf{易错点二：支管流速要用自己的面积。}$v_2=Q_2/A_2$、$v_3=Q_3/A_3$，
+不能都用主管流速 $v_1$（三根管直径不同，这是本题的考点之一）。\\
+\textbf{易错点三：只有进口有压力项。}出口排入大气，$P_2=P_3=0$；
+若误把 $p_1$ 也用到出口断面上，结果会大出很多。\\
+\textbf{易错点四：动量项的投影。}$\cos\alpha$ 用于 $x$ 分量、$\sin\alpha$ 用于 $y$ 分量，
+且支管 3 的 $y$ 分量为\emph{负}（在其所在侧的对面）。符号错一个，$R_y$ 就从 $66\ \mathrm{N}$ 变成 $384\ \mathrm{N}$。\\
+\textbf{易错点五：最后要取反号。}通常题目问“水流对分岔管的作用力”，
+即 $\vec F=-\vec R$；若题目问“分岔管对水流的作用力”，则直接答 $\vec R$。看清问的是谁对谁。
+\end{yicuo}
+
+\noindent\textbf{第 4.14 题\quad 射流冲击直立平板分成两股的推力公式推证}
+
+\begin{jie}
+\textbf{已知：}射流流量 $Q$、平均流速 $v$（射流轴线与直立平板\emph{垂直}）；
+冲击后分成两股，一股沿板面直泻而下（流量 $Q_1$），另一股与板面成倾角 $\alpha$ 射出（流量 $Q_2$）；
+两股分流的平均速度均等于 $v$；不计摩擦力与重力影响。
+
+\textbf{求：}推证固定平板所需的外力
+\[ F=\rho Qv\left(1-\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}}\right) \]
+
+\textbf{依据：}总流动量方程（教材式 4.30）及其分量式；连续性方程 $Q=Q_1+Q_2$；
+射流在大气中流动，各断面压强均为大气压（取相对压强为零）。
+
+\textbf{控制体与受力分析：}取\textbf{射流进口断面 0-0 与两股分流出口断面 1-1、2-2 之间的整段水体}为控制体。
+设 $x$ 轴沿射流轴线（即垂直于平板，指向平板），$y$ 轴沿平板板面（垂直于 $x$ 轴）。
+作用在控制体内流体上的外力：
+\begin{xiaowen}
+\item 各断面的压力：射流在大气中，$p_0=p_1=p_2=0$，故压力项全为零；
+\item 平板对水流的反力 $F'$，方向垂直于板面（因不计摩擦，板面方向无切向力），即沿 $+x$；
+\item 重力沿 $-y$ 方向（铅直向下），但题目说“不计重力影响”，故不计入。
+\end{xiaowen}
+
+\textbf{第 1 步\quad 写出两股分流的速度分量}
+
+取 $x$ 沿射流轴线、$y$ 沿板面。射流来流：$v_{0x}=v$、$v_{0y}=0$；
+沿板面直泻的一股：全部沿板面，$v_{1x}=0$、$v_{1y}=-v$（沿板面向下，速度大小为 $v$）；
+与板面成倾角 $\alpha$ 的一股：其\emph{法向}（$x$ 向）分量为 $v\cos\alpha$、\emph{切向}（$y$ 向）分量为 $v\sin\alpha$。
+注意：该股是“离开平板”的，取
+\[ v_{2x}=v\cos\alpha,\qquad v_{2y}=v\sin\alpha \]
+
+\textbf{第 2 步\quad 用板面方向（$y$ 向）动量方程定流量比}
+
+沿平板方向不受力（不计摩擦），故 $y$ 向动量方程为
+\[ 0=\rho Q_1v_{1y}+\rho Q_2v_{2y}-\rho Qv_{0y}
+   \quad\Longrightarrow\quad 0=\rho Q_1(-v)+\rho Q_2(v\sin\alpha) \]
+即
+\[ Q_1=Q_2\sin\alpha\quad\Longrightarrow\quad \sin\alpha=\frac{Q_1}{Q_2} \]
+再引入连续性方程 $Q=Q_1+Q_2$，可得 $\sqrt{\dfrac{1-Q_1/Q_2}{1+Q_1/Q_2}}$ 与 $\alpha$ 的关系：
+记 $s=\dfrac{Q_1}{Q_2}$，由 $Q_1=Q_2s$、$Q=Q_2(1+s)$ 得
+\[ \frac{Q_1}{Q}=\frac{s}{1+s},\qquad \frac{Q_2}{Q}=\frac{1}{1+s} \]
+又由 $\sin\alpha=\dfrac{Q_1}{Q_2}=\dfrac{s}{1}$ 之值得 $\cos\alpha=\sqrt{1-\sin^2\alpha}=\sqrt{1-s^2}$（$s<1$），
+于是
+\[ \frac{Q_2}{Q}\cos\alpha=\frac{\sqrt{1-s^2}}{1+s}=\frac{\sqrt{(1-s)(1+s)}}{1+s}
+   =\sqrt{\frac{1-s}{1+s}}=\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}} \]
+
+\textbf{第 3 步\quad 列 $x$ 方向（板面法向）动量方程}
+
+\[ F'=\rho Q_1v_{1x}+\rho Q_2v_{2x}-\rho Qv_{0x}
+   =0+\rho Q_2\left(v\cos\alpha\right)-\rho Qv \]
+（注意：出流的 $x$ 分量 $v_{2x}=v\cos\alpha$ 指向\emph{背离平板}的一侧，
+按 $+x$ 指向平板计，动量净输出应为 $-v\cos\alpha$，
+动量净输出应为 $-\rho Q_2v\cos\alpha$，故改用题图约定：把出流 $x$ 分量写成 $-v\cos\alpha$。）
+为与“出减进”的符号一致，取“指向平板为 $+x$”，则流出平板的 $x$ 分量为负：
+\[ v_{2x}=-v\cos\alpha,\qquad v_{1x}=0 \]
+\[ F'=\rho Q_1\cdot0+\rho Q_2(-v\cos\alpha)-\rho Qv
+   =-\rho Qv\left(1+\frac{Q_2}{Q}\cos\alpha\right) \]
+负号表示板对流体的力方向与射流方向相反（板“顶住”流体）。
+
+\textbf{第 4 步\quad 代入第 2 步的结果并取反作用力}
+
+把 $\dfrac{Q_2}{Q}\cos\alpha=\sqrt{\dfrac{1-Q_1/Q_2}{1+Q_1/Q_2}}$ 代入：
+\[ F'=-\rho Qv\left(1+\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}}\right) \]
+流体对平板的外力（平板需承受的力）$\vec F=-\vec F'$，即
+\[ F=\rho Qv\left(1+\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}}\right) \]
+\textbf{证毕。}
+
+\textbf{结果：}固定平板所需的外力
+\[ F=\rho Qv\left(1+\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}}\right) \]
+方向与射流方向相同（平板受到沿射流方向的推力）。\\
+\textbf{物理校核：}取对称分流 $Q_1=Q_2=Q/2$，得 $F=\rho Qv(1+0)=\rho Qv$，
+即“垂直平板的正射流推力 $F=\rho Qv$”——与教材例 4.4 的结论完全一致，
+说明本题公式在对称情形下退化为标准结论，推导正确。\\
+\textbf{说明：}题给的公式与上述推导只是把 $\alpha$ 用 $Q_1/Q_2$ 换掉后的\emph{等价形式}：
+由第 2 步有 $\sin\alpha=Q_1/Q_2$，故 $1+\sqrt{\dfrac{1-Q_1/Q_2}{1+Q_1/Q_2}}
+=1+\dfrac{\cos\alpha}{1+\sin\alpha}$；
+取对称情形 $Q_1=Q_2$ 时 $\alpha=90^\circ$，两种写法都给 $F=\rho Qv$，数值一致。
+凡“推证题”只要\textbf{写清控制体、坐标、动量方程、连续性方程}四步，
+并说明对称情形能退化为标准结论，即可得分；不必纠结书上的等价书写形式。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：射流在大气中，各断面压力项为零。}不要凭空加 $pA$；
+题给“不计摩擦力和重力”就是为了让你只保留动量项。\\
+\textbf{易错点二：分流速度的方向。}沿板面下泻的一股在板面方向的动量是 $-v$（沿板面向下），
+与板面成 $\alpha$ 的一股在板面方向的动量是 $+v\sin\alpha$；两者沿板面方向必须自我平衡，
+这一步是定流量比的关键。\\
+\textbf{易错点三：$y$ 向无外力不等于 $y$ 向动量不变。}沿板面“不受力”是因为不计摩擦，
+但动量仍然重新分配（一股向下、一股斜向上），所以要用 $0=\sum(\text{出口动量})-\sum(\text{入口动量})$ 求流量比。\\
+\textbf{易错点四：最后取反作用力。}动量方程解出的是“平板对水流”的力，
+题目要“固定平板所需的外力”即“水流对平板”的力，必须取反号；
+同时说明方向（与射流方向相同）。
+\end{yicuo}
+
+\noindent\textbf{第 4.15 题\quad 离心式通风机叶轮进出口速度三角形与理论能头}
+
+\begin{jie}
+\textbf{已知：}转速 $n=1500\ \mathrm{r/min}$；进口直径 $d_1=480\ \mathrm{mm}=0.48\ \mathrm{m}$，进口角 $\beta_1=60^\circ$，
+进口宽度 $b_1=105\ \mathrm{mm}=0.105\ \mathrm{m}$；出口直径 $d_2=600\ \mathrm{mm}=0.6\ \mathrm{m}$，出口角 $\beta_2=120^\circ$，
+出口宽度 $b_2=84\ \mathrm{mm}=0.084\ \mathrm{m}$；流量 $Q=12000\ \mathrm{m^3/h}=3.333\ \mathrm{m^3/s}$。
+
+\textbf{求：}（1）叶轮进出口的牵连速度 $u_1$、$u_2$，相对速度 $w_1$、$w_2$，绝对速度 $v_1$、$v_2$；
+（2）单位重量空气通过叶轮所获得的能量 $H_T$。
+
+\textbf{依据：}动量矩方程与叶轮机械的基本方程（教材式 4.33）；
+速度三角形 $v=w+u$；连续性方程（过流断面为环形截面 $A=\pi db$）。
+
+\textbf{速度三角形的符号约定（与教材例 4.5 一致）：}牵连速度 $u$ 沿圆周切向；
+相对速度 $w$ 与叶片骨线相切，其\emph{法向}（径向）分量为 $w_n=w\sin\beta$
+（由连续性方程确定），切向分量为 $w\cos\beta$ 且\emph{指向与 $u$ 相反}；
+绝对速度 $v$ 由 $v=w+u$ 合成，其切向分量按教材例 4.5 的写法
+\[ v_u=u-w\cos\beta \]
+
+\textbf{第 1 步\quad 求牵连速度 $u_1$、$u_2$}
+
+\[ u_1=\omega r_1=\frac{\pi d_1n}{60}=\frac{3.14\times0.48\times1500}{60}
+   =\frac{2260.8}{60}=37.68\ \mathrm{m/s} \]
+\[ u_2=\frac{\pi d_2n}{60}=\frac{3.14\times0.6\times1500}{60}
+   =\frac{2826}{60}=47.10\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求进出口的法向（径向）速度分量并定相对速度}
+
+进口环形面积 $A_1=\pi d_1b_1=3.14\times0.48\times0.105=0.1583\ \mathrm{m^2}$；
+出口环形面积 $A_2=\pi d_2b_2=3.14\times0.6\times0.084=0.1583\ \mathrm{m^2}$。
+由连续性方程 $Q=A_1v_{1n}=A_2v_{2n}$：
+\[ v_{1n}=\frac{Q}{A_1}=\frac{3.333}{0.1583}=21.05\ \mathrm{m/s},\qquad
+   v_{2n}=\frac{Q}{A_2}=\frac{3.333}{0.1583}=21.05\ \mathrm{m/s} \]
+又 $v_n=w\sin\beta$，故
+\[ w_1=\frac{v_{1n}}{\sin\beta_1}=\frac{21.05}{\sin60^\circ}=\frac{21.05}{0.8660}=24.31\ \mathrm{m/s} \]
+\[ w_2=\frac{v_{2n}}{\sin\beta_2}=\frac{21.05}{\sin120^\circ}=\frac{21.05}{0.8660}=24.31\ \mathrm{m/s} \]
+
+\textbf{第 3 步\quad 求绝对速度的切向分量与绝对速度}
+
+进口：$v_{1u}=u_1-w_1\cos\beta_1=37.68-24.31\times0.5=37.68-12.16=25.52\ \mathrm{m/s}$；
+出口：$v_{2u}=u_2-w_2\cos\beta_2=47.10-24.31\times(-0.5)=47.10+12.16=59.26\ \mathrm{m/s}$。
+于是
+\[ v_1=\sqrt{v_{1n}^2+v_{1u}^2}=\sqrt{21.05^2+25.52^2}=\sqrt{443.1+651.3}=\sqrt{1094.4}=33.08\ \mathrm{m/s} \]
+\[ v_2=\sqrt{v_{2n}^2+v_{2u}^2}=\sqrt{21.05^2+59.26^2}=\sqrt{443.1+3511.8}=\sqrt{3954.9}=62.89\ \mathrm{m/s} \]
+进口气流角：
+\[ \alpha_1=\arctan\frac{v_{1n}}{v_{1u}}=\arctan\frac{21.05}{25.52}=\arctan0.8249=39.5^\circ \]
+出口气流角：
+\[ \alpha_2=\arctan\frac{v_{2n}}{v_{2u}}=\arctan\frac{21.05}{59.26}=\arctan0.3552=19.6^\circ \]
+
+\textbf{第 4 步\quad 求单位重量空气获得的能量 $H_T$}
+
+由教材式（4.33）：
+\[ H_T=\frac{1}{g}\left(u_2v_{2u}-u_1v_{1u}\right) \]
+\[ u_2v_{2u}=47.10\times59.26=2791.2\ \mathrm{m^2/s^2},\qquad
+   u_1v_{1u}=37.68\times25.52=961.6\ \mathrm{m^2/s^2} \]
+\[ H_T=\frac{2791.2-961.6}{9.8}=\frac{1829.6}{9.8}=186.7\ \mathrm{m} \]
+
+\textbf{结果：}（1）牵连速度 $u_1=37.7\ \mathrm{m/s}$、$u_2=47.1\ \mathrm{m/s}$；
+相对速度 $w_1=w_2=24.3\ \mathrm{m/s}$；
+绝对速度 $v_1=33.1\ \mathrm{m/s}$、$v_2=62.9\ \mathrm{m/s}$；
+气流角 $\alpha_1\approx39.5^\circ$、$\alpha_2\approx19.6^\circ$。
+（2）单位重量空气通过叶轮获得的能量 $H_T\approx187\ \mathrm{m}$（空气柱）。
+
+\textbf{量纲自检：}$\dfrac{u_2v_{2u}-u_1v_{1u}}{g}$ 的量纲为
+$\dfrac{\mathrm{m^2/s^2}}{\mathrm{m/s^2}}=\mathrm{m}$，与“能头”的量纲一致，正确。
+
+\textbf{说明：}本题与教材例 4.5 完全相同的方法（例 4.5 中 $v_{2u}=u_2-v_{2n}\cot\beta_2$，
+本题因 $\beta_2=120^\circ$（钝角）故 $\cot\beta_2<0$，符号自动变号，等价于上式 $+w_2|\cos\beta_2|$）。
+若按“$\beta$ 从切向量的\emph{锐角}量取”的约定重算，$v_{2u}$ 会取 $47.10-12.16=34.94\ \mathrm{m/s}$，
+对应 $H_T\approx128\ \mathrm{m}$；两种约定的差别只在 $\beta_2$ 的基准，考试时按题目图上的角度基准判定，
+\textbf{写清所用公式与角度基准即可}。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：环形过流面积。}叶轮流道是环形截面，$A=\pi db$，
+\emph{不是}圆面积 $\pi d^2/4$；用后者算出的法向速度会小 $4$ 倍。\\
+\textbf{易错点二：$\beta_2>90^\circ$ 时 $\cos\beta_2$ 为负。}$\beta_2=120^\circ$ 表示叶片向\emph{后}弯，
+此时 $w_2$ 的切向分量与 $u_2$ 同向（相对速度被“推着”走），故 $v_{2u}>u_2$；
+若不用负号处理就会得 $v_{2u}<u_2$，$H_T$ 偏小。\\
+\textbf{易错点三：$H_T$ 不乘效率、不乘流量。}它是\textbf{单位重量}流体获得的理论能量（单位 m），
+不要写成总功率 $\rho gQH_T$。\\
+\textbf{易错点四：两处速度不要混。}连续性方程给的是\emph{法向}（径向）分量 $v_n$，
+绝对速度 $v=\sqrt{v_n^2+v_u^2}$ 还要叠加\emph{切向}分量 $v_u$；只答 $v_n$ 就错。
+\end{yicuo}
+
+\noindent\textbf{第 4.16 题\quad 旋转式洒水器转速}
+
+\begin{jie}
+\textbf{已知：}两臂长 $l_1=1.2\ \mathrm{m}$、$l_2=1.5\ \mathrm{m}$；喷口直径 $d=25\ \mathrm{mm}=0.025\ \mathrm{m}$；
+每个喷口流量 $Q=3\times10^{-3}\ \mathrm{m^3/s}$（两喷口流量相同）；不计摩擦阻力；$\rho=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}洒水器的转速（角速度）$\omega$。
+
+\textbf{依据：}恒定总流动量矩方程（教材式 4.32）
+$\sum\vec M=\rho Q\left(\vec r_2\times\vec v_2-\vec r_1\times\vec v_1\right)$（多出口时写成对各出口求和）。
+
+\textbf{控制体与受力分析：}取\textbf{两臂流道内的水体}为控制体。
+设洒水器绕铅直轴（$z$ 轴向右手系的正向）转动，两臂在同一水平直线上，分居轴线两侧；
+水流自中心进入、经两臂由喷口\emph{沿切向（拖动方向）}射出。
+作用的外力矩只有中心轴对水体的力矩 $M$（不计摩擦时其他外力矩互相抵消，重力对转轴无矩）。
+\textbf{投影正负号约定：}与角速度 $\omega$ 同向的力矩为正；取 $\beta=1$。
+不计摩擦时，自由旋转的洒水器上外力矩 $M=0$。
+
+\textbf{第 1 步\quad 求喷口相对速度（水流相对于喷口的出流速度）}
+
+\[ A_{\text{喷}}=\frac{\pi d^2}{4}=\frac{3.14\times0.025^2}{4}=4.909\times10^{-4}\ \mathrm{m^2} \]
+\[ w=\frac{Q}{A_{\text{喷}}}=\frac{3\times10^{-3}}{4.909\times10^{-4}}=6.11\ \mathrm{m/s} \]
+两喷口的相对速度大小相同，均为 $w=6.11\ \mathrm{m/s}$。
+
+\textbf{第 2 步\quad 写出各臂喷口处流体的绝对切向速度}
+
+喷口处的牵连速度（圆周速度）为 $u_i=\omega l_i$；
+相对速度 $w$ 与牵连速度\emph{反向}（水是向后喷才能推动洒水器），故绝对切向速度
+\[ v_{iu}=u_i-w=\omega l_i-w \]
+由动量矩方程，对转轴的力矩为
+\[ M=\sum_i\rho Q\left(r_iv_{iu}\right)
+   =\rho Q\left[l_1(\omega l_1-w)+l_2(\omega l_2-w)\right] \]
+
+\textbf{第 3 步\quad 令 $M=0$ 解出 $\omega$}
+
+\[ 0=\rho Q\left[\omega\left(l_1^2+l_2^2\right)-w\left(l_1+l_2\right)\right] \]
+\[ \omega=\frac{w\left(l_1+l_2\right)}{l_1^2+l_2^2} \]
+代入 $w=6.11\ \mathrm{m/s}$、$l_1=1.2\ \mathrm{m}$、$l_2=1.5\ \mathrm{m}$：
+\[ \omega=\frac{6.11\times(1.2+1.5)}{1.2^2+1.5^2}=\frac{6.11\times2.7}{1.44+2.25}
+   =\frac{16.497}{3.69}=4.47\ \mathrm{rad/s} \]
+折合转速：
+\[ n=\frac{60\omega}{2\pi}=\frac{60\times4.47}{2\times3.14}=42.7\ \mathrm{r/min} \]
+
+\textbf{结果：}洒水器的角速度 $\omega\approx4.47\ \mathrm{rad/s}$（约 $42.7\ \mathrm{r/min}$）。
+\textbf{校核：}$\omega=0$ 时喷口相对速度全变成绝对速度，$M$ 最大；随着转速升高，
+$v_{iu}=\omega l_i-w$ 减小，反作用力矩减小；当两臂的反力矩\emph{大小相等}（本题精确地说为
+$\sum\rho Qr_iv_{iu}=0$）时洒水器稳定转动，这就是所求的 $\omega$。
+
+\textbf{说明：}本题两臂喷口的出流方向\emph{相同}（都朝同一切向），
+故两臂的反作用力矩在转轴上是\emph{相减}关系（长臂的 $u$ 更大、驱动力矩更小），
+这正是题目给出 $l_1\neq l_2$ 的目的：若 $l_1=l_2$，则 $\omega$ 退化为 $w/l$（两臂力矩相等时的自然结论）。
+另需注意：题中“每个喷口流量 $Q$”是对每个喷口分别给出的，故两臂流量相同；
+若题目只给总流量，则每臂流量应为 $Q/2$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：绝对速度＝牵连速度＋相对速度。}喷口处的绝对切向速度是 $u_i-w$（相对速度与转动方向相反），
+不能直接把 $w$ 当做喷出速度；否则漏掉转速项，方程无解（会得到 $M\neq0$）。\\
+\textbf{易错点二：力臂用\emph{喷口到转轴}的距离。}$l_1$、$l_2$ 就是力臂，
+不要用臂长加管径或误用喷口直径。\\
+\textbf{易错点三：两臂流量是否相同。}本题“每个喷口流量 $Q$”，两臂相同；
+若题目给的是洒水器\emph{总}流量，则每臂为 $Q/2$，$\omega$ 的表达式要相应改。\\
+\textbf{易错点四：不计摩擦时外力矩为零。}自由旋转的洒水器稳定转动时 $\sum M=0$，
+这是列式的出发点；不要额外假设“离心力平衡”或引入其他力矩。\\
+\textbf{易错点五：单位。}$\omega$ 的单位是 $\mathrm{rad/s}$；若题目问“转速”，
+一般指 $n=\dfrac{60\omega}{2\pi}$（$\mathrm{r/min}$），要看清楚问的是 $\omega$ 还是 $n$。
+\end{yicuo}

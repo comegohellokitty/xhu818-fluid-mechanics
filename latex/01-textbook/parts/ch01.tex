@@ -1,0 +1,264 @@
+\chapter{绪论}
+
+\begin{yijubox}
+E1 \texttt{8-1考情分析.pptx} slide33：第一章绪论＝重点掌握基础概念。\\
+E2 \texttt{9-1考点分析.pptx}：第 1--3 章偏概念，掌握基本公式与解释即可。\\
+\textbf{本章结论}：不考大题，只在选择、填空、判断中出 1--3 题（约 3--9 分），
+全部是"定义 + 概念辨析"。复习策略＝把定义逐字记住，把易混概念对比表背下来。
+\end{yijubox}
+
+\section{流体力学的研究任务与研究方法}
+
+\begin{kaodian}{2}{流体力学的任务与三种研究方法}
+\textbf{是什么：}流体力学研究流体的\textbf{宏观平衡和运动规律}，以及流体与固体之间的相互作用。
+
+\textbf{三种研究方法（必背，考选择/填空）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+方法 & 做法 & 优缺点 \\
+\midrule
+理论分析 & 抓住主要因素建立模型 $\to$ 建立封闭方程组与边界/初始条件 $\to$ 解析求解 & 推导严谨、答案精确；但只适用于较简单的理论模型，复杂流动无能为力 \\
+实验研究 & 按相似原理设计模型，实测相似准则数，拟合准则方程式推广 & 更接近实际、结果可靠；但受测量精度与模型符合程度限制，有些流动无法实验 \\
+数值计算 & 确定数学模型 $\to$ 选计算方法 $\to$ 编程上机 $\to$ 分析结果 & 可解解析法不能解的问题，省时省钱；但依赖理论分析与实验提供模型，且难涵盖全部影响因素 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+三种方法相辅相成：理论指导实验与数值计算，实验检验理论、提供建模依据，数值计算弥补前两者的不足。
+
+\textbf{常考题型：}填空（"流体力学的研究方法有\rule{2cm}{0.4pt}、\rule{2cm}{0.4pt}、\rule{2cm}{0.4pt}三种"）；选择（问哪一种方法"答案精确"或"更接近实际"）。
+
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E1 slide33 只要求"基础概念"；E4 历年真题中未见独立成题}\quad\nandu{易}
+
+\begin{banfa}
+三方法优缺点用\textbf{六个字}记：理论"准而窄"，实验"真而难"，数值"广而依"。
+选择题问"哪种方法对复杂流动无能为力"$\to$理论分析；问"最接近实际"$\to$实验研究。
+\end{banfa}
+\end{kaodian}
+
+\section{连续介质模型}
+
+\begin{kaodian}{4}{连续介质假设}
+\textbf{是什么：}把流体看作由\textbf{连续分布的质点}组成的介质，其物理量（密度、速度、压强等）
+是空间坐标和时间的\textbf{连续函数}。
+
+\textbf{为什么引入：}真实流体由离散分子组成、分子间有空隙；但工程问题的特征尺度远大于分子平均自由程，
+因此可以"抹平"分子间隙，用连续函数和微积分来描述流体运动——这是整个流体力学数学工具的地基。
+
+\textbf{适用条件：}所研究问题的特征尺度远大于分子平均自由程（一般工程问题均满足）；
+高空稀薄气体、真空技术等不适用。
+
+\begin{zhenti}{2022 年 818 第 1 题}{单项选择题}
+连续介质假设意味着（\quad）。\\
+(A) 流体分子互相紧连\quad (B) 流体的物理量是连续函数\quad (C) 流体分子间有孔隙\quad (D) 流体不可压缩
+\end{zhenti}
+\noindent\textbf{答案：(B)。}连续介质假设的本质是"物理量连续"，不是"分子紧挨着"。
+
+\textbf{常考题型：}选择题（如上）、填空题（"连续介质假设认为流体是由\underline{\hspace{1.5cm}}组成的介质"）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2022 年 818 第 1 题直接考；E1 slide33"第一章＝重点掌握基础概念"}\quad\nandu{易}
+
+\begin{yicuo}
+把"连续介质"理解成"分子紧挨着、没有间隙"是\textbf{错}的。假设针对的是\emph{宏观物理量}的连续性，
+它并不否认分子的离散性；"(C) 流体分子间有孔隙"恰恰是事实，所以不能选。
+\end{yicuo}
+\end{kaodian}
+
+\section{流体的主要物理性质}
+
+\begin{kaodian}{3}{密度、比容与重度}
+\begin{gongshi}{密度的定义（式 1.1、1.2）}
+\[ \rho=\frac{m}{V}\qquad\qquad \rho_A=\lim_{\Delta V\to0}\frac{\Delta m}{\Delta V} \]
+\textbf{含义：}单位体积流体的质量。对非均质流体，取"包含 A 点的微元体积趋近于零"的极限，得到 A 点的\textbf{点密度}。\\
+\textbf{适用条件：}连续介质假设成立。常用值：水 $\rho=1000\ \mathrm{kg/m^3}$，水银 $\rho=13600\ \mathrm{kg/m^3}$。
+\end{gongshi}
+
+\begin{gongshi}{比容与重度（式 1.3、1.4）}
+\[ u=\frac{1}{\rho}\ \ (\mathrm{m^3/kg}),\qquad\qquad \gamma=\frac{G}{V}=\rho g\ \ (\mathrm{N/m^3}) \]
+\textbf{含义：}比容＝单位质量流体所占体积（密度的倒数）；重度＝单位体积流体的重量。\\
+\textbf{适用条件：}$g$ 取当地重力加速度，工程计算常取 $g=9.8\ \mathrm{m/s^2}$（个别题取 9.81）。
+\end{gongshi}
+
+\textbf{常考题型：}填空题小计算——"已知密度 $\rho=851\ \mathrm{kg/m^3}$，则重度 $\gamma=\underline{\quad}$、比容 $u=\underline{\quad}$"。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E4 2015 年试题填空第 1 题（由密度与运动黏度求重度与动力黏度）；E5 题库同类题}\quad\nandu{易}
+
+\begin{banfa}
+$\gamma=\rho g$ 一定要带 $g$，写成 $\gamma=\rho$ 就是单位（N/m³ vs kg/m³）没检查。
+填空题给 $\nu$ 求 $\mu$ 时用 $\mu=\nu\rho$；给 $\rho$ 求 $\nu$ 时用 $\nu=\mu/\rho$。
+\textbf{三步自检：}① 单位换算成国际单位；② 查表值是否与题给温度一致；③ 结果数量级是否合理（20 ℃ 水的 $\nu\approx1.0\times10^{-6}\ \mathrm{m^2/s}$）。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{流体的压缩性与膨胀性}
+\begin{gongshi}{体积压缩系数、体积弹性模量、体积膨胀系数（式 1.5--1.8）}
+\[ k=-\frac{1}{V}\frac{\dd V}{\dd p}\ \ (\mathrm{Pa^{-1}}),\qquad
+   K=\frac{1}{k}=\rho\frac{\dd p}{\dd\rho}\ \ (\mathrm{Pa}),\qquad
+   \alpha_V=\frac{1}{V}\frac{\dd V}{\dd T}\ \ (\mathrm{K^{-1}}) \]
+\textbf{含义：}$k$＝单位压强增量引起的体积相对减小量（右侧加负号是为了让它为正）；
+$K$＝$k$ 的倒数，$K$ 越大压缩性越小；$\alpha_V$＝单位温升引起的体积相对增大量。\\
+\textbf{适用条件：}$k$、$\alpha_V$ 都是"定温/定压"下定义的；三者都随流体种类、温度、压强变化。
+\end{gongshi}
+
+\textbf{结论（背）：}任何流体都是可压缩的，只是程度不同。
+\textbf{液体}在一般平衡与运动问题中压缩性可忽略、按不可压缩处理；
+但\textbf{水击}和\textbf{水中爆炸}问题中必须按可压缩流体处理。
+\textbf{低速气体}也可视为不可压缩流体。
+
+\textbf{常考题型：}选择/判断（"下列哪种情况必须考虑液体的压缩性"$\to$水击）；
+填空（"体积弹性模量越大，流体压缩性越\underline{\ \ 小\ }"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E5 题库选择题（工程概念题）；E6 教材 1.3.2 节为独立小节}\quad\nandu{易}
+
+\begin{yicuo}
+易错：把 $k$ 说成"压缩系数越大越难压缩"。恰恰相反——$k$ 越大越\textbf{容易}压缩；
+$K=1/k$ 越大才越\textbf{难}压缩。另一处：1.5 式的负号是"约定"，不是物理上体积会变大。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{5}{黏性——牛顿内摩擦定律、动力黏度与运动黏度}
+\textbf{是什么：}流体运动时，质点之间发生相对运动就会产生抵抗相对运动的\textbf{切向阻力}，
+这种性质叫黏性。黏性是流体产生阻力和能量损失的根源。
+
+\begin{gongshi}{牛顿内摩擦定律（式 1.9、1.10）}
+\[ T=\mu A\frac{\dd u}{\dd y},\qquad\qquad \tau=\frac{T}{A}=\mu\frac{\dd u}{\dd y} \]
+\textbf{含义：}内摩擦力 $T$ 与\textbf{速度法向梯度} $\dfrac{\dd u}{\dd y}$ 和\textbf{接触面积} $A$ 成正比，
+比例系数就是动力黏度 $\mu$；单位面积上的内摩擦力即为\textbf{切应力} $\tau$。\\
+\textbf{适用条件：}只适用于\textbf{牛顿流体}的\textbf{层流}（平行层状）运动；$\dfrac{\dd u}{\dd y}$ 必须按速度剖面的法向取。
+\end{gongshi}
+
+\begin{gongshi}{动力黏度与运动黏度（式 1.11）}
+\[ \mu\ \ (\mathrm{Pa\cdot s}),\qquad\qquad \nu=\frac{\mu}{\rho}\ \ (\mathrm{m^2/s}) \]
+\textbf{含义：}$\mu$ 反映流体内摩擦的强弱，直接出现在牛顿内摩擦定律里；
+$\nu=\mu/\rho$ 只是因为它在雷诺数等无量纲数中经常作为一个整体出现，才单独定义，\textbf{并不表示黏性大小}。\\
+\textbf{适用条件：}温度、压强一定。工程常用范围内黏度受压强影响小，\textbf{主要随温度变化}。
+\end{gongshi}
+
+\textbf{速度梯度的物理意义：}取矩形微元面，上下层速度差 $\dd u$，经 $\dd t$ 发生角变形，
+角变形速度 $\dfrac{\dd\theta}{\dd t}=\dfrac{\dd u}{\dd y}$——所以\textbf{速度梯度＝角变形速度}。
+
+\textbf{温度对黏度的影响（必考）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+流体 & 黏性来源 & 温度升高时 \\
+\midrule
+液体 & 分子间\textbf{内聚力}（分子间距小，内聚力强）为主 & 分子间距加大 $\to$ 内聚力减小 $\to$ 黏度\textbf{减小} \\
+气体 & 分子热运动的\textbf{动量交换}（内聚力可忽略）为主 & 热运动加剧 $\to$ 黏度\textbf{增大} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{zhenti}{2026 年真题回忆版}{简答题}
+概念题中出现"理想流体"；计算题第 1 题为\textbf{牛顿流体}（斜板上的静压强/切应力问题）。
+\end{zhenti}
+
+\textbf{常考题型：}选择（"汽油属于（牛顿/非牛顿）流体"、黏度随温度的变化方向）；
+填空（"运动黏度的量纲是\rule{2cm}{0.4pt}"$\to$ $\mathrm{L^2/T}$）；
+简答（黏性与流动性的关系）；计算（斜板间流体求 $\tau$ 或求 $\mu$）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2026 计算题第 1 题（牛顿流体）；E5 题库选择第 2 题"汽油＝牛顿流体"、问答题第 1 题"流动性与黏滞性"；E4 常以填空考 $\mu$、$\nu$ 计算；E1 slide16 填空考"名词定义"}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{①温度方向"水减气增"记法}：水（液体）越热越"稀"，空气越热越"稠"。\\
+\textbf{②$\nu$ 不表示黏性大小}：选项里出现"运动黏度越大黏性越大"一定是错的。
+$\nu=\mu/\rho$ 还随 $\rho$ 变，物理上没有"黏性"的绝对含义。\\
+\textbf{③斜板/平板类计算三步走}：(a) 求两板间距 $h$；(b) 速度线性分布时 $\dfrac{\dd u}{\dd y}=\dfrac{U}{h}$；
+(c) 代 $\tau=\mu U/h$ 或 $T=\mu A U/h$。注意题目给的是 \emph{动力}黏度还是 \emph{运动}黏度，给 $\nu$ 要先乘 $\rho$。\\
+\textbf{④量纲速判}：$\mu\to\mathrm{M/(L\cdot T)}$（即 $\mathrm{Pa\cdot s}$），$\nu\to\mathrm{L^2/T}$，$\tau\to\mathrm{Pa}$。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{牛顿流体、理想流体与非牛顿流体}
+\textbf{牛顿流体：}切应力与角变形速度（速度法向梯度）成\textbf{正比}，即遵守牛顿内摩擦定律的流体。
+水、空气、汽油等属牛顿流体。
+
+\textbf{非牛顿流体：}不遵守牛顿内摩擦定律，$\tau\sim\dfrac{\dd u}{\dd y}$ 关系不是过原点的直线。
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXl@{}}
+\toprule
+类型（教材图 1.2 中的线） & 特征 & 举例 \\
+\midrule
+理想宾汉流体（B 线） & 切应力需达到某一值才开始剪切变形，之后变形速度为常数 & 泥浆、血浆 \\
+伪塑性流体（C 线） & 黏度随角变形速度增大而\textbf{减小} & 尼龙、颜料、油漆 \\
+膨胀性流体（D 线） & 黏度随角变形速度增大而\textbf{增大} & 生面团、浓淀粉糊 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{理想流体：}不具黏性的流体，是现实中不存在的\textbf{假想流体}。
+引入目的是简化分析：当实际流体黏度小或所研究区域速度梯度小、黏滞力远小于其他力时可以忽略黏性；
+即使对黏性占主导的问题，也可先研究理想流体、再研究实际流体。
+
+\textbf{常考题型：}选择（判断某流体属哪一类；"理想流体是指（\quad）"）；
+判断（"理想流体是黏度很小的流体"$\to$ 错，是\emph{不具黏性}的假想流体）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E5 题库选择第 2 题（汽油＝牛顿流体）；E4 2026 回忆版简答涉及"理想流体"；E6 教材 1.3.3 节}\quad\nandu{易}
+
+\begin{yicuo}
+"理想流体＝黏度很小的流体"错；"理想流体＝不可压缩流体"也错。
+理想流体的\textbf{唯一}含义是"无黏性"；不可压缩是另一条独立假设，两者不能混为一谈。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{2}{液体的表面张力}
+\textbf{是什么：}液体自由表面上相邻部分之间的\textbf{拉力}，方向与液面相切、与两相邻部分的分界线垂直。
+
+\textbf{本质：}液面上分子受到液体内部分子的吸引与上方气体分子的吸引不平衡，合力垂直液面指向液体内部，
+使液体有尽量缩小表面的趋势，宏观上表现为表面拉力。
+
+\begin{gongshi}{表面张力系数}
+\[ \sigma=\frac{F}{L}\ \ (\mathrm{N/m}) \]
+\textbf{含义：}作用在单位长度上的表面张力。$\sigma$ 与液体性质、纯度、温度及接触介质有关。\\
+\textbf{适用条件：}表面张力\textbf{仅在液体自由表面存在}，液体内部没有，是一种\textbf{局部受力现象}；
+因其很小，一般对液体宏观运动不起作用，可以忽略。
+\end{gongshi}
+
+\textbf{常考题型：}选择/判断（表面张力存在于液体内部？$\to$ 错）；
+填空（表面张力系数的单位是 N/m）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E4 历年真题未独立成题；E6 教材 1.3.4 节}\quad\nandu{易}
+\end{kaodian}
+
+\section{作用在流体上的力}
+
+\begin{kaodian}{3}{质量力与表面力}
+\textbf{是什么：}作用在流体上的力按作用方式分为两类。
+
+\begin{gongshi}{质量力与表面力}
+\[ \bF_{\text{质量}} = m\bm{a}\ \ \text{（如重力、惯性力、离心力）},\qquad
+   \bF_{\text{表面}} = \text{压力} + \text{切应力（摩擦力）} \]
+\textbf{含义：}\textbf{质量力}（又称体积力）作用于流体块内\textbf{每一个质点}，大小与质量成正比，
+是\textbf{非接触力}；\textbf{表面力}作用于流体与流体（或流体与固体）的\textbf{接触面}上，
+大小与面积成正比，可分解为法向的\textbf{压力}与切向的\textbf{切应力}。\\
+\textbf{适用条件：}质量力是\emph{外}力且为非接触力；表面力必须通过接触面传递。
+\end{gongshi}
+
+\textbf{单位质量力：}把质量力除以质量，得单位质量力 $f=(f_x,f_y,f_z)$，其量纲与加速度相同。
+\textbf{有势的质量力：}若存在势函数 $W$ 使 $f_x=-\dfrac{\partial W}{\partial x}$（等号可整体变号），
+则称该质量力有势——重力就是有势力，$W=gz$。
+
+\textbf{常考题型：}选择（"体积力有势"的含义；下列哪种力是质量力）；
+填空（质量力的量纲、单位质量力的表达式）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E5 题库选择第 3 题（体积力有势）；E6 教材 1.4 节；质量力是流体平衡微分方程的直接输入（第 2 章）}\quad\nandu{易}
+
+\begin{banfa}
+判别口诀：\textbf{"接触的是表面力，不接触的是质量力"}。
+题目里"作用于流体块内每个质点上"$\to$质量力；"作用于接触面上"$\to$表面力。
+另外记：压力是表面力的\textbf{法向}分量，切应力是\textbf{切向}分量——
+第 2 章静力学中流体不能承受切应力，所以静止流体表面力只剩压力，这正是静压强特性的来源。
+\end{banfa}
+\end{kaodian}
+
+\section{本章小结}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lccX@{}}
+\toprule
+考点 & 重要度 & 难度 & 一句话抓住 \\
+\midrule
+研究任务与三种方法 & \xstarfull{2} & 易 & 理论准而窄 / 实验真而难 / 数值广而依 \\
+连续介质假设 & \xstarfull{4} & 易 & 物理量是连续函数（$\neq$分子紧挨着） \\
+密度、比容、重度 & \xstarfull{3} & 易 & $\gamma=\rho g$，$\mu=\nu\rho$ \\
+压缩性与膨胀性 & \xstarfull{3} & 易 & $K=1/k$；水击必须考虑液体压缩性 \\
+黏性与牛顿内摩擦定律 & \xstarfull{5} & 易 & $\tau=\mu\,\dd u/\dd y$；水减气增 \\
+牛顿/理想/非牛顿流体 & \xstarfull{4} & 易 & 理想流体＝\emph{无黏性}的假想流体 \\
+表面张力 & \xstarfull{2} & 易 & 只在自由表面，可忽略 \\
+质量力与表面力 & \xstarfull{3} & 易 & 接触＝表面力，不接触＝质量力 \\
+\bottomrule
+\end{tabularx}
+\end{center}

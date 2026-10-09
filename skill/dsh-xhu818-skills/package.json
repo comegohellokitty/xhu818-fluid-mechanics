@@ -1,0 +1,31 @@
+{
+  "name": "dsh-xhu818-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness skill pack: exam-prep-latex — turn scanned textbooks, past exam papers and question banks into a set of Chinese exam-prep LaTeX documents whose importance ratings are backed by traceable file-level evidence.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-skill",
+    "latex",
+    "exam-prep"
+  ],
+  "main": "lib/index.mjs",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

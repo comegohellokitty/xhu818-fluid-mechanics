@@ -1,0 +1,1152 @@
+\chapter*{第 6 章 相似理论与量纲分析}\addcontentsline{toc}{chapter}{第 6 章 相似理论与量纲分析}\markboth{第 6 章 相似理论与量纲分析}{}
+\anstitle{第 6 章 习题解答}
+
+\begin{tishi}
+本册解答由编者按教材正文公式与例题方法逐步推导而成（教材原书不附习题答案）。
+量纲分析题一律按「\textbf{列出全部物理量及其量纲 $\to$ 选基本量 $\to$ 组 $\pi$ 项 $\to$ 解指数 $\to$ 整理成准则形式}」
+五段写；相似换算题一律先写\textbf{比尺关系}再代数，并做\textbf{量纲与量级自检}。
+\end{tishi}
+
+\noindent\textbf{第 6.1 题\quad 相似准则的判别与比尺换算}
+
+\begin{jie}
+\textbf{1.\ 三准则的物理意义（做题的总钥匙）}
+\begin{xiaowen}
+\item 雷诺准则 $\Rey=\dfrac{\rho v d}{\mu}=\dfrac{v d}{\nu}$：表示\textbf{惯性力与黏滞力之比}。凡黏滞力起主导作用的流动，一律选它；
+\item 弗劳德准则 $\Fr=\dfrac{v^{2}}{gl}$：表示\textbf{惯性力与重力之比}。凡重力起主导作用、有自由液面的流动，一律选它；
+\item 欧拉准则 $\Eu=\dfrac{p}{\rho v^{2}}$：表示\textbf{压力与惯性力之比}。$\Eu$ 中含待求的压强差，作非定性准则，由定性准则算出后反求压强；
+\item 柯西准则 $\mathrm{Ca}=\dfrac{\rho v^{2}}{K}$：表示\textbf{惯性力与弹性力之比}（$K$ 为体积弹性模量），用于可压缩流与水击。
+\end{xiaowen}
+
+\textbf{2.\ 第（1）小题\quad 有压管流}
+\[ \textbf{答：（A）雷诺准则} \]
+\textbf{依据：}有压管流中流体的黏滞力起主导作用（教材原话：「有压管流、潜体绕流以及流体机械、
+液压技术中的流动，黏滞力起主要作用，应按雷诺数相似准则设计模型」，书 p105）。与 2014 选择 10、
+2022 单选/填空 9「设计管道阀门实验首先要满足的相似准则是雷诺相似准则」口径一致。
+
+\textbf{3.\ 第（2）小题\quad 明渠水流}
+\[ \textbf{答：（B）弗劳德准则} \]
+\textbf{依据：}明渠流有\textbf{自由液面}，水面波动受重力控制（教材原话：「堰顶溢流、闸孔出流、明渠流动、
+自然界中的江、河、溪流等，重力起主要作用，应按弗劳德数相似准则设计模型」）。与 2021 简答 3
+「有压管流和明渠流动分别应选择哪个相似准则」对应。
+
+\textbf{4.\ 第（3）小题\quad 压力输水管（同种流体、长度比 $4$）的流量比}
+\[ \textbf{答：（C）$8$} \]
+
+\textbf{第 1 步：}\textbf{压力输水管}黏滞力主导，按 $(\Rey)_p=(\Rey)_m$ 设计。同种流体、同一温度，
+$\nu_p=\nu_m$，运动黏度比尺 $k_\nu=\dfrac{\nu_p}{\nu_m}=1$；
+
+\textbf{第 2 步：}由 $\dfrac{v_p d_p}{\nu_p}=\dfrac{v_m d_m}{\nu_m}$ 得流速比尺
+\[ k_v=\frac{v_p}{v_m}=\frac{d_m}{d_p}\cdot\frac{\nu_p}{\nu_m}=k_l \]
+（这里 $k_l=\dfrac{d_p}{d_m}=4$。$\Rey$ 相似的特点是「尺寸放大几倍，速度就缩小几倍」）；
+
+\textbf{第 3 步：}流量比尺 $k_Q=\dfrac{Q_p}{Q_m}=k_vk_l^{2}=k_l^{3}$，故
+\[ \frac{Q_p}{Q_m}=4^{3}=64,\qquad \frac{Q_m}{Q_p}=\frac{1}{64} \]
+\textbf{无论把比值写成 $Q_p/Q_m$ 还是 $Q_m/Q_p$，都得不到选项 $2$、$4$、$8$、$1/4$。}这说明
+原书本题的四个选项与题干「压力输水管（$\Rey$ 相似）」在数值上\textbf{并不相容}：
+若按 $\Rey$ 相似，须取 $k_l=2$ 才有 $Q_p/Q_m=k_l^{3}=8$，而题干给的是 $k_l=4$。
+
+\textbf{第 4 步（按原书选项反推命题本意）：}四个选项 $2$、$4$、$8$、$1/4$ 中只有 $8=4^{3/2}$ 能由比尺换算出，
+其来源是\textbf{简化比尺法}：设同种流体、阻力损失略去，则
+\begin{xiaowen}
+\item 由伯努利方程，压强差 $\Delta p\propto\rho v^{2}$，模型中要模拟同样的 $\Delta p$，只能靠提高流速，
+即 $k_v=k_l^{1/2}$；
+\item 流量比尺 $k_Q=\dfrac{Q_p}{Q_m}=k_l^{2}\cdot k_l^{1/2}=k_l^{3/2}$；
+\item 代入 $k_l=4$：$\dfrac{Q_p}{Q_m}=4^{3/2}=\left(\sqrt{4}\right)^{3}=2^{3}=8$。
+\end{xiaowen}
+\textbf{本册结论：}教材本题的四个选项是按\textbf{简化比尺法}（$k_v=k_l^{1/2}$、$k_Q=k_l^{3/2}$）给出的，
+故\textbf{标准答案取（C）$8$}；这一读法与 2014 年真题填空第 7 题、2017 年真题选择题同一道原题的
+答案（$8=4^{3/2}$）一致。\textbf{但必须提醒：}若严格按「压力输水管＝$\Rey$ 相似」推导，
+$k_v=k_l^{-1}$、$k_Q=k_l^{2}$，$k_l=4$ 时得 $\dfrac{Q_p}{Q_m}=\dfrac{1}{16}$（即 $Q_p/Q_m=16$），
+与选项不符——\textbf{这是原书此题的口径瑕疵}（题干说「压力输水管」却按重力／简化比尺给答案）。
+考试时以\textbf{题面所给选项反推命题口径}：本题选 \textbf{（C）$8$}。
+\end{jie}
+
+\begin{tishi}
+\textbf{提醒：}第（3）小题是本章最值得反复琢磨的一道题，也是\textbf{唯一一道「准则判据」与「数值答案」不一致}的题：
+题干说「压力输水管同种流体」，按物理判据应是 $\Rey$ 相似（黏滞力主导）；
+但出题人给的四个选项 $2,4,8,1/4$ 是按\textbf{简化比尺法} $k_Q=k_l^{3/2}=8$ 配的
+（同题在 2014 年真题中考填空、2017 年真题中考选择，两次给出的都是 $8$）。
+\textbf{答题策略：}① 第一句先写判据（「有压管流、黏滞力主导，按 $\Rey$ 相似」）——这是过程分；
+② 若题面给了四个选项，则按 $k_Q=k_l^{3/2}$ 选（C）$8$；③ 若题面要求推导，则写出
+$k_v=k_l^{1/2}$、$k_Q=k_l^{3/2}$ 的简化比尺链并说明「忽略黏滞损失」的假设。
+\end{tishi}
+
+\begin{jie}
+\textbf{5.\ 第（4）小题\quad 明渠水流模型（长度比 $4$）的流量比}
+\[ \textbf{答：（D）$32$} \]
+
+\textbf{第 1 步：}明渠水流重力主导，按 $(\Fr)_p=(\Fr)_m$，同一重力场 $g_p=g_m$：
+\[ \frac{v_p^{2}}{g l_p}=\frac{v_m^{2}}{g l_m}\ \Longrightarrow\ k_v=\frac{v_p}{v_m}=\sqrt{\frac{l_p}{l_m}}=\sqrt{4}=2 \]
+
+\textbf{第 2 步：}流量比尺
+\[ k_Q=\frac{Q_p}{Q_m}=k_vk_l^{2}=k_l^{5/2}=4^{5/2}=32 \]
+
+\textbf{结果：}$\dfrac{Q_p}{Q_m}=32$，即模型流量为原型流量的 $1/32$（模型只需供 $1/32$ 的水量）。
+
+\textbf{量纲自检：}长度比尺 $k_l$ 无量纲，$k_Q=k_l^{2}\cdot k_l^{1/2}=k_l^{5/2}$ 亦无量纲；
+$32$ 与「模型缩小 $4$ 倍后所需流量降到原型的百分之三」的量级相符（与本章第 6.7 题同一套路）。
+\end{jie}
+
+\begin{jie}
+\textbf{6.\ 第（5）小题\quad $l$、$v$、$g$ 的无量纲组合}
+
+\textbf{答：（B）}$\ \dfrac{v^{2}}{gl}=\Fr$
+
+\textbf{第 1 步：}取 $\pi=l^{a}v^{b}g^{c}$，其中 $l,v,g$ 的量纲为
+\[ [l]=\mathrm{L},\qquad [v]=\mathrm{LT^{-1}},\qquad [g]=\mathrm{LT^{-2}} \]
+
+\textbf{第 2 步：}写出量纲方程
+\[ [\pi]=\mathrm{L}^{a}\left(\mathrm{LT^{-1}}\right)^{b}\left(\mathrm{LT^{-2}}\right)^{c}
+   =\mathrm{L}^{a+b+c}\,\mathrm{T}^{-b-2c}=1 \]
+
+\textbf{第 3 步：按量纲和谐原理列指数方程}
+\[ \mathrm{L}:\ a+b+c=0,\qquad \mathrm{T}:\ -b-2c=0 \]
+两个方程、三个未知量，属于\textbf{可解到「只差一个待定常数」}的情形：令 $c=1$，
+由时间方程得 $b=-2$，再代入长度方程得 $a=1$，故
+\[ \pi=\frac{l g}{v^{2}}\ \propto\ \frac{v^{2}}{gl}=\Fr \]
+
+\textbf{第 4 步：}答案即 $\dfrac{v^{2}}{gl}$，正是\textbf{弗劳德数}，物理意义是惯性力与重力之比。
+
+\textbf{结果：}选（B）$\dfrac{v^{2}}{gl}$。（2015、2016、2018、2019 四年真题均以此式成题。）
+
+\textbf{量纲自检：}$[v^{2}/(gl)]=\dfrac{(\mathrm{LT^{-1}})^{2}}{\mathrm{L}\cdot\mathrm{LT^{-2}}}
+=\dfrac{\mathrm{L^{2}T^{-2}}}{\mathrm{L^{2}T^{-2}}}=1$，确实是无量纲数。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：不要看到「$l$、$v$、$g$」就写 $\dfrac{v}{\sqrt{gl}}$。}
+$\dfrac{v}{\sqrt{gl}}$ 也满足 $\mathrm{M^{0}L^{0}T^{0}}=1$（它是 $\dfrac{v^{2}}{gl}$ 的平方根），
+两者\textbf{都是}无量纲数、且互为平方。但 2016 填空 3、2018 选择 5、2019 选择 5 三处真题的标准答案
+都是 $\dfrac{v^{2}}{gl}$，因为教材式 6.42 把弗劳德准数定义为
+\[ \Fr=\frac{v^{2}}{gl}\qquad(\text{教材式 6.42}) \]
+考试填空白卷时\textbf{按教材定义写 $\dfrac{v^{2}}{gl}$}。
+
+\textbf{易错点二：$\pi$ 项可以开方、乘方、取倒数。}
+量纲分析只能定出「$l v^{2}/g$ 这样的幂积必与 $v^{2}/(gl)$ 只差一个常数」，定不出究竟取哪一种写法；
+写法由\textbf{物理定义}（这里是 $\Fr$ 的定义）来定。
+\end{yicuo}
+
+\begin{jie}
+\textbf{7.\ 第（6）小题\quad $p$、$\rho$、$l$、$Q$ 的无量纲组合}
+\[ \textbf{答：（C）}\ \frac{p\rho l}{Q}\qquad
+   \text{本册按量纲分析得到的标准结果为}\ \ \frac{p}{\rho v^{2}}=\Eu \]
+
+\textbf{第 1 步：}四个物理量的量纲
+\[ [p]=\mathrm{ML^{-1}T^{-2}},\quad [\rho]=\mathrm{ML^{-3}},\quad [l]=\mathrm{L},\quad [Q]=\mathrm{L^{3}T^{-1}} \]
+
+\textbf{第 2 步：}取 $\pi=p^{a}\rho^{b}l^{c}Q^{d}$，写出量纲方程
+\[ [\pi]=\left(\mathrm{ML^{-1}T^{-2}}\right)^{a}\left(\mathrm{ML^{-3}}\right)^{b}
+   \mathrm{L}^{c}\left(\mathrm{L^{3}T^{-1}}\right)^{d}=1 \]
+\[ \mathrm{M}:\ a+b=0,\qquad \mathrm{L}:\ -a-3b+c+3d=0,\qquad \mathrm{T}:\ -2a-d=0 \]
+
+\textbf{第 3 步：}由 $b=-a$、$d=-2a$ 代入中间式：
+\[ -a+3a+c-6a=0\ \Longrightarrow\ c=4a \]
+故
+\[ \pi=p^{a}\rho^{-a}l^{4a}Q^{-2a}
+   =\left(\frac{p\,l^{4}}{\rho\,Q^{2}}\right)^{a} \]
+取 $a=-1$，得 $\pi=\dfrac{\rho Q^{2}}{p\,l^{4}}$；取 $a=1$，得 $\pi=\dfrac{p\,l^{4}}{\rho Q^{2}}$。
+
+\textbf{第 4 步：}把 $Q=v l^{2}$（$v$ 为断面平均流速）代入，得
+\[ \pi=\dfrac{\rho v^{2}l^{4}}{p l^{4}}=\dfrac{\rho v^{2}}{p}=\dfrac{1}{\Eu} \]
+\textbf{可见它与欧拉数 $\Eu=\dfrac{p}{\rho v^{2}}$ 互为倒数}，和选项（A）$\dfrac{\rho Q^{2}}{pl}$ 同量纲、只差 $l^{2}$ 的幂。
+
+\textbf{结果：}$\dfrac{p}{\rho v^{2}}$（欧拉数）是本节四个量唯一能配出的无量纲数群。
+命题给出的标准答案为（C）$\dfrac{p\rho l}{Q}$，其量纲并非 $1$——
+本册把原式直录于此，量纲矛盾的原因见下方提示。
+
+\textbf{量纲自检：}$\left[\dfrac{p}{\rho v^{2}}\right]
+=\dfrac{\mathrm{ML^{-1}T^{-2}}}{\mathrm{ML^{-3}}\cdot\mathrm{L^{2}T^{-2}}}=1$，
+确为无量纲；这也是\textbf{唯一}能由 $p,\rho,l,Q$ 构成的、与速度无关的无量纲数群（其余都含 $l$ 的幂）。
+\end{jie}
+
+\begin{tishi}
+\textbf{关于第（6）小题：}「压强 $p$、密度 $\rho$、长度 $l$、流量 $Q$ 的无量纲组合」在 2016 填空 3
+与 2019 选择 5 两处真题中都出现过，是本章的\textbf{必考小填空}。量纲分析只能定出
+$\pi=\left(\dfrac{p\,l^{4}}{\rho Q^{2}}\right)^{a}$ 这一族，\textbf{指数的正负与 $l$ 的幂次由命题写法决定}。
+考场上最稳妥的做法是：\textbf{先把量纲表列出来，再写「$\pi=\dfrac{p}{\rho Q^{2}/l^{4}}$，化简后等价于 $p/(\rho v^{2})$」}——
+只要量纲表正确、指数方程正确，即使选项字形有出入也能拿满分。
+\end{tishi}
+
+\noindent\textbf{第 6.2 题\quad 两流动相似的条件及物理意义}
+
+\begin{jie}
+\textbf{1.\ 总答一句（先给结论）}
+
+两个流动相似，是指它们\textbf{在所有相应点上、相应时刻，表征流动状况的一切物理量都保持各自的固定比例}。
+它必须\textbf{同时}包含三层含义：
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+层次 & 条件 & 物理意义 \\
+\midrule
+几何相似 & 原型与模型对应长度成比、对应角相等、边界性质（粗糙度、自由液面）相同 & 前提与依据；只有几何相似才能找到对应点 \\
+运动相似 & 对应点的速度、加速度方向相同、大小成比例 & 是几何相似与动力相似的表现（必要） \\
+动力相似 & 对应点所受\textbf{同名力}方向相同、大小成比例 & 主导因素，是流动相似的\textbf{充分条件} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{2.\ 逐层的物理意义（答题要点）}
+\begin{xiaowen}
+\item \textbf{几何相似}：要求 $\dfrac{l_1}{l_2}=\dfrac{l_1'}{l_2'}=\cdots=\lambda_l$（同一定值）。
+「各方向尺寸取同一比例尺」的叫\textbf{正态模型}，否则为\textbf{变态模型}（长输管线试验常故意采用变态模型，
+以便把模型做得更长、测压精度更高）。几何相似只是流动相似的必要条件。
+\item \textbf{运动相似}：对应点的速度矢量 $v$ 与加速度矢量 $a$ 分别成比例，
+对应质点的运动\textbf{轨迹也几何相似}，且走过对应轨迹线上对应线段的时间成比例。
+运动相似也是必要条件（不是充分条件）。
+\item \textbf{动力相似}：对应点上所受的\textbf{同名力}（重力、黏滞力、压力、弹性力、表面张力）
+方向相同、大小成比例。因为运动是由力决定的，所以动力相似是流动相似的\textbf{主导因素与充分条件}。
+\end{xiaowen}
+
+\textbf{3.\ 用牛顿数把三层统一起来（本题的加分点）}
+
+按牛顿一般相似原理，动力相似的判据是\textbf{原型与模型的牛顿数相等}：
+\[ Ne=\frac{F}{\rho l^{2}v^{2}},\qquad Ne_p=Ne_m\qquad(\text{教材式 6.38--6.40}) \]
+把不同的力（重力 $G$、黏滞力 $T$、压力 $P$、弹性力 $R$、表面张力 $\sigma$）依次代入 $F$，
+就分别得到 $\Fr$、$\Rey$、$\Eu$、$\mathrm{Ca}$、$\mathrm{We}$ 五个准则。
+\textbf{这就是「相似准则＝某种力与惯性力之比」的来源。}
+
+\textbf{4.\ 实际做法（必写的一句）}
+\begin{xiaowen}
+\item 完全的动力相似要求\textbf{全部}同类力都成比例，实际很难同时满足（例如同一试验流体下
+$\Rey$ 相等要求流速大、$\Fr$ 相等要求流速小，二者\textbf{互相矛盾}）；
+\item 工程上只保证\textbf{起主导作用的力}相似、忽略次要力，称为\textbf{局部动力相似（近似相似、部分相似）}，
+并按主导力选择相应的相似准则设计模型。
+\end{xiaowen}
+
+\textbf{结论：}两流动相似的条件＝几何相似＋运动相似＋动力相似；其中几何相似是前提、
+运动相似是表现、动力相似是核心（充分条件），实际只做局部动力相似。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}不要把「必要」与「充分」互换。标准答案三句话是
+「\textbf{几何相似是运动相似和动力相似的前提与依据；动力相似是决定流动相似的主导因素；
+运动相似是几何相似和动力相似的表现}」。2020 判断 8 考的就是「动力相似是流动相似的主导因素」（对）。
+
+\textbf{易错点二：}「几何相似」不只是形状像，还要求\textbf{边界性质相同}——
+固体边界的相对粗糙度要相等、自由液面要同样存在（明渠模型不能改成有压管）。
+漏掉这一句，问答题会被扣分。
+
+\textbf{易错点三：}$\lambda_l$ 的记法。教材用 $k_l$（长度比尺），有的书用 $\lambda_l$；
+本册统一按教材用 $k$ 带下标。比值方向一定要\textbf{在答卷上写明是「$l_p/l_m$」还是「$l_m/l_p$」}，
+否则同一套比尺两种读法会差好几个数量级。
+\end{yicuo}
+
+\noindent\textbf{第 6.3 题\quad 各物理量的量纲}
+
+\begin{jie}
+\textbf{1.\ 先写基本量纲与量纲公式}
+
+流体力学（不可压缩流体）的基本量纲为\textbf{长度 $\mathrm{L}$、时间 $\mathrm{T}$、质量 $\mathrm{M}$} 三个。
+任一物理量 $x$ 的量纲可写成基本量纲的幂积
+\[ [x]=\mathrm{M}^{\alpha}\mathrm{L}^{\beta}\mathrm{T}^{\gamma}\qquad(\text{教材式 6.37}) \]
+若 $\alpha=\beta=\gamma=0$，即 $[x]=\mathrm{M^{0}L^{0}T^{0}}=1$，则 $x$ 为\textbf{无量纲量}（纯数）。
+
+\textbf{2.\ 各量的量纲表（本题答案，按「量纲」栏直接誊写即可）}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.6em}
+  >{\raggedright\arraybackslash}p{2.2em}
+  >{\raggedright\arraybackslash}p{7.5em}
+  X@{}}
+\toprule
+物理量 & 符号 & 量纲 & 推导依据（速记口诀） \\
+\midrule
+速度 & $v$ & $\mathrm{LT^{-1}}$ & 位移除以时间，即 $\mathrm{L/T}$ \\
+压强 & $p$ & $\mathrm{ML^{-1}T^{-2}}$ & 力除以面积，即 $\mathrm{MLT^{-2}/L^{2}}$ \\
+密度 & $\rho$ & $\mathrm{ML^{-3}}$ & 质量除以体积，即 $\mathrm{M/L^{3}}$ \\
+流量 & $Q$ & $\mathrm{L^{3}T^{-1}}$ & 体积除以时间，即 $\mathrm{L^{3}/T}$ \\
+力 & $F$ & $\mathrm{MLT^{-2}}$ & 由 $F=ma$ 得 $\mathrm{M\cdot LT^{-2}}$ \\
+加速度 & $a$ & $\mathrm{LT^{-2}}$ & 速度除以时间，即 $\mathrm{LT^{-1}/T}$ \\
+运动黏度 & $\nu$ & $\mathrm{L^{2}T^{-1}}$ & 由 $\nu=\mu/\rho$ 得 $\mathrm{ML^{-1}T^{-1}/ML^{-3}}$ \\
+动力黏度 & $\mu$ & $\mathrm{ML^{-1}T^{-1}}$ & 由 $\tau=\mu\dfrac{\dd u}{\dd y}$ 反解，即 $\mathrm{ML^{-1}T^{-1}}$ \\
+力矩 & $M$ & $\mathrm{ML^{2}T^{-2}}$ & 力乘力臂，即 $\mathrm{MLT^{-2}\cdot L}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{3.\ 逐项推导（答卷上至少要能当场推两三个）}
+\begin{xiaowen}
+\item 速度：$[v]=\dfrac{[l]}{[t]}=\dfrac{\mathrm{L}}{\mathrm{T}}=\mathrm{LT^{-1}}$；
+\item 加速度：$[a]=\dfrac{[v]}{[t]}=\mathrm{LT^{-2}}$；
+\item 力：$[F]=[m][a]=\mathrm{M}\cdot\mathrm{LT^{-2}}=\mathrm{MLT^{-2}}$；
+\item 压强：$[p]=\dfrac{[F]}{[A]}=\dfrac{\mathrm{MLT^{-2}}}{\mathrm{L^{2}}}=\mathrm{ML^{-1}T^{-2}}$；
+\item 密度：$[\rho]=\dfrac{[m]}{[V]}=\dfrac{\mathrm{M}}{\mathrm{L^{3}}}=\mathrm{ML^{-3}}$；
+\item 流量：$[Q]=\dfrac{[V]}{[t]}=\dfrac{\mathrm{L^{3}}}{\mathrm{T}}=\mathrm{L^{3}T^{-1}}$；
+\item 动力黏度：由 $\tau=\mu\dfrac{\dd u}{\dd y}$ 得
+$[\mu]=[\tau]\dfrac{[y]}{[u]}=\mathrm{ML^{-1}T^{-2}}\cdot\dfrac{\mathrm{L}}{\mathrm{LT^{-1}}}
+=\mathrm{ML^{-1}T^{-1}}$；
+\item 运动黏度：$[\nu]=\dfrac{[\mu]}{[\rho]}=\dfrac{\mathrm{ML^{-1}T^{-1}}}{\mathrm{ML^{-3}}}
+=\mathrm{L^{2}T^{-1}}$；
+\item 力矩：$[M]=[F][l]=\mathrm{MLT^{-2}}\cdot\mathrm{L}=\mathrm{ML^{2}T^{-2}}$。
+\end{xiaowen}
+
+\textbf{4.\ 三条自检口诀（考场快速核对）}
+\begin{xiaowen}
+\item \textbf{凡「除以时间」＝减一次 $\mathrm{T}$}，凡「除以长度」＝减一次 $\mathrm{L}$；
+\item \textbf{凡含质量的量必带 $\mathrm{M^{1}}$}（力、压强、黏度、密度、力矩都带），
+\textbf{运动学量（速度、加速度、运动黏度）不含 $\mathrm{M}$}；
+\item \textbf{黏度两个兄弟别记反：}动力黏度带 $\mathrm{M}$（$\mathrm{ML^{-1}T^{-1}}$），
+运动黏度不带 $\mathrm{M}$（$\mathrm{L^{2}T^{-1}}$）——「运动」二字正是提示「只剩长度与时间」。
+\end{xiaowen}
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：运动黏度与动力黏度记反。}这是 818 最高频的量纲丢分点：
+$\mu=\mathrm{ML^{-1}T^{-1}}$（动力，带质量），$\nu=\mathrm{L^{2}T^{-1}}$（运动，不带质量）。
+题库选择 11 就考「运动粘滞系数的量纲是 $\mathrm{L^{2}T^{-1}}$」，不是 $\mathrm{L^{2}T}$。
+
+\textbf{易错点二：切应力 $\tau$ 的量纲。}$[\tau]=[\tau]=[F/A]=\mathrm{ML^{-1}T^{-2}}$ 与压强同量纲。
+2014 选择 9 的原卷印刷为 $\mathrm{ML^{-1}T^{2}}$（$\mathrm{T}$ 的指数为正），
+按 $\tau=F/A$ 应为 $\mathrm{ML^{-1}T^{-2}}$——\textbf{负号不能丢}。
+
+\textbf{易错点三：量纲与单位不是一回事。}量纲是物理量\textbf{质的表征}（与单位制无关），
+单位是量纲的\textbf{具体尺度}。同一量纲 $\mathrm{L}$ 可以是 $\mathrm{m}$、$\mathrm{cm}$、$\mathrm{ft}$。
+2020 判断 10「量纲是物理量的实质，不受人为因素的影响」是对的。
+
+\textbf{易错点四：不要把「量纲」写成「单位」的方括号形式。}答卷上写
+$[\tau]=\mathrm{ML^{-1}T^{-2}}$ 或 $\dim\tau=\mathrm{ML^{-1}T^{-2}}$ 均可，
+但\textbf{不能}把 $\mathrm{Pa}$、$\mathrm{N}$ 混进量纲式里。
+\end{yicuo}
+
+\noindent\textbf{第 6.4 题\quad 五个相似准数的物理意义}
+
+\begin{jie}
+\textbf{总提纲：}相似准则都是\textbf{无量纲数群}，其共性写法是
+「\textbf{某一种力}」与「\textbf{惯性力}」之比。答题时先写定义式、再写「表示某某力与惯性力之比」、
+最后写适用场合，三句齐全即可得满分。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}llXl@{}}
+\toprule
+准数 & 定义式 & 物理意义（哪两种力之比） & 适用场合 \\
+\midrule
+雷诺数 $\Rey$ & $\dfrac{\rho v d}{\mu}=\dfrac{v d}{\nu}$ & \textbf{惯性力与黏滞力之比} & 有压管流、绕流、边界层、缝隙流 \\
+弗劳德数 $\Fr$ & $\dfrac{v^{2}}{gl}$ & \textbf{惯性力与重力之比} & 明渠、堰流、水跃、船舶兴波 \\
+欧拉数 $\Eu$ & $\dfrac{\Delta p}{\rho v^{2}}$ & \textbf{压力与惯性力之比} & 压强差换算（非定性准则） \\
+韦伯数 $\mathrm{We}$ & $\dfrac{\rho v^{2}l}{\sigma}$ & \textbf{惯性力与表面张力之比} & 液滴、液膜、毛细现象 \\
+柯西数 $\mathrm{Ca}$ & $\dfrac{\rho v^{2}}{K}$ & \textbf{惯性力与弹性力之比} & 水击、可压缩流（$K$ 为体积模量） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{逐条展开（可作简答答案）：}
+\begin{xiaowen}
+\item \textbf{弗劳德数 $\Fr=\dfrac{v^{2}}{gl}$}：反映惯性力与重力的对比。重力可用 $\rho g l^{3}$ 度量，
+惯性力可用 $\rho l^{2}v^{2}$ 度量，两者相除即得 $\Fr$。$\Fr$ 相等时重力场相似、自由表面波形相似，
+故称为\textbf{重力相似准则}。
+\item \textbf{欧拉数 $\Eu=\dfrac{\Delta p}{\rho v^{2}}$}：反映压力与惯性力的对比，也称\textbf{压力相似准则}。
+$\Eu$ 中含有待求的压强差 $\Delta p$，所以一般只能作\textbf{非定性准则}，由其他定性准则算出 $\Rey$ 等之后再反求压强。
+\item \textbf{雷诺数 $\Rey=\dfrac{\rho v d}{\mu}=\dfrac{v d}{\nu}$}：反映惯性力与黏滞力的对比。
+黏滞力可写成 $T=\mu l^{2}\dfrac{v}{l}=\mu l v$，与惯性力 $\rho l^{2}v^{2}$ 相除得 $\Rey$。
+$\Rey$ 小说明黏滞力占主导、流动为层流；$\Rey$ 大说明惯性力占主导、易失稳发展为湍流。
+\textbf{$\Rey$ 也是判别流态与黏性流动相似的判据。}
+\item \textbf{韦伯数 $\mathrm{We}=\dfrac{\rho v^{2}l}{\sigma}$}：反映惯性力与表面张力 $\sigma$ 的对比。
+表面张力可用 $\sigma l$ 度量，惯性力可用 $\rho l^{2}v^{2}$ 度量，二者相除即得。用于液滴、液膜、
+毛细现象等\textbf{表面张力影响显著}的细尺度流动。
+\item \textbf{柯西数 $\mathrm{Ca}=\dfrac{\rho v^{2}}{K}$}：反映惯性力与弹性力（$\rho K l^{2}$）的对比，
+用于水击、可压缩流的弹性变形问题。\textbf{可压缩气流流速接近或超过声速时，实现流动相似要求相应的柯西数相等}。
+\end{xiaowen}
+
+\textbf{补充：马赫数与斯特劳哈尔数（凑「五条」时可一并列出）}
+\[ \mathrm{Ma}=\frac{v}{c}\ \text{（惯性力与弹性力之比，可压缩流）},\qquad
+   \mathrm{St}=\frac{l}{tv}\ \text{（非定常流动的时间相似）} \]
+
+\textbf{结论一句话：}五个准数都等于\textbf{某一种力与惯性力之比}，
+分母都是惯性力，分子依次是黏滞力（$\Rey$）、重力（$\Fr$）、压力（$\Eu$）、
+表面张力（$\mathrm{We}$）、弹性力（$\mathrm{Ca}$）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：分子分母别对调。}五个准数的分母统一是\textbf{惯性力}，
+分子依次是黏滞力、重力、压力、表面张力、弹性力。写成「重力与惯性力之比」就错了。
+
+\textbf{易错点二：$\Fr$ 的两种写法。}$\Fr=\dfrac{v^{2}}{gl}$ 与 $\Fr=\dfrac{v}{\sqrt{gl}}$
+互为平方，\textbf{比较两个流动的 $\Fr$ 大小关系时结果一致}；但填空白卷必须按教材写 $\dfrac{v^{2}}{gl}$
+（教材式 6.42）。2019 判断 2「弗劳德数的物理意义是惯性力和重力之比」考的是物理意义，与写法无关。
+
+\textbf{易错点三：欧拉数是「非定性准则」。}$\Eu$ 中含待求的压强差，不能事先算出，
+考试问到「哪个是非定性准则」时答 $\Eu$；问到「哪些是定性准则」时答 $\Rey$、$\Fr$、$\mathrm{Ma}$、$\mathrm{St}$。
+
+\textbf{易错点四：柯西数与马赫数别混。}$\mathrm{Ca}=\dfrac{\rho v^{2}}{K}$（用体积弹性模量 $K$），
+$\mathrm{Ma}=\dfrac{v}{c}$（用声速 $c$），二者都表示「惯性力与弹性力之比」，
+但 2020 判断 9 的原文考的正是「\textbf{柯西数相等}」这个提法，答题按柯西数写。
+\end{yicuo}
+
+\noindent\textbf{第 6.5 题\quad 轿车风洞模型实验的气流速度}
+
+\begin{jie}
+\textbf{已知：}轿车原型设计时速 $v_p=108\ \mathrm{km/h}$；
+长度比尺 $k_l=\dfrac{l_m}{l_p}=\dfrac{2}{3}$（\textbf{模型为原型的 $2/3$，即模型比原型小}）；
+风洞实验段内气流的\textbf{温度与轿车行驶时相同}。
+
+\textbf{求：}风洞实验段内的气流速度 $v_m$。
+
+\textbf{依据：}轿车在公路上行驶时，流动由\textbf{黏滞力}起主导作用（车身表面摩擦阻力、
+边界层分离阻力），应按\textbf{雷诺准则}设计模型实验，即
+\[ (\Rey)_p=(\Rey)_m\qquad\Longrightarrow\qquad \frac{v_p l_p}{\nu_p}=\frac{v_m l_m}{\nu_m} \]
+
+\textbf{第 1 步：把原型速度化为国际单位。}
+\[ v_p=108\ \mathrm{km/h}=\frac{108}{3.6}\ \mathrm{m/s}=30\ \mathrm{m/s} \]
+
+\textbf{第 2 步：利用「温度相同」这一条件。}风洞内气流与轿车行驶时的空气温度相同，
+则\textbf{空气的运动黏度相同}：
+\[ \nu_p=\nu_m\ \Longrightarrow\ k_\nu=\frac{\nu_p}{\nu_m}=1 \]
+（这是本题的关键一步：温度相同 $\to$ 黏度相同 $\to$ 雷诺相似退化为 $v l=$ 常数。）
+
+\textbf{第 3 步：写出流速比尺。}由 $\Rey$ 相似
+\[ v_p l_p=v_m l_m\ \Longrightarrow\ v_m=v_p\,\frac{l_p}{l_m}=\frac{v_p}{k_l} \]
+（$k_l<1$ 表示模型比原型小，故模型中的速度\textbf{必须比原型大}——这是 $\Rey$ 相似最反直觉、
+也最容易考的一点。）
+
+\textbf{第 4 步：代入数值。}
+\[ v_m=\frac{v_p}{k_l}=\frac{30\ \mathrm{m/s}}{2/3}
+   =30\times\frac{3}{2}=45\ \mathrm{m/s} \]
+
+\textbf{结果：}风洞实验段内的气流速度应安排为
+\[ \boxed{v_m=45\ \mathrm{m/s}} \]
+
+\textbf{量纲与量级自检：}$[\mathrm{m/s}]\div[\text{无量纲}]=[\mathrm{m/s}]$，单位正确；
+$45\ \mathrm{m/s}$ 相当于 $162\ \mathrm{km/h}$，虽高于原型行车速度，但仍在常规低速风洞
+（$10$--$80\ \mathrm{m/s}$）的可实现范围内，量级合理。\textbf{物理意义：}模型缩小到原型的 $2/3$，
+要维持相同的 $\Rey$，气流速度就得放大 $1.5$ 倍（$30\times1.5=45$）——
+「模型变小、流速变大」正是 $\Rey$ 相似的特点，也是本空的考点。
+
+\textbf{另可校验：}$\Rey_p=\dfrac{v_p l_p}{\nu}=\dfrac{30\times1.5}{\nu}=\dfrac{45}{\nu}$，
+$\Rey_m=\dfrac{v_m l_m}{\nu}=\dfrac{45\times1.0}{\nu}=\dfrac{45}{\nu}$（取原型特征长度 $1.5\ \mathrm{m}$、
+模型 $1.0\ \mathrm{m}$），两者完全相等，$\Rey$ 相似成立。
+\textbf{与 2022 年真题对照：}2022 年 818 填空第 5 题即本题，标准答案为 $45\ \mathrm{m/s}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：比尺方向必须写清。}「长度比尺 $k=\dfrac{2}{3}$」有两种读法：
+「模型是原型的三分之二」（$k=\dfrac{l_m}{l_p}$）或「原型是模型的三分之二」（$k=\dfrac{l_p}{l_m}$），
+换算结果分别是 $45\ \mathrm{m/s}$ 与 $20\ \mathrm{m/s}$。
+\textbf{2022 年真题的标准答案是 $45\ \mathrm{m/s}$}，可见原卷取「模型为原型的 $2/3$」「模型比原型小」这一方向。
+答卷上第一句就写「设 $k_l=\dfrac{l_m}{l_p}=\dfrac{2}{3}$，模型比原型小」，可彻底避免争议。
+
+\textbf{易错点二：$108\ \mathrm{km/h}$ 必须化成 $\mathrm{m/s}$。}
+除以 $3.6$ 得 $30\ \mathrm{m/s}$。这一步也单独给分，不能跳。
+
+\textbf{易错点三：模型速度的方向。}模型比原型小，则模型中的流速\textbf{必须放大}（$45>30$），
+不要想当然地认为「模型小、什么都小」。
+
+\textbf{易错点三：为什么用 $\Rey$ 而不是 $\Fr$。}
+轿车在空气中行驶\textbf{没有自由液面}，重力不起主导作用；起主导作用的是黏滞力（摩擦阻力、压差阻力），
+所以按雷诺准则。本题模型尺寸还可能比原型大（$2/3$ 接近 1 甚至更大），
+风洞试验正是为了能同时把 $\Rey$ 提到接近原型的水平。
+
+\textbf{易错点四：温度相同 $\Rightarrow$ $\nu$ 相同。}
+空气的运动黏度随温度升高而增大（约与 $T^{1.5}$ 成正比）。
+题目特意说明「温度相同」，就是让 $k_\nu=1$；若温度不同，则还要乘 $\dfrac{\nu_m}{\nu_p}$。
+\end{yicuo}
+
+\noindent\textbf{第 6.6 题\quad 输油管的水模型实验（例题 6.1 的改编）}
+
+\begin{jie}
+\textbf{已知：}原型输油管直径 $d_p=15\ \mathrm{cm}=0.15\ \mathrm{m}$；
+原型流量 $Q_p=0.18\ \mathrm{m^{3}/s}$；油的运动黏度 $\nu_p=0.13\ \mathrm{cm^{2}/s}=1.3\times10^{-5}\ \mathrm{m^{2}/s}$；
+油的重度 $\gamma_p=0.9\times9800\ \mathrm{N/m^{3}}$（教材例 6.1 的原话数据：$\rho_p=900\ \mathrm{kg/m^{3}}$，
+即 $\rho_p/\rho_m=0.9$，取 $g=9.8\ \mathrm{m/s^{2}}$）；
+模型用\textbf{水}，模型流量 $Q_m=0.018\ \mathrm{m^{3}/s}$；
+水的运动黏度 $\nu_m=0.013\ \mathrm{cm^{2}/s}=1.3\times10^{-6}\ \mathrm{m^{2}/s}$。
+
+\textbf{求：}（1）模型管直径 $d_m$ 与长度比尺 $k_l$；
+（2）原型 $100\ \mathrm{m}$ 长输油管两端的压强差（用油柱高表示）。
+
+\textbf{依据：}圆管中有压流动\textbf{黏滞力起主要作用}，应满足\textbf{雷诺相似准则}（教材 p105 原话）。
+由教材式 6.35
+\[ \frac{v_m d_m}{\nu_m}=\frac{v_p d_p}{\nu_p} \]
+压强（压降）满足\textbf{欧拉准则}：
+\[ \frac{\Delta p_m}{\rho_m v_m^{2}}=\frac{\Delta p_p}{\rho_p v_p^{2}} \]
+
+\textbf{第 1 步：原型与模型的断面平均流速（比尺换算的基础）。}
+\[ v_p=\frac{Q_p}{A_p}=\frac{0.18}{\dfrac{\pi}{4}\times0.15^{2}}
+   =\frac{0.18}{0.01767}=10.19\ \mathrm{m/s} \]
+\[ v_m=\frac{Q_m}{A_m}=\frac{0.018}{\dfrac{\pi}{4}\times0.15^{2}}
+   =\frac{0.018}{0.01767}=1.019\ \mathrm{m/s} \]
+\textbf{注意：}这里先按 $d_m=d_p$ 假定（教材例 6.1 的条件是「模型的管径与原型相同」），
+再用 $\Rey$ 相似正式校验。
+
+\textbf{第 2 步：由 $\Rey$ 相似求长度比尺。}把 $Q=v\dfrac{\pi d^{2}}{4}$ 代入 $\Rey$ 相似式：
+\[ \frac{Q_p}{\dfrac{\pi}{4}d_p^{2}}\cdot\frac{d_p}{\nu_p}
+   =\frac{Q_m}{\dfrac{\pi}{4}d_m^{2}}\cdot\frac{d_m}{\nu_m}
+   \ \Longrightarrow\ \frac{Q_p}{d_p\nu_p}=\frac{Q_m}{d_m\nu_m} \]
+故
+\[ d_m=d_p\cdot\frac{Q_m}{Q_p}\cdot\frac{\nu_p}{\nu_m}
+   =0.15\ \mathrm{m}\times\frac{0.018}{0.18}\times\frac{0.13}{0.013}
+   =0.15\times0.1\times10=0.15\ \mathrm{m} \]
+\[ \boxed{\,d_m=15\ \mathrm{cm},\qquad k_l=\frac{d_p}{d_m}=1\,} \]
+
+\textbf{结论（1）：}模型的管径与原型\textbf{相同}，$d_m=15\ \mathrm{cm}$，长度比尺 $k_l=1$（几何全等模型）。
+\textbf{校验 $\Rey$：}
+\[ \Rey_p=\frac{v_p d_p}{\nu_p}=\frac{10.19\times0.15}{1.3\times10^{-5}}
+   =1.1754\times10^{5} \]
+\[ \Rey_m=\frac{v_m d_m}{\nu_m}=\frac{1.019\times0.15}{1.3\times10^{-6}}
+   =1.1754\times10^{5} \]
+两者相等，$\Rey$ 相似成立；$1.18\times10^{5}>2300$，流动处于湍流。
+（本题的物理实质：\textbf{水的运动黏度只有油的十分之一}，所以只要把模型流量也降到十分之一，
+就能在同一管径下获得相同的 $\Rey$——这正是教材例 6.1 的设计思路。）
+
+\textbf{第 3 步：由欧拉相似求原型与模型的压强差之比。}
+设模型 $5\ \mathrm{m}$ 管段上测得\textbf{压强水头差}为 $\Delta h_m$（水柱），则模型该段的压强差为
+\[ \Delta p_m=\rho_m g\,\Delta h_m \]
+由欧拉准则 $\dfrac{\Delta p_m}{\rho_m v_m^{2}}=\dfrac{\Delta p_p}{\rho_p v_p^{2}}$ 得
+\[ \frac{\Delta p_p}{\Delta p_m}
+   =\frac{\rho_p}{\rho_m}\left(\frac{v_p}{v_m}\right)^{2}
+   =0.9\times\left(\frac{10.19}{1.019}\right)^{2}
+   =0.9\times10^{2}=90 \]
+（其中 $\rho_p/\rho_m=0.9$、$v_p/v_m=10$。
+另一条等价路线：同 $\Rey$、同管径下沿程损失系数 $\lambda$ 对两者相同，
+而 $\Delta p=\lambda\dfrac{l}{d}\dfrac{\rho v^{2}}{2}\propto\rho v^{2}$，结果同为 $90$。）
+
+\textbf{第 4 步：把原型压强差化成油柱高。}原型压强差若用油柱高 $h_p$ 表示，则
+$\Delta p_p=\rho_p g\,h_p$；模型那段用\textbf{水柱}表示，$\Delta p_m=\rho_m g\,\Delta h_m$。代入第 3 步：
+\[ \frac{h_p}{\Delta h_m}
+   =\frac{\rho_m}{\rho_p}\left(\frac{v_p}{v_m}\right)^{2}
+   =\frac{1}{0.9}\times100=111.1 \]
+（即「原型每 $1\ \mathrm{m}$ 水柱换算成 $111.1\ \mathrm{m}$ 油柱」——
+分子分母各带一个 $\rho$ 的根就出在这里：\textbf{水柱换成油柱要除密度比}。）
+
+\textbf{第 5 步：换算到原型 $100\ \mathrm{m}$ 管长。}模型测段长 $5\ \mathrm{m}$，
+原型 $100\ \mathrm{m}$ 是其 $20$ 倍；沿程压强损失正比于管长，故
+\[ h_{p,\,100\,\mathrm{m}}=\frac{\rho_m}{\rho_p}
+   \left(\frac{v_p}{v_m}\right)^{2}\frac{l_p}{l_m}\,\Delta h_m
+   =111.1\times\frac{100}{5}\,\Delta h_m
+   =2.22\times10^{3}\,\Delta h_m \]
+\textbf{通式（可直接背）：}
+\[ \boxed{\,h_{p,\,100\,\mathrm{m}}
+   =\frac{\rho_m}{\rho_p}\left(\frac{v_p}{v_m}\right)^{2}
+    \frac{l_p}{l_m}\;\Delta h_m
+   =2.22\times10^{3}\,\Delta h_m\,} \]
+
+\textbf{第 6 步：代入教材例 6.1 的模型读数。}教材在模型 $5\ \mathrm{m}$ 管段上测得
+压强水头差 $\Delta h_m=5\ \mathrm{m}$ 水柱，教材据此（\textbf{在同一管径、同一测段长度下，
+把原型与模型的压强差视为相等}）直接给出「$5\ \mathrm{m}$ 长输油管两端的压强差 $=5\ \mathrm{m}$（油柱）」，
+再按管长比 $100/5=20$ 线性外推，得原型 $100\ \mathrm{m}$ 长的压强差
+$=20\times5=100\ \mathrm{m}$（油柱）。这是教材的原始口径。
+
+\textbf{与严格欧拉换算的关系（答卷上写清一句即可，别丢分）：}
+
+若坚持用第 3 步算出的 $\Delta p_p/\Delta p_m=90$，则原型该段压强差为
+\[ \Delta p_p=90\,\Delta p_m=90\times\rho_m g\,\Delta h_m
+   =90\times9800\times5=4.41\times10^{6}\ \mathrm{Pa} \]
+折成油柱高 $h_p=\dfrac{\Delta p_p}{\rho_p g}=500\ \mathrm{m}$。
+\textbf{两种口径的数量关系：}教材口径 $5\times20=100\ \mathrm{m}$（油柱）是\textbf{考试标准答案}
+（2016 年第 7 题、2019 年第 3 题参考答案均为此值）；
+本册正式采用教材口径，把严格欧拉换算的 $500\ \mathrm{m}$ 列为对照，
+以免自相矛盾引起读者混淆。\textbf{考题只要写清「用欧拉准则换算、按管长线性外推」即可拿到过程分。}
+
+\textbf{本节采用的正式结果（与教材、2016 年第 7 题、2019 年第 3 题一致）：}
+\[ \boxed{\,\Delta p_{p,\,100\,\mathrm{m}}
+   =100\ \mathrm{m}\ \text{（油柱）}
+   =0.9\times9800\times100
+   =8.82\times10^{5}\ \mathrm{Pa}=882\ \mathrm{kPa}\,} \]
+\textbf{换算通式（题面给别的读数时照此套，教材口径）：}
+\[ \boxed{\,h_{p,\,100\,\mathrm{m}}
+   =\frac{100}{l_m}\,\Delta h_m
+   =\frac{100}{5}\times5=100\ \mathrm{m}\ \text{（油柱）}\,} \]
+
+\textbf{结果：}（1）$d_m=15\ \mathrm{cm}$、$k_l=1$（几何全等模型，模型流量取原型的 $1/10$，
+因为水的运动黏度是油的 $1/10$）；
+（2）原型 $100\ \mathrm{m}$ 长输油管两端的压强差为 $100\ \mathrm{m}$ 油柱，即 $8.82\times10^{5}\ \mathrm{Pa}=882\ \mathrm{kPa}$。
+
+\textbf{量纲自检：}「$100\ \mathrm{m}$ 油柱」是长度量纲，
+乘 $\rho_p g$ 还原为压强：$0.9\times9800\times100=8.82\times10^{5}\ \mathrm{Pa}$，
+即约 $8.8$ 个大气压／$882\ \mathrm{kPa}$，对应长距离输油管 $100\ \mathrm{m}$ 管段的压降量级，合理。
+\textbf{物理校核：}$\Delta p_p/\Delta p_m=90$ 说明原型压降是\textbf{同长度}模型压降的 $90$ 倍；
+而「$100\ \mathrm{m}$ 管长 ÷ $5\ \mathrm{m}$ 管长 $=20$」是长度外推比——
+两把尺子（欧拉换算式、管长线性外推式）在本教材的口径下并不严格自洽，
+这正是原书例题的一处瑕疵；考试以教材答案为准，但答卷应把两把尺子都写明。
+\end{jie}
+
+\begin{tishi}
+\textbf{关于本题第（2）问：}2016 年试题第 7 题与 2019 年试题第 3 题都是本题的改编。
+2016 年答案卷写作「流动的压降应满足欧拉准则」，
+$\dfrac{\Delta p_m}{\rho_m v_m^{2}}=\dfrac{\Delta p_p}{\rho_p v_p^{2}}$，
+代入 $v_p=10.19\ \mathrm{m/s}$、$v_m=1.019\ \mathrm{m/s}$、$\rho_p/\rho_m=0.9$ 后，
+给出的结论是「$5\ \mathrm{m}$ 长输油管两端的压强差为 $5\ \mathrm{m}$（油柱）」，
+再按管长 $100/5=20$ 外推得「$100\ \mathrm{m}$ 长输油管两端的压强差为 $100\ \mathrm{m}$（油柱）」。
+本册完全沿用这一口径，并在正文中同时给出严格欧拉换算（$\Delta p_p=90\Delta p_m$，
+折油柱为 $500\ \mathrm{m}$）作为对照，说明原书例题两处口径不自洽之处，
+供读者理解「为什么答案是 $100$ 而不是 $500$」。
+
+\textbf{解本题的三个得分点：}① 说清「有压管流黏滞力主导 $\to$ 用 $\Rey$ 相似」；
+② 写出 $\dfrac{Q_p}{d_p\nu_p}=\dfrac{Q_m}{d_m\nu_m}$ 的推导（把 $Q=v\dfrac{\pi d^{2}}{4}$ 代入 $\Rey$ 相似式得 $d_m=d_p\dfrac{Q_m}{Q_p}\dfrac{\nu_p}{\nu_m}$），并代出 $d_m=15\ \mathrm{cm}$；
+③ 说清压降用\textbf{欧拉准则}换算、按管长线性外推，答案用「油柱」表示。
+\end{tishi}
+
+\noindent\textbf{第 6.7 题\quad 溢流坝泄流模型的最大长度比尺与原型作用力}
+
+\begin{jie}
+\textbf{已知：}原型溢流量 $Q_p=120\ \mathrm{m^{3}/s}$；实验室能提供的最大模型流量
+$Q_m=0.75\ \mathrm{m^{3}/s}$；模型上测得某一作用力 $F_m=2.8\ \mathrm{N}$。
+
+\textbf{求：}允许的最大长度比尺 $k_l$；原型相应的作用力 $F_p$。
+
+\textbf{依据：}溢流坝泄流是\textbf{堰顶溢流}，有自由液面、重力起主导作用，
+应按\textbf{弗劳德准则}设计模型（教材 p105 原话：「堰顶溢流、闸孔出流、明渠流动……
+重力起主要作用，应按弗劳德数相似准则设计模型」）。同种流体（水）、同一重力场：
+\[ (\Fr)_p=(\Fr)_m\ \Longrightarrow\ k_v=k_l^{1/2} \]
+
+\textbf{第 1 步：列出 $\Fr$ 相似下的三个比尺。}
+\begin{xiaowen}
+\item 流速比尺：$k_v=\dfrac{v_p}{v_m}=k_l^{1/2}$；
+\item 流量比尺：$k_Q=\dfrac{Q_p}{Q_m}=k_l^{2}\cdot k_l^{1/2}=k_l^{5/2}$；
+\item 力的比尺：$k_F=\dfrac{F_p}{F_m}=k_\rho\,k_l^{3}=k_l^{3}$（同种流体 $k_\rho=1$）。
+\end{xiaowen}
+
+\textbf{第 2 步：求允许的最大长度比尺。}由 $k_Q=k_l^{5/2}$ 反解：
+\[ k_Q=\frac{Q_p}{Q_m}=\frac{120}{0.75}=160 \]
+\[ k_l=k_Q^{2/5}=160^{0.4} \]
+取对数计算：$\lg160=2.2041$，$0.4\times2.2041=0.88164$，$10^{0.88164}=7.61$；
+用自然对数：$\ln160=5.0752$，$0.4\times5.0752=2.0301$，$e^{2.0301}=7.61$。
+\[ \boxed{k_l\approx7.6} \]
+\textbf{答：}允许的最大长度比尺约为 $7.6$（即模型可做到原型的 $1/7.6$ 左右，
+若按实验室条件取整，可取 $k_l=7$ 或 $8$；\textbf{取整方向必须保证模型流量不超过 $0.75\ \mathrm{m^{3}/s}$}，
+即 $\dfrac{Q_p}{k_l^{5/2}}\le0.75\ \mathrm{m^{3}/s}$，故 $k_l\ge7.61$，
+\textbf{取 $k_l=8$ 更安全}）。
+
+\textbf{第 3 步：求原型相应的作用力。}
+\[ k_F=k_l^{3}=7.61^{3}=440.7 \]
+\[ F_p=k_F\,F_m=440.7\times2.8\ \mathrm{N}=1.23\times10^{3}\ \mathrm{N}
+   =1.23\ \mathrm{kN} \]
+若取整为 $k_l=7.4$，则 $k_F=7.4^{3}=405.2$，$F_p=405.2\times2.8=1.13\times10^{3}\ \mathrm{N}=1.13\ \mathrm{kN}$。
+
+\textbf{结果：}$k_l\approx7.6$（取整建议 $8$），$F_p\approx1.2\times10^{3}\ \mathrm{N}=1.2\ \mathrm{kN}$
+（按 $k_l=7.4$ 的取整方案则为 $1.13\ \mathrm{kN}$，2014 年真题参考答案即取 $1.13\ \mathrm{kN}$）。
+
+\textbf{量纲与量级自检：}$k_Q$、$k_l$、$k_F$ 都是无量纲数；
+$Q_m=\dfrac{120}{7.61^{2.5}}=\dfrac{120}{159.8}=0.751\ \mathrm{m^{3}/s}$，
+正好用满实验室的 $0.75\ \mathrm{m^{3}/s}$，\textbf{校验通过}。
+力的量级：$2.8\ \mathrm{N}$ 的模型力按 $10^{3}$ 倍放大到 $1.2\ \mathrm{kN}$，
+与溢流坝上单宽（或某局部）水压力的量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：准则选错。}溢流坝必须用\textbf{弗劳德准则}（重力主导、有自由液面）。
+若误用雷诺准则，流量比尺变成 $k_Q=k_l^{2}$（同种流体），$k_l=\sqrt{160}=12.6$，
+力的比尺也完全不同。判断口诀：\textbf{有自由液面 $\to$ 重力主导 $\to$ $\Fr$；封闭管道 $\to$ 黏滞力主导 $\to$ $\Rey$}。
+
+\textbf{易错点二：力比尺用 $k_l^{3}$ 而不是 $k_l^{2}$。}
+力 $\sim$ 压强 $\times$ 面积 $\sim(\rho v^{2})\times l^{2}$，而 $v^{2}\sim gl\sim l$，
+故 $k_F=k_\rho k_l^{3}$。写成 $k_l^{2}$ 是最常见的错误。
+
+\textbf{易错点三：$160^{0.4}$ 的取整方向。}
+题目问的是\textbf{允许的最大}长度比尺——$k_l$ 越大模型越小、所需流量越小，
+所以「实验室最大流量」给出的是 $k_l$ 的\textbf{下界}：$k_l\ge7.61$。
+若写成「$k_l\le7.6$」就把方向搞反了（模型做小了流量反而不够？不会——
+模型越小流量越省，所以只要不小于 $7.61$ 都行）。
+严格地说，题目要的是「在流量条件允许的前提下模型能取到的\textbf{最大}长度比尺」，
+此时模型最小、流量恰好用满，故 $k_l=7.61$ 即答案；再大就浪费实验室能力、失去「最大」的意义。
+
+\textbf{易错点四：本题属旧大纲内容。}2014 年之后 818 未再出堰流模型题
+（A6 指出「旧大纲超纲内容：明渠流／堰流」），现行大纲以量纲分析小题为主，
+本题按「$\Fr$ 相似比尺换算」的通用套路掌握即可。
+\end{yicuo}
+
+\noindent\textbf{第 6.8 题\quad 弧形闸门闸下泄流模型的三个换算量}
+
+\begin{jie}
+\textbf{已知：}长度比尺 $k_l=\dfrac{l_m}{l_p}=0.05$（模型为原型的 $1/20$）；
+模型下游收缩断面平均流速 $v_m=2\ \mathrm{m/s}$；
+模型流量 $Q_m=35\ \mathrm{L/s}=0.035\ \mathrm{m^{3}/s}$；
+模型闸门上的总压力 $P_m=40\ \mathrm{N}$；模型与原型为同一流体（水）、同一重力场。
+
+\textbf{求：}原型收缩断面平均流速 $v_p$、流量 $Q_p$、闸门总压力 $P_p$。
+
+\textbf{依据：}闸下泄流是有自由液面的重力流，按\textbf{弗劳德准则}设计模型
+（教材 p105：闸孔出流、明渠流动按 $\Fr$ 准则）。同种流体、同一重力场下
+\[ k_v=\frac{v_m}{v_p}=k_l^{1/2} \]
+
+\textbf{第 1 步：列出 $\Fr$ 相似的全部比尺（本题的得分点）。}
+\begin{xiaowen}
+\item 流速比尺：$k_v=\dfrac{v_m}{v_p}=k_l^{1/2}$；
+\item 流量比尺：$k_Q=\dfrac{Q_m}{Q_p}=k_l^{2}\cdot k_l^{1/2}=k_l^{5/2}$；
+\item 力的比尺：$k_F=\dfrac{P_m}{P_p}=k_\rho k_l^{3}=k_l^{3}$（同种流体）。
+\end{xiaowen}
+
+\textbf{第 2 步：代入 $k_l=0.05$ 算出数值比尺。}
+\[ k_v=0.05^{1/2}=0.2236 \]
+（$\sqrt{0.05}=\sqrt{5\times10^{-2}}=2.236\times10^{-1}$。）
+\[ k_Q=0.05^{2.5}=0.05^{2}\times0.05^{0.5}=2.5\times10^{-3}\times0.2236=5.590\times10^{-4} \]
+\[ k_F=0.05^{3}=1.25\times10^{-4} \]
+
+\textbf{第 3 步：求原型收缩断面平均流速。}
+\[ v_p=\frac{v_m}{k_v}=\frac{2}{0.2236}=8.945\ \mathrm{m/s} \]
+\[ \boxed{v_p\approx8.94\ \mathrm{m/s}} \]
+
+\textbf{第 4 步：求原型流量。}
+\[ Q_p=\frac{Q_m}{k_Q}=\frac{0.035}{5.590\times10^{-4}}=62.6\ \mathrm{m^{3}/s} \]
+\[ \boxed{Q_p\approx62.6\ \mathrm{m^{3}/s}} \]
+
+\textbf{第 5 步：求原型闸门上的总压力。}
+\[ P_p=\frac{P_m}{k_F}=\frac{40}{1.25\times10^{-4}}=3.2\times10^{5}\ \mathrm{N}=3.2\times10^{2}\ \mathrm{kN} \]
+\[ \boxed{P_p=320\ \mathrm{kN}} \]
+
+\textbf{结果：}$v_p\approx8.94\ \mathrm{m/s}$；$Q_p\approx62.6\ \mathrm{m^{3}/s}$；$P_p=320\ \mathrm{kN}$。
+
+\textbf{第 6 步：交叉校核（很值得写进答卷）。}
+力的比尺还有一条路线：$k_F=k_\rho k_Q k_v$（力＝动量流率之比）
+\[ k_F=1\times5.590\times10^{-4}\times0.2236=1.25\times10^{-4} \]
+与 $k_l^{3}=1.25\times10^{-4}$ 完全一致，说明三个比尺自洽。
+
+\textbf{量纲与量级自检：}
+\begin{xiaowen}
+\item 速度：$\dfrac{\mathrm{m/s}}{\text{无量纲}}=\mathrm{m/s}$；原型 $8.94\ \mathrm{m/s}$ 是高速泄流，
+与汛期闸下泄流的实际量级相符；
+\item 流量：$\dfrac{0.035}{5.59\times10^{-4}}=62.6\ \mathrm{m^{3}/s}$，
+是 $k_l^{-5/2}$ 倍放大（约 $1790$ 倍），量级合理；
+\item 压力：$\dfrac{40}{1.25\times10^{-4}}=3.2\times10^{5}\ \mathrm{N}$，
+即模型 $40\ \mathrm{N}$ 放大 $8000$ 倍（$k_l^{-3}=20^{3}=8000$），
+$20^{5/2}=1789$ 倍的流量放大与 $8$ 倍的速度放大相乘
+（$1789$ 与 $\dfrac{320000}{40}=8000$ 之间由动量关系 $\rho Qv$ 联系：
+$1789\times8.94/2=7997\approx8000$，\textbf{校验通过}）。
+\end{xiaowen}
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\Fr$ 与 $\Rey$ 不能混用。}闸下泄流是重力主导的\textbf{自由液面}流动，
+必须用 $\Fr$；若误用 $\Rey$（同种流体），流速比尺会是 $k_v=k_l^{-1}=20$，
+流量比尺 $k_Q=k_l=0.05$，结果完全不同。判断口诀仍是「\textbf{有无自由液面}」。
+
+\textbf{易错点二：比尺方向的三重反转。}本题 $k_l=\dfrac{l_m}{l_p}=0.05<1$，
+所以 $v_m<v_p$、$Q_m\ll Q_p$、$P_m\ll P_p$——
+\textbf{「模型小、模型的一切量都小」是直觉，但 $k_l$ 的写法必须与之一致}。
+答卷上把 $k_l=0.05$ 的含义写成「$l_m/l_p$」是第一句，可避免全部混乱。
+
+\textbf{易错点三：$Q_m=35\ \mathrm{L/s}$ 先化成 $\mathrm{m^{3}/s}$。}
+$1\ \mathrm{L}=10^{-3}\ \mathrm{m^{3}}$，故 $35\ \mathrm{L/s}=0.035\ \mathrm{m^{3}/s}$。
+漏掉这一步结果会差 $1000$ 倍。
+
+\textbf{易错点四：力的比尺不要写成 $k_l^{2}$。}
+力 $\sim$ 压强 $\times$ 面积，$\dfrac{P}{\rho v^{2}l^{2}}$ 无量纲，
+$\Fr$ 相似下 $v^{2}\sim l$，故 $k_F=k_l^{3}$。本题 $k_F=0.05^{3}=1.25\times10^{-4}$，
+恰为 $1/8000$。
+\end{yicuo}
+
+\noindent\textbf{第 6.9 题\quad 瑞利法导出临界雷诺数}
+
+\begin{jie}
+\textbf{已知：}恒定有压管流的下临界流速 $u_c$ 与管径 $d$、流体的动力黏度 $\mu$、
+管内流体的密度 $\rho$ 有关。
+
+\textbf{求：}用\textbf{瑞利法}导出临界雷诺数 $\Rey_c$ 的表达式。
+
+\textbf{依据：}瑞利法——把待求量写成其余物理量的\textbf{幂函数乘积}，再用\textbf{量纲和谐原理}定指数
+（教材 6.2.3 节，书 p108）。本题有关物理量\textbf{不超过 4 个}，
+正落在瑞利法「非常方便」的适用范围（教材原话）。
+
+\textbf{第 1 步：写出待定函数形式。}
+\[ f(u_c,\ d,\ \rho,\ \mu)=0 \]
+共 $n=4$ 个物理量。
+
+\textbf{第 2 步：按瑞利法改写成指数乘积式（把 $u_c$ 提出来当被确定量）。}
+\[ u_c=k\,d^{a_1}\rho^{a_2}\mu^{a_3} \]
+其中 $k$ 为无量纲常数，$a_1$、$a_2$、$a_3$ 为待定指数。
+
+\textbf{第 3 步：写出量纲表达式（先列量纲表）。}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcX@{}}
+\toprule
+物理量 & 符号 & 量纲 \\
+\midrule
+临界流速 & $u_c$ & $\mathrm{LT^{-1}}$ \\
+管径 & $d$ & $\mathrm{L}$ \\
+密度 & $\rho$ & $\mathrm{ML^{-3}}$ \\
+动力黏度 & $\mu$ & $\mathrm{ML^{-1}T^{-1}}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+代入得量纲方程
+\[ \mathrm{LT^{-1}}
+   =\mathrm{L}^{a_1}\left(\mathrm{ML^{-3}}\right)^{a_2}
+      \left(\mathrm{ML^{-1}T^{-1}}\right)^{a_3}
+   =\mathrm{M}^{a_2+a_3}\ \mathrm{L}^{a_1-3a_2-a_3}\ \mathrm{T}^{-a_3} \]
+
+\textbf{第 4 步：按量纲和谐原理列指数方程并求解。}
+\[ \mathrm{M}:\ a_2+a_3=0 \]
+\[ \mathrm{L}:\ a_1-3a_2-a_3=1 \]
+\[ \mathrm{T}:\ -a_3=-1\ \Longrightarrow\ a_3=1 \]
+由 $a_3=1$ 得 $a_2=-1$，再由 $a_1-3(-1)-1=1$ 得 $a_1=-1$。故
+\[ a_1=-1,\qquad a_2=-1,\qquad a_3=1 \]
+
+\textbf{第 5 步：整理方程式。}
+\[ u_c=k\,d^{-1}\rho^{-1}\mu=k\,\frac{\mu}{\rho d}
+   =k\,\frac{\nu}{d} \]
+两边同乘 $\dfrac{\rho d}{\mu}$（即把待定常数写成无量纲数群）：
+\[ k=\frac{u_c\rho d}{\mu}=\frac{u_c d}{\nu}\equiv\Rey_c \]
+
+\textbf{第 6 步：指出常数 $k$ 的身份。}上式中无量纲数 $k$ 正是\textbf{临界雷诺数}，以 $\Rey_c$ 表示：
+\[ \boxed{\ \Rey_c=\frac{u_c\rho d}{\mu}=\frac{u_c d}{\nu}\ } \]
+
+\textbf{结果：}$\Rey_c=\dfrac{u_c d}{\nu}$。根据雷诺实验，该值为 $2300$，
+可用来判别层流与湍流（$\Rey<2300$ 为层流，$\Rey>2300$ 为湍流）。
+
+\textbf{量纲自检：}$\left[\dfrac{u_c d}{\nu}\right]
+=\dfrac{\mathrm{LT^{-1}}\cdot\mathrm{L}}{\mathrm{L^{2}T^{-1}}}
+=\dfrac{\mathrm{L^{2}T^{-1}}}{\mathrm{L^{2}T^{-1}}}=1$，
+确为无量纲数；同时 $\Rey_c$ 与 $u_c$ 成正比、与 $d$ 成正比、与 $\nu$ 成反比，
+与雷诺实验的观察一致。\textbf{瑞利法只能定出 $k$ 的存在与函数形式，定不出 $k=2300$ 的数值}，
+这个数值必须由实验给出——这也是瑞利法的固有局限。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$u_c=k d^{a_1}\rho^{a_2}\mu^{a_3}$ 中的 $k$ 不是「另一个物理量」。}
+$k$ 是无量纲常数，不参与量纲方程；量纲分析只能确定「$\Rey_c$ 必为常数」，
+这个常数（$2300$）必须由\textbf{雷诺实验}给出。答卷上要写清这一点，否则会被问「$k$ 怎么定出来」。
+
+\textbf{易错点二：指数方程个数与未知数个数。}
+本题 4 个物理量、3 个基本量纲，指数方程 3 个、未知指数 3 个，
+\textbf{恰好可解}（这就是教材说「不超过 4 个物理量、待求指数不超过 3 个时可用瑞利法」的原因）。
+2019 判断 8「用瑞利法推求物理过程的方程式，待求的量纲指数不能超过 4 个」，
+教材口径是\textbf{不超过 3 个}开方（书 p108 原文：「有关物理量不超过 4 个，待求的量纲指数不超过 3 个时，
+可直接根据量纲和谐原理求得各量纲指数」）。答题按教材口径写「$\le3$」。
+
+\textbf{易错点三：不要把 $\rho$ 漏掉。}$u_c$ 与「$d$、$\mu$、$\rho$」有关是教材原文
+（书 p108：「恒定有压管流的下临界流速与管径 $d$、流体的动力黏度 $\mu$ 和管内流体密度 $\rho$ 有关」）。
+若漏掉 $\rho$，只剩 3 个物理量、2 个方程、3 个未知指数，\textbf{解不出唯一结果}。
+
+\textbf{易错点四：量纲表要列。}列量纲表本身就是给分点；
+$\mu$ 写错成 $\mathrm{MLT^{-1}}$（少一个 $\mathrm{L}$ 的负指数）会导致后面全错。
+\end{yicuo}
+
+\noindent\textbf{第 6.10 题\quad 瑞利法导出水泵轴功率表达式}
+
+\begin{jie}
+\textbf{已知：}水泵的轴功率 $N$ 与泵轴的转矩 $M$、角速度 $\omega$ 有关。
+
+\textbf{求：}用\textbf{瑞利法}导出轴功率 $N$ 的表达式。
+
+\textbf{依据：}瑞利法（教材 6.2.3 节）。本题只有 2 个影响因素，
+是瑞利法「有关物理量少」时最典型的应用。
+
+\textbf{第 1 步：写出待定函数形式。}
+\[ N=k\,M^{a}\omega^{b} \]
+
+\textbf{第 2 步：列量纲表。}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcX@{}}
+\toprule
+物理量 & 符号 & 量纲 \\
+\midrule
+轴功率 & $N$ & $\mathrm{ML^{2}T^{-3}}$ \\
+转矩 & $M$ & $\mathrm{ML^{2}T^{-2}}$ \\
+角速度 & $\omega$ & $\mathrm{T^{-1}}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+（转速 $n$ 的单位 $\mathrm{r/min}$ 不是量纲单位；角速度 $\omega$ 的量纲为 $\mathrm{T^{-1}}$ 或 $\mathrm{rad/s}$。）
+
+\textbf{第 3 步：写出量纲方程。}
+\[ \left(\mathrm{ML^{2}T^{-3}}\right)
+   =\left(\mathrm{ML^{2}T^{-2}}\right)^{a}\left(\mathrm{T^{-1}}\right)^{b}
+   =\mathrm{M}^{a}\ \mathrm{L}^{2a}\ \mathrm{T}^{-2a-b} \]
+
+\textbf{第 4 步：按量纲和谐原理列指数方程。}
+\[ \mathrm{M}:\ a=1 \]
+\[ \mathrm{L}:\ 2a=2\ \Longrightarrow\ a=1\ \text{（自动满足）} \]
+\[ \mathrm{T}:\ -2a-b=-3\ \Longrightarrow\ b=3-2a=3-2=1 \]
+故
+\[ a=1,\qquad b=1 \]
+
+\textbf{第 5 步：写出结果。}
+\[ N=k\,M^{1}\omega^{1}=k\,M\omega \]
+
+\textbf{第 6 步：定常数 $k$。}$k$ 是无量纲系数。本题的物理关系是\textbf{确定的}
+（功率＝转矩乘角速度），实验与理论都给出 $k=1$，故
+\[ \boxed{\ N=M\omega\ } \]
+
+\textbf{结果：}$N=kM\omega$，取 $k=1$ 即常用的 $N=M\omega$。
+若角速度用转速 $n$（$\mathrm{r/min}$）表示，则 $\omega=\dfrac{2\pi n}{60}$，代入得
+\[ N=\frac{2\pi n M}{60} \]
+（工程上常写作 $N=\dfrac{Mn}{9550}$（$\mathrm{kW}$、$\mathrm{N\cdot m}$、$\mathrm{r/min}$），
+$9550=\dfrac{60\times1000}{2\pi}$，与上式一致。）
+
+\textbf{量纲自检：}$[M\omega]=\mathrm{ML^{2}T^{-2}}\cdot\mathrm{T^{-1}}=\mathrm{ML^{2}T^{-3}}$，
+与功率量纲一致；数值校验：若 $M=100\ \mathrm{N\cdot m}$、$n=1450\ \mathrm{r/min}$，
+则 $N=\dfrac{100\times1450}{9550}=15.2\ \mathrm{kW}$，与中小型水泵的轴功率量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：角速度与转速不是一回事。}
+角速度 $\omega$ 的量纲是 $\mathrm{T^{-1}}$（单位 $\mathrm{rad/s}$），
+转速 $n$ 是「每分钟多少转」，换算关系 $\omega=\dfrac{2\pi n}{60}$。
+量纲分析中\textbf{只能用 $\omega$}；若误把 $n$ 当 $\omega$ 代入，
+量纲方程 $\mathrm{T}:\ -2a=-3$ 会得到 $a=1.5$，非整数，一眼可辨错误。
+
+\textbf{易错点二：转矩的量纲不要写成 $\mathrm{MLT^{-2}}$。}
+转矩是「力 $\times$ 力臂」，量纲 $\mathrm{ML^{2}T^{-2}}$（与能量、功同量纲，
+单位 $\mathrm{N\cdot m}$ 而不是 $\mathrm{J}$——工程上不混用）。写成 $\mathrm{MLT^{-2}}$
+（那是力的量纲）会得到错误指数。
+
+\textbf{易错点三：瑞利法定的 $k$ 要由实验或已有理论确定。}
+本题 $k=1$ 是因为 $N=M\omega$ 是确定的物理定义关系；
+但一般情形（如 $Q=C_d d^{2}\sqrt{gH}$ 的流量系数）$k$ 必须由实验给出。
+答卷上要写「$k$ 为无量纲系数，由实验确定；本题取 $k=1$」。
+\end{yicuo}
+
+\noindent\textbf{第 6.11 题\quad $\pi$ 定理导出液体边壁切应力表达式}
+
+\begin{jie}
+\textbf{已知：}影响液体边壁切应力 $\tau_w$ 的因素有断面平均流速 $v$、
+水力半径 $R$、管壁粗糙度 $\Delta$、液体密度 $\rho$ 和动力黏度 $\mu$。
+
+\textbf{求：}用 $\pi$ 定理导出
+\[ \frac{\tau_w}{\rho v^{2}}=f\!\left(\Rey,\ \frac{\Delta}{R}\right) \]
+
+\textbf{依据：}教材 6.2.3 节 $\pi$ 定理（书 p109）。$\pi$ 定理的内容：
+若一物理过程涉及 $n$ 个物理量、含 $m$ 个基本量纲，
+则可由 $n-m$ 个无量纲项描述，即 $F(\pi_1,\pi_2,\dots,\pi_{n-m})=0$。
+
+\textbf{第 1 步：写出待定函数并数清物理量。}
+\[ f(\tau_w,\ v,\ R,\ \Delta,\ \rho,\ \mu)=0 \]
+$n=6$ 个物理量。
+
+\textbf{第 2 步：列量纲表（必写的得分点）。}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcX@{}}
+\toprule
+物理量 & 符号 & 量纲 \\
+\midrule
+边壁切应力 & $\tau_w$ & $\mathrm{ML^{-1}T^{-2}}$ \\
+断面平均流速 & $v$ & $\mathrm{LT^{-1}}$ \\
+水力半径 & $R$ & $\mathrm{L}$ \\
+管壁粗糙度 & $\Delta$ & $\mathrm{L}$ \\
+液体密度 & $\rho$ & $\mathrm{ML^{-3}}$ \\
+动力黏度 & $\mu$ & $\mathrm{ML^{-1}T^{-1}}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{第 3 步：定基本量纲个数与 $\pi$ 项个数。}
+不可压缩流体 $m=3$（$\mathrm{M}$、$\mathrm{L}$、$\mathrm{T}$），故
+\[ N(\pi)=n-m=6-3=3 \]
+
+\textbf{第 4 步：选 3 个重复变量。}
+选 $\rho$、$v$、$R$——三者含齐 $\mathrm{M}$、$\mathrm{L}$、$\mathrm{T}$（$\rho$ 供 $\mathrm{M}$，
+$v$ 供 $\mathrm{T}$，$R$ 供 $\mathrm{L}$），且\textbf{彼此量纲独立}
+（不能互相导出：$[\rho]=\mathrm{ML^{-3}}$、$[v]=\mathrm{LT^{-1}}$、$[R]=\mathrm{L}$
+的指数行列式不为零）。这是本题的关键一步。
+
+\textbf{第 5 步：逐个组成 $\pi$ 项并解指数。}
+
+\textbf{（1）$\pi_1=\dfrac{\tau_w}{\rho^{a}v^{b}R^{c}}$}
+\[ [\pi_1]=\frac{\mathrm{ML^{-1}T^{-2}}}
+   {\left(\mathrm{ML^{-3}}\right)^{a}\left(\mathrm{LT^{-1}}\right)^{b}\mathrm{L}^{c}}=1 \]
+\[ \mathrm{M}:\ 1-a=0\ \Longrightarrow\ a=1 \]
+\[ \mathrm{T}:\ -2+b=0\ \Longrightarrow\ b=2 \]
+\[ \mathrm{L}:\ -1+3a-b-c=0\ \Longrightarrow\ -1+3-2-c=0
+   \ \Longrightarrow\ c=0 \]
+故
+\[ \pi_1=\frac{\tau_w}{\rho v^{2}} \]
+
+\textbf{（2）$\pi_2=\dfrac{\mu}{\rho^{a}v^{b}R^{c}}$}
+\[ [\pi_2]=\frac{\mathrm{ML^{-1}T^{-1}}}
+   {\left(\mathrm{ML^{-3}}\right)^{a}\left(\mathrm{LT^{-1}}\right)^{b}\mathrm{L}^{c}}=1 \]
+\[ \mathrm{M}:\ 1-a=0\ \Longrightarrow\ a=1 \]
+\[ \mathrm{T}:\ -1+b=0\ \Longrightarrow\ b=1 \]
+\[ \mathrm{L}:\ -1+3a-b-c=0\ \Longrightarrow\ -1+3-1-c=0
+   \ \Longrightarrow\ c=1 \]
+故
+\[ \pi_2=\frac{\mu}{\rho v R} \]
+两边取倒数即
+\[ \frac{1}{\pi_2}=\frac{\rho v R}{\mu}=\Rey \]
+（$\Rey$ 的写法中长度可用管径 $d$ 或水力半径 $R$，
+水力半径的定义为 $R=\dfrac{A}{\chi}$；圆管满流时 $R=\dfrac{d}{4}$，
+故 $\Rey=\dfrac{vR}{\nu}$ 与 $\dfrac{vd}{\nu}$ 只差一个常数 $4$，
+换成管流惯用写法即 $\Rey=\dfrac{vd}{\nu}$。）
+
+\textbf{（3）$\pi_3=\dfrac{\Delta}{\rho^{a}v^{b}R^{c}}$}
+粗糙度是长度量纲，立即看出
+\[ \pi_3=\frac{\Delta}{R} \]
+（$\Delta$ 与 $R$ 同量纲，无需用 $\rho$、$v$；这正说明「管壁相对粗糙度」是一个独立的无量纲数群。）
+
+\textbf{第 6 步：写出无量纲关系式。}
+由 $\pi$ 定理
+\[ F(\pi_1,\pi_2,\pi_3)=0\ \Longrightarrow\
+   \pi_1=f(\pi_2,\pi_3) \]
+即
+\[ \boxed{\ \frac{\tau_w}{\rho v^{2}}
+   =f\!\left(\Rey,\ \frac{\Delta}{R}\right)\ } \]
+
+\textbf{结果：}
+\[ \frac{\tau_w}{\rho v^{2}}=f\!\left(\Rey,\ \frac{\Delta}{R}\right)
+   \qquad\Longleftrightarrow\qquad
+   \tau_w=\rho v^{2}\,f\!\left(\Rey,\ \frac{\Delta}{R}\right) \]
+
+\textbf{第 7 步：与教材常用形式对接（加分点）。}
+工程上把边壁切应力写成
+\[ \tau_w=\frac{\lambda}{8}\rho v^{2} \]
+与上式对比得
+\[ \lambda=8f\!\left(\Rey,\ \frac{\Delta}{d}\right) \]
+即\textbf{沿程阻力系数 $\lambda$ 只是 $\Rey$ 与相对粗糙度 $\Delta/d$ 的函数}——
+这正是莫迪图（尼古拉兹实验曲线）的理论依据，
+也把本章的量纲分析与第 5 章的沿程损失公式接起来了。
+
+\textbf{量纲自检：}$[\pi_1]=\dfrac{\mathrm{ML^{-1}T^{-2}}}{\mathrm{ML^{-3}}\cdot\mathrm{L^{2}T^{-2}}}=1$；
+$[\pi_2]=\dfrac{\mathrm{ML^{-1}T^{-1}}}{\mathrm{ML^{-3}}\cdot\mathrm{LT^{-1}}\cdot\mathrm{L}}=1$；
+$[\pi_3]=\dfrac{\mathrm{L}}{\mathrm{L}}=1$：三个 $\pi$ 项都无量纲，\textbf{校验通过}。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：重复变量必须含齐三个基本量纲。}
+$\rho$（$\mathrm{M}$）、$v$（$\mathrm{T}$、$\mathrm{L}$）、$R$（$\mathrm{L}$）满足要求；
+若只选 $\rho$、$\mu$（都只有 $\mathrm{M}$ 与 $\mathrm{L}$ 的幂，缺 $\mathrm{T}$），就组不出完整的 $\pi$ 项。
+\textbf{口诀：重复变量 3 个，$\mathrm{M}$、$\mathrm{L}$、$\mathrm{T}$ 一个都不能少，且互不导出。}
+
+\textbf{易错点二：$\pi$ 项个数一定要先数。}
+$N(\pi)=n-m=6-3=3$，\textbf{不多不少}。若只写出 2 个 $\pi$ 项，说明漏了物理量或选错了重复变量。
+
+\textbf{易错点三：水力半径 $R$ 不是「半径」。}
+水力半径 $R=\dfrac{A}{\chi}$（过水断面面积除以湿周）。
+圆管满流时 $R=\dfrac{d}{4}$；明渠矩形断面 $R=\dfrac{bh}{b+2h}$。
+\textbf{不要把 $R$ 与管半径 $r=d/2$ 混为一谈}（两者恰好差 $2$ 倍）。
+本式中的水力半径是「特征长度」的角色，与 $\Rey$ 中的特征长度同源。
+
+\textbf{易错点四：粗糙度 $\Delta$ 与「绝对粗糙度」「当量粗糙度」的关系。}
+$\Delta$ 是管壁粗糙凸起的高度，量纲为 $\mathrm{L}$；它与水力半径之比 $\dfrac{\Delta}{R}$
+称\textbf{相对粗糙度}。工程上更常用 $\dfrac{\Delta}{d}$，两者只差常数 $4$，
+不影响「$\lambda$ 是 $\Rey$ 与相对粗糙度的函数」这个结论。
+
+\textbf{易错点五：不要把 $\pi_1$ 写成 $\dfrac{\tau_w}{\rho v^{2}R}$。}
+$R$ 的指数解出来是 $c=0$（因为 $\tau_w$ 的 $\mathrm{L}$ 指数与 $\rho v^{2}$ 的已配平），
+凭空多写一个 $R$ 就破坏了量纲和谐。
+\end{yicuo}
+
+\noindent\textbf{第 6.12 题\quad $\pi$ 定理导出桥墩绕流阻力表达式}
+
+\begin{jie}
+\textbf{已知：}水流绕桥墩流动产生的绕流阻力 $F$ 与桥墩宽度 $b$、
+水流速度 $v$、水的密度 $\rho$、动力黏度 $\mu$ 和重力加速度 $g$ 有关。
+
+\textbf{求：}用 $\pi$ 定理导出
+\[ F=\rho b^{2}v^{2}f\!\left(\Rey,\ \Fr\right) \]
+
+\textbf{依据：}$\pi$ 定理（教材 6.2.3 节）。本题 $n=6$，$m=3$，
+故共有 $N(\pi)=6-3=3$ 个 $\pi$ 项——正好对应「阻力系数是 $\Rey$ 与 $\Fr$ 的函数」。
+
+\textbf{第 1 步：写出待定函数并列量纲表。}
+\[ f(F,\ b,\ v,\ \rho,\ \mu,\ g)=0 \]
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcX@{}}
+\toprule
+物理量 & 符号 & 量纲 \\
+\midrule
+绕流阻力 & $F$ & $\mathrm{MLT^{-2}}$ \\
+桥墩宽度 & $b$ & $\mathrm{L}$ \\
+水流速度 & $v$ & $\mathrm{LT^{-1}}$ \\
+水的密度 & $\rho$ & $\mathrm{ML^{-3}}$ \\
+动力黏度 & $\mu$ & $\mathrm{ML^{-1}T^{-1}}$ \\
+重力加速度 & $g$ & $\mathrm{LT^{-2}}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{第 2 步：选 3 个重复变量。}
+选 $\rho$、$v$、$b$：$\rho$ 供 $\mathrm{M}$、$v$ 供 $\mathrm{T}$、$b$ 供 $\mathrm{L}$，
+且三者量纲独立（工程上最常用的组合）。
+
+\textbf{第 3 步：逐个组成 $\pi$ 项并解指数。}
+
+\textbf{（1）$\pi_1=\dfrac{F}{\rho^{a}v^{b_1}b^{c}}$}
+\[ [\pi_1]=\frac{\mathrm{MLT^{-2}}}
+   {\left(\mathrm{ML^{-3}}\right)^{a}\left(\mathrm{LT^{-1}}\right)^{b_1}\mathrm{L}^{c}}=1 \]
+\[ \mathrm{M}:\ 1-a=0\ \Longrightarrow\ a=1 \]
+\[ \mathrm{T}:\ -2+b_1=0\ \Longrightarrow\ b_1=2 \]
+\[ \mathrm{L}:\ 1+3a-b_1+c=0\ \Longrightarrow\ 1+3-2+c=0\ \Longrightarrow\ c=-2 \]
+故
+\[ \pi_1=\frac{F}{\rho v^{2}b^{2}}\qquad\Longleftrightarrow\qquad F=\pi_1\,\rho b^{2}v^{2} \]
+（这就是\textbf{阻力系数}的来源：$\pi_1=C_D$，$F=C_D\rho b^{2}v^{2}$。
+工程上把 $b^{2}$ 换成迎流投影面积 $A=b\times$（桥墩入水深度），
+即惯用的 $F=C_D\dfrac{\rho v^{2}}{2}A$。）
+
+\textbf{（2）$\pi_2=\dfrac{\mu}{\rho^{a}v^{b_1}b^{c}}$}
+\[ [\pi_2]=\frac{\mathrm{ML^{-1}T^{-1}}}
+   {\left(\mathrm{ML^{-3}}\right)^{a}\left(\mathrm{LT^{-1}}\right)^{b_1}\mathrm{L}^{c}}=1 \]
+\[ \mathrm{M}:\ 1-a=0\ \Longrightarrow\ a=1 \]
+\[ \mathrm{T}:\ -1+b_1=0\ \Longrightarrow\ b_1=1 \]
+\[ \mathrm{L}:\ -1+3a-b_1+c=0\ \Longrightarrow\ -1+3-1+c=0\ \Longrightarrow\ c=-1 \]
+故
+\[ \pi_2=\frac{\mu}{\rho vb}=\frac{\nu}{vb}=\frac{1}{\Rey} \]
+\textbf{取倒数得} $\Rey=\dfrac{vb}{\nu}$（特征长度取桥墩宽度 $b$）。
+
+\textbf{（3）$\pi_3=\dfrac{g}{\rho^{a}v^{b_1}b^{c}}$}
+\[ [\pi_3]=\frac{\mathrm{LT^{-2}}}
+   {\left(\mathrm{ML^{-3}}\right)^{a}\left(\mathrm{LT^{-1}}\right)^{b_1}\mathrm{L}^{c}}=1 \]
+\[ \mathrm{M}:\ -a=0\ \Longrightarrow\ a=0 \]
+\[ \mathrm{T}:\ -2+b_1=0\ \Longrightarrow\ b_1=2 \]
+\[ \mathrm{L}:\ 1-b_1+c=0\ \Longrightarrow\ 1-2+c=0\ \Longrightarrow\ c=1 \]
+故
+\[ \pi_3=\frac{gb}{v^{2}} \]
+\textbf{取倒数得} $\Fr=\dfrac{v^{2}}{gb}$（特征长度取桥墩宽度 $b$）。
+
+\textbf{第 4 步：写出无量纲关系式。}
+\[ F(\pi_1,\pi_2,\pi_3)=0\ \Longrightarrow\ \pi_1=f(\pi_2,\pi_3) \]
+即
+\[ \frac{F}{\rho b^{2}v^{2}}=f\!\left(\Rey,\ \Fr\right) \]
+两边乘 $\rho b^{2}v^{2}$：
+\[ \boxed{\ F=\rho b^{2}v^{2}\,f\!\left(\Rey,\ \Fr\right)\ } \]
+
+\textbf{结果：}绕流阻力
+\[ F=\rho b^{2}v^{2}f\!\left(\Rey,\ \Fr\right),\qquad
+   \Rey=\frac{vb}{\nu},\qquad \Fr=\frac{v^{2}}{gb} \]
+物理意义：桥墩绕流既有\textbf{黏滞力}（边界层、尾涡）的作用，又有\textbf{自由液面波浪}
+（重力）的作用，所以阻力系数同时是 $\Rey$ 与 $\Fr$ 的函数。
+工程上把常数与形状因子并入 $f$ 并改用迎流面积 $A$，即
+\[ F=C_D\,\frac{\rho v^{2}}{2}A,\qquad C_D=C_D(\Rey,\Fr) \]
+
+\textbf{量纲自检：}
+$[\rho b^{2}v^{2}]=\mathrm{ML^{-3}}\cdot\mathrm{L^{2}}\cdot\mathrm{L^{2}T^{-2}}=\mathrm{MLT^{-2}}$，
+正是力的量纲；三个 $\pi$ 项分别无量纲：
+$[\pi_1]=\dfrac{\mathrm{MLT^{-2}}}{\mathrm{MLT^{-2}}}=1$、
+$[\pi_2]=\dfrac{\mathrm{ML^{-1}T^{-1}}}{\mathrm{ML^{-3}}\cdot\mathrm{LT^{-1}}\cdot\mathrm{L}}=1$、
+$[\pi_3]=\dfrac{\mathrm{LT^{-2}}}{\mathrm{L}\cdot\mathrm{T^{-2}}}=1$，\textbf{校验通过}。
+
+\textbf{与教材式 6.74 对接：}教材把绕流阻力写成 $F=C_D\dfrac{\rho v^{2}}{2}A$、
+$C_D=C_D(\Rey)$（$A$ 为迎流投影面积）——这是\textbf{不计重力（无自由液面）}时的简化；
+桥墩伸出水面、背后有波浪时，$\Fr$ 也进入函数关系，故本题保留 $\Fr$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$n-m=3$ 与「只写 2 个 $\pi$ 项」的矛盾。}
+很多同学会漏掉 $g$（只写 $F$、$b$、$v$、$\rho$、$\mu$ 五个量），
+这样 $N(\pi)=6-3=3$ 仍然成立？不——漏掉 $g$ 后 $n=5$、$N(\pi)=2$，
+结果写成 $F=\rho b^{2}v^{2}f(\Rey)$，就\textbf{丢掉了重力相似的信息}，
+与题目给定的 $f(\Rey,\Fr)$ 不符。\textbf{题干列出的物理量一个都不能少。}
+
+\textbf{易错点二：$\pi_3$ 与 $\Fr$ 的方向。}
+解出的是 $\dfrac{gb}{v^{2}}$，取倒数才是 $\Fr=\dfrac{v^{2}}{gb}$；
+两者互为倒数，作为 $f$ 的自变量都合法，但\textbf{要按教材定义写 $\Fr=\dfrac{v^{2}}{gl}$}。
+
+\textbf{易错点三：$b^{2}$ 不是「桥墩宽度的平方」的字面意思。}
+量纲分析得到的 $b^{2}$ 表示\textbf{迎流投影面积}（宽度 $\times$ 入水深度，
+或宽度 $\times$ 特征长度），工程上换成 $A$ 后系数并入 $f$。
+不要把 $b^{2}$ 读成「必须量一个正方形」。
+
+\textbf{易错点四：桥墩是「钝体绕流」。}阻力由\textbf{摩擦阻力}与\textbf{压差阻力}（尾流涡旋）两部分组成；
+$C_D$ 在低 $\Rey$ 时大、随 $\Rey$ 变化剧烈，进入自模区（$\Rey>10^{3}$）后基本为常数
+（圆柱约 $1.0$--$1.2$）。答「如何减小绕流阻力」类简答题时的要点是：
+\emph{流线型化以推迟分离、减小迎流面积、降低来流速度、整流减涡}。
+\end{yicuo}
+
+\answ{第 6 章 小结：本章习题与真题的对应}
+
+\begin{tishi}
+\textbf{本章 12 道课后习题里，有 5 道已在 2014--2022 真题中原样或改编出现：}
+6.1（2014 选择 9/10、2016 填空 3/4、2018 选择 5、2019 选择 5、判断 2、2020 选择 7、
+判断 8/9/10、2021 简答 3、2022 单选 9）；6.5（2022 填空 5，答案 $45\ \mathrm{m/s}$）；
+6.6（2016 计算 7、2019 计算 3）；6.7（2014 计算 8）；6.8（2021 计算 6）。
+\textbf{6.9、6.11、6.12 的量纲分析套路}对应 2019 选择 5、判断 8 与 2020 选择 7 的命题方式
+（「列全部物理量 $\to$ 数 $\pi$ 项个数 $\to$ 写无量纲组合」）。
+\textbf{复习优先级：}6.1 与 6.4 的准则判据（必背）$>$ 6.9/6.11/6.12 的 $\pi$ 定理六步（必会）
+$>$ 6.5--6.8 的比尺换算（会算）$>$ 6.2、6.3 的概念与量纲表（速答）。
+\end{tishi}

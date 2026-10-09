@@ -1,0 +1,865 @@
+\chapter*{第 7 章 理想流体动力学 解答}
+\addcontentsline{toc}{chapter}{第 7 章 理想流体动力学 解答}
+\markboth{第 7 章 理想流体动力学 解答}{}
+
+\anstitle{第 7 章 习题解答}
+
+\begin{tishi}
+\textbf{说明：}本章解答逐一对应题目册 q-ch07 的 14 道题（孔珑原题号 8-3 至 8-16），
+按「已知 $\to$ 依据 $\to$ 步骤 $\to$ 结果 $\to$ 物理检查」的体例给出，
+原题与原解答均见孔珑主编《工程流体力学（第四版）》配套辅导书
+《工程流体力学 学习指导及习题解答》第 8 章 8.3 节（原书书页 126--134）。
+凡原书推算有误、影印不清，或同一个量存在两种通行口径处，
+均在该题之后另加提示框说明；每道题都写了完整的偏导、积分与代入过程，
+读者可以逐行复核。本章解答不判星级、不列依据、不标难度。
+\end{tishi}
+
+\sloppy
+\emergencystretch=2em
+
+%==================================================
+\noindent\textbf{第 8-3 题\quad 四个流场是否满足连续性条件、是有旋还是无旋}
+
+\begin{jie}
+\textbf{已知：}四组速度场：(1) $v_x=k$、$v_y=0$；
+(2) $v_x=\dfrac{kx}{x^2+y^2}$、$v_y=\dfrac{ky}{x^2+y^2}$；
+(3) $v_x=x^2+2xy$、$v_y=y^2+2xy$；
+(4) $v_x=y+z$、$v_y=z+x$、$v_z=x+y$。$k$ 为常数。
+
+\textbf{求：}哪几个满足不可压缩流体的连续性条件？各有旋还是无旋？
+
+\textbf{依据：}不可压缩流体的连续性方程（平面流动）
+$\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=0$，
+三维流动再加一项 $\dfrac{\partial v_z}{\partial z}=0$；
+旋转角速度分量
+\[ \omega_x=\frac{1}{2}\left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial z}\right),\qquad
+   \omega_y=\frac{1}{2}\left(\frac{\partial v_x}{\partial z}-\frac{\partial v_z}{\partial x}\right),\qquad
+   \omega_z=\frac{1}{2}\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right) \]
+
+\textbf{第 1 步\quad 判断是否满足连续性条件}
+
+(1) $\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=\dfrac{\partial k}{\partial x}+\dfrac{\partial 0}{\partial y}=0+0=0$，\textbf{满足}。
+
+(2) $\dfrac{\partial v_x}{\partial x}=k\dfrac{(x^2+y^2)-x\cdot 2x}{(x^2+y^2)^2}=\dfrac{k(y^2-x^2)}{(x^2+y^2)^2}$，
+$\dfrac{\partial v_y}{\partial y}=k\dfrac{(x^2+y^2)-y\cdot 2y}{(x^2+y^2)^2}=\dfrac{k(x^2-y^2)}{(x^2+y^2)^2}$，
+两项之和为零，\textbf{满足}。
+
+(3) $\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=(2x+2y)+(2y+2x)=4(x+y)\neq0$，\textbf{不满足}。
+该速度场不能作为不可压缩流体的平面流动，故本小题不再讨论有旋与否。
+
+(4) $\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}+\dfrac{\partial v_z}{\partial z}
+=\dfrac{\partial(y+z)}{\partial x}+\dfrac{\partial(z+x)}{\partial y}+\dfrac{\partial(x+y)}{\partial z}=0+0+0=0$，\textbf{满足}。
+
+\textbf{第 2 步\quad 判断有旋还是无旋}
+
+(1) $\dfrac{\partial v_y}{\partial x}=0$、$\dfrac{\partial v_x}{\partial y}=0$，
+故 $\omega_z=\dfrac{1}{2}(0-0)=0$，\textbf{无旋}。
+
+(2) $\dfrac{\partial v_y}{\partial x}=k\dfrac{0\cdot(x^2+y^2)-y\cdot 2x}{(x^2+y^2)^2}=-\dfrac{2kxy}{(x^2+y^2)^2}$，
+$\dfrac{\partial v_x}{\partial y}=k\dfrac{0\cdot(x^2+y^2)-x\cdot 2y}{(x^2+y^2)^2}=-\dfrac{2kxy}{(x^2+y^2)^2}$，
+两者相等，故 $\omega_z=\dfrac{1}{2}\left(-\dfrac{2kxy}{(x^2+y^2)^2}+\dfrac{2kxy}{(x^2+y^2)^2}\right)=0$，\textbf{无旋}。
+
+(4) $\dfrac{\partial v_z}{\partial y}=1$、$\dfrac{\partial v_y}{\partial z}=1$；
+$\dfrac{\partial v_x}{\partial z}=1$、$\dfrac{\partial v_z}{\partial x}=1$；
+$\dfrac{\partial v_y}{\partial x}=1$、$\dfrac{\partial v_x}{\partial y}=1$。
+故 $\omega_x=\dfrac{1}{2}(1-1)=0$、$\omega_y=\dfrac{1}{2}(1-1)=0$、$\omega_z=\dfrac{1}{2}(1-1)=0$，\textbf{无旋}。
+
+\textbf{结果：}(1)(2)(4) 满足连续性条件，并且都是无旋流动；
+(3) 不满足连续性条件，不能作为不可压缩流体的平面流动。
+
+\textbf{物理检查：}(2) 的速度场是平面点源型流动，流线是从原点辐射出去的直线，
+但它仍然无旋；这一例恰好说明\textbf{「流线是直线」既不能判为有旋、也不能判为无旋}，
+唯一可靠的判据是涡量（旋转角速度）是否为零。
+
+\textbf{补充（第 (3) 小题）：}若按定义再算一次，
+$\omega_z=\dfrac{1}{2}\left(\dfrac{\partial v_y}{\partial x}-\dfrac{\partial v_x}{\partial y}\right)
+=\dfrac{1}{2}(2y-2x)=y-x$，一般不为零，该场是有旋的；
+但它首先就不满足连续性条件，故原书与本解都不把它当作一个可能的水流场来讨论。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-4 题\quad 极坐标下连续方程与旋转角速度的证明}
+
+\begin{jie}
+\textbf{已知：}直角坐标下的连续方程与旋转角速度
+\[ \frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}=0,\qquad
+   \omega_z=\frac{1}{2}\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right) \]
+以及坐标变换 $x=r\cos\theta$、$y=r\sin\theta$。
+
+\textbf{求：}证明极坐标下的连续方程与旋转角速度分别为
+\[ \frac{\partial v_r}{\partial r}+\frac{v_r}{r}+\frac{1}{r}\frac{\partial v_\theta}{\partial\theta}=0,\qquad
+   \omega_z=\frac{1}{2}\left(\frac{\partial v_\theta}{\partial r}+\frac{v_\theta}{r}-\frac{1}{r}\frac{\partial v_r}{\partial\theta}\right) \]
+
+\textbf{第 1 步\quad 用微元体的质量守恒直接建立极坐标连续方程}
+
+在极坐标平面内取微元体：径向尺寸为 $\mathrm{d}r$，环向弧长为 $r\,\mathrm{d}\theta$，
+垂直纸面的厚度取 $1$（单位厚度）。
+
+径向流进的流量为 $v_r\,(r\,\mathrm{d}\theta)$，流出的流量为
+$\left(v_r+\dfrac{\partial v_r}{\partial r}\mathrm{d}r\right)\left[(r+\mathrm{d}r)\,\mathrm{d}\theta\right]$，
+二者的差（净流入）为
+\[ -\frac{\partial(rv_r)}{\partial r}\,\mathrm{d}r\,\mathrm{d}\theta \]
+环向流进的流量为 $v_\theta\,\mathrm{d}r$，流出的流量为
+$\left(v_\theta+\dfrac{\partial v_\theta}{\partial\theta}\mathrm{d}\theta\right)\mathrm{d}r$，
+净流入为
+\[ -\frac{\partial v_\theta}{\partial\theta}\,\mathrm{d}r\,\mathrm{d}\theta \]
+
+不可压缩流体在恒定流动时，微元体内的质量不随时间变化，净流入必为零：
+\[ -\left[\frac{\partial(rv_r)}{\partial r}+\frac{\partial v_\theta}{\partial\theta}\right]\mathrm{d}r\,\mathrm{d}\theta=0
+   \ \Longrightarrow\ \frac{\partial(rv_r)}{\partial r}+\frac{\partial v_\theta}{\partial\theta}=0 \]
+把第一项展开 $\dfrac{\partial(rv_r)}{\partial r}=r\dfrac{\partial v_r}{\partial r}+v_r$，
+再两边同除以 $r$，得
+\[ \frac{\partial v_r}{\partial r}+\frac{v_r}{r}+\frac{1}{r}\frac{\partial v_\theta}{\partial\theta}=0 \]
+连续方程证毕。
+
+\textbf{第 2 步\quad 用链式法则把直角坐标的旋转角速度化到极坐标}
+
+由 $r=\sqrt{x^2+y^2}$、$\theta=\arctan\dfrac{y}{x}$ 可得四个基本导数关系
+\[ \frac{\partial r}{\partial x}=\cos\theta,\qquad \frac{\partial r}{\partial y}=\sin\theta,\qquad
+   \frac{\partial\theta}{\partial x}=-\frac{\sin\theta}{r},\qquad \frac{\partial\theta}{\partial y}=\frac{\cos\theta}{r} \]
+故对任意量 $f(r,\theta)$ 都有
+\[ \frac{\partial f}{\partial x}=\cos\theta\frac{\partial f}{\partial r}-\frac{\sin\theta}{r}\frac{\partial f}{\partial\theta},\qquad
+   \frac{\partial f}{\partial y}=\sin\theta\frac{\partial f}{\partial r}+\frac{\cos\theta}{r}\frac{\partial f}{\partial\theta} \]
+而极坐标与直角坐标的速度分量关系为
+\[ v_x=v_r\cos\theta-v_\theta\sin\theta,\qquad v_y=v_r\sin\theta+v_\theta\cos\theta \]
+
+把 $f=v_y$ 代入上面第一式、$f=v_x$ 代入第二式并逐项展开：
+\[ \begin{aligned}
+\frac{\partial v_y}{\partial x}={}&
+ \sin\theta\cos\theta\frac{\partial v_r}{\partial r}+\cos^2\theta\frac{\partial v_\theta}{\partial r}
+ -\frac{\sin^2\theta}{r}\frac{\partial v_r}{\partial\theta}-\frac{\sin\theta\cos\theta}{r}v_r\\
+ &-\frac{\sin\theta\cos\theta}{r}\frac{\partial v_\theta}{\partial\theta}+\frac{\sin^2\theta}{r}v_\theta
+\end{aligned} \]
+\[ \begin{aligned}
+\frac{\partial v_x}{\partial y}={}&
+ \sin\theta\cos\theta\frac{\partial v_r}{\partial r}-\sin^2\theta\frac{\partial v_\theta}{\partial r}
+ +\frac{\cos^2\theta}{r}\frac{\partial v_r}{\partial\theta}-\frac{\sin\theta\cos\theta}{r}v_r\\
+ &-\frac{\sin\theta\cos\theta}{r}\frac{\partial v_\theta}{\partial\theta}-\frac{\cos^2\theta}{r}v_\theta
+\end{aligned} \]
+两式相减时，含 $\dfrac{\partial v_r}{\partial r}$、$\dfrac{\partial v_\theta}{\partial\theta}$ 的两组项两两抵消；
+含 $v_r$ 的两项系数相同（都是 $-\dfrac{\sin\theta\cos\theta}{r}$），也相消。余下的三项为
+\[ \frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}
+ =\left(\cos^2\theta+\sin^2\theta\right)\frac{\partial v_\theta}{\partial r}
+ +\frac{v_\theta}{r}\left(\sin^2\theta+\cos^2\theta\right)
+ -\frac{1}{r}\left(\sin^2\theta+\cos^2\theta\right)\frac{\partial v_r}{\partial\theta}
+ =\frac{\partial v_\theta}{\partial r}+\frac{v_\theta}{r}-\frac{1}{r}\frac{\partial v_r}{\partial\theta} \]
+于是
+\[ \omega_z=\frac{1}{2}\left(\frac{\partial v_\theta}{\partial r}+\frac{v_\theta}{r}-\frac{1}{r}\frac{\partial v_r}{\partial\theta}\right) \]
+旋转角速度的极坐标表达式证毕。
+
+\textbf{另一种完全等价的写法：}注意
+$\dfrac{\partial(rv_\theta)}{\partial r}=r\dfrac{\partial v_\theta}{\partial r}+v_\theta$，
+把前两项合并即得
+\[ \omega_z=\frac{1}{2r}\left[\frac{\partial(rv_\theta)}{\partial r}-\frac{\partial v_r}{\partial\theta}\right] \]
+两式只差一个把 $\dfrac{1}{r}$ 乘进括号的恒等变形，做题时用哪一式都可以。
+
+\textbf{量纲自检：}$\dfrac{v_r}{r}$ 与 $\dfrac{1}{r}\dfrac{\partial v_r}{\partial\theta}$ 的单位都是 $\mathrm{s^{-1}}$，
+与 $\omega_z$ 的单位一致。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-5 题\quad 三个极坐标流场是否连续、是否有旋}
+
+\begin{jie}
+\textbf{已知：}(1) $v_r=0$、$v_\theta=k$；(2) $v_r=-\dfrac{k}{r}$、$v_\theta=0$；
+(3) $v_r=2r\sin\theta\cos\theta$、$v_\theta=-2r\sin^2\theta$。$k>0$ 为常数。
+
+\textbf{求：}三个流场是否连续？是否有旋？
+
+\textbf{依据：}第 8-4 题已证明的极坐标连续方程与旋转角速度
+\[ \frac{\partial v_r}{\partial r}+\frac{v_r}{r}+\frac{1}{r}\frac{\partial v_\theta}{\partial\theta}=0,\qquad
+   \omega_z=\frac{1}{2}\left(\frac{\partial v_\theta}{\partial r}+\frac{v_\theta}{r}-\frac{1}{r}\frac{\partial v_r}{\partial\theta}\right) \]
+
+\textbf{第 1 小题\quad $v_r=0$，$v_\theta=k$}
+
+连续性：$\dfrac{\partial 0}{\partial r}+\dfrac{0}{r}+\dfrac{1}{r}\dfrac{\partial k}{\partial\theta}=0$，\textbf{满足}。
+
+有旋性：
+\[ \omega_z=\frac{1}{2}\left(\frac{\partial k}{\partial r}+\frac{k}{r}-\frac{1}{r}\frac{\partial 0}{\partial\theta}\right)
+ =\frac{1}{2}\left(0+\frac{k}{r}-0\right)=\frac{k}{2r}\neq0 \]
+\textbf{有旋}。
+
+物理图像：这是「环向速度沿半径按 $1/r$ 递减、但不等于点涡的 $1/r$ 规律」的流动，
+流线是以原点为心的同心圆；虽然流线是圆，微团却在绕自身轴转动，所以是有旋的。
+（顺便指出：点涡 $v_\theta=\dfrac{\Gamma}{2\pi r}$ 才是无旋的，本题的 $v_\theta=k$ 与之不同。）
+
+\textbf{第 2 小题\quad $v_r=-\dfrac{k}{r}$，$v_\theta=0$}
+
+连续性：
+\[ \frac{\partial(-k/r)}{\partial r}+\frac{-k/r}{r}+\frac{1}{r}\frac{\partial 0}{\partial\theta}
+ =\frac{k}{r^2}-\frac{k}{r^2}+0=0 \]
+\textbf{满足}。
+
+有旋性：
+\[ \omega_z=\frac{1}{2}\left(0+0-\frac{1}{r}\frac{\partial(-k/r)}{\partial\theta}\right)
+ =\frac{1}{2}\left(0+0-0\right)=0 \]
+\textbf{无旋}。
+
+物理图像：这是平面点源流动（径向辐射、流线为过原点的直线、无旋，故存在速度势）。
+
+\textbf{第 3 小题\quad $v_r=2r\sin\theta\cos\theta$，$v_\theta=-2r\sin^2\theta$}
+
+先算连续方程的三项：
+\[ \frac{\partial v_r}{\partial r}=2\sin\theta\cos\theta,\qquad
+   \frac{v_r}{r}=2\sin\theta\cos\theta,\qquad
+   \frac{1}{r}\frac{\partial v_\theta}{\partial\theta}=\frac{1}{r}\left(-2r\right)\cdot 2\sin\theta\cos\theta=-4\sin\theta\cos\theta \]
+三者之和 $2\sin\theta\cos\theta+2\sin\theta\cos\theta-4\sin\theta\cos\theta=0$，\textbf{满足}。
+
+再算旋转角速度的三项：
+\[ \frac{\partial v_\theta}{\partial r}=-2\sin^2\theta,\qquad
+   \frac{v_\theta}{r}=-2\sin^2\theta,\qquad
+   \frac{1}{r}\frac{\partial v_r}{\partial\theta}
+   =\frac{1}{r}\cdot 2r\left(\cos^2\theta-\sin^2\theta\right)=2\cos2\theta \]
+故
+\[ \omega_z=\frac{1}{2}\left(-2\sin^2\theta-2\sin^2\theta-2\cos2\theta\right)=-2\sin^2\theta-\cos2\theta \]
+再用 $\cos2\theta=\cos^2\theta-\sin^2\theta$：
+\[ \omega_z=-2\sin^2\theta-\left(\cos^2\theta-\sin^2\theta\right)
+ =-\sin^2\theta-\cos^2\theta=-1\neq0 \]
+\textbf{有旋}。
+
+\textbf{校验（换到直角坐标复算一遍）：}由 $v_x=v_r\cos\theta-v_\theta\sin\theta$、
+$v_y=v_r\sin\theta+v_\theta\cos\theta$ 得
+\[ v_x=2r\sin\theta\cos^2\theta+2r\sin^3\theta
+ =2r\sin\theta\left(\cos^2\theta+\sin^2\theta\right)=2r\sin\theta=2y,\qquad v_y=0 \]
+于是
+\[ \omega_z=\frac{1}{2}\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right)
+ =\frac{1}{2}\left(0-2\right)=-1 \]
+与极坐标算得的 $-1$ 一致，同时也复核了连续性（$\partial v_x/\partial x+\partial v_y/\partial y=0$）。
+
+\textbf{结果：}(1) 满足连续性、有旋；(2) 满足连续性、无旋；(3) 满足连续性、有旋。
+\end{jie}
+
+\begin{tishi}
+\textbf{关于第 1 小题的两种口径：}本题题面给出的是 $v_\theta=k$（常数）。
+原书答案在代入时把 $\dfrac{\partial v_\theta}{\partial r}$ 与 $\dfrac{v_\theta}{r}$
+分别写成了 $\dfrac{\partial(kr)}{\partial r}$ 与 $\dfrac{kr}{r}$，相当于按 $v_\theta=kr$
+（像刚体一样整体旋转）来计算，于是得到 $\omega_z=\dfrac{k}{2}+\dfrac{k}{2}=k$。
+若严格按题面 $v_\theta=k$，则 $\omega_z=\dfrac{k}{2r}$。
+两种口径下 $\omega_z$ 都不为零，\textbf{「有旋」的结论相同}，只是表达式不同；
+本解按题面给出 $\dfrac{k}{2r}$，给读者一个提醒：代入前务必看清 $v_\theta$ 是常数还是与 $r$ 成正比。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 8-6 题\quad 求点 $(2,2,2)$ 处角速度的三个分量}
+
+\begin{jie}
+\textbf{已知：}有旋流动的速度场 $v_x=x+y$、$v_y=y+z$、$v_z=x^2+y^2+z^2$；所求点为 $(2,2,2)$。
+
+\textbf{求：}$\omega_x$、$\omega_y$、$\omega_z$。
+
+\textbf{依据：}旋转角速度分量
+\[ \omega_x=\frac{1}{2}\left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial z}\right),\qquad
+   \omega_y=\frac{1}{2}\left(\frac{\partial v_x}{\partial z}-\frac{\partial v_z}{\partial x}\right),\qquad
+   \omega_z=\frac{1}{2}\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right) \]
+
+\textbf{第 1 步\quad 先求所需的六个偏导数}
+\[ \frac{\partial v_z}{\partial y}=2y,\qquad \frac{\partial v_y}{\partial z}=1,\qquad
+   \frac{\partial v_x}{\partial z}=0,\qquad \frac{\partial v_z}{\partial x}=2x,\qquad
+   \frac{\partial v_y}{\partial x}=0,\qquad \frac{\partial v_x}{\partial y}=1 \]
+
+\textbf{第 2 步\quad 代入点 $(2,2,2)$}
+\[ \omega_x=\frac{1}{2}\left(2y-1\right)=\frac{1}{2}\left(4-1\right)=\frac{3}{2}\ \mathrm{rad/s} \]
+\[ \omega_y=\frac{1}{2}\left(0-2x\right)=-x=-2\ \mathrm{rad/s} \]
+\[ \omega_z=\frac{1}{2}\left(0-1\right)=-\frac{1}{2}\ \mathrm{rad/s} \]
+
+\textbf{结果：}在点 $(2,2,2)$ 处，
+$\omega_x=\dfrac{3}{2}\ \mathrm{rad/s}$、$\omega_y=-2\ \mathrm{rad/s}$、$\omega_z=-\dfrac{1}{2}\ \mathrm{rad/s}$。
+
+\textbf{物理检查：}三个分量中至少有一个不为零，故该点附近的流体微团在绕自身轴旋转，
+题面所说的「有旋流动」成立。旋转角速度是矢量，若要写成一个数，
+可用 $|\omega|=\sqrt{\omega_x^2+\omega_y^2+\omega_z^2}$
+$=\sqrt{2.25+4+0.25}=\sqrt{6.5}\approx2.55\ \mathrm{rad/s}$。
+
+\textbf{量纲自检：}速度对坐标的偏导单位是 $\mathrm{(m/s)/m}=\mathrm{s^{-1}}$，
+与角速度 $\mathrm{rad/s}$ 一致。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-7 题\quad 求旋转角速度、角变形速度与涡线方程}
+
+\begin{jie}
+\textbf{已知：}$v_x=2y+3z$，$v_y=2z+3x$，$v_z=2x+3y$。
+
+\textbf{求：}旋转角速度 $\omega_x$、$\omega_y$、$\omega_z$；角变形速度；涡线方程。
+
+\textbf{第 1 步\quad 求所需的九个偏导数}
+\[ \frac{\partial v_x}{\partial x}=\frac{\partial v_y}{\partial y}=\frac{\partial v_z}{\partial z}=0,\qquad
+   \frac{\partial v_x}{\partial y}=2,\qquad \frac{\partial v_x}{\partial z}=3,\qquad
+   \frac{\partial v_y}{\partial x}=3,\qquad \frac{\partial v_y}{\partial z}=2,\qquad
+   \frac{\partial v_z}{\partial x}=2,\qquad \frac{\partial v_z}{\partial y}=3 \]
+
+\textbf{第 2 步\quad 旋转角速度}
+\[ \omega_x=\frac{1}{2}\left(\frac{\partial v_z}{\partial y}-\frac{\partial v_y}{\partial z}\right)=\frac{1}{2}(3-2)=\frac{1}{2}\ \mathrm{rad/s} \]
+\[ \omega_y=\frac{1}{2}\left(\frac{\partial v_x}{\partial z}-\frac{\partial v_z}{\partial x}\right)=\frac{1}{2}(3-2)=\frac{1}{2}\ \mathrm{rad/s} \]
+\[ \omega_z=\frac{1}{2}\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right)=\frac{1}{2}(3-2)=\frac{1}{2}\ \mathrm{rad/s} \]
+三个分量相等且与位置无关，说明整个流场各处的流体微团都以同一角速度绕
+方向 $(1,1,1)$ 转动，旋转角速度的大小
+\[ |\omega|=\sqrt{\left(\frac{1}{2}\right)^2+\left(\frac{1}{2}\right)^2+\left(\frac{1}{2}\right)^2}
+ =\frac{\sqrt{3}}{2}\approx0.866\ \mathrm{rad/s} \]
+
+\textbf{第 3 步\quad 角变形速度}
+由 $\varepsilon_{xy}=\dfrac{1}{2}\left(\dfrac{\partial v_x}{\partial y}+\dfrac{\partial v_y}{\partial x}\right)$ 等三式：
+\[ \varepsilon_{xy}=\frac{1}{2}(2+3)=\frac{5}{2}\ \mathrm{s^{-1}},\qquad
+   \varepsilon_{yz}=\frac{1}{2}\left(\frac{\partial v_y}{\partial z}+\frac{\partial v_z}{\partial y}\right)=\frac{1}{2}(2+3)=\frac{5}{2}\ \mathrm{s^{-1}} \]
+\[ \varepsilon_{zx}=\frac{1}{2}\left(\frac{\partial v_z}{\partial x}+\frac{\partial v_x}{\partial z}\right)=\frac{1}{2}(2+3)=\frac{5}{2}\ \mathrm{s^{-1}} \]
+三个角变形速度也彼此相等，说明流体微团除整体转动之外，还沿三个坐标面发生等量的剪切变形。
+
+\textbf{第 4 步\quad 涡线方程}
+涡线上各点的切线方向与该点的涡量（旋转角速度矢量）方向一致，故
+\[ \frac{\mathrm{d}x}{\omega_x}=\frac{\mathrm{d}y}{\omega_y}=\frac{\mathrm{d}z}{\omega_z} \]
+三个分量都等于 $\dfrac{1}{2}$，代入后得
+\[ \mathrm{d}x=\mathrm{d}y=\mathrm{d}z \]
+积分得
+\[ x-y=C_1,\qquad z-y=C_2 \]
+即涡线是一族平行于方向 $(1,1,1)$ 的直线（两个积分常数各取一组值就得到一条涡线）。
+
+\textbf{结果：}$\omega_x=\omega_y=\omega_z=\dfrac{1}{2}\ \mathrm{rad/s}$；
+$\varepsilon_{xy}=\varepsilon_{yz}=\varepsilon_{zx}=\dfrac{5}{2}\ \mathrm{s^{-1}}$；
+涡线方程为 $x-y=C_1$、$z-y=C_2$（直线族）。
+\end{jie}
+
+\begin{tishi}
+\textbf{角变形速度的两种记法：}本解按教材（3.4 节）的定义，令角变形速度
+$\varepsilon_{xy}=\dfrac{1}{2}\left(\dfrac{\partial v_x}{\partial y}+\dfrac{\partial v_y}{\partial x}\right)$，
+得 $\dfrac{5}{2}\ \mathrm{s^{-1}}$。也有些书上把「两条直角边夹角的变化率」
+$\gamma_{xy}=\dfrac{\partial v_x}{\partial y}+\dfrac{\partial v_y}{\partial x}$ 直接称为角变形速度，
+那它就等于 $5\ \mathrm{s^{-1}}$，是本解结果的 2 倍。
+两种口径只是差一个 $\dfrac{1}{2}$ 因子，做题时按所用教材的符号取其一即可，
+但\textbf{同一份答卷里不要两种混用}。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 8-8 题\quad 证明满足连续方程、是有势流动，并求速度势}
+
+\begin{jie}
+\textbf{已知：}不可压缩流体平面流动 $v_x=2xy+x$、$v_y=x^2-y^2-y$。
+
+\textbf{求：}证明它满足连续方程、是有势流动，并求出速度势 $\varphi$。
+
+\textbf{第 1 步\quad 验证连续性方程}
+\[ \frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}
+ =\frac{\partial(2xy+x)}{\partial x}+\frac{\partial(x^2-y^2-y)}{\partial y}
+ =(2y+1)+(-2y-1)=0 \]
+满足不可压缩流体的连续性方程。
+
+\textbf{第 2 步\quad 验证无旋（即有势）}
+\[ \omega_z=\frac{1}{2}\left(\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right)
+ =\frac{1}{2}\left(2x-2x\right)=0 \]
+涡量处处为零，流动无旋，故存在速度势 $\varphi$，是一个有势流动。
+
+\textbf{第 3 步\quad 积分求速度势}
+由 $\mathrm{d}\varphi=\dfrac{\partial\varphi}{\partial x}\mathrm{d}x+\dfrac{\partial\varphi}{\partial y}\mathrm{d}y
+=v_x\mathrm{d}x+v_y\mathrm{d}y$，先把 $y$ 当作常量对 $x$ 积分：
+\[ \varphi=\int(2xy+x)\,\mathrm{d}x=x^2y+\frac{x^2}{2}+f(y) \]
+其中 $f(y)$ 是待定的积分函数（对 $x$ 积分时出现的「常数」）。
+再对 $y$ 求偏导，与已知的 $v_y$ 比较：
+\[ \frac{\partial\varphi}{\partial y}=x^2+f'(y)=v_y=x^2-y^2-y \]
+故 $f'(y)=-y^2-y$，再对 $y$ 积分得
+\[ f(y)=-\frac{y^3}{3}-\frac{y^2}{2}+C \]
+所以
+\[ \varphi=x^2y+\frac{x^2}{2}-\frac{y^3}{3}-\frac{y^2}{2}+C \]
+
+\textbf{第 4 步\quad 回代校验}
+$\dfrac{\partial\varphi}{\partial x}=2xy+x=v_x$，
+$\dfrac{\partial\varphi}{\partial y}=x^2-y^2-y=v_y$，两式都对。
+
+\textbf{结果：}该流动满足连续方程、$\omega_z=0$ 为无旋流动、存在速度势
+\[ \varphi=x^2y+\frac{x^2}{2}-\frac{y^3}{3}-\frac{y^2}{2}+C \]
+速度势可以差一个任意常数（取 $C=0$ 最常见），常数不影响由它算出的速度。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-9 题\quad 由 $\varphi=xy$ 求速度分量与流函数，并证明等势线与流线正交}
+
+\begin{jie}
+\textbf{已知：}速度势 $\varphi=xy$。
+
+\textbf{求：}速度分量 $v_x$、$v_y$；流函数 $\psi$；画出 $\varphi=1$、$2$、$3$ 的等势线；
+证明等势线与流线互相正交。
+
+\textbf{第 1 步\quad 求速度分量}
+\[ v_x=\frac{\partial\varphi}{\partial x}=y,\qquad v_y=\frac{\partial\varphi}{\partial y}=x \]
+校验：$\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=0+0=0$，满足连续性，流函数存在；
+$\omega_z=\dfrac{1}{2}\left(\dfrac{\partial v_y}{\partial x}-\dfrac{\partial v_x}{\partial y}\right)
+=\dfrac{1}{2}(1-1)=0$，无旋，与「已知速度势」自洽。
+
+\textbf{第 2 步\quad 求流函数}
+由 $\mathrm{d}\psi=v_x\mathrm{d}y-v_y\mathrm{d}x=y\,\mathrm{d}y-x\,\mathrm{d}x$ 积分：
+\[ \psi=\frac{y^2}{2}-\frac{x^2}{2}+C \]
+取过原点的流线为基准（令 $x=y=0$ 时 $\psi=0$），得 $C=0$，于是
+\[ \psi=\frac{1}{2}\left(y^2-x^2\right) \]
+校验：$\dfrac{\partial\psi}{\partial y}=y=v_x$，$-\dfrac{\partial\psi}{\partial x}=x=v_y$，两式都对。
+
+\textbf{第 3 步\quad 等势线}
+令 $\varphi=xy=C$，即得等势线方程
+\[ xy=C \]
+取 $C=1,2,3$，得三条以 $x$ 轴和 $y$ 轴为渐近线的等轴双曲线，
+画在 $xOy$ 平面的第一象限内（第三象限各有一条与之对称的支）。
+$C$ 越大，曲线离原点越远；三条曲线互不相交。
+
+\textbf{第 4 步\quad 证明等势线与流线正交}
+流线：$\psi=\dfrac{1}{2}\left(y^2-x^2\right)=C_2$，两边微分得
+$y\,\mathrm{d}y-x\,\mathrm{d}x=0$，故流线上任一点的斜率
+\[ k_1=\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{x}{y} \]
+等势线：$\varphi=xy=C_1$，两边微分得 $y\,\mathrm{d}x+x\,\mathrm{d}y=0$，
+故等势线上同一点的斜率
+\[ k_2=\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{y}{x} \]
+两斜率之积
+\[ k_1k_2=\frac{x}{y}\cdot\left(-\frac{y}{x}\right)=-1 \]
+所以两族曲线在两族曲线的任一交点处互相垂直，即\textbf{等势线与流线正交}。
+
+\textbf{结果：}$v_x=y$、$v_y=x$；$\psi=\dfrac{1}{2}\left(y^2-x^2\right)+C$（取 $C=0$ 时为 $\dfrac{1}{2}\left(y^2-x^2\right)$）；
+等势线为双曲线族 $xy=C$，且与流线处处正交。
+
+\textbf{几何意义：}等势线 $xy=C_1$ 与流线 $y^2-x^2=2C_2$ 是共焦点的两族等轴双曲线，
+它们构成平面势流的正交网格；等势线是等压线，流线在恒定流时与迹线重合。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-10 题\quad 由 $\varphi=x^2-y^2+x$ 求流函数}
+
+\begin{jie}
+\textbf{已知：}不可压缩流体平面流动的速度势 $\varphi=x^2-y^2+x$。
+
+\textbf{求：}流函数 $\psi$。
+
+\textbf{第 1 步\quad 求速度分量}
+\[ v_x=\frac{\partial\varphi}{\partial x}=2x+1,\qquad v_y=\frac{\partial\varphi}{\partial y}=-2y \]
+校验：$\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=2-2=0$，满足连续性，故流函数存在。
+
+\textbf{第 2 步\quad 积分求流函数}
+由 $\mathrm{d}\psi=v_x\mathrm{d}y-v_y\mathrm{d}x=(2x+1)\mathrm{d}y+2y\,\mathrm{d}x$。
+注意被积表达式可以凑成全微分：
+\[ (2x+1)\mathrm{d}y+2y\,\mathrm{d}x=2x\,\mathrm{d}y+2y\,\mathrm{d}x+\mathrm{d}y
+ =\mathrm{d}(2xy)+\mathrm{d}y=\mathrm{d}(2xy+y) \]
+所以
+\[ \psi=2xy+y+C \]
+取过原点的流线为基准（$x=y=0$ 时 $\psi=0$），得 $C=0$，于是
+\[ \psi=y\left(2x+1\right) \]
+
+\textbf{第 3 步\quad 回代校验}
+$\dfrac{\partial\psi}{\partial y}=2x+1=v_x$，$-\dfrac{\partial\psi}{\partial x}=-2y=v_y$，两式都对。
+
+\textbf{结果：}$\psi=2xy+y+C$，取 $C=0$ 时写作 $\psi=y(2x+1)$。
+
+\textbf{提示：}流函数可差任意常数，但两点之间流函数之差（即通过两点连线的单位厚度流量）
+与常数取法无关，所以尾部的「$+C$」不影响任何物理量的计算。
+本题的流线方程 $y(2x+1)=C$ 是一族双曲线，与第 8-8 题的速度场属于同一类
+（把坐标平移到 $\left(-\dfrac{1}{2},0\right)$ 后即为标准拉伸流）。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-11 题\quad 由 $\psi=xy+2x-3y+10$ 求速度势}
+
+\begin{jie}
+\textbf{已知：}不可压缩流体平面流动的流函数 $\psi=xy+2x-3y+10$。
+
+\textbf{求：}速度势 $\varphi$。
+
+\textbf{第 1 步\quad 由流函数求速度分量}
+\[ v_x=\frac{\partial\psi}{\partial y}=x-3,\qquad v_y=-\frac{\partial\psi}{\partial x}=-(y+2) \]
+校验：$\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=1-1=0$，满足连续性；
+$\omega_z=\dfrac{1}{2}\left(\dfrac{\partial v_y}{\partial x}-\dfrac{\partial v_x}{\partial y}\right)
+=\dfrac{1}{2}(0-0)=0$，无旋，故速度势存在。
+
+\textbf{第 2 步\quad 积分求速度势}
+\[ \mathrm{d}\varphi=v_x\mathrm{d}x+v_y\mathrm{d}y=(x-3)\mathrm{d}x-(y+2)\mathrm{d}y \]
+两边积分：
+\[ \varphi=\int(x-3)\,\mathrm{d}x-\int(y+2)\,\mathrm{d}y
+ =\frac{x^2}{2}-3x-\frac{y^2}{2}-2y+C \]
+取 $C=0$。
+
+\textbf{第 3 步\quad 回代校验}
+$\dfrac{\partial\varphi}{\partial x}=x-3=v_x$，$\dfrac{\partial\varphi}{\partial y}=-(y+2)=v_y$，两式都对。
+
+\textbf{结果：}$\varphi=\dfrac{x^2}{2}-3x-\dfrac{y^2}{2}-2y+C$（常数可任取，通常取 $C=0$）。
+
+\textbf{物理图像：}由 $v_x=x-3=0$、$v_y=-(y+2)=0$ 解得驻点 $(3,\,-2)$；
+流场在该点附近的流线形如双曲线，这是一种平面拉伸流（滞止点流），
+也是叠加基本平面势流时最常用的「积木」之一。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-12 题\quad 四个流函数是否都对应有势流动}
+
+\begin{jie}
+\textbf{已知：}(1) $\psi=kxy$；(2) $\psi=x^2-y^2$；(3) $\psi=k\ln(xy^2)$；
+(4) $\psi=k\left(1-\dfrac{1}{r^2}\right)r\sin\theta$。
+
+\textbf{求：}以上各流函数是否都是有势流动（即流场是否无旋、是否存在速度势）？
+
+\textbf{依据：}由流函数求速度分量，直角坐标下用
+$v_x=\dfrac{\partial\psi}{\partial y}$、$v_y=-\dfrac{\partial\psi}{\partial x}$；
+极坐标下用 $v_r=\dfrac{1}{r}\dfrac{\partial\psi}{\partial\theta}$、
+$v_\theta=-\dfrac{\partial\psi}{\partial r}$。
+「有势」的判据是 $\omega_z=\dfrac{1}{2}\left(\dfrac{\partial v_y}{\partial x}-\dfrac{\partial v_x}{\partial y}\right)=0$
+（极坐标下用第 8-4 题的 $\omega_z$ 表达式）。
+
+\textbf{第 (1) 小题\quad $\psi=kxy$}
+
+$v_x=\dfrac{\partial\psi}{\partial y}=kx$，$v_y=-\dfrac{\partial\psi}{\partial x}=-ky$。
+\[ \omega_z=\frac{1}{2}\left[\frac{\partial(-ky)}{\partial x}-\frac{\partial(kx)}{\partial y}\right]
+ =\frac{1}{2}(0-0)=0 \]
+\textbf{无旋、有势}。速度势可由
+$\mathrm{d}\varphi=kx\,\mathrm{d}x-ky\,\mathrm{d}y$ 积分得
+$\varphi=\dfrac{k}{2}\left(x^2-y^2\right)+C$，与 $\psi$ 不是同一族函数，但描述同一流动（两族曲线正交）。
+
+\textbf{第 (2) 小题\quad $\psi=x^2-y^2$}
+
+$v_x=\dfrac{\partial\psi}{\partial y}=-2y$，$v_y=-\dfrac{\partial\psi}{\partial x}=-2x$。
+\[ \omega_z=\frac{1}{2}\left[\frac{\partial(-2x)}{\partial x}-\frac{\partial(-2y)}{\partial y}\right]
+ =\frac{1}{2}(-2+2)=0 \]
+\textbf{无旋、有势}。速度势为
+$\varphi=-2xy+C$（由 $\mathrm{d}\varphi=-2y\,\mathrm{d}x-2x\,\mathrm{d}y$ 积分而得）。
+
+\textbf{第 (3) 小题\quad $\psi=k\ln(xy^2)=k\ln x+2k\ln y$}
+
+$v_x=\dfrac{\partial\psi}{\partial y}=k\cdot\dfrac{1}{y^2}\cdot 2y=\dfrac{2k}{y}$，
+$v_y=-\dfrac{\partial\psi}{\partial x}=-k\cdot\dfrac{1}{x}=-\dfrac{k}{x}$。
+
+连续性：$\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=0+0=0$，满足
+（流函数既然存在，连续性自然是满足的）。
+
+有旋性：$\dfrac{\partial v_y}{\partial x}=\dfrac{k}{x^2}$，
+$\dfrac{\partial v_x}{\partial y}=-\dfrac{2k}{y^2}$，故
+\[ \omega_z=\frac{1}{2}\left[\frac{\partial v_y}{\partial x}-\frac{\partial v_x}{\partial y}\right]
+ =\frac{1}{2}\left(\frac{k}{x^2}+\frac{2k}{y^2}\right)\neq0 \]
+\textbf{有旋，不是有势流动}（不存在速度势）。
+
+\textbf{第 (4) 小题\quad $\psi=k\left(1-\dfrac{1}{r^2}\right)r\sin\theta=k\left(r-\dfrac{1}{r}\right)\sin\theta$}
+
+先把流函数展开为 $k\!\left(r-\dfrac{1}{r}\right)\sin\theta$，再用极坐标公式求速度分量：
+\[ v_r=\frac{1}{r}\frac{\partial\psi}{\partial\theta}
+ =\frac{1}{r}\cdot k\left(r-\frac{1}{r}\right)\cos\theta
+ =k\left(1-\frac{1}{r^2}\right)\cos\theta \]
+\[ v_\theta=-\frac{\partial\psi}{\partial r}
+ =-k\left(1+\frac{1}{r^2}\right)\sin\theta \]
+再算旋转角速度的三项：
+\[ \frac{\partial v_\theta}{\partial r}=-k\left(-\frac{2}{r^3}\right)\sin\theta=\frac{2k}{r^3}\sin\theta,\qquad
+   \frac{v_\theta}{r}=-\frac{k}{r}\left(1+\frac{1}{r^2}\right)\sin\theta \]
+\[ \frac{1}{r}\frac{\partial v_r}{\partial\theta}
+ =\frac{1}{r}\cdot k\left(1-\frac{1}{r^2}\right)(-\sin\theta)
+ =-\frac{k}{r}\left(1-\frac{1}{r^2}\right)\sin\theta \]
+于是
+\[ \begin{aligned}
+\omega_z&=\frac{1}{2}\left[\frac{2k}{r^3}\sin\theta
+ -\frac{k}{r}\left(1+\frac{1}{r^2}\right)\sin\theta
+ +\frac{k}{r}\left(1-\frac{1}{r^2}\right)\sin\theta\right]\\
+&=\frac{k\sin\theta}{2}\left[\frac{2}{r^3}-\frac{1}{r}-\frac{1}{r^3}+\frac{1}{r}-\frac{1}{r^3}\right]=0
+\end{aligned} \]
+括号内四项两两相消，故 $\omega_z=0$，\textbf{无旋、有势}。
+（这正是均匀流叠加平面偶极子的圆柱绕流流函数，是平面势流中的经典无旋流动。）
+
+\textbf{结果：}(1)、(2)、(4) 都是有势流动；(3) 有旋，不是有势流动。
+\end{jie}
+
+\begin{tishi}
+\textbf{第 (3) 小题的口径说明：}题面 $\psi=k\ln(xy^2)$ 影印清楚，据此算得
+$v_x=\dfrac{2k}{y}$、$v_y=-\dfrac{k}{x}$。原书答案此处把
+$\dfrac{\partial\psi}{\partial y}=\dfrac{2k}{y}$ 印成了 $2k$（漏掉分母 $y$）、
+把 $\dfrac{\partial\psi}{\partial x}=\dfrac{k}{x}$ 印成了 $\dfrac{ky}{x}$，
+于是印成 $v_x=2k$、$v_y=-\dfrac{ky}{x}$；这组速度既不满足全微分条件
+（$\dfrac{\partial v_y}{\partial x}\neq-\dfrac{\partial v_x}{\partial y}$），
+也与 $\psi=k\ln(xy^2)$ 不自洽。按题面重算的结论
+\textbf{「有旋、不是有势流动」与原书相同}，只是中间表达式不同，做题时以本文为准。
+
+\textbf{第 (4) 小题的指数：}题面是 $k\left(1-\dfrac{1}{r^2}\right)r\sin\theta$，
+指数 $2$ 在影印页上很小，容易读成 $\dfrac{1}{r}$。只有按 $\dfrac{1}{r^2}$ 计算，
+才与原书给出的 $v_r=k\left(1-\dfrac{1}{r^2}\right)\cos\theta$、
+$v_\theta=-k\left(1+\dfrac{1}{r^2}\right)\sin\theta$ 以及「无旋有势」的结论吻合；
+若按 $\dfrac{1}{r}$ 计算，则 $\omega_z=-\dfrac{k\sin\theta}{2r^2}\neq0$，
+会得出「有旋」的相反结论，故此处必须取 $\dfrac{1}{r^2}$。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 8-13 题\quad 证明两个流场 $\varphi=x^2+x-y^2$ 与 $\psi=2xy+y$ 等同}
+
+\begin{jie}
+\textbf{已知：}流场一由速度势 $\varphi=x^2+x-y^2$ 给出；流场二由流函数 $\psi=2xy+y$ 给出。
+
+\textbf{求：}证明两个流场是等同的。
+
+\textbf{第 1 步\quad 由速度势求速度分量}
+\[ v_x=\frac{\partial\varphi}{\partial x}=2x+1,\qquad v_y=\frac{\partial\varphi}{\partial y}=-2y \]
+
+\textbf{第 2 步\quad 由流函数求速度分量}
+\[ v_x=\frac{\partial\psi}{\partial y}=2x+1,\qquad v_y=-\frac{\partial\psi}{\partial x}=-2y \]
+
+两组速度分量逐点完全相同。速度场唯一地决定流场（速度相同则流线、流量、加速度都相同），
+故\textbf{两个流场等同}。
+
+\textbf{第 3 步\quad 进一步给出两者之间的互求关系}
+
+由第 1 步得到的 $(v_x,v_y)$ 反过来积分求流函数：
+\[ \mathrm{d}\psi=v_x\mathrm{d}y-v_y\mathrm{d}x=(2x+1)\mathrm{d}y+2y\,\mathrm{d}x
+ =\mathrm{d}(2xy+y) \]
+故 $\psi=2xy+y+C$，取 $C=0$ 即题给的 $\psi=2xy+y$。
+
+反之，由第 2 步得到的 $(v_x,v_y)$ 积分求速度势：
+\[ \mathrm{d}\varphi=v_x\mathrm{d}x+v_y\mathrm{d}y=(2x+1)\mathrm{d}x-2y\,\mathrm{d}y
+ =\mathrm{d}\left(x^2+x-y^2\right) \]
+取积分常数为零，即得题给的 $\varphi=x^2+x-y^2$。
+
+\textbf{第 4 步\quad 流线方程的一致性（可选校验）}
+
+由 $\psi=2xy+y=y(2x+1)=C$ 得流线族 $y(2x+1)=C$；
+由 $\varphi$ 求出的流函数与 $\psi=2xy+y$ 只差一个常数，等 $\psi$ 线完全重合，
+故两个流场不仅速度相同，流线也逐条相同。
+驻点为 $v_x=2x+1=0$ 与 $v_y=-2y=0$ 的交点，即 $\left(-\dfrac{1}{2},\,0\right)$，两种描述给出的驻点一致。
+
+\textbf{结果：}两个流场的速度分量逐点相同，$\varphi=x^2+x-y^2$ 与 $\psi=2xy+y$ 是
+\textbf{同一个平面势流的两种描述}（前者给势函数、后者给流函数），二者等同。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-14 题\quad 两个等强度点源在四个给定点的速度}
+
+\begin{jie}
+\textbf{已知：}在 $(1,0)$ 与 $(-1,0)$ 处各有一个点源，二者的速度强度（体积流量）相同，
+均为 $q_V=4\pi$（按 $\mathrm{m^3/s}$ 计）。所求点为 $(0,0)$、$(0,1)$、$(0,-1)$、$(1,1)$。
+
+\textbf{求：}四个点处的速度。
+
+\textbf{依据：}强度为 $q_V$、位于原点的点源，其速度势与流函数为
+\[ \varphi=\frac{q_V}{2\pi}\ln r=\frac{q_V}{2\pi}\ln\sqrt{x^2+y^2},\qquad
+   \psi=\frac{q_V}{2\pi}\theta=\frac{q_V}{2\pi}\arctan\frac{y}{x} \]
+速度分量为 $v_x=\dfrac{q_V}{2\pi}\dfrac{x}{x^2+y^2}$、$v_y=\dfrac{q_V}{2\pi}\dfrac{y}{x^2+y^2}$。
+当点源位于 $(x_0,y_0)$ 时，只需把 $x$、$y$ 分别换成 $x-x_0$、$y-y_0$。
+势流叠加原理：组合流动的势函数（流函数）等于各基本流动势函数（流函数）的代数和。
+
+\textbf{第 1 步\quad 写出组合流动的速度势}
+
+两个点源强度相同，$q_V=4\pi$，故 $\dfrac{q_V}{2\pi}=2$。记
+\[ r_1^2=(x-1)^2+y^2,\qquad r_2^2=(x+1)^2+y^2 \]
+则组合流动的速度势为
+\[ \varphi=2\ln r_1+2\ln r_2=\ln\left(r_1^2r_2^2\right)=\ln\left\{\left[(x-1)^2+y^2\right]\left[(x+1)^2+y^2\right]\right\} \]
+若改用流函数叠加，则为
+\[ \psi=2\left[\arctan\frac{y}{x-1}+\arctan\frac{y}{x+1}\right] \]
+两种做法结果完全一致。
+
+\textbf{第 2 步\quad 求组合流动的速度分量}
+\[ v_x=\frac{\partial\varphi}{\partial x}=2\frac{x-1}{r_1^2}+2\frac{x+1}{r_2^2}
+ =2\left[\frac{x-1}{(x-1)^2+y^2}+\frac{x+1}{(x+1)^2+y^2}\right] \]
+\[ v_y=\frac{\partial\varphi}{\partial y}=2\frac{y}{r_1^2}+2\frac{y}{r_2^2}
+ =2\left[\frac{y}{(x-1)^2+y^2}+\frac{y}{(x+1)^2+y^2}\right] \]
+（原书用流函数求导 $v_x=\dfrac{\partial\psi}{\partial y}$、$v_y=-\dfrac{\partial\psi}{\partial x}$，结果相同。）
+
+\textbf{第 3 步\quad 逐点代入}
+
+\noindent(1) 点 $(0,0)$：$r_1^2=1$，$r_2^2=1$，
+\[ v_x=2\left[\frac{-1}{1}+\frac{1}{1}\right]=0,\qquad v_y=2\left[\frac{0}{1}+\frac{0}{1}\right]=0 \]
+即该点速度为零。
+
+\noindent(2) 点 $(0,1)$：$r_1^2=(-1)^2+1^2=2$，$r_2^2=1^2+1^2=2$，
+\[ v_x=2\left[\frac{-1}{2}+\frac{1}{2}\right]=0,\qquad
+   v_y=2\left[\frac{1}{2}+\frac{1}{2}\right]=2\ \mathrm{m/s} \]
+
+\noindent(3) 点 $(0,-1)$：$r_1^2=2$，$r_2^2=2$，
+\[ v_x=2\left[\frac{-1}{2}+\frac{1}{2}\right]=0,\qquad
+   v_y=2\left[\frac{-1}{2}+\frac{-1}{2}\right]=-2\ \mathrm{m/s} \]
+
+\noindent(4) 点 $(1,1)$：$r_1^2=0^2+1^2=1$，$r_2^2=2^2+1^2=5$，
+\[ v_x=2\left[\frac{0}{1}+\frac{2}{5}\right]=\frac{4}{5}=0.8\ \mathrm{m/s},\qquad
+   v_y=2\left[\frac{1}{1}+\frac{1}{5}\right]=\frac{12}{5}=2.4\ \mathrm{m/s} \]
+
+\textbf{结果：}
+$(0,0)$ 处 $v_x=0$、$v_y=0$（驻点）；
+$(0,1)$ 处 $v_x=0$、$v_y=2\ \mathrm{m/s}$；
+$(0,-1)$ 处 $v_x=0$、$v_y=-2\ \mathrm{m/s}$；
+$(1,1)$ 处 $v_x=0.8\ \mathrm{m/s}$、$v_y=2.4\ \mathrm{m/s}$。
+
+\textbf{物理检查：}两个点源关于 $y$ 轴对称，故 $y$ 轴（$x=0$）上速度的 $x$ 分量必然为零，
+与 (1)(2)(3) 的结果相符；(2) 与 (3) 的 $y$ 分量大小相等、方向相反，也符合对称性。
+两源连线的中点（原点）是驻点：两个源都把流体向外推，中点上两股作用恰好相抵。
+\end{jie}
+
+\begin{tishi}
+\textbf{两点说明：}① 题面只说两个点源「具有相同速度强度 $4\pi$」，未给单位，
+本解按体积流量 $q_V=4\pi\ \mathrm{m^3/s}$ 处理，故速度的单位是 $\mathrm{m/s}$；
+若题给的量纲不同，各点速度只需乘同一个量纲因子。
+② $(1,1)$ 点的答案影印为 $v_x=\dfrac{4}{5}\ \mathrm{m/s}$、$v_y=\dfrac{12}{5}\ \mathrm{m/s}$，
+其中的 $\dfrac{12}{5}$ 在 OCR 结果里读成了 $\dfrac{1}{2}$，本文以影印页为准
+（$y$ 方向上两个源的贡献 $2\times\dfrac{1}{1}$ 与 $2\times\dfrac{1}{5}$ 相加得 $2.4\ \mathrm{m/s}$，可自行复核）。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 8-15 题\quad 均匀流与点源叠加成半体绕流：求势函数、流函数、外型与宽度}
+
+\begin{jie}
+\textbf{已知：}速度为 $v_\infty$、平行于 $x$ 轴的均匀等速流，与位于原点 $O$、
+强度（体积流量）为 $q_V$ 的点源叠加，构成绕平面半体（半无限体）的流动。
+
+\textbf{求：}组合流动的速度势 $\varphi$ 与流函数 $\psi$；证明半体外型方程为
+$r=\dfrac{q_V(\pi-\theta)}{2\pi v_\infty\sin\theta}$；证明它的宽度等于 $\dfrac{q_V}{v_\infty}$。
+
+\textbf{第 1 步\quad 写出两个基本流动的势函数与流函数}
+
+均匀等速流（沿 $x$ 轴正向、速度 $v_\infty$）：
+\[ \varphi_1=v_\infty x,\qquad \psi_1=v_\infty y \]
+点源（位于原点、体积流量 $q_V$）：
+\[ \varphi_2=\frac{q_V}{2\pi}\ln r=\frac{q_V}{2\pi}\ln\sqrt{x^2+y^2},\qquad
+   \psi_2=\frac{q_V}{2\pi}\theta \]
+
+\textbf{第 2 步\quad 按势流叠加原理代数相加}
+\[ \varphi=\varphi_1+\varphi_2=v_\infty x+\frac{q_V}{2\pi}\ln\sqrt{x^2+y^2},\qquad
+   \psi=\psi_1+\psi_2=v_\infty y+\frac{q_V}{2\pi}\arctan\frac{y}{x} \]
+写成极坐标形式（用 $x=r\cos\theta$、$y=r\sin\theta$）：
+\[ \varphi=v_\infty r\cos\theta+\frac{q_V}{2\pi}\ln r,\qquad
+   \psi=v_\infty r\sin\theta+\frac{q_V}{2\pi}\theta \]
+
+\textbf{第 3 步\quad 求速度分布}
+\[ v_r=\frac{\partial\varphi}{\partial r}=v_\infty\cos\theta+\frac{q_V}{2\pi r},\qquad
+   v_\theta=\frac{1}{r}\frac{\partial\varphi}{\partial\theta}=-v_\infty\sin\theta \]
+
+\textbf{第 4 步\quad 求驻点}
+
+驻点是流场中速度为零的点，令 $v_r=0$ 且 $v_\theta=0$：
+\[ \left\{\begin{array}{l}
+   v_\infty\cos\theta+\dfrac{q_V}{2\pi r}=0\\[6pt]
+   -v_\infty\sin\theta=0
+   \end{array}\right. \]
+由第二式得 $\sin\theta=0$，即 $\theta=0$ 或 $\theta=\pi$。
+若取 $\theta=0$，则 $\cos\theta=1$，代入第一式得
+$r=-\dfrac{q_V}{2\pi v_\infty}<0$，半径不能为负，没有物理意义；
+故取 $\theta=\pi$，此时 $\cos\theta=-1$，代入第一式得
+\[ r_0=\frac{q_V}{2\pi v_\infty} \]
+即驻点位于 $x$ 轴负半轴上的点 $\left(-\dfrac{q_V}{2\pi v_\infty},\ 0\right)$，
+它就是半体的前缘（滞止点）。
+
+\textbf{第 5 步\quad 求过驻点的流线，即半体外型}
+
+过驻点的那条流线把点源射出的流体与外部均匀流分开，它的形状就是半体的物面。
+把驻点坐标 $r=r_0$、$\theta=\pi$ 代入流函数：
+\[ \psi_0=v_\infty r_0\sin\pi+\frac{q_V}{2\pi}\cdot\pi=0+\frac{q_V}{2}=\frac{q_V}{2} \]
+故过驻点的流线方程为
+\[ v_\infty r\sin\theta+\frac{q_V}{2\pi}\theta=\frac{q_V}{2} \]
+把含 $\theta$ 的项移到右边：
+\[ v_\infty r\sin\theta=\frac{q_V}{2}-\frac{q_V\theta}{2\pi}
+ =\frac{q_V}{2}\left(1-\frac{\theta}{\pi}\right)=\frac{q_V(\pi-\theta)}{2\pi} \]
+两边除以 $v_\infty\sin\theta$，得
+\[ r=\frac{q_V(\pi-\theta)}{2\pi v_\infty\sin\theta} \]
+这正是题目要求证明的平面半体外型方程，证毕。
+当 $\theta=\pi$ 时分子分母同时趋于零，其极限为 $r_0=\dfrac{q_V}{2\pi v_\infty}$，
+与第 4 步求得的驻点一致（也可用洛必达法则验证）。
+
+\textbf{第 6 步\quad 求半体的宽度}
+
+对半体外型上的点，纵坐标为
+\[ y=r\sin\theta=\frac{q_V(\pi-\theta)}{2\pi v_\infty} \]
+当 $x\to+\infty$ 时 $\theta\to0$，代入得
+\[ y\to\frac{q_V(\pi-0)}{2\pi v_\infty}=\frac{q_V}{2v_\infty} \]
+即半体在下游远处，其上轮廓线的纵坐标趋于 $\dfrac{q_V}{2v_\infty}$，这是\textbf{半宽}。
+流动关于 $x$ 轴对称，下半部分有一条对称的轮廓线，故半体的\textbf{总宽度}
+\[ B=2\times\frac{q_V}{2v_\infty}=\frac{q_V}{v_\infty} \]
+证毕。
+
+\textbf{结果：}
+\[ \varphi=v_\infty x+\frac{q_V}{2\pi}\ln r,\qquad \psi=v_\infty y+\frac{q_V}{2\pi}\theta \]
+驻点位于 $\left(-\dfrac{q_V}{2\pi v_\infty},\ 0\right)$，
+半体外型为 $r=\dfrac{q_V(\pi-\theta)}{2\pi v_\infty\sin\theta}$，
+其宽度（全宽）为 $\dfrac{q_V}{v_\infty}$。
+
+\textbf{物理检查：}驻点之所以落在点源的上游（$x<0$），是因为沿 $x$ 轴正向的均匀来流
+与点源向外射出的流体在这一点恰好等值反向、互相抵消；
+点源流量越大、来流越慢，驻点离原点越远（$r_0\propto\dfrac{q_V}{v_\infty}$），
+半体越「粗」——这与「点源越强、半体越胖」的直觉一致。
+
+\textbf{与真题的联系：}西华 818 的 2015 年计算题第 8 题就是本题的前半段
+（写出叠加后的势函数与流函数、求驻点、求过驻点流线），
+只是没有要求进一步证明外型方程与宽度；做题时务必把「驻点在 $\theta=\pi$」这一判断写清楚。
+\end{jie}
+
+%==================================================
+\noindent\textbf{第 8-16 题\quad 旋转圆柱的速度环量、马格努斯升力与驻点位置}
+
+\begin{jie}
+\textbf{已知：}圆柱长 $L=50\ \mathrm{m}$，直径 $d=1.2\ \mathrm{m}$，故半径 $r_0=0.6\ \mathrm{m}$；
+转速 $n=90\ \mathrm{r/min}$；空气密度 $\rho=1.205\ \mathrm{kg/m^3}$；
+来流速度 $v_\infty=80\ \mathrm{km/h}$，方向与圆柱轴垂直；
+环流与圆柱面之间没有滑动，即圆柱表面处的环向速度等于圆柱表面的线速度。
+
+\textbf{求：}速度环量 $\Gamma$；升力 $F_L$；驻点的位置。
+
+\textbf{第 1 步\quad 统一单位，求圆柱表面的线速度}
+\[ n=90\ \mathrm{r/min}=1.5\ \mathrm{r/s},\qquad
+   \omega=2\pi n=2\pi\times1.5=3\pi=9.4248\ \mathrm{rad/s} \]
+\[ v_\infty=\frac{80\times10^3}{3600}=22.222\ \mathrm{m/s} \]
+圆柱表面的线速度（环向速度）
+\[ v=\omega r_0=9.4248\times0.6=5.655\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求速度环量}
+
+「环流与圆柱体之间没有滑动」意味着紧贴圆柱表面的流体随圆柱一起转，
+其环向速度处处等于 $v=\omega r_0$，于是绕一周的速度环量为
+\[ \Gamma=\oint\vec{v}\cdot\mathrm{d}\vec{s}=v\cdot 2\pi r_0=\omega r_0\cdot 2\pi r_0=2\pi r_0^2\omega \]
+代入数值：
+\[ \Gamma=2\pi\times0.6^2\times9.4248=2\pi\times0.36\times9.4248=21.30\ \mathrm{m^2/s} \]
+若按原书取 $\pi=3.14$，则
+\[ \Gamma=2\pi r_0^2\omega=2\times3.14\times0.36\times\left(\frac{90\times2\times3.14}{60}\right)
+ =21.297\ \mathrm{m^2/s} \]
+本解沿用 $21.297\ \mathrm{m^2/s}$ 这一数值，以便与原书、与同类真题答案逐位对照。
+
+\textbf{第 3 步\quad 求升力}
+
+旋转圆柱在横向来流中受到与来流垂直的升力（马格努斯力），
+由库塔-儒可夫斯基公式，单位长度的升力为 $\rho v_\infty\Gamma$，故长 $L$ 的圆柱所受升力为
+\[ F_L=\rho v_\infty\Gamma L \]
+代入数值：
+\[ F_L=1.205\times22.222\times21.297\times50=2.851\times10^4\ \mathrm{N} \]
+量纲自检：$\mathrm{\dfrac{kg}{m^3}\times\dfrac{m}{s}\times\dfrac{m^2}{s}\times m}=\mathrm{kg\cdot\dfrac{m}{s^2}}=\mathrm{N}$，正确。
+
+原书按 $F_L=-\rho v_\infty L\Gamma$ 写作
+\[ F_L=-1.205\times\frac{80\times10^3}{3600}\times50\times21.297=-28514.3\ \mathrm{N} \]
+其中的负号只表示升力的方向与所设正方向相反（升力方向与旋转方向、来流方向有关）；
+\textbf{升力的大小为 $2.85\times10^4\ \mathrm{N}$}，方向垂直于来流与圆柱轴所构成的平面。
+
+\textbf{第 4 步\quad 求驻点位置}
+
+圆柱绕流叠加环流以后，圆柱表面（$r=r_0$）上的环向速度为
+\[ v_\theta=-2v_\infty\sin\theta+\frac{\Gamma}{2\pi r_0} \]
+第一项是均匀流绕圆柱的贡献（在圆柱表面最大值为 $2v_\infty$），第二项是环流的贡献。
+驻点处 $v_r=0$（圆柱表面本身就是一条流线）且 $v_\theta=0$，于是
+\[ -2v_\infty\sin\theta+\frac{\Gamma}{2\pi r_0}=0
+ \ \Longrightarrow\
+ \sin\theta=\frac{\Gamma}{2\pi r_0\cdot 2v_\infty}=\frac{\Gamma}{4\pi v_\infty r_0} \]
+代入数值：
+\[ \sin\theta=\frac{21.297}{4\times3.14\times22.222\times0.6}=\frac{21.297}{167.47}=0.12717 \]
+\[ \theta=7^\circ18' \]
+另一驻点由 $\sin\theta=0.12717$ 的第二个解给出：
+\[ \theta=180^\circ-7^\circ18'=172^\circ42' \]
+两个驻点都在圆柱表面上，即 $r=r_0=0.6\ \mathrm{m}$。
+
+$\theta$ 自 $x$ 轴正向（来流方向）量起、逆时针为正。
+
+\textbf{第 5 步\quad 判断驻点是否脱离表面}
+
+驻点脱离圆柱表面的条件是 $|\Gamma|>4\pi v_\infty r_0$。本例
+\[ 4\pi v_\infty r_0=4\times3.14\times22.222\times0.6=167.5\ \mathrm{m^2/s}
+ \gg\Gamma=21.297\ \mathrm{m^2/s} \]
+故驻点仍留在圆柱表面上，与第 4 步的结果一致。
+
+\textbf{结果：}
+速度环量 $\Gamma=2\pi r_0^2\omega=21.297\ \mathrm{m^2/s}$；
+升力 $F_L=\rho v_\infty\Gamma L=2.85\times10^4\ \mathrm{N}$
+（原书按 $F_L=-\rho v_\infty L\Gamma$ 记作 $-28514.3\ \mathrm{N}$，负号表示方向，大小不变）；
+驻点位于圆柱表面上 $r_0=0.6\ \mathrm{m}$ 处，方位角 $\theta=7^\circ18'$ 与 $\theta=172^\circ42'$
+（自 $x$ 轴正向量起）。
+\end{jie}
+
+\begin{tishi}
+\textbf{驻点角度的符号说明（原书与本解的差别）：}原书的推导式写的是正号关系
+$\sin\theta=\dfrac{\Gamma}{4v_\infty\pi r_0}$，但数值却写成 $-0.12717$，
+并由此得到 $\theta=187^\circ18'$ 与 $352^\circ42'$。
+本解按该正号关系得 $\sin\theta=+0.12717$，即 $\theta=7^\circ18'$ 与 $172^\circ42'$。
+两套答案相差 $180^\circ$，正好等价于把环流（圆柱旋转）的方向取反：
+沿 $+z$ 轴看去顺时针旋转与逆时针旋转，驻点关于 $y$ 轴镜像互换。
+由于题面只说圆柱「绕其轴旋转」而未指明转向，环流的正负号本身就不确定，
+\textbf{两种答案都成立}；不论取哪一组，驻点都落在圆柱表面 $r_0=0.6\ \mathrm{m}$ 上，
+升力的大小也不变（方向相反）——这恰恰是马格努斯效应的正常表现：转向反了，升力就反了。
+考试作答时，建议写出 $v_\theta=-2v_\infty\sin\theta+\dfrac{\Gamma}{2\pi r_0}$、
+说明「$\Gamma$ 的正负依旋转方向而定」，再给出对应的一组角度，就不会被判错。
+
+\textbf{关于 $\pi$ 的取值：}原书全程取 $\pi=3.14$，故得 $\Gamma=21.297\ \mathrm{m^2/s}$、
+$F_L=-28514.3\ \mathrm{N}$；若取 $\pi=3.14159$，则 $\Gamma=21.30\ \mathrm{m^2/s}$，
+两者差在第五位有效数字以远，不影响任何结论。
+\end{tishi}

@@ -1,0 +1,333 @@
+\chapter*{第 3 章\quad 流体运动学·孔珑题选 解答}
+\addcontentsline{toc}{chapter}{第 3 章\quad 流体运动学·孔珑题选 解答}
+\markboth{第 3 章\quad 流体运动学·孔珑题选 解答}{}
+
+\begin{tishi}
+本章解答对应题目页的 10 道题，题号即孔珑《工程流体力学（第四版）》第 4 章课后习题的原书题号（4-2、4-4 至 4-12）。解答在原书配套辅导书解答的基础上整理，补齐了必要的中间步骤与物理说明；凡对原书的数值、量纲口径或计算结果作过订正之处，均在该题解答之后用框标出，请与题目页的章末说明对照阅读。计算中统一取大气压 $p_a=101325$ Pa；空气的气体常数按题给取 $R=287$ J/(kg$\cdot$K) 或 $287.1$ J/(kg$\cdot$K)。每题按\textbf{已知、依据、步骤、结果、提醒}五段写，计算题一律写出单位。
+\end{tishi}
+
+\noindent\textbf{第 4-2 题\quad 点涡流场的流线方程}
+
+\begin{jie}
+\textbf{已知：}$v_x=-\dfrac{\Gamma}{2\pi}\dfrac{y}{x^2+y^2}$，$v_y=\dfrac{\Gamma}{2\pi}\dfrac{x}{x^2+y^2}$，$\Gamma$ 为常数。
+\textbf{依据：}流线是同一瞬时流场中的曲线，线上各点速度矢量与该线相切，二维情形下其微分方程为
+$\dfrac{\dd x}{v_x}=\dfrac{\dd y}{v_y}$，即 $v_y\dd x-v_x\dd y=0$。
+
+\textbf{第 1 步：代入速度分量。}两个分量含相同的公共因子 $\dfrac{\Gamma}{2\pi(x^2+y^2)}$，先约去：
+\[ v_y\dd x-v_x\dd y=\frac{\Gamma}{2\pi(x^2+y^2)}\left(x\,\dd x+y\,\dd y\right)=0 \]
+
+\textbf{第 2 步：积分。}上式等价于
+\[ \dd\left(x^2+y^2\right)=0\quad\Longrightarrow\quad x^2+y^2=C \]
+其中 $C\ge0$ 为积分常数（$C=0$ 时退化为原点本身）。
+
+\textbf{第 3 步：判断流向。}取圆上一点 $y=0$、$x>0$：$v_x=0$，$v_y=\dfrac{\Gamma}{2\pi x}$。
+当 $\Gamma>0$ 时 $v_y>0$，流体沿同心圆逆时针流动；$\Gamma<0$ 时顺时针流动。
+
+\textbf{结果：}流线方程为 $x^2+y^2=C$，是\textbf{以原点为圆心的一族同心圆}（点涡流场）。
+画图时取若干个不同的 $C$ 值画出若干条同心圆，并用箭头标出逆时针方向。
+
+\textbf{提醒：}流线方程与 $t$ 无关，说明这是恒定流；原点处速度趋于无穷，是点涡的奇点，
+画流线时不经过原点。
+\end{jie}
+
+\begin{yicuo}
+\textbf{流线题的三个易错点：}① 求流线时把 $t$ 当自变量积进去，得到的是\textbf{迹线}而非流线——
+本题速度场不显含 $t$，二者恰好重合，但方法上不能混。② 公共因子没约完就分离变量，会把
+$x^2+y^2$ 也积进结果。③ 求完曲线族忘了说明\textbf{流向}：题要求"画出若干条流线"，
+画箭头判断方向的依据是圆上任意一点的速度分量符号。
+\end{yicuo}
+
+\noindent\textbf{第 4-4 题\quad 二维流动的判定与某点加速度}
+
+\begin{jie}
+\textbf{已知：}$v_x=xy^2$，$v_y=-\dfrac{1}{3}y^3$，$v_z=xy$，求 $(x,y,z)=(1,2,3)$ 点的加速度。
+\textbf{依据：}流动的维数由\textbf{运动要素所依赖的空间坐标个数}决定，与"某方向是否存在速度分量"无关；
+质点加速度用欧拉法的随体导数
+\[ a_x=\frac{\partial v_x}{\partial t}+v_x\frac{\partial v_x}{\partial x}+v_y\frac{\partial v_x}{\partial y}+v_z\frac{\partial v_x}{\partial z} \]
+（$y$、$z$ 方向同式换下标）。
+
+\textbf{（1）维数：}$v_x=xy^2$ 依赖 $x$、$y$；$v_y=-\dfrac{1}{3}y^3$ 只依赖 $y$；$v_z=xy$ 依赖 $x$、$y$。
+三个分量都\textbf{与 $z$ 无关}，故运动要素只与 $x$、$y$ 两个坐标有关，属\textbf{二维流动}（平面流动）。
+注意 $v_z=xy\neq0$ 并不妨碍它是二维流动。
+
+\textbf{（2）加速度：}速度场不显含 $t$，$\dfrac{\partial(\cdot)}{\partial t}=0$，只剩迁移加速度。先算九个一阶偏导：
+\[ \frac{\partial v_x}{\partial x}=y^2,\quad\frac{\partial v_x}{\partial y}=2xy,\quad\frac{\partial v_x}{\partial z}=0 \]
+\[ \frac{\partial v_y}{\partial x}=0,\quad\frac{\partial v_y}{\partial y}=-y^2,\quad\frac{\partial v_y}{\partial z}=0 \]
+\[ \frac{\partial v_z}{\partial x}=y,\quad\frac{\partial v_z}{\partial y}=x,\quad\frac{\partial v_z}{\partial z}=0 \]
+逐项代入：
+\[ a_x=xy^2\cdot y^2-\frac{1}{3}y^3\cdot2xy=xy^4-\frac{2}{3}xy^4=\frac{1}{3}xy^4 \]
+\[ a_y=0+0+\left(-\frac{1}{3}y^3\right)\left(-y^2\right)+0=\frac{1}{3}y^5 \]
+\[ a_z=xy^2\cdot y+\left(-\frac{1}{3}y^3\right)x+0=xy^3-\frac{1}{3}xy^3=\frac{2}{3}xy^3 \]
+在 $(x,y,z)=(1,2,3)$ 处
+\[ a_x=\frac{1}{3}\times1\times2^4=\frac{16}{3}=5.33\ \mathrm{m/s^2} \]
+\[ a_y=\frac{1}{3}\times2^5=\frac{32}{3}=10.67\ \mathrm{m/s^2} \]
+\[ a_z=\frac{2}{3}\times1\times2^3=\frac{16}{3}=5.33\ \mathrm{m/s^2} \]
+
+\textbf{结果：}$\bm{a}=\left(\dfrac{16}{3},\ \dfrac{32}{3},\ \dfrac{16}{3}\right)$ m/s$^2$，即
+约为 $(5.33,\ 10.67,\ 5.33)$ m/s$^2$（设题给速度分量的单位为 m/s）。
+
+\textbf{提醒：}$a_z$ 中的 $v_y\dfrac{\partial v_z}{\partial y}$ 一项不能漏，正是它把 $a_z$ 由 $xy^3$ 减为
+$\dfrac{2}{3}xy^3$；同理 $a_x$ 中 $v_y\dfrac{\partial v_x}{\partial y}$ 使结果由 $xy^4$ 减为 $\dfrac{1}{3}xy^4$。
+\end{jie}
+
+\noindent\textbf{第 4-5 题\quad 三维流动的判定与某点加速度}
+
+\begin{jie}
+\textbf{已知：}$v_x=x^2y$，$v_y=-3y$，$v_z=2z^2$，求 $(x,y,z)=(3,1,2)$ 点的加速度。
+\textbf{依据：}同第 4-4 题——维数看运动要素依赖的坐标个数，加速度按随体导数分量式算。
+
+\textbf{（1）维数：}$v_x=x^2y$ 依赖 $x$、$y$，$v_z=2z^2$ \textbf{依赖 $z$}，故运动要素与三个坐标都有关，
+属\textbf{三维流动}。
+
+\textbf{（2）加速度：}速度场不显含 $t$，只剩迁移加速度。各分量的一阶偏导为
+\[ \frac{\partial v_x}{\partial x}=2xy,\quad\frac{\partial v_x}{\partial y}=x^2,\quad\frac{\partial v_x}{\partial z}=0;\qquad
+   \frac{\partial v_y}{\partial y}=-3;\qquad \frac{\partial v_z}{\partial z}=4z \]
+（其余偏导均为零）于是
+\[ a_x=x^2y\cdot2xy+(-3y)\cdot x^2=2x^3y^2-3x^2y=2\times3^3\times1^2-3\times3^2\times1=54-27=27\ \mathrm{m/s^2} \]
+\[ a_y=(-3y)(-3)=9y=9\times1=9\ \mathrm{m/s^2} \]
+\[ a_z=2z^2\cdot4z=8z^3=8\times2^3=64\ \mathrm{m/s^2} \]
+
+\textbf{结果：}$\bm{a}=(27,\ 9,\ 64)$ m/s$^2$。
+
+\textbf{提醒：}$2z^2$ 对 $z$ 求导得 $4z$，再乘 $v_z=2z^2$ 才是 $8z^3$（不是 $8z^2$）；
+代入 $z=2$ 时先算 $z^3=8$，再乘 8 得 64。
+\end{jie}
+
+\begin{tishi}
+第 4-5 题题面的 $z$ 向分量是 $2z^2\vec k$（原书影印处笔画与 $x$ 形近，易误读为 $2xz^2$ 或 $2x^2$）。
+按 $v_z=2z^2$ 计算，$a_z=8z^3=64$ m/s$^2$ 与题给点 $(3,1,2)$ 自洽；若误读为 $2x^2$，$a_z$ 将为零，
+与原书印出的 64 不符，故此处按 $2z^2$ 判读。
+\end{tishi}
+
+\noindent\textbf{第 4-6 题\quad 三维流动的判定与某点加速度}
+
+\begin{jie}
+\textbf{已知：}$v_x=4x^3+2y+xy$，$v_y=3x-y^3+z$，$v_z=0$，求 $(x,y,z)=(2,2,3)$ 点的加速度。
+\textbf{依据：}同第 4-4 题。
+
+\textbf{（1）维数：}$v_x$ 依赖 $x$、$y$，$v_y=3x-y^3+z$ \textbf{含 $z$ 项}，故运动要素与三个坐标都有关，
+属\textbf{三维流动}（尽管 $v_z\equiv0$）。
+
+\textbf{（2）加速度：}先算该点的速度分量与所需偏导：
+\[ v_x=4\times2^3+2\times2+2\times2=40\ \mathrm{m/s},\qquad v_y=3\times2-2^3+3=1\ \mathrm{m/s} \]
+\[ \frac{\partial v_x}{\partial x}=12x^2+y=50,\qquad \frac{\partial v_x}{\partial y}=2+x=4,\qquad \frac{\partial v_x}{\partial z}=0 \]
+\[ \frac{\partial v_y}{\partial x}=3,\qquad \frac{\partial v_y}{\partial y}=-3y^2=-12,\qquad \frac{\partial v_y}{\partial z}=1 \]
+迁移加速度为
+\[ a_x=v_x\frac{\partial v_x}{\partial x}+v_y\frac{\partial v_x}{\partial y}=(4x^3+2y+xy)(12x^2+y)+(3x-y^3+z)(2+x) \]
+\[ a_x=40\times50+1\times4=2004\ \mathrm{m/s^2} \]
+\[ a_y=v_x\frac{\partial v_y}{\partial x}+v_y\frac{\partial v_y}{\partial y}=40\times3+1\times(-12)=120-12=108\ \mathrm{m/s^2} \]
+由于 $v_z\equiv0$，$a_z=\dfrac{\partial v_z}{\partial t}+v_x\dfrac{\partial v_z}{\partial x}+v_y\dfrac{\partial v_z}{\partial y}+v_z\dfrac{\partial v_z}{\partial z}=0$。
+
+\textbf{结果：}$\bm{a}=(2004,\ 108,\ 0)$ m/s$^2$。
+
+\textbf{提醒：}$a_z=0$ \textbf{不能}用来判断流动是二维的——$v_y$ 依赖 $z$，运动要素与三个坐标都有关，
+仍是三维流动；判断维数只能看速度分量依赖哪些坐标。
+\end{jie}
+
+\begin{yicuo}
+\textbf{加速度与维数题的三点提醒：}① 维数的判据是"运动要素是否依赖某坐标"：
+第 4-4 题 $v_z=xy\neq0$ 却是二维流动（与 $z$ 无关），第 4-6 题 $a_z=0$ 却是三维流动（$v_y$ 含 $z$）。
+② 每个加速度分量都要乘遍三个速度分量，漏项是最常见的失分点。
+③ 代入具体坐标点时，先把 $v_x$、$v_y$、$v_z$ 的数值算出来再乘偏导，比直接展开多项式更不易错。
+\end{yicuo}
+
+\noindent\textbf{第 4-7 题\quad 输油管的流速与质量流量}
+
+\begin{jie}
+\textbf{已知：}内径 $d_1=0.2$ m 处流速 $v_1=2$ m/s，另一内径 $d_2=0.05$ m，油的相对密度 $0.85$，
+故油的密度 $\rho=0.85\times1000=850$ kg/m$^3$。
+\textbf{依据：}不可压缩流体一元总流的连续性方程 $q_V=v_1A_1=v_2A_2$（体积流量沿程不变），
+质量流量 $q_m=\rho q_V$。
+
+\textbf{第 1 步：求体积流量}
+\[ A_1=\frac{\pi d_1^2}{4}=\frac{\pi\times0.2^2}{4}=0.0314\ \mathrm{m^2},\qquad
+   q_V=v_1A_1=2\times0.0314=0.0628\ \mathrm{m^3/s} \]
+
+\textbf{第 2 步：求内径 5 cm 截面上的流速}
+由 $v_1d_1^2=v_2d_2^2$（流速与内径的平方成反比）
+\[ v_2=v_1\left(\frac{d_1}{d_2}\right)^2=2\times\left(\frac{20}{5}\right)^2=32\ \mathrm{m/s} \]
+用流量直接校核：$v_2=\dfrac{q_V}{A_2}=\dfrac{0.0628}{\pi\times0.05^2/4}=\dfrac{0.0628}{1.963\times10^{-3}}=32$ m/s，一致。
+
+\textbf{第 3 步：求质量流量}
+\[ q_m=\rho q_V=850\times0.0628=53.4\ \mathrm{kg/s} \]
+（原书取 $q_V=0.0628$ m$^3$/s，得 $q_m=53.38$ kg/s。）
+
+\textbf{结果：}$v_2=32$ m/s（为 $v_1$ 的 16 倍，因为内径减为四分之一），$q_m\approx53.4$ kg/s。
+
+\textbf{提醒：}管内质量流量处处相同；对不可压缩流体体积流量也处处相同，变的是平均流速。
+"相对密度 0.85"必须先化成密度 $850$ kg/m$^3$，再乘体积流量得质量流量。
+\end{jie}
+
+\noindent\textbf{第 4-8 题\quad 管中空气的平均流速}
+
+\begin{jie}
+\textbf{已知：}内径 $d=0.05$ m，空气质量流量 $q_m=0.5$ kg/s，截面压强 $p=5\times10^5$ Pa，
+温度 $t=100$ ℃，气体常数 $R=287.1$ J/(kg$\cdot$K)。
+\textbf{依据：}理想气体状态方程 $\rho=\dfrac{p}{RT}$（$T$ 取热力学温度、$p$ 取绝对压强）；
+质量流量 $q_m=\rho vA$，故 $v=\dfrac{q_m}{\rho A}=\dfrac{4q_m}{\rho\pi d^2}$。
+
+\textbf{第 1 步：温度换成热力学温度}
+\[ T=273+100=373\ \mathrm{K} \]
+
+\textbf{第 2 步：求该截面上的空气密度}
+\[ \rho=\frac{p}{RT}=\frac{5\times10^5}{287.1\times373}=4.67\ \mathrm{kg/m^3} \]
+
+\textbf{第 3 步：求断面面积}
+\[ A=\frac{\pi d^2}{4}=\frac{\pi\times0.05^2}{4}=1.963\times10^{-3}\ \mathrm{m^2} \]
+
+\textbf{第 4 步：求平均流速}
+\[ v=\frac{q_m}{\rho A}=\frac{0.5}{4.67\times1.963\times10^{-3}}=\frac{0.5}{9.17\times10^{-3}}=54.5\ \mathrm{m/s} \]
+
+\textbf{结果：}$v\approx54.5$ m/s（原书取 $T=373$ K 得 $\rho=4.669$ kg/m$^3$、$v\approx54.6$ m/s）。
+
+\textbf{提醒：}气体必须先由状态方程算出该截面上的密度，再代入质量流量式；
+温度用热力学温度（$273+100=373$ K），压强用绝对压强（题给 $5\times10^5$ Pa 即绝对压强）。
+同一管道内质量流量不变，但密度随 $p$、$T$ 变，断面平均流速也随之变化。
+\end{jie}
+
+\noindent\textbf{第 4-9 题\quad 锥形喷嘴内的轴向速度分布}
+
+\begin{jie}
+\textbf{已知：}喷嘴长 $L=3$ cm，大内径端 $d(0)=8$ cm，小内径端 $d(3\ \mathrm{cm})=2$ cm，
+流量 $q_V=0.01$ m$^3$/s，流体无黏性、不可压缩；坐标 $x$ 自大内径端面沿轴线量起（以 cm 计）。
+\textbf{依据：}圆断面面积 $A=\dfrac{\pi d^2}{4}$；不可压缩一元总流连续性方程 $q_V=v(x)A(x)=$ 常数。
+
+\textbf{第 1 步：写出直径沿轴向的变化规律。}半径由 4 cm 线性减到 1 cm，轴向长 3 cm，
+故半锥角为 $45^\circ$，在 $0\le x\le3$ cm 内
+\[ d(x)=8-2x\ \mathrm{cm} \]
+（$x=0$ 时 $d=8$ cm，$x=3$ cm 时 $d=2$ cm，与题给两端直径相符。）
+
+\textbf{第 2 步：写出断面面积。}
+\[ A(x)=\frac{\pi d^2}{4}=\frac{\pi(8-2x)^2}{4}=\pi(4-x)^2\ \mathrm{cm^2}=\pi(4-x)^2\times10^{-4}\ \mathrm{m^2} \]
+
+\textbf{第 3 步：由连续性方程解出速度。}
+\[ q_V=v(x)A(x)\quad\Longrightarrow\quad
+   v(x)=\frac{q_V}{A(x)}=\frac{0.01}{\pi(4-x)^2\times10^{-4}}=\frac{100}{\pi(4-x)^2}\ \mathrm{m/s} \]
+其中 $x$ 以 cm 计。若把坐标改以 m 计，则 $d=(0.08-2x)$ m，等价表达式为
+\[ v(x)=\frac{0.01}{\pi(0.04-x)^2}\ \mathrm{m/s} \]
+
+\textbf{第 4 步：端点校核。}$x=0$：$v=\dfrac{100}{16\pi}=1.99$ m/s；
+$x=3$ cm：$v=\dfrac{100}{\pi}=31.8$ m/s。与小端面积 $\pi\times0.01^2=3.14\times10^{-4}$ m$^2$ 相除同样得 31.8 m/s。
+
+\textbf{结果：}$v(x)=\dfrac{100}{\pi(4-x)^2}$ m/s（$x$ 以 cm 计，$0\le x\le3$），
+速度沿轴向按 $\dfrac{1}{(4-x)^2}$ 迅速增大，出口流速约 31.8 m/s，入口约 1.99 m/s。
+
+\textbf{提醒：}$x$ 是长度量，式中 $(4-x)$ 的单位决定整个表达式的量纲；
+必须先把面积换成 m$^2$ 再除体积流量，最后标注单位为 m/s。
+\end{jie}
+
+\begin{tishi}
+原书解答把 $d=8-2x$（$x$ 以 cm 计）直接代入 $q_V=0.01$ m$^3$/s，写为
+$v=\dfrac{0.01}{\pi(4-x)^2}$，量纲上省略了 $\mathrm{cm^2}\to\mathrm{m^2}$ 的 $10^{-4}$ 换算因子，
+实为笔误口径；本册按统一单位给出 $v=\dfrac{100}{\pi(4-x)^2}$ m/s（$x$ 以 cm 计）。
+两种写法叙述的是同一物理关系，但答题时\textbf{必须自己统一单位}，否则结果的量纲无法校核。
+\end{tishi}
+
+\noindent\textbf{第 4-10 题\quad 点源流场通过同心圆的流量}
+
+\begin{jie}
+\textbf{已知：}$v_x=\dfrac{4x}{x^2+y^2}$，$v_y=\dfrac{4y}{x^2+y^2}$，$z$ 方向取单位长度。
+\textbf{依据：}极坐标与直角坐标的关系 $x=r\cos\theta$、$y=r\sin\theta$、$x^2+y^2=r^2$；
+速度的径向、切向分量为 $v_r=v_x\cos\theta+v_y\sin\theta$、$v_\theta=-v_x\sin\theta+v_y\cos\theta$；
+穿过半径 $r$、单位长度的圆柱面（即平面内的圆周）的流量为 $q_V=v_r\cdot2\pi r$。
+
+\textbf{第 1 步：换成极坐标。}在半径 $r$ 处
+\[ v_x=\frac{4r\cos\theta}{r^2}=\frac{4\cos\theta}{r},\qquad v_y=\frac{4r\sin\theta}{r^2}=\frac{4\sin\theta}{r} \]
+
+\textbf{第 2 步：求径向与切向速度。}
+\[ v_r=\frac{4\cos\theta}{r}\cos\theta+\frac{4\sin\theta}{r}\sin\theta
+      =\frac{4}{r}\left(\cos^2\theta+\sin^2\theta\right)=\frac{4}{r} \]
+\[ v_\theta=-\frac{4\cos\theta}{r}\sin\theta+\frac{4\sin\theta}{r}\cos\theta=0 \]
+即速度处处沿径向向外，大小只与 $r$ 有关、与 $\theta$ 无关——这是\textbf{点源}流场。
+
+\textbf{第 3 步：求通过单位长度圆柱面的流量。}取半径 $r$、$z$ 向长度 1 的圆柱面，其面积为 $2\pi r$，
+面上速度处处垂直穿过且大小为 $\dfrac{4}{r}$，故
+\[ q_V=v_r\cdot2\pi r=\frac{4}{r}\times2\pi r=8\pi \]
+
+\textbf{结果：}穿过任意一个以原点为圆心的同心圆（$z$ 向取单位长度）的流量均为
+$q_V=8\pi$ m$^2$/s，与半径 $r$ 无关，故各个同心圆上的流量相等，命题得证。
+
+\textbf{提醒：}这类形如 $\dfrac{x}{x^2+y^2}$、$\dfrac{y}{x^2+y^2}$ 的速度场一律先换极坐标；
+"流量相等"的本质是平面流动的连续性——流体自原点连续流出，通过各同心圆的流量必然相同。
+\end{jie}
+
+\noindent\textbf{第 4-11 题\quad 空气预热器至喷燃器的管道平均流速}
+
+\begin{jie}
+\textbf{已知：}空气质量流量 $q_m=8000$ kg/h，气温 $t_1=400$ ℃，两条管道截面均为
+$400\ \mathrm{mm}\times600\ \mathrm{mm}$，标准状态（$0$ ℃、$101325$ Pa）下空气密度 $\rho_0=1.29$ kg/m$^3$。
+\textbf{依据：}等压条件下理想气体状态方程给出密度与热力学温度成反比
+$\dfrac{\rho_1}{\rho_0}=\dfrac{T_0}{T_1}$；质量流量 $q_m=\rho_1vA$（两条管道并联，总面积为 $2A$）。
+
+\textbf{第 1 步：换单位。}
+\[ q_m=\frac{8000}{3600}=2.222\ \mathrm{kg/s},\qquad
+   T_0=273\ \mathrm{K},\qquad T_1=273+400=673\ \mathrm{K} \]
+
+\textbf{第 2 步：求热态空气的密度。}
+\[ \rho_1=\rho_0\frac{T_0}{T_1}=1.29\times\frac{273}{673}=0.5233\ \mathrm{kg/m^3} \]
+
+\textbf{第 3 步：由质量流量求平均流速。}每条管道面积 $A=0.4\times0.6=0.24$ m$^2$，两条管道并联，
+总过流面积 $2A=0.48$ m$^2$：
+\[ q_m=\rho_1v(2A)=2\rho_1v\times0.24 \]
+\[ v=\frac{q_m}{2\rho_1\times0.24}=\frac{2.222}{2\times0.5233\times0.24}=\frac{2.222}{0.2512}=8.85\ \mathrm{m/s} \]
+
+\textbf{结果：}输气管道中空气的平均流速 $v\approx8.85$ m/s（原书印出的结果为 8.987 m/s，见下框说明）。
+
+\textbf{提醒：}气体密度必须按热力学温度换算，$0$ ℃ 对应 273 K、$400$ ℃ 对应 673 K；
+"两条管道"意味着总质量流量由两个断面分担，千万不要只按一条管道算。
+\end{jie}
+
+\begin{tishi}
+原书结果印为 $v=8.987$ m/s。按题给条件复算：$\rho_1=1.29\times\dfrac{273}{673}=0.5233$ kg/m$^3$，
+$v=\dfrac{8000/3600}{2\times0.5233\times0.24}=8.85$ m/s，与原书相差约 1.6\%，疑为原书算术笔误。
+本册按公式代入计算值 8.85 m/s 给出，考试时按公式自行代入即可，不要背原书数字。
+\end{tishi}
+
+\noindent\textbf{第 4-12 题\quad 汽轮机废汽主管流速与两支管直径}
+
+\begin{jie}
+\textbf{已知：}废汽比体积 $v=0.3816$ m$^3$/kg，主管内径 $d_0=100$ mm，质量流量 $q_m=2000$ kg/h；
+两支管质量流量 $q_{m1}=500$ kg/h、$q_{m2}=1500$ kg/h，支管内流速均为 $u=25$ m/s。
+\textbf{依据：}比体积是密度的倒数 $\rho=\dfrac{1}{v}$；质量流量 $q_m=\rho uA=\rho u\dfrac{\pi d^2}{4}$，
+故 $u=\dfrac{4q_m}{\rho\pi d^2}$、$d=\sqrt{\dfrac{4q_m}{\pi\rho u}}$；分流处质量守恒 $q_m=q_{m1}+q_{m2}$。
+
+\textbf{第 1 步：求蒸汽密度。}
+\[ \rho=\frac{1}{v}=\frac{1}{0.3816}=2.62\ \mathrm{kg/m^3} \]
+
+\textbf{第 2 步：换单位。}
+\[ q_m=\frac{2000}{3600}=0.556\ \mathrm{kg/s},\qquad
+   q_{m1}=\frac{500}{3600}=0.1389\ \mathrm{kg/s},\qquad
+   q_{m2}=\frac{1500}{3600}=0.4167\ \mathrm{kg/s} \]
+
+\textbf{第 3 步：求主管内的平均流速。}主管面积 $A_0=\dfrac{\pi\times0.1^2}{4}=7.854\times10^{-3}$ m$^2$，
+\[ u_0=\frac{4q_m}{\rho\pi d_0^2}=\frac{4\times0.556}{2.62\times\pi\times0.1^2}=\frac{2.222}{0.0823}=27.0\ \mathrm{m/s} \]
+
+\textbf{第 4 步：求两支管直径。}支管内流速题给 $u=25$ m/s：
+\[ d_1=\sqrt{\frac{4q_{m1}}{\pi\rho u}}=\sqrt{\frac{4\times0.1389}{\pi\times2.62\times25}}
+     =\sqrt{\frac{0.5556}{205.8}}=\sqrt{0.002700}=0.052\ \mathrm{m} \]
+\[ d_2=\sqrt{\frac{4q_{m2}}{\pi\rho u}}=\sqrt{\frac{4\times0.4167}{\pi\times2.62\times25}}
+     =\sqrt{\frac{1.667}{205.8}}=\sqrt{0.008098}=0.090\ \mathrm{m} \]
+
+\textbf{第 5 步：校核。}$q_{m1}+q_{m2}=500+1500=2000$ kg/h，与主管质量流量相等，满足质量守恒。
+
+\textbf{结果：}主管内蒸汽平均流速 $u_0=27.0$ m/s；两支管直径分别为
+$d_1\approx0.052$ m（52 mm）、$d_2\approx0.090$ m（90 mm）。
+
+\textbf{提醒：}比体积是密度的倒数，求密度要用 $\rho=1/v$；
+主管流速与支管流速是\textbf{两个不同的已知量}，求支管直径必须用支管流速 25 m/s，
+不能用主管流速 27 m/s。
+\end{jie}
+
+\begin{tishi}
+原书解答把支管流速取为主管流速 27 m/s 代入，得 $d_1=0.05$ m、$d_2=0.0866$ m。
+题面明确给出"管内流速均为 25 m/s"，故本册按 25 m/s 计算，得 $d_1\approx0.052$ m、$d_2\approx0.090$ m。
+两者的差异恰好来自 25 与 27 的替换（$d$ 与 $\sqrt{u}$ 成反比），做题时以题给数据为准。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{连续性一类题的四点提醒：}① 不可压缩流体用 $v_1A_1=v_2A_2$，可压缩流体必须用
+$q_m=\rho_1v_1A_1=\rho_2v_2A_2$（体积流量不再相等）。② 气体一律先用 $\rho=\dfrac{p}{RT}$ 或
+$\rho_1=\rho_0\dfrac{T_0}{T_1}$ 求密度，温度用 K。③ 分流处写"进等于出"，
+支管直径用支管自己的流量与流速求。④ 单位：kg/h 化 kg/s、℃ 化 K、mm 与 cm 化 m，
+一步不换就会把结果差出几个数量级。
+\end{yicuo}

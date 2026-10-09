@@ -1,0 +1,1107 @@
+\chapter{黏性流体动力学基础}
+
+\begin{yijubox}
+E1 \texttt{8-1考情分析.pptx} slide33：第八章黏性流体动力学基础＝\textbf{选择填空题考点}。\\
+E1 slide33 同时把第七、八章一并归入"概念为主"的收尾区；E2 \texttt{9-1考点分析.pptx}：第六至第八章只有少量填空/判断/选择，\textbf{掌握基本概念＋公式套用}即可。\\
+E1 slide16：选择/判断考\emph{概念辨析}，填空考\emph{名词定义与小计算}。\\
+E4 证据一：2015 年试题计算题含"\textbf{平板摩擦阻力比}"；E4 证据二：2015 年试题填空题
+"层流断面平均速度＝0.5 倍最大速度、$\Rey$ 判流态"。\\
+\textbf{本章结论}：本章\textbf{不出大题}，命题集中在三种题型——
+① 名词定义型填空（边界层、边界层厚度、位移厚度、动量损失厚度、雷诺应力等）；
+② 概念辨析型选择/判断（边界层内压强分布、分离的条件、$\Rey$ 判据的取法）；
+③ 公式代入型小计算（$\delta$、$C_f$、$C_D$、阻力比）。
+复习策略＝\textbf{把定义记死、把公式认准、把易错点背下来}。篇幅重心应放在 8.2（概念）、8.7（简答）、8.1（概念）三节。
+\end{yijubox}
+
+\begin{tishi}
+\textbf{与第 5 章的分工（本讲义不重复展开）：}雷诺实验、两种流态与临界雷诺数、
+圆管层流的速度分布（抛物线、$u_{\max}=2v$）、圆管层流沿程水头损失、湍流的沿程阻力系数，
+均已在\textbf{第 5 章}讲过，本章只在必要的衔接处一句带过，一律注明"详见第 5 章"。
+本章的新东西是：\emph{黏性流体的运动微分方程（N-S 方程）}、\emph{边界层理论}、\emph{湍流的时均方程与模型}。
+\end{tishi}
+
+\section{纳维-斯托克斯方程}
+
+\begin{kaodian}{3}{黏性流体中的应力状态与本构关系}
+\textbf{是什么：}理想流体运动时可以存在相对运动，但不具有抵抗剪切变形的能力，任意面上的应力只有法向力；
+\textbf{黏性流体}具有抵抗剪切变形的能力，任意面上的应力\textbf{既有法向应力也有切应力}。
+
+\textbf{应力记号（必考，注意下标的读法）：}两个下标表示清楚"作用面"与"投影方向"——
+\textbf{第一个下标＝作用面的法线方向}，\textbf{第二个下标＝应力分量的投影方向}。
+如 $x$ 面上的合应力 $\vec{\tau}_x=\tau_{xx}\vec{i}+\tau_{xy}\vec{j}+\tau_{xz}\vec{k}$。
+三个坐标面上的 9 个分量组成\textbf{应力张量}；由剪力互等定理
+$\tau_{xy}=\tau_{yx}$、$\tau_{xz}=\tau_{zx}$、$\tau_{yz}=\tau_{zy}$，应力矩阵是\textbf{对称矩阵}，
+9 个分量中只有 \textbf{6 个独立}。
+
+\textbf{平均压强：}\emph{理想流体}中无切应力且三个法向应力相等，$\tau_{xx}=\tau_{yy}=\tau_{zz}=-p$；
+\emph{黏性流体}中过一点任意三个相互垂直面上的法向应力之和是不变量，定义
+\[ p=-\frac{\tau_{xx}+\tau_{yy}+\tau_{zz}}{3} \]
+为\textbf{平均压强}。注意：黏性流体中该和虽是不变量，但各法向应力本身\emph{一般不等于} $-p$。
+
+\begin{gongshi}{广义牛顿内摩擦定律（本构关系，8.1）}
+\[ \tau_{xy}=\tau_{yx}=\mu\left(\frac{\partial u_x}{\partial y}+\frac{\partial u_y}{\partial x}\right),\quad
+   \tau_{yz}=\tau_{zy}=\mu\left(\frac{\partial u_y}{\partial z}+\frac{\partial u_z}{\partial y}\right),\quad
+   \tau_{xz}=\tau_{zx}=\mu\left(\frac{\partial u_x}{\partial z}+\frac{\partial u_z}{\partial x}\right) \]
+\[ \sigma_{xx}=-p+2\mu\frac{\partial u_x}{\partial x},\quad
+   \sigma_{yy}=-p+2\mu\frac{\partial u_y}{\partial y},\quad
+   \sigma_{zz}=-p+2\mu\frac{\partial u_z}{\partial z} \]
+\textbf{含义：}把切应力与\emph{角变形速度}（两个方向偏导数的和）、法向应力与\emph{线变形率}线性联系起来，
+是牛顿流体在三维情形下对牛顿内摩擦定律 $\tau=\mu\,du/dy$ 的推广。法向应力中 $-p$ 是各向同性的压强部分，
+$2\mu\,\partial u_x/\partial x$ 是因线变形率不同而附加的黏性法向应力。\\
+\textbf{适用条件：}\textbf{牛顿流体}、连续介质、不可压缩（或采用斯托克斯假设：体积黏度 $\mu'=0$，
+即只保留 $-p$ 而不加 $\mu'\,\mathrm{div}\,\bv$ 项）。
+\end{gongshi}
+
+\textbf{以应力表示的流体运动微分方程}（沿 $x$ 方向）：
+\[ X+\frac{1}{\rho}\left(\frac{\partial\tau_{xx}}{\partial x}+\frac{\partial\tau_{yx}}{\partial y}+\frac{\partial\tau_{zx}}{\partial z}\right)=\frac{\dd u_x}{\dd t} \]
+它由\emph{牛顿第二定律}直接写出，但\textbf{方程组不封闭}（未知的应力分量多于方程数），
+必须补入本构关系才能求解——这正是下一步推导 N-S 方程的出发点。
+
+\textbf{常考题型：}填空（"应力分量 $\tau_{xy}$ 中第一个下标表示\underline{\ 作用面法线方向\ }"）；
+选择（"黏性流体中任意一点的法向应力"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 填空考"名词定义"；E2"掌握基本概念"；E6 教材 8.1 节}\quad\nandu{易}
+
+\begin{banfa}
+① \textbf{下标口诀："先面后向"}———先写面（法线方向），后写向（投影方向）。
+② \textbf{数一数就得分：}$3\times3=9$ 个分量，对称性砍掉 3 个$\to$独立 6 个。
+③ 判断题见到"黏性流体中三个法向应力都等于 $-p$"$\to$\textbf{错}（那是理想流体的结论）；
+见到"三个法向应力之和是不变量"$\to$\textbf{对}。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{纳维-斯托克斯方程的建立与各项物理意义}
+\begin{gongshi}{不可压缩牛顿流体的 N-S 方程（8.1，分量形式）}
+\[ \rho\frac{\dd u_x}{\dd t}=\rho X-\frac{\partial p}{\partial x}+\mu\left(\frac{\partial^2 u_x}{\partial x^2}+\frac{\partial^2 u_x}{\partial y^2}+\frac{\partial^2 u_x}{\partial z^2}\right) \]
+（$y$、$z$ 方向同理）或除以 $\rho$ 写成单位质量形式：
+\[ X-\frac{1}{\rho}\frac{\partial p}{\partial x}+\nu\left(\frac{\partial^2 v_x}{\partial x^2}+\frac{\partial^2 v_x}{\partial y^2}+\frac{\partial^2 v_x}{\partial z^2}\right)=\frac{\dd v_x}{\dd t} \]
+\textbf{含义：}把\emph{广义牛顿内摩擦定律}代入\emph{以应力表示的运动微分方程}，
+消去应力分量后得到的速度场控制方程。物理上就是"对流体微团应用牛顿第二定律"，
+左边是惯性，右边是作用在微团上的全部外力。\\
+\textbf{适用条件：}牛顿流体＋不可压缩＋常黏度 $\mu$；写成上式的形式时\textbf{默认层流}，
+此时 N-S 方程是严格成立的方程。
+\end{gongshi}
+
+\begin{gongshi}{不可压缩 N-S 方程的矢量形式（必背）}
+\[ \rho\left(\frac{\partial \bv}{\partial t}+(\bv\cdot\grad)\bv\right)=\rho\bF-\grad p+\mu\grad^2\bv \]
+\textbf{含义：}等式左边是单位体积流体的\textbf{惯性项}（$\partial\bv/\partial t$ 为当地加速度、$(\bv\cdot\grad)\bv$ 为迁移加速度）；
+右边依次是\textbf{质量力项}、\textbf{压力项}、\textbf{黏性项}。\\
+\textbf{适用条件：}不可压缩牛顿流体；$\mu=$常数；需要与连续性方程 $\grad\cdot\bv=0$ 联立封闭。
+\end{gongshi}
+
+\textbf{方程中四项的物理意义（选择题高频，务必逐项会说）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+项 & 名称 & 物理意义（作用在单位体积流体上） \\
+\midrule
+$\rho\dfrac{\dd \bv}{\dd t}$ & 惯性项 & 使微团产生加速度所需的力；其中 $(\bv\cdot\grad)\bv$ 是\textbf{非线性}的来源 \\
+$-\grad p$ & 压力项 & 由压强梯度产生的\emph{各向同性}的面力，方向由高压指向低压 \\
+$\mu\grad^2\bv$ & 黏性项 & 分子动量扩散产生的\emph{耗散性}切力，把动能不可逆地转为热能 \\
+$\rho\bF$ & 质量力项 & 外力场（重力、惯性力等）对单位体积流体施加的\textbf{非接触力} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{为什么难解（必背结论）：}N-S 方程是\textbf{二阶非线性偏微分方程}，
+非线性来自惯性项中的迁移加速度 $(\bv\cdot\grad)\bv$；
+再加上\textbf{边界条件难以用解析式表达}，除极少数简单情形外\textbf{得不到解析解}，
+工程上只能依靠数值计算（CFD）与湍流模型。
+
+\begin{jielun}
+$\Rey$ 数可理解为惯性项与黏性项的量级之比 $\Rey\sim\rho U^2/l \div \mu U/l^2=\rho Ul/\mu$。
+$\Rey$ 很小时黏性项占优（层流、可求解析解）；$\Rey$ 很大时惯性项占优，非线性不可忽略，
+这就是高雷诺数流动必须另辟蹊径（边界层理论、湍流模型）的根本原因。
+\end{jielun}
+
+\textbf{常考题型：}选择（"N-S 方程中 $(\bv\cdot\grad)\bv$ 项的物理意义"）；判断（"N-S 方程只适用于层流"）；
+填空（"N-S 方程不能求解析解的原因是\underline{\ 惯性项非线性\ }"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33 第八章＝"选择填空题考点"；E1 slide16 选择/判断考"概念辨析"；E2"掌握基本概念"}\quad\nandu{中}
+
+\begin{banfa}
+① \textbf{"四项对号入座"速记：}\emph{惯性—压力—黏性—质量力}，读式子时按 $\rho\bv$、$p$、$\mu$、$F$ 四个符号扫一遍就不会漏。
+② 判断"N-S 方程只适用于层流"$\to$\textbf{错}。它本身是黏性流体的运动方程；
+写成 $\rho\frac{\dd \bv}{\dd t}=\rho\bF-\grad p+\mu\grad^2\bv$ 时对\emph{瞬时量}成立，
+湍流时把 $\bv$、$p$ 替换为瞬时量后再时均化即可（见 8.8 节）。
+③ "为什么不能求解析解"三句话答题法：\textbf{①惯性项非线性 ②边界条件复杂 ③高 $\Rey$ 下解不稳定（湍流）}。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{（硬性纠错）}不要把 N-S 方程说成"只适用于层流"。准确表述是：
+它是\textbf{黏性流体（牛顿流体）的运动微分方程}，\emph{层流}时直接是严格方程，
+\emph{湍流}时必须先把速度、压强分解为时均量与脉动量再做时均化，得到雷诺方程。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{2}{N-S 方程的几种解析解（简介）}
+只有流动\emph{极简单}的情形才能求出解析解，考法限于"认得名字＋会套式子"。
+
+\begin{gongshi}{两平板间的三种经典解（8.1）}
+\[ \text{①纯剪切流（库埃特流）：}\ u=\frac{u_0}{h}y,\qquad\qquad
+   \text{②泊肃叶流：}\ u=\frac{1}{2\mu}\frac{\dd p}{\dd x}\left(y^2-hy\right) \]
+\[ \text{③库特流（叠加）：}\ u=\frac{u_0}{h}y+\frac{1}{2\mu}\frac{\dd p}{\dd x}\left(y^2-hy\right) \]
+\textbf{含义：}①上下板间由板速带动的线性速度分布（无压强梯度）；
+②两板均不动、由流向压强梯度 $\dd p/\dd x$ 驱动的抛物线速度分布；
+③上板以 $u_0$ 匀速运动\emph{同时}存在压强梯度的库特流，其速度＝①与②的\textbf{叠加}。\\
+\textbf{适用条件：}两平行板、层流、不可压缩牛顿流体、充分发展（$\partial u/\partial x=0$）、定常。
+另有一类解是\emph{同心圆环间的层流}（轴向压力驱动，速度分布为含 $\ln r$ 的形式），
+以及圆管泊肃叶流（详见第 5 章）。
+\end{gongshi}
+
+\begin{tishi}
+\textbf{"为什么只有这几个解"（很可能考的一句话）：}能求出解析解的情形，
+都是\emph{流场几何简单到使惯性项 $(\bv\cdot\grad)\bv$ 恒为零或可忽略}的情形
+（如平行流动中 $u_y=u_z=0$、$\partial u/\partial x=0$，迁移加速度整项消失）。
+一旦惯性项真正起作用，方程就变成非线性的，解析解一般不存在。
+\end{tishi}
+
+\textbf{常考题型：}填空/选择（"两平板间由压强梯度驱动的层流速度分布是\underline{\ 抛物线\ }"）；
+判断（"库特流的速度是纯剪切流与泊肃叶流的叠加"）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择，掌握基本概念＋公式套用即可"；E6 教材 8.1 节}\quad\nandu{易}
+
+\begin{banfa}
+判型三看：\textbf{看板动不动}（动$\to$剪切项$\frac{u_0}{h}y$）、\textbf{看有没有 $\dd p/\dd x$}（有$\to$抛物项）、
+\textbf{看两者是否同时有}（同时有$\to$叠加成库特流）。三种情况用\emph{同一个}表达式就能覆盖。
+\end{banfa}
+\end{kaodian}
+
+\section{边界层的基本概念}
+
+\begin{kaodian}{3}{边界层的定义与三重含义}
+\textbf{是什么（教材口径）：}当\textbf{雷诺数很大}时，黏性作用只集中在\textbf{紧贴壁面的极薄一层}内，
+这一层称为\textbf{边界层}（附面层）；边界层以外的主流区速度梯度很小，黏性作用可以忽略，
+可按\emph{理想流体}处理。
+
+\textbf{边界层的三重含义（概念题就考这三条）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+含义 & 说明 \\
+\midrule
+① 一层\textbf{薄}层 & 厚度 $\delta$ 远小于物体特征长度 $l$，即 $\delta\ll l$；且 $\delta/l\sim 1/\sqrt{\Rey_l}$ \\
+② \textbf{速度梯度大} & 层内 $\dfrac{\partial u}{\partial y}\sim\dfrac{U}{\delta}$，比流向梯度 $\dfrac{U}{l}$ 大 $\sqrt{\Rey_l}$ 倍，是黏性切应力显著的原因 \\
+③ 流动\textbf{有旋} & 层内存在大速度梯度与旋涡，是有旋流动；层外主流可视为无旋的势流 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{边界层概念的物理图像：}物体前缘处流体与壁面之间的无滑移条件使壁面附近速度陡降；
+沿程不断把动量通过黏性向内传递，因此边界层\textbf{越来越厚}。
+典型数值（平板层流）：$\delta/x=5.0/\sqrt{\Rey_x}$，例如 $\Rey_x=4\times10^5$ 时 $\delta\approx0.008x$，
+即只有板长千分之八——但它是\emph{相对}薄，不是绝对薄。
+
+\textbf{常考题型：}填空（"边界层是指\underline{\ 紧贴壁面、黏性作用显著的薄层\ }"）；
+简答（"边界层的含义/为什么引入边界层概念"）；
+选择（"边界层外的流动按（理想流体／黏性流体）处理"$\to$理想流体）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 填空考"名词定义"、简答考"定义/分类/特点"；E1 slide33 第八章＝"选择填空题考点"；E2"掌握基本概念"}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{"三字经"背法：}边界层＝\textbf{薄、陡、旋}（薄层、梯度陡、有旋）。
+答题时先写"壁面附近 $\delta\ll l$ 的薄层"，再补"层内 $\partial u/\partial y$ 极大、黏性力与惯性力同量级"，最后加"层外按势流处理"——三句话拿满分。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 1：}"薄"是\textbf{相对}的。$\delta/l\sim1/\sqrt{\Rey_l}$ 随 $\Rey$ \emph{增大而减小}，
+但 $\delta$ 的\emph{绝对值}沿程仍然增大。飞机机翼边界层可以有几厘米厚，不能想当然认为它"很薄所以可以忽略不计"。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{3}{边界层厚度 $\delta$ 的定义与沿程增长}
+\begin{gongshi}{边界层厚度的工程定义（8.2）}
+\[ \delta(x):\quad u(x,y)\big|_{y=\delta}=0.99\,U_\infty \]
+\[ \text{量级关系：}\quad \frac{\delta}{l}\sim\frac{1}{\sqrt{\Rey_l}}\quad\text{或}\quad \delta\propto\sqrt{\frac{\nu x}{U}} \]
+\textbf{含义：}把\emph{速度达到来流速度（外部势流速度）$99\%$} 的位置规定为边界层外缘，
+该处到壁面的法向距离即边界层厚度 $\delta$。用 $99\%$ 而非 $100\%$ 是因为从层内到层外的过渡是\emph{渐近}的，
+不存在一个速度恰好等于 $U_\infty$ 的明确界面，所以 $\delta$ 是一个\textbf{人为约定的工程量}。\\
+\textbf{适用条件：}适用于大雷诺数下壁面附近的流动；$\delta$ 依赖约定（若改用 $0.995U_\infty$ 则 $\delta$ 略大），
+故涉及 $\delta$ 的一切公式都必须"同一约定配套使用"。
+\end{gongshi}
+
+\textbf{沿程增长的物理原因：}流体从前缘开始，壁面处速度为零，靠黏性把外部动量逐层向内"扩散"；
+扩散所需时间随流向距离增加，故 $\delta$ 随 $x$ 增大，且 $\delta\propto\sqrt{x}$（层流）。
+\textbf{平板}上 $U_\infty$ 不变时 $\delta=5.0x/\sqrt{\Rey_x}$；层流时 $\delta$ 是抛物线型的缓增，
+转捩成湍流后 $\delta$ 增长明显加快（$\delta\propto x^{4/5}$）。
+
+\textbf{常考题型：}填空（"边界层厚度定义为 $u=$ \underline{\ } $U_\infty$ 处的 $y$ 值"$\to$0.99）；
+选择（"边界层厚度沿程如何变化"$\to$增大）；
+小计算（给出 $\Rey_x$ 求 $\delta/x$）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 填空考"名词定义与小计算"；E2"掌握基本概念＋公式套用"；E6 教材 8.2 节}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{约定的数字只有两个要记：}厚度用 $\mathbf{0.99}$，转捩用 $\mathbf{5\times10^5}$。
+\textbf{顺手自检：}$\delta/x=5.0/\sqrt{\Rey_x}$ 中，$\Rey_x=10^6$ 时 $\delta/x=0.5\%$；
+考试里若算出 $\delta/x$ 达到百分之几十，一定是把 $\Rey_x$ 算错了。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{边界层内的两种流态与转捩点}
+\textbf{是什么：}边界层内部同样存在\textbf{层流边界层}与\textbf{湍流边界层}两种流态；
+由层流转为湍流的现象称为\textbf{转捩}，转捩发生的位置称为\textbf{转捩点}。
+平板绕流中，前缘开始的层流边界层经过一段距离后转捩为湍流。
+
+\begin{gongshi}{边界层流态的判据（8.2）}
+\[ \Rey_x=\frac{U_\infty x}{\nu},\qquad\qquad \Rey_{x,c}\approx5\times10^5 \]
+\textbf{含义：}以\emph{距前缘的距离 $x$ 为特征长度}构造的局部雷诺数。
+$\Rey_x<5\times10^5$ 时为层流边界层，$\Rey_x>5\times10^5$ 后转捩为湍流边界层。\\
+\textbf{适用条件：}适用于光滑平板、来流湍流度较小的情形；
+转捩点位置受来流湍流度、壁面粗糙度、压力梯度与壁面温度影响很大，
+实际可在 $3\times10^5\sim3\times10^6$ 之间变动，故 $5\times10^5$ 只是\textbf{工程参考值}。
+\end{gongshi}
+
+\textbf{湍流边界层的分层（必背）：}紧贴壁面是极薄的\textbf{黏性底层}（层流），
+再往外是\textbf{过渡区}，最外层是\textbf{湍流核心区}。
+湍流边界层内部由于脉动掺混，速度剖面比层流\emph{饱满}（同一 $\delta$ 下，近壁速度更大、
+壁面切应力也更大），故湍流边界层的\emph{摩擦阻力更大}，
+但\emph{抵抗逆压梯度的能力更强}、\emph{不易分离}。
+
+\textbf{常考题型：}选择（"平板边界层由层流转为湍流的临界雷诺数约为"$\to5\times10^5$）；
+判断（"边界层一定是层流"$\to$错）；填空（"湍流边界层由黏性底层、过渡区和\underline{\ 湍流核心区\ }组成"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 选择/判断考"概念辨析"、填空考"名词定义"；E2"掌握基本概念"；E6 教材 8.2 节}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{"两个 $\Rey$ 分清楚"对照表（考点即在此）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+ & 管内流动（第 5 章） & 平板边界层（本章） \\
+\midrule
+特征长度 & 管径 $d$ & 距前缘距离 $x$ \\
+判据 & $\Rey_d=\dfrac{vd}{\nu}$ & $\Rey_x=\dfrac{U_\infty x}{\nu}$ \\
+临界值 & $2000$（工程取值） & $5\times10^5$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+题目里出现"$d$"就用第一个，出现"$x$、距前缘"就用第二个，\textbf{绝不能互换}。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 3：}边界层的层流/湍流与\emph{管内的}层流/湍流是\textbf{两套判据}：
+管内按 $\Rey_d$ 且临界值是 $2000$；平板边界层按 $\Rey_x$ 且临界值是 $5\times10^5$。
+把 $2000$ 套到平板上（或反之）是最典型的失分点。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{3}{边界层内的压强分布}
+\begin{gongshi}{边界层内沿法向压强不变（8.2、8.3，核心结论）}
+\[ \frac{\partial p}{\partial y}\approx0\quad\Longrightarrow\quad p=p(x) \]
+\textbf{含义：}边界层很薄，法向坐标 $y$ 方向上的惯性效应（离心效应）可忽略，
+故\textbf{压强沿壁面法向不变}，边界层内任意一点的压强\emph{都等于}该处边界层外缘的压强；
+$(x,y)$ 处的二维压强场退化为一维的 $p=p(x)$。这就是"边界层内压强由外部势流决定"的准确表述。\\
+\textbf{适用条件：}壁面曲率半径远大于边界层厚度（薄层近似）且流动未分离。
+圆柱/机翼等曲面壁面只要 $\delta\ll$ 曲率半径仍可用；
+但\textbf{分离区、尾流区、激波区}不成立。
+\end{gongshi}
+
+\textbf{由外部势流确定压强梯度（解题必经的一步）：}
+边界层外缘是理想流体，沿流线满足伯努利方程 $\dfrac{p}{\rho}+\dfrac{U^2}{2}=$常数，对 $x$ 求导得
+\[ \frac{\dd p}{\dd x}=-\rho U\frac{\dd U}{\dd x} \]
+\textbf{讨论三种情形：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+情形 & 判据 & 边界层表现 \\
+\midrule
+顺压梯度 & $\dfrac{\dd p}{\dd x}<0$（$\dd U/\dd x>0$） & 压强沿程下降，流体被加速，剖面更饱满，\textbf{不易分离} \\
+零压梯度 & $\dfrac{\dd p}{\dd x}=0$（平板 $U=$常数） & 平板绕流的理想情形 \\
+逆压梯度 & $\dfrac{\dd p}{\dd x}>0$（$\dd U/\dd x<0$） & 压强沿程升高，流体减速，\textbf{可能分离}（见 8.7） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}填空（"边界层内压强沿法向\underline{\ 不变\ }，即 $p=p(x)$"）；
+选择（"边界层内压强梯度 $\dd p/\dd x$ 由（外部势流／边界层内的黏性／壁面切应力）决定"$\to$外部势流）；
+简答（"为什么边界层内压强只沿流向变化"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 选择/判断考"概念辨析"、填空考"名词定义"；E2"掌握基本概念"；E6 教材 8.2、8.3 节\quad}\nandu{中}
+
+\begin{banfa}
+\textbf{这是"白送分"的突破口：}题目只要给了物体表面的\emph{压强分布}或\emph{外部势流速度分布}，
+就能直接用 $\dfrac{\dd p}{\dd x}=-\rho U\dfrac{\dd U}{\dd x}$ 换算，把边界层方程右边的压强项写成 $U$ 的函数。
+\textbf{一句话答题模板：}"因边界层极薄，$\partial p/\partial y\approx0$，层内压强沿法向不变、
+等于层外势流压强，故由伯努利方程得 $\dfrac{\dd p}{\dd x}=-\rho U\dfrac{\dd U}{\dd x}$。"
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 2：}不要以为"边界层内压强也跟着黏性耗散掉很多"。恰恰相反——
+边界层内的\textbf{黏性只在动量方程里起作用，在压强上不产生法向落差}。
+压强是\emph{外部势流说了算}的已知量，这是边界层方程能被简化为抛物型方程的关键前提。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{2}{边界层概念的适用条件}
+\textbf{成立条件（三条）：}
+\begin{enumerate}
+  \item \textbf{大雷诺数}：$\Rey$ 足够大，$\delta/l\sim1/\sqrt{\Rey}$ 才足够小，"薄层＋层外无黏"才成立；
+  低 $\Rey$（如 $\Rey<10$ 的绕流球）时黏性遍布全流场，边界层概念\textbf{不适用}；
+  \item \textbf{壁面附近、未分离}：只描述贴壁薄层与主流的衔接；\emph{分离点以后}边界层方程失效；
+  \item \textbf{流体连续}：连续介质假设成立（稀薄气体、激波后强间断不适用）。
+\end{enumerate}
+
+\textbf{不适用的区域（选择/判断题的陷阱材料）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+区域 & 为什么不适用 \\
+\midrule
+尾流区 & 物体后面黏性影响扩散到整个尾迹，不再"薄"，必须用完整 N-S 方程或湍流模型 \\
+分离区 & $\partial u/\partial y|_{y=0}=0$ 之后出现回流，方程类型与边界条件全部改变 \\
+激波区 & 存在强间断、压缩性显著，连续介质与不可压缩前提被破坏 \\
+低 $\Rey$ 绕流 & 黏性作用遍布全流场，没有"层外势流"可言 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}判断（"边界层理论适用于任何雷诺数的绕流"$\to$错）；
+选择（"下列哪个区域不能用边界层理论"$\to$尾流/分离区）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择"；E1 slide16 判断考"概念辨析"；E6 教材 8.2 节}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{"四不适用"口诀：}尾流、分离、激波、低 $\Rey$。
+凡是题目描述里出现"物体后面很远的地方""回流""激波""$\Rey$ 很小"，就要立刻想到边界层理论已失效。
+\end{banfa}
+\end{kaodian}
+
+\section{边界层方程组及边界条件}
+
+\begin{kaodian}{3}{量级比较与普朗特边界层方程}
+\textbf{思路（简答常考）：}把完整的不可压缩 N-S 方程在\emph{边界层薄层}内做\textbf{量级比较}，
+把量级远小于惯性项的黏性项与法向压强项丢掉，得到\textbf{普朗特边界层方程}。
+
+\textbf{量级比较的依据与结果（必背表格）：}设流向特征长度 $l$、法向厚度 $\delta$、外部速度 $U$。
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXc@{}}
+\toprule
+量 & 依据 & 量级 \\
+\midrule
+$x$ & 顺流方向变化缓慢 & $l$ \\
+$y$ & 只跨过薄薄一层 & $\delta$ \\
+$u$ & 与外部势流同级 & $U$ \\
+$v$ & 由连续性方程 $\dfrac{\partial u}{\partial x}+\dfrac{\partial v}{\partial y}=0$ 反推 &
+$\dfrac{U\delta}{l}$ \\
+$\dfrac{\partial^2 u}{\partial y^2}$ & 黏性与惯性同量级 & $\dfrac{U}{\delta^2}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+由"惯性项 $\sim$ 黏性项"得 $U^2/l\sim\nu U/\delta^2$，即
+\[ \delta\sim\sqrt{\frac{\nu l}{U}}\ ,\qquad \frac{\delta}{l}\sim\frac{1}{\sqrt{\Rey_l}} \]
+这同时\emph{证明了}边界层厚度与 $\sqrt{x}$ 成正比，也说明 $v\ll u$（$v/u\sim\delta/l$）。
+
+\textbf{量级比较的结论（丢掉哪些项）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+方程 & 简化结果 \\
+\midrule
+连续方程 & 形式\textbf{不变}：$\dfrac{\partial u}{\partial x}+\dfrac{\partial v}{\partial y}=0$ \\
+$x$ 向动量方程 & 黏性项只保留 $\nu\dfrac{\partial^2 u}{\partial y^2}$（$\dfrac{\partial^2 u}{\partial x^2}$ 小 $\Rey_l$ 倍，丢弃） \\
+$y$ 向动量方程 & 各黏性项与惯性项均比 $x$ 向小，只剩 $\dfrac{\partial p}{\partial y}=0$，即 $p=p(x)$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{gongshi}{普朗特边界层方程（8.3，必背）}
+\[ \text{连续：}\ \frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0 \]
+\[ \text{动量：}\ u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}
+   =-\frac{1}{\rho}\frac{\dd p}{\dd x}+\nu\frac{\partial^2 u}{\partial y^2} \]
+\[ \text{压强项：}\ \frac{\dd p}{\dd x}=-\rho U\frac{\dd U}{\dd x}\quad(\text{由外部势流伯努利方程}) \]
+\textbf{含义：}在薄层近似下，二维不可压缩定常层流边界层的基本方程组。
+它与 N-S 方程的本质区别是：\textbf{法向动量方程被压强方程取代}，$p$ 由外部势流给出；
+方程对 $x$ 是\emph{抛物型}的，可以从前缘开始沿 $x$ \emph{逐步向前推进}求解\\
+（而 N-S 方程是椭圆型的，必须全场耦合求解）——这正是边界层理论把问题"化难为易"的关键。\\
+\textbf{适用条件：}大 $\Rey$、薄边界层、\emph{未分离}、二维（或轴对称）层流、
+不可压缩、物性为常数、壁面曲率半径远大于 $\delta$。
+\end{gongshi}
+
+\textbf{常考题型：}填空（"边界层方程中 $y$ 向动量方程简化为\underline{\ $\partial p/\partial y=0$\ }"）；
+选择（"边界层方程中保留的黏性项是"$\to$ $\nu\partial^2u/\partial y^2$）；
+简答（"写出边界层方程并说明各项含义"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33 第八章＝"选择填空题考点"；E1 slide16 选择考"概念辨析"；E2"掌握基本概念与公式套用"；E6 教材 8.3 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{"只留一个二阶项"记忆法：}N-S 的黏性项有三个 $\partial^2/\partial x^2$、$\partial^2/\partial y^2$、$\partial^2/\partial z^2$；
+边界层里\textbf{只有跨过薄层的 $\partial^2/\partial y^2$ 幸存}，其余丢进"小一个 $\Rey_l$ 量级"里。
+考试写方程时若多写了 $\nu\partial^2u/\partial x^2$，就会被扣"未做量级比较"的分。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{边界条件}
+\begin{gongshi}{边界层方程的边界条件（8.3）}
+\[ y=0:\quad u=0,\quad v=0\qquad(\text{无滑移、无穿透}) \]
+\[ y=\delta\ (\text{或 }y\to\infty):\quad u\to U(x)\qquad(\text{与外缘势流衔接}) \]
+\[ \text{压强：}\quad \frac{\dd p}{\dd x}=-\rho U\frac{\dd U}{\dd x} \]
+\[ \text{前缘条件：}\quad x=0:\ u=U_\infty\ (\text{均匀来流}) \]
+\textbf{含义：}① \textbf{壁面无滑移}：黏性流体紧贴壁面的流体质点与壁面\emph{没有相对速度}，
+故 $u=v=0$；这是边界层（乃至一切黏性流动）产生的根源。
+② \textbf{外缘衔接}：边界层外缘速度等于外部势流速度 $U(x)$，
+由外部势流解（势流理论，见第 7 章）提供；
+③ 压强梯度不再是独立未知量，由外部势流经伯努利方程换算得到。\\
+\textbf{适用条件：}固壁、连续介质、未分离；壁面运动时无滑移条件改为 $u=U_{\text{wall}}$。
+\end{gongshi}
+
+\textbf{为什么必须有无滑移条件：}若允许壁面处流体滑移，则壁面处 $\partial u/\partial y$ 不再是 $\sim U/\delta$，
+边界层的整套量级比较和黏性效应都失去来源。无滑移是"边界层存在"的逻辑前提，
+也是\emph{理想流体理论无法给出阻力}的根源——理想流体允许在壁面滑移，算不出摩擦阻力。
+
+\textbf{常考题型：}填空（"边界层方程的壁面边界条件是\underline{\ $u=v=0$\ }"）；
+简答（"写出边界层方程及其边界条件"）；判断（"黏性流体在壁面处可以滑移"$\to$错）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 填空考"名词定义"、简答考"定义/分类/特点"；E2"掌握基本概念"；E6 教材 8.3 节}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{边界条件"三层检验"：}拿到边界层题目，先写\emph{壁面两条}（$u=0$、$v=0$），
+再写\emph{外缘一条}（$u=U(x)$），最后写\emph{压强换算一条}（$\dd p/\dd x=-\rho U\,\dd U/\dd x$）。
+四行写完，即使没往下算，简答题也已经拿到了大部分分数。
+\end{banfa}
+\end{kaodian}
+
+\section{边界层方程的相似性解}
+
+\begin{kaodian}{2}{布拉修斯解（平板层流边界层）}
+\textbf{思路（相似性解的要义）：}平板边界层外部 $U_\infty=$常数，是\emph{零压梯度}情形。
+布拉修斯提出：不同 $x$ 断面上的速度剖面\emph{彼此相似}，可用一个组合变量把它们"归一化"。
+引入无量纲法向坐标与流函数
+\[ \eta=y\sqrt{\frac{U_\infty}{\nu x}}\ ,\qquad \psi=\sqrt{\nu xU_\infty}\,f(\eta)
+   \ \Longrightarrow\ u=U_\infty f'(\eta) \]
+代入普朗特方程后，偏微分方程化为\textbf{常微分方程}
+\[ 2f'''+ff''=0 \]
+边界条件：$\eta=0$ 处 $f=f'=0$（无滑移）；$\eta\to\infty$ 处 $f'\to1$（外缘衔接）。
+数值求得 $f''(0)=0.332$。\textbf{这就是"相似性解"：把 $x$、$y$ 两个自变量合成一个 $\eta$，
+使不同断面的速度剖面成为同一条曲线。}
+
+\begin{tishi}
+相似性解的意义有三条：① 把偏微分方程降为常微分方程，可数值求解；
+② 说明层流边界层速度剖面\textbf{自相似}（去量纲后与 $x$ 无关）；
+③ 由此得到下面一组\textbf{可直接套用的公式}。\emph{推导过程不需背，结果必须背。}
+\end{tishi}
+
+\textbf{常考题型：}选择/填空（"布拉修斯解适用于（平板／零压梯度）层流边界层"）；
+简答（"什么是边界层方程的相似性解"）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择，掌握基本概念＋公式套用即可"；E6 教材 8.4 节}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{认标志就能选对：}出现"$\eta=y\sqrt{U/(\nu x)}$""$f''(0)=0.332$""平板层流"三者之一，
+就是布拉修斯解。它\textbf{只能用于平板}（$U=$常数、$\dd p/\dd x=0$），
+一旦给出曲面或非零压强梯度，就不能套这组数。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{2}{平板层流边界层的厚度、切应力与阻力公式}
+\begin{gongshi}{布拉修斯解的四个结果（8.4，必背）}
+\[ \delta=\frac{5.0x}{\sqrt{\Rey_x}}\ ,\qquad\qquad
+   \tau_w=0.332\frac{\rho U_\infty^2}{\sqrt{\Rey_x}} \]
+\[ C_f=\frac{\tau_w}{\frac{1}{2}\rho U_\infty^2}=\frac{0.664}{\sqrt{\Rey_x}}\ ,\qquad\qquad
+   C_D=\frac{1.328}{\sqrt{\Rey_l}} \]
+\[ F_d=\frac{1}{2}\rho U_\infty^2\,bl\,C_D=0.664\,b\sqrt{\mu\rho l}\,U_\infty^{1.5} \]
+\textbf{含义：}$\delta$＝边界层厚度（$u=0.99U_\infty$ 处）；
+$\tau_w$＝壁面局部切应力；$C_f$＝\textbf{局部摩擦阻力系数}（该 $x$ 处单位面积摩擦力与 $\frac12\rho U^2$ 之比）；
+$C_D$＝\textbf{整板平均摩擦阻力系数}；$F_d$＝宽 $b$、长 $l$ 平板单面的总摩擦阻力。\\
+\textbf{适用条件：}\emph{平板}、\emph{层流边界层}（$\Rey_l<5\times10^5$）、不可压缩、定常、零压梯度、
+来流湍流度很低；$F_d$ 为\emph{单面}阻力（双面板要乘 2）；$C_D=1.328/\sqrt{\Rey_l}$ 中的
+$\Rey_l=U_\infty l/\nu$ 用\textbf{板长}作特征长度。
+\end{gongshi}
+
+\textbf{数量级自检（很好用）：}$C_f$ 随 $x$ 增大而减小（$\propto x^{-1/2}$），
+说明\emph{前缘附近单位面积摩擦力最大}、越往后越小；而 $\delta$ 越往后越大。
+这两件事方向相反，切忌混答。
+
+\textbf{常考题型：}填空（"平板层流边界层 $\delta/x=$ \underline{\ }"）；
+计算（给定 $U$、$l$、$b$、$\nu$ 求 $F_d$ 或求两块板的阻力比）；
+选择（"$C_f$ 随 $\Rey_x$ 如何变化"$\to$减小）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E4 2015 年试题计算题含"平板摩擦阻力比"；E2"掌握基本概念＋公式套用即可"；E6 教材 8.4、8.6 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{平板阻力计算"五步走"（专治"平板摩擦阻力比"这类题）：}
+① 由 $U_\infty$、$l$、$\nu$ 算 $\Rey_l=\dfrac{U_\infty l}{\nu}$，看是否小于 $5\times10^5$ 以判定层流；
+② 层流取 $C_D=\dfrac{1.328}{\sqrt{\Rey_l}}$；
+③ 单面阻力 $F_d=\dfrac12\rho U_\infty^2\,bl\,C_D$，双面乘 2；
+④ 若题目问"两块板的阻力比"，先分别算出两个 $\Rey_l$，再按 $F\propto \sqrt{U^3 l}$（同流体温、同宽）或
+直接用 $F=\dfrac12\rho U^2b\sqrt{\nu l U}\times1.328$ 求比，\textbf{不要漏掉任何一个变量}；
+⑤ 最后做量纲检查：阻力必须是 N，且与 $b$、$l^{1/2}$、$U^{3/2}$ 成正比。
+
+\textbf{秒答技巧：}层流平板的 $F_d=0.664b\sqrt{\mu\rho l}\,U^{1.5}$，
+说明\textbf{层流摩擦阻力与来流速度的 1.5 次方成正比}，而与板长的平方根成正比。
+题目若给"速度加倍"，阻力变成 $2^{1.5}=2.83$ 倍——这个结论比一步步算快得多。
+\end{banfa}
+\end{kaodian}
+
+\section{边界层动量积分方程}
+
+\begin{kaodian}{2}{冯·卡门动量积分方程}
+\textbf{思路（推导要点）：}在边界层内取一个\textbf{控制体}（长 $\dd x$、高跨过边界层），
+对其应用\textbf{动量定理}：\emph{流出与流入控制体的动量通量之差＝作用在控制体上的合力}。
+作用力只有三个来源：壁面切应力 $\tau_w\dd x$（阻力方向）、
+两侧压强差产生的压强力、以及外缘带入的动量。
+把边界层方程对 $y$ 从 $0$ 积分到 $\delta$ 也能得到同一结果。
+
+\begin{gongshi}{卡门动量积分方程（8.5，必背形式）}
+\[ \frac{\tau_w}{\rho U^2}=\frac{\dd \delta_2}{\dd x}
+   +2\delta_2\frac{\dd U}{\dd x}+\frac{\delta_2}{U}\frac{\dd U}{\dd x}
+   =\frac{\dd \delta_2}{\dd x}+\frac{\delta_2}{U}\left(2+H\right)\frac{\dd U}{\dd x} \]
+\textbf{平板（$\dd U/\dd x=0$）简化为最常用的形式：}
+\[ \frac{\tau_w}{\rho U_\infty^2}=\frac{\dd \delta_2}{\dd x}\ ,\qquad\text{即}\qquad
+   \tau_w=\rho U_\infty^2\frac{\dd \delta_2}{\dd x} \]
+\textbf{含义：}把动量守恒沿边界层厚度方向积分，把\emph{二维偏微分方程}降为关于 $x$ 的\emph{常微分方程}；
+方程中不再出现 $v$ 与法向坐标，只涉及 $\tau_w$、$U$ 与三个厚度参数。
+它是"近似解法"的理论基础：\emph{只要假定一个速度剖面，就能解出 $\delta(x)$ 与 $\tau_w(x)$}。\\
+\textbf{适用条件：}二维、不可压缩、定常、\emph{不分离}（要求 $\tau_w>0$）；
+既适用于层流，也适用于湍流（湍流时 $\tau_w$ 取时均湍流切应力）。
+\end{gongshi}
+
+\textbf{常考题型：}填空（"平板零压梯度时卡门方程为\underline{\ $\tau_w=\rho U^2\,\dd\delta_2/\dd x$\ }"）；
+简答（"简述动量积分方程的推导思路与意义"）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择"；E1 slide33 第八章＝"选择填空题考点"；E6 教材 8.5 节}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{"积分方程解决什么"的标准答法：}
+"它把边界层的\textbf{偏微分方程沿法向积分一次}，化为常微分方程，
+从而\textbf{不需要知道精确的速度剖面}，只要假定的剖面满足边界条件，
+就能求出工程上够用的 $\delta$、$\tau_w$ 与 $C_f$。"
+\textbf{平板上只需背一个式子：}$\tau_w=\rho U_\infty^2\dfrac{\dd\delta_2}{\dd x}$，其余推导都可现推。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{位移厚度 $\delta_1$、动量损失厚度 $\delta_2$ 与形状因子 $H$}
+\begin{gongshi}{三种厚度参数的定义（8.5，必背）}
+\[ \delta_1=\int_0^{\delta}\left(1-\frac{u}{U}\right)\dd y\ ,\qquad\qquad
+   \delta_2=\int_0^{\delta}\frac{u}{U}\left(1-\frac{u}{U}\right)\dd y \]
+\[ H=\frac{\delta_1}{\delta_2} \]
+\textbf{含义（这是概念题的考点，要会说"物理意义"）：}
+\begin{itemize}
+  \item $\delta_1$ \textbf{位移厚度}：边界层内速度亏损使通过断面的\emph{质量流量}比理想流体少，
+        其数量相当于\emph{壁面外移了 $\delta_1$} 才能恢复同样的流量，
+        故又称\emph{排挤厚度}；物理上表示"固体壁面被边界层\"增厚\"了多少"，
+        外流相当于绕一个比真实物体\emph{胖 $\delta_1$} 的物体流动。
+  \item $\delta_2$ \textbf{动量损失厚度}：边界层内速度亏损使通过断面的\emph{动量通量}减少，
+        其数量相当于损失了厚度为 $\delta_2$、速度为 $U$ 的一层流体的动量；
+        它\textbf{直接等于摩擦阻力造成的动量损失率}，是卡门方程里的主角。
+  \item $H$ \textbf{形状因子}：反映速度剖面的"饱满程度"，
+        层流平板 $H\approx2.59$，湍流平板 $H\approx1.3\sim1.4$；
+        $H$ \emph{越大剖面越瘦（近壁速度越小）}，也\textbf{越接近分离}，
+        故 $H$ 常被用作\emph{分离判据}的经验指标。
+\end{itemize}
+\textbf{适用条件：}二维不可压缩边界层、不分离；$\delta$ 取同一约定（$0.99U$）。
+\end{gongshi}
+
+\textbf{三者关系速查：}$\delta>\delta_1>\delta_2$；层流平板取布拉修斯解时
+$\delta_1=1.721\dfrac{x}{\sqrt{\Rey_x}}$，$\delta_2=0.664\dfrac{x}{\sqrt{\Rey_x}}$，$H=2.59$。
+
+\textbf{常考题型：}填空（"位移厚度的物理意义是\underline{\ 因速度亏损使流量减少、相当于壁面外移的厚度\ }"）；
+选择（"层流平板边界层的形状因子约为"$\to$2.6）；简答（"比较 $\delta$、$\delta_1$、$\delta_2$ 的定义与物理意义"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 填空考"名词定义"、简答考"定义/分类/特点"；E2"掌握基本概念"；E6 教材 8.5 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{三厚度"一句话区分法"（答题直接用）：}
+$\delta$\ ——\emph{几何}厚度：速度恢复到 $0.99U$ 的地方；
+$\delta_1$\ ——\emph{流量}亏损：相当于壁面外移多少（管流里算流量修正、势流里修正物面）；
+$\delta_2$\ ——\emph{动量}亏损：等于摩擦阻力的动量代价（阻力计算用它）。
+\textbf{记忆钩子：}1 管流量、2 管动量、$H$ 管分离。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{2}{用假定速度剖面近似求解的步骤}
+\textbf{套路（这是"近似解法"的标准流程，务必按顺序会写）：}
+
+\textbf{① 选剖面}：假定 $u/U$ 是 $\eta=y/\delta$ 的简单函数——常用两种（都以边界条件定系数）：
+\[ \text{三次多项式：}\ \frac{u}{U}=\frac{3}{2}\eta-\frac{1}{2}\eta^3\ ,\qquad\qquad
+   \text{正弦式：}\ \frac{u}{U}=\sin\left(\frac{\pi}{2}\eta\right) \]
+三次多项式是用四个条件定出来的：$\eta=0$ 处 $u=0$；
+$\eta=1$ 处 $u=U$ 且 $\dfrac{1}{U}\dfrac{\partial u}{\partial \eta}\big|_{\eta=1}=0$；
+$\eta=1$ 处 $\dfrac{\partial^2 u}{\partial \eta^2}\big|_{\eta=1}=0$（外缘光滑衔接）。
+
+\textbf{② 算两个厚度}：把剖面代入定义式积分
+\[ \delta_1=\delta\!\int_0^1\!\left(1-\frac{u}{U}\right)\dd\eta\ ,\qquad
+   \delta_2=\delta\!\int_0^1\!\frac{u}{U}\left(1-\frac{u}{U}\right)\dd\eta \]
+三次多项式得 $\delta_1=\dfrac{3}{8}\delta$，$\delta_2=\dfrac{39}{280}\delta$，$H=2.69$。
+（注意：各剖面算出的 $H$ 略有差别，但都在 $2.5\sim2.7$，与布拉修斯的 $2.59$ 接近。）
+
+\textbf{③ 写 $\tau_w$}：由牛顿内摩擦定律，壁面切应力只用剖面的\emph{壁面斜率}：
+\[ \tau_w=\mu\left.\frac{\partial u}{\partial y}\right|_{y=0}=\mu\frac{U}{\delta}\cdot
+   \left.\frac{\dd (u/U)}{\dd \eta}\right|_{\eta=0} \]
+三次多项式的壁面斜率为 $1.5$，故 $\tau_w=1.5\mu U/\delta$。
+
+\textbf{④ 代入卡门方程求解}：平板情形用 $\tau_w=\rho U^2\dfrac{\dd \delta_2}{\dd x}$，
+把 $\delta_2=C\delta$（$C$ 为常数）与 $\tau_w=A\mu U/\delta$ 代入，得
+\[ \frac{A\mu U}{\delta}=\rho U^2 C\frac{\dd\delta}{\dd x}
+   \ \Longrightarrow\ \delta\frac{\dd\delta}{\dd x}=\frac{A\nu}{CU}
+   \ \Longrightarrow\ \delta=2\sqrt{\frac{A}{C}}\frac{x}{\sqrt{\Rey_x}} \]
+三次多项式（$A=1.5$、$C=39/280$）得 $\delta=4.64\dfrac{x}{\sqrt{\Rey_x}}$，$C_f=0.646/\sqrt{\Rey_x}$，
+与布拉修斯的精确解（$5.0$、$0.664$）只差约 $7\%$——\textbf{足以说明积分法的工程精度}。
+
+\textbf{⑤ 求阻力}：$C_D=\dfrac{1}{l}\displaystyle\int_0^l C_f\dd x$，或由 $C_D=2\dfrac{\delta_2(l)}{l}$ 直接算出。
+
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择，掌握基本概念＋公式套用即可"；E6 教材 8.5 节}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{这套步骤的价值在于"不会也能得分的结构分"：}
+只要答出"假定剖面 $\to$ 算 $\delta_1$、$\delta_2$ $\to$ 求 $\tau_w$ $\to$ 代入卡门方程 $\to$ 积分得阻力"
+这五步，即使积分算错，简答题的分也基本拿到。
+\textbf{如果只让估算：}可用正弦式（$\delta_1=0.363\delta$、$\delta_2=0.137\delta$），
+它的结果与三次多项式几乎一致。
+\end{banfa}
+\end{kaodian}
+
+\section{平板边界层计算}
+
+\begin{kaodian}{2}{湍流边界层的速度剖面与公式}
+\textbf{是什么：}当 $\Rey_x>5\times10^5$ 后，平板边界层转捩为湍流。
+湍流边界层内靠\emph{脉动掺混}传递动量，速度剖面比层流\textbf{饱满}得多，
+工程上常用简便的经验公式描述。
+
+\begin{gongshi}{平板湍流边界层的常用公式（8.6）}
+\[ \text{速度剖面：}\ \frac{u}{U_\infty}=\left(\frac{y}{\delta}\right)^{1/7}
+   \qquad(\text{1/7 次方分布律}) \]
+\[ \delta=\frac{0.37x}{\Rey_x^{1/5}}\ ,\qquad\qquad
+   C_f=\frac{\tau_w}{\frac{1}{2}\rho U_\infty^2}=\frac{0.0592}{\Rey_x^{1/5}} \]
+\[ \text{整板平均：}\ C_D=\frac{0.074}{\Rey_l^{1/5}}\ ,\qquad
+   F_d=\frac{1}{2}\rho U_\infty^2\,bl\,C_D \]
+\textbf{含义：}用 $\delta$ 作特征尺度、$\Rey_x$ 作无量纲量的幂律拟合法；
+$\delta\propto x^{4/5}$（比层流的 $x^{1/2}$ 长得快），$C_f\propto \Rey_x^{-1/5}$（比层流衰减得慢，故摩擦力更大）。
+$C_D=0.074/\Rey_l^{1/5}$ 是在 $5\times10^5<\Rey_l<10^7$ 范围内由实验拟合的。\\
+\textbf{适用条件：}\emph{光滑平板}、\emph{自前缘即全湍流}（或 $\Rey_l$ 很大使层流段可忽略）、
+不可压缩、零压梯度、$\Rey_l$ 在 $5\times10^5\sim10^7$；
+注意不同教材的系数略有差别（如 $0.074$ 与 $0.072$），\textbf{必须与所用教材配套}；
+1/7 次方律只适用于 $\Rey_x<10^7$ 左右，更高雷诺数要用对数律。
+\end{gongshi}
+
+\textbf{常考题型：}选择（"湍流边界层厚度沿程按（$x^{ 1/2}$／$x^{4/5}$）增长"$\to x^{4/5}$）；
+填空（"湍流边界层常用速度剖面为\underline{\ 1/7 次方分布律\ }"）；
+计算（给定条件求 $\delta$、$\tau_w$ 或 $F_d$）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"掌握基本概念＋公式套用即可"；E4 2015 年试题计算题含"平板摩擦阻力比"；E6 教材 8.6 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{层流 vs 湍流"五对数"对照表（考场速查）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+项目 & 层流边界层 & 湍流边界层 \\
+\midrule
+$\delta/x$ & $5.0/\Rey_x^{1/2}$ & $0.37/\Rey_x^{1/5}$ \\
+局部 $C_f$ & $0.664/\Rey_x^{1/2}$ & $0.0592/\Rey_x^{1/5}$ \\
+整板 $C_D$ & $1.328/\Rey_l^{1/2}$ & $0.074/\Rey_l^{1/5}$ \\
+速度剖面 & 布拉修斯（抛物型，瘦） & 1/7 次方律（饱满） \\
+厚度增长 & $\propto x^{1/2}$（缓） & $\propto x^{4/5}$（快） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\textbf{记系数的方法：}层流只有两个数 \textbf{0.664 / 1.328}（后一个是前一个的 2 倍）；
+湍流只有两个数 \textbf{0.0592 / 0.074}。
+判层/湍只看 $\Rey_l$ 与 $5\times10^5$ 的大小。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{2}{混合边界层（前段层流＋后段湍流）的阻力计算}
+\textbf{是什么：}实际平板（如机翼、船体）的边界层总是\textbf{前缘一段层流、转捩点之后为湍流}，
+这种由层流段与湍流段拼接成的边界层称为\textbf{混合边界层}。
+计算思路是"\textbf{分段算、再相加}"，并\emph{扣除}转捩前若已按湍流算所多出的那部分。
+
+\begin{gongshi}{混合边界层的平均阻力系数（8.6）}
+\[ C_D=\frac{0.074}{\Rey_l^{1/5}}-\frac{A}{\Rey_l}\quad\text{或写作}\quad
+   C_D=\frac{0.074}{\Rey_l^{1/5}}-\frac{1700}{\Rey_l} \]
+（后一种为转捩点取 $\Rey_{x,c}=5\times10^5$ 时的常用形式）
+\[ \text{整板阻力：}\ F_d=\frac{1}{2}\rho U_\infty^2\,bl\,C_D \]
+\textbf{含义：}第一项是把整板都当作湍流算得的值（偏大）；
+第二项是\emph{修正项}，扣掉"转捩前本应是层流、却按湍流多算的那部分阻力"，
+故 $C_D$ 比"全湍流"小。物理上说明\textbf{前缘保持层流可以减小平板的总摩擦阻力}。\\
+\textbf{适用条件：}平板、零压梯度、转捩点位置已知（常取 $\Rey_{x,c}=5\times10^5$，此时 $A\approx1700$）；
+修正项系数 $A$ 与转捩点位置有关，转捩越靠后、层流段越长，$C_D$ 越小；
+若题目直接给出转捩点 $x_c$，也可分段积分
+$F_d=\frac12\rho U^2b\!\left(\int_0^{x_c}\!C_{f,\text{层}}\dd x+\int_{x_c}^{l}\!C_{f,\text{湍}}\dd x\right)$。
+\end{gongshi}
+
+\textbf{常考题型：}计算（求混合边界层的总阻力，或比较"全层流／全湍流／混合"三种假设的阻力大小）；
+选择（"转捩点后移则总摩擦阻力如何变化"$\to$减小）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E4 2015 年试题计算题含"平板摩擦阻力比"；E2"掌握基本概念＋公式套用即可"；E6 教材 8.6 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{"三算一比较"套路：}
+① 先算 $\Rey_l$ 判断是否可能全层流（$\Rey_l<5\times10^5$ 时整个板都是层流，\emph{不要}用混合公式）；
+② 若 $\Rey_l>5\times10^5$，判题意："全湍流"用 $0.074/\Rey_l^{1/5}$，"混合"再减 $A/\Rey_l$；
+③ 代 $F_d=\frac12\rho U^2blC_D$（\emph{单面}，双面乘 2）；
+④ \textbf{比大小结论要背}：同 $\Rey_l$ 下 $C_{D,\text{全层}}>C_{D,\text{全湍}}$ 还是相反？
+—— 由 $\Rey_l^{-1/2}$ 与 $\Rey_l^{-1/5}$ 比较：$\Rey_l>10^5$ 时 $\Rey_l^{-1/2}<\Rey_l^{-1/5}$，
+\textbf{所以 $C_{D,\text{层}}<C_{D,\text{湍}}$，即层流摩擦阻力更小}（这也正是"层流翼型"存在的理由）。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{常见陷阱：}湍流边界层"速度剖面饱满、近壁速度梯度大"，
+所以\textbf{湍流的摩擦阻力大于层流}（$C_f$ 大）；但湍流\textbf{更不易分离}，\emph{形状阻力小}。
+两句话必须一起说：\textbf{湍流＝摩擦阻力大＋抗分离能力强}。
+只答前半句或只答后半句都会丢分。
+\end{yicuo}
+\end{kaodian}
+
+\section{边界层的分离及减阻}
+
+\begin{kaodian}{3}{边界层分离的物理机制与分离点判据}
+\textbf{是什么：}边界层在\textbf{逆压梯度}区段内，近壁\emph{动能不足}的流体被压强顶住，
+速度先减小到零，继而出现\textbf{倒流}，使边界层脱离壁面的现象称为\textbf{分离}，
+发生分离的位置叫\textbf{分离点}。
+
+\textbf{物理机制（简答题的标准答法，要按因果链写）：}
+\begin{enumerate}
+  \item 逆压梯度 $\dfrac{\dd p}{\dd x}>0$（等价 $\dd U/\dd x<0$）：流体沿流向要\emph{顶着压强爬坡}，
+        动能不断转化为压力能，速度下降；
+  \item 边界层内近壁流体本来\emph{动能最小}（壁面 $u=0$；靠黏性从外部缓慢取得动量），
+        先于外层被"刹停"；
+  \item 壁面处速度梯度 $\left.\dfrac{\partial u}{\partial y}\right|_{y=0}$ 由正变零、再由零变负，
+        近壁出现\textbf{回流}；
+  \item 回流把边界层"顶"离壁面，形成\textbf{分离区（尾流区）}与旋涡，
+        主流绕分离区流过，形成\emph{尾涡}。
+\end{enumerate}
+
+\begin{gongshi}{分离点判据（8.7，必背）}
+\[ \text{分离点：}\quad\left.\frac{\partial u}{\partial y}\right|_{y=0}=0 \]
+\[ \text{分离前：}\ \left.\frac{\partial u}{\partial y}\right|_{y=0}>0\ ;\qquad
+   \text{分离后：}\ \left.\frac{\partial u}{\partial y}\right|_{y=0}<0 \]
+\[ \text{壁面切应力：}\ \tau_w=\mu\left.\frac{\partial u}{\partial y}\right|_{y=0}
+   \ \Longrightarrow\ \text{分离点处}\ \tau_w=0 \]
+\textbf{含义：}分离点即壁面切应力为零的点（速度剖面在壁面处的切线变竖直）。
+该判据把"分离"这件几何上难观测的事，转化为\textbf{壁面切应力过零}这一可计算的条件。\\
+\textbf{适用条件：}二维、不可压缩、连续介质；流动必须先出现\textbf{逆压梯度}；
+层流边界层可用该判据直接判断；湍流边界层由于脉动掺混带来的动量补充，
+需要用"壁面定律"或半经验判据（如形状因子 $H$ 的经验阈值）修正。
+\end{gongshi}
+
+\begin{jielun}
+\textbf{分离的两个必要条件缺一不可：}\textbf{逆压梯度（$\dd p/\dd x>0$）＋ 黏性}。
+—— 理想流体无黏，壁面处\emph{允许滑移}、$\partial u/\partial y$ 不趋于无穷大，
+且没有近壁低速层，\textbf{无论如何都不会分离}；
+—— 有黏但没有逆压梯度（如平板），速度剖面沿程相似放大，\textbf{也不会分离}。
+因此"边界层分离是黏性作用与逆压梯度共同作用的结果"是标准结论。
+\end{jielun}
+
+\textbf{常考题型：}简答（"试述边界层分离的物理原因与分离条件"——\textbf{高频}）；
+填空（"边界层分离点的条件是\underline{\ $\partial u/\partial y|_{y=0}=0$\ }"）；
+判断（"理想流体也会发生边界层分离"$\to$错；"只有逆压梯度就会分离"$\to$错）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 简答考"定义、分类、特点"式问题；E2"掌握基本概念"；E6 教材 8.7 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{简答题"四句话"模板（背下来直接默写）：}
+① "在逆压梯度区，压强沿程升高，边界层内流体动能不断消耗、速度减小"；
+② "近壁处流体质点动能最小，先减速到零"；
+③ "此后出现回流，$\left.\partial u/\partial y\right|_{y=0}=0$ 处即为分离点"；
+④ "分离形成尾涡区，使物体前后压差增大，产生形状阻力（压差阻力）。"
+\textbf{顺手补一句：}"理想流体无黏、无边界层，故不会分离——分离是黏性现象。"
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 4：}分离的根源是\textbf{逆压梯度＋黏性，两者缺一不可}。
+只答"有逆压梯度就分离"是错的（平板有黏性、无逆压，也不分离）；
+只答"黏性导致分离"也不完整（无逆压梯度同样不分离）。
+理想流体无黏，\emph{永远不分离}——这是判断题最爱设的坑。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{3}{分离与形状阻力、尾涡的关系；摩擦阻力与形状阻力的区别}
+\textbf{两种阻力（对比记忆，选择/填空常考）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+项目 & \textbf{摩擦阻力} & \textbf{形状阻力（压差阻力）} \\
+\midrule
+产生原因 & 流体的黏性在壁面上产生的切应力 & 分离后尾涡区使物体前后压强不平衡 \\
+正比于 & \textbf{湿表面积}（与表面接触的面积） & \textbf{迎流面积}与尾流区尺寸 \\
+与分离关系 & 分离前后都存在 & \textbf{只有分离后才显著} \\
+典型例 & 平板平行来流（几乎只有摩擦阻力） & 平板垂直来流、圆柱、钝体（几乎只有形状阻力） \\
+减小方法 & 减小湿面积、层流化、微沟槽、降黏 & 流线型化、延缓分离 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{总阻力：}$F_D=F_{\text{摩擦}}+F_{\text{形状}}$，两者之比随物体形状变化很大；
+对\emph{流线型}物体摩擦阻力占主导，对\emph{钝体}形状阻力占主导。
+
+\textbf{尾涡与能量损失的物理图像：}分离后尾流区是低压的旋涡区，
+旋涡不断被主流带走、又不断生成，把主流的一部分机械能不可逆地转化为热能，
+既恶化了物体前后压差（阻力增大），又引起机械振动与噪声。
+工程上"避免在重要部位出现分离"就是为此。
+
+\textbf{常考题型：}选择（"下列哪种阻力与湿表面积成正比"$\to$摩擦阻力）；
+填空（"物体的总阻力由\underline{\ 摩擦阻力\ }和\underline{\ 形状阻力\ }组成"）；
+判断（"分离后摩擦阻力消失"$\to$错）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 选择/判断考"概念辨析"、填空考"名词定义"；E2"掌握基本概念"；E6 教材 8.7 节}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{一句口诀定"谁能减小谁"：}"摩擦靠面积，形状靠尾涡"——
+问"微沟槽减阻减的是什么"$\to$摩擦阻力（湿面积不变但切应力降）；
+问"流线型化减的是什么"$\to$形状阻力（延缓分离、缩小尾涡）。
+两者不要互串。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{减阻措施（简答题高频）}
+\textbf{总纲：}减阻要么\textbf{减小摩擦阻力}（管好边界层内的切应力与湿面积），
+要么\textbf{减小形状阻力}（管住分离与尾涡）。措施按这个二分法组织，答题就不会漏。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+措施 & 做法 & 减的是什么／原理 \\
+\midrule
+① 流线型化、优化型线 & 采用水滴形、细长比合适的型线，使逆压梯度平缓 &
+减形状阻力：推迟分离、缩小尾涡；同时尽量减小湿面积 \\
+② 减小逆压梯度 & 设计时使 $\dd p/\dd x$ 的逆压段尽量短、峰值尽量小（如尾部缓收） &
+减形状阻力：给边界层留更多动能，推迟分离 \\
+③ 边界层抽吸（吸气） & 通过多孔壁把近壁低速、已将分离的流体吸入内部 &
+同时减两种阻力：把低动能流体移走，剖面重新饱满；是延缓分离最有效的手段之一 \\
+④ 使边界层提前转捩为湍流 & 加绊线、粗糙带或小涡流发生器，令转捩点前移 &
+减形状阻力：湍流掺混强、抗逆压能力好，\textbf{推迟分离}；代价是摩擦阻力略增 \\
+⑤ 微沟槽（肋条）表面减阻 & 沿流向开 $\mathrm{\mu m}$ 级的顺流向沟槽（仿鲨鱼皮） &
+减摩擦阻力：抑制流向涡与湍流猝发，可减摩擦阻力数个百分点 \\
+⑥ 添加高分子聚合物 & 在水中加入少量高分子聚合物（如聚丙烯酰胺） &
+减摩擦阻力：抑制湍流脉动与近壁相干结构，降低湍流切应力 \\
+⑦ 控制表面粗糙度、柔性壁面 & 抛光、避免不必要的凸起与台阶 &
+减摩擦阻力：避免局部粗糙把层流底层"戳破"而转为水力粗糙 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{权衡（务必写上一句）：}③④⑤⑦ 主要减\textbf{摩擦}阻力，②③④ 主要减\textbf{形状}阻力；
+而④（提前转捩）是\textbf{以摩擦阻力增大为代价换取分离推迟}，
+因此在\emph{以形状阻力为主}的场合（机翼大迎角、钝体绕流）才划算，
+在以摩擦阻力为主的场合（机翼巡航、平板）反而不利——工程上要按工况权衡。
+
+\textbf{常考题型：}\textbf{简答（高频）}："简述减小流体阻力的措施"／"如何防止边界层分离"；
+选择（"下列措施中不是减小摩擦阻力的是"）；
+判断（"使边界层提前转捩总能减小总阻力"$\to$错，需分场合）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide16 简答考"定义、分类、特点"式问题（E1 slide16 明确简答题的考法）；E2"掌握基本概念"；E6 教材 8.7 节}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{答案要"成对出现"才拿满分：}每写一条措施，就补一句它\emph{减哪种阻力、代价是什么}。
+写成"措施＋减阻类型＋代价"三列，简答题 4 分基本能拿满 3--4 分。
+\textbf{最容易被漏掉的两条：}③\textbf{边界层抽吸}（教材上专门讲，务必写上）与
+⑥\textbf{添加高分子聚合物}（教材提到的减阻新手段）。
+\textbf{提防判断题陷阱：}"提前转捩总能减阻"$\to$\textbf{错}，它只在形状阻力为主的场合有利。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 5：}摩擦阻力 $\propto$ \textbf{湿表面积}；形状阻力 $\propto$ \textbf{迎流面积与尾流区}。
+这两个成正比的对象是反着来的：船体/机翼越"流线"，湿面积越大（摩擦阻力上升）但尾涡越小（形状阻力下降），
+所以工程上存在\textbf{最优长细比}——不是越流线越好。
+\end{yicuo}
+\end{kaodian}
+
+\section{湍流的基本方程}
+
+\begin{kaodian}{3}{雷诺时均法与雷诺方程}
+\textbf{思路（湍流为什么不能直接用 N-S 方程）：}湍流是三维、有旋、非定常的随机流动，
+瞬时量随时间和空间剧烈脉动；直接求解 N-S 方程需要分辨所有尺度的涡，
+在工程雷诺数下计算量大到不可行。工程上改用\textbf{时均化}方法，
+只求\emph{平均值}，把脉动的影响归入附加应力。
+
+\textbf{雷诺分解（8.8）：}把瞬时量分解为时均值与脉动量之和
+\[ u=\bar u+u'\ ,\qquad v=\bar v+v'\ ,\qquad w=\bar w+w'\ ,\qquad p=\bar p+p' \]
+其中 $\bar u=\dfrac{1}{T}\displaystyle\int_0^T u\,\dd t$ 为\textbf{时均速度}，
+$T$ 取远大于脉动周期、远小于流动宏观特征时间；
+由定义立即得 $\overline{u'}=0$，即\textbf{脉动量的时均值恒为零}。
+
+\textbf{时均化运算规则（填空小考点）：}
+\[ \overline{\bar u}=\bar u\ ,\qquad \overline{u'}=0\ ,\qquad
+   \overline{\bar u\,v'}=\bar u\,\overline{v'}=0\ ,\qquad
+   \overline{u'+v'}=\overline{u'}+\overline{v'}=0 \]
+\[ \overline{\bar u\,\bar v}=\bar u\,\bar v\ ,\qquad
+   \overline{u'^2}>0\ (\text{脉动量的平方时均值不为零！}) \]
+
+\begin{gongshi}{雷诺方程（时均 N-S 方程，8.8，必背）}
+\[ \text{连续：}\ \frac{\partial \bar u}{\partial x}+\frac{\partial \bar v}{\partial y}+\frac{\partial \bar w}{\partial z}=0 \]
+\[ \rho\left(\frac{\dd \bar u}{\dd t}\right)
+   =\rho X-\frac{\partial \bar p}{\partial x}
+   +\mu\grad^2\bar u
+   +\frac{\partial}{\partial x}\!\left(-\rho\overline{u'u'}\right)
+   +\frac{\partial}{\partial y}\!\left(-\rho\overline{u'v'}\right)
+   +\frac{\partial}{\partial z}\!\left(-\rho\overline{u'w'}\right) \]
+\textbf{含义：}把雷诺分解代入 N-S 方程再做时均化，
+左边仍保留时均速度的惯性项与压力项、黏性项，
+但\textbf{多出三项} $-\rho\overline{u'_iu'_j}$ 的偏导——这就是\textbf{雷诺应力}
+（又称\textbf{湍流附加应力}或\textbf{湍流应力}）。
+它的物理来源是：脉动使流体微团在断面之间\textbf{交换动量}，
+宏观上等效为一组附加应力。\emph{湍流的本质＝脉动导致的动量交换}。\\
+\textbf{适用条件：}不可压缩牛顿流体、定常时均（$\partial\bar u/\partial t=0$）；
+\emph{时均}方程组只描述平均流动，脉动信息已被归入雷诺应力。
+\end{gongshi}
+
+\textbf{不可压缩时均方程组的封闭性问题（必答结论）：}
+未知量有 $\bar u,\bar v,\bar w,\bar p$ 共 4 个，但\emph{新增的}雷诺应力有
+$\overline{u'u'}$、$\overline{v'v'}$、$\overline{w'w'}$、$\overline{u'v'}$、$\overline{u'w'}$、$\overline{v'w'}$
+共 \textbf{6 个独立分量}（由对称性）。
+3 个动量方程＋1 个连续方程＝4 个方程，却有 $4+6=10$ 个未知量，
+\textbf{方程数少于未知量数，方程组不封闭}。
+必须补充\textbf{湍流模型}（把雷诺应力与平均速度场联系起来，见 8.9 节）才能求解。
+
+\textbf{常考题型：}填空（"雷诺方程比 N-S 方程多出的项称为\underline{\ 雷诺应力\ }"；
+"脉动量的时平均值等于\underline{\ 零\ }"）；
+选择（"雷诺应力的物理来源"$\to$脉动引起的动量交换）；
+简答（"写出雷诺方程并说明雷诺应力的含义"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33 第八章＝"选择填空题考点"；E1 slide16 填空考"名词定义"；E2"掌握基本概念"；E6 教材 8.8 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{"多三行"记忆法：}雷诺方程＝N-S 方程＋三行 $-\rho\overline{u'_iu'_j}$ 的散度项。
+答题时先默写 N-S 方程，再补一句"对瞬时量做时均化后，多出雷诺应力项"即可。
+\textbf{封闭性问题的标准三句：}"雷诺应力有 6 个独立分量，方程只有 4 个，
+未知量多于方程，故方程组不封闭，必须引入湍流模型——这就是所有湍流模型的出发点。"
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 6：}不要把 N-S 方程说成"只适用于层流"。
+\textbf{N-S 方程本身对层流和湍流（瞬时量）都成立}；
+湍流之所以要另立方程组，不是因为 N-S 方程失效，
+而是因为\emph{直接数值求解瞬时量的代价太大}，故改用\emph{时均化}的雷诺方程。
+这是选择题与判断题的经典设坑点，也是本章与第 5 章"两种流态"最容易混起来的地方。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{2}{普朗特混合长度理论与湍流切应力}
+\textbf{思路（第一个实用的湍流模型）：}雷诺应力是未知的，普朗特设想用力学类比把它表达成
+\emph{平均速度梯度}的函数——湍流脉动像一个"微小流体团"跳出特征距离后再与周围掺混合并。
+
+\begin{gongshi}{混合长度假设与湍流切应力（8.8）}
+\[ \tau_t=-\rho\overline{u'v'}=\rho\,l^2\left(\frac{\dd \bar u}{\dd y}\right)^2
+   \qquad(\text{取绝对值})\ ,\qquad l=\kappa y \]
+\[ \text{总切应力：}\ \tau=\tau_{\text{黏}}+\tau_t
+   =\mu\frac{\dd \bar u}{\dd y}+\rho\,l^2\left(\frac{\dd \bar u}{\dd y}\right)^2
+   =\rho\left(\nu+l^2\left|\frac{\dd \bar u}{\dd y}\right|\right)\frac{\dd \bar u}{\dd y} \]
+\textbf{含义：}$l$ 称\textbf{混合长度}，表示流体微团在丧失原有属性前横向运动的\emph{特征距离}，
+可理解为湍流"掺混的尺度"；$\kappa$ 是卡门常数（$\kappa\approx0.4$）。
+上式把未知的雷诺应力化归为\emph{已知的平均速度梯度}，
+从而\textbf{使时均方程组可以封闭}——这是零方程湍流模型的核心。\\
+\textbf{适用条件：}\emph{局部}平衡的剪切湍流（近壁区、自由剪切层）适用；
+$\tau_t$ 只取大小（故写成梯度平方或绝对值形式），
+\emph{不能反映上游历史效应与逆压梯度的输运影响}；
+$l=\kappa y$ 只在贴近壁面处成立，远离壁面需另行给定。
+\end{gongshi}
+
+\textbf{黏性切应力与湍流切应力的对比（填空/选择常考）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+项目 & 黏性切应力 $\tau_{\text{黏}}$ & 湍流切应力 $\tau_t$ \\
+\midrule
+表达式 & $\mu\,\dfrac{\dd \bar u}{\dd y}$ & $\rho\,l^2\left(\dfrac{\dd \bar u}{\dd y}\right)^2$ \\
+物理机制 & \textbf{分子}热运动引起的动量交换 & \textbf{流体质点（微团）}脉动的动量交换 \\
+与梯度关系 & \textbf{线性} & \textbf{二次}（梯度越大增长越快） \\
+主导区域 & 黏性底层（紧贴壁面） & 湍流核心区 \\
+是否耗散 & 是，黏性耗散 & 主要是输运，最终仍由小尺度涡耗散 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}填空（"普朗特混合长度理论中 $\tau_t=$ \underline{\ }"）；
+选择（"黏性底层中主要起作用的是（黏性／湍流）切应力"$\to$黏性）；
+简答（"简述雷诺应力与黏性切应力的区别"）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择，掌握基本概念＋公式套用即可"；E6 教材 8.8 节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{"看次数认应力"：}一次方（线性）$\to$黏性（分子尺度）；二次方$\to$湍流（微团尺度）。
+题目给"$\tau=\mu\dd u/\dd y$"就是层流，给"$\rho l^2(\dd u/\dd y)^2$"就是湍流。
+\textbf{分层回答"边界层内切应力如何分布"：}紧贴壁面的\textbf{黏性底层}里 $\tau_t$ 很小、黏性切应力主导；
+越往外湍流切应力越大，在\textbf{湍流核心区}里湍流切应力远大于黏性切应力；
+总切应力近似为常数（$\approx\tau_w$）。
+\end{banfa}
+\end{kaodian}
+
+\section{湍流模型}
+
+\begin{kaodian}{1}{湍流模型的分类与基本思想}
+\textbf{是什么：}湍流模型的作用是\textbf{补充雷诺应力与平均速度场之间的关系，
+使雷诺方程组封闭}。按"需要在方程组中补充几个新的微分方程"来分类，
+可分为零方程、一方程、两方程、雷诺应力方程模型，以及不封闭而是直接求解的
+大涡模拟（LES）与直接数值模拟（DNS）。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXlX@{}}
+\toprule
+类别 & 基本思想 & 优缺点 & 适用场合 \\
+\midrule
+零方程（混合长度） &
+直接用代数式把 $\tau_t$ 与 $\dd\bar u/\dd y$ 挂钩，不引入新微分方程 &
+优：最简单、快、易收敛；缺：忽略历史效应与逆压梯度，通用性最差 &
+简单剪切流动、附着边界层、工程快速估算 \\
+一方程（$k$ 方程） &
+引入湍动能 $k$ 的输运方程求解 $k$，再配经验特征长度 $l$ &
+优：考虑了湍能的历史/对流/扩散；缺：$l$ 仍需经验给定，通用性中等 &
+中等复杂度的附着流、剪切流 \\
+两方程（$k$-$\varepsilon$、$k$-$\omega$ SST） &
+同时求解 $k$ 与湍流耗散率 $\varepsilon$（或比耗散率 $\omega$）两个输运方程，涡黏由二者组合得到 &
+优：适用面最广、工程精度最好，是目前湍流工程计算的主流；
+缺：计算量较大，对近壁处理与网格质量敏感 &
+几乎全部工程湍流问题；\emph{SST} 版本对逆压梯度与分离流更好 \\
+雷诺应力方程模型（RSM） &
+直接求解 6 个雷诺应力分量的输运方程，不再用涡黏假设 &
+优：能反映雷诺应力的各向异性、旋转与强曲率效应，精度高；
+缺：方程多（含 6 个输运方程）、计算量大、不易收敛 &
+强旋流、强曲率、分离与二次流 \\
+大涡模拟（LES） &
+用滤波把流动分为大尺度涡与小尺度涡：\emph{大涡直接求解}，小涡用\emph{亚格子模型}统一处理 &
+优：能捕捉非定常大尺度结构，精度远超雷诺时均；
+缺：网格与计算量巨大，近壁需特殊处理 &
+非定常分离、尾涡、绕流噪声、燃烧等 \\
+直接数值模拟（DNS） &
+\emph{不加任何模型}，直接数值求解 N-S 方程，分辨\emph{全部}尺度的涡（网格 $\lesssim$ 最小涡尺度） &
+优：理论上最精确，是研究湍流机理与检验模型的"标准答案"；
+缺：计算量随 $\Rey$ 极高次幂增长，目前只能算低 $\Rey$、简单几何 &
+基础湍流研究、简单几何低 $\Rey$ 流动 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{一句总括（很可能是简答题的答案骨架）：}
+"湍流模型＝用\textbf{低阶的、可计算的量}（平均速度、$k$、$\varepsilon$、$\omega$）去\emph{近似表达}
+\textbf{高阶的、未知的雷诺应力}，从而封闭时均方程组；
+模型越复杂，能反映的物理机制越多、精度越高，但计算量与不确定参数也越大——
+故工程上按'精度够用、成本可承受'来选型。"
+
+\textbf{常考题型：}填空（"两方程模型中最常用的是\underline{\ $k$-$\varepsilon$ 模型\ }"；
+"只求解大尺度涡、把小于网格尺度的涡用亚格子模型处理的方法称为\underline{\ 大涡模拟\ }"）；
+选择（"不需要任何湍流模型的模拟方法是"$\to$DNS）；
+简答（"简述湍流模型的分类及其基本思想"）。
+\textbf{重要度 \xstarfull{1}}\quad\yiju{E2"第六到第八章只有少量填空/判断/选择"（最边缘内容）；E6 教材 8.9 节（简介）}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{用"数方程个数"记分类：}\emph{不补}微分方程＝零方程（混合长度）；
+补 1 个（$k$）＝一方程；补 2 个（$k$、$\varepsilon$ 或 $k$、$\omega$）＝两方程（工程主流）；
+直接补 6 个＝雷诺应力方程模型。
+\textbf{认名字：}$k$-$\varepsilon$、$k$-$\omega$ \textbf{SST} 常出现在选择题中，
+"LES＝大涡模拟""DNS＝直接数值模拟"是必认的英文缩写。
+\textbf{给分点：}答简答题时只要按"零方程→一方程→两方程→雷诺应力→LES→DNS"的顺序排开，
+并各写一句"基本思想"，就已经覆盖了全部得分点。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错 7：}DNS 与 LES 的区别常被写反——\textbf{DNS 不加任何模型}（必须分辨所有尺度，
+故网格要求最苛刻）；\textbf{LES 加亚格子模型}（只解析大涡，小涡被模化）。
+记住"DNS＝全解、LES＝解大模小"。
+另一个坑：把"$k$-$\varepsilon$ 模型"说成"两方程\emph{零}方程模型"（零方程模型是混合长度理论，没有微分方程）。
+\end{yicuo}
+\end{kaodian}
+
+\section{本章小结}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lccX@{}}
+\toprule
+考点 & 重要度 & 难度 & 一句话抓住 \\
+\midrule
+黏性流体的应力与本构关系 & \xstarfull{3} & 易 & 9 个分量、对称、独立 6 个；法向应力含 $-p$ 与 $2\mu\partial u_x/\partial x$ \\
+N-S 方程与各项意义 & \xstarfull{3} & 中 & 惯性—压力—黏性—质量力；惯性项非线性故难解 \\
+N-S 方程的解析解 & \xstarfull{2} & 易 & 库埃特流＝纯剪切流＋泊肃叶流；简单流动才有解析解 \\
+边界层的定义与三重含义 & \xstarfull{3} & 易 & 薄、陡、旋；$\delta/l\sim1/\sqrt{\Rey_l}$ \\
+边界层厚度 $\delta$ 的定义 & \xstarfull{3} & 易 & $u=0.99U_\infty$ 处；$\delta\propto\sqrt{\nu x/U}$ \\
+两种边界层与转捩点 & \xstarfull{3} & 易 & 平板按 $\Rey_x$，临界 $5\times10^5$（管内按 $\Rey_d$，2000） \\
+边界层内压强分布 & \xstarfull{3} & 中 & $\partial p/\partial y\approx0$，$p=p(x)$，由外部势流定 \\
+边界层的适用条件 & \xstarfull{2} & 易 & 大 $\Rey$、未分离；尾流/分离/激波/低 $\Rey$ 不适用 \\
+量级比较与普朗特方程 & \xstarfull{3} & 中 & 只留 $\nu\partial^2u/\partial y^2$；$\partial p/\partial y=0$；抛物型可推进求解 \\
+边界条件 & \xstarfull{3} & 易 & 壁面 $u=v=0$；外缘 $u=U(x)$；$\dd p/\dd x=-\rho U\,\dd U/\dd x$ \\
+布拉修斯相似性解 & \xstarfull{2} & 难 & $2f'''+ff''=0$，$f''(0)=0.332$，只用于平板 \\
+平板层流公式（$\delta$、$\tau_w$、$C_f$、$C_D$） & \xstarfull{2} & 中 & $5.0/\sqrt{\Rey_x}$、$0.664/\sqrt{\Rey_x}$、$1.328/\sqrt{\Rey_l}$ \\
+卡门动量积分方程 & \xstarfull{2} & 难 & 平板：$\tau_w=\rho U^2\,\dd\delta_2/\dd x$ \\
+$\delta_1$、$\delta_2$、$H$ 的定义与意义 & \xstarfull{3} & 中 & 1 管流量、2 管动量、$H$ 管分离（$H$ 大易分离） \\
+假定剖面近似解法步骤 & \xstarfull{2} & 难 & 选剖面$\to$算厚度$\to$求 $\tau_w$$\to$代卡门$\to$积分求阻力 \\
+湍流边界层公式 & \xstarfull{2} & 中 & 1/7 次方律；$0.37/\Rey_x^{1/5}$；$0.074/\Rey_l^{1/5}$ \\
+混合边界层 & \xstarfull{2} & 中 & 全湍流值再减 $A/\Rey_l$；层流段越长阻力越小 \\
+边界层分离的机制与判据 & \xstarfull{3} & 中 & 逆压梯度＋黏性；分离点 $\partial u/\partial y|_{y=0}=0$ \\
+形状阻力与两种阻力对比 & \xstarfull{3} & 易 & 摩擦阻力 $\propto$湿面积；形状阻力 $\propto$迎流面积＋尾涡 \\
+减阻措施 & \xstarfull{3} & 易 & 流线型、抽吸、提前转捩、微沟槽、高分子聚合物 \\
+雷诺时均法与雷诺方程 & \xstarfull{3} & 中 & $\overline{u'}=0$、$\overline{u'^2}>0$；多出 $-\rho\overline{u'_iu'_j}$，方程组不封闭 \\
+混合长度与湍流切应力 & \xstarfull{2} & 中 & $\tau_t=\rho l^2(\dd\bar u/\dd y)^2$；$l=\kappa y$ \\
+湍流模型分类与思想 & \xstarfull{1} & 中 & 零$\to$一$\to$两方程$\to$雷诺应力$\to$LES$\to$DNS；DNS 不加模型 \\
+\bottomrule
+\end{tabularx}
+\end{center}

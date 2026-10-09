@@ -1,0 +1,332 @@
+\chapter{2022 年 818 工程流体力学试题（当年科目代码 818）}
+
+\begin{tishi}
+\textbf{关于科目代码：}原卷封面所印为「考试科目代码及名称：\textbf{818} 工程流体力学」，
+与现行 818 一致。本套试题内容全部落在现行 818 大纲第 1--8 章范围内，
+\emph{无超纲题}（无明渠/堰流、无气体动力学、无流体机械）。
+
+\textbf{试卷说明（原卷原文）：}试题附在答卷内交回，答案必须写在答题纸上，写在试题纸上无效。
+
+\textbf{结构：}单项选择题 30 分（10 小题，每小题 3 分）、判断题 20 分（10 小题，每小题 2 分）、
+填空题 30 分（按原卷「每空 3 分」计，共 10 个空：第 1 题 1 空、第 2 题 2 空、第 3 题 1 空、
+第 4 题 1 空、第 5 题 1 空、第 6 题 1 空、第 7 题 3 空）、简答题 12 分（3 小题，每小题 4 分）、
+计算题 58 分（6 小题：8、12、10、10、12、6 分）。满分 150 分。
+
+\textbf{关于图示：}原卷图一律不作想象重绘，正文中标注「原卷图 $N$」的文字图示说明，
+只是依据原卷写成的\emph{解题用文字描述}，\textbf{不等于原卷图形}；
+凡描述不到之处均注明"原卷图略，请对照原卷"，影印件见本册附录。
+
+\textbf{OCR 校订说明：}密度原卷 OCR 作「$p_1$」「p」，本册按流体力学习惯统一为 $\rho_1$、$\rho$；
+正方形断面积「$A_1=0.4\,\mathrm{m}\times0.4\,\mathrm{m}$」原卷 OCR 作「$0.4\,\mathrm{m}\times0.4\,\mathrm{m}$」，
+其数值 $0.16\,\mathrm{m^2}$ 为按字面计算所得；运动黏度原卷 OCR 作「$1.308\times10^{-6}\,\mathrm{m^2/s}$」，
+指数位字形很小，据上下文订为 $1.308\times10^{-6}\,\mathrm{m^2/s}$（水在常温下的量级）。
+以上均属\textbf{字形错读的改正}，\textbf{各题题设数值一律未作改动}。
+\end{tishi}
+
+\section{一、单项选择题（本题共 10 小题，每小题 3 分，小计 30 分）}
+
+\begin{ti}
+  \item 连续介质假设意味着（\quad）。\hfill\xstarfull{4}\yiju{E4 2022 单选 1（连续介质假设的含义）；E5 题库选择 1}\nandu{易}
+  \begin{choices}
+    \item 流体分子互相紧连
+    \item 流体的物理量是连续函数
+    \item 流体分子间有间隙
+    \item 流体不可压缩
+  \end{choices}
+
+  \item （\quad）的流体称为不可压缩流体。\hfill\xstarfull{3}\yiju{E4 2015 填空 1（由 $\rho=851$ kg/m$^3$ 求重度与动力黏度）}\nandu{易}
+  \begin{choices}
+    \item 速度很小
+    \item 速度很大
+    \item 忽略黏性力
+    \item 密度不变
+  \end{choices}
+
+  \item 当液体测压管水头线坡度小于零时，测压管水头线的沿程变化是（\quad）。
+  \hfill\xstarfull{5}\yiju{E4 2022 单选 3（测压管水头线坡度）、单选 7（虹吸管）；E1 slide33"计算题基础入门"}\nandu{中}
+  \begin{choices}
+    \item 沿程下降
+    \item 沿程上升
+    \item 保持水平
+    \item 前三种情况都有可能
+  \end{choices}
+
+  \item 空气从断面积 $A_1=0.4\,\mathrm{m}\times0.4\,\mathrm{m}$ 的方形管中进入压缩机，
+  密度 $\rho_1=1.2\,\mathrm{kg/m^3}$，断面平均流速 $v_1=4\,\mathrm{m/s}$。压缩后，
+  从直径 $d_1=0.25\,\mathrm{m}$ 的圆形管中排出，断面平均流速 $v_2=3\,\mathrm{m/s}$。
+  压缩机出口断面的平均密度 $\rho_2$ 和质量流量 $Q_m$ 分别等于（\quad）。
+  \hfill\xstarfull{5}\yiju{E4 2022 单选 4；E5 题库}\nandu{中}
+  \begin{choices}
+    \item $5.22\,\mathrm{kg/m^3}$，$0.77\,\mathrm{kg/s}$
+    \item $4.32\,\mathrm{kg/m^3}$，$0.77\,\mathrm{kg/s}$
+    \item $5.22\,\mathrm{kg/m^3}$，$1.08\,\mathrm{kg/s}$
+    \item $4.32\,\mathrm{kg/m^3}$，$1.08\,\mathrm{kg/s}$
+  \end{choices}
+  \tuyi{原卷图略（本题无图）。}
+
+  \item 重力作用下不可压缩流体静压强微分方程为 $\mathrm{d}p=$（\quad）。
+  \hfill\xstarfull{4}\yiju{E4 2022 单选 5（$dp$ 形式）；E5 题库选择 3（体积力有势）}\nandu{中}
+  \begin{choices}
+    \item $-\rho\,\mathrm{d}z$
+    \item $-g\,\mathrm{d}z$
+    \item $-\rho g\,\mathrm{d}z$
+    \item $\rho g\,\mathrm{d}z$
+  \end{choices}
+
+  \item 一条管道将水从高水位水池引入低水位水池，应用伯努利方程所选取计算点位于（\quad）。
+  \hfill\xstarfull{5}\yiju{E1 slide16"计算题：伯努利方程"；E1 slide33 与 E2 slide4"第四章＝考试计算题重点"}\nandu{易}
+  \begin{choices}
+    \item 两水池水面
+    \item 管道进、出口
+    \item 高水池水面和管道出口
+    \item 管道进口和低水池
+  \end{choices}
+
+  \item 虹吸管最高处压强（\quad）大气压。\hfill\xstarfull{5}\yiju{E4 2022 单选 6（计算点选取）；E4 2026 计算 2（文丘里流量证明）}\nandu{易}
+  \begin{choices}
+    \item $>$
+    \item $<$
+    \item $=$
+    \item $\ge$
+  \end{choices}
+
+  \item 圆柱形直角外管嘴的正常工作条件是（\quad）。\hfill\xstarfull{5}\yiju{E4 2022 单选 8（圆柱形直角外管嘴 $H_0\le 9$ m、$l=(3\sim4)d$）；E4 2026 计算 5}\nandu{中}
+  \begin{choices}
+    \item $H_0\le9\,\mathrm{m}$，$l=(3\sim4)d$
+    \item $H_0\ge9\,\mathrm{m}$，$l=(3\sim4)d$
+    \item $H_0\ge9\,\mathrm{m}$，$l>(3\sim4)d$
+    \item $H_0\le9\,\mathrm{m}$，$l<(3\sim4)d$
+  \end{choices}
+
+  \item 直径分别为 $10\,\mathrm{mm}$ 和 $30\,\mathrm{mm}$ 的圆管，同时流通平均流速为
+  $0.2\,\mathrm{m/s}$、运动黏度为 $1.308\times10^{-6}\,\mathrm{m^2/s}$ 的水，
+  其对应的流态分别为（\quad）。\hfill\xstarfull{5}\yiju{E4 2022 单选 9（两圆管流态判别）；E4 2026 简答 3（层流与雷诺数关系）}\nandu{中}
+  \begin{choices}
+    \item 层流\quad 层流
+    \item 层流\quad 湍流
+    \item 湍流\quad 层流
+    \item 湍流\quad 湍流
+  \end{choices}
+
+  \item 用等直径直管输送液体，如果流量、管长、液体黏性均不变，将管道直径减小一半，
+  在层流状态下压强损失增大为原来的（\quad）倍。\hfill\xstarfull{5}\yiju{E4 2022 单选 10（管径减半压强损失 16 倍）；E4 2015 填空（层流平均速度＝0.5 倍最大速度）}\nandu{中}
+  \begin{choices}
+    \item $4$
+    \item $8$
+    \item $16$
+    \item $32$
+  \end{choices}
+\end{ti}
+
+\begin{tishi}
+\textbf{第 4 题：}原卷方管断面积 OCR 只拾得「$A_1=0.4\,\mathrm{m}\times0.4\,\mathrm{m}$」，
+其面积 $0.16\,\mathrm{m^2}$ 系按字面相乘所得，未改动原卷数值；
+选项 (D) 原卷 OCR 作「$4.32\,\mathrm{kg/m}$」，密度单位应为 $\mathrm{kg/m^3}$，
+此处已按单位改正；\textbf{数值一律未改}。请对照原卷影印核实。
+
+\textbf{第 5 题：}原卷选项 (A) 的字形 OCR 完全乱码（作「zpd-」），
+据四个选项的排布与流体力学常识订为 $-\rho\,\mathrm{d}z$（重力作用下不可压缩流体的
+$\mathrm{d}p=-\rho g\,\mathrm{d}z$）；\textbf{选项 (A) 的字面写法请对照原卷影印核实}。
+\end{tishi}
+
+\section{二、判断题（正确的填"$\surd$"，错误的填"$\times$"，本题共 10 小题，每小题 2 分，小计 20 分）}
+
+\begin{ti}
+  \item 圆管流动的临界雷诺数随流体的黏度变化。\hfill\xstarfull{5}\yiju{E4 2022 单选 9（两圆管流态判别）；E4 2026 简答 3（层流与雷诺数关系）}\nandu{中}
+
+  \item 如图 1，动力黏度为 $\mu$ 的润滑油充满在两个同轴圆柱体的间隙中，外筒固定，
+  其内径为 $D$，间隙为 $h$，当内筒以速度 $U$ 沿轴线方向运动时，
+  内筒表面的切应力 $\tau=\mu U/h$。\hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{中}
+  \tuyi{原卷图 1：两个同轴圆柱体，外筒固定（图中打阴影线），内圆筒直径 $d$（外筒内径为 $D$），
+  两筒之间的环状间隙厚度为 $h$；内筒以速度 $U$ 沿轴线方向（图中箭头方向）运动，
+  间隙中充满动力黏度为 $\mu$ 的润滑油。（原卷影印见本册附录）}
+
+  \item 质量力是接触性外力。\hfill\xstarfull{3}\yiju{E4 2018 选择 1（作用于流体的质量力）；E5 题库选择 3（体积力有势）}\nandu{易}
+
+  \item 圆管湍流中，在紧贴固体边壁处始终有一层很薄的流体保持为层流状态。
+  \hfill\xstarfull{3}\yiju{E6 教材 5.4；E2 slide5}\nandu{中}
+
+  \item 流体机械中的过流部件内的流动通常处在湍流水力粗糙区。\hfill\xstarfull{3}\yiju{E6 教材 5.4；E2 slide5}\nandu{中}
+
+  \item 当管道进口连接一充分大容器时，如果是直角进口，液体在进口处的局部阻力系数等于 $1$。
+  \hfill\xstarfull{4}\yiju{E4 2015 计算 3（突然缩小水头损失）；E1 slide16}\nandu{中}
+
+  \item 动能修正系数是反映过流断面上实际流速分布不均匀性的系数，流速分布越不均匀，
+  其值越大。\hfill\xstarfull{5}\yiju{E1 slide16"计算题：伯努利方程"；E1 slide33 与 E2 slide4"第四章＝考试计算题重点"}\nandu{易}
+
+  \item 液体的黏性主要来自分子间的内聚力。\hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{中}
+
+  \item 在设计管道阀门实验时，首先要考虑满足的相似准则是雷诺相似准则。
+  \hfill\xstarfull{4}\yiju{E4 2014 选择 10；E4 2016 填空 4；E4 2019 判断 2；E4 2022 单选 9；E5 题库选择 12}\nandu{中}
+
+  \item 圆管湍流粗糙区的沿程阻力系数 $\lambda$ 与管壁粗糙度和流动雷诺数都有关。
+  \hfill\xstarfull{3}\yiju{E6 教材 5.4；E2 slide5}\nandu{中}
+\end{ti}
+
+\begin{tishi}
+\textbf{第 2 题：}原卷切应力的表达式 OCR 作「$\tau=-u U/h$」并丢了 $\mu$，
+据图 1 的题设（牛顿内摩擦定律）订为 $\tau=\mu U/h$；$\mu$ 的字形请对照原卷影印核实。
+
+\textbf{第 6 题：}直角进口的局部阻力系数常用取值为 $\zeta=0.5$（充分大容器、直角进口），
+原卷作「等于 $1$」；该值属命题原文，此处照原卷字面转写、\textbf{未改}，请对照影印核实。
+
+\textbf{第 10 题：}原卷本行 OCR 作「沿程阻力系数 $2$」，其中「$2$」是 $\lambda$ 的字形错读，
+此处按 $\lambda$ 转写，\textbf{含义与数值未改}。
+\end{tishi}
+
+\section{三、填空题（本题共 10 空，每空 3 分，小计 30 分）}
+
+\begin{ti}
+  \item 图 2 为毕托管测速原理图，1、2 两点的压强水头差为 $\Delta h$，
+  1 点处流体的速度等于 \underline{\hspace{4cm}}。\hfill\xstarfull{5}\yiju{E4 2022 单选 6（计算点选取）；E4 2026 计算 2（文丘里流量证明）}\nandu{中}
+  \tuyi{原卷图 2：一根自左向右的水平管道，管内流体由左向右流动；
+  管轴线处标有测点 1（毕托管总压孔正对来流）与测点 2（静压孔）；
+  两点各接一根竖直测压管，两测压管中的液柱高度差为 $\Delta h$（图中两立管分别画出）。
+  （原卷影印见本册附录）}
+
+  \item 盛水容器如图 3 所示，压强最大的是 \underline{\hspace{3cm}} 点，
+  压强最小的是 \underline{\hspace{3cm}} 点。\hfill\xstarfull{5}\yiju{E4 2022 单选 3（测压管水头线坡度）、单选 7（虹吸管）；E1 slide33"计算题基础入门"}\nandu{难}
+  \tuyi{原卷图 3：一盛水容器，内部由隔板分成左、右两个相通的腔室，各腔室液面高低不同；
+  图中共标出 1、2、3、4、5 五个点，分别位于左、右腔室水中及连通处的不同深度上
+  （1 点在左腔室液面以下的浅层水中，4、5 点在右腔室的水中）。
+  五点的具体位置与深度尺寸请对照原卷影印。（原卷影印见本册附录）}
+
+  \item 圆柱形容器绕其中心铅垂轴作等角速度旋转，当液体处于相对平衡状态时，
+  液体内部某点的压强 $p$ 由液面压强、液体自重产生的压强和 \underline{\hspace{3.5cm}} 三部分组成。
+  \hfill\xstarfull{3}\yiju{E6 教材 2.4；E5 题库}\nandu{中}
+
+  \item 并联长管 1、2，两管的直径、沿程阻力系数均相同，长度 $L_2=4L_1$，
+  则通过流量 $Q_1$ 和 $Q_2$ 的关系为 \underline{\hspace{3.5cm}}。\hfill\xstarfull{4}\yiju{E1 slide33；E6 教材 5.7}\nandu{中}
+
+  \item 有一轿车在公路上行驶，设计时速 $v=108\,\mathrm{km/h}$，拟在长度比尺 $k=2/3$
+  的风洞中进行模型实验。若风洞实验段内气流的温度与轿车在公路上行驶时的温度相同，
+  风洞实验段内的气流速度应为 \underline{\hspace{2.5cm}} $\mathrm{m/s}$。\hfill\xstarfull{3}\yiju{E4 2014 计算 8（溢流坝模型相似）；E5 题库选择 15}\nandu{难}
+
+  \item 水以速度 $v_0=0.8\,\mathrm{m/s}$ 绕一块长 $L=2\,\mathrm{m}$ 的平板流动，
+  水的运动黏度 $\nu=10^{-6}\,\mathrm{m^2/s}$，转捩临界雷诺数 $\Rey_{xcr}=5\times10^{5}$，
+  则平板末端边界层的流态是 \underline{\hspace{3cm}}。（填"层流"或"湍流"）
+  \hfill\xstarfull{3}\yiju{E6 教材 8.2；E1 slide33}\nandu{中}
+
+  \item 一平面定常流动的流函数 $\psi=-\sqrt{3}\,x+y$，则速度分量
+  $v_x=$ \underline{\hspace{2cm}} $\mathrm{m/s}$，$v_y=$ \underline{\hspace{2cm}} $\mathrm{m/s}$，
+  加速度 $a=$ \underline{\hspace{2cm}} $\mathrm{m/s^2}$。\hfill\xstarfull{5}\yiju{E4 2015 计算（流函数求速度与流线）；E4 2026 计算 4（证明势函数存在性）}\nandu{难}
+\end{ti}
+
+\begin{tishi}
+\textbf{第 1 题：}题干原卷 OCR 作「1、2 两点的压强水头差为 $4h$」，其中「$4$」是
+$\Delta$（Delta）的字形错读，据图 2 的液柱差符号订为 $\Delta h$；符号字形请对照影印核实。
+
+\textbf{第 2 题：}原卷图 3 中 1、2、3、4、5 五点的位置关系 OCR 未给出，
+上文的文字描述系依据图 3 的轮廓写成，\textbf{五点的确切位置请对照原卷影印核实}。
+
+\textbf{第 6 题：}运动黏度原卷 OCR 作「$\nu=10^{\circ}\,\mathrm{m^2/s}$」，指数位字形残缺，
+据原卷本题其余数值（$v_0=0.8\,\mathrm{m/s}$、$L=2\,\mathrm{m}$）与水的常温量级
+订为 $\nu=10^{-6}\,\mathrm{m^2/s}$；数值未作改动，请对照影印复核。
+
+\textbf{第 7 题：}流函数原卷 OCR 作「$\psi=-\sqrt{3}x+y$」，
+其中根号 OCR 作「$\surd$」、正负号字形不清；此处按影印转写为 $-\sqrt{3}\,x+y$，
+\textbf{请对照原卷影印核实符号与根号范围}。
+\end{tishi}
+
+\section{四、简答题（本题共 3 小题，每小题 4 分，小计 12 分）}
+
+\begin{ti}
+  \item 流体的黏度与流体种类、温度和压强有关，其中受温度的影响较大，
+  那么气体和液体的黏度随温度变化的趋势是否一致，为什么？\hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{中}
+
+  \item 流线和迹线是如何定义的？分别描述什么情况？\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{易}
+
+  \item 均匀流是如何定义的？其特点有哪些？\hfill\xstarfull{3}\yiju{E1 slide16 简答（均匀流的特点）}\nandu{中}
+\end{ti}
+
+\section{五、计算题（本题共 6 小题，小计 58 分）}
+
+\begin{ti}
+  \item 图 4 所示一圆柱形油桶，内装轻油和重油。轻油的密度 $\rho_1=6632\,\mathrm{kg/m^3}$，
+  重油的密度 $\rho_2=8877\,\mathrm{kg/m^3}$，当两种油重量相等时，求：
+  （1）两种油的深度 $h_1$ 和 $h_2$ 分别为多少？
+  （2）两测压管内油面将上升至什么高度？（8 分）\hfill\xstarfull{4}\yiju{E4 2018 选择 3（U 形水银测压计）；E4 2015 填空（U 形压差计）}\nandu{中}
+  \tuyi{原卷图 4：一竖直圆柱形油桶，桶内上层为轻油（密度 $\rho_1$、深度 $h_1$），
+  下层为重油（密度 $\rho_2$、深度 $h_2$），两层总深度标为 $5\,\mathrm{m}$；
+  桶右侧壁上、下各接一根测压管（对应两层油的液面高程），测压管内油面将上升至某高度。
+  （原卷影印见本册附录）}
+
+  \item 图 5 所示圆柱形压力罐，半径 $R=0.5\,\mathrm{m}$，长 $l=2\,\mathrm{m}$，
+  压力表度数 $p_m=23.72\,\mathrm{kPa}$。试求：（1）端部平面盖板所受的水压力；
+  （2）上、下半圆筒所受水压力。（12 分）\hfill\xstarfull{5}\yiju{E5 题库计算 1（弧形闸门 $F_x,F_z$ 与力矩）；E1 slide33}\nandu{难}
+  \tuyi{原卷图 5：一卧式圆柱形压力罐，罐顶装有压力表；图 (a) 为横断面图（圆断面半径 $R$，
+  圆周上有螺栓连接），图 (b) 为纵剖面图（罐长 $l$）；
+  罐内充水，压力表读数 $p_m=23.72\,\mathrm{kPa}$，要求分别计算端部平盖与上、下半圆筒面的总压力。
+  （原卷影印见本册附录）}
+
+  \item 如图 6，有一水平安装的文丘里流量计测得 $\dfrac{p_1}{\rho g}=1\,\mathrm{m}$，
+  $\dfrac{p_2}{\rho g}=0.4\,\mathrm{m}$，水管的横截面积 $A_1=0.002\,\mathrm{m^2}$，
+  喉道的横截面积 $A_2=0.001\,\mathrm{m^2}$，水头损失 $h_w=0.05\dfrac{v_1^{2}}{2g}$，
+  求通过流量 $Q$。（10 分）\hfill\xstarfull{5}\yiju{E4 2022 单选 6（计算点选取）；E4 2026 计算 2（文丘里流量证明）}\nandu{难}
+  \tuyi{原卷图 6：一水平放置的文丘里流量计，进口断面 1--1（面积 $A_1$、流速 $v_1$、
+  压强水头 $p_1/\rho g$），喉道断面 2--2（面积 $A_2$、流速 $v_2$、压强水头 $p_2/\rho g$）；
+  两断面各接一根竖直测压管，管内液柱高出管轴的高度即为相应的压强水头。
+  （原卷影印见本册附录）}
+
+  \item 图 7 为一水电站压力水管的渐变段，直径 $D_1=1.5\,\mathrm{m}$，$D_2=1\,\mathrm{m}$，
+  渐变段起始断面压强 $p_1=400\,\mathrm{kPa}$，流量 $Q=1.8\,\mathrm{m^3/s}$，
+  若不计水头损失，求渐变段所受的水平推力。（10 分）\hfill\xstarfull{5}\yiju{E4 2015 计算（水平弯管求 $F_x,F_y$）；E4 2026 计算 3（教材例题 4.12）；E1 slide16}\nandu{难}
+  \tuyi{原卷图 7：一水平放置的压力水管渐变段（由粗变细的圆锥形管段），
+  进口断面直径 $D_1=1.5\,\mathrm{m}$、压强 $p_1=400\,\mathrm{kPa}$，
+  出口断面直径 $D_2=1\,\mathrm{m}$；管内流量 $Q=1.8\,\mathrm{m^3/s}$，
+  需用连续性方程、伯努利方程与动量方程求管段所受的水平推力。
+  （原卷影印见本册附录）}
+
+  \item 如图 8 所示，用离心泵将湖水抽到水池，流量 $Q=0.2\,\mathrm{m^3/s}$，
+  湖面高程 $\nabla_1=85\,\mathrm{m}$，水池水面高程 $\nabla_3=105\,\mathrm{m}$，
+  吸水管和压水管直径相等，$d_1=d_2=0.5\,\mathrm{m}$，吸水管长 $l_1=10\,\mathrm{m}$，
+  压水管长 $l_2=1000\,\mathrm{m}$，水泵的允许真空高度 $h_v=4.5\,\mathrm{m}$，
+  吸水管底阀局部水头损失系数 $\zeta_e=2.5$，$90^\circ$ 弯头局部水头损失系数 $\zeta_b=0.3$，
+  $120^\circ$ 弯头局部水头损失系数 $\zeta_d=0.2$，水泵入口前的渐变收缩段局部水头损失系数
+  $\zeta_g=0.1$，压水管和压水管的沿程阻力系数相等 $\lambda=0.022$，
+  水泵的效率 $\eta_p=0.7$。试确定（1）水泵的安装高程 $z_s$；（2）水泵的功率。（12 分）
+  \hfill\xstarfull{4}\yiju{E5 题库计算 4（水泵工况点与节流调节）；E6 教材 4.2}\nandu{难}
+  \tuyi{原卷图 8：左下为湖水（湖面高程 $\nabla_1=85\,\mathrm{m}$），右上为水池
+  （水池水面高程 $\nabla_3=105\,\mathrm{m}$）；离心泵置于湖面上方某高程 $z_s$ 处，
+  吸水管自湖水经底阀（带底阀的进口）向上接入泵入口，泵入口前有一渐变收缩段与
+  $90^\circ$、$120^\circ$ 弯头；压水管自泵出口沿程爬升（管长 $l_2=1000\,\mathrm{m}$）
+  接至右侧水池；两管直径均为 $0.5\,\mathrm{m}$。
+  （原卷影印见本册附录）}
+
+  \item 已知平面流动速度场 $v_x=x(1+2t)$，$v_y=y$，$v_z=0$，
+  求 $t=0$ 时通过点 $(1,1)$ 的流线。（6 分）\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{中}
+\end{ti}
+
+\begin{tishi}
+\textbf{计算题第 1 题：}轻油、重油的密度原卷 OCR 作「$\rho_1=6632\,\mathrm{kg/m^3}$」、
+「$\rho_2=8877\,\mathrm{kg/m^3}$」，密度单位原卷被 OCR 写成 $\mathrm{kg/m^2}$，
+此处按 $\mathrm{kg/m^3}$ 改正；\textbf{数值 $6632$、$8877$ 未改}。
+按「两种油重量相等」与总深度 $5\,\mathrm{m}$ 试算，$h_1+h_2=5\,\mathrm{m}$ 且
+$\rho_1h_1=\rho_2h_2$，所得 $h_1\approx2.87\,\mathrm{m}$、$h_2\approx2.13\,\mathrm{m}$ 量级自洽；
+但该密度值（约 $6.6\times10^3\,\mathrm{kg/m^3}$）明显偏离实际油品密度
+（约 $0.8\times10^3\,\mathrm{kg/m^3}$），\textbf{疑为原卷数量级或 OCR 有误}，
+此处照原卷字面转写、未改，请对照原卷影印复核。
+
+\textbf{计算题第 2 题：}压力表度数原卷 OCR 作「$p_m=23.72\,\mathrm{kPa}$」，
+影印字形亦读作 $23.72$，数值未作改动；长（沿轴向）原卷 OCR 作「长$=2\,\mathrm{m}$」，
+据影印补为 $l=2\,\mathrm{m}$。两处均请对照原卷影印复核。
+
+\textbf{计算题第 3 题：}水头损失原卷 OCR 作「$h_w=0.05\dfrac{v_1^{2}}{2g}$」，
+其中流速下标的字形较小，系按影印读作 $v_1$；若原卷实为 $v_2$，
+则数值关系需按影印复核，此处照 OCR 保留、未改。
+
+\textbf{计算题第 4 题：}渐变段出口直径原卷 OCR 作「$D_2=1\,\mathrm{m}$」（另一处作 $D_1$），
+此处按影印转写为进口 $D_1=1.5\,\mathrm{m}$、出口 $D_2=1\,\mathrm{m}$；数值未改，请对照影印复核。
+
+\textbf{计算题第 5 题：}原卷 OCR 对本小题的符号错读最多，已按影印与流体力学习惯订正：
+（a）水泵效率 OCR 作「$\eta$，$=0.7$」、符号「n」，订为 $\eta_p=0.7$；
+（b）湖面高程 OCR 作「湖面高程$=85\,\mathrm{m}$」，据影印订为 $\nabla_1=85\,\mathrm{m}$；
+（c）水池水面高程 OCR 作「$V_3=105\,\mathrm{m}$」，订为 $\nabla_3=105\,\mathrm{m}$；
+（d）底阀局部水头损失系数 OCR 作「$C=2.5$」，订为 $\zeta_e=2.5$；
+（e）$90^\circ$ 弯头系数 OCR 作「$S_1=0.3$」，订为 $\zeta_b=0.3$；
+（f）$120^\circ$ 弯头系数 OCR 作「$a=0.2$」，订为 $\zeta_d=0.2$；
+（g）渐变收缩段系数 OCR 作「，$=0.1$」，订为 $\zeta_g=0.1$。
+以上\textbf{数值一律未改}，仅改正符号字形；原卷「压水管和压水管的沿程阻力系数相等」
+一句前后重复（疑为「吸水管和压水管」），此处照 OCR 字面保留、未改，
+\textbf{请对照原卷影印核实}。
+\end{tishi}

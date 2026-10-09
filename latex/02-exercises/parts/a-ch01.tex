@@ -1,0 +1,596 @@
+\chapter*{第 1 章 课后习题解答}
+\addcontentsline{toc}{chapter}{第 1 章 课后习题解答}
+\markboth{第 1 章 课后习题解答}{}
+
+\begin{tishi}
+本册解答由编者按教材正文公式与例题方法逐步推导而成（教材原书不附习题答案）。
+每题按\textbf{已知 $\to$ 依据 $\to$ 步骤 $\to$ 结果 $\to$ 易错提醒}五段写；
+计算题一律写出单位，概念题给出可作简答答案的完整要点。
+\end{tishi}
+
+\noindent\textbf{第 1.1 题\quad 连续介质模型及其必要性}
+
+\begin{jie}
+\textbf{1.\ 什么是连续介质模型}
+
+把流体视为由\textbf{无数连续分布的流体质点}组成的介质，其物理量（密度 $\rho$、速度 $u$、
+压强 $p$、温度 $T$ 等）是\textbf{空间坐标和时间的连续函数}，这就是流体的连续介质模型
+（连续介质假设）。
+
+\textbf{2.\ 必要性（三个理由）}
+
+\begin{xiaowen}
+\item \textbf{数学工具的前提}：流体力学用微积分、微分方程描述流动，而微积分成立的前提是
+所研究的量连续、可导。真实流体由离散分子组成、分子间存在空隙，若直接按分子描述，
+$\rho$、$u$ 都是取值极不规则的量，"取极限""求导数"无从进行；引入连续介质模型后，
+$\rho=\rho(x,y,z,t)$、$u=u(x,y,z,t)$ 成为连续可导函数，才能写出微分方程。
+\item \textbf{"质点"取统计平均，得到确定的宏观量}：质点定义为
+"宏观上足够小（小到可视为一个几何点，其内部各点物理量相同）、
+微观上足够大（包含大量分子，使统计平均有确定值）"的流体微团。
+\item \textbf{工程上成立}：一般工程问题的特征尺度 $L$ 远大于分子平均自由程 $\lambda$
+（气体约 $10^{-7}\ \mathrm{m}$ 量级，液体更小），$L/\lambda$ 很大，抹平分子间隙带来的
+误差可以忽略。
+\end{xiaowen}
+
+\textbf{3.\ 适用条件}：所研究流动的特征尺度远大于分子平均自由程，一般工程问题均满足；
+高空稀薄气体、真空技术等不满足，需用分子运动论处理。
+
+\textbf{4.\ 结论}：连续介质假设是整个流体力学数学描述的地基。按教材口径，
+用连续介质模型处理后的流体称为\textbf{连续介质流体}；忽略压缩性时还可进一步简化为
+\textbf{不可压缩均质流体}（$\rho=$ 常数）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：}连续介质假设的落点是"\textbf{宏观物理量连续}"，
+\textbf{不是}"分子紧挨着、分子间没有孔隙"。真实流体分子间恰恰是有孔隙的（离散性是真的），
+假设只是说"宏观上可按连续处理"。2022 年 818 单选第 1 题正是设这个陷阱：
+"流体分子互相紧连"与"流体分子间有孔隙"两个选项都\textbf{不能}作为对该假设的正确描述。
+\end{yicuo}
+
+\noindent\textbf{第 1.2 题\quad 牛顿内摩擦定律及摩擦力的根本原因}
+
+\begin{jie}
+\textbf{1.\ 定律表述与数学表达式}
+
+设有两块平行平板，其间充满流体，下板固定、上板以速度 $U$ 匀速运动；黏附于固体表面的
+流体速度与固体速度相同（上板处为 $U$、下板处为 $0$），两板间流体作平行于平板的
+\textbf{层流}运动，速度由 $0$ 均匀过渡到 $U$。实验证明，流体内摩擦阻力 $T$ 的大小与
+\textbf{速度法向梯度} $\dfrac{\dd u}{\dd y}$ 和\textbf{接触面积} $A$ 成正比，并与流体性质有关：
+\[ T=\mu A\frac{\dd u}{\dd y}\qquad(\text{教材式 1.9}) \]
+单位面积上的内摩擦阻力称为\textbf{切应力} $\tau$：
+\[ \tau=\frac{T}{A}=\mu\frac{\dd u}{\dd y}\qquad(\text{教材式 1.10}) \]
+式（1.9）、式（1.10）合称\textbf{牛顿内摩擦定律}。
+
+\textbf{2.\ 各符号的含义}
+\begin{xiaowen}
+\item $\mu$——\textbf{动力黏度}（$\mathrm{Pa\cdot s}$），表征流体黏性的强弱，由流体种类和温度决定；
+\item $\dfrac{\dd u}{\dd y}$——速度沿\emph{法线}方向的梯度，物理意义是\textbf{角变形速度}：
+取矩形微元面 $abcd$，上下层速度差为 $\dd u$，经 $\dd t$ 发生角变形 $\dd\theta$，
+由几何关系 $\tan(\dd\theta)=\dfrac{\dd u\,\dd t}{\dd y}$，故
+$\dfrac{\dd\theta}{\dd t}=\dfrac{\dd u}{\dd y}$；
+\item $A$——两流体层之间的接触面积；$\tau$——切应力（$\mathrm{Pa}$）。
+\end{xiaowen}
+
+\textbf{3.\ 特殊情形（速度线性分布，本册 1.5、1.6 题就要用）}
+
+两板间距 $h$、板速 $U$ 都不大时，速度沿法向呈线性分布 $u(y)=\dfrac{U}{h}y$，则
+$\dfrac{\dd u}{\dd y}=\dfrac{U}{h}$，于是
+\[ T=\mu A\frac{U}{h},\qquad\qquad \tau=\mu\frac{U}{h} \]
+注意：上式只适用于\textbf{层流且速度线性分布}的平行平板间流动。
+
+\textbf{4.\ 产生摩擦力的根本原因}
+
+\textbf{根本原因是流体具有黏性}（即流体分子之间的内聚力与分子热运动的动量交换，
+使流体有抵抗剪切变形的能力）。当流体质点之间发生\emph{相对运动}时，
+速度较大的上层流体带动速度较小的下层流体，下层流体又阻滞上层流体的运动，
+因而在相邻流体层之间产生大小相等、方向相反的一对\textbf{切向阻力}
+（内摩擦阻力，也称黏滞力）。由此推出两条必记结论：
+\begin{xiaowen}
+\item 流体\textbf{静止}时，速度梯度为零，内摩擦力为零——所以静止流体不能承受切应力
+（这是第 2 章静压强特性的来源）；
+\item 内摩擦力\textbf{只存在于有相对运动的流体层之间}，理想流体（无黏性）不存在内摩擦力。
+\end{xiaowen}
+\end{jie}
+
+\noindent\textbf{第 1.3 题\quad 液体与气体的黏性随温度的变化趋势}
+
+\begin{jie}
+\textbf{1.\ 结论：变化趋势相反（先答这一句）}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+流体 & 温度升高时黏度 & 黏性的主要来源 \\
+\midrule
+液体 & \textbf{减小} & 分子之间的\textbf{内聚力}（分子间距小，内聚力强） \\
+气体 & \textbf{增大} & 分子热运动引起的\textbf{动量交换}（内聚力极小，可忽略） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{2.\ 为什么不同（机理）}
+\begin{xiaowen}
+\item \textbf{液体}：分子间距小，分子间内聚力强，黏性作用主要来源于\textbf{分子内聚力}。
+温度升高 $\to$ 分子间距加大 $\to$ 内聚力减小 $\to$ 黏度随温度升高而\textbf{减小}。
+\item \textbf{气体}：分子间距大，内聚力极小可以忽略，黏性作用\textbf{完全}是分子热运动中
+\textbf{动量交换}的结果。温度升高 $\to$ 热运动加剧 $\to$ 动量交换增强 $\to$ 黏度随温度升高而
+\textbf{增大}。
+\end{xiaowen}
+
+\textbf{3.\ 用教材表 1.1 的数据印证}
+
+水：$0\,^\circ\mathrm{C}$ 时 $\mu=1.792\times10^{-3}\ \mathrm{Pa\cdot s}$ $\to$
+$100\,^\circ\mathrm{C}$ 时 $\mu=0.284\times10^{-3}\ \mathrm{Pa\cdot s}$，随温度单调\textbf{下降}；
+空气：$0\,^\circ\mathrm{C}$ 时 $\mu=0.0172\times10^{-3}\ \mathrm{Pa\cdot s}$ $\to$
+$100\,^\circ\mathrm{C}$ 时 $\mu=0.0218\times10^{-3}\ \mathrm{Pa\cdot s}$，随温度单调\textbf{上升}。
+
+\textbf{4.\ 补充（可作加分点）}
+在工程常用的温度和压强范围内，\textbf{黏度受压强的影响很小，主要随温度变化}；
+黏度还与流体种类有关。运动黏度 $\nu=\mu/\rho$ 也随温度改变，但它\textbf{不表示黏性大小}。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：}别只说"温度升高黏度都变小"。正确提法是
+\textbf{"液体随温度升高黏度减小、气体随温度升高黏度增大"}——两个方向相反。
+另外不要把机理说反：液体的黏性来自\textbf{内聚力}，气体的黏性来自\textbf{动量交换}；
+也不要说"液体黏性来自动量交换"。
+\end{yicuo}
+
+\noindent\textbf{第 1.4 题\quad 作用在流体上的两类外力}
+
+\begin{jie}
+\textbf{1.\ 两大类}
+
+在流体中任取一流体块（被一闭曲面包围）作为研究对象，作用于该流体块的\textbf{外力}
+按性质分为\textbf{质量力}和\textbf{表面力}两类。
+
+\textbf{2.\ 定义}
+
+\textbf{（1）质量力（又称体积力）}：指作用于流体块中\textbf{各流体质点的非接触性外力}，
+例如\textbf{重力、惯性力、离心力}等。质量力与流体块\textbf{质量成正比}，
+所以又叫体积力。作用于\textbf{单位质量}流体上的质量力叫\textbf{单位质量力}，
+记为 $\bm{f}$，其分量为 $f_x,f_y,f_z$。设作用在质量为 $m$ 的流体块上的质量力为 $\bF$，
+在直角坐标轴上分量为 $F_x,F_y,F_z$，则
+\[ \bm{f}=\frac{\bF}{m}=f_x\bm{i}+f_y\bm{j}+f_z\bm{k}\qquad(\text{教材式 1.13、1.14}) \]
+单位质量力的\emph{量纲与加速度相同}（$\mathrm{m/s^2}$）。若存在势函数 $W$ 使
+$f_x=-\dfrac{\partial W}{\partial x}$（等号可整体变号），则称该质量力\textbf{有势}；
+重力是有势力，$W=gz$。第 2 章流体平衡微分方程中的 $f_x,f_y,f_z$ 正是这里的单位质量力。
+
+\textbf{（2）表面力}：指作用于流体块\textbf{表面}上的外力，由与流体块接触的
+周围流体或固体\emph{接触}传递。表面力按其作用方向分为：
+\begin{xiaowen}
+\item 垂直并指向流体块表面的\textbf{压力}；
+\item 与表面平行的\textbf{切向力}（摩擦力、黏滞力）。
+\end{xiaowen}
+表面力一般是位置和时间的函数，用\textbf{应力}表示。在流体块表面上任取一点 $A$，
+$\Delta A$ 是包围 $A$ 的微元面积，作用在 $\Delta A$ 上的压力为 $\Delta P$、切向力为
+$\Delta T$，则 $A$ 点的\textbf{压应力（压强）}$p$ 和\textbf{切应力}$\tau$ 为
+\[ p=\lim_{\Delta A\to0}\frac{\Delta P}{\Delta A}\qquad(\text{教材式 1.15}),\qquad\qquad
+   \tau=\lim_{\Delta A\to0}\frac{\Delta T}{\Delta A}\qquad(\text{教材式 1.16}) \]
+压强和切应力的单位都是 $\mathrm{Pa}$。一般情况下，运动流体块表面上各点处两种应力都存在；
+但\textbf{理想流体或静止流体}的表面应力\textbf{只有压强而无切应力}。
+
+\textbf{3.\ 两类力的对比（背这张表）}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+比较项 & 质量力（体积力） & 表面力 \\
+\midrule
+作用位置 & 流体块内\textbf{每一个质点} & 流体与相邻流体（或固体）的\textbf{接触面} \\
+是否接触 & \textbf{非接触力} & 必须通过\textbf{接触}传递 \\
+大小规律 & 与\textbf{质量}成正比 & 与\textbf{面积}成正比 \\
+典型例子 & 重力、惯性力、离心力 & 压力（法向）＋切应力（切向） \\
+静止流体中 & 存在（如重力） & 只剩压力，切应力为零 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：}判别口诀——\textbf{"接触的是表面力，不接触的是质量力"}。
+题目说"作用于流体块内每个质点上"$\to$ 质量力；"作用于接触面上"$\to$ 表面力。
+另外两个常见错答：① 把重力归为表面力（错，重力作用于每个质点）；
+② 说"表面力就是压力"（错，表面力包含\textbf{法向压力}与\textbf{切向切应力}两部分，
+只有静止流体或理想流体才退化为"只有压力"）。
+\end{yicuo}
+
+\noindent\textbf{第 1.5 题\quad 平板在油面上水平运动所受的阻力}
+
+\begin{jie}
+\textbf{已知：}平板尺寸 $0.8\ \mathrm{m}\times0.2\ \mathrm{m}$；平板运动速度
+$U=1\ \mathrm{m/s}$；平板到固定边界的距离（油层厚度）$\delta=1\ \mathrm{mm}
+=1\times10^{-3}\ \mathrm{m}$；油的动力黏度 $\mu=1.15\ \mathrm{Pa\cdot s}$；
+由平板所带动的油的速度成\textbf{直线分布}。
+
+\textbf{求：}平板所受的阻力 $T$。
+
+\textbf{依据：}牛顿内摩擦定律（教材式 1.9、1.10）$T=\mu A\dfrac{\dd u}{\dd y}$；
+速度线性分布时代入 $\dfrac{\dd u}{\dd y}=\dfrac{U}{\delta}$，得 $T=\mu A\dfrac{U}{\delta}$。
+
+\textbf{第 1 步\quad 求受剪面积 $A$}
+
+平板上下两面中只有\emph{与油接触的一面}（习图所示朝下的一面）产生黏滞阻力，故
+\[ A=0.8\ \mathrm{m}\times0.2\ \mathrm{m}=0.16\ \mathrm{m^2} \]
+
+\textbf{第 2 步\quad 求速度梯度}
+
+油层内速度由固定边界处的 $0$ 直线增大到平板处的 $U$，所以
+\[ \frac{\dd u}{\dd y}=\frac{U}{\delta}=\frac{1\ \mathrm{m/s}}{1\times10^{-3}\ \mathrm{m}}
+   =1000\ \mathrm{s^{-1}} \]
+
+\textbf{第 3 步\quad 求切应力}
+\[ \tau=\mu\frac{\dd u}{\dd y}=1.15\ \mathrm{Pa\cdot s}\times1000\ \mathrm{s^{-1}}
+   =1150\ \mathrm{Pa}=1.15\ \mathrm{kPa} \]
+
+\textbf{第 4 步\quad 求平板所受的阻力}
+\[ T=\tau A=1150\ \mathrm{Pa}\times0.16\ \mathrm{m^2}=184\ \mathrm{N} \]
+也可以一步写出：
+\[ T=\mu A\frac{U}{\delta}=1.15\times0.16\times\frac{1}{1\times10^{-3}}
+   =1.15\times0.16\times1000=184\ \mathrm{N} \]
+
+\textbf{结果：}油对平板的切应力 $\tau=1150\ \mathrm{Pa}$，
+平板所受的阻力（大小）$T=184\ \mathrm{N}$，方向\textbf{与平板运动方向相反}
+（即水平指向运动的反方向）；若平板要保持 $U=1\ \mathrm{m/s}$ 匀速运动，
+所需的外加牵引力也等于 $184\ \mathrm{N}$。
+
+\textbf{量纲自检：}$\mathrm{Pa\cdot s\times m^2\times\dfrac{m/s}{m}}
+=\mathrm{Pa\cdot m^2}=\mathrm{N}$，单位正确；$184\ \mathrm{N}$ 与"手臂推一桶水"的量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\mu$ 的单位。}题目给的是\textbf{动力黏度}
+$\mu=1.15\ \mathrm{Pa\cdot s}$，直接代入 $\tau=\mu\dfrac{\dd u}{\dd y}$ 即可；
+若给的是\textbf{运动黏度} $\nu$，必须先换算 $\mu=\nu\rho$ 再代入。
+
+\textbf{易错点二：单位不能混。}$\delta=1\ \mathrm{mm}$ 必须写成 $1\times10^{-3}\ \mathrm{m}$，
+否则算出的切应力会差 $1000$ 倍。
+
+\textbf{易错点三：面积取一面还是两面。}
+本题平板\textbf{平放在油面上}，只有下表面与油接触，故 $A=0.8\times0.2=0.16\ \mathrm{m^2}$；
+若题目改为"厚度可忽略的平板悬在液体\emph{中间}，两侧均有液层"，
+则两侧都受剪、总面积要乘 2。读题务必看图判断"受剪面个数"。
+\end{yicuo}
+
+\noindent\textbf{第 1.6 题\quad 两固定板间薄平板所受阻力及其最小值}
+
+\begin{jie}
+\textbf{已知：}上、下两固定平行平板相距 $\delta=40\ \mathrm{mm}=0.04\ \mathrm{m}$；
+液体动力黏度 $\mu=0.7\ \mathrm{Pa\cdot s}$；薄平板长
+$a=60\ \mathrm{mm}=0.06\ \mathrm{m}$；薄平板运动速度 $U=15\ \mathrm{m/s}$，
+方向水平向右；薄平板到\textbf{上}固定板的距离为 $h$，
+到\textbf{下}固定板的距离为 $\delta-h$。两液层内速度均为线性分布。
+
+\textbf{求：}（1）$h=10\ \mathrm{mm}$ 时薄平板\textbf{单位宽度}受到的阻力 $T$；
+（2）$h$ 为多大时阻力最小，并求最小值。
+
+\textbf{依据：}牛顿内摩擦定律（教材式 1.9、1.10）。
+薄平板\textbf{上下两面都受剪}：上液层厚度为 $h$、下液层厚度为 $\delta-h$。
+取\textbf{单位宽度}（宽 $b=1\ \mathrm{m}$），则单面受剪面积 $A=a\times1=a$。
+两液层速度梯度分别为
+\[ \left(\frac{\dd u}{\dd y}\right)_{\text{上}}=\frac{U}{h},\qquad\qquad
+   \left(\frac{\dd u}{\dd y}\right)_{\text{下}}=\frac{U}{\delta-h} \]
+两液层对薄平板的黏滞阻力\textbf{方向相反}（上层阻滞平板向右，下层也阻滞平板向右，
+所以两者都指向左，是\emph{相加}关系），平板上所受的总阻力
+\[ T=\mu a\,U\left(\frac{1}{h}+\frac{1}{\delta-h}\right) \]
+
+\textbf{第 1 问\quad $h=10\ \mathrm{mm}=0.01\ \mathrm{m}$ 时的阻力}
+
+\[ \frac{1}{h}=\frac{1}{0.01}=100\ \mathrm{m^{-1}},\qquad
+   \frac{1}{\delta-h}=\frac{1}{0.04-0.01}=\frac{1}{0.03}=33.33\ \mathrm{m^{-1}} \]
+\[ T=\mu a U\left(\frac{1}{h}+\frac{1}{\delta-h}\right)
+   =0.7\times0.06\times15\times(100+33.33) \]
+其中 $0.7\times0.06\times15=0.63\ \mathrm{Pa\cdot m^2/s}$，故
+\[ T=0.63\times133.33=84.0\ \mathrm{N/m} \]
+\textbf{结果（1）：}$T\approx84\ \mathrm{N/m}$（单位宽度上的阻力，单位 $\mathrm{N/m}$）。
+
+\textbf{第 2 问\quad 使 $T$ 最小的 $h$}
+
+把 $T$ 看作 $h$ 的函数：$T(h)=\mu a U\left(\dfrac{1}{h}+\dfrac{1}{\delta-h}\right)$，
+求极小值。
+
+\textbf{方法一（求导）}
+\[ \frac{\dd T}{\dd h}=\mu a U\left(-\frac{1}{h^2}+\frac{1}{(\delta-h)^2}\right)=0
+   \quad\Longrightarrow\quad \frac{1}{h^2}=\frac{1}{(\delta-h)^2} \]
+因 $0<h<\delta$，取正根得 $h=\dfrac{\delta}{2}$，即
+\[ h=\frac{40\ \mathrm{mm}}{2}=20\ \mathrm{mm} \]
+（求二阶导或直接观察：$h\to0$ 或 $h\to\delta$ 时 $T\to\infty$，故该驻点为极小值点。）
+
+\textbf{方法二（算术－几何平均值不等式，更快）}
+$\dfrac{1}{h}+\dfrac{1}{\delta-h}\ge\dfrac{2}{\sqrt{h(\delta-h)}}$，
+等号在 $h=\delta-h$ 时成立，即 $h=\delta/2$。
+
+\textbf{最小值}
+\[ T_{\min}=\mu a U\left(\frac{2}{\delta}+\frac{2}{\delta}\right)
+   =\mu a U\cdot\frac{4}{\delta} \]
+\[ T_{\min}=0.7\times0.06\times15\times\frac{4}{0.04}
+   =0.63\times100=63.0\ \mathrm{N/m} \]
+\textbf{结果（2）：}当薄平板位于\textbf{两固定板正中间}（$h=20\ \mathrm{mm}$）时阻力最小，
+最小值 $T_{\min}\approx63\ \mathrm{N/m}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：两侧阻力方向。}
+薄平板向右运动，\textbf{上液层}中液体的速度从板上 $U$ 线性减到上固定板的 $0$，
+对平板的黏滞力指向\textbf{左}；\textbf{下液层}同理也指向\textbf{左}。
+两侧阻力\textbf{同向，要相加}，不能相减。
+（只有"两固定板以相反方向运动"之类的题才会出现一左一右。）
+
+\textbf{易错点二："单位宽度"的含义。}
+$T$ 的单位是 $\mathrm{N/m}$，即"每米宽平板上受的力"。
+所以受剪面积要取 $A=a\times1\ \mathrm{m}$，而不是取全板的 $a\times b$——
+题目没给板宽，就是这个意思。
+
+\textbf{易错点三：极值点的判断。}
+只解出 $\left|\dfrac{1}{h}\right|=\left|\dfrac{1}{\delta-h}\right|$ 会得到 $h=\delta/2$
+这\emph{一个}解；要注意验证它是极小值（两端 $T\to\infty$，故必为极小值点），
+不能漏掉"验证"这一步。答案要写成 $h=20\ \mathrm{mm}$（带单位）。
+
+\textbf{易错点四：}不要把 $\delta=40\ \mathrm{mm}$ 与 $a=60\ \mathrm{mm}$ 混用：
+$\delta$ 是两固定板的间距（控制速度梯度），$a$ 是薄平板长度（控制受剪面积）。
+\end{yicuo}
+
+\noindent\textbf{第 1.7 题\quad 两同轴圆柱间隙中内筒表面的切应力}
+
+\begin{jie}
+\textbf{已知：}润滑油的动力黏度 $\mu=0.172\ \mathrm{Pa\cdot s}$；
+外筒固定，内筒外径 $D=12\ \mathrm{cm}=0.12\ \mathrm{m}$；
+内、外筒之间的径向间隙 $h=0.02\ \mathrm{cm}=2\times10^{-4}\ \mathrm{m}$；
+（1）内筒以速度 $U=1\ \mathrm{m/s}$ 沿轴线方向平移；
+（2）内筒以转速 $n=180\ \mathrm{r/min}$ 旋转。
+
+\textbf{求：}（1）内筒表面的切应力 $\tau_1$；（2）旋转时内筒表面的切应力 $\tau_2$。
+
+\textbf{依据：}牛顿内摩擦定律 $\tau=\mu\dfrac{\dd u}{\dd n}$（教材式 1.10）。
+间隙 $h=0.02\ \mathrm{cm}$ 很小，间隙内油层的速度按\textbf{线性分布}处理：
+紧贴内筒表面的油层速度等于内筒表面速度，紧贴外筒内壁的油层速度为 $0$，
+所以无论平移还是旋转，速度梯度都是"\textbf{内筒表面速度除以间隙}"：
+\[ \frac{\dd u}{\dd n}=\frac{u_{\text{内筒表面}}}{h} \]
+这正是教材"速度线性分布 $T=\mu A U/h$"的例题思路（E6），
+也是 2022 年 818 判断题第 2 题的考点：同轴圆柱间隙中 $\tau=\mu U/h$。
+注意：旋转问题中"内筒表面速度"是\textbf{周向线速度}，不是转速 $n$。
+
+\textbf{第 1 问\quad 内筒沿轴线平移（$U=1\ \mathrm{m/s}$）}
+
+速度梯度为
+\[ \frac{\dd u}{\dd n}=\frac{U}{h}=\frac{1}{2\times10^{-4}}=5\times10^{3}\ \mathrm{s^{-1}} \]
+代入牛顿内摩擦定律
+\[ \tau_1=\mu\frac{U}{h}=0.172\times\frac{1}{2\times10^{-4}}
+   =0.172\times5000=860\ \mathrm{Pa} \]
+\textbf{结果（1）：}内筒表面的切应力 $\tau_1=860\ \mathrm{Pa}$，
+方向与内筒运动方向相反（黏滞阻力）。
+
+\textbf{第 2 问\quad 内筒绕轴线旋转（$n=180\ \mathrm{r/min}$）}
+
+\textbf{第一步：把转速化为内筒表面的周向线速度。}
+\[ u=\frac{\pi D n}{60}
+   =\frac{3.14\times0.12\times180}{60}
+   =3.14\times0.12\times3=1.13\ \mathrm{m/s} \]
+
+\textbf{第二步：求速度梯度。}旋转时间隙内沿\textbf{半径方向}各油层的周向速度
+由内筒表面的 $u$ 线性降到外筒内壁的 $0$，故
+\[ \frac{\dd u}{\dd n}=\frac{u}{h}=\frac{1.13}{2\times10^{-4}}
+   =5.65\times10^{3}\ \mathrm{s^{-1}} \]
+
+\textbf{第三步：代入牛顿内摩擦定律。}
+\[ \tau_2=\mu\frac{u}{h}=0.172\times5.65\times10^{3}
+   =971.8\ \mathrm{Pa}\approx972\ \mathrm{Pa} \]
+\textbf{结果（2）：}旋转时内筒表面的切应力 $\tau_2\approx972\ \mathrm{Pa}$。
+
+\textbf{量纲自检：}$\mathrm{Pa\cdot s}\times\dfrac{\mathrm{m/s}}{\mathrm{m}}
+=\mathrm{Pa\cdot s}\times\mathrm{s^{-1}}=\mathrm{Pa}$，
+与切应力单位一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：内筒直径 $D$ 与间隙 $h$ 不是同一类量。}
+$D=12\ \mathrm{cm}$ 是直径，$h=0.02\ \mathrm{cm}$ 是\textbf{径向间隙}（半径方向上的油层厚度），
+后者才进速度梯度的分母。把 $h$ 当成半径或直径都会差几十倍。
+
+\textbf{易错点二：位移与速度的方向。}
+第（1）问是\textbf{沿轴线平移}，$U=1\ \mathrm{m/s}$ 就是速度梯度算式里的表面速度；
+第（2）问是\textbf{绕轴线旋转}，必须先把转速 $n$（单位 $\mathrm{r/min}$）换算成
+内筒表面的\textbf{周向线速度} $u=\pi Dn/60$，再代入公式。
+直接拿 $n=180$ 当速度用是最常见的丢分点。
+
+\textbf{易错点三：单位换算不能省。}
+$h=0.02\ \mathrm{cm}=2\times10^{-4}\ \mathrm{m}$（不是 $2\times10^{-2}$）；
+$D=12\ \mathrm{cm}=0.12\ \mathrm{m}$。若漏换，切应力会差 $100$ 倍。
+
+\textbf{易错点四：}$\tau$ 与力 $T$ 的区别。
+本题只问\textbf{切应力}（$\mathrm{Pa}$），不要再乘内筒的湿面积；
+若题目问"作用在内筒上的摩擦力矩"，才需要用到 $A=\pi DL$ 与力臂 $D/2$，
+而目前尚未给出内筒长度 $L$。
+\end{yicuo}
+
+\noindent\textbf{第 1.8 题\quad 由密度与运动黏度求重度、比容与动力黏度}
+
+\begin{jie}
+\textbf{已知：}油的密度 $\rho=851\ \mathrm{kg/m^3}$；
+运动黏度 $\nu=3.39\times10^{-6}\ \mathrm{m^2/s}$；取重力加速度 $g=9.8\ \mathrm{m/s^2}$。
+
+\textbf{求：}重度 $\gamma$、比容 $u$、动力黏度 $\mu$。
+
+\textbf{依据：}$\gamma=\rho g$（教材式 1.3）；
+$\rho=\dfrac{1}{u}$，即比容 $u=\dfrac{1}{\rho}$（教材式 1.4）；
+$\nu=\dfrac{\mu}{\rho}$，即 $\mu=\rho\nu$（教材式 1.11）。
+
+\textbf{第一步：求重度。}
+\[ \gamma=\rho g=851\times9.8=8339.8\ \mathrm{N/m^3}
+   \approx8.34\times10^{3}\ \mathrm{N/m^3} \]
+
+\textbf{第二步：求比容。}
+\[ u=\frac{1}{\rho}=\frac{1}{851}=1.175\times10^{-3}\ \mathrm{m^3/kg}
+   \approx1.18\times10^{-3}\ \mathrm{m^3/kg} \]
+
+\textbf{第三步：求动力黏度。}
+\[ \mu=\rho\nu=851\times3.39\times10^{-6}
+   =2.885\times10^{-3}\ \mathrm{Pa\cdot s}\approx2.89\times10^{-3}\ \mathrm{Pa\cdot s} \]
+
+\textbf{结果：}$\gamma\approx8.34\times10^{3}\ \mathrm{N/m^3}$；
+比容 $u\approx1.18\times10^{-3}\ \mathrm{m^3/kg}$；
+动力黏度 $\mu\approx2.89\times10^{-3}\ \mathrm{Pa\cdot s}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：不要把 $\rho$ 与 $\gamma$ 混为一谈。}
+密度 $\rho$ 的单位是 $\mathrm{kg/m^3}$，重度 $\gamma$ 的单位是 $\mathrm{N/m^3}$，
+$g$ 是两者之间的唯一桥梁（$\gamma=\rho g$）。用错一个 $g$ 或漏乘 $g$ 都会使结果错。
+
+\textbf{易错点二：重度不要写成"密度×9.8"后就丢单位。}
+答案要落在 $\mathrm{N/m^3}$；若写成 $\mathrm{kg/m^3}$ 说明只算了密度。
+
+\textbf{易错点三：$\nu$ 与 $\mu$ 的关系不要倒置。}
+运动黏度 $\nu$ 的单位是 $\mathrm{m^2/s}$，动力黏度 $\mu$ 的单位是 $\mathrm{Pa\cdot s}$；
+因为 $\nu=\mu/\rho$，所以 $\mu=\rho\nu$（本题 $\nu$ 很小，$\mu$ 的量级为 $10^{-3}$，
+若算出 $10^{5}$ 量级一定是把式子倒过来用了）。
+
+\textbf{易错点四：比容定义的记忆。}
+比容是\textbf{单位质量流体所占的体积}，故 $u=1/\rho$（$\mathrm{m^3/kg}$），
+不要和密度互为倒数以外的其他量混淆。
+\end{yicuo}
+
+\noindent\textbf{第 1.9 题\quad 由压强与体积变化求体积模量}
+
+\begin{jie}
+\textbf{已知：}液体原体积 $V_0=4\ \mathrm{m^3}$；
+压强增量 $\Delta p=0.5\ \mathrm{MPa}=0.5\times10^{6}\ \mathrm{Pa}=5\times10^{5}\ \mathrm{Pa}$；
+体积减小量 $|\Delta V|=1\ \mathrm{L}=1\times10^{-3}\ \mathrm{m^3}$。
+
+\textbf{求：}该液体的体积模量 $K$。
+
+\textbf{依据：}体积模量（体积弹性模量）的定义
+\[ K=-\frac{\Delta p}{\Delta V/V_0}\qquad(\text{教材式 1.5--1.7}) \]
+其中 $\Delta V$ 是体积变化量，因压强增大时液体被压缩、体积减小，故 $\Delta V<0$，
+公式前取负号使 $K$ 为正值。$K$ 越大表示液体越难压缩。
+
+\textbf{第一步：求体积相对变化量。}
+\[ \frac{|\Delta V|}{V_0}=\frac{1\times10^{-3}}{4}=2.5\times10^{-4} \]
+
+\textbf{第二步：代入定义式。}
+\[ K=\frac{\Delta p}{|\Delta V|/V_0}
+   =\frac{0.5\times10^{6}}{2.5\times10^{-4}}
+   =0.5\times10^{6}\times4\times10^{3}
+   =2\times10^{9}\ \mathrm{Pa}=2\ \mathrm{GPa} \]
+
+\textbf{结果：}该液体的体积模量 $K=2\times10^{9}\ \mathrm{Pa}=2\ \mathrm{GPa}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：体积单位必须统一到 $\mathrm{m^3}$。}
+$1\ \mathrm{L}=1\times10^{-3}\ \mathrm{m^3}=1\ \mathrm{dm^3}$。
+若把 $1\ \mathrm{L}$ 当成 $1\ \mathrm{m^3}$，结果会大 $10^{3}$ 倍。
+
+\textbf{易错点二：$\Delta p$ 用帕（$\mathrm{Pa}$）还是兆帕（$\mathrm{MPa}$）要前后一致。}
+若用 $0.5\ \mathrm{MPa}$ 计算，得到的 $K$ 就是 $2\times10^{3}\ \mathrm{MPa}$，
+本质上仍是 $2\ \mathrm{GPa}$，但\textbf{不能}又乘 $10^{6}$又不声明单位。
+
+\textbf{易错点三：定义式中必须是\textbf{相对}体积变化。}
+分母要用 $\Delta V/V_0$（无量纲），不能直接用 $\Delta V$；
+教材把 $-(\Delta V/V_0)$ 定义为\textbf{体积压缩系数} $\beta_p$，
+$K=1/\beta_p$，两者互为倒数，写反了会把"难压缩"说成"易压缩"。
+
+\textbf{易错点四：}$K$ 的量级判断。
+水的体积模量约为 $2.1\times10^{9}\ \mathrm{Pa}$，本题算出 $2\times10^{9}\ \mathrm{Pa}$
+与水的量级相符——做题时可用这个量级自检。
+\end{yicuo}
+
+\noindent\textbf{第 1.10 题\quad 膨胀水箱最小容积}
+
+\begin{jie}
+\textbf{已知：}系统内水的总体积 $V=10\ \mathrm{m^3}$；
+加温前后温差 $\Delta T=50\ ^{\circ}\mathrm{C}$；
+水的体积膨胀系数 $\alpha_V=0.0005\ /^{\circ}\mathrm{C}=5\times10^{-4}\ /^{\circ}\mathrm{C}$。
+
+\textbf{求：}膨胀水箱的最小容积 $V_{\min}$。
+
+\textbf{依据：}体积膨胀系数的定义
+\[ \alpha_V=\frac{1}{V}\frac{\Delta V}{\Delta T}
+   \qquad(\text{教材式 1.8}) \]
+即温度升高 $\Delta T$ 时，水的体积增量为 $\Delta V=\alpha_V V\Delta T$。
+管路系统本身不能胀大，多出来的这部分水必须由膨胀水箱容纳，
+所以膨胀水箱的最小容积就等于水的体积增量。
+
+\textbf{第一步：求体积增量。}
+\[ \Delta V=\alpha_V V\Delta T=5\times10^{-4}\times10\times50
+   =0.25\ \mathrm{m^3} \]
+
+\textbf{第二步：确定膨胀水箱的最小容积。}
+\[ V_{\min}=\Delta V=0.25\ \mathrm{m^3}=250\ \mathrm{L} \]
+
+\textbf{结果：}膨胀水箱的最小容积 $V_{\min}=0.25\ \mathrm{m^3}$（合 $250\ \mathrm{L}$）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\Delta V$ 不是"$V$ 的百分之几"就完事。}
+必须写成 $\Delta V=\alpha_V V\Delta T$，三个因子缺一不可——
+漏掉 $V$ 会把答案写成 $0.000025\ \mathrm{m^3}$，漏掉 $\Delta T$ 会写成 $0.005\ \mathrm{m^3}$。
+
+\textbf{易错点二：$\alpha_V$ 的单位是"每摄氏度"。}
+$\alpha_V=0.0005\ /^{\circ}\mathrm{C}$ 表示"每升高 $1\ ^{\circ}\mathrm{C}$、体积增加
+原体积的 $0.0005$ 倍"，所以它与 $\Delta T$ 的乘积是无量纲的相对增量，
+再乘 $V$ 才得到体积增量。
+
+\textbf{易错点三：}$V_{\min}$ 问的是\textbf{多出来}的那部分。
+膨胀水箱只容纳膨胀量，不是容纳整个系统的 $10\ \mathrm{m^3}$；
+答案应是 $0.25\ \mathrm{m^3}$，写成 $10.25\ \mathrm{m^3}$ 属于概念错误。
+\end{yicuo}
+
+\noindent\textbf{第 1.11 题\quad 两平行板间的毛细水柱高}
+
+\begin{jie}
+\textbf{已知：}两竖直平行平板的内间距 $d=2\ \mathrm{mm}=2\times10^{-3}\ \mathrm{m}$；
+水的表面张力系数 $\sigma=0.0725\ \mathrm{N/m}$；
+接触角 $\theta=8^{\circ}$；取水的密度 $\rho=1000\ \mathrm{kg/m^3}$，
+重力加速度 $g=9.8\ \mathrm{m/s^2}$。
+
+\textbf{求：}两板间的毛细水柱高 $h$。
+
+\textbf{依据：}表面张力（教材 1.3.4 节）。取两板间\textbf{单位宽度}（宽 $b=1\ \mathrm{m}$）
+的液柱分析，液柱上升高度为 $h$ 时受力平衡：
+\begin{xiaowen}
+\item \textbf{向上：}两板与水的接触线共有\textbf{两条}（左板一条、右板一条），
+每条长 $b=1\ \mathrm{m}$，表面张力沿接触线、与液面相切，
+其在竖直方向的分力为 $\sigma b\cos\theta$，故总上托力为 $2\sigma b\cos\theta$；
+\item \textbf{向下：}液柱的重力 $G=\rho g b\,d\,h$（底面积 $b\times d$、高 $h$）。
+\end{xiaowen}
+令 $2\sigma b\cos\theta=\rho g b d h$，约去 $b$ 得
+\[ h=\frac{2\sigma\cos\theta}{\rho g d}\qquad(\text{平行板毛细升高公式}) \]
+
+\textbf{第一步：算 $\cos\theta$ 与已知量。}
+\[ \cos 8^{\circ}=0.990,\qquad
+   2\sigma=2\times0.0725=0.145\ \mathrm{N/m} \]
+
+\textbf{第二步：代入公式。}
+\[ h=\frac{2\times0.0725\times0.990}{1000\times9.8\times2\times10^{-3}}
+   =\frac{0.1436}{19.6}=7.33\times10^{-3}\ \mathrm{m} \]
+
+\textbf{结果：}两板间的毛细水柱高 $h\approx7.3\ \mathrm{mm}$。
+
+\textbf{与圆管公式的区别（本册补充方法）：}圆管中毛细升高为
+$h=4\sigma\cos\theta/(\rho g d)$（$d$ 为\textbf{管径}），其系数是 $4$ 而不是 $2$。
+原因正是本题第一条"依据"：圆管的接触线是整圈周长 $\pi d$，
+而两平行板之间只有\textbf{两条}接触线，分母因此相差一倍。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：平行板与圆管的公式不能互套。}
+圆管 $h=\dfrac{4\sigma\cos\theta}{\rho g d}$；两平行板之间只有两条接触线，故为
+$h=\dfrac{2\sigma\cos\theta}{\rho g d}$。套错公式结果恰好差一倍。
+
+\textbf{易错点二：$d$ 是\textbf{板间距}，不是板宽、也不是周长。}
+本题 $d=2\ \mathrm{mm}=2\times10^{-3}\ \mathrm{m}$，
+漏掉 $10^{-3}$ 的换算会把 $h$ 算成 $7.3\ \mathrm{m}$，明显不合理。
+
+\textbf{易错点三：接触角 $\theta=8^{\circ}$ 不是 $0^{\circ}$，$\cos\theta$ 不能省略。}
+本题 $\rho g d=19.6$，若取 $\cos\theta=1$ 会得到 $h=7.4\ \mathrm{mm}$；
+表面上看差别不大，但没有理由把题给的 $\theta$ 丢掉。
+另需注意 $\theta$ 是液面切线与\textbf{板壁}的夹角，$\theta<90^{\circ}$ 表示水能润湿板面，
+液面呈凹形，水才会上升。
+
+\textbf{易错点四：}$\sigma$ 的单位与量级。
+水的表面张力系数约为 $0.0725\ \mathrm{N/m}$（$20\ ^{\circ}\mathrm{C}$ 左右），
+$\sigma$ 很小，也正是教材强调"表面张力一般对液体宏观运动可以忽略，
+只在流体计量、液滴与气泡形成等问题中才必须考虑"的原因。
+\end{yicuo}
+

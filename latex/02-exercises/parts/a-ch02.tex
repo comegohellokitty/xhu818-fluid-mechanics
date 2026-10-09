@@ -1,0 +1,748 @@
+\chapter*{第 2 章 课后习题解答}
+\addcontentsline{toc}{chapter}{第 2 章 课后习题解答}
+\markboth{第 2 章 课后习题解答}{}
+
+\begin{tishi}
+本册解答由编者按教材正文公式与例题方法逐步推导而成（教材原书不附习题答案）。
+每题按\textbf{已知 $\to$ 依据（注明教材式号）$\to$ 步骤 $\to$ 结果（带单位）$\to$ 易错提醒}五段写。
+第 2 章统一取 $\gamma_{\text{水}}=9800\ \mathrm{N/m^3}$、$\gamma_{\text{Hg}}=13.6\gamma_{\text{水}}=133280\ \mathrm{N/m^3}$
+（与教材【例 2.1】、式 2.12、式 2.13 口径一致）；凡"压强差／相对压强"均指表压，未特别说明时用相对压强。
+平面总压力题（2.11、2.13）与曲面总压力题（2.14--2.17）都要求同时写出\textbf{解析法（压力体法）}与
+\textbf{图解法}（适用时），并给出\textbf{压力中心／合力作用线}的位置。
+\end{tishi}
+
+\noindent\textbf{第 2.1 题\quad 测压管测液面相对压强（用水柱高度表示）}
+
+\begin{jie}
+\textbf{已知：}容器内液体为汽油，重度 $\gamma_{\text{汽}}=7.35\ \mathrm{kN/m^3}=7350\ \mathrm{N/m^3}$；
+容器液面处为待求的液面相对压强 $p_0$；容器右壁所接开口测压管内汽油液面高出容器液面 $h=1.5\ \mathrm{m}$。
+
+\textbf{求：}用\textbf{水柱高度}表示的液面相对压强 $p_0$。
+
+\textbf{依据：}教材式（2.11）$p=p_0+\rho gh$ 及式（2.9）$z+\dfrac{p}{\rho g}=C$——
+静止液体中同一液体、同一高程处压强相等，故测压管中液面与容器液面之间的高差即代表容器液面处的相对压强。
+
+\textbf{解：}测压管开口通大气，管中液面处表压为零，故容器液面处的相对压强等于其上方这段汽油柱产生的压强：
+\[ p_0=\gamma_{\text{汽}}h=7.35\times10^3\times1.5=1.1025\times10^4\ \mathrm{Pa}\approx11.03\ \mathrm{kPa} \]
+题目要求"用水柱高度表示"，即把同一压强换算成水柱高：
+\[ h_{\text{水}}=\frac{p_0}{\gamma_{\text{水}}}=\frac{11025}{9800}=1.125\ \mathrm{m} \]
+
+\textbf{结果：}液面相对压强 $p_0\approx11.03\ \mathrm{kPa}$，折合水柱高度 $h_{\text{水}}=1.125\ \mathrm{mH_2O}$。
+（校验：汽油重度 $7.35\ \mathrm{kN/m^3}=0.75\gamma_{\text{水}}$，故 $0.75\times1.5=1.125\ \mathrm{m}$，与上式一致。）
+\end{jie}
+
+\begin{yicuo}
+① 题目问的是"用\textbf{水柱高度}表示"，必须再用 $\gamma_{\text{水}}$ 换算一次，
+不能直接答"$1.5\ \mathrm{m}$"——那是汽油柱高度（因汽油轻，水柱高度必然比它小）；
+② 测压管液面高于容器液面，说明容器液面压强\textbf{高于}大气压，表压为正，不要凭"密封容器"就写负号。
+\end{yicuo}
+
+\noindent\textbf{第 2.2 题\quad 上部有空气的压差计测两点压强差}
+
+\begin{jie}
+\textbf{已知：}$h_1=0.6\ \mathrm{m}$，$h=0.45\ \mathrm{m}$，$h_2=1.8\ \mathrm{m}$；
+工作介质为水，$\gamma=9800\ \mathrm{N/m^3}$；压差计上部为空气，空气柱自重忽略不计。
+
+\textbf{求：}A、B 两点的压强差。
+
+\textbf{依据：}教材式（2.9）、式（2.10）两点式静力学基本方程；压差计的\textbf{等压面法}
+（同一连通气体中的两个液面压强相等）。
+
+\textbf{解：}倒 U 形管上部两腿由空气连通，空气自重忽略，故左腿液面 D 与右腿液面 E 处压强相等：
+\[ p_D=p_E=p_{\text{air}} \]
+分别自 D、E 向下写到 A、B 接管轴线处（同一液体中压强随深度线性增大）：
+\[ p_A=p_D+\gamma h_1=p_{\text{air}}+\gamma h_1 \]
+\[ p_B=p_E+\gamma\left(h+h_1+h_2\right)=p_{\text{air}}+\gamma\left(h+h_1+h_2\right) \]
+两式相减，$p_{\text{air}}$ 与 $\gamma h_1$ 同时消去：
+\[ p_B-p_A=\gamma\left(h+h_2\right)=9800\times(0.45+1.8)=9800\times2.25=2.205\times10^4\ \mathrm{Pa} \]
+
+\textbf{结果：}$p_B-p_A=22050\ \mathrm{Pa}=22.05\ \mathrm{kPa}$，即 B 点压强比 A 点高 $22.05\ \mathrm{kPa}$
+（若以 A 为基准，则 A、B 两点压强差为 $|\Delta p|=22.05\ \mathrm{kPa}$）。
+\end{jie}
+
+\begin{yicuo}
+① 两侧水柱都要从\textbf{空气面}往下量：B 侧为 $h+h_1+h_2$、A 侧为 $h_1$，
+相减后 $h_1$ 抵消，只剩 $\gamma(h+h_2)$——不要漏掉 $h$ 或错把 $h$ 当作"空气段"而丢掉；
+② $"$空气自重忽略$"$ 的真正含义是\textbf{两液面压强相等}，从而 $p_D=p_E$；
+③ 若上部不是空气而是水银，则 $p_D\ne p_E$，必须按液体重度逐段写，不能套本题结论。
+\end{yicuo}
+
+\noindent\textbf{第 2.3 题\quad 复式水银测压计测水箱水面相对压强}
+
+\begin{jie}
+\textbf{已知：}水箱水面相对压强为 $p_0$（水面高程 3.0 m）；第一支水银 U 形管两腿水银面高程 1.4 m 与 2.5 m；
+高程 2.5 m 与 1.2 m 两个水银面之间为\textbf{水}；第二支 U 形管左腿水银面 1.2 m、右侧开口腿水银面 2.3 m。
+取 $\gamma_{\text{水}}=9800\ \mathrm{N/m^3}$、$\gamma_{\text{Hg}}=13.6\gamma_{\text{水}}=133280\ \mathrm{N/m^3}$。
+各读数均为高程（m），自水箱底量起。
+
+\textbf{求：}水箱水面的相对压强 $p_0$。
+
+\textbf{依据：}教材式（2.9）、式（2.10）（静力学基本方程）与复式测压计的\textbf{等压面法}：
+在同一静止流体（或虽不同流体但由同一等压面相连）的同一高程处压强相等。
+
+\textbf{解：}自水箱液面向开口端逐段写（表压）：
+第 1 段：由水面（高程 3.0）向下 1.6 m 的水到达第一处水银面（高程 1.4），压强增大 $\gamma_{\text{水}}\times1.6$；
+第 2 段：在该水银面处压强相等，由第二支 U 形管左腿水银面（1.4）向上 1.1 m 到另一腿水银面（2.5），压强减小 $\gamma_{\text{Hg}}\times1.1$；
+第 3 段：在 2.5 处水银面与水相接，再向下 1.3 m 的水到达高程 1.2 的水银面，压强增大 $\gamma_{\text{水}}\times1.3$；
+第 4 段：由该水银面经 U 形管向上 1.1 m 到开口腿水银面（2.3），压强减小 $\gamma_{\text{Hg}}\times1.1$，而开口处表压为零。
+故
+\[ p_0+\gamma_{\text{水}}\times1.6-\gamma_{\text{Hg}}\times1.1+\gamma_{\text{水}}\times1.3-\gamma_{\text{Hg}}\times1.1=0 \]
+\[ p_0=2.2\gamma_{\text{Hg}}-2.9\gamma_{\text{水}}=2.2\times133280-2.9\times9800=293216-28420=264796\ \mathrm{Pa} \]
+
+\textbf{结果：}水箱水面的相对压强 $p_0\approx264.8\ \mathrm{kPa}\approx2.65\ \mathrm{MPa}$ 的 $0.1$ 倍，
+约为 2.6 个大气压（表压），说明水箱液面处于\textbf{受压}状态。
+\end{jie}
+
+\begin{yicuo}
+① 逐段写方程时"向下加、向上减"，方向搞反一步结果就全错，
+建议像上面那样\textbf{每一段的起点、终点高程都写出来}；
+② 水银段与水段的 $\gamma$ 不能混用，$\gamma_{\text{Hg}}=13.6\gamma_{\text{水}}=133.28\ \mathrm{kN/m^3}$；
+③ 本题开口端表压为零，全程用表压计算，最后不必再加 $p_a$。
+\end{yicuo}
+
+\noindent\textbf{第 2.4 题\quad 水银压力计测水管内的真空度与绝对压强}
+
+\begin{jie}
+\textbf{已知：}水管 A 轴线高程 $h_1=0.5\ \mathrm{m}$；封闭侧（与水相接）水银面高程 $h_2=1.8\ \mathrm{m}$；
+通大气开口侧水银面高程 $h_3=1.2\ \mathrm{m}$；大气压的压力水头为 10 m，故
+$p_a=\gamma_{\text{水}}\times10=9800\times10=98000\ \mathrm{Pa}$；$\gamma_{\text{Hg}}=133280\ \mathrm{N/m^3}$。
+
+\textbf{求：}水管 A 内的真空度 $p_{Av}$ 及绝对压强 $p_{A,\text{abs}}$。
+
+\textbf{依据：}教材式（2.12）$p_{\text{abs}}=p_a+p_M$、式（2.13）$p_v=p_a-p_{\text{abs}}$；
+式（2.9）、式（2.10）（等压面法）。
+
+\textbf{解：}
+（1）两水银面之间为水银，开口侧液面通大气（表压为零），封闭侧液面在同一高程处压强可由静力学基本方程求出：
+\[ p_{2}=p_a-\gamma_{\text{Hg}}\left(h_2-h_3\right)=98000-133280\times(1.8-1.2)=98000-79968=18032\ \mathrm{Pa} \]
+（2）A 在水银面\textbf{以下} $h_2-h_1=1.3\ \mathrm{m}$ 处，中间为水，故
+\[ p_{A,\text{abs}}=p_2+\gamma_{\text{水}}\left(h_2-h_1\right)=18032+9800\times1.3=18032+12740=30772\ \mathrm{Pa} \]
+（3）真空度（绝对压强低于大气压的部分）：
+\[ p_{Av}=p_a-p_{A,\text{abs}}=98000-30772=67228\ \mathrm{Pa} \]
+相应的真空高度 $h_v=p_{Av}/\gamma_{\text{水}}=67228/9800\approx6.86\ \mathrm{m}$。
+
+\textbf{结果：}$p_{A,\text{abs}}\approx30.77\ \mathrm{kPa}$；真空度 $p_{Av}\approx67.23\ \mathrm{kPa}$（真空高度约 $6.86\ \mathrm{m}$ 水柱）。
+计算结果与教材【例 2.1】完全一致，可作校验。
+\end{jie}
+
+\begin{yicuo}
+① "大气压的压力水头为 10 m"必须换算成 $p_a=\gamma_{\text{水}}\times10=98\ \mathrm{kPa}$，
+不要用 $101.325\ \mathrm{kPa}$；
+② 真空度是 $p_a-p_{\text{abs}}$，\textbf{恒为正}，不能写成负值，也不能与表压混为一谈；
+③ 从水银面到 A 是"向下"，压强应增大，符号不要写反；
+④ A 管中压强低于大气压（负表压），故 A 处于\textbf{真空}状态，这是虹吸管、水泵吸水管中的典型工况。
+\end{yicuo}
+
+\noindent\textbf{第 2.5 题\quad 三种互不相混液体中三根测压管的液面高度}
+
+\begin{jie}
+\textbf{已知：}容器敞开（液面通大气）；自下而上依次为 $\gamma_3$、$\gamma_2$、$\gamma_1$ 三种互不相混液体，
+$\gamma_2=0.8\gamma_3$，$\gamma_1=0.8\gamma_2=0.64\gamma_3$；每层厚 2 m；
+三根测压管分别接在 $\gamma_1/\gamma_2$ 交界面（管内液面记 $h_3$）、$\gamma_2/\gamma_3$ 交界面（记 $h_2$）
+和容器底部 $\gamma_3$ 层内（记 $h_1$）。
+
+\textbf{求：}三根测压管内液面至容器底部的高度 $h_1$、$h_2$、$h_3$。
+
+\textbf{依据：}教材式（2.9）$z+\dfrac{p}{\rho g}=C$、式（2.10）两点式、式（2.11）$p=p_0+\rho gh$：
+测压管内液面高程等于连接点的\textbf{测压管水头}。
+
+\textbf{解：}取容器底为高程零点，设 $\gamma_3=\gamma$，则 $\gamma_2=0.8\gamma$、$\gamma_1=0.64\gamma$，各层厚 2 m。
+（1）先求各交界面的压强（表压，自敞口液面向下累加）：
+\[ p_{12}=\gamma_1\times2=1.28\gamma\qquad(z=4\ \mathrm{m}) \]
+\[ p_{23}=p_{12}+\gamma_2\times2=1.28\gamma+1.6\gamma=2.88\gamma\qquad(z=2\ \mathrm{m}) \]
+\[ p_{0}=p_{23}+\gamma_3\times2=2.88\gamma+2\gamma=4.88\gamma\qquad(z=0) \]
+（2）测压管内液体即所连接处的那一层液体，故各管液面高程为
+\[ h_3=4+\frac{p_{12}}{\gamma_1}=4+\frac{1.28\gamma}{0.64\gamma}=4+2=6.0\ \mathrm{m} \]
+\[ h_2=2+\frac{p_{23}}{\gamma_2}=2+\frac{2.88\gamma}{0.8\gamma}=2+3.6=5.6\ \mathrm{m} \]
+\[ h_1=0+\frac{p_{0}}{\gamma_3}=\frac{4.88\gamma}{\gamma}=4.88\ \mathrm{m} \]
+
+\textbf{结果：}$h_1=4.88\ \mathrm{m}$、$h_2=5.6\ \mathrm{m}$、$h_3=6.0\ \mathrm{m}$。
+其中 $h_3$ 最高（恰好与容器内敞口液面同高，即 3 层 $\times$2 m $=6\ \mathrm{m}$），$h_1$ 最低。
+\end{jie}
+
+\begin{yicuo}
+① 测压管里是\textbf{它所连接那一层的液体}（重度 $\gamma_1$、$\gamma_2$ 或 $\gamma_3$），
+不是水，也不能三根管都用同一个重度；
+② 算式 $h=p/\gamma$ 中的 $p$ 必须是\textbf{该连接点高程处}的压强，不能把别处的压强拿来除；
+③ $h_3=6.0\ \mathrm{m}$ 与敞口液面高程相同，这是最方便的\textbf{自检点}——若算不出这个结果，必有环节出错；
+④ 压强自上而下逐层累加时，每层贡献的是 $\gamma_i\times$层厚，不要漏掉中间层。
+\end{yicuo}
+
+\noindent\textbf{第 2.6 题\quad 标出 A、B、C 三点的位置水头、压强水头和测压管水头}
+
+\begin{jie}
+\textbf{已知：}密闭盛液容器，液面压强 $p_0$，液面高程为 $z_s$（自基准面 O--O 量起）；
+容器内 A、B、C 三点，位置水头分别为 $z_A$、$z_B$、$z_C$，各点到液面的深度分别为 $h_A$、$h_B$、$h_C$；
+容器右壁接一根通大气的测压管，管内液面高程记 $z_T$。
+
+\textbf{求：}A、B、C 三点的位置水头、压强水头和测压管水头。
+
+\textbf{依据：}教材式（2.9）$z+\dfrac{p}{\rho g}=C$、式（2.10）$z_1+\dfrac{p_1}{\rho g}=z_2+\dfrac{p_2}{\rho g}$：
+静止液体中各点的测压管水头相同。
+
+\textbf{解：}
+（1）\textbf{位置水头}：即各点相对基准面 O--O 的高度，直接量取
+\[ z_A,\quad z_B,\quad z_C \]
+（A、B 在下部，$z$ 小；C 在上部，$z$ 大。本题三点都在液面以下，故 $0<z_i<z_s$。）
+
+（2）\textbf{压强水头}：任一点 i 的压强为
+\[ p_i=p_0+\rho g h_i,\qquad \frac{p_i}{\rho g}=\frac{p_0}{\rho g}+h_i \]
+其中 $h_i=z_s-z_i$ 为该点的淹没深度。由于液面加压 $p_0>0$，各点压强水头比其淹没深度多出 $p_0/(\rho g)$。
+
+（3）\textbf{测压管水头}：把（1）（2）相加
+\[ z_i+\frac{p_i}{\rho g}=z_i+\left(\frac{p_0}{\rho g}+z_s-z_i\right)=z_s+\frac{p_0}{\rho g} \]
+右端与点的位置无关，故
+\[ z_A+\frac{p_A}{\rho g}=z_B+\frac{p_B}{\rho g}=z_C+\frac{p_C}{\rho g}=z_T=z_s+\frac{p_0}{\rho g} \]
+
+\textbf{结果：}A、B、C 三点的\textbf{测压管水头彼此相等}，都等于 $\left(z_s+\dfrac{p_0}{\rho g}\right)$，
+即等于右壁开口测压管内液面的高程 $z_T$——在图上表现为过 $z_T$ 的一条\textbf{水平线}；
+三点各自的\textbf{位置水头}自 O--O 竖直量到该点；三点的\textbf{压强水头}则是各点到这条测压管水头水平线的铅直距离。
+\end{jie}
+
+\begin{yicuo}
+① 三点"测压管水头相等"指的是 $z+p/(\rho g)$ 这个\textbf{和}相等，
+而不是 $z$ 相等或 $p$ 相等；
+② 基准面取题图给定的 O--O，不要习惯性地取液面；
+③ 密闭容器液面有压强 $p_0$，测压管水头线高于液面 $p_0/(\rho g)$，不要漏掉这一项；
+④ 测压管水头线的物理含义是"接上测压管后液面能上升到的位置"，
+其沿程水平（静止）或下降（流动）的规律正是 2022 年单选第 3 题的考点。
+\end{yicuo}
+
+\noindent\textbf{第 2.7 题\quad 旋转容器：水触底且液面与容器同高时的角速度}
+
+\begin{jie}
+\textbf{已知：}圆筒容器高 $H=0.6\ \mathrm{m}$，直径 $D=0.45\ \mathrm{m}$（半径 $R=0.225\ \mathrm{m}$）；
+绕竖直中心轴以角速度 $\omega$ 旋转；旋转后水面恰好与容器中心底部相触（顶点触底），
+且液面在容器壁处恰好升至容器顶面。
+
+\textbf{求：}角速度 $\omega$。
+
+\textbf{依据：}教材式（2.17）自由面方程 $z_0=\dfrac{\omega^2r^2}{2g}$（旋转容器相对平衡时自由面为旋转抛物面）。
+
+\textbf{解：}取抛物面顶点为原点、$z$ 轴竖直向上，自由面方程为
+\[ z=\frac{\omega^2r^2}{2g} \]
+"水正好与容器中心触底"$\Rightarrow$ 顶点在容器底，$r=0$ 处 $z=0$；
+"顶部与容器同高"$\Rightarrow$ 在容器壁 $r=R$ 处液面恰好升到容器高度 $H$：
+\[ \frac{\omega^2R^2}{2g}=H \]
+\[ \omega=\frac{\sqrt{2gH}}{R}=\frac{\sqrt{2\times9.8\times0.6}}{0.225}=\frac{3.4293}{0.225}=15.24\ \mathrm{rad/s} \]
+对应的转速
+\[ n=\frac{60\omega}{2\pi}=\frac{60\times15.24}{2\pi}=145.5\ \mathrm{r/min} \]
+
+\textbf{结果：}$\omega\approx15.2\ \mathrm{rad/s}$（约 $145.5\ \mathrm{r/min}$）。
+此时容器内水面最高点恰在顶缘，再增大转速水即溢出。
+\end{jie}
+
+\begin{yicuo}
+① $R$ 用\textbf{半径} $0.225\ \mathrm{m}$，不要误用直径；
+② 抛物面方程里的 $z$ 是自\textbf{顶点}量起的高度，本题顶点恰在容器底，
+所以"顶点高度 $=0$"可直接用；若顶点不在底，必须先由体积守恒求顶点位置（见第 2.9 题）；
+③ 单位：$\omega$ 为 $\mathrm{rad/s}$，若题目问"转速"再乘 $60/(2\pi)$ 换成 $\mathrm{r/min}$。
+\end{yicuo}
+
+\noindent\textbf{第 2.8 题\quad 有盖旋转圆筒中的压强表达式（两种开孔情况）}
+
+\begin{jie}
+\textbf{已知：}有盖圆筒容器半径 $R$、高 $H$，绕竖直中心轴以恒定角速度 $\omega$ 旋转；
+当地大气压为 $p_a$；两种情形：（1）上盖\textbf{中心}开一小孔；（2）顶盖\textbf{边缘}开口。
+
+\textbf{求：}筒内水的压强表达式 $p=p(r,z)$。
+
+\textbf{依据：}教材式（2.14）$p=\dfrac{\rho\omega^2r^2}{2}-\rho gz+C$ 与式（2.15）（相对平衡条件下的压强分布）。
+
+\textbf{解：}取容器底中心为原点，$z$ 轴竖直向上，则
+\[ p=\frac{\rho\omega^2r^2}{2}+\rho g\left(z-H\right)+C_0 \]
+其中常数 $C_0$ 由边界条件确定（也可直接写成 $p=\dfrac{\rho\omega^2r^2}{2}-\rho gz+C$，两种写法等价）。
+
+（1）\textbf{上盖中心开一小孔}：小孔处 $(r=0,\ z=H)$ 与大气相通，$p=p_a$，代入得 $C_0=p_a$，故
+\[ p=p_a+\rho g\left(z-H\right)+\frac{\rho\omega^2r^2}{2}\qquad(0\le z\le H) \]
+含义：与小孔同高度的顶盖边缘处压强最高，$p\left(R,H\right)=p_a+\dfrac{\rho\omega^2R^2}{2}$；轴心处为 $p_a$。
+
+（2）\textbf{顶盖边缘开口}：开口处 $(r=R,\ z=H)$ 与大气相通，$p=p_a$，代入得
+$C_0=p_a-\dfrac{\rho\omega^2R^2}{2}$，故
+\[ p=p_a+\rho g\left(z-H\right)+\frac{\rho\omega^2\left(r^2-R^2\right)}{2}\qquad(0\le z\le H) \]
+含义：顶盖中心处压强最低，
+\[ p\left(0,H\right)=p_a-\frac{\rho\omega^2R^2}{2}<p_a \]
+即顶盖中心出现\textbf{负表压（真空）}，转速足够大时轴心处会出现空腔（水体被"拉断"）；边缘处为 $p_a$。
+
+\textbf{结果：}（1）$p=p_a+\rho g\left(z-H\right)+\dfrac{\rho\omega^2r^2}{2}$；
+（2）$p=p_a+\rho g\left(z-H\right)+\dfrac{\rho\omega^2\left(r^2-R^2\right)}{2}$。
+两式均以容器底中心为原点、$z$ 竖直向上，$0\le r\le R$、$0\le z\le H$。
+\end{jie}
+
+\begin{yicuo}
+① 两种情况的差别\textbf{只在积分常数}（边界条件不同），
+$r$、$z$ 的函数形式完全相同，不要另设一套公式；
+② 情形（2）轴心压强小于大气压（出现真空）是\textbf{正确结论}，不是把重度算错了；
+③ $z$ 的零点必须说明（取容器底中心最方便），否则常数项无从确定；
+④ 若容器未装满，还应先由体积守恒确定自由面方程，再用自由面（$p=p_a$）作边界条件。
+\end{yicuo}
+
+\noindent\textbf{第 2.9 题\quad 旋转容器不溢水的极限转速}
+
+\begin{jie}
+\textbf{已知：}圆筒容器半径 $R=15\ \mathrm{cm}=0.15\ \mathrm{m}$，高 $H=50\ \mathrm{cm}=0.5\ \mathrm{m}$；
+旋转前充水深度 $h=30\ \mathrm{cm}=0.3\ \mathrm{m}$；绕 $z$ 轴（容器中心轴）以等角速度 $\omega$ 旋转。
+
+\textbf{求：}不致使水溢出的极限（角）速度。
+
+\textbf{依据：}教材式（2.17）自由面方程 $z_0=\dfrac{\omega^2r^2}{2g}$；
+旋转前后水的\textbf{体积不变}。
+
+\textbf{解：}设旋转后抛物面顶点距容器底为 $z_0$，壁面处液面比顶点升高
+\[ \Delta=\frac{\omega^2R^2}{2g} \]
+则壁面处液面高程 $z\left(R\right)=z_0+\Delta$。"恰好不溢出"的条件是液面最高点刚好到达容器顶：
+\[ z_0+\Delta=H\quad\Rightarrow\quad z_0=H-\Delta \]
+由体积守恒（旋转后水体在抛物面以下，容器以内）：
+\[ V=\pi R^2H-\frac{1}{2}\pi R^2\Delta=\pi R^2h \]
+（因为抛物面与其顶点水平面之间那部分的体积为 $\dfrac{1}{2}\pi R^2\Delta$），整理得
+\[ H-\frac{\Delta}{2}=h\quad\Rightarrow\quad \Delta=2\left(H-h\right)=2\times(0.5-0.3)=0.4\ \mathrm{m} \]
+于是
+\[ \omega=\frac{\sqrt{2g\Delta}}{R}=\frac{\sqrt{2\times9.8\times0.4}}{0.15}=\frac{2.8}{0.15}=18.67\ \mathrm{rad/s} \]
+对应转速 $n=\dfrac{60\omega}{2\pi}=\dfrac{60\times18.67}{2\pi}=178.3\ \mathrm{r/min}$。
+校验：$z_0=H-\Delta=0.5-0.4=0.1\ \mathrm{m}>0$，水面未露出容器底，假设成立。
+
+\textbf{结果：}极限角速度 $\omega\approx18.67\ \mathrm{rad/s}$（约 $178\ \mathrm{r/min}$）；
+再增大转速，壁面处水面高过容器顶，水即溢出。
+\end{jie}
+
+\begin{yicuo}
+① "不溢出"的条件是\textbf{壁面处}液面恰好到达容器顶部，而不是轴心处；
+② 必须用体积守恒，且抛物面所"排开"的体积是 $\dfrac{1}{2}\pi R^2\Delta$——
+这个 $\dfrac{1}{2}$ 最容易漏；
+③ 若算得 $z_0<0$，说明抛物面已露出容器底、水不再占满底部，
+上面的解析式不再适用（本题 $z_0=0.1\ \mathrm{m}$，安全）；
+④ 题目若问"转速"，需把 $\mathrm{rad/s}$ 换算为 $\mathrm{r/min}$。
+\end{yicuo}
+
+\noindent\textbf{第 2.10 题\quad 压力中心与形心重合的特殊情况}
+
+\begin{jie}
+\textbf{已知：}淹没在水下的平面（面积 $A$，形心 C，形心淹没深度 $h_C$），
+平面与自由液面的夹角为 $\theta$；压力中心 D 沿平面的坐标为 $y_D$，形心为 $y_C$。
+
+\textbf{求：}压力中心与形心重合的特殊情况。
+
+\textbf{依据：}教材式（2.29）$P=\rho gh_CA$、式（2.30）$P=\rho gy_C\sin\theta\,A$、
+式（2.31）$y_D=y_C+\dfrac{J_C}{y_CA}$；平行移轴定理 $J_C=\displaystyle\int_A\left(y-y_C\right)^2\dd A\ge0$。
+
+\textbf{证明与讨论：}
+\[ y_D-y_C=\frac{J_C}{y_CA}=\frac{J_C\sin\theta}{h_CA} \]
+其中 $J_C$、$A$ 只与平面的形状和大小有关，$h_C$、$\theta$ 只与方位有关。
+（1）对\textbf{有限}面积的受压面，恒有 $J_C>0$、$A>0$、$y_C>0$，
+故只有当 $\sin\theta=0$，即 $\theta=0$（平面与液面\textbf{平行}、呈\textbf{水平}放置）时，
+才有 $y_D-y_C=0$，即 $y_D=y_C$。
+（2）此时面上各点淹没深度相同、压强处处相等（等于 $p_C=\rho gh_C$），
+压强分布均匀，合力的作用点自然与形心重合——这与式（2.31）的结论一致。
+（3）形式上，当 $h_C\to\infty$（水深趋于无穷）时 $y_D\to y_C$，
+但有限水深下 $y_D-y_C$ 恒为正，工程上不出现"水深无穷大"这一情形。
+
+\textbf{结论：}只有当受压平面为\textbf{水平面（与液面平行）}时，
+压力中心才与平面形心重合；其余情况下恒有 $y_D>y_C$，
+即压力中心总在形心沿平面向下（压强增大）的一侧，偏移量为 $J_C/(y_CA)$。
+\end{jie}
+
+\begin{yicuo}
+① 标准答案是"平面为\textbf{水平面}"，
+不要答成"水深很大时"（那是极限说法，不是题问的"特殊情况"）；
+② 水平面时不能用 $y$（沿斜面坐标）来描述，应从"压强分布均匀"这一物理角度说明；
+③ 压力中心与形心重合的偏移量 $J_C/(y_CA)$ 是沿\textbf{受压面}量的，不是水平距离；
+④ 曲面上的总压力没有"压力中心"这一概念，不能用本题结论套。
+\end{yicuo}
+
+\noindent\textbf{第 2.11 题\quad 铅直矩形闸门的总压力与压力中心（解析法＋图解法）}
+
+\begin{jie}
+\textbf{已知：}铅直矩形闸门，闸门顶缘 A 在水面以下 $h_1=1\ \mathrm{m}$，门高 $h_2=2\ \mathrm{m}$，
+门宽 $b=1.5\ \mathrm{m}$；$\gamma=9800\ \mathrm{N/m^3}$。
+
+\textbf{求：}用解析公式和图解法求总压力 $P$ 及其作用点（压力中心 D）。
+
+\textbf{依据：}教材式（2.29）$P=\rho gh_CA=p_CA$；
+式（2.30）、式（2.31）$y_C=\dfrac{h_C}{\sin\theta}$、$y_D=y_C+\dfrac{J_C}{y_CA}$；
+图解法 $P=\Omega b$（$\Omega$ 为压强分布图的面积）；矩形 $J_C=\dfrac{bh^3}{12}$。
+
+\textbf{一、解析法}
+门顶 A 处淹没深度 $h_A=h_1=1\ \mathrm{m}$，门底 B 处淹没深度 $h_B=h_1+h_2=3\ \mathrm{m}$；
+闸门形心 C 的淹没深度
+\[ h_C=h_1+\frac{h_2}{2}=1+1=2\ \mathrm{m} \]
+受压面积 $A=bh_2=1.5\times2=3\ \mathrm{m^2}$，故
+\[ P=\gamma h_CA=9800\times2\times3=58800\ \mathrm{N} \]
+压力中心：铅直平面 $\theta=90^{\circ}$，$y_C=h_C=2\ \mathrm{m}$，
+\[ J_C=\frac{bh_2^3}{12}=\frac{1.5\times2^3}{12}=1.0\ \mathrm{m^4} \]
+\[ y_D=y_C+\frac{J_C}{y_CA}=2+\frac{1.0}{2\times3}=2+0.1667=2.1667\ \mathrm{m} \]
+即压力中心在\textbf{液面以下 $2.167\ \mathrm{m}$}处，也就是门顶 A 以下 $1.167\ \mathrm{m}$ 处。
+
+\textbf{二、图解法}
+压强沿水深线性分布，压强分布图为一\textbf{梯形}：上底（门顶 A）
+\[ p_A=\gamma h_1=9800\times1=9800\ \mathrm{Pa} \]
+下底（门底 B）
+\[ p_B=\gamma\left(h_1+h_2\right)=9800\times3=29400\ \mathrm{Pa} \]
+梯形高 $h_2=2\ \mathrm{m}$，面积
+\[ \Omega=\frac{\left(p_A+p_B\right)h_2}{2}=\frac{\left(9800+29400\right)\times2}{2}=39200\ \mathrm{N/m} \]
+故
+\[ P=\Omega b=39200\times1.5=58800\ \mathrm{N}=58.8\ \mathrm{kN} \]
+梯形形心到上底的距离
+\[ \frac{h_2\left(p_A+2p_B\right)}{3\left(p_A+p_B\right)}=\frac{2\times\left(9800+2\times29400\right)}{3\times39200}=\frac{2\times68600}{117600}=1.1667\ \mathrm{m} \]
+即压力中心在门顶 A 以下 $1.1667\ \mathrm{m}$（液面以下 $2.1667\ \mathrm{m}$）处。
+
+\textbf{结果：}总压力 $P=58.8\ \mathrm{kN}$，方向\textbf{水平、垂直于闸门指向闸门}（由左侧水体压向闸门）；
+压力中心 D 在闸门对称轴上、液面以下 $y_D=2.167\ \mathrm{m}$（门顶以下 $1.167\ \mathrm{m}$）处。
+解析法与图解法所得 $P$ 及 $y_D$ 完全相同。
+\end{jie}
+
+\begin{yicuo}
+① $h_C$ 取\textbf{形心}淹没深度 $h_1+h_2/2=2\ \mathrm{m}$，
+不要用门底水深 $3\ \mathrm{m}$，也不要用门顶水深 $1\ \mathrm{m}$；
+② $J_C$ 是对\textbf{形心轴}的惯性矩 $bh^3/12$，不要用水面的惯性矩（那要先移轴）；
+③ 图解法中 $\Omega$ 的单位是 $\mathrm{N/m}$（沿宽度方向单位长度的力），
+必须再乘宽度 $b$ 才是总压力；
+④ 梯形形心公式是"距\textbf{上底} $=h(a+2b)/[3(a+b)]$"（$a$ 为上底、$b$ 为下底），
+下标最容易写反，可用"形心偏向较长的底"来检查。
+\end{yicuo}
+
+\noindent\textbf{第 2.12 题\quad 圆形闸门的水压力矩与形心水深无关（证明）}
+
+\begin{jie}
+\textbf{已知：}蓄水池侧壁圆形闸门，直径 $D$（题图为 $125\ \mathrm{cm}$），
+闸门平面与水面夹角 $\theta$，形心 C 处水深 $h_C$；闸门可绕通过形心 C 的水平轴旋转。
+
+\textbf{求：}证明水压力对该轴的力矩与形心水深 $h_C$ 无关。
+
+\textbf{依据：}教材式（2.29）$P=\gamma h_CA$、式（2.30）$y_C=\dfrac{h_C}{\sin\theta}$、
+式（2.31）$y_D=y_C+\dfrac{J_C}{y_CA}$；圆形 $A=\dfrac{\pi D^2}{4}$、$J_C=\dfrac{\pi D^4}{64}$。
+
+\textbf{证明：}沿闸门平面取坐标 $y$（自闸门平面与自由液面的交点向下量），
+形心 $y_C=\dfrac{h_C}{\sin\theta}$，压力中心 $y_D$。
+水压力合力 $P=\gamma h_CA$ 作用于 D；对通过形心的水平轴的力臂为 $\left(y_D-y_C\right)$（沿平面量取），故力矩
+\[ M=P\left(y_D-y_C\right)=\gamma h_CA\cdot\frac{J_C}{y_CA}=\gamma h_C\frac{J_C}{y_C}
+=\gamma h_C J_C\cdot\frac{\sin\theta}{h_C}=\gamma J_C\sin\theta \]
+式中 $J_C=\dfrac{\pi D^4}{64}$、$\theta$ 只与闸门的形状、大小和方位有关，与 $h_C$ 无关。
+故 $M=\gamma J_C\sin\theta$ 与形心水深 $h_C$ 无关，得证。
+
+代入题图数据 $D=125\ \mathrm{cm}=1.25\ \mathrm{m}$（$\gamma=9800\ \mathrm{N/m^3}$）：
+\[ J_C=\frac{\pi D^4}{64}=\frac{\pi\times1.25^4}{64}=0.1198\ \mathrm{m^4},\qquad
+M=9800\times0.1198\sin\theta=1174\sin\theta\ \ \mathrm{N\cdot m} \]
+即不管池中水位升到多高（$h_C$ 变化），只要 $\theta$ 不变，水压力对形心轴的力矩都不变。
+
+\textbf{结果：}$M=\gamma J_C\sin\theta=\dfrac{\pi}{64}\gamma D^4\sin\theta$，与 $h_C$ 无关（证毕）。
+物理意义：$h_C$ 增大时总压力 $P$ 正比增大，而压力中心相对形心的偏移 $\left(y_D-y_C\right)$
+恰按 $1/h_C$ 减小，两者相抵，故对形心轴的力矩恒定——这正是闸门绕形心轴"自动平衡"、启闭省力的原理。
+\end{jie}
+
+\begin{yicuo}
+① 力矩必须对\textbf{通过形心 C 的轴}取，
+不能对水面上的某点取（那样会与 $h_C$ 有关）；
+② 圆形截面对形心轴的惯性矩是 $\dfrac{\pi D^4}{64}$，
+不要写成极惯性矩 $\dfrac{\pi D^4}{32}$ 或 $\dfrac{\pi R^4}{2}$；
+③ 力臂是沿\textbf{受压面}量的 $\left(y_D-y_C\right)$，不是水平距离；
+④ 证明中要用到 $y_C=h_C/\sin\theta$，若漏掉 $\sin\theta$ 就得不到"与 $h_C$ 无关"的结论。
+\end{yicuo}
+
+\noindent\textbf{第 2.13 题\quad 矩形闸门吊起所需的力 T}
+
+\begin{jie}
+\textbf{已知：}矩形闸门 AB，宽 $b=3\ \mathrm{m}$（垂直于图面），A 端铰接于右侧竖直壁，
+闸门与底板夹角 $\alpha=60^{\circ}$；上游水面高出 A 点 $h_1=1\ \mathrm{m}$，
+A 到底板的铅直距离 $h_2=1.73\ \mathrm{m}$；下游水位高出底板 $h_3=h_2/2=0.865\ \mathrm{m}$；
+闸门自重 $G=9800\ \mathrm{N}$；吊索拉力 $T$ 竖直向上、作用于闸门下缘 B。
+$\gamma=9800\ \mathrm{N/m^3}$。
+
+\textbf{求：}将门吊起（即将离底、底板反力为零）所需的力 $T$。
+
+\textbf{依据：}教材式（2.29）--式（2.31）（平面总压力及其压力中心）、式（2.32）（曲面总压力分解思想）；
+即将吊起时对铰链 A 取\textbf{力矩平衡} $\sum M_A=0$。
+由于水压力垂直于门面、而 A 在门面上，各段水压力对 A 的力臂就是"从 A 沿门面量到压力中心的距离"。
+
+\textbf{解：}
+（1）\textbf{几何}：门长
+\[ L=\frac{h_2}{\sin\alpha}=\frac{1.73}{0.8660}=2.0\ \mathrm{m} \]
+A 点淹没深度 $h_A=h_1=1\ \mathrm{m}$；门形心淹没深度
+\[ h_C=h_1+\frac{h_2}{2}=1+0.865=1.865\ \mathrm{m} \]
+
+（2）\textbf{上游水压力对 A 的矩}：设 $s$ 为自 A 沿门面向下的距离，则 $s$ 处淹没深度为
+$h_1+s\sin\alpha$，水压力 $p=\gamma\left(h_1+s\sin\alpha\right)$ 垂直于门面、力臂为 $s$，故
+\[ M_1=\gamma b\int_0^{L}\left(h_1+s\sin\alpha\right)s\dd s
+=\gamma b\left[\frac{h_1L^2}{2}+\frac{L^3\sin\alpha}{3}\right] \]
+\[ M_1=9800\times3\times\left[\frac{1\times2.0^2}{2}+\frac{2.0^3\times0.8660}{3}\right]
+=29400\times\left[2.000+2.309\right]=126696\ \mathrm{N\cdot m} \]
+（检验：由 $P_1=\gamma h_C bL=9800\times1.865\times3\times2.0=109662\ \mathrm{N}$，
+压力中心距 A 为 $M_1/P_1=1.155\ \mathrm{m}$，位于门的下半段，合理。）
+
+（3）\textbf{下游水压力对 A 的矩}：下游水面在底板以上 $h_3=0.865\ \mathrm{m}$，
+门面上高程为 $z=1.73-s\sin60^{\circ}$，令 $z=h_3$ 得下游开始浸没的门面位置
+\[ s_0=\frac{h_2-h_3}{\sin\alpha}=\frac{1.73-0.865}{0.8660}=1.0\ \mathrm{m} \]
+即自 $s=1.0\ \mathrm{m}$ 到 $s=2.0\ \mathrm{m}$（长 1 m）为下游浸湿段。令 $t=s-s_0$，该段任一点的下游淹没深度为 $t\sin\alpha$，力臂为 $s_0+t$：
+\[ M_2=\gamma b\int_0^{1.0}\left(t\sin\alpha\right)\left(s_0+t\right)\dd t
+=\gamma b\sin\alpha\left(\frac{s_0}{2}+\frac{1}{3}\right) \]
+\[ M_2=9800\times3\times0.8660\times(0.5+0.3333)=25460\times0.8333=21217\ \mathrm{N\cdot m} \]
+（检验：该段形心下游淹没深度 $0.5\sin60^{\circ}=0.433\ \mathrm{m}$，
+$P_2=9800\times0.433\times3\times1.0=12730\ \mathrm{N}$，压力中心距 A 为 $1.0+0.667=1.667\ \mathrm{m}$，
+$M_2=12730\times1.667=21221\ \mathrm{N\cdot m}$，与积分结果一致。）
+$M_2$ 的方向与 $M_1$ 相反（下游水压力帮助把门推开）。
+
+（4）\textbf{闸门自重对 A 的矩}：形心距 A 为 $L/2=1.0\ \mathrm{m}$，
+对 A 的力臂为其水平投影
+\[ \frac{L}{2}\cos\alpha=1.0\times0.5=0.5\ \mathrm{m},\qquad
+M_G=G\times0.5=9800\times0.5=4900\ \mathrm{N\cdot m} \]
+方向与 $M_1$ 相同（闸门自重把下缘压向底板）。
+
+（5）\textbf{力矩平衡}：吊索拉力 $T$ 竖直向上作用在 B 点，
+其对 A 的力臂为 A、B 的水平距离
+\[ L\cos\alpha=2.0\times0.5=1.0\ \mathrm{m} \]
+即将吊起时底板反力为零，对 A 取矩：
+\[ T\times1.0=M_1+M_G-M_2=126696+4900-21217=110379\ \mathrm{N\cdot m} \]
+\[ T=110379\ \mathrm{N} \]
+
+\textbf{结果：}将门吊起所需的力 $T\approx1.10\times10^5\ \mathrm{N}=110.4\ \mathrm{kN}$，方向竖直向上。
+可见闸门虽只重 $9.8\ \mathrm{kN}$，但因上游水压力矩很大（$126.7\ \mathrm{kN\cdot m}$），吊索拉力达 $110\ \mathrm{kN}$ 量级。
+\end{jie}
+
+\begin{yicuo}
+① $T$ 的力臂是 A、B 的\textbf{水平距离} $L\cos\alpha=1.0\ \mathrm{m}$，
+不是门长 $L=2.0\ \mathrm{m}$；
+② 上游、下游水压力矩\textbf{方向相反}，必须相减；闸门自重力矩与上游同向，必须加上；
+③ $L$ 要由 $L=h_2/\sin\alpha$ 求，不要误用 $h_2$ 本身；
+④ 各段水压力对 A 的力臂是\textbf{沿门面}从 A 量到压力中心的距离
+（因水压力垂直于门面、且 A 在门面上）；
+⑤ 若题图的吊索不是作用在下缘 B 而是作用在门形心处，
+力臂将变为 $L\cos\alpha/2=0.5\ \mathrm{m}$，$T$ 会翻倍（约 $221\ \mathrm{kN}$）——
+做题时务必先按图确认吊索作用点。
+\end{yicuo}
+
+\noindent\textbf{第 2.14 题\quad 弧形闸门的静水总压力（解析法＋压力体法）}
+
+\begin{jie}
+\textbf{已知：}弧形闸门 AB，宽 $b=4\ \mathrm{m}$，圆心角 $\alpha=45^{\circ}$，半径 $r=2\ \mathrm{m}$，
+转轴（圆心 O）恰与水面齐平；水在闸门左侧。
+
+\textbf{求：}作用于闸门的静水总压力（大小、方向、作用线）。
+
+\textbf{依据：}教材式（2.32）$P_x=\rho gh_CA_x$、式（2.33）$P_z=\rho gV$、
+式（2.34）$P=\sqrt{P_x^2+P_z^2}$、式（2.35）$\tan\alpha'=\dfrac{P_z}{P_x}$；
+教材【例 2.4】结论：圆弧面上各点水压力沿法线通过圆心，合力必过圆心。
+
+\textbf{解：}
+（1）\textbf{几何}：O 在水面上，A 在 O 左侧水平距离 $r=2\ \mathrm{m}$ 处的水面线上；
+B 在 O 左下方、OB 与水平线成 $\alpha=45^{\circ}$。水深（B 点所在池底至水面）
+\[ h=r\sin\alpha=2\times0.7071=1.414\ \mathrm{m} \]
+闸门自 A（水面，$z=0$）到 B（池底，$z=-1.414\ \mathrm{m}$），其铅直投影高为 $h$。
+
+（2）\textbf{水平分力}：曲面在铅直平面上的投影面积
+\[ A_x=bh=4\times1.414=5.657\ \mathrm{m^2} \]
+其形心淹没深度 $h_C=h/2=0.707\ \mathrm{m}$，故
+\[ P_x=\gamma h_CA_x=9800\times0.707\times5.657=39200\ \mathrm{N} \]
+方向：水平指向下游（自水侧指向弧面，即 $+x$ 方向）。
+
+（3）\textbf{铅直分力（压力体法）}：压力体由弧面 AB、水面的延长线以及过 B 点的铅直线围成
+（过 A 点的铅直线退化为一点，因为 A 恰好在水面上）。
+其单位宽度面积由积分求得
+\[ S=\int_{-r}^{-r\cos\alpha}\sqrt{r^2-x^2}\dd x=\int_{-2}^{-1.4142}\sqrt{4-x^2}\dd x=0.5708\ \mathrm{m^2} \]
+（等价算法：$S=\dfrac{\alpha r^2}{2}-\dfrac{1}{2}r^2\sin\alpha\cos\alpha$；
+注意压力体\textbf{不是}弧与弦之间的弓形面积 $0.1566\ \mathrm{m^2}$）。
+该压力体位于弧面的\textbf{凹侧（圆内）}，而水在弧面的凸侧（圆外），
+即压力体内\emph{并无液体}，属教材所称的\textbf{虚压力体}，故铅直分力方向与重力方向相反；
+也可直接判断："各点压力沿法线指向圆心 O，弧面位于圆心左下方 $45^{\circ}$ 内，
+法线的竖直分量为正"，两者结论一致：
+\[ P_z=\gamma Sb=9800\times0.5708\times4=22375\ \mathrm{N} \]
+方向\textbf{向上}（指向圆心一侧）。
+
+（4）\textbf{合力}：
+\[ P=\sqrt{P_x^2+P_z^2}=\sqrt{39200^2+22375^2}=\sqrt{1.5366\times10^9+5.006\times10^8}
+=4.51\times10^4\ \mathrm{N} \]
+\[ \tan\alpha'=\frac{P_z}{P_x}=\frac{22375}{39200}=0.5708\quad\Rightarrow\quad
+\alpha'=29.7^{\circ} \]
+作用线：弧面上各处水压力都沿法线指向圆心 O，故合力作用线必通过转轴 O
+（对转轴 O 的力矩为零）。
+
+\textbf{结果：}静水总压力 $P\approx45.1\ \mathrm{kN}$，
+方向与水平面成 $29.7^{\circ}$ 斜向上（指向上游一侧偏上，即指向圆心 O），
+作用线通过闸门转轴 O，对转轴无力矩。
+\end{jie}
+
+\begin{yicuo}
+① 压力体面积\textbf{不是}弧与弦围成的弓形面积（$0.1566\ \mathrm{m^2}$），
+而是弧面、水面与两端铅直面围成的曲边区域（$0.5708\ \mathrm{m^2}$），
+可用定积分，或用"扇形 $-$ 三角形"（$\dfrac{\alpha r^2}{2}-\dfrac{1}{2}r^2\sin\alpha\cos\alpha$）核算；
+② 水平分力中 $h_C$ 是\textbf{投影面}的形心淹没深度（$h/2=0.707\ \mathrm{m}$），
+不是弧面形心；
+③ 铅直分力方向要由压力体的虚实和法线方向判断：本题压力体在弧的凹侧（圆内）、
+内部并无液体，属\textbf{虚压力体}，故铅直分力向上，别写反；
+④ 结论"合力作用线过圆心"必须写出，它是圆弧面总压力的特征，
+也是扇形闸门启闭省力的原因；
+⑤ 圆心角 $45^{\circ}$ 是指 $\angle AOB$——A 在 O 的正左方、B 在 O 的左下方 $45^{\circ}$，
+不要误把"圆心到 A 的连线"当成与水平成 $45^{\circ}$。
+\end{yicuo}
+
+\noindent\textbf{第 2.15 题\quad 圆柱闸门上下游水深不同时的静水总压力}
+
+\begin{jie}
+\textbf{已知：}圆柱闸门长 $L=4\ \mathrm{m}$、直径 $D=1\ \mathrm{m}$（半径 $R=0.5\ \mathrm{m}$），横卧于底板；
+上游水深 $H_1=1\ \mathrm{m}$（自底板量起，恰与圆柱顶部齐平）；
+下游水深 $H_2=0.5\ \mathrm{m}$（自底板量起，恰与圆柱轴线齐平）；$\gamma=9800\ \mathrm{N/m^3}$。
+
+\textbf{求：}圆柱体上所受的静水总压力。
+
+\textbf{依据：}教材式（2.32）$P_x=\rho gh_CA_x$、式（2.33）$P_z=\rho gV$、
+式（2.34）、式（2.35）；压力体虚实判断（教材 2.6 节）。
+
+\textbf{解：}
+（1）\textbf{水平分力}（两侧反向，取差值）：上游侧
+\[ P_{x1}=\frac{1}{2}\gamma H_1^2L=\frac{1}{2}\times9800\times1^2\times4=19600\ \mathrm{N} \]
+下游侧
+\[ P_{x2}=\frac{1}{2}\gamma H_2^2L=\frac{1}{2}\times9800\times0.5^2\times4=4900\ \mathrm{N} \]
+故
+\[ P_x=P_{x1}-P_{x2}=19600-4900=14700\ \mathrm{N} \]
+方向：水平指向下游（自上游侧指向下游侧）。
+
+（2）\textbf{铅直分力}（两侧同向，均向上，故相加）：
+上游水面与圆柱顶部齐平，水的压力作用于圆柱\textbf{左半圆}柱面；
+压力体为左半圆（该区域在圆柱内部、无水），属\textbf{虚压力体}，
+按"虚压力体方向向上"得
+\[ P_{z1}=\gamma L\times\frac{\pi R^2}{2}=9800\times4\times\frac{\pi\times0.5^2}{2}
+=9800\times4\times0.3927=15393\ \mathrm{N} \]
+下游水面与圆柱轴线齐平，水的压力只作用于圆柱\textbf{右下四分之一圆}柱面；
+压力体为右下四分之一圆（同在圆柱内部、无水），亦为虚压力体，方向向上：
+\[ P_{z2}=\gamma L\times\frac{\pi R^2}{4}=9800\times4\times0.1963=7697\ \mathrm{N} \]
+故
+\[ P_z=P_{z1}+P_{z2}=15393+7697=23090\ \mathrm{N} \]
+方向：竖直向上（两侧水压力都指向圆柱轴心，竖直分量均向上）。
+
+（3）\textbf{合力}：
+\[ P=\sqrt{P_x^2+P_z^2}=\sqrt{14700^2+23090^2}=\sqrt{2.1609\times10^8+5.3315\times10^8}
+=2.74\times10^4\ \mathrm{N} \]
+\[ \tan\alpha'=\frac{P_z}{P_x}=\frac{23090}{14700}=1.571\quad\Rightarrow\quad
+\alpha'=57.5^{\circ} \]
+作用线：两侧水压力均沿圆柱半径方向指向轴心，故合力作用线必\textbf{通过圆柱轴线}。
+
+\textbf{结果：}$P\approx27.4\ \mathrm{kN}$，
+方向与水平面成 $57.5^{\circ}$ 斜向上游一侧（向上、向上游偏，指向轴心），
+作用线通过圆柱轴心；其中 $P_x=14.7\ \mathrm{kN}$（向下游）、$P_z=23.1\ \mathrm{kN}$（向上）。
+\end{jie}
+
+\begin{yicuo}
+① 两侧水平分力\textbf{反向}要相减，两侧铅直分力\textbf{同向}要相加，
+这是本题最易丢分处；
+② 压力体分别是"半圆"和"四分之一圆"，因为它们都落在圆柱内部（无水）$\Rightarrow$虚压力体$\Rightarrow$向上；
+③ $H_2=0.5\ \mathrm{m}$ 恰为圆柱轴线高程，故下游只浸没右下 $1/4$ 圆，
+不要误写成半圆或整个右半；
+④ 上游水面与圆柱顶部齐平，故左半圆全部受力、无真空段；
+⑤ 合力作用线过轴心这一结论要写出来（说明对轴心无力矩，圆柱闸门启闭省力）。
+\end{yicuo}
+
+\noindent\textbf{第 2.16 题\quad 抛物线形坝面的静水合力（大小与方向）}
+
+\begin{jie}
+\textbf{已知：}坝的上游受水面为抛物线，顶点在 O 点；水深 $H=50\ \mathrm{m}$ 处
+（即水面上 A 点）抛物线到对称轴的距离为 12.5 m；求单位宽度（垂直于图面 1 m）坝体上的合力。
+$\gamma=9800\ \mathrm{N/m^3}$。
+
+\textbf{求：}单位宽度坝体所受水的合力大小和方向。
+
+\textbf{依据：}教材式（2.32）$P_x=\rho gh_CA_x$、式（2.33）$P_z=\rho gV$、
+式（2.34）、式（2.35）；压力体虚实判断。
+
+\textbf{解：}
+（1）\textbf{定抛物线方程}：以 O 为原点、对称轴为竖直的 $y$ 轴（向上）、水面方向为 $x$ 轴。
+因顶点在 O、且对称轴竖直，设 $x^2=2py$。
+由"$y=H=50\ \mathrm{m}$ 处 $x=12.5\ \mathrm{m}$"得
+\[ 12.5^2=2p\times50\quad\Rightarrow\quad 156.25=100p\quad\Rightarrow\quad p=1.5625\ \mathrm{m} \]
+即
+\[ x^2=3.125y\quad\text{或}\quad x=\sqrt{3.125y} \]
+
+（2）\textbf{水平分力}：受水面在铅直平面上的投影高为 $H=50\ \mathrm{m}$，
+单位宽度取 $b=1\ \mathrm{m}$，故 $A_x=H\times1=50\ \mathrm{m^2}$，其形心淹没深度 $h_C=H/2=25\ \mathrm{m}$：
+\[ P_x=\gamma h_CA_x=9800\times25\times50=1.225\times10^7\ \mathrm{N/m} \]
+方向：水平指向下游。
+
+（3）\textbf{铅直分力（压力体法）}：压力体为抛物线、水面（$y=H$）、
+对称轴（$x=0$）以及过 A 点的铅直线所围的区域；该区域位于水体之内，
+为\textbf{实压力体}（水在曲面之上、凹面朝上），故铅直分力\textbf{向下}。
+单位宽度的压力体面积
+\[ S=\int_0^{H}x\dd y=\int_0^{50}\sqrt{3.125y}\dd y
+=\sqrt{3.125}\times\frac{2}{3}\times50^{3/2}
+=1.7678\times0.6667\times353.55=416.67\ \mathrm{m^2} \]
+（也可写成 $S=\dfrac{2}{3}\times12.5\times50=416.67\ \mathrm{m^2}$，
+即"抛物线内面积 $=\dfrac{2}{3}\times$外接矩形"）
+\[ P_z=\gamma S b=9800\times416.67\times1=4.083\times10^6\ \mathrm{N/m} \]
+方向：竖直向下。
+
+（4）\textbf{合力}：
+\[ P=\sqrt{P_x^2+P_z^2}=\sqrt{12.25^2+4.083^2}\times10^6=12.91\times10^6\ \mathrm{N/m} \]
+\[ \tan\alpha'=\frac{P_z}{P_x}=\frac{4.083\times10^6}{12.25\times10^6}=0.3333
+\quad\Rightarrow\quad\alpha'=18.4^{\circ} \]
+
+\textbf{结果：}单位宽度坝体所受水的合力
+\[ P\approx1.29\times10^7\ \mathrm{N/m}=12.9\ \mathrm{MN/m} \]
+方向：与水平面成 $18.4^{\circ}$ \textbf{斜向下}、指向下游（即 $P$ 指向下游偏下方）。
+其中 $P_x=12.25\ \mathrm{MN/m}$（向下游）、$P_z=4.08\ \mathrm{MN/m}$（向下）。
+\end{jie}
+
+\begin{yicuo}
+① 抛物线方程必须由"顶点在 O（与底板相切，切线水平）"和"过点 $(12.5,50)$"
+两个条件定出，$x^2=3.125y$；
+② 压力体是抛物线内的那块面积 $416.67\ \mathrm{m^2}$，
+\textbf{不是}三角形面积 $\dfrac{1}{2}\times12.5\times50=312.5\ \mathrm{m^2}$；
+③ 铅直分力方向：水在曲面\textbf{上方}（凹面朝上）为实压力体$\Rightarrow$向下，
+别与弧形闸门（虚压力体$\Rightarrow$向上）记混；
+④ 题目只要求"单位宽度"的合力，$b=1\ \mathrm{m}$，结果单位为 $\mathrm{N/m}$，不要多乘宽度；
+⑤ 检验：抛物线面积与外接矩形面积之比恒为 $2/3$，可用它快速校核积分结果。
+\end{yicuo}
+
+\noindent\textbf{第 2.17 题\quad 扇形闸门上的静水总压力（大小与方向）}
+
+\begin{jie}
+\textbf{已知：}扇形闸门，中心角 $\alpha=45^{\circ}$（过铰链 C 的水平半径 $Ca$ 与另一边半径 $Cb$ 的夹角），
+宽度 $B=1\ \mathrm{m}$（垂直于图面），绕铰链 C 旋转；水深 $H=3\ \mathrm{m}$；
+C 位于底板高程上，$b$ 点在水面上、$a$ 点在底板上；水在闸门左侧，
+过水弧面仅为 $b$ 到 $a$ 的一段（$45^{\circ}$ 圆弧）。$\gamma=9800\ \mathrm{N/m^3}$。
+
+\textbf{求：}水作用于闸门的总压力 $p$ 的大小和方向。
+
+\textbf{依据：}教材式（2.32）$P_x=\rho gh_CA_x$、式（2.33）$P_z=\rho gV$、
+式（2.34）、式（2.35）；教材【例 2.4】：圆弧面上各点压力沿法线通过圆心。
+
+\textbf{解：}
+（1）\textbf{几何与半径}：水面高程为 $H=3\ \mathrm{m}$，$b$ 在水面上且 $Cb$ 与水平线成 $45^{\circ}$，
+故
+\[ r=\frac{H}{\sin\alpha}=\frac{3}{0.7071}=4.243\ \mathrm{m} \]
+$a$ 在 C 的正左方、与 C 同高程（底板），故 $Ca$ 为水平半径，长 $r$；
+$a$ 到 $b$ 的水平距离为
+\[ r-r\cos\alpha=4.243-4.243\times0.7071=4.243-3.000=1.243\ \mathrm{m} \]
+
+（2）\textbf{水平分力}：过水弧面在铅直平面上的投影高为 $H=3\ \mathrm{m}$（自 $b$ 到 $a$），
+宽度 $B=1\ \mathrm{m}$，故
+\[ A_x=HB=3\times1=3\ \mathrm{m^2},\qquad h_C=\frac{H}{2}=1.5\ \mathrm{m} \]
+\[ P_x=\gamma h_CA_x=9800\times1.5\times3=44100\ \mathrm{N} \]
+方向：水平指向下游。
+
+（3）\textbf{铅直分力（压力体法）}：压力体由弧面 $ba$、水面的延长线以及过 $a$、$b$ 的铅直面围成，
+该区域在水体之中，为\textbf{实压力体}，故方向\textbf{向下}。单位宽度面积
+\[ S=H\left(r-r\cos\alpha\right)-\left[\frac{\alpha r^2}{2}-\frac{1}{2}r^2\sin\alpha\cos\alpha\right] \]
+（前一项为"矩形"面积，方括号内为弧下曲边面积 $=$ 扇形 $-$ 三角形）
+\[ S=3\times1.243-\left(7.069-4.500\right)=3.729-2.569=1.160\ \mathrm{m^2} \]
+\[ P_z=\gamma SB=9800\times1.160\times1=11368\ \mathrm{N} \]
+方向：竖直向下。
+
+（4）\textbf{合力}：
+\[ p=\sqrt{P_x^2+P_z^2}=\sqrt{44100^2+11368^2}=\sqrt{1.9448\times10^9+1.2923\times10^8}
+=4.55\times10^4\ \mathrm{N} \]
+\[ \tan\alpha'=\frac{P_z}{P_x}=\frac{11368}{44100}=0.2578\quad\Rightarrow\quad
+\alpha'=14.4^{\circ} \]
+作用线：各点水压力沿半径指向圆心 C，故合力作用线必\textbf{通过铰链 C}，
+水压力对铰链的力矩为零（这正是扇形闸门可以轻便启闭的原因）。
+
+\textbf{结果：}水作用于闸门的总压力 $p\approx4.55\times10^4\ \mathrm{N}=45.5\ \mathrm{kN}$，
+方向与水平面成 $14.4^{\circ}$ \textbf{斜向下}、指向下游，
+作用线通过铰链 C，对铰链无力矩。
+\end{jie}
+
+\begin{yicuo}
+① 半径 $r$ 不是题给的 $H$，须由几何关系 $r=H/\sin\alpha=4.24\ \mathrm{m}$ 求出；
+② 压力体\textbf{不是}弧与弦之间的弓形面积（$0.705\ \mathrm{m^2}$），
+而是"矩形 $-$ 弧下曲边面积"$=1.16\ \mathrm{m^2}$——
+矩形高为 $H$、宽为 $r-r\cos\alpha$，弧下曲边面积 $=$ 扇形 $-$ 三角形；
+③ 铅直分力方向：水在弧面外侧、压力体为实压力体$\Rightarrow$\textbf{向下}；
+④ 只有 $b$ 到 $a$ 这一段弧面过水，$a$ 以下进入底板以下的部分不承受水压力；
+⑤ "合力过铰链 C"的结论必须写出，它说明闸门不承受水压力矩，
+转动只须克服自重、摩擦力与铰链反力。
+\end{yicuo}

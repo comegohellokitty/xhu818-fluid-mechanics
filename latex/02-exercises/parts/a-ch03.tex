@@ -1,0 +1,511 @@
+\chapter*{第 3 章 课后习题解答}
+\addcontentsline{toc}{chapter}{第 3 章 课后习题解答}
+\markboth{第 3 章 课后习题解答}{}
+
+\begin{tishi}
+本册解答由编者按教材正文公式与例题方法逐步推导而成（教材原书不附习题答案）。
+每题按\textbf{已知 $\to$ 依据 $\to$ 步骤 $\to$ 结果 $\to$ 易错提醒}五段写；
+计算题一律写出单位，概念题给出可作简答答案的完整要点。
+\end{tishi}
+
+\noindent\textbf{第 3.1 题（1）\quad 恒定流的判别}
+
+\begin{jie}
+\textbf{已知：}四个关于恒定流（定常流）的选项。
+
+\textbf{依据：}教材 3.2.1 节定义——恒定流是指流场中\textbf{所有空间点上一切运动要素均不随时间变化}的流动；
+其数学表达即教材式（3.12）：$\dfrac{\partial u_x}{\partial t}=\dfrac{\partial u_y}{\partial t}=\dfrac{\partial u_z}{\partial t}=0$，
+此时 $\bu=\bu(x,y,z)$，与 $t$ 无关。
+
+\textbf{判断：}B 正确。A 说“流动随时间按一定规律变化”，恰恰是\textbf{非恒定流}；
+C（各过流断面的速度分布相同）说的是断面流速分布、是空间分布问题；
+D（各过流断面的压强相同）同样是空间分布问题，都不决定流动是否为恒定流。
+
+\textbf{结果：}选 B。
+
+\textbf{提醒：}“恒定”只相对\textbf{时间}而言，只要求 $\dfrac{\partial(\cdot)}{\partial t}=0$，
+并不要求断面流速分布均匀。
+\end{jie}
+
+\noindent\textbf{第 3.1 题（2）\quad 非恒定流的判别}
+
+\begin{jie}
+\textbf{已知：}A. $\dfrac{\partial u}{\partial t}=0$；\quad B. $\dfrac{\partial u}{\partial t}\neq0$；\quad
+C. $\dfrac{\partial u}{\partial s}=0$；\quad D. $\dfrac{\partial u}{\partial s}\neq0$。
+
+\textbf{依据：}教材式（3.12）的否定形式。恒定流要求各运动要素都满足 $\dfrac{\partial u}{\partial t}=0$，
+因此只要有\textbf{至少一个}运动要素满足 $\dfrac{\partial u}{\partial t}\neq0$，就是非恒定流。
+
+\textbf{判断：}$\dfrac{\partial u}{\partial s}$ 是沿流程 $s$ 的\textbf{空间}导数（位变项），
+它是否为零只说明流动是否均匀，与恒定与否无关，故 C、D 先排除；A 是恒定流条件。故 B 正确。
+
+\textbf{结果：}选 B。
+
+\textbf{提醒：}这一组选项的考点就是把“$\partial/\partial t$（时间）”与“$\partial/\partial s$（空间）”分开看。
+\end{jie}
+
+\noindent\textbf{第 3.1 题（3）\quad 渐变流的判别}
+
+\begin{jie}
+\textbf{已知：}四个关于渐变流的选项。
+
+\textbf{依据：}教材 3.2 节按\textbf{空间}把非均匀流分为渐变流与急变流：\textbf{渐变流}（缓变流）的流线
+接近\textbf{相互平行的直线}，或流线的曲率半径很大、流线之间夹角很小；否则为急变流。
+
+\textbf{判断：}C 正确。A 说“过流断面上速度均匀分布”，这是\textbf{均匀流}的断面特征（渐变流的断面流速并不均匀，
+只是压强按静压分布）；B 是恒定流的定义；D 是连续性方程的结果（沿程各断面流量相同），
+对渐变流与急变流都成立，不构成渐变流的定义。
+
+\textbf{结果：}选 C。
+
+\textbf{提醒：}渐变流的落脚点是\textbf{流线的几何形态}（近于平行直线），
+不是“速度均匀”或“流量相同”。
+\end{jie}
+
+\noindent\textbf{第 3.1 题（4）\quad 动能修正系数与流速分布的不均匀性}
+
+\begin{jie}
+\textbf{已知：}四个选项都在描述“流速分布的不均匀程度”与“动能修正系数大小”的关系。
+
+\textbf{依据：}动能修正系数 $\alpha$ 定义为过流断面上按\textbf{实际流速分布}算得的动能与按\textbf{断面平均流速}
+算得的动能之比：
+\[ \alpha=\frac{\displaystyle\int_A u^3\dd A}{v^3A}\qquad(\alpha\ge1) \]
+\textbf{含义：}$u\equiv v$（断面流速均匀）时 $\alpha=1$；流速分布越不均匀，$\alpha$ 越大，
+即 $\alpha-1$ 的大小正是断面流速\textbf{不均匀程度}的度量。
+
+\textbf{判断：}第一空问“流速分布（\quad）”，应填\textbf{越均匀}；第二空问“系数值（\quad）”，
+因 $\alpha\ge1$ 且流速均匀时取最小值 1，故应填\textbf{越小}；第三空“流速分布（\quad）时”填\textbf{均匀}；
+第四空“接近于（\quad）”填 \textbf{1}。四个选项中只有 B 全部吻合。
+
+\textbf{结果：}选 B（越均匀，越小；均匀，1）。
+
+\textbf{补充：}圆管层流（抛物线分布）$\alpha=2$，圆管紊流 $\alpha\approx1.01\sim1.10$，
+工程上紊流常直接取 $\alpha\approx1.0$（第 4 章伯努利方程中要用到）。
+\end{jie}
+
+\begin{yicuo}
+（1）--（3）的易错：把“恒定”与“均匀”混为一谈——恒定看时间、均匀看空间流线；
+或把“渐变流”说成“过流断面上速度均匀分布”。\\
+（4）的易错：以为 $\alpha$ 可以小于 1。$\alpha\ge1$ 恒成立（$\alpha=1$ 恰好对应断面流速均匀），
+不会出现 $\alpha<1$，更不可能“接近于 0”；选项里出现 0 的一律排除。
+\end{yicuo}
+
+\noindent\textbf{第 3.2 题\quad 欧拉观点下密度变化率的数学表达式}
+
+\begin{jie}
+\textbf{已知：}要求用\textbf{欧拉观点}（自变量为 $x,y,z,t$）写出三种情形下密度变化率的表达式。
+
+\textbf{依据：}欧拉法中物理量对时间的导数称为\textbf{随体导数}（全导数），教材式（3.9）；
+对密度 $\rho$，由教材式（3.11）并展开位变项：
+\[ \frac{\dd\rho}{\dd t}=\frac{\partial\rho}{\partial t}+u_x\frac{\partial\rho}{\partial x}
+   +u_y\frac{\partial\rho}{\partial y}+u_z\frac{\partial\rho}{\partial z}
+   =\frac{\partial\rho}{\partial t}+(\bu\cdot\grad)\rho \]
+其中 $\dfrac{\partial\rho}{\partial t}$ 是\textbf{局部（时变）导数}，$(\bu\cdot\grad)\rho$ 是\textbf{位变导数}。
+
+\textbf{（1）均质流体}
+
+均质指密度\textbf{不随空间坐标变化}，即
+\[ \frac{\partial\rho}{\partial x}=\frac{\partial\rho}{\partial y}=\frac{\partial\rho}{\partial z}=0
+   \quad\Longrightarrow\quad \rho=\rho(t) \]
+代入随体导数式，位变项为零，故
+\[ \frac{\dd\rho}{\dd t}=\frac{\partial\rho}{\partial t} \]
+
+\textbf{（2）不可压缩流体}
+
+不可压缩指\textbf{同一流体质点在运动全过程中密度不变}，即随体导数为零：
+\[ \frac{\dd\rho}{\dd t}=0
+   \quad\Longrightarrow\quad
+   \frac{\partial\rho}{\partial t}+u_x\frac{\partial\rho}{\partial x}+u_y\frac{\partial\rho}{\partial y}
+   +u_z\frac{\partial\rho}{\partial z}=0 \]
+
+\textbf{（3）不可压缩均质流体}
+
+既不可压缩又均质，密度\textbf{既与时间无关、又与空间坐标无关}：
+\[ \frac{\dd\rho}{\dd t}=0,\qquad \frac{\partial\rho}{\partial t}=0,\qquad \rho=\text{常数} \]
+
+\textbf{结果汇总：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+情形 & 密度变化率（欧拉观点） \\
+\midrule
+均质流体 & $\dfrac{\dd\rho}{\dd t}=\dfrac{\partial\rho}{\partial t}$（位变项为零，$\rho=\rho(t)$） \\
+不可压缩流体 & $\dfrac{\dd\rho}{\dd t}=0$，即 $\dfrac{\partial\rho}{\partial t}+(\bu\cdot\grad)\rho=0$ \\
+不可压缩均质流体 & $\dfrac{\dd\rho}{\dd t}=0$ 且 $\dfrac{\partial\rho}{\partial t}=0$，即 $\rho=$ 常数 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{jie}
+
+\begin{yicuo}
+教材在给出密度随体导数后专门强调：不可压缩流体的数学表达式 $\dfrac{\dd\rho}{\dd t}=0$ 与均质
+（$\rho$ 为常数）\textbf{是不同的，不可混淆}。$\dfrac{\dd\rho}{\dd t}=0$ 只表示\textbf{同一质点}在运动全过程中
+密度不变，\textbf{不同质点可以有不同的密度}，所以\textbf{不可压缩流体并不一定处处等密度}；
+只有再限定“均质”才得到 $\rho=$ 常数。三小问的差别正在这里，答题时必须逐条写清
+“与空间无关”“随体不变”“二者兼有”。
+\end{yicuo}
+
+\noindent\textbf{第 3.3 题\quad 三维速度场的恒定性与加速度}
+
+\begin{jie}
+\textbf{已知：}$u_x=yz+t$，$u_y=xz-t$，$u_z=xy$（各分量单位制一致）。
+
+\textbf{依据：}恒定流判据为教材式（3.12）；质点加速度（欧拉法）为教材式（3.7）、（3.8a）：
+\[ a_x=\frac{\partial u_x}{\partial t}+u_x\frac{\partial u_x}{\partial x}
+   +u_y\frac{\partial u_x}{\partial y}+u_z\frac{\partial u_x}{\partial z} \]
+第一项为当地（时变）加速度，后三项为迁移（位变）加速度。
+
+\textbf{第 1 步\quad 判断是否恒定}
+
+三个速度分量中 $u_x$、$u_y$ 显含时间：$\dfrac{\partial u_x}{\partial t}=1\neq0$，
+$\dfrac{\partial u_y}{\partial t}=-1\neq0$（$\dfrac{\partial u_z}{\partial t}=0$）。
+按式（3.12），只要有一个运动要素随时间变化就是非恒定流。
+
+\textbf{结果（1）：}该流动是\textbf{非恒定流动}，即 $\bu=\bu(x,y,z,t)$。
+
+\textbf{第 2 步\quad 求九个一阶偏导}
+
+\[ \frac{\partial u_x}{\partial x}=0,\qquad \frac{\partial u_x}{\partial y}=z,\qquad \frac{\partial u_x}{\partial z}=y \]
+\[ \frac{\partial u_y}{\partial x}=z,\qquad \frac{\partial u_y}{\partial y}=0,\qquad \frac{\partial u_y}{\partial z}=x \]
+\[ \frac{\partial u_z}{\partial x}=y,\qquad \frac{\partial u_z}{\partial y}=x,\qquad \frac{\partial u_z}{\partial z}=0 \]
+
+\textbf{第 3 步\quad 代入式（3.8a）求加速度场}
+
+\[ a_x=1+(yz+t)\times0+(xz-t)\times z+(xy)\times y=1+xz^2-tz+xy^2 \]
+\[ a_y=-1+(yz+t)\times z+(xz-t)\times0+(xy)\times x=-1+yz^2+tz+x^2y \]
+\[ a_z=0+(yz+t)\times y+(xz-t)\times x+(xy)\times0=y^2z+ty+x^2z-tx \]
+
+\textbf{第 4 步\quad 代入点 $(1,1,1)$}
+
+\[ a_x=1+1-t+1=3-t,\qquad a_y=-1+1+t+1=1+t,\qquad a_z=1+t+1-t=2 \]
+
+\textbf{结果（2）：}
+\[ \bm a=(3-t)\bm{i}+(1+t)\bm{j}+2\bm{k}\quad(\mathrm{m/s^2}) \]
+由于流动非恒定，固定点上的加速度仍随时间变化，故结果中保留 $t$。
+若题意为“取计时起点 $t=0$ 时质点恰通过点 $(1,1,1)$”，则
+\[ \bm a=3\bm{i}+\bm{j}+2\bm{k},\qquad
+   |\bm a|=\sqrt{3^2+1^2+2^2}=\sqrt{14}\approx3.74\ \mathrm{m/s^2} \]
+\end{jie}
+
+\begin{yicuo}
+① 判断恒定只查 $\dfrac{\partial(\cdot)}{\partial t}$，不要把 $\dfrac{\partial u_x}{\partial x}$ 这类
+\textbf{空间}导数当成时间导数；本题 $\dfrac{\partial u_z}{\partial t}=0$ 并不说明流动恒定。
+② 迁移加速度中乘的是\textbf{速度分量}：$u_y\dfrac{\partial u_x}{\partial y}$ 的系数是 $u_y=xz-t$，
+不是 $u_x$；乘错分量或漏乘是最常见的错。
+③ 本题流动非恒定，“通过点 $(1,1,1)$ 时”对应的时刻由质点轨迹决定，题目未给出，
+因此完整答案必须保留 $t$；若取 $t=0$ 须说明这是人为取定的计时起点。
+\end{yicuo}
+
+\noindent\textbf{第 3.4 题\quad 二维非恒定流场的流线方程与过定点流线}
+
+\begin{jie}
+\textbf{已知：}$u_x=x+2t$，$u_y=-y+t-3$；求流线方程及 $t=0$ 瞬时过 $M(-1,-1)$ 的流线。
+
+\textbf{依据：}教材式（3.14）流线微分方程
+\[ \frac{\dd x}{u_x}=\frac{\dd y}{u_y}=\frac{\dd z}{u_z} \]
+教材正文明确指出：流线是对\textbf{某一时刻}而言的，式中 $t$ 是\textbf{参变量}，
+积分求流线方程时应\textbf{视为常数}。
+
+\textbf{第 1 步\quad 列方程并分离变量}
+
+\[ \frac{\dd x}{x+2t}=\frac{\dd y}{-y+t-3}=\frac{\dd y}{t-3-y} \]
+
+\textbf{第 2 步\quad 积分（把 $t$ 当常数）}
+
+\[ \int\frac{\dd x}{x+2t}=-\int\frac{\dd y}{t-3-y} \]
+\[ \ln|x+2t|=-\ln|t-3-y|+\ln C \]
+\[ \boxed{(x+2t)(t-3-y)=C} \]
+这就是该非恒定流场在瞬时 $t$ 的流线族，$C$ 为积分常数、$t$ 为参变量。
+
+\textbf{第 3 步\quad 代入 $t=0$}
+
+\[ x(-3-y)=C \quad\Longrightarrow\quad x(3+y)=C_1 \]
+
+\textbf{第 4 步\quad 用定点 $M(-1,-1)$ 定出常数}
+
+\[ C_1=(-1)\times(3-1)=(-1)\times2=-2 \]
+
+\textbf{结果：}
+\[ \text{流线族：}\ (x+2t)(t-3-y)=C\quad(t\ \text{为参变量}) \]
+\[ t=0\ \text{瞬时过}\ M(-1,-1)\ \text{的流线：}\ x(3+y)=-2,\ \text{即}\ xy+3x+2=0 \]
+该流线是以 $x$ 轴与直线 $y=-3$ 为渐近线的双曲线的一支。
+\end{jie}
+
+\begin{yicuo}
+① 求流线时 $t$ 必须当常数；若把 $t$ 也当自变量积进去，得到的是\textbf{迹线}，不是流线。
+② $\dfrac{\dd y}{t-3-y}$ 的积分是 $-\ln|t-3-y|$，这个\textbf{负号}漏掉会使结果变成
+$\dfrac{x+2t}{t-3-y}=C$ 之类的错误形式。
+③ 定点代入后要写出具体方程（$xy+3x+2=0$），不能只答“流线族”。
+\end{yicuo}
+
+\noindent\textbf{第 3.5 题\quad 非恒定流场在 $t=0$、$t=2$ 时的流线方程}
+
+\begin{jie}
+\textbf{已知：}$u_x=x+t$，$u_y=-y+t$；求 $t=0$ 与 $t=2$ 时过 $M(-1,-1)$ 的流线方程。
+
+\textbf{依据：}教材式（3.14），积分时 $t$ 当参变量（常数）。
+
+\textbf{第 1 步\quad 积分得流线族}
+
+\[ \frac{\dd x}{x+t}=\frac{\dd y}{-y+t}=\frac{\dd y}{t-y} \]
+\[ \ln|x+t|=-\ln|t-y|+\ln C \quad\Longrightarrow\quad \boxed{(x+t)(t-y)=C} \]
+
+\textbf{第 2 步\quad $t=0$ 的流线}
+
+\[ x(-y)=C \quad\Longrightarrow\quad xy=C_1 \]
+由 $M(-1,-1)$：$C_1=(-1)\times(-1)=1$。
+
+\textbf{结果（$t=0$）：}$xy=1$（等轴双曲线）。
+
+\textbf{第 3 步\quad $t=2$ 的流线}
+
+\[ (x+2)(2-y)=C \]
+由 $M(-1,-1)$：$C=(-1+2)\times(2+1)=1\times3=3$。
+
+\textbf{结果（$t=2$）：}
+\[ (x+2)(2-y)=3,\qquad\text{即}\qquad 2x-xy-2y+1=0\ \ \text{或}\ \ y=2-\frac{3}{x+2} \]
+
+\textbf{说明：}同一非恒定流场在不同瞬时经过\textbf{同一空间点}的流线并不相同（形状与位置都随 $t$ 变），
+这正是“非恒定流动中流线随时间变化、流线与迹线不重合”的具体体现。
+\end{jie}
+
+\begin{yicuo}
+① 顺序不能颠倒：必须\textbf{先取定瞬时}（把该 $t$ 代入表达式），\textbf{再用定点坐标}定出积分常数；
+颠倒会把 $t$ 消错。
+② 两小问的积分常数用了不同数值（$C_1=1$ 与 $C=3$），这不是矛盾：经过同一点的是同一质点，
+但不同瞬时的流线本身不同，常数自然不同。
+\end{yicuo}
+
+\noindent\textbf{第 3.6 题\quad 抛物线流速分布的单宽流量}
+
+\begin{jie}
+\textbf{已知：}两平板间速度分布 $u_x=u_{\max}\left[1-\left(\dfrac{y}{b}\right)^2\right]$，
+$y=0$ 为中心线，$y=\pm b$ 为平板所在位置，$u_{\max}$ 为常数。
+
+\textbf{求：}通过平板的流体单宽流量 $q$。
+
+\textbf{依据：}教材式（3.15）、（3.16）总流体积流量 $Q=\displaystyle\int_A u\dd A$。
+“单宽流量”指\textbf{每单位宽度}（$z$ 方向）上的流量，故取宽度为 1、$\dd A=1\cdot\dd y$：
+\[ q=\int_{-b}^{b}u_x\dd y \]
+
+\textbf{第 1 步\quad 代入速度分布}
+
+\[ q=\int_{-b}^{b}u_{\max}\left[1-\frac{y^2}{b^2}\right]\dd y
+   =u_{\max}\left[y-\frac{y^3}{3b^2}\right]_{-b}^{b} \]
+
+\textbf{第 2 步\quad 代入上下限}
+
+\[ q=u_{\max}\left[\left(b-\frac{b^3}{3b^2}\right)-\left(-b+\frac{b^3}{3b^2}\right)\right]
+   =u_{\max}\left[\left(b-\frac{b}{3}\right)-\left(-b+\frac{b}{3}\right)\right] \]
+\[ q=u_{\max}\left(\frac{2b}{3}+\frac{2b}{3}\right)=\frac{4}{3}u_{\max}b \]
+
+\textbf{结果：}单宽流量
+\[ q=\frac{4}{3}u_{\max}b\quad(\mathrm{m^2/s}) \]
+对应的断面平均流速 $v=\dfrac{q}{2b}=\dfrac{2}{3}u_{\max}$。
+（若题目反而要求总宽 $B$ 上的流量，则 $Q=qB=\dfrac{4}{3}u_{\max}bB$。）
+
+\textbf{量纲自检：}$[\mathrm{m/s}]\times[\mathrm{m}]=\mathrm{m^2/s}$，与单宽流量量纲一致。
+\end{jie}
+
+\begin{yicuo}
+① 不要把线性分布的平均值 $\dfrac{u_{\max}}{2}$ 搬过来：抛物线分布时断面平均流速是
+$\dfrac{2}{3}u_{\max}$。
+② 积分区间写成 $0\sim b$ 而忘记乘 2。本解答直接从 $-b$ 积到 $b$，可避免这一错误。
+③ 不要把 $b$ 当成板间距：板间距是 $2b$，$b$ 是半间距。
+\end{yicuo}
+
+\noindent\textbf{第 3.7 题\quad 证明给定的不可压缩流体运动可能存在}
+
+\begin{jie}
+\textbf{已知：}$u_x=2x^2+y$，$u_y=2y^2+z$，$u_z=-4(x+y)z+xy$，流体不可压缩。
+
+\textbf{依据：}教材式（3.25）不可压缩均质流体的连续性微分方程
+\[ \frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}=0 \]
+速度场只要恒满足它，该运动就是\textbf{可能存在}的；不满足则一定不存在。
+
+\textbf{第 1 步\quad 逐项求偏导}
+
+\[ \frac{\partial u_x}{\partial x}=\frac{\partial}{\partial x}(2x^2+y)=4x \]
+\[ \frac{\partial u_y}{\partial y}=\frac{\partial}{\partial y}(2y^2+z)=4y \]
+\[ \frac{\partial u_z}{\partial z}=\frac{\partial}{\partial z}\bigl[-4(x+y)z+xy\bigr]=-4(x+y) \]
+
+\textbf{第 2 步\quad 求和}
+
+\[ \frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}
+   =4x+4y-4(x+y)=0 \]
+对任意 $(x,y,z)$ 恒成立。
+
+\textbf{结果：}该速度场满足不可压缩流体的连续性方程，故题给运动\textbf{可能存在}。
+\end{jie}
+
+\begin{yicuo}
+① 对 $u_z=-4(x+y)z+xy$ 求 $\dfrac{\partial u_z}{\partial z}$ 时，$xy$ 与 $z$ 无关、其导数为\textbf{零}，
+只留下 $-4(x+y)$；这一项漏掉或符号写反都会使和不为零。
+② 这类“证明可能存在”的题只需验连续性方程；若还要求判断有旋无旋，需再算
+$\omega_x,\omega_y,\omega_z$（本题不要求）。
+\end{yicuo}
+
+\noindent\textbf{第 3.8 题\quad 平面流动的连续性、有旋性与运动分解}
+
+\begin{jie}
+\textbf{已知：}平面不可压缩流动 $u_x=2x-1$，$u_y=-2y$（$u_z=0$，各分量不显含 $t$，故为恒定流）。
+
+\textbf{第 1 问\quad 是否满足连续性方程}
+
+\textbf{依据：}教材式（3.26）二维不可压缩流体的连续性方程
+$\dfrac{\partial u_x}{\partial x}+\dfrac{\partial u_y}{\partial y}=0$。
+
+\[ \frac{\partial u_x}{\partial x}=2,\qquad \frac{\partial u_y}{\partial y}=-2,\qquad 2+(-2)=0 \]
+\textbf{结论（1）：}\textbf{满足}连续性方程（且 $\varepsilon_{xx}+\varepsilon_{yy}=0$，与不可压缩相符）。
+
+\textbf{第 2 问\quad 是否无旋}
+
+\textbf{依据：}教材式（3.35）旋转角速度、式（3.38）无旋条件。
+已知 $\dfrac{\partial u_y}{\partial x}=0$、$\dfrac{\partial u_x}{\partial y}=0$，且 $u_z=0$，故
+\[ \omega_x=\frac{1}{2}\left(\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z}\right)=0,\qquad
+   \omega_y=\frac{1}{2}\left(\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x}\right)=0 \]
+\[ \omega_z=\frac{1}{2}\left(\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}\right)
+   =\frac{1}{2}(0-0)=0 \]
+\textbf{结论（2）：}$\bomega=\bm{0}$，流动\textbf{无旋}（即势流，存在速度势函数）。
+
+\textbf{第 3 问\quad 加速度、线变形率、纯剪切变形率}
+
+（a）\textbf{加速度}：流动恒定，$\dfrac{\partial(\cdot)}{\partial t}=0$，只剩迁移加速度，按教材式（3.8a）：
+\[ a_x=(2x-1)\times2+(-2y)\times0=4x-2 \]
+\[ a_y=(2x-1)\times0+(-2y)\times(-2)=4y \]
+\[ \bm a=(4x-2)\bm{i}+4y\bm{j}\quad(\mathrm{m/s^2}) \]
+
+（b）\textbf{线变形率}（教材式（3.33）中的线变形速度定义）：
+\[ \varepsilon_{xx}=\frac{\partial u_x}{\partial x}=2,\qquad
+   \varepsilon_{yy}=\frac{\partial u_y}{\partial y}=-2,\qquad
+   \varepsilon_{zz}=\frac{\partial u_z}{\partial z}=0 \]
+三者之和 $\varepsilon_{xx}+\varepsilon_{yy}+\varepsilon_{zz}=0$：$x$ 向拉伸、$y$ 向压缩，与不可压缩相符。
+
+（c）\textbf{纯剪切变形率}（教材式（3.34））：
+\[ \varepsilon_{xy}=\varepsilon_{yx}=\frac{1}{2}\left(\frac{\partial u_x}{\partial y}
+   +\frac{\partial u_y}{\partial x}\right)=\frac{1}{2}(0+0)=0 \]
+同理 $\varepsilon_{yz}=\varepsilon_{zy}=0$，$\varepsilon_{zx}=\varepsilon_{xz}=0$。
+
+\textbf{结果汇总：}
+\begin{xiaowen}
+\item 满足连续性方程；
+\item 无旋（$\omega_x=\omega_y=\omega_z=0$，为有势流动）；
+\item $\bm a=(4x-2)\bm{i}+4y\bm{j}$；$\varepsilon_{xx}=2$，$\varepsilon_{yy}=-2$，$\varepsilon_{zz}=0$；
+$\varepsilon_{xy}=\varepsilon_{yx}=\varepsilon_{yz}=\varepsilon_{zy}=\varepsilon_{zx}=\varepsilon_{xz}=0$。
+即该流动只有平移与线变形，既无纯剪切变形，也无旋转。
+\end{xiaowen}
+\end{jie}
+
+\begin{yicuo}
+① \textbf{纯剪切变形率取“加号”、旋转角速度取“减号”}：
+$\varepsilon_{xy}=\dfrac{1}{2}\left(\dfrac{\partial u_x}{\partial y}+\dfrac{\partial u_y}{\partial x}\right)$，
+$\omega_z=\dfrac{1}{2}\left(\dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}\right)$，两者不能互换。
+② 无旋（$\bomega=0$）说明存在速度势，但\textbf{不等于无黏}：本题是有黏性的不可压缩平面流动，
+同样可以无旋。
+③ 加速度不能只写当地项：本题恒定却仍有迁移加速度 $a_x=4x-2$、$a_y=4y$，
+恰好说明“恒定流动不等于无加速度”。
+\end{yicuo}
+
+\noindent\textbf{第 3.9 题\quad 变直径管两断面的平均流速}
+
+\begin{jie}
+\textbf{已知：}$d_1=320\ \mathrm{mm}=0.32\ \mathrm{m}$，$d_2=160\ \mathrm{mm}=0.16\ \mathrm{m}$，
+$v_1=1.5\ \mathrm{m/s}$。
+
+\textbf{求：}断面平均流速 $v_2$。
+
+\textbf{依据：}不可压缩总流的连续性方程（教材式 3.31）$v_1A_1=v_2A_2$。
+
+\textbf{第 1 步\quad 求两断面的面积比}
+
+\[ \frac{A_1}{A_2}=\frac{\pi d_1^2/4}{\pi d_2^2/4}=\left(\frac{d_1}{d_2}\right)^2
+   =\left(\frac{0.32}{0.16}\right)^2=2^2=4 \]
+
+\textbf{第 2 步\quad 求 $v_2$}
+
+\[ v_2=v_1\frac{A_1}{A_2}=1.5\ \mathrm{m/s}\times4=6\ \mathrm{m/s} \]
+
+\textbf{结果：}$v_2=6\ \mathrm{m/s}$。直径减半、面积变为 $1/4$，流速增为 $4$ 倍。
+\end{jie}
+
+\begin{yicuo}
+① 误按直径比 $\dfrac{d_1}{d_2}=2$ 直接去乘 $v_1$（得 $3\ \mathrm{m/s}$）。
+流速与\textbf{面积}成反比，即与\textbf{直径的平方}成反比。
+② 单位换算：本题两个直径同为 mm，比值不受影响；若一个写 mm、一个写 m 就会算错
+（$320\ \mathrm{mm}=0.32\ \mathrm{m}$）。
+\end{yicuo}
+
+\noindent\textbf{第 3.10 题\quad 压缩机出口断面的平均密度与质量流量}
+
+\begin{jie}
+\textbf{已知：}进口为方形管，断面积 $A_1=0.4\ \mathrm{m}\times0.4\ \mathrm{m}=0.16\ \mathrm{m^2}$，
+进口密度 $\rho_1=1.2\ \mathrm{kg/m^3}$，进口断面平均流速 $v_1=4\ \mathrm{m/s}$；
+出口为圆管，直径 $d_1=0.25\ \mathrm{m}$（教材原印下标如此，即出口断面直径），
+出口断面平均流速 $v_2=3\ \mathrm{m/s}$。
+
+\textbf{求：}出口断面平均密度 $\rho_2$、质量流量 $Q_m$。
+
+\textbf{依据：}气体（可压缩）恒定总流连续性方程（教材式 3.30）
+$\rho_1v_1A_1=\rho_2v_2A_2$；质量流量定义 $Q_m=\rho Q$（教材式 3.17）。
+
+\textbf{第 1 步\quad 求出口断面积}
+
+\[ A_2=\frac{\pi d_1^2}{4}=\frac{\pi\times0.25^2}{4}=\frac{\pi\times0.0625}{4}
+   =0.0491\ \mathrm{m^2} \]
+
+\textbf{第 2 步\quad 求质量流量}
+
+进口断面的质量流量就是全过程不变的质量流量：
+\[ Q_m=\rho_1v_1A_1=1.2\ \mathrm{kg/m^3}\times4\ \mathrm{m/s}\times0.16\ \mathrm{m^2}
+   =0.768\ \mathrm{kg/s} \]
+
+\textbf{第 3 步\quad 求出口断面平均密度}
+
+由 $\rho_1v_1A_1=\rho_2v_2A_2$ 得
+\[ \rho_2=\frac{\rho_1v_1A_1}{v_2A_2}=\frac{0.768}{3\times0.0491}=\frac{0.768}{0.1473}
+   =5.21\ \mathrm{kg/m^3} \]
+
+\textbf{结果：}出口断面平均密度 $\rho_2\approx5.21\ \mathrm{kg/m^3}$（约为进口的 $4.3$ 倍，气体被压缩）；
+质量流量 $Q_m=0.768\ \mathrm{kg/s}$。
+
+\textbf{校验：}出口体积流量 $Q_2=v_2A_2=3\times0.0491=0.147\ \mathrm{m^3/s}$，
+$\rho_2Q_2=5.21\times0.147=0.766\ \mathrm{kg/s}\approx0.768\ \mathrm{kg/s}$，与进口质量流量一致。
+\end{jie}
+
+\begin{yicuo}
+① \textbf{气体不能用 $v_1A_1=v_2A_2$}：密度变了，必须用 $\rho_1v_1A_1=\rho_2v_2A_2$。
+② 出口圆管给的是\emph{直径}，面积要用 $A=\dfrac{\pi d^2}{4}$；把 $d$ 当半径算会差 $4$ 倍。
+③ 质量流量单位是 $\mathrm{kg/s}$，可用量纲自检：
+$\mathrm{kg/m^3}\times\mathrm{m/s}\times\mathrm{m^2}=\mathrm{kg/s}$。
+④ 若题目要求由状态方程定出口密度，还需补 $\rho=\dfrac{p}{RT}$ 或
+$\dfrac{\rho_2}{\rho_1}=\dfrac{p_2T_1}{p_1T_2}$；本题给足了两断面的流速与面积，直接用连续性方程即可封闭。
+\end{yicuo}
+
+\noindent\textbf{第 3.11 题\quad 三通汇流管的断面平均流速}
+
+\begin{jie}
+\textbf{已知：}$Q_1=1.5\ \mathrm{m^3/s}$（断面 1--1 流入），$Q_3=2.6\ \mathrm{m^3/s}$（断面 3--3 流出），
+$A_2=0.2\ \mathrm{m^2}$（断面 2--2）。
+
+\textbf{求：}断面 2--2 的断面平均流速 $v_2$。
+
+\textbf{依据：}汇流情况下总流的连续性方程（教材式 3.32）$\sum Q_{\text{进}}=\sum Q_{\text{出}}$，
+即 $Q_1+Q_2=Q_3$；断面平均流速 $v=\dfrac{Q}{A}$（教材式 3.18）。
+
+\textbf{第 1 步\quad 求断面 2--2 的流量}
+
+\[ Q_2=Q_3-Q_1=2.6-1.5=1.1\ \mathrm{m^3/s} \]
+
+\textbf{第 2 步\quad 求断面平均流速}
+
+\[ v_2=\frac{Q_2}{A_2}=\frac{1.1}{0.2}=5.5\ \mathrm{m/s} \]
+
+\textbf{结果：}断面 2--2 的断面平均流速 $v_2=5.5\ \mathrm{m/s}$，流向为\textbf{流入}干管
+（与图中 $Q_2$ 箭头方向一致）。
+\end{jie}
+
+\begin{yicuo}
+① 汇流时不要写成 $Q_1=Q_2+Q_3$。先定控制体、判断各断面是“进”还是“出”：本题 1--1、2--2 进，
+3--3 出，故 $Q_1+Q_2=Q_3$。
+② 已知 $Q$ 与 $A$ 求流速时直接用 $v=\dfrac{Q}{A}$，不必再乘密度（乘了密度得到的是质量流量）。
+\end{yicuo}

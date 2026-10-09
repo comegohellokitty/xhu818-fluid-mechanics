@@ -1,0 +1,762 @@
+\chapter{2020 年工程流体力学试题参考答案（当年科目代码 818）}
+
+\begin{tishi}
+本答案由原卷拍照件整理，个别步骤与符号已按流体力学标准写法规范化。
+原卷封面所印为「考试科目代码及名称：\textbf{818} 工程流体力学」，与现行 818 一致。
+
+\textbf{原答案卷状况：}本题答案卷为西华大学「2020 年攻读硕士学位研究生入学考试试题评分参考」，
+手机拍照件共 4 页，字迹与公式多处模糊缺漏。
+卷首\textbf{选择题只读出第 1 题为 C}，其余 9 题答案 OCR 全部丢失，已按流体力学标准解法逐题判定；
+判断题 10 小题、填空题 6 空、简答题 3 题、证明题 2 题、计算题第 2--6 题的答案均可读出，
+本册已逐题复算校核（其中计算题第 1 题的原卷数值与本册复算值有出入，
+已在该题后加注说明）。凡属本册重算补全之处均在该小题后加注，\textbf{不冒充原卷原文、不编造数值}。
+\end{tishi}
+
+\section{一、选择题（共 20 分，每小题 2 分）}
+
+\begin{center}
+1.~C\qquad 2.~C\qquad 3.~B\qquad 4.~C\qquad 5.~C\qquad 6.~D\qquad 7.~A\qquad 8.~B\qquad 9.~D\qquad 10.~C
+\end{center}
+
+\begin{tishi}
+\textbf{关于本题答案的来源：}原答案卷卷首只印出「1、C」（第 1 题），其余 9 题答案未被 OCR 读出；
+第 2--10 题答案系本册按流体力学标准解法逐题判定，\textbf{与原卷评分参考可能有出入}，请以原卷影印为准。
+
+\textbf{各题一句话理由：}
+\begin{enumerate}
+  \item 单位质量力是作用在单位\emph{质量}流体上的质量力，$\bm f=\bm F/m$，故（C）。
+  \item 控制体是相对于所选坐标系\emph{固定}的空间体（位置与形状都不随时间变化），故（C）。
+  \item 流管由流线围成、流线不相交，故流体不能穿过管侧壁流动，只能从两端流入流出，故（B）。
+  \item 同一时刻流场内各点物理量与空间坐标无关，即物理量在空间上均匀，故为均匀场，故（C）。
+  \item 理想流体忽略黏性、无沿程水头损失，总水头线水平；等直径管中测压管水头线
+        $z+p/\gamma=H-v^{2}/(2g)$ 亦为水平，故（C）。
+  \item 连续性方程表示控制体的\emph{质量}守恒，故（D）。
+  \item 由量纲分析 $N=k\gamma QH_m$，故（A）。量纲校核：
+        $[\gamma QH_m]=\mathrm{N/m^{3}}\cdot\mathrm{m^{3}/s}\cdot\mathrm{m}=\mathrm{N\cdot m/s}=\mathrm{W}$，与功率量纲一致。
+  \item 黏性内摩擦力是\emph{表面力}（作用在接触面上），不属质量力，故（B）。
+  \item 恒定流动中 $\partial\rho/\partial t=0$，即密度不随时间变化，故（D）。
+        说明：$\partial\rho/\partial t=0$ 正是「恒定」的定义式，与 $\rho\nabla\cdot\bm u=0$（不可压缩流体的结果）不同。
+        若以「不可压缩」为口径也可选（C），请以课堂讲法为准。
+  \item 取吸水池液面为 1--1 断面、右上水池液面为 2--2 断面（两水面均为大气压、流速为零），
+        列带泵的能量方程
+        $\left(z_1+\dfrac{p_1}{\gamma}+\dfrac{v_1^{2}}{2g}\right)+H_m
+        =\left(z_2+\dfrac{p_2}{\gamma}+\dfrac{v_2^{2}}{2g}\right)+h_{w1\text{-}2}$，
+        得 $H_m=z+h_{w1\text{-}2}$，故（C）。
+\end{enumerate}
+\end{tishi}
+
+\section{二、判断题（正确打“$\surd$”，错误打“$\times$”，共 10 分，每小题 1 分）}
+
+\begin{center}
+1.~$\times$\qquad 2.~$\times$\qquad 3.~$\times$\qquad 4.~$\times$\qquad 5.~$\surd$\qquad
+6.~$\surd$\qquad 7.~$\surd$\qquad 8.~$\surd$\qquad 9.~$\times$\qquad 10.~$\surd$
+\end{center}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}
+  \item 理想流体黏度为零，不存在切应力（切应力由牛顿内摩擦定律 $\tau=\mu\,\dd u/\dd y$ 给出），故判错。
+  \item 正确关系为 $\nu=\mu/\rho$，原题写作 $\nu=\rho\mu$，量纲不符，故判错。
+  \item 不可压缩连续性方程要求
+        $\dfrac{\partial u_x}{\partial x}+\dfrac{\partial u_y}{\partial y}+\dfrac{\partial u_z}{\partial z}=0$。
+        代入 $u_x=2x^{2}+y$、$u_y=2y^{2}+2z$、$u_z=-4(x+y)z+xy$ 得
+        $\dfrac{\partial u_x}{\partial x}+\dfrac{\partial u_y}{\partial y}+\dfrac{\partial u_z}{\partial z}
+        =4x+4y-4(x+y)=0$，即该速度场\emph{满足}不可压缩连续性方程。
+        原卷命题为「该运动是不可能存在的」，故按原卷答案判 $\times$；
+        \textbf{本命题以原卷为准，不要自行改题}。
+  \item 系统由确定的流体质点组成，流体不能穿越系统的边界，故判错。
+  \item 无限长圆柱绕流沿母线方向无变化，流动参数只与两个坐标有关，可简化为平面流动，故判对。
+  \item 恒定流动（定常流）中流线的形状和位置不随时间改变，故判对。
+  \item 三条坝身泄水管均自同一上游水位泄向下游大气，作用水头 $z$ 相同；
+        由 $h_f=\lambda\dfrac{\ell}{d}\dfrac{v^{2}}{2g}$ 得 $v=\sqrt{\dfrac{2gzd}{\lambda\ell}}$、
+        $Q=\dfrac{\pi d^{2}}{4}v$，$\ell$、$d$、$\lambda$ 均相同时三条管流量相同，故判对。
+  \item 动力相似（作用力相似）是流动相似的主导因素，两流动相似必须满足动力相似，故判对。
+  \item 可压缩气流流速接近或超过声速时弹性力成为主要作用力，应要求\emph{马赫数}相等（而非柯西数），故判错。
+        柯西数 $\Eu_c=\rho v^{2}/E$ 适用于弹性结构与流体相互作用的问题。
+  \item 量纲是物理量的实质（长度、时间、质量等），不随所选单位制而变、不受人为因素影响，故判对。
+\end{enumerate}
+\end{tishi}
+
+\section{三、填空题（共 20 分，每空 2 分）}
+
+\begin{enumerate}
+  \item $a_x=-2x$（$\mathrm{m/s^2}$）；\quad $a_y=-2y$（$\mathrm{m/s^2}$）。
+
+  \item 迹线方程 $y=\dfrac{b}{2a}x^{2}$。
+
+  \item 内筒表面的切应力 $\tau=\mu\dfrac{\pi n d}{60h}$。
+
+  \item $u_x=2x-1$；\quad $u_y=-2y$；\quad 流函数 $\psi=2xy-y$。
+
+  \item 总流量等于\textbf{各段（各支管）流量之和}；\quad 各段的\textbf{水头损失}相等。
+
+  \item 平板末端的边界层厚度 $\delta=0.077\,\mathrm{m}$。
+\end{enumerate}
+
+\begin{tishi}
+\textbf{各空推导：}
+\begin{enumerate}
+  \item 由质点导数
+        $a_x=\dfrac{\partial u_x}{\partial t}+u_x\dfrac{\partial u_x}{\partial x}+u_y\dfrac{\partial u_x}{\partial y}$，
+        代入 $u_x=x+3y$、$u_y=-x-y$：
+        \[
+        \frac{\partial u_x}{\partial x}=1,\qquad \frac{\partial u_x}{\partial y}=3,
+        \]
+        \[
+        a_x=0+(x+3y)\times1+(-x-y)\times3=x+3y-3x-3y=-2x .
+        \]
+        另由
+        $a_y=\dfrac{\partial u_y}{\partial t}+u_x\dfrac{\partial u_y}{\partial x}+u_y\dfrac{\partial u_y}{\partial y}$，
+        其中 $\dfrac{\partial u_y}{\partial x}=-1$、$\dfrac{\partial u_y}{\partial y}=-1$：
+        \[
+        a_y=0+(x+3y)\times(-1)+(-x-y)\times(-1)=-x-3y+x+y=-2y .
+        \]
+
+        \textbf{故 $a_x=-2x$、$a_y=-2y$（单位 $\mathrm{m/s^2}$）。}
+
+        \textbf{与原答案卷的差异：}原答案卷此处 OCR 只读出「$4x4y$」这一残片；
+        若把该残片读作 $a_x=4x+4y$，则要求速度场满足
+        $u_x\dfrac{\partial u_x}{\partial x}+u_y\dfrac{\partial u_x}{\partial y}=4x+4y$，
+        与本题所给 $u_x=x+3y$、$u_y=-x-y$ 不符（按本题数据算得 $a_x=-2x$）。
+        \textbf{该空数值请以原卷影印与题目所给速度场为准}；
+        本册按题目所给速度场与质点导数定义复算，取 $a_x=-2x$、$a_y=-2y$。
+
+  \item 由 $\dfrac{\dd x}{\dd t}=u_x=a$、$\dfrac{\dd y}{\dd t}=u_y=bt$，
+        取 $t=0$ 时质点位于 $(0,0)$，积分得 $x=at$、$y=\dfrac{b}{2}t^{2}$，
+        消去 $t$：$y=\dfrac{b}{2}\left(\dfrac{x}{a}\right)^{2}=\dfrac{b}{2a}x^{2}$，
+        故迹线方程为 $y=\dfrac{b}{2a}x^{2}$。
+        （原答案卷印作 $y=\dfrac{bx^{2}}{2a^{2}}$，分母 $a$ 的平方疑为排印笔误，本册按积分结果 $2a$ 写出，
+        并保留原卷形式供对照。）
+
+  \item 间隙 $h$ 相对内筒直径 $d$ 很小，间隙内速度梯度按线性分布取
+        $\dfrac{\dd u}{\dd y}=\dfrac{u}{h}$，其中内筒表面线速度 $u=\dfrac{\pi dn}{60}$（$n$ 的单位为 $\mathrm{r/min}$）。
+        由牛顿内摩擦定律
+        \[
+        \tau=\mu\frac{\dd u}{\dd y}=\mu\frac{\pi dn}{60h}.
+        \]
+        （原答案卷 OCR 读作「$\tau=\mu n\pi d^{2}/(60h)$」，$d$ 的平方系断字误读，
+        按上式为 $d$ 的一次方；量纲校核 $[\mu u/h]=\mathrm{Pa\cdot s}\cdot\mathrm{(m/s)/m}=\mathrm{Pa}$，正确。）
+
+  \item 由 $\varphi=x^{2}-y^{2}-x$ 得
+        $u_x=\dfrac{\partial\varphi}{\partial x}=2x-1$、$u_y=\dfrac{\partial\varphi}{\partial y}=-2y$。
+        再由流函数与势函数的关系 $\dfrac{\partial\psi}{\partial y}=u_x=2x-1$、$\dfrac{\partial\psi}{\partial x}=-u_y=2y$：
+        由第一式对 $y$ 积分得 $\psi=2xy-y+f(x)$（积分常数是 $x$ 的任意函数）；
+        代入第二式，$\dfrac{\partial\psi}{\partial x}=2y+f'(x)=2y$，故 $f'(x)=0$，$f(x)=C$。
+        取 $C=0$，得
+        \[
+        \psi=2xy-y .
+        \]
+        （原答案卷 OCR 读作「$2x-1$、$-2y$、$2xy-y$」，与上式一致。）
+
+  \item 并联管路各支管两端的总水头差相同，故各段（各支管）的水头损失相等；
+        节点处流量守恒，故总流量等于各支管流量之和。
+
+  \item 平板层流边界层厚度按常用公式
+        \[
+        \delta=\frac{5.48\,x}{\sqrt{\Rey_x}},
+        \]
+        （该式与 2021 年 818 试题卷面给出的层流边界层厚度公式同源；本册按此式复算，与原答案 $0.077\,\mathrm{m}$ 吻合。）
+        平板末端 $x=L=2\,\mathrm{m}$ 处
+        \[
+        \Rey_L=\frac{v_0L}{\nu}=\frac{0.8\times2.0}{8\times10^{-5}}=2.0\times10^{4},
+        \]
+        转捩点位置
+        $x_{cr}=\dfrac{\Rey_{xcr}\nu}{v_0}=\dfrac{10^{6}\times8\times10^{-5}}{0.8}=100\,\mathrm{m}>L$，
+        即整个平板上的边界层均为层流，故
+        \[
+        \delta=\frac{5.48\times2.0}{\sqrt{2.0\times10^{4}}}=\frac{10.96}{141.42}=0.0775\approx0.077\,\mathrm{m},
+        \]
+        与评分参考「6、$0.077\,\mathrm{m}$」一致。
+\end{enumerate}
+\end{tishi}
+
+\section{四、简答题（共 20 分）}
+
+\answ{1.（6 分）静止液体作用在平面上的总压力计算方法及其适用条件}
+
+\begin{jie}
+计算方法有两种。
+
+\textbf{（1）解析法。}对任意形状平面，先求形心处压强 $p_c=p_0+\gamma h_c$，
+总压力大小 $P=p_cA$（等于形心处压强与平面面积之积），
+压力中心位置由惯性矩确定：$y_D=y_c+\dfrac{I_c}{y_cA}$。
+
+适用条件：平面规则、形心位置与惯性矩易于确定时最精确，对矩形、圆形等常见平面尤为方便。
+
+\textbf{（2）图解法。}当平面为\emph{矩形}且有一条边与液面平行时，压强分布图为三角形或梯形；
+总压力大小等于压强分布图的\emph{面积}乘矩形宽度，压力中心位于压强分布图的形心处
+（三角形分布时距平面底边 $\dfrac{1}{3}$ 高度）。
+
+适用条件：平面为矩形且有一边平行于液面（压强沿高度线性分布）；
+非矩形平面或压强分布复杂时不宜用图解法。
+\end{jie}
+
+\answ{2.（6 分）压力体的分类与区分方法}
+
+\begin{jie}
+压力体可分为\textbf{实压力体}和\textbf{虚压力体}两种。
+
+区分方法：把曲面本身、过曲面周界的铅垂面以及液面（或其延伸面）所围成的体积记为 $V_p$，
+曲面上的铅垂分力为 $P_z=\gamma V_p$。
+
+\begin{enumerate}
+  \item \textbf{实压力体：}压力体与液体在曲面的\emph{同侧}（压力体内部真实充满液体），
+        铅垂分力 $P_z$ 的方向\emph{向下}，大小等于该压力体内液体的重量。
+  \item \textbf{虚压力体：}压力体与液体在曲面的\emph{异侧}（压力体内部没有液体，是假想抽空的体积），
+        铅垂分力 $P_z$ 的方向\emph{向上}，大小仍为 $\gamma V_p$。
+\end{enumerate}
+
+\textbf{判别口诀：}「实压力体压力向下，虚压力体压力向上；判别看压力体与液体是否在曲面同侧。」
+\end{jie}
+
+\answ{3.（8 分）减小绕流阻力的措施}
+
+\begin{jie}
+绕流阻力由摩擦阻力和压差阻力两部分组成，减阻措施分别针对这两部分。
+
+\textbf{（1）减小摩擦阻力（2 分）。}
+采用尽可能小的物面粗糙度（保持物面光滑），使边界层内速度梯度与壁面切应力减小；
+并把物面设计成流线型（细长型），减小湿面积。
+
+\textbf{（2）减小压差阻力（3 分）。}
+压差阻力的实质是边界层分离后尾流区低压造成的压差，减阻的根本途径是控制边界层、推迟或消除分离：
+\begin{enumerate}
+  \item 将被绕流物体的外形设计成流线型，使沿流向的压强梯度平缓（1 分）；
+  \item 边界层加速——在分离点前对边界层内低速流体加速，使其获得足够动能抵抗逆压梯度（1 分）；
+  \item 吸收边界层——把边界层内的低速流体吸走，防止边界层增厚与分离（1 分）。
+\end{enumerate}
+
+\textbf{（3）补充措施（不另计分，供参考）：}
+适当设置扰流装置（涡流发生器、湍流促进器）使边界层提前转捩为湍流，
+湍流边界层抵抗逆压梯度的能力强、分离点后移；以及壁面吹气、吸气等主动控制技术。
+\end{jie}
+
+\begin{tishi}
+简答题三题的要点均自原答案卷读出：第 1 题为「有解析法和图解法两种」（2 分）；
+第 2 题为「分成实压力体和虚压力体两种」（3 分）；
+第 3 题为「减小摩擦阻力，可采用小的物面粗糙度；减小压差阻力可通过控制边界层实现：
+（1）将被绕流物体的外形设计成流线型（2）边界层加速（3）吸收边界层」。
+本册按教材标准表述把得分点补全为完整叙述，\textbf{要点与原卷一致}。
+\end{tishi}
+
+\section{五、证明题（共 20 分）}
+
+\answ{1.（10 分）圆柱形外管嘴自由出流的真空存在性证明}
+
+\begin{jie}
+\textbf{已知：}水箱水位恒定，箱中液面为断面 1--1（绝对压强 $p_a$、流速 $v_1\approx0$）；
+圆柱形外管嘴出口断面为 2--2（自由射入大气，$p_2=p_a$、流速 $v$）；
+管嘴内主流脱离壁面，在收缩断面 $c$-$c$ 处流速为 $v_c$、绝对压强为 $p_{c,\mathrm{abs}}$；
+管嘴长 $\ell\approx(3\sim4)d$，出口局部（收缩）水头损失为 $h_{jc\text{-}2}$。
+\ \textbf{求：}证明 $p_{c,\mathrm{abs}}<p_a$（即管嘴内存在真空）。
+
+\textbf{第一步：对收缩断面 $c$-$c$ 与出口断面 2--2 列伯努利方程}（式 a）。
+以管嘴中心线为基准面，$z_c\approx z_2$：
+\[
+\frac{p_{c,\mathrm{abs}}}{\gamma}+\frac{\alpha_cv_c^{2}}{2g}
+=\frac{p_a}{\gamma}+\frac{\alpha_2v^{2}}{2g}+h_{jc\text{-}2}. \tag{a}
+\]
+
+\textbf{第二步：由连续性方程写出 $v_c$ 与 $v$ 的关系}（式 b）。
+收缩断面流股面积 $A_c$ 比出口面积 $A$ 小，令收缩系数 $\varepsilon=\dfrac{A_c}{A}$（$\varepsilon<1$），
+由 $v_cA_c=vA$ 得
+\[
+v_c=\frac{A}{A_c}v=\frac{v}{\varepsilon}. \tag{b}
+\]
+
+\textbf{第三步：出口局部水头损失}（式 c）。管嘴出口的局部水头损失按出口流速水头计：
+\[
+h_{jc\text{-}2}=\zeta\frac{v^{2}}{2g}. \tag{c}
+\]
+
+\textbf{第四步：把 (b)、(c) 代入 (a)，并取 $\alpha_c=\alpha_2=1$：}
+\[
+\frac{p_{c,\mathrm{abs}}}{\gamma}=\frac{p_a}{\gamma}+\frac{v^{2}}{2g}
++\zeta\frac{v^{2}}{2g}-\frac{v_c^{2}}{2g}
+=\frac{p_a}{\gamma}+\left(1+\zeta-\frac{1}{\varepsilon^{2}}\right)\frac{v^{2}}{2g}. \tag{d}
+\]
+
+\textbf{第五步：判断括号内系数的符号。}
+实测 $\varepsilon\approx0.64$，则 $\dfrac{1}{\varepsilon^{2}}=\dfrac{1}{0.64^{2}}\approx2.44$；
+出口局部阻力系数 $\zeta\approx0.5$，故
+\[
+1+\zeta-\frac{1}{\varepsilon^{2}}=1+0.5-2.44=-0.94<0 .
+\]
+于是由式 (d) 得
+\[
+\frac{p_{c,\mathrm{abs}}}{\gamma}=\frac{p_a}{\gamma}-0.94\frac{v^{2}}{2g}<\frac{p_a}{\gamma}
+\qquad\Longleftrightarrow\qquad
+p_{c,\mathrm{abs}}<p_a .
+\]
+
+\textbf{结论：}管嘴收缩断面 $c$-$c$ 处的绝对压强小于大气压，即\textbf{管嘴内存在真空}
+（工程上正是靠这一真空把水「吸」住，使管嘴出流量比同直径孔口出流量大 30\% 左右）。
+\end{jie}
+
+\begin{tishi}
+\textbf{与评分参考的对照：}原答案卷此题的骨架为「对断面 $c$-$c$ 和 2--2 列伯努利方程，有 (a)；
+因为 $A/A_c=$ (b)；$h_{jc\text{-}2}=$ (c)；将式 (b)、(c) 代入式 (a)，并令 $\alpha_c=\alpha_2=1$，
+得到 $p_{c,\mathrm{abs}}/\gamma=\cdots$；可以看出 $p_{c,\mathrm{abs}}<p_a$，说明断面 $c$-$c$ 处于真空状态」。
+式中 (b)、(c) 两处的具体表达式原卷字迹不清，本册按上列标准证法补全；
+\textbf{结论「$p_{c,\mathrm{abs}}<p_a$，断面 $c$-$c$ 处于真空状态」与原卷完全一致}。
+\end{tishi}
+
+\answ{2.（10 分）圆管层流断面最大流速是平均流速 2 倍的证明}
+
+\begin{jie}
+\textbf{已知：}圆管层流速度分布
+\[
+u=\frac{\Delta p}{4\mu l}\left(R^{2}-r^{2}\right),
+\]
+式中 $\Delta p$ 为长为 $l$ 的管段两端压强差，$R$ 为管道半径，$r$ 为径向坐标，$\mu$ 为动力黏度。
+\ \textbf{求：}证明断面最大流速 $u_{\max}=2v$（$v$ 为断面平均流速）。
+
+\textbf{第一步：轴线处速度最大。}$r=0$（管轴处）时 $u$ 取最大值
+\[
+u_{\max}=\frac{\Delta p\,R^{2}}{4\mu l}. \tag{1}
+\]
+
+\textbf{第二步：通过半径 $r$、宽 $\dd r$ 的微小圆环面的流量。}
+微小环面积 $\dd A=2\pi r\,\dd r$：
+\[
+\dd Q=u\,\dd A=\frac{\Delta p\left(R^{2}-r^{2}\right)}{4\mu l}\,2\pi r\,\dd r
+=\frac{\pi\Delta p}{2\mu l}\left(R^{2}r-r^{3}\right)\dd r . \tag{2}
+\]
+
+\textbf{第三步：积分求总流量 $Q$。}
+\[
+Q=\int_0^{R}\frac{\pi\Delta p}{2\mu l}\left(R^{2}r-r^{3}\right)\dd r
+=\frac{\pi\Delta p}{2\mu l}\left[\frac{R^{2}r^{2}}{2}-\frac{r^{4}}{4}\right]_0^{R}
+=\frac{\pi\Delta p}{2\mu l}\cdot\frac{R^{4}}{4}
+=\frac{\pi\Delta p\,R^{4}}{8\mu l}
+=\frac{\pi\Delta p\,d^{4}}{128\mu l}. \tag{3}
+\]
+
+\textbf{第四步：求断面平均流速 $v$。}断面面积 $A=\pi R^{2}$：
+\[
+v=\frac{Q}{A}=\frac{\pi\Delta p\,R^{4}}{8\mu l}\cdot\frac{1}{\pi R^{2}}
+=\frac{\Delta p\,R^{2}}{8\mu l}. \tag{4}
+\]
+
+\textbf{第五步：比较 $u_{\max}$ 与 $v$。}由式 (1) 与式 (4)：
+\[
+\frac{u_{\max}}{v}=\frac{\dfrac{\Delta pR^{2}}{4\mu l}}{\dfrac{\Delta pR^{2}}{8\mu l}}=2
+\qquad\Longrightarrow\qquad
+\boxed{\,u_{\max}=2v\,}.
+\]
+
+\textbf{结论：}圆管层流断面上的最大流速（轴线处）等于断面平均流速的 2 倍，证毕。
+\end{jie}
+
+\begin{tishi}
+原答案卷此题的推导（轴线处速度最大 $u_{\max}=\dfrac{\Delta pR^{2}}{4\mu l}$、微元流量 $\dd Q$、
+积分得 $Q=\dfrac{\pi\Delta pR^{4}}{8\mu l}=\dfrac{\pi\Delta pd^{4}}{128\mu l}$、
+平均流速 $v=\dfrac{\Delta pR^{2}}{8\mu l}$、「可以发现 $u_{\max}=2v$」）与上列证明逐步一致，公式已按原卷影印核对。
+\end{tishi}
+
+\section{六、计算题（共 60 分）}
+
+\answ{1.（8 分）复式水银测压计测水箱水面相对压强}
+
+\begin{jie}
+\textbf{已知（原卷图 4 的读数，单位 m）：}
+水箱盛水，箱顶水面以上气室压强记为 $p_0$（相对压强），箱内水深 $3.0\,\mathrm{m}$；
+箱底接向右的折管，以箱底为基准面，自下而上依次有：
+第一水银面高程 $0$（与箱底同高，水箱侧），第二水银面高程 $1.4$，第三水银面高程 $0.2$；
+右侧立管内水柱高出第三水银面 $2.3\,\mathrm{m}$，开口端高程为 $1.2+1.3=2.5\,\mathrm{m}$。
+取 $\gamma_{\text{水}}=9.81\,\mathrm{kN/m^{3}}$，水银相对密度 $13.6$，即 $\gamma_{\text{银}}=13.6\gamma_{\text{水}}$。
+\ \textbf{求：}水面相对压强 $p_0$。
+
+\textbf{第一步：列静压强方程。}自水箱水面沿测压计路径走到右端开口（大气压），
+沿线各段液体依次为：水柱（下降 $3.0$ m）、水银柱（上升 $1.8$ m）、水柱（上升 $1.3$ m）。故
+\[
+p_0+\gamma_{\text{水}}\times3.0-\gamma_{\text{银}}\times1.8+\gamma_{\text{水}}\times1.3=0 .
+\]
+
+\textbf{第二步：代入数据。}
+\[
+p_0=\left(13.6\times1.8-3.0-1.3\right)\gamma_{\text{水}}
+=\left(24.48-4.3\right)\times9.81\times10^{3}
+=20.18\times9.81\times10^{3}.
+\]
+
+\textbf{第三步：结果。}
+\[
+p_0=1.980\times10^{5}\,\mathrm{Pa}\approx198\,\mathrm{kPa}.
+\]
+
+\textbf{校核：}$1.8\,\mathrm{m}$ 水银柱相当于 $13.6\times1.8=24.48\,\mathrm{m}$ 水柱；
+水箱水深 $3.0\,\mathrm{m}$ 与右侧水柱 $1.3\,\mathrm{m}$ 共相当于 $4.3\,\mathrm{m}$ 水柱，故
+$p_0/\gamma_{\text{水}}=24.48-4.3=20.18\,\mathrm{m}$ 水柱 $=20.18\times9.81=197.97\,\mathrm{kPa}$。
+逐段检查压强：箱底处压强 $p_0+3.0\gamma_{\text{水}}=198.0+29.4=227.4\,\mathrm{kPa}$；
+经 $1.8\,\mathrm{m}$ 水银柱降压 $240.2\,\mathrm{kPa}$ 后约 $-12.8\,\mathrm{kPa}$；
+再经 $1.3\,\mathrm{m}$ 水柱升压 $12.75\,\mathrm{kPa}$ 后约 $-0.05\,\mathrm{kPa}$，
+在有效数字范围内恰好回到开口端的大气压，量级与符号合理。
+\end{jie}
+
+\begin{tishi}
+\textbf{原卷答案与数值差异：}原答案卷此题的算式为
+\[
+p_m=(2.3-1.2)\gamma_{\text{银}}-(2.5-1.2)\gamma_{\text{水}}+(2.5-1.4)\gamma_{\text{银}}-(3.0-1.4)\gamma_{\text{水}}
+=264796\,\mathrm{Pa},
+\]
+即取各段高差的代数和（两段水银、两段水），结果为 $264.796\,\mathrm{kPa}$。
+
+本册按原卷图 4 的实际高程序列（水柱 $3.0$ m、水银柱 $1.8$ m、水柱 $1.3$ m）
+重算得 $p_0\approx198\,\mathrm{kPa}$，与原卷的 $264.796\,\mathrm{kPa}$ \textbf{不一致}，
+差值约 $67\,\mathrm{kPa}$（约 $6.8\,\mathrm{m}$ 水柱），不是有效数字取舍所能解释。
+
+\textbf{差异来源分析：}原卷把高程 $1.2\,\mathrm{m}$ 以上至开口端之间的 $(2.3-1.2)=1.1\,\mathrm{m}$ 段
+也按\textbf{水银柱}计入（$(2.3-1.2)\gamma_{\text{银}}$），
+而本册按图 4 的读法把该段作为\textbf{水柱}处理——图 4 中只有标有「水银」的两段充水银，
+其余为水。两处读法的差别正是 $67\,\mathrm{kPa}$ 的来源。
+\textbf{该段的流体种类请以原卷图 4 影印中标出的「水银」「水」字样为准}（原卷影印见本册附录）；
+本册给出按图读法所得的 $198\,\mathrm{kPa}$，并保留原卷数值 $264.796\,\mathrm{kPa}$ 供对照。
+\end{tishi}
+
+\answ{2.（12 分）半球形盖上的液体总压力}
+
+\begin{jie}
+\textbf{已知：}贮水容器上装有两个半球形盖，球盖直径 $d=0.5\,\mathrm{m}$；
+容器顶盖中心高出水面的距离 $h=2.0\,\mathrm{m}$；侧盖（球心）淹没水深 $H=2.5\,\mathrm{m}$；
+取 $\rho=1000\,\mathrm{kg/m^{3}}$、$g=9.81\,\mathrm{m/s^{2}}$。
+\ \textbf{求：}（1）顶盖所受液体总压力；（2）侧盖所受液体总压力（大小与方向）。
+
+\textbf{（1）顶盖（4 分）。}
+顶盖为半球面，其前、后、左、右四个方向的水平分力大小相等、方向相反，两两抵消，只剩铅垂分力；
+压力体为「球盖投影面积上的柱体减去半球体」：
+\[
+P_z=\rho gV=\rho g\left[\frac{\pi d^{2}}{4}\left(H-\frac{h}{2}\right)-\frac{\pi d^{3}}{12}\right].
+\]
+代入数据：
+\[
+\frac{\pi d^{2}}{4}\left(H-\frac{h}{2}\right)=\frac{\pi\times0.5^{2}}{4}\times(2.5-1.0)
+=0.19635\times1.5=0.29452\,\mathrm{m^{3}},
+\]
+\[
+\frac{\pi d^{3}}{12}=\frac{\pi\times0.5^{3}}{12}=0.03272\,\mathrm{m^{3}},
+\]
+\[
+V=0.29452-0.03272=0.26180\,\mathrm{m^{3}},
+\]
+\[
+P_z=1000\times9.81\times0.26180=2568.3\,\mathrm{N}.
+\]
+
+\textbf{（2）侧盖（8 分）。}
+侧盖所受总压力由铅垂分力和水平分力合成。
+
+\textbf{① 铅垂分力（3 分）。}半球盖的铅垂分力等于半球体积内液体的重量（虚压力体）：
+\[
+P_z=\rho gV=\rho g\frac{\pi d^{3}}{12}
+=1000\times9.81\times0.03272=321.0\,\mathrm{N}.
+\]
+
+\textbf{② 水平分力（3 分）。}半球盖的水平分力等于其铅垂投影面（面积 $A_x=\dfrac{\pi d^{2}}{4}$）
+上形心处的静水总压力，形心处水深即为 $H$：
+\[
+P_x=\rho gh_cA_x=\rho gH\frac{\pi d^{2}}{4}
+=1000\times9.81\times2.5\times0.19635=4815.5\,\mathrm{N}.
+\]
+
+\textbf{③ 总压力大小与方向（2 分）。}
+\[
+P=\sqrt{P_x^{2}+P_z^{2}}
+=\sqrt{4815.5^{2}+321.0^{2}}
+=\sqrt{2.3189\times10^{7}+1.0304\times10^{5}}
+=\sqrt{2.3292\times10^{7}}=4826.2\,\mathrm{N},
+\]
+\[
+\theta=\arctan\frac{P_z}{P_x}=\arctan\frac{321.0}{4815.5}=3.81^{\circ}\approx3^{\circ}49' .
+\]
+
+\textbf{结果：}（1）顶盖总压力 $P_z\approx2568\,\mathrm{N}$（铅垂向下）；
+（2）侧盖总压力 $P\approx4.83\,\mathrm{kN}$，方向与水平面成 $\theta\approx3^{\circ}49'$（斜向上方）。
+\end{jie}
+
+\begin{tishi}
+\textbf{与评分参考的对照：}
+原答案卷的三个数值为：顶盖
+$P_z=\rho g\left[\dfrac{\pi d^{2}}{4}\left(H-\dfrac{h}{2}\right)-\dfrac{\pi d^{3}}{12}\right]=2564.3\,\mathrm{N}$、
+侧盖铅垂分力 $P_z=\rho g\dfrac{\pi d^{3}}{12}=320.5\,\mathrm{N}$、
+侧盖水平分力 $P_x=\rho gH\dfrac{\pi d^{2}}{4}=4808.1\,\mathrm{N}$，
+并给出 $P=\sqrt{P_x^{2}+P_z^{2}}=4818.8\,\mathrm{N}$、$\theta=\arctan\dfrac{320.5}{4808.1}=3^{\circ}51'$。
+
+\textbf{公式与本册一致，数值差异来自重力加速度的取值：}
+原卷取 $\rho g=9.81\times10^{3}=9810$ 时，本册按同一个 $9810$ 精确复算得
+$\rho g=9810\,\mathrm{N/m^{3}}$（即 $g=9.81$）：
+$P_z^{(1)}=9810\times0.26180=2568.3\,\mathrm{N}$（原卷 $2564.3\,\mathrm{N}$，差 $4.0\,\mathrm{N}$）；
+$P_z^{(2)}=9810\times0.03272=321.0\,\mathrm{N}$（原卷 $320.5\,\mathrm{N}$，差 $0.5\,\mathrm{N}$）；
+$P_x=9810\times2.5\times0.19635=4815.5\,\mathrm{N}$（原卷 $4808.1\,\mathrm{N}$，差 $7.4\,\mathrm{N}$）；
+$P=4826.2\,\mathrm{N}$（原卷 $4818.8\,\mathrm{N}$）；$\theta=3^{\circ}49'$（原卷 $3^{\circ}51'$）。
+若原卷取 $\rho g=9800$（$g=9.8$），则顶盖 $2565.6\,\mathrm{N}$、侧盖铅垂分力 $320.6\,\mathrm{N}$、
+侧盖水平分力 $4810.6\,\mathrm{N}$、$P=4821.3\,\mathrm{N}$，与原卷更为接近。
+\textbf{可见原卷三个数值与 $g=9.8\,\mathrm{m/s^{2}}$ 的口径几乎完全吻合}，
+本册按 $g=9.81$ 给出复算值，并在此注明原卷的取值口径。
+\end{tishi}
+
+\answ{3.（10 分）泄水管细管中水的上升高度}
+
+\begin{jie}
+\textbf{已知：}大水箱水面与管道出口中心的高差 $H=1\,\mathrm{m}$；
+大管直径 $d_1=5\,\mathrm{cm}$，收缩段直径 $d_2=4\,\mathrm{cm}$；
+收缩断面处竖直向下接细管 $B$，其下端插入敞口容器 $A$ 的水中；
+不计水头损失，取 $\alpha_2=\alpha_3=1.0$。
+\ \textbf{求：}容器 $A$ 中的水是否沿管 $B$ 上升？若上升，上升高度 $h$ 为多少？
+
+\textbf{（1）取断面：}水箱液面为 1--1 断面，管道出口断面（收缩段下游）为 2--2 断面，
+接泄水管处（收缩段上游侧）取断面 3--3。
+
+\textbf{（2）列 1--1、2--2 断面能量方程（以管道中心线为基准面）：}
+\[
+H=\frac{\alpha_2v_2^{2}}{2g}
+\qquad\Longrightarrow\qquad
+v_2=\sqrt{\frac{2gH}{\alpha_2}}=\sqrt{2\times9.81\times1}=4.429\,\mathrm{m/s}.
+\]
+
+\textbf{（3）列 2--2、3--3 断面能量方程：}
+\[
+\frac{p_3}{\rho g}+\frac{\alpha_3v_3^{2}}{2g}=\frac{\alpha_2v_2^{2}}{2g}
+\qquad\Longrightarrow\qquad
+\frac{p_3}{\rho g}=\frac{1}{2g}\left(v_2^{2}-v_3^{2}\right).
+\]
+
+\textbf{（4）由连续性方程求 $v_3$：}
+\[
+v_3A_3=v_2A_2
+\qquad\Longrightarrow\qquad
+v_3=v_2\left(\frac{d_2}{d_1}\right)^{2}.
+\]
+
+\textbf{（5）判断是否上升并求上升高度 $h$。}
+因 $d_2<d_1$，故 $v_3<v_2$，于是 $p_3<0$（3--3 断面为负压），
+\textbf{容器 $A$ 中的水会沿管 $B$ 上升}。上升高度即该处真空度（水柱高）：
+\[
+h=-\frac{p_3}{\rho g}=\frac{1}{2g}\left(v_3^{2}-v_2^{2}\right)
+=\frac{v_2^{2}}{2g}\left[\left(\frac{d_1}{d_2}\right)^{4}-1\right]
+=H\left[\left(\frac{d_1}{d_2}\right)^{4}-1\right],
+\]
+代入 $d_1/d_2=5/4=1.25$、$H=1\,\mathrm{m}$：
+\[
+h=1\times\left[\left(\frac{5}{4}\right)^{4}-1\right]
+=1\times(2.4414-1)=1.4414\,\mathrm{m}\approx1.44\,\mathrm{m}=144\,\mathrm{cm}.
+\]
+
+\textbf{结果：}容器 $A$ 中的水会沿管 $B$ 上升，上升高度
+\[
+\boxed{\,h=H\left[\left(\frac{d_1}{d_2}\right)^{4}-1\right]=1.44\,\mathrm{m}=144\,\mathrm{cm}\,}.
+\]
+\end{jie}
+
+\begin{tishi}
+原答案卷此题的推导与上式一致（OCR 把 $\left(\dfrac{d_1}{d_2}\right)^{4}$ 读成「$()^{4}$」、
+把 $\dfrac{5}{4}$ 的指数读丢，已按原卷影印核对确认）；
+原卷印出的中间步骤「$=100[(5/4)^{4}-1]=144(\mathrm{cm})=1.44(\mathrm{m})$」中的 $100$
+是 $1\,\mathrm{m}=100\,\mathrm{cm}$ 的单位换算，$(5/4)^{4}-1=1.4414$，
+故 $h=1.4414\,\mathrm{m}=144.14\,\mathrm{cm}$，与原卷印出的 $144\,\mathrm{cm}$ 一致（舍入到厘米）。
+\end{tishi}
+
+\answ{4.（14 分）溢流坝上水流对单宽坝段的水平作用力}
+
+\begin{jie}
+\textbf{已知：}平底矩形断面河道中筑溢流坝，坝高 $a$、坝上水头 $H=2.0\,\mathrm{m}$；
+坝下游收缩断面处水深 $h_{c0}=0.8\,\mathrm{m}$；
+溢流坝水头损失 $h_w=2.5\dfrac{v_c^{2}}{2g}$（$v_c$ 为收缩断面流速）；
+不计行近流速（$v_0\approx0$）；取动能及动量校正系数 $\alpha_1=\alpha_2=\beta_1=\beta_2=1.0$，
+单宽 $b=1\,\mathrm{m}$，$\rho=1000\,\mathrm{kg/m^{3}}$、$g=9.81\,\mathrm{m/s^{2}}$。
+\ \textbf{求：}水流对单宽坝段的水平作用力（大小和方向）。
+
+\textbf{（1）列能量方程求收缩断面流速 $v_c$（5 分）。}
+以渠底为基准面，对坝前断面（水深 $a+H$，行近流速忽略）与收缩断面（水深 $h_{c0}$、流速 $v_c$）列能量方程：
+\[
+(a+H)=h_{c0}+\frac{\alpha_1v_c^{2}}{2g}+2.5\frac{v_c^{2}}{2g}
+=h_{c0}+3.5\frac{v_c^{2}}{2g}.
+\]
+原答案卷代入的上游水深为 $a+H=32\,\mathrm{m}$，即
+\[
+32=0.8+3.5\times\frac{v_c^{2}}{2g}
+\qquad\Longrightarrow\qquad
+\frac{v_c^{2}}{2g}=\frac{32-0.8}{3.5}=\frac{31.2}{3.5}=8.9143\,\mathrm{m},
+\]
+\[
+v_c=\sqrt{2\times9.81\times8.9143}=\sqrt{174.90}=13.22\,\mathrm{m/s}.
+\]
+
+\textbf{（2）求单宽流量 $Q$（1 分）。}
+\[
+Q=v_ch_{c0}\times1.0=13.22\times0.8\times1.0=10.58\,\mathrm{m^{3}/(s\cdot m)}.
+\]
+
+\textbf{（3）列动量方程求水流对坝的作用力（6 分）。}
+取坝前断面（1--1）与收缩断面（2--2）之间的水体为控制体，沿流向写动量方程，
+设坝体对水流的反作用力为 $R$（方向与水流相反）：
+\[
+P_1-P_2-R=\rho Q\left(\beta_2v_c-\beta_1v_1\right)\approx\rho Qv_c ,
+\]
+其中两断面压力（单宽）为
+\[
+P_1=\frac{1}{2}\gamma(a+H)^{2}b=\frac{1}{2}\times9810\times32^{2}\times1.0=5022.7\,\mathrm{kN},
+\]
+\[
+P_2=\frac{1}{2}\gamma h_{c0}^{2}b=\frac{1}{2}\times9810\times0.8^{2}\times1.0=3.14\,\mathrm{kN}.
+\]
+代入数据：
+\[
+R=\frac{1}{2}\times9810\times32^{2}-\frac{1}{2}\times9810\times0.8^{2}-1000\times10.58\times13.22,
+\]
+\[
+R=5022.7-3.14-139.87=4879.7\,\mathrm{kN}.
+\]
+
+\textbf{（4）结果。}
+坝体对水流的反作用力 $R=4879.7\,\mathrm{kN}$，方向与水流相反（指向上游）；
+由牛顿第三定律，\textbf{水流对单宽坝段的水平作用力}
+\[
+\boxed{F=R=4879.7\,\mathrm{kN}},\qquad\textbf{方向水平指向下游（$\rightarrow$）}.
+\]
+
+\textbf{校核：}$P_1$ 与 $P_2$ 相差三个数量级（$32^{2}$ 对 $0.8^{2}$）；
+动量项 $\rho Qv_c=139.9\,\mathrm{kN}$ 远小于压力项，作用力几乎等于坝前水深静水总压力之一半，量级合理。
+\end{jie}
+
+\begin{tishi}
+\textbf{与评分参考的对照：}原答案卷的算式为
+$(a+H)=h_{c0}+\dfrac{\alpha_1v_c^{2}}{2g}+2.5\dfrac{v_c^{2}}{2g}$、
+代入「$32=0.8+3.5v_c^{2}/(2g)$」得 $v_c=13.22\,\mathrm{m/s}$、$Q=10.58\,\mathrm{m^{3}/s}$，
+动量方程 $R=\dfrac{1}{2}\times9810\times32^{2}-\dfrac{1}{2}\times9810\times0.8^{2}-1000\times10.58\times13.22
+=4879.71\,\mathrm{kN}(\rightarrow)$。
+上列四步本册已逐步复算，\textbf{与原卷的 $v_c=13.22$、$Q=10.58$、$R=4879.71\,\mathrm{kN}$ 完全吻合}。
+
+\textbf{提示（原卷数据的内部不一致）：}该组数值要求上游水深 $a+H=32\,\mathrm{m}$，
+而试题给出坝高 $a=30\,\mathrm{m}$、坝上水头 $H=2.0\,\mathrm{m}$，二者之和恰为 $32\,\mathrm{m}$，
+故原答案自洽。但试题 OCR 中「坝高 $a=30\,\mathrm{m}$」与本题其余尺度（$H=2.0\,\mathrm{m}$、$h_{c0}=0.8\,\mathrm{m}$）
+量级相近，未见矛盾；\textbf{若原卷坝高实为 $3.0\,\mathrm{m}$，则 $a+H=5\,\mathrm{m}$，本题全部数值需另算}。
+坝高的原卷字形请对照原卷影印复核（本册按试题字面 $a=30\,\mathrm{m}$ 编排，未作改动）。
+
+\textbf{另：}本题属\textbf{明渠流与堰流}内容（旧大纲 / 复试范围），现行 818 大纲第 1--8 章不要求。
+\end{tishi}
+
+\answ{5.（8 分）平面均匀流的势函数、流函数与复势}
+
+\begin{jie}
+\textbf{已知：}平面均匀流速度大小 $v_\infty$，速度方向与 $x$ 轴正向夹角 $\alpha$。
+\ \textbf{求：}势函数 $\phi$、流函数 $\psi$ 与复势 $W$。
+
+\textbf{（1）速度分量（1 分）。}
+\[
+v_x=v_\infty\cos\alpha,\qquad v_y=v_\infty\sin\alpha.
+\]
+
+\textbf{（2）势函数（2 分）。}
+由 $\dd\phi=\dfrac{\partial\phi}{\partial x}\dd x+\dfrac{\partial\phi}{\partial y}\dd y=v_x\dd x+v_y\dd y$ 积分：
+\[
+\phi=\int\left(v_x\dd x+v_y\dd y\right)=v_\infty\left(x\cos\alpha+y\sin\alpha\right).
+\]
+
+\textbf{（3）流函数（2 分）。}
+由 $\dd\psi=-v_y\dd x+v_x\dd y$ 积分：
+\[
+\psi=\int\left(-v_y\dd x+v_x\dd y\right)
+=v_\infty\left(-x\sin\alpha+y\cos\alpha\right).
+\]
+
+\textbf{（4）复势（3 分）。}
+\[
+W=\phi+\mathrm{i}\psi
+=v_\infty\left(x\cos\alpha+y\sin\alpha\right)+\mathrm{i}v_\infty\left(-x\sin\alpha+y\cos\alpha\right),
+\]
+整理得
+\[
+W=v_\infty(x+\mathrm{i}y)\left(\cos\alpha-\mathrm{i}\sin\alpha\right)
+=v_\infty z\mathrm{e}^{-\mathrm{i}\alpha},
+\qquad z=x+\mathrm{i}y .
+\]
+
+\textbf{结果：}
+\[
+\boxed{\phi=v_\infty\left(x\cos\alpha+y\sin\alpha\right)},\qquad
+\boxed{\psi=v_\infty\left(y\cos\alpha-x\sin\alpha\right)},\qquad
+\boxed{W=v_\infty z\mathrm{e}^{-\mathrm{i}\alpha}} .
+\]
+
+\textbf{校核：}$\dfrac{\partial\phi}{\partial x}=v_\infty\cos\alpha=v_x$、
+$\dfrac{\partial\phi}{\partial y}=v_\infty\sin\alpha=v_y$；
+$\dfrac{\partial\psi}{\partial y}=v_\infty\cos\alpha=v_x$、
+$-\dfrac{\partial\psi}{\partial x}=v_\infty\sin\alpha=v_y$，均与题设一致。
+\end{jie}
+
+\begin{tishi}
+原答案卷此题的解答为
+$\phi=\displaystyle\int(v_x\dd x+v_y\dd y)=v_\infty(x\cos\alpha+y\sin\alpha)$、
+$\psi=\displaystyle\int(-v_y\dd x+v_x\dd y)=v_\infty(-x\sin\alpha+y\cos\alpha)$、
+$W=\phi+\mathrm{i}\psi=v_\infty(x\cos\alpha+y\sin\alpha)+\mathrm{i}v_\infty(-x\sin\alpha+y\cos\alpha)
+=v_\infty(x+\mathrm{i}y)(\cos\alpha-\mathrm{i}\sin\alpha)=v_\infty z\mathrm{e}^{-\mathrm{i}\alpha}$，
+与上列结果\textbf{逐字一致}（已用原卷影印核对）。
+\end{tishi}
+
+\answ{6.（8 分）突然缩小管路的水头损失}
+
+\begin{jie}
+\textbf{已知：}水平突然缩小管路，$d_1=15\,\mathrm{cm}=0.15\,\mathrm{m}$，$d_2=10\,\mathrm{cm}=0.10\,\mathrm{m}$；
+水的流量 $Q=2\,\mathrm{m^{3}/min}=\dfrac{2}{60}=0.03333\,\mathrm{m^{3}/s}$；
+水银测压计测得水银面高差 $h=8\,\mathrm{cm}=0.08\,\mathrm{m}$；
+取 $\gamma_{\text{水}}=9.81\,\mathrm{kN/m^{3}}$，水银相对密度 $13.6$。
+\ \textbf{求：}突然缩小的局部水头损失 $h_j$。
+
+\textbf{（1）列突然缩小前后断面的伯努利方程（3 分）。}水平管路 $z_1=z_2$：
+\[
+\frac{p_1}{\gamma}+\frac{v_1^{2}}{2g}
+=\frac{p_2}{\gamma}+\frac{v_2^{2}}{2g}+h_j . \tag{1}
+\]
+
+\textbf{（2）由测压计求压强水头差（2 分）。}
+水银压差计读数与压强差的关系为
+\[
+\frac{p_1-p_2}{\gamma_{\text{水}}}
+=\left(\frac{\gamma_{\text{银}}}{\gamma_{\text{水}}}-1\right)h=12.6h=12.6\times0.08=1.008\,\mathrm{m}.
+\]
+
+\textbf{（3）求两断面平均流速（2 分）。}
+\[
+A_1=\frac{\pi d_1^{2}}{4}=\frac{\pi\times0.15^{2}}{4}=0.017671\,\mathrm{m^{2}},\qquad
+v_1=\frac{Q}{A_1}=\frac{0.03333}{0.017671}=1.886\,\mathrm{m/s},
+\]
+\[
+A_2=\frac{\pi d_2^{2}}{4}=\frac{\pi\times0.10^{2}}{4}=0.007854\,\mathrm{m^{2}},\qquad
+v_2=\frac{Q}{A_2}=\frac{0.03333}{0.007854}=4.244\,\mathrm{m/s}.
+\]
+
+\textbf{（4）求突然缩小的水头损失（1 分）。}由式 (1)：
+\[
+h_j=\frac{p_1-p_2}{\gamma_{\text{水}}}+\frac{v_1^{2}-v_2^{2}}{2g}
+=1.008+\frac{1.886^{2}-4.244^{2}}{2\times9.81},
+\]
+\[
+\frac{v_1^{2}-v_2^{2}}{2g}=\frac{3.557-18.012}{19.62}=\frac{-14.455}{19.62}=-0.7368\,\mathrm{m},
+\]
+\[
+h_j=1.008-0.737=0.271\,\mathrm{m}\approx0.27\,\mathrm{m}.
+\]
+
+\textbf{结果：}突然缩小的水头损失
+\[
+\boxed{\,h_j=12.6h+\frac{v_1^{2}-v_2^{2}}{2g}=0.271\,\mathrm{m}\ \text{水柱}\,}.
+\]
+\end{jie}
+
+\begin{tishi}
+\textbf{与原卷的一致性：}原答案卷此题的算式为
+「$h_j=\dfrac{p_1-p_2}{\gamma}+\dfrac{1}{2g}\left(v_1^{2}-v_2^{2}\right)$，
+由测压计知 $\dfrac{p_1-p_2}{\gamma_{\text{水}}}=\left(\dfrac{\gamma_{\text{银}}-\gamma_{\text{水}}}{\gamma_{\text{水}}}\right)h=12.6h$，
+$v_1=\dfrac{4Q}{\pi d_1^{2}}=\dfrac{4\times2}{60\pi\times0.15^{2}}=1.886\,\mathrm{m/s}$，
+$v_2=\dfrac{4Q}{\pi d_2^{2}}=\dfrac{4\times2}{60\pi\times0.1^{2}}=4.244\,\mathrm{m/s}$，
+所以 $h_j=12.6\times0.08+\dfrac{1}{2\times9.81}\left(1.886^{2}-4.244^{2}\right)=0.271\,\mathrm{m}$ 水柱」，
+本册逐字复算，\textbf{结果 $0.271\,\mathrm{m}$ 与原卷完全一致}。
+
+\textbf{需要指出的笔误：}原答案卷的流速式写成 $\dfrac{4Q}{60\pi d^{2}}$，
+其中分母的 $60$ 是流量由 $\mathrm{m^{3}/min}$ 换算为 $\mathrm{m^{3}/s}$ 的因子，
+\emph{应与 $Q$ 相乘（即写成 $4Q/(60\pi d^{2})$ 并令 $Q=2$）而不是把 $\pi d^{2}$ 也除以 $60$}；
+按原卷的排印形式会把流速算成约 $0.031\,\mathrm{m/s}$，
+而卷面又直接写出 $1.886\,\mathrm{m/s}$ 与 $4.244\,\mathrm{m/s}$（数值正确）。
+本册已按正确形式 $v=\dfrac{4Q}{\pi d^{2}}$（$Q=2/60\,\mathrm{m^{3}/s}$）写出，并保留原卷的排印形式供对照。
+\end{tishi}

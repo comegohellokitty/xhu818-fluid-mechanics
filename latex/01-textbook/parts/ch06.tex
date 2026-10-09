@@ -1,0 +1,332 @@
+\chapter{相似理论与量纲分析}
+
+\begin{yijubox}
+\textbf{考情依据（E1／E2／E4／E5）}：E1《8-1考情分析.pptx》slide33：第六章相似理论与量纲分析＝\textbf{量纲转化、相似理论}；slide16：填空常考名词定义与小计算。E2《9-1考点分析.pptx》：第六到第八章以填空、判断、选择为主，掌握\textbf{基本概念＋公式套用}即可。\textbf{E4 历年真题}：本章在 2014--2022 年反复出现——2014 选择 9（切应力 $\tau$ 的量纲）、选择 10（有压管流动力相似应选的准则）；2016 填空 3（$l$、$v$、$g$ 的无量纲组合）、填空 4（管道阀门实验的相似准则）；2018 选择 5、2019 选择 5（无量纲组合）；2019 判断 2（$\Fr$ 的物理意义）、判断 8（瑞利法的量纲指数）；2020 选择 7（水泵功率 $N$ 的量纲分析）、判断 8、判断 9、判断 10；2021 简答 3（有压管流与明渠各选哪个准则）；2022 单选 9（管道阀门实验）。\textbf{E5 题库}（10.pdf）：选择 11（运动黏滞系数的量纲）、选择 12（雷诺准则）、选择 15（风机并联风量）、问答 2（泵与风机标准条件与相似换算）。
+
+\textbf{本章结论}：本章以填空、判断、选择为主，偶有小计算，考的是\textbf{概念辨析＋公式套用}。复习抓住两条主线——\textbf{相似理论}（三个相似层次、各类相似准则）与\textbf{量纲分析}（量纲和谐、瑞利法、$\pi$ 定理）。
+\end{yijubox}
+
+\section{相似理论}
+
+\begin{kaodian}{1}{力学相似的三个层次}
+两个流动现象相似，是指它们在\textbf{几何相似}的前提下，对应点上的\textbf{运动学量、动力学量}都成比例。工程上把相似分成三个层次，逐层加深。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+层次 & 要求 & 地位 \\
+\midrule
+几何相似 & 对应长度成比例（$\lambda_l$）、对应角相等 & 前提，必要条件 \\
+运动相似 & 对应点速度、加速度方向相同、大小成比例 & 必要条件 \\
+动力相似 & 对应点同名力方向相同、大小成比例 & 核心，充分条件 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{三个层次的关系}：几何相似是前提；几何相似加上运动相似，等价于对应点速度场相似；只有再加上动力相似，现象才称为\textbf{完全相似}（力学相似）。三者的桥梁是牛顿数 $Ne=F/(\rho l^2 v^2)$——动力相似的实质就是\textbf{原型与模型的牛顿数相等}。
+\end{kaodian}
+
+\begin{gongshi}{几何相似——长度比尺}
+\[ \lambda_l=\frac{l_1}{l_2},\qquad \lambda_A=\lambda_l^{2},\qquad \lambda_V=\lambda_l^{3} \]
+\textbf{含义：}下标 1 为原型、2 为模型；$\lambda_l$ 是相似现象的第一特征参数，面积比尺、体积比尺都是它的幂。
+\textbf{适用条件：}一切模型试验的前提；模型按同一比例尺缩小（正态模型）。若三个方向比尺不同，则为变态模型，不能直接套用上式。
+\end{gongshi}
+
+\begin{gongshi}{运动相似——速度比尺与时间比尺}
+\[ \lambda_v=\frac{v_1}{v_2}=\frac{\lambda_l}{\lambda_t},\qquad \lambda_t=\frac{\lambda_l}{\lambda_v},\qquad \lambda_a=\frac{\lambda_v}{\lambda_t}=\frac{\lambda_v^{2}}{\lambda_l} \]
+\textbf{含义：}$\lambda_v$ 为速度比尺，$\lambda_t$ 为时间比尺；三式说明几何相似一旦确定，速度相似与时间相似只能独立一个。
+\textbf{适用条件：}用于把模型的流速、历时换算到原型；非定常流动中 $\lambda_t$ 还必须与周期性相似准则 $\mathrm{St}$ 一致。
+\end{gongshi}
+
+\begin{gongshi}{动力相似——力比尺}
+\[ \lambda_F=\frac{F_1}{F_2},\qquad Ne=\frac{F}{\rho l^{2}v^{2}} \]
+\textbf{含义：}$\lambda_F$ 为同名力比尺；$Ne$ 为牛顿数（力的无量纲化），同名力（重力、黏性力、压力、弹性力、表面张力）都要方向相同且大小成比。
+\textbf{适用条件：}动力相似是流动相似的\textbf{充分条件}，也是模型试验成败的关键；实际只能做到主导力相似（局部动力相似）。
+\end{gongshi}
+
+\textbf{常考题型：}选择／填空（"几何相似与运动相似是必要条件、动力相似是充分条件"；"牛顿数表示什么"）。\quad\textbf{重要度 \xstarfull{3}}\quad\yiju{E4 2020 判断 8（动力相似是流动相似的主导因素）；E1 slide33（相似理论）}\quad\nandu{易}
+
+\begin{kaodian}{2}{相似三定理（相似正定理、逆定理、$\pi$ 定理）}
+相似三定理是把"现象相似"从几何直观提升为可运算判据的桥梁，是本章的理论骨架。
+
+\begin{gongshi}{相似正定理与逆定理}
+\[ \text{正定理：现象相似} \Rightarrow \text{同名相似准数相等} \]
+\[ \text{逆定理：单值条件相似，且同名准数相等} \Rightarrow \text{现象相似} \]
+\textbf{含义：}正定理说明相似准数（准则）是相似的\textbf{必然结果}，用来判断、换算；逆定理说明相似准数是相似的\textbf{充分条件}，用来设计模型试验。
+\textbf{适用条件：}逆定理的两个条件缺一不可——单值条件（几何、物性、边界、初始条件）相似，并且同名准数相等。
+\end{gongshi}
+
+\begin{gongshi}{$\pi$ 定理（布金汉定理）}
+\[ f(x_1,x_2,\dots,x_n)=0 \;\Longrightarrow\; F(\pi_1,\pi_2,\dots,\pi_{n-m})=0 \]
+\textbf{含义：}若一个物理现象涉及 $n$ 个物理量，其中含 $m$ 个基本量纲（力学问题 $m=3$：M、L、T），则这 $n$ 个量之间的规律可以化为 $n-m$ 个无量纲数群（$\pi$ 项）之间的函数关系。
+\textbf{适用条件：}适用于物理量多、难以直接用瑞利法的场合；关键是选好 $m$ 个量纲独立的重复变量。
+\end{gongshi}
+
+\textbf{常考题型：}填空／判断／选择（"相似的正定理说明什么""$\pi$ 定理能减少几个变量"）。\quad\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33（第六章＝量纲转化、相似理论）；E2（掌握基本概念即可）}\quad\nandu{中}
+\end{kaodian}
+
+\begin{kaodian}{3}{三大相似准则：$\Rey$、$\Eu$、$\Fr$}
+相似准则（相似准数）是无量纲数群，它等于两种力的比值，因此\textbf{准确写出物理意义比背公式更重要}——这是填空题的高频点。
+
+\begin{gongshi}{雷诺数 $\Rey$}
+\[ \Rey=\frac{\rho v d}{\mu}=\frac{v d}{\nu} \]
+\textbf{含义：}$\Rey$ 表示\textbf{惯性力与黏性力之比}（黏性力相似准则）。$\Rey$ 小说明黏性力占主导，流动为层流；$\Rey$ 大说明惯性力占主导，容易失稳、发展为湍流。
+\textbf{适用条件：}\textbf{一切黏性力主导的流动必须满足}：管流、绕流、边界层、缝隙流；雷诺模型（封闭流场、管内流动）以此为主要准则。
+\end{gongshi}
+
+\begin{gongshi}{欧拉数 $\Eu$}
+\[ \Eu=\frac{\Delta p}{\rho v^{2}} \]
+\textbf{含义：}$\Eu$ 表示\textbf{压力与惯性力之比}（压力相似准则），也等于压强系数；它常含待求的压强差。
+\textbf{适用条件：}用于把模型的压强差换算到原型；$\Eu$ 中常含待求量，故一般作\textbf{非定性准则}，由其他准则（如 $\Rey$）算出后反求压强。
+\end{gongshi}
+
+\begin{gongshi}{弗劳德数 $\Fr$}
+\[ \Fr=\frac{v^{2}}{gl} \]
+\textbf{含义：}$\Fr$ 表示\textbf{惯性力与重力之比}（重力相似准则）；$\Fr$ 相等时重力场相似，自由表面波形相似。
+\textbf{适用条件：}重力起主导作用的流动：明渠、堰流、水跃、船舶兴波；这类模型称为弗劳德模型。
+\end{gongshi}
+
+\begin{yicuo}
+\textbf{易错：}相似准则填空考的是"表示的物理意义"，不是公式。$\Rey$＝惯性力与黏性力之比，$\Eu$＝压力与惯性力之比，$\Fr$＝惯性力与重力之比——三者分母都是惯性力，别把分子分母对调。此外 $\Fr$ 还有 $v/\sqrt{gl}$ 的写法，两者互为平方，判断 $\Fr$ 大小关系时不受影响。
+\end{yicuo}
+
+\textbf{常考题型：}选择／填空（题库 10.pdf 选择第 12 题考"雷诺准则"）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2014 选择 10（有压管流动力相似→雷诺准则）；E4 2016 填空 4、2022 单选 9（管道阀门实验→雷诺准则）；E4 2019 判断 2（$\Fr$ 的物理意义）；E5 题库选择 12（雷诺准则）}\quad\nandu{易}
+\end{kaodian}
+
+\begin{kaodian}{4}{其他准则：$\mathrm{Ma}$、$\mathrm{St}$、$\mathrm{We}$、$\mathrm{Ca}$（一般了解）}
+\begin{gongshi}{马赫数 $\mathrm{Ma}$ 与斯特劳哈尔数 $\mathrm{St}$}
+\[ \mathrm{Ma}=\frac{v}{c},\qquad \mathrm{St}=\frac{l}{tv} \]
+\textbf{含义：}$\mathrm{Ma}$ 表示\textbf{惯性力与弹性力之比}（压缩性／弹性力相似准则），$v$ 为流速、$c$ 为当地声速；$\mathrm{St}$ 表示\textbf{非定常流动的时间相似}（周期性／斯特劳哈尔准则），$t$ 为特征时间或周期。
+\textbf{适用条件：}$\mathrm{Ma}$ 用于气体高速流动与可压缩流，$\mathrm{Ma}>0.3$ 必须考虑压缩性；$\mathrm{St}$ 用于非定常流、脉动流、螺旋桨与叶轮机械的周期性流动。
+\end{gongshi}
+
+\begin{gongshi}{韦伯数 $\mathrm{We}$ 与柯西数 $\mathrm{Ca}$}
+\[ \mathrm{We}=\frac{\rho v^{2}l}{\sigma},\qquad \mathrm{Ca}=\frac{\rho v^{2}}{K} \]
+\textbf{含义：}$\mathrm{We}$ 表示\textbf{惯性力与表面张力之比}，$\sigma$ 为表面张力系数；$\mathrm{Ca}$ 表示\textbf{惯性力与弹性力之比}，$K$ 为体积弹性模量。
+\textbf{适用条件：}$\mathrm{We}$ 用于液滴、液膜、毛细现象、表面张力影响显著的细尺度流动；$\mathrm{Ca}$ 用于水击、可压缩流的弹性变形问题。二者一般只作了解。
+\end{gongshi}
+
+\textbf{常考题型：}选择（"$\mathrm{Ma}$ 表示哪两种力之比"）。\quad\textbf{重要度 \xstarfull{3}}\quad\yiju{E4 2020 判断 9（可压缩流相似要求柯西数相等）；E1 slide16（填空考名词定义）}\quad\nandu{易}
+\end{kaodian}
+
+\begin{kaodian}{5}{定性准则与非定性准则——相似准则的选取原则}
+\textbf{定性准则}（独立准则、已定准则）：只由单值条件中的已知量组成，可以事先算出的准则，如 $\Rey$、$\Fr$、
+$\mathrm{Ma}$、$\mathrm{St}$。\textbf{非定性准则}（待定准则、被定准则）：含有待求物理量的准则，如 $\Eu$ 中的 $\Delta p$，一般作为待求量，由定性准则反求。
+
+\begin{banfa}
+\textbf{相似准则的选取套路：}① 判断由哪种力主导——黏性力主导（管流、绕流）选 $\Rey$，重力主导（明渠、堰流、船舶兴波）选 $\Fr$，压缩性主导（高速气流）选 $\mathrm{Ma}$，有周期性选 $\mathrm{St}$；② 检查能否同时满足：$\Rey$ 与 $\Fr$ 对同一试验流体互相矛盾（$\Rey$ 要求流速大、$\Fr$ 要求流速小），一般\textbf{不可能同时满足全部准则}；③ 按主导力取舍、放弃次要准则，做\textbf{局部相似（部分相似）}，必要时改用变黏度液体、风洞加压等手段作近似相似处理。
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错：}模型试验不可能同时满足全部相似准则。若同时要求 $\Rey$ 相等和 $\Fr$ 相等，在模型缩小、用水作试验流体时两个条件互相冲突（$\Rey$ 要求 $v$ 大，$\Fr$ 要求 $v$ 小），必须说明\textbf{按主导力选取、只保证主要准则相等}（部分相似／近似相似），考试中漏掉这句会失分。
+\end{yicuo}
+
+\textbf{常考题型：}问答／判断（"为什么模型试验不能同时满足全部相似准则"）。\quad\textbf{重要度 \xstarfull{3}}\quad\yiju{E4 2021 简答 3（有压管流与明渠分别选哪个准则）；E1 slide33（相似理论）}\quad\nandu{中}
+\end{kaodian}
+
+\section{量纲分析}
+
+\begin{kaodian}{6}{量纲与单位：量纲和谐原理的前提}
+\textbf{量纲（因次）}是物理量\textbf{质的表征}，与单位制无关；\textbf{单位}是量纲的\textbf{具体尺度}（量的表征）。基本量纲：力学问题取 \textbf{M（质量）、L（长度）、T（时间）}，涉及温度时再加 \textbf{$\Theta$}；其余为导出量纲。任一物理量的量纲可写成幂积形式。
+
+\begin{gongshi}{量纲公式}
+\[ [x]=M^{\alpha}L^{\beta}T^{\gamma} \]
+\textbf{含义：}$[x]$ 表示物理量 $x$ 的量纲，$\alpha,\beta,\gamma$ 为量纲指数；若三者全为零，$[x]=1$，则 $x$ 为无量纲量。
+\textbf{适用条件：}用于量纲齐次性检验、确定公式中指数、构造无量纲数群；无量纲量不随单位制改变，这是量纲分析的立足点。
+\end{gongshi}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\toprule
+物理量 & 符号 & 量纲 & 单位（SI） \\
+\midrule
+长度 & $l$ & $\mathrm{L}$ & $\mathrm{m}$ \\
+时间 & $t$ & $\mathrm{T}$ & $\mathrm{s}$ \\
+速度 & $v$ & $\mathrm{LT^{-1}}$ & $\mathrm{m\cdot s^{-1}}$ \\
+密度 & $\rho$ & $\mathrm{ML^{-3}}$ & $\mathrm{kg\cdot m^{-3}}$ \\
+动力黏度 & $\mu$ & $\mathrm{ML^{-1}T^{-1}}$ & $\mathrm{Pa\cdot s}$ \\
+\textbf{运动黏度} & $\nu$ & $\mathrm{L^{2}T^{-1}}$ & $\mathrm{m^{2}\cdot s^{-1}}$ \\
+力 & $F$ & $\mathrm{MLT^{-2}}$ & $\mathrm{N}$ \\
+压强 & $p$ & $\mathrm{ML^{-1}T^{-2}}$ & $\mathrm{Pa}$ \\
+表面张力系数 & $\sigma$ & $\mathrm{MT^{-2}}$ & $\mathrm{N\cdot m^{-1}}$ \\
+功率 & $P$ & $\mathrm{ML^{2}T^{-3}}$ & $\mathrm{W}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{yicuo}
+\textbf{易错：}量纲与单位不是一回事。量纲是物理量\textbf{质的表征}，与单位制的选择无关；单位是量纲的具体尺度，同一量纲可以有很多单位（长度量纲 L 可以是 m、cm、ft）。因此"量纲和单位相同"是错误的判断。另一高频真题（题库 10.pdf 选择第 11 题）：\textbf{运动黏滞系数的量纲是 $\mathrm{L^{2}T^{-1}}$}，不是 $\mathrm{L^{2}T}$。速度是 $\mathrm{LT^{-1}}$、加速度是 $\mathrm{LT^{-2}}$。
+\end{yicuo}
+
+\textbf{常考题型：}填空／选择（"量纲与单位的区别""某物理量的量纲是什么"）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2014 选择 9（切应力 $\tau$ 的量纲）；E4 2020 判断 10（量纲是物理量的实质）；E5 题库选择 11（运动黏滞系数的量纲 $\mathrm{L^{2}T^{-1}}$）}\quad\nandu{易}
+\end{kaodian}
+
+\begin{kaodian}{7}{量纲和谐原理（量纲齐次性原理）}
+\begin{gongshi}{量纲和谐原理}
+\[ [A]=[B]=[C]=\cdots \quad \text{（同一方程各项量纲必须相同）} \]
+\textbf{含义：}凡是正确的物理方程，各项的量纲必须彼此相同，与系数数值无关；无量纲项的指数还可以放进指数、对数函数里。
+\textbf{适用条件：}三种典型用途：①检验物理公式是否正确；②确定公式中待定指数的组合关系；③建立物理量之间的结构形式（为瑞利法与 $\pi$ 定理提供依据）。\textbf{经验公式一般不满足量纲和谐}，物理意义不明确者除外。
+\end{gongshi}
+
+\textbf{常考题型：}判断／问答（"用量纲和谐原理检验下列公式"）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E1 slide33（量纲转化）；E2（公式套用）}\quad\nandu{中}
+\end{kaodian}
+
+\begin{kaodian}{8}{量纲分析方法一：瑞利法（Rayleigh）}
+瑞利法把待求量写成其余物理量的\textbf{幂函数乘积}，再用\textbf{量纲和谐}定指数，适合物理量少（一般不超过 5 个）的问题。
+
+\begin{gongshi}{瑞利法的基本形式}
+\[ y=k\,x_1^{a}x_2^{b}x_3^{c}\cdots \]
+\textbf{含义：}$y$ 为待求量，$x_1,x_2,\dots$ 为影响因素，$a,b,c,\dots$ 为待定量纲指数，$k$ 为无量纲系数（由实验确定）。
+\textbf{适用条件：}物理量个数少（$\le 5$）且规律可写成幂积时；物理量多、或含超越函数（对数、指数）时不宜用，应改用 $\pi$ 定理。
+\end{gongshi}
+
+\begin{banfa}
+\textbf{瑞利法解题步骤}
+\begin{enumerate}
+\item 明确待求量，找出影响它的全部物理量，设法写成幂积 $y=k x_1^{a}x_2^{b}x_3^{c}\cdots$；
+\item 写出量纲方程 $[y]=[x_1]^{a}[x_2]^{b}[x_3]^{c}\cdots$，把各量纲用 M、L、T 表示；
+\item 由量纲齐次性，对 M、L、T 分别列出指数方程；
+\item 解线性方程组得指数 $a,b,c,\dots$，代回原式，$k$ 用实验或已有公式确定。
+\end{enumerate}
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错：}瑞利法只适合物理量少的场合（一般 $\le 5$ 个），变量多时指数方程个数少于未知数个数，解不出唯一结果，必须改用 $\pi$ 定理。另外 $k$ 是无量纲系数，量纲分析只能确定它的存在，不能定出数值，要由实验确定。
+\end{yicuo}
+
+\textbf{常考题型：}填空／小计算（以课内例题、课后习题为主）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2019 判断 8（瑞利法待求的量纲指数不能超过 4 个）；E1 slide33（量纲转化）}\quad\nandu{中}
+\end{kaodian}
+
+\begin{kaodian}{9}{量纲分析方法二：$\pi$ 定理（布金汉定理）}
+当影响因素较多时，用 $\pi$ 定理把 $n$ 个物理量的关系压缩成 $n-m$ 个无量纲数群的关系，是量纲分析最有力的工具，也是本章唯一的"难点型"考点。
+
+\begin{gongshi}{$\pi$ 定理的操作式}
+\[ f(x_1,\dots,x_n)=0 \;\Longrightarrow\; F(\pi_1,\dots,\pi_{n-m})=0,\qquad \pi_i=\frac{x_{m+i}}{\text{重复变量的幂积}} \]
+\textbf{含义：}先从 $n$ 个物理量中选出 $m$ 个\textbf{重复变量}（含全部基本量纲，且彼此量纲独立），再把每一个其余物理量与重复变量组合成无量纲的 $\pi$ 项，共得 $n-m$ 个 $\pi$ 项。
+\textbf{适用条件：}物理量较多（$n>5$）或规律写成幂积不便时；要求所有物理量确实影响该现象，且基本量纲个数 $m$ 取够。
+\end{gongshi}
+
+\begin{banfa}
+\textbf{$\pi$ 定理六步套路}
+\begin{enumerate}
+\item 列出影响该现象的全部 $n$ 个物理量，并逐一写出量纲（列表是得分点）；
+\item 确定基本量纲个数 $m$（力学问题一般 $m=3$，即 M、L、T）；
+\item 从中选定 $m$ 个\textbf{重复变量}：必须包含全部 $m$ 个基本量纲，且彼此量纲独立（工程上常取 $\rho$、$v$、$d$）；
+\item 把其余 $n-m$ 个物理量分别与重复变量组成 $\pi$ 项，令其量纲为 1，解出各指数；
+\item 写出无量纲关系式 $F(\pi_1,\dots,\pi_{n-m})=0$，即 $n-m$ 个 $\pi$ 项之间的函数关系；
+\item 结合实验或已有理论，把 $\pi$ 项整理成熟悉的准则形式（如 $\Rey$、$\Eu$）或常用公式。
+\end{enumerate}
+\end{banfa}
+
+\begin{yicuo}
+\textbf{易错：}重复变量的选取有三条硬要求——① 个数必须是 $m$ 个；② 必须包含\textbf{全部基本量纲}（M、L、T 一个都不能少）；③ 彼此\textbf{量纲独立}（不能互相导出，如不能同时选 $d$ 与 $l$、$v$ 与 $a$）。只选 $\rho$、$\mu$ 就缺了 L 和 T，是典型错误。
+\end{yicuo}
+
+\textbf{常考题型：}填空／小计算／问答（写出 $\pi$ 项、问"共得几个 $\pi$ 项"）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2016 填空 3、2018 选择 5、2019 选择 5（三个物理量的无量纲组合）；E4 2020 选择 7（水泵功率 $N$ 的量纲分析）；E1 slide33（量纲转化）}\quad\nandu{难}
+\end{kaodian}
+
+\begin{kaodian}{10}{典型例题一：圆管沿程压强损失 $\Delta p$}
+\textbf{题目：}不可压缩流体在等直径圆管中作定常流动，已知沿程压强损失 $\Delta p$ 与管长 $l$、管径 $d$、断面平均流速 $v$、流体密度 $\rho$ 及动力黏度 $\mu$ 有关，用量纲分析求 $\Delta p$ 的函数结构。
+
+\begin{banfa}
+\textbf{解（$\pi$ 定理）}
+\begin{enumerate}
+\item 有关的 $n=6$ 个物理量：$\Delta p$、$l$、$d$、$v$、$\rho$、$\mu$；量纲分别为 $\mathrm{ML^{-1}T^{-2}}$、$\mathrm{L}$、$\mathrm{L}$、$\mathrm{LT^{-1}}$、$\mathrm{ML^{-3}}$、$\mathrm{ML^{-1}T^{-1}}$。
+\item 基本量纲 $m=3$（M、L、T），故共有 $n-m=3$ 个 $\pi$ 项。
+\item 选重复变量：$\rho$、$v$、$d$（含 M、L、T，且量纲独立）。
+\item 组成 $\pi$ 项并解指数：
+\end{enumerate}
+\[ \pi_1=\frac{\Delta p}{\rho^{a}v^{b}d^{c}}:\quad \mathrm{M}:1+a=0,\ \ \mathrm{L}:-1-3a+b+c=0,\ \ \mathrm{T}:-2-b=0 \;\Rightarrow\; a=-1,\ b=-2,\ c=0 \]
+\[ \pi_2=\frac{l}{d};\qquad \pi_3=\frac{\mu}{\rho^{a}v^{b}d^{c}}:\ \ \mathrm{M}:1+a=0,\ \ \mathrm{T}:-1-b=0 \;\Rightarrow\; a=-1,\ b=-1 \;\Rightarrow\; \pi_3=\frac{\mu}{\rho v d}=\frac{1}{\Rey} \]
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item 无量纲关系式：$\Eu=\dfrac{\Delta p}{\rho v^{2}}=\varphi\!\left(\dfrac{l}{d},\Rey\right)$。
+\item 整理成常用形式：$\Delta p=\varphi(\Rey)\dfrac{l}{d}\rho v^{2}=\dfrac{\lambda}{2}\dfrac{l}{d}\rho v^{2}$，即达西公式 $\Delta p=\lambda\dfrac{l}{d}\dfrac{\rho v^{2}}{2}$；层流时 $\lambda=64/\Rey$，与理论完全一致。
+\end{enumerate}
+\end{banfa}
+
+\textbf{常考题型：}小计算／填空（这一步不必完整推导，能写出 $\pi$ 项与 $\Rey$ 即可）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E2（公式套用）；E3（真题多源于课后习题改编）}\quad\nandu{难}
+\end{kaodian}
+
+\begin{kaodian}{11}{典型例题二：绕流阻力与孔口流量}
+\begin{gongshi}{绕流阻力 $\bF$（圆球、圆柱）}
+\[ \bF=C_D\,\frac{\rho v^{2}}{2}\,A,\qquad C_D=C_D(\Rey),\qquad \Rey=\frac{vd}{\nu} \]
+\textbf{含义：}绕流物体的阻力由 $\pi$ 定理得 $\pi_1=F/(\rho v^{2}d^{2})$、$\pi_2=1/\Rey$，故阻力系数 $C_D$ 只是 $\Rey$ 的函数；$A$ 为迎流投影面积，$v$ 为来流速度。
+\textbf{适用条件：}不可压缩黏性流体绕钝体的定常绕流（沉速、尘粒输运、绕流阻力试验）；$C_D$ 需查实验曲线或按流态分区取值。
+\end{gongshi}
+
+\begin{gongshi}{孔口出流流量 $Q$（瑞利法）}
+\[ Q=C_d\,d^{2}\sqrt{gH} \]
+\textbf{含义：}$H$ 为作用水头、$d$ 为孔口直径、$C_d$ 为流量系数；用瑞利法设 $Q=k d^{a}H^{b}g^{c}$，由量纲和谐得 $c=1/2$、$a+b=5/2$，再取孔口断面面积 $\propto d^{2}$（$a=2$）即得 $b=1/2$，故 $Q\propto d^{2}\sqrt{gH}$。
+\textbf{适用条件：}薄壁小孔口自由出流，忽略黏性影响（重力主导）；$C_d$ 由实验确定，一般在 0.6 左右。
+\end{gongshi}
+
+\textbf{常考题型：}填空／小计算（记忆结果式即可）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E1 slide16（填空考小计算）；E2（公式套用）}\quad\nandu{中}
+\end{kaodian}
+
+\begin{tishi}
+\textbf{量纲分析速记：}① 力学问题基本量纲恒为 3（M、L、T），$\pi$ 项个数＝物理量个数－3；② 绕流阻力、圆管阻力都最终归结为"阻力系数是 $\Rey$ 的函数"；③ 凡含 $g$ 的（孔口、堰流）结果里必出现 $\sqrt{gH}$。
+\end{tishi}
+
+\section{相似理论在流体机械中的应用}
+
+\begin{kaodian}{12}{泵与风机的相似换算公式}
+同一台（或几何相似的一族）泵／风机在相似工况下，性能参数按下面的相似律换算。它与前面的相似理论同源：流量对应运动相似，扬程（能头）对应动力相似，功率由两者合成。
+
+\begin{gongshi}{泵与风机相似换算三式}
+\[ \frac{Q}{Q'}=\frac{n}{n'}\left(\frac{D}{D'}\right)^{3},\qquad
+   \frac{H}{H'}=\left(\frac{n}{n'}\right)^{2}\left(\frac{D}{D'}\right)^{2},\qquad
+   \frac{P}{P'}=\left(\frac{n}{n'}\right)^{3}\left(\frac{D}{D'}\right)^{5} \]
+\textbf{含义：}$n$ 为转速、$D$ 为叶轮外径、$Q$ 为流量、$H$ 为扬程（风压头）、$P$ 为轴功率；同转速变直径时流量按 $D^{3}$、扬程按 $D^{2}$、功率按 $D^{5}$ 变化；同尺寸变转速时按 $n^{1}$、$n^{2}$、$n^{3}$ 变化。
+\textbf{适用条件：}几何相似、运动相似（相似工况）且效率近似不变；转速变化一般限制在 $\pm 20\%$ 以内，变径时叶轮切割量不宜超过 20\%。
+\end{gongshi}
+
+\begin{banfa}
+\textbf{相似换算解题套路：}① 分清是"变转速"还是"变直径"（分别代入 $n/n'$ 与 $D/D'$ 的幂次）；② 由 $Q/Q'$ 求新流量，再由 $H/H'$ 求新扬程；③ 用 $P=\rho gQH/\eta$ 或 $P/P'$ 的幂次（对 $n$ 为 3 次、对 $D$ 为 5 次）求功率并互相校核。
+\end{banfa}
+
+\textbf{常考题型：}选择／小计算（题库 10.pdf 选择第 15 题含"风机并联风量"）。\quad\textbf{重要度 \xstarfull{2}}\quad\yiju{E5 题库选择 15（风机并联风量）；E4 2020 选择 7（泵功率量纲分析）；E1／E2 未把本节列为初试重点}\quad\nandu{易}
+\end{kaodian}
+
+\begin{kaodian}{13}{比转速 $n_s$ 与标准状态换算（了解）}
+\begin{gongshi}{比转速 $n_s$}
+\[ n_s=\frac{3.65\,n\sqrt{Q}}{H^{3/4}} \]
+\textbf{含义：}$n_s$ 是由相似换算导出的综合性能参数，单位取 $n$（$\mathrm{r/min}$）、$Q$（$\mathrm{m^{3}/s}$）、$H$（$\mathrm{m}$）；$n_s$ 小（低比转速）为离心式，$n_s$ 大（高比转速）为轴流式，中间为混流式，是选型与分类的依据。
+\textbf{适用条件：}几何相似的同一族泵（风机用 $n_s$ 时以风压头替代扬程）；只用于同类机器的比较与选型，不能跨类型比较。
+\end{gongshi}
+
+\begin{gongshi}{变工况与标准状态换算}
+\[ Q=Q_0\ \text{（同转速、同尺寸）},\qquad H\propto\rho,\qquad P\propto\rho \]
+\textbf{含义：}气体密度随工作状态改变：同转速、同尺寸下流量不变，扬程（风压）与轴功率都正比于密度 $\rho$；标准状态一般取 $20\,^\circ\mathrm{C}$、$101.325\,\mathrm{kPa}$、$\rho=1.2\,\mathrm{kg/m^{3}}$。
+\textbf{适用条件：}风机在非标准状态（高温、高原、变气压）下运行时换算性能；泵送不同密度液体时的功率换算同理（此时扬程按 $\mathrm{m}$ 液柱计，不变）。
+\end{gongshi}
+
+\begin{tishi}
+\textbf{了解即止：}6.3 节只在题库中偶有出现，复习到"三式＋比转速"即可。
+\end{tishi}
+
+\textbf{常考题型：}问答（题库 10.pdf 问答第 2 题考"泵与风机标准条件与相似换算"）。\quad\textbf{重要度 \xstarfull{2}}\quad\yiju{E5 题库问答 2（泵与风机标准条件与相似换算）；E1／E2 未列为初试重点}\quad\nandu{易}
+\end{kaodian}
+
+\section{本章小结}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lccX@{}}
+\toprule
+考点 & 重要度 & 难度 & 一句话抓住 \\
+\midrule
+力学相似的三个层次 & \xstarfull{3} & 易 & 几何相似是前提，运动相似是延伸，动力相似是核心 \\
+相似三定理 & \xstarfull{3} & 中 & 正定理：相似则准数相等；逆定理：准数相等则相似 \\
+$\Rey$、$\Eu$、$\Fr$ 三准则 & \xstarfull{4} & 易 & 分母都是惯性力，分别比黏性力、压力、重力 \\
+$\mathrm{Ma}$、$\mathrm{St}$、$\mathrm{We}$、$\mathrm{Ca}$ & \xstarfull{3} & 易 & 压缩性、周期性、表面张力、弹性 \\
+定性准则与非定性准则 & \xstarfull{3} & 中 & 含待求量的是非定性准则（$\Eu$） \\
+准则选取原则 & \xstarfull{3} & 中 & $\Rey$ 与 $\Fr$ 冲突，按主导力取部分相似 \\
+量纲与单位、量纲速查表 & \xstarfull{4} & 易 & $\nu$ 的量纲是 $\mathrm{L^{2}T^{-1}}$ \\
+量纲和谐原理 & \xstarfull{4} & 中 & 方程各项量纲相同；经验公式一般不满足 \\
+瑞利法 & \xstarfull{4} & 中 & 幂积＋解指数；变量少（$\le 5$）才用 \\
+$\pi$ 定理 & \xstarfull{4} & 难 & 六步套路：列量→定 $m$→选重复变量→组 $\pi$→写关系→整理 \\
+典型例题：$\Delta p$、绕流阻力 & \xstarfull{4} & 难 & 最后都归结为"系数是 $\Rey$ 的函数" \\
+泵与风机相似换算 & \xstarfull{2} & 易 & 流量 1 次、扬程 2 次、功率 3 次（对转速） \\
+比转速 $n_s$ & \xstarfull{2} & 易 & $n_s$ 定类型：低离心、高轴流 \\
+\bottomrule
+\end{tabularx}
+\end{center}

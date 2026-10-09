@@ -1,0 +1,180 @@
+\chapter{2015 年试题（当年科目代码 819，旧大纲）}
+
+\begin{tishi}
+\textbf{关于科目代码：}2015 年西华大学该科目的\textbf{考试科目代码为 819}（名称为"工程流体力学"），
+\underline{不是}当前 818 的代码。819 属\textbf{旧大纲}，命题范围比现行 818 大纲略宽，
+\textbf{含明渠流（梯形断面土渠水力最佳断面）等超纲内容}（本套计算题第 10 题即属此类）。
+复习时这部分只需知道"旧大纲考过、现行大纲不要求"，可按最低重要度处理。
+
+\textbf{试卷说明（原卷原文）：}试题附在答卷内交回，答案必须写在答题纸上，写在试题纸上无效。
+
+\textbf{结构：}选择题 45 分（15 小题，每小题 3 分）、填空题 30 分（10 空，每空 3 分）、
+计算题 75 分（1--7 题必做，8、9、10 三题\textbf{任选做一道}）。满分 150 分。
+\end{tishi}
+
+\section{一、选择题（共 45 分，每小题 3 分）}
+
+\begin{ti}
+  \item 理想流体的特点是（\quad）。\hfill\xstarfull{3}\yiju{E4 2026 简答 2（理想流体）；E6 教材 1.3}\nandu{易}
+  \fourchoices{粘度是常数}{符合 $p=\rho RT$}{无粘性}{不可压缩}
+
+  \item 液体的粘性主要来自于液体（\quad）。\hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{易}
+  \fourchoices{分子热运动}{分子间内聚力}{易变形性}{抗拒变形的能力}
+
+  \item 恒定流是（\quad）。\hfill\xstarfull{3}\yiju{E1 slide16 简答（均匀流的特点）}\nandu{易}
+  \fourchoices{流动随时间按一定规律变化}{各空间点上的运动要素不随时间变化}{各过流断面的速度分布相同}{迁移加速度为零}
+
+  \item 无旋运动是指（\quad）。\hfill\xstarfull{4}\yiju{E5 题库选择 13（涡量为零）；E6 教材 3.4}\nandu{易}
+  \fourchoices{流线是直线的流动}{迹线是直线的流动}{微团无旋转的流动}{恒定流动}
+
+  \item 用欧拉法表示流体质点的加速度 $\vec a$ 等于（\quad）。\hfill\xstarfull{5}\yiju{E4 各年选择/填空（质点导数与加速度）；E1 slide33"公式较多，重点记忆"}\nandu{中}
+  \begin{choices}
+    \item $\dfrac{\mathrm{d}^{2}\vec r}{\mathrm{d}t^{2}}$
+    \item $\dfrac{\partial \vec u}{\partial t}$
+    \item $(\vec u\cdot\nabla)\vec u$
+    \item $\dfrac{\partial \vec u}{\partial t}+(\vec u\cdot\nabla)\vec u$
+  \end{choices}
+
+  \item 相对压强的起算基准是（\quad）。\hfill\xstarfull{4}\yiju{E4 2018 选择 3（U 形水银测压计）；E4 2015 填空（U 形压差计）}\nandu{易}
+  \fourchoices{绝对真空}{1 个标准大气压}{当地大气压}{液面压强}
+
+  \item 水平放置的渐扩管，如忽略水头损失，则上游断面形心压强 $p_1$ 和下游断面形心压强 $p_2$
+  的大小关系为（\quad）。\hfill\xstarfull{5}\yiju{E1 slide16"计算题：伯努利方程"；E1 slide33 与 E2 slide4"第四章＝考试计算题重点"}\nandu{中}
+  \fourchoices{$p_1>p_2$}{$p_1=p_2$}{$p_1<p_2$}{不定}
+
+  \item 在封闭容器上装有 U 型水银测压计，其中 1、2、3 点位于同一水平面上，其压强关系为（\quad）。
+  \hfill\xstarfull{4}\yiju{E4 2018 选择 3（U 形水银测压计）；E4 2015 填空（U 形压差计）}\nandu{中}
+  \fourchoices{$p_1>p_2>p_3$}{$p_1=p_2=p_3$}{$p_1<p_2<p_3$}{$p_2<p_1<p_3$}
+  \tuyi{原卷图：一封闭容器侧壁接一根 U 型水银测压计，管中 1、2、3 三点位于同一水平面上，
+  1 点在容器内液体中，3 点在水银面上方的液柱中；原卷未给出各段液柱高度数值。
+  （原卷影印见本册附录）}
+
+  \item 长度 $l$、速度 $v$、重力加速度 $g$ 的无量纲组合是（\quad）。\hfill\xstarfull{4}\yiju{E1 slide33（量纲转化）；E2 slide5}\nandu{中}
+  \begin{choices}
+    \item $\dfrac{v}{gl}$
+    \item $\dfrac{lv}{g}$
+    \item $\dfrac{v^{2}}{gl}$
+    \item $\dfrac{gl}{v}$
+  \end{choices}
+  \begin{tishi}
+  原卷四个选项按分式竖排（分子在横线之上、分母在横线之下）。OCR 未保留根号字形，
+  故此处一律按无根号的分式转写；若原卷某项实为含 $\sqrt{\phantom{x}}$ 的形式，请对照原卷影印核实。
+  \end{tishi}
+  \item 圆管层流流动，过流断面上切应力分布为（\quad）。\hfill\xstarfull{5}\yiju{E4 2022 单选 10（管径减半压强损失 16 倍）；E4 2015 填空（层流平均速度＝0.5 倍最大速度）}\nandu{中}
+  \fourchoices{在过流断面上是常数}{管轴处是零，且与半径成正比}{管壁处是零，向管轴线性增大}{按抛物线分布}
+
+  \item 雷诺数的物理意义为（\quad）。\hfill\xstarfull{5}\yiju{E4 2022 单选 9（两圆管流态判别）；E4 2026 简答 3（层流与雷诺数关系）}\nandu{易}
+  \fourchoices{惯性力和粘滞力之比}{惯性力和重力之比}{压力和惯性力之比}{压力和粘滞力之比}
+
+  \item 在均质连通的同种静止液体中，任一（\quad）上各点压强相同。\hfill\xstarfull{5}\yiju{E4 2022 单选 3（测压管水头线坡度）、单选 7（虹吸管）；E1 slide33"计算题基础入门"}\nandu{易}
+  \fourchoices{平面}{水平面}{斜面}{以上都不对}
+
+  \item 切应力 $\tau$ 的量纲表达式为（\quad）。\hfill\xstarfull{5}\yiju{E4 2026 计算 1（牛顿流体斜板静压强）；E5 题库选择 2（汽油＝牛顿流体）}\nandu{中}
+  \fourchoices{$\mathrm{MLT}^{-2}$}{$\mathrm{ML}^{-1}\mathrm{T}^{-2}$}{$\mathrm{ML}^{-1}\mathrm{T}^{-1}$}{$\mathrm{MLT}^{-1}$}
+
+  \item 进行水力模型实验，要实现有压管流的动力相似，应选的相似准则是（\quad）。
+  \hfill\xstarfull{4}\yiju{E4 2014 选择 10；E4 2016 填空 4；E4 2019 判断 2；E4 2022 单选 9；E5 题库选择 12}\nandu{易}
+  \fourchoices{雷诺准则}{弗劳德准则}{欧拉准则}{其它}
+
+  \item 速度势函数存在于（\quad）流动中。\hfill\xstarfull{5}\yiju{E4 2015 计算（流函数求速度与流线）；E4 2026 计算 4（证明势函数存在性）}\nandu{易}
+  \fourchoices{不可压缩流体}{平面连续}{处处无旋}{任意平面}
+\end{ti}
+
+\section{二、填空题（共 30 分，每空 3 分）}
+
+\noindent 说明：物理量应注明单位。
+
+\begin{ti}
+  \item 某油的密度为 $851\,\mathrm{kg/m^3}$，运动粘度为 $3.39\times10^{-6}\,\mathrm{m^2/s}$，
+  此油的重度 $\gamma=$ \underline{\hspace{2.2cm}}，动力粘度 $\mu=$ \underline{\hspace{2.2cm}}。
+  \hfill\xstarfull{3}\yiju{E4 2015 填空 1（由 $\rho=851$ kg/m$^3$ 求重度与动力黏度）}\nandu{易}
+
+  \item 在 \underline{\hspace{3cm}} 流动中，流线和迹线重合。\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{易}
+
+  \item 变直径管，直径 $d_1=320\,\mathrm{mm}$，$d_2=160\,\mathrm{mm}$，流速 $v_1=1.5\,\mathrm{m/s}$，
+  则 $v_2=$ \underline{\hspace{2.5cm}}。\hfill\xstarfull{5}\yiju{E4 2022 单选 4；E5 题库}\nandu{易}
+
+  \item 用 U 形水银压差计测量水管内 A、B 两点的压强差，水银面高度差 $h_p=10\,\mathrm{cm}$，
+  则 $p_A-p_B=$ \underline{\hspace{3cm}}。\hfill\xstarfull{4}\yiju{E4 2018 选择 3（U 形水银测压计）；E4 2015 填空（U 形压差计）}\nandu{中}
+  \tuyi{原卷图：水管上 A、B 两点接一 U 形水银压差计，两管中水银面高度差为 $h_p$。
+  （原卷影印见本册附录）}
+
+  \item 圆管的流动为层流时，断面平均速度是最大速度的 \underline{\hspace{2.5cm}} 倍，
+  沿程阻力和平均速度的 \underline{\hspace{2cm}} 次方成正比。\hfill\xstarfull{5}\yiju{E4 2022 单选 10（管径减半压强损失 16 倍）；E4 2015 填空（层流平均速度＝0.5 倍最大速度）}\nandu{中}
+
+  \item 水管直径为 $10\,\mathrm{mm}$，管中水的平均速度 $v=0.2\,\mathrm{m/s}$，
+  其运动粘度 $\nu=1.308\times10^{-6}\,\mathrm{m^2/s}$，则管中水流的流态为 \underline{\hspace{2.5cm}}；
+  如将管径改为 $30\,\mathrm{mm}$，流速不变时，流态为 \underline{\hspace{2.5cm}}。
+  \hfill\xstarfull{5}\yiju{E4 2022 单选 9（两圆管流态判别）；E4 2026 简答 3（层流与雷诺数关系）}\nandu{中}
+
+  \item 伯努利方程中 $z+\dfrac{p}{\rho g}+\dfrac{v^{2}}{2g}$ 表示单位 \underline{\hspace{2.5cm}}
+  流体具有的机械能。\hfill\xstarfull{5}\yiju{E1 slide16"计算题：伯努利方程"；E1 slide33 与 E2 slide4"第四章＝考试计算题重点"}\nandu{易}
+\end{ti}
+
+\section{三、计算题（共 75 分）}
+
+\noindent （1、2、3、4、5、6、7 题必做，8、9、10 题任选做一道。）
+
+\begin{ti}
+  \item 已知二维速度场 $u_x=x+2t$，$u_y=y+t-3$。试求：该流动的流线方程以及在 $t=0$ 瞬时
+  过点 $M(-1,\,-1)$ 的流线。（7 分）\hfill\xstarfull{5}\yiju{E4 2015 计算 1（流线方程、流动方向判断）}\nandu{易}
+
+  \item 一变直径管段 AB，直径 $d_A=0.2\,\mathrm{m}$，$d_B=0.4\,\mathrm{m}$，高差 $\Delta h=1.5\,\mathrm{m}$。
+  今测得 $p_A=30\,\mathrm{kN/m^2}$，$p_B=40\,\mathrm{kN/m^2}$，B 处断面平均流速 $v_B=1.5\,\mathrm{m/s}$。
+  试判断水在管中的流动方向。（8 分）\hfill\xstarfull{5}\yiju{E1 slide16"计算题：伯努利方程"；E1 slide33 与 E2 slide4"第四章＝考试计算题重点"}\nandu{中}
+  \tuyi{原卷图：一变直径管段，A 断面（直径 $d_A$）位置高于 B 断面（直径 $d_B$），
+  两断面高差为 $\Delta h$；A、B 两断面各接测压管，断面形心压强分别为 $p_A$、$p_B$。
+  （原卷影印见本册附录）}
+
+  \item 水平突然缩小管路的 $d_1=15\,\mathrm{cm}$，$d_2=10\,\mathrm{cm}$，水的流量 $Q=2\,\mathrm{m^3/min}$。
+  用水银测压计测得 $h=8\,\mathrm{cm}$。求突然缩小的水头损失。（8 分）
+  \hfill\xstarfull{4}\yiju{E4 2015 计算 3（突然缩小水头损失）；E1 slide16}\nandu{中}
+  \tuyi{原卷图：水平放置的突然缩小管路，粗管直径 $d_1$、细管直径 $d_2$，
+  在突然缩小处前后的两个断面之间接一水银测压计，读数（水银面高差）为 $h$。
+  （原卷影印见本册附录）}
+
+  \item 如图，圆柱闸门长 $L=4\,\mathrm{m}$，直径 $D=1\,\mathrm{m}$，上下游水深分别为
+  $H_1=1\,\mathrm{m}$，$H_2=0.5\,\mathrm{m}$，试求此柱体上所受的静水总压力的大小和方向。（10 分）
+  \hfill\xstarfull{5}\yiju{E5 题库计算 1（弧形闸门 $F_x,F_z$ 与力矩）；E1 slide33}\nandu{中}
+  \tuyi{原卷图：一圆柱形闸门（沿轴线方向长 $L=4\,\mathrm{m}$，直径 $D=1\,\mathrm{m}$）横置于渠中，
+  将上下游隔开，圆柱左（上）游侧水深 $H_1=1\,\mathrm{m}$，右（下）游侧水深 $H_2=0.5\,\mathrm{m}$；
+  圆柱为曲面受压体，需分别求水平分力（用压力体/压强分布）与铅垂分力。
+  （原卷影印见本册附录）}
+
+  \item 如图，水流经水平弯管流入大气，已知 $d_1=100\,\mathrm{mm}$，$d_2=75\,\mathrm{mm}$，
+  $v_1=1.5\,\mathrm{m/s}$，$\theta=30^\circ$。若不计水头损失，试求水流对弯管的作用力 $F_x$、$F_y$。（12 分）
+  \hfill\xstarfull{5}\yiju{E4 2015 计算（水平弯管求 $F_x,F_y$）；E4 2026 计算 3（教材例题 4.12）；E1 slide16}\nandu{难}
+  \tuyi{原卷图：水平放置的渐变弯管，进口断面 1--1 直径 $d_1=100\,\mathrm{mm}$、流速 $v_1=1.5\,\mathrm{m/s}$
+  沿水平方向；出口断面 2--2 直径 $d_2=75\,\mathrm{mm}$，出口轴线与进口轴线成 $\theta=30^\circ$ 夹角，
+  出口水流自由流入大气。（原卷影印见本册附录）}
+
+  \item 利用文丘里流量计测量竖直水管中的流量。已知 $d_1=300\,\mathrm{mm}$，$d_2=150\,\mathrm{mm}$，
+  水银压差计读数 $\Delta h=20\,\mathrm{mm}$。试确定水流量 $Q$。（8 分）\hfill\xstarfull{5}\yiju{E4 2022 单选 6（计算点选取）；E4 2026 计算 2（文丘里流量证明）}\nandu{中}
+  \tuyi{原卷图：文丘里流量计装在铅垂（竖直）水管上，上游收缩前断面 1--1 直径 $d_1=300\,\mathrm{mm}$，
+  喉部断面 2--2 直径 $d_2=150\,\mathrm{mm}$，2--2 断面位于 1--1 断面下方；
+  喉部与上游断面之间接一水银压差计，读数 $\Delta h=20\,\mathrm{mm}$。
+  （原卷影印见本册附录）}
+
+  \item 一平面定常流动的流函数为 $\psi(x,y)=-3x+y$，求速度分布，写出通过 $A(1,\,0)$
+  和 $B(2,\,3)$ 两点的流线方程。（10 分）\hfill\xstarfull{5}\yiju{E4 2015 计算（流函数求速度与流线）；E4 2026 计算 4（证明势函数存在性）}\nandu{中}
+
+  \item 将速度为 $v_\infty$ 的平行于 $x$ 轴的均匀流和在原点强度为 $q$ 的点源叠加，
+  求叠加后流场中驻点位置及经过驻点的流线方程。（12 分）\hfill\xstarfull{4}\yiju{E4 2015 计算 8（求驻点与流线）；E2 slide5}\nandu{难}
+
+  \item 一块面积为 $2\,\mathrm{m}\times8\,\mathrm{m}$ 的矩形平板放在速度 $v_0=3\,\mathrm{m/s}$ 的水流中，
+  水的运动粘度 $\nu=10^{-6}\,\mathrm{m^2/s}$，平板放置的方法有两种：以长边顺着流速方向，
+  摩擦阻力为 $F_1$；以短边顺着流速方向，摩擦阻力为 $F_2$。试求比值 $F_1/F_2$。（12 分）
+  \hfill\xstarfull{2}\yiju{E4 2015 计算 9（平板摩擦阻力比 $F_1/F_2$）}\nandu{难}
+
+  \item 欲开挖一梯形断面土渠。已知：流量 $Q=10\,\mathrm{m^3/s}$，边坡系数 $m=1.5$，
+  粗糙系数 $n=0.02$，为防止冲刷取最大允许流速 $v=1.0\,\mathrm{m/s}$，试求：
+  \begin{xiaowen}
+    \item 按水力最佳断面条件设计断面尺寸，计算底宽 $b$ 和水深 $h$；
+    \item 渠道的底坡 $i$ 为多少？
+  \end{xiaowen}
+  （12 分）\hfill\xstarmark{X1}\nandu{难}
+  \begin{tishi}
+  本题为\textbf{旧大纲（2015 年及以前）}内容，现行 818 大纲不要求明渠流与堰流，
+  此处仅作史料收录，复习时可略过。
+  \end{tishi}
+\end{ti}

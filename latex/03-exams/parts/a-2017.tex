@@ -1,0 +1,459 @@
+\chapter{2017 年工程流体力学试题参考答案（当年科目代码 819）}
+
+\begin{tishi}
+本答案由原卷拍照件整理，个别步骤与符号已按流体力学标准写法规范化。
+原卷封面科目代码印作 819，本册统一按 818 编排；试卷内容全部落在现行 818 大纲范围之内。
+
+\textbf{原答案卷 OCR 状况：}答案卷共 3 页，为手机拍照件，字迹模糊、公式大量缺漏。
+选择题答案只辨认出\textbf{第 9 题、第 10 题}两项（均读作 C），其中第 9 题经重算应为 B（本册取 B 并注明）；
+其余各题答案已按流体力学标准解法逐题重算确定；
+填空题与判断题仅存零散字符，亦按题意重算后补全。凡属重算补全之处，均在该小题后加注说明。
+\end{tishi}
+
+\section{一、选择题（共 30 分，每小题 3 分）}
+
+\answ{答案}
+\begin{center}
+1.~B\qquad 2.~C\qquad 3.~D\qquad 4.~A\qquad 5.~C\qquad 6.~D\qquad 7.~B\qquad 8.~C\qquad 9.~B\qquad 10.~C
+\end{center}
+
+\begin{tishi}
+第 9 题原答案卷 OCR 辨读为 C，但按题意（$1$、$2$、$3$ 三点在同一水平面、为同一静止液体）应为 $p_1=p_2=p_3$，
+即应选 B，本册以 B 为准（可能与原卷答案不符，已注明）。
+\end{tishi}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}
+  \item 真空压强 $p_v=p_a-p_{abs}=0.1\times10^6-65000=35000$ Pa。
+  \item 并联管 $h_{f1}=h_{f2}$，$\lambda L_1Q_1^2/d^5=\lambda L_2Q_2^2/d^5$，
+        故 $Q_1/Q_2=\sqrt{L_2/L_1}=\sqrt{3}\approx1.73$。
+  \item 层流 $\lambda=64/\Rey\propto1/v$，于是 $h_f=\lambda\dfrac{L}{d}\dfrac{v^2}{2g}\propto v$，即 1 次方。
+  \item 气体（空气）的黏性由分子动量交换控制，动力黏度 $\mu$ 随温度升高而增大。
+  \item 渐扩管过流断面增大、流速减小，忽略损失时
+        $z+\dfrac{p}{\gamma}+\dfrac{v^2}{2g}=\text{const}$，动能头减小则压强水头增大，故 $p_1<p_2$。
+  \item 总水头沿程只降不升，$A$、$C$ 在同一断面 1 上而位置水头不同，
+        故 $z_A+\dfrac{p_A}{\gamma}>z_C+\dfrac{p_C}{\gamma}$。
+  \item 压力输水管同种流体的模型实验，长度比 $\lambda_l=4$ 时流速比尺 $\lambda_v=\sqrt{\lambda_l}=2$，
+        故流量比 $\lambda_Q=\lambda_l\lambda_v^2=\lambda_l^{1.5}=4^{1.5}=8$，填 B。
+  \item 平板受射流冲击力 $F=\rho Qv$。
+  \item 1、2、3 三点位于同一水平面上，连通器内同一静止液体中同一水平面各点压强相等，$p_1=p_2=p_3$。
+  \item $z+\dfrac{p}{\rho g}+\dfrac{\alpha v^2}{2g}$ 为单位重量流体的机械能（总能头）。
+\end{enumerate}
+\end{tishi}
+
+\begin{tishi}
+\textbf{关于第 7 题的两种口径：}该题 OCR 未留下答案，按两种常用口径结果不同——
+\begin{itemize}
+  \item 口径一（按 $Q\propto Av$、$v\propto\sqrt{\lambda_l}$ 的简化换算，也是本题高中式“长度比 4”的最直接用法）：
+        $\lambda_Q=\lambda_l^{1.5}=4^{1.5}=8$，选 \textbf{B}；
+  \item 口径二（严格按重力相似准则 $\lambda_v=\lambda_l^{1/2}$、$\lambda_Q=\lambda_l^{5/2}$）：
+        $\lambda_Q=4^{2.5}=32$，选 \textbf{D}。
+\end{itemize}
+本题题干只说“长度比为 4”而未给流速比或流量比尺的相似准则，两种口径都有人用；
+本册答案按口径一取 \textbf{B}，复习时请以课堂讲法为准，两种换算关系都要会推。
+\end{tishi}
+
+\begin{tishi}
+\textbf{关于第 8 题：}选项未标单位，按量纲分析仅 $\rho Qv$ 为力（$\mathrm{N}$），其余三项分别为
+$\mathrm{m^4/s^2}$、$\mathrm{m^5/s^3}$、$\mathrm{kg\cdot m/s^2}$ 之外的形式，故取 C。
+\end{tishi}
+
+\section{二、填空题（共 30 分，每空 3 分）}
+
+\answ{答案}
+\begin{center}
+\begin{tabular}{@{}p{0.94\linewidth}@{}}
+1.\ 平移（线变形）、角变形（旋转） \tabularnewline
+2.\ $p_0=p_{\text{表}}=-11025$ Pa（即绝对压强 $88975$ Pa） \tabularnewline
+3.\ $\mathrm{N/kg}$（即 $\mathrm{m/s^2}$） \tabularnewline
+4.\ 管轴处切应力 $\tau=0$；管轴上的流速 $u_{\max}=0.4$ m/s \tabularnewline
+5.\ $A$ 点压强水头 $0$；$A$ 点测压管水头 $6$ mH$_2$O；$B$ 点压强水头 $2$ mH$_2$O；$C$ 点压强水头 $3$ mH$_2$O \tabularnewline
+\end{tabular}
+\end{center}
+
+\begin{tishi}
+第 5 空原答案卷 OCR 只拾得“2 mH$_2$O、3 mH$_2$O、0、6 mH$_2$O”四个数字，与 $A$、$B$、$C$ 三点的对应关系已经错乱、无法判读。
+本册按图 4 的几何关系（$A$ 为自由液面、$B$、$C$ 依次在其下）与静压强分布重算，
+所得压强水头依次为 $0$、$2$、$3$ mH$_2$O；若按原卷残片字面直接对号入座，则会读成 $2$、$4$、$6$ mH$_2$O，二者互不相符，请对照原卷影印核实。
+\end{tishi}
+
+\begin{tishi}
+\textbf{各空说明：}
+\begin{enumerate}
+  \item 流体微团的运动形式为平移、线变形、角变形（剪切变形）和旋转；原答题处只写“平移、变形、旋转”，
+        本册按教材标准表述补全为“平移（含线变形）、角变形、旋转”。
+  \item 测压管高出液面说明容器内液面为真空，$p_0=-\gamma h=-11.025$ kN/m$^2\approx-11.03$ kPa。
+        原答案 OCR 只留下“11025”这一数字（符号与单位丢失），按题意应为 $-11025$ Pa。
+  \item 单位质量力 $f=F/m$，单位 $\mathrm{N/kg}$（数值上等于 $\mathrm{m/s^2}$）。
+  \item 圆管层流 $\tau=\dfrac{\Delta p}{2l}r$，管轴 $r=0$ 处 $\tau=0$；
+        轴心流速为断面平均流速的 2 倍，$u_{\max}=2\times0.2=0.4$ m/s。
+  \item 以下游 $D$ 点所在水平面为基准面，由题图 4 的几何关系（$A$ 为自由液面、$B$ 在 $A$ 下 2 m、$C$ 在 $B$ 下 1 m）可定出
+        $z_A=6$ m、$z_B=4$ m、$z_C=3$ m、$z_D=0$。液面处表压强为零，向下每降低 1 m 压强水头增加 1 m：
+        \[
+        \frac{p_A}{\gamma}=0,\qquad
+        \frac{p_B}{\gamma}=2\ \text{m},\qquad
+        \frac{p_C}{\gamma}=3\ \text{m}
+        \]
+        故 $A$ 点压强水头 $0$、测压管水头 $0+6=6$ mH$_2$O；$B$ 点压强水头 $2$ mH$_2$O、测压管水头 $2+4=6$ mH$_2$O；
+        $C$ 点压强水头 $3$ mH$_2$O、测压管水头 $3+3=6$ mH$_2$O。
+        三者测压管水头均为 $6$ mH$_2$O，与同一静止液体中测压管水头面为水平面的结论一致
+        （本小题原卷 OCR 只留下“$2$、$3$、$0$、$6$ mH$_2$O”等零散数字，
+        上述数值系按图 4 的几何关系与静压强公式重算得出，与原卷残片字面可能不符）。
+\end{enumerate}
+\end{tishi}
+
+\section{三、判断题（正确的打“$\surd$”，错误的打“$\times$”，共 30 分，每小题 3 分）}
+
+\answ{答案}
+\begin{center}
+1.~$\surd$\qquad 2.~$\surd$\qquad 3.~$\surd$\qquad 4.~$\surd$\qquad 5.~$\times$\qquad
+6.~$\surd$\qquad 7.~$\surd$\qquad 8.~$\times$\qquad 9.~$\times$\qquad 10.~$\surd$
+\end{center}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}
+  \item 恒定流动（定常流）中流线与迹线重合。
+  \item 均匀流动中迁移加速度为零、流速不随位置变化；按时变加速度的定义 $\partial v/\partial t$，
+        若流动同时定常则为零。教材把均匀流列入无时变加速度的情形，故判对。
+  \item 理想流体即忽略黏性的流体，黏度等于零。
+  \item $\Rey=vL/\nu$ 的物理意义是惯性力与黏滞力之比。
+  \item 无旋流动指旋转角速度（涡量）为零，与流线是否为直线无关，如点涡流流线为圆仍无旋。
+  \item 均质、连通、同种静止液体中，同一水平面上各点压强相等（连通器原理）。
+  \item 圆管湍流粗糙区（阻力平方区）$\lambda$ 只与相对粗糙度 $\Delta/d$ 有关，与 $\Rey$ 无关。
+  \item 动力黏度 $\mu$ 的量纲为 $\mathrm{M}\,\mathrm{L}^{-1}\mathrm{T}^{-1}$，原题写作 $\mathrm{MLT^{-1}}$，
+        缺少长度量纲的负一次方，故判错。
+  \item 粘性流体的测压管水头线沿程总趋势下降，
+        但在有局部收缩或动能转化为压强的局部区域会出现局部回升，故“一定下降”错误。
+  \item 流体处于静止状态时没有相对运动，$\tau=\mu\dfrac{\mathrm{d}u}{\mathrm{d}y}=0$，切应力不会产生。
+\end{enumerate}
+\end{tishi}
+
+\section{四、计算题（共 60 分）}
+
+\answ{1.（10 分）离心泵装置电动机功率}
+
+\begin{jie}
+\textbf{已知：}提水高度 $z=20$ m；抽水流量 $Q=35\,\mathrm{L/s}=3.5\times10^{-2}\,\mathrm{m^3/s}$；
+泵效率 $\eta_1=0.82$；电动机效率 $\eta_2=0.95$；吸水管与压水管总水头损失 $h_w=1.5$ mH$_2$O。
+取水的重度 $\gamma=\rho g=9.8\,\mathrm{kN/m^3}$。
+\textbf{求：}电动机的功率 $P$。
+
+\textbf{（1）列伯努利方程求泵的扬程 $\Delta H$。}
+基准面 $0$--$0$ 取在吸水池液面处，两液面均为大气压，流速近似为零：
+\[
+0+0+0+\Delta H=z+0+0+h_w
+\]
+\[
+\Delta H=z+h_w=20+1.5=21.5\ \mathrm{m}
+\]
+
+\textbf{（2）泵的有效功率（水功率）。}
+\[
+N_e=\gamma Q\Delta H=9.8\times10^3\times3.5\times10^{-2}\times21.5=7374.5\ \mathrm{W}\approx7.37\ \mathrm{kW}
+\]
+
+\textbf{（3）电动机功率。}泵轴功率由泵效率换算，电动机输出功率再由电动机效率换算：
+\[
+P=\frac{N_e}{\eta_1\eta_2}=\frac{7.3745}{0.82\times0.95}=\frac{7.3745}{0.779}\approx9.47\ \mathrm{kW}
+\]
+
+\textbf{结果：}$P\approx9.47\,\mathrm{kW}$，即电动机应选配不少于 $9.5$ kW 的电机。
+\end{jie}
+
+\begin{tishi}
+原答案卷此处写作 $P=\dfrac{\gamma Q\Delta H}{\eta_1\eta_2}=\dfrac{9.8\times35\times10^{-3}\times21.5}{0.82\times0.95}=9.47$ kW，
+其中 $35\times10^{-3}$ 即 $35$ L/s 换算为 $\mathrm{m^3/s}$（取 $\gamma=9.8$ kN/m$^3$），结果一致。
+\end{tishi}
+
+\answ{2.（8 分）汽车克服空气阻力所消耗的功率}
+
+\begin{jie}
+\textbf{已知：}车速 $v=80\,\mathrm{km/h}=22.2\,\mathrm{m/s}$；迎风面积 $A=2\,\mathrm{m^2}$；
+阻力系数 $C_D=0.4$；空气密度 $\rho=1.25\,\mathrm{kg/m^3}$。
+\textbf{求：}克服空气阻力消耗的功率 $P$。
+
+\textbf{（1）空气阻力。}
+\[
+F_D=C_D\frac{\rho v^2}{2}A=0.4\times\frac{1.25\times22.2^2}{2}\times2
+=0.4\times1.25\times246.42=246.42\ \mathrm{N}
+\]
+
+\textbf{（2）消耗功率。}
+\[
+P=F_Dv=246.42\times22.2=5470.5\ \mathrm{W}\approx5.47\ \mathrm{kW}
+\]
+
+\textbf{结果：}$F_D\approx246.4$ N，$P\approx5.47\,\mathrm{kW}$。
+\end{jie}
+
+\answ{3.（10 分）铅垂管路起始断面压强}
+
+\begin{jie}
+\textbf{已知：}水箱液面高出管路进口断面 $A$ 的高度为 $h$；管径 $d$、管长 $L$，铅垂向下流入大气；
+局部阻力忽略，沿程阻力系数为 $\lambda$。
+\textbf{求：}（1）$A$ 断面压强；（2）$h$ 为多少时 $A$ 断面表压强为零。
+
+\textbf{（1）求 $A$ 断面压强。}
+取水箱液面为断面 $1$（$p_1=0$ 表压，$v_1\approx0$，$z_1=h$，基准面取在 $A$ 断面），
+管路出口断面为断面 $2$（$p_2=0$ 表压，$z_2=-L$，管长 $L$ 全部为沿程损失段，出口流速为 $v$）。
+
+对 $1$、$2$ 断面列伯努利方程：
+\[
+h+0+0=(-L)+0+\frac{v^2}{2g}+\lambda\frac{L}{d}\frac{v^2}{2g}
+\]
+\[
+\frac{v^2}{2g}\left(1+\lambda\frac{L}{d}\right)=h+L
+\quad\Longrightarrow\quad
+\frac{v^2}{2g}=\frac{h+L}{1+\lambda L/d}
+\]
+
+对液面 $1$ 与 $A$ 断面列伯努利方程（$z_A=0$，$A$ 处流速即管内流速 $v$）：
+\[
+h+0+0=0+\frac{p_A}{\gamma}+\frac{v^2}{2g}
+\quad\Longrightarrow\quad
+\frac{p_A}{\gamma}=h-\frac{v^2}{2g}
+\]
+
+代入 $\dfrac{v^2}{2g}$：
+\[
+\frac{p_A}{\gamma}=h-\frac{h+L}{1+\lambda L/d}
+=\frac{h\left(1+\lambda\dfrac{L}{d}\right)-(h+L)}{1+\lambda\dfrac{L}{d}}
+=\frac{\lambda\dfrac{L}{d}\,h-L}{1+\lambda\dfrac{L}{d}}
+\]
+\[
+\boxed{\;p_A=\gamma\,\frac{L-\lambda hL/d}{1+\lambda L/d}\;}
+\]
+
+可见 $A$ 断面一般为负压（低于大气压），其数值取决于 $\lambda\dfrac{L}{d}$ 与 $h$ 的相对大小；
+若 $\lambda L/d$ 较大或 $h$ 较小，则 $A$ 处出现真空，工程上须注意管路进口的汽化与失稳问题。
+
+\textbf{（2）$h$ 为何值时 $A$ 断面表压强为零。}
+令 $p_A=0$，即
+\[
+\lambda\frac{L}{d}h-L=0
+\quad\Longrightarrow\quad
+h=\frac{d}{\lambda}
+\]
+
+\textbf{结果：}（1）$p_A=\gamma\dfrac{L-\lambda hL/d}{1+\lambda L/d}$（表压，通常为负值，$A$ 处可能出现真空）；
+（2）当 $\boxed{h=\dfrac{d}{\lambda}}$ 时 $A$ 断面表压强为零。
+\end{jie}
+
+\begin{tishi}
+原答案卷此处文字与公式严重残缺，只留下“$p_A=\gamma L$”“$\dfrac{p_A}{\gamma}-1=0$ 时 $A$ 断面处表压强为零”“即 $h=\lambda$”等零散片段，
+字迹不清、无法逐字复原。上述解法系按标准伯努利方程解法补全；
+第（2）问原卷末尾残留“$\lambda$”字样，与“$h$ 与 $\lambda$ 有关”的结论一致，但具体表达式已不可辨认，请注意对照原卷。
+\end{tishi}
+
+\answ{4.（12 分）水流对水平弯管的作用力}
+
+\begin{jie}
+\textbf{已知：}水平弯管 $d_1=100$ mm、$d_2=75$ mm，进口流速 $v_1=1.5$ m/s，
+出口轴线与进口轴线夹角 $\theta=30^\circ$，出口流入大气，不计水头损失，取 $\rho=1000\,\mathrm{kg/m^3}$。
+\textbf{求：}水流对弯管的作用力 $F_x$、$F_y$。
+
+\textbf{（1）连续性方程求 $v_2$、$Q$。}
+\[
+v_2=v_1\frac{A_1}{A_2}=v_1\left(\frac{d_1}{d_2}\right)^2=1.5\times\left(\frac{100}{75}\right)^2
+=1.5\times1.778=2.67\ \mathrm{m/s}
+\]
+\[
+A_1=\frac{\pi d_1^2}{4}=\frac{\pi\times0.1^2}{4}=7.85\times10^{-3}\ \mathrm{m^2}
+\]
+\[
+Q=A_1v_1=7.85\times10^{-3}\times1.5=0.0118\ \mathrm{m^3/s}
+\]
+
+\textbf{（2）对 $1$、$2$ 断面列能量方程求进口断面压强 $p_1$（水平放置，$z_1=z_2$，不计损失）。}
+\[
+\frac{p_1}{\gamma}+\frac{v_1^2}{2g}=0+\frac{v_2^2}{2g}
+\]
+\[
+p_1=\frac{\rho}{2}\left(v_2^2-v_1^2\right)=\frac{1000}{2}\left(2.67^2-1.5^2\right)
+=500\times(7.129-2.25)=2439.5\ \mathrm{Pa}\approx2.44\ \mathrm{kPa}
+\]
+（进口断面平均流速 $v_1$ 方向取为 $x$ 轴正向，$v_1$ 在 $y$ 方向分量为零。）
+
+\textbf{（3）对该弯管段内的水体写动量方程。}设弯管对水流的反作用力为 $R_x$、$R_y$，
+则水流对弯管的作用力为 $F_x=-R_x$、$F_y=-R_y$。
+\[
+p_1A_1-R_x=\rho Q\left(v_2\cos\theta-v_1\right)
+\]
+\[
+0-R_y=\rho Q\left(v_2\sin\theta-0\right)
+\]
+代入 $\rho Q=1000\times0.0118=11.78\,\mathrm{kg/s}$：
+\[
+p_1A_1=2439.5\times7.85\times10^{-3}=19.21\ \mathrm{N}
+\]
+\[
+R_x=19.21-11.78\times(2.67\times0.866-1.5)
+=19.21-11.78\times(2.312-1.5)=19.21-9.56=9.65\ \mathrm{N}
+\]
+\[
+R_y=-11.78\times(2.67\times0.5)=-11.78\times1.335=-15.72\ \mathrm{N}
+\]
+
+于是水流对弯管的作用力：
+\[
+F_x=-R_x=-9.65\ \mathrm{N}
+\qquad
+F_y=-R_y=15.72\ \mathrm{N}
+\]
+
+\textbf{结果：}水流对弯管的作用力
+$\boxed{F_x\approx-9.6\ \mathrm{N}}$（方向与进口流速方向相反）、
+$\boxed{F_y\approx15.7\ \mathrm{N}}$（竖直向上，与 $\theta$ 的偏转方向相同）。
+\end{jie}
+
+\begin{tishi}
+原答案卷此处给出 $R_x=9.58$ N、$R_y=15.75$ N，与本解按同一组公式算得的
+$R_x=9.65$ N、$R_y=15.72$ N 相符（差异来自有效数字取舍）。
+注意原答案卷 $Q=AV=0.0118$ m$^2$/s 中的单位系 OCR 把 $\mathrm{m^3/s}$ 误读为 $\mathrm{m^2/s}$。
+\end{tishi}
+
+\answ{5.（10 分）长管输送流量与管径}
+
+\begin{jie}
+\textbf{已知：}作用水头 $H=127.4$ m，管长 $L=500$ m，沿程阻力系数 $\lambda=0.024$，
+管路末端可用水头 $h=2H/3$，管路末端可用功率 $N=1000$ kW；长管只计沿程损失，取 $\gamma=9.81\,\mathrm{kN/m^3}$。
+\textbf{求：}输送流量 $Q$ 与管路直径 $d$。
+
+\textbf{（1）由最大输出功率条件确定沿程水头损失。}
+设管路末端剩余水头为 $h=H-h_f$，末端可用功率为
+\[
+N=\gamma Qh=\gamma Q\left(H-h_f\right)
+=\gamma Q\left(H-\frac{8\lambda LQ^2}{g\pi^2d^5}\right)
+\]
+在 $H$、$L$、$d$ 一定时令 $\dfrac{\mathrm{d}N}{\mathrm{d}Q}=0$，可得最大输送功率条件为
+\[
+H-\frac{3\times8\lambda LQ^2}{g\pi^2d^5}=0
+\quad\Longrightarrow\quad
+h_f=\frac{8\lambda LQ^2}{g\pi^2d^5}=\frac{H}{3}
+\]
+这与题给“沿程损失为 $H/3$ 时管路输送功率为最大”完全吻合。于是
+\[
+h_f=\frac{H}{3}=\frac{127.4}{3}=42.47\ \mathrm{m},
+\qquad
+h=H-h_f=\frac{2H}{3}=84.93\ \mathrm{m}
+\]
+此时最大输送功率 $N_{\max}=\gamma Q\dfrac{2H}{3}=\dfrac{2}{3}\gamma QH$。
+
+\textbf{（2）求输送流量 $Q$。}由 $N=\gamma Qh=\gamma Q\dfrac{2H}{3}$ 得
+\[
+Q=\frac{3N}{2\gamma H}=\frac{3\times1000\times10^3}{2\times9.81\times10^3\times127.4}
+=\frac{3\times10^6}{2.5003\times10^6}=1.20\ \mathrm{m^3/s}
+\]
+
+\textbf{（3）求管路直径 $d$。}
+由达西公式 $h_f=\lambda\dfrac{L}{d}\dfrac{v^2}{2g}$ 与 $v=\dfrac{4Q}{\pi d^2}$，得
+\[
+h_f=\lambda\frac{L}{d}\cdot\frac{1}{2g}\left(\frac{4Q}{\pi d^2}\right)^2
+=\frac{8\lambda LQ^2}{g\pi^2d^5}
+\]
+\[
+d=\left(\frac{8\lambda LQ^2}{g\pi^2h_f}\right)^{1/5}
+\]
+先算分子：$8\times0.024\times500\times1.2^2=8\times0.024\times500\times1.44=138.24$；
+分母：$9.81\times\pi^2\times42.47=9.81\times9.8696\times42.47=4111.9$。
+\[
+d^{5}=\frac{138.24}{4111.9}=3.362\times10^{-2}
+\]
+\[
+d=\left(3.362\times10^{-2}\right)^{1/5}
+=\exp\!\left(\frac{\ln 0.03362}{5}\right)=\exp(-0.6811)=0.506\ \mathrm{m}
+\]
+
+\textbf{结果：}$\boxed{Q\approx1.2\ \mathrm{m^3/s}}$，$\boxed{d\approx0.507\ \mathrm{m}}$。
+
+\textbf{校核：}$v=\dfrac{4Q}{\pi d^2}=\dfrac{4\times1.2}{\pi\times0.507^2}=5.94$ m/s，
+$h_f=0.024\times\dfrac{500}{0.507}\times\dfrac{5.94^2}{2\times9.81}=42.5$ m $=H/3$，与题设一致。
+\end{jie}
+
+\begin{tishi}
+原答案卷此题的流量算式被 OCR 读作
+$\dfrac{3N}{2\gamma H}=\dfrac{3\times1000\times1000}{2\times1000\times9.81\times127.4}=1.2\ \mathrm{m^3/s}$，
+其中分母 $1000$ 系 $\gamma=9.81\times10^3$ N/m$^3$ 的近似写法，结果 $1.2$ m$^3$/s 与本解一致；
+管径 $d=0.507$ m 与原卷所给结果一致。
+\end{tishi}
+
+\answ{6.（10 分）抛物线形坝面的水平分力与垂直分力}
+
+\begin{jie}
+\textbf{已知：}坝迎水面为抛物线，顶点 $O$ 在水面（$O$ 处水深为零），
+水深 $h=50$ m 处抛物线到其对称轴的水平距离为 $b=12.5$ m，
+求单位宽度（$B=1$ m）坝体所受水的水平分力与垂直分力，取 $\gamma=9.8\,\mathrm{kN/m^3}$。
+
+\textbf{建立坐标系：}以顶点 $O$ 为原点，$x$ 轴水平指向坝体一侧，$y$ 轴铅垂向下。
+抛物线过点 $(12.5,\ 50)$，设 $y=ax^2$，则
+\[
+50=a\times12.5^2=156.25a
+\quad\Longrightarrow\quad
+a=\frac{50}{156.25}=0.32
+\]
+即坝面方程
+\[
+\boxed{y=0.32x^2}\qquad(0\leqslant x\leqslant12.5\ \mathrm{m},\ 0\leqslant y\leqslant50\ \mathrm{m})
+\]
+
+\textbf{（1）水平分力 $F_x$。}曲面上的水平分力等于该曲面在铅垂面上的投影面所受的静水总压力，
+投影面为单位宽、高 $h$ 的矩形：
+\[
+F_x=\frac{1}{2}\gamma h^2B=\frac{1}{2}\times9.8\times50^2\times1=12250\ \mathrm{kN}
+\]
+方向水平指向下游（由水压向坝体）。
+
+\textbf{（2）垂直分力 $F_z$。}曲面上的垂直分力等于压力体的水重。单位宽度坝体，
+取宽度为 $\mathrm{d}x$、高为 $(h-y)$ 的竖向条带，该条带上方水重为 $\gamma(h-y)\mathrm{d}x$：
+\[
+F_z=\gamma B\int_0^{b}(h-y)\,\mathrm{d}x
+=\gamma\int_0^{12.5}\left(50-0.32x^2\right)\mathrm{d}x
+\]
+\[
+\int_0^{12.5}\left(50-0.32x^2\right)\mathrm{d}x
+=50\times12.5-\frac{0.32\times12.5^3}{3}
+=625-\frac{0.32\times1953.125}{3}
+=625-208.33=416.67\ \mathrm{m^2}
+\]
+\[
+F_z=9.8\times416.67=4083.3\ \mathrm{kN}
+\]
+
+并把上式写成通用闭式验证：对 $y=ax^2$（$h=ab^2$）有
+\[
+\int_0^b(h-ax^2)\,\mathrm{d}x=ab^3-\frac{ab^3}{3}=\frac{2}{3}ab^3=\frac{2}{3}hb,
+\qquad
+F_z=\frac{2}{3}\gamma hb=\frac{2}{3}\times9.8\times50\times12.5=4083.3\ \mathrm{kN}
+\]
+
+\textbf{结果：}单位宽度坝体所受水的
+\[
+\boxed{F_x=12250\ \mathrm{kN}\ (\text{水平向，指向下游})},\qquad
+\boxed{F_z=4083\ \mathrm{kN}\ (\text{铅垂向下})}
+\]
+
+\textbf{校核与说明：}$F_x$ 与水深平方成正比、$F_z$ 与水深及半宽的一次方成正比，
+本题中 $F_x\gg F_z$，符合“宽度方向很陡的抛物线坝面以水平推力为主”的物理直觉。
+\end{jie}
+
+\begin{tishi}
+原答案卷此处 OCR 残缺：只留下 “$\gamma\displaystyle\int_0^{\cdot}x^2\,\mathrm{d}x=408.3$ KN”、
+“$P_z=\rho gV=\rho g\displaystyle\int x\,\mathrm{d}y=0.64\rho g$”、
+“$\dfrac{1}{2}\rho gH^2=1225$ KN”等片段。
+
+逐条核对：水平分力原卷写 $1225$ kN，而 $h=50$ m 时
+$\dfrac{1}{2}\gamma h^2=\dfrac{1}{2}\times9.8\times2500=12250$ kN，原卷数值与国际单位换算相差 10 倍，
+本册按正确量值取 $12250$ kN。垂直分力原卷作 $408.3$ kN，
+而按题给尺寸重算应为 $4083$ kN（相差 10 倍，属漏写尾数）；
+其“$0.64\rho g$”对应闭式系数：$\dfrac{F_z}{\gamma h^2}=\dfrac{2b}{3h}=\dfrac{2\times12.5}{3\times50}=0.1667$，
+而“$0.64$”约为 $F_z$ 与 $\gamma b h$ 的比值 $\left(\dfrac{2}{3}\right)$ 与 $F_x$ 系数组合后的近似值，
+不足以唯一还原原卷写法。以上两处数量级问题均已在答案中按正确数值改正，特此说明。
+\end{tishi}
+
+\begin{tishi}
+\textbf{关于超纲题：}本套 2017 年试题（选择、填空、判断、计算共四大题）全部落在现行 818 大纲
+第 1--8 章范围之内，未出现明渠流（X1）、气体动力学（X2）、流体机械（X3）等旧大纲/复试范围内容，
+故无超纲题需要另加标注。
+\end{tishi}

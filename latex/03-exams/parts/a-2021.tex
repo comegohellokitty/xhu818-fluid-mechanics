@@ -1,0 +1,396 @@
+\chapter{2021 年工程流体力学试题参考答案（当年科目代码 818）}
+
+\begin{tishi}
+说明：原资料未提供 2021 年答案卷，本册解答由编者按流体力学标准解法独立给出，仅供对答案与自检使用，不代表当年官方评分标准。
+
+本卷满分 150 分，结构为：单项选择题 10 小题 $\times$ 3 分 $=$ 30 分；判断题 10 小题 $\times$ 2 分 $=$ 20 分；填空题 10 空 $\times$ 3 分 $=$ 30 分；简答题 3 小题 $\times$ 4 分 $=$ 12 分；计算题 6 小题共 58 分（10、8、14、8、10、8）。
+题号顺序与同年试题卷重排后的顺序一致。凡原卷图面未标注数值、而解题又必须用到的几何量，均在相应“第 $N$ 题”说明框中交代取值依据，请勿当作原卷数据使用。全书取水的重度 $\gamma=9.8\,\mathrm{kN/m^3}$、重力加速度 $g=9.8\,\mathrm{m/s^2}$；若按 $\gamma=9.81\,\mathrm{kN/m^3}$ 计算，末位数字略有差异。
+\end{tishi}
+
+\section{一、单项选择题（共 30 分，每小题 3 分）}
+
+\answ{答案}
+\begin{center}
+1.~D \quad 2.~D \quad 3.~C \quad 4.~B \quad 5.~B \quad 6.~B \quad 7.~C \quad 8.~C \quad 9.~B \quad 10.~B
+\end{center}
+
+\begin{tishi}
+第 1 题：压力体是受压曲面与自由液面（或其延长面）之间的空间体积。该空间确实被液体占据者为实压力体，被构筑物占据、与液体分居受压面两侧者为虚压力体，故压力体内可能有液体，也可能无液体，选 D。
+
+第 2 题：重力场中作用于液体的质量力只有重力，单位质量力为 $(0,\,0,\,-g)$（$z$ 轴铅垂向上），即 $f_x=f_y=0$、$f_z=-g$，选 D。
+
+第 3 题：动量方程 $\sum\vec F=\frac{\mathrm{d}}{\mathrm{d}t}\int_{CV}\vec u\rho\,\mathrm{d}V$ 中，$\sum\vec F$ 表示作用在控制体内流体上的合外力，即质量力与表面力之和，选 C。
+
+第 4 题：$a_x=\frac{\partial u_x}{\partial t}+u_x\frac{\partial u_x}{\partial x}+u_y\frac{\partial u_x}{\partial y}=x+xt^{2}$，代入 $t=1\,\mathrm{s}$、$x=1$ 得 $a_x=2\,\mathrm{m/s^2}$；$a_y=\frac{\partial u_y}{\partial t}+u_x\frac{\partial u_y}{\partial x}+u_y\frac{\partial u_y}{\partial y}=-y+yt^{2}$，代入 $t=1$、$y=2$ 得 $a_y=0$，选 B。
+
+第 5 题：$u_x$ 只随 $y$ 变化、$u_y$ 只随 $x$ 变化、$u_z=0$，运动要素只与两个空间坐标有关，为二元（二维）流动，选 B。
+
+第 6 题：动量方程中的压强项沿控制体周界以大气压作用于流体，大气压互相抵消，进、出口断面用相对压强（计示压强）即可，选 B。
+
+第 7 题：$\Rey=\frac{vd}{\nu}$，只与流速、管径和运动黏度（温度）有关，与管长无关，选 C。
+
+第 8 题：阻力平方区（水力粗糙区）中沿程阻力系数只与相对粗糙度有关，$h_f=\lambda\frac{l}{d}\frac{v^2}{2g}\propto v^{2}$，选 C。
+
+第 9 题：判别层流与紊流用下临界雷诺数（圆管取 $\Rey_c=2300$ 或 2320），选 B。
+
+第 10 题：三根支管为并联，两端水头差相同，故各管水头损失相等；由 $h_f=\lambda\frac{l}{d}\frac{v^2}{2g}=\frac{8\lambda l}{\pi^2g}\frac{Q^2}{d^{5}}$，$\lambda$、$l$、$h_f$ 均相同，得 $\frac{Q_1^2}{d_1^{5}}=\frac{Q_2^2}{d_2^{5}}=\frac{Q_3^2}{d_3^{5}}$，选 B。
+\end{tishi}
+
+\section{二、判断题（共 20 分，每小题 2 分）}
+
+\answ{答案}
+\begin{center}
+1.~$\surd$ \quad 2.~$\surd$ \quad 3.~$\times$ \quad 4.~$\surd$ \quad 5.~$\surd$ \quad 6.~$\times$ \quad 7.~$\surd$ \quad 8.~$\times$ \quad 9.~$\times$ \quad 10.~$\times$
+\end{center}
+
+\begin{tishi}
+第 1 题：正确。静止流体（以及理想流体运动时）内部切应力为零，故流体静力学中不考虑流体内的切应力。
+
+第 2 题：正确。均匀流的迁移（位变）加速度 $\vec u\cdot\nabla\vec u=0$，流体质点只有当地（时变）加速度。
+
+第 3 题：错误。满管流只表示管道被液体充满，断面压强仍可低于大气压，例如虹吸管顶部、文丘里管喉部均出现负压。
+
+第 4 题：正确。有压管道的机械能损失按边界形状是否沿程变化分为沿程损失与局部损失两类。
+
+第 5 题：正确。圆管层流的沿程阻力系数 $\lambda=\frac{64}{\Rey}$，只与雷诺数有关。
+
+第 6 题：错误。管道出口与充分大容器相连属于突然扩大，$\zeta=\left(1-\frac{A_1}{A_2}\right)^{2}$，$A_2\to\infty$ 时 $\zeta\to 1\neq 0$。
+
+第 7 题：正确。短管计算中速度水头与局部水头损失都不能略去（长管计算才可略去）。
+
+第 8 题：错误。由 $T=\frac{2AH}{\mu a\sqrt{2gH}}$ 知，水位下降的变水头泄空同体积水所需时间为恒定水头泄放同体积水所需时间的 2 倍，题述“小于”错误。
+
+第 9 题：错误。是否水力粗糙取决于绝对粗糙度 $\Delta$ 与层流底层厚度 $\delta_l$ 的比值，即由 $\Rey$ 与 $\Delta/d$ 共同决定，并非单看内壁面粗糙度是否大。
+
+第 10 题：错误。取沿板面（铅垂）方向的动量方程，不计摩擦力与重力时沿板面无外力：$0=\rho Q_1(-v)+\rho Q_2v\cos\alpha$，得 $Q_1=Q_2\cos\alpha$；又 $Q_1+Q_2=Q$，故 $Q_2=\frac{Q}{1+\cos\alpha}$，即 $\cos\alpha=\frac{Q_1}{Q_2}\neq\frac{Q_2}{Q}$。（本册按图 2 把倾角 $\alpha$ 定义为偏转射流与水平参考线的夹角，此时沿板方向的动量方程给出 $Q_1=Q_2\sin\alpha$，同样与题给式不符，结论仍为错误。）
+\end{tishi}
+
+\section{三、填空题（共 30 分，10 空，每空 3 分）}
+
+\answ{答案}
+
+\noindent\textbf{1.}\quad 牛顿流体。
+
+\noindent\textbf{2.}\quad 大小相等。
+
+\noindent\textbf{3.}\quad $p_A=p_a-\gamma h_1-\gamma_{\mathrm{Hg}}h_2$（以相对压强计，$A$ 处为负压，即 $p_A-p_a=-\left(\gamma h_1+\gamma_{\mathrm{Hg}}h_2\right)$）。
+
+\noindent\textbf{4.}\quad 虚压力体；铅垂分力方向为“向上”。
+
+\noindent\textbf{5.}\quad 系统。
+
+\noindent\textbf{6.}\quad 一维流动。
+
+\noindent\textbf{7.}\quad 变形（角变形）运动。
+
+\noindent\textbf{8.}\quad $u_x=2y$，$u_y=2x-1$。
+
+\begin{tishi}
+第 3 题：按图 3 读图，U 形管中的水银面在 $A$ 一侧高于通大气的右支，说明 $A$ 处压强低于大气压。取右支水银面为等压面：$p_A+\gamma h_1+\gamma_{\mathrm{Hg}}h_2=p_a$，故 $p_A=p_a-\gamma h_1-\gamma_{\mathrm{Hg}}h_2$。式中 $h_1$ 为 $A$ 点至左支水银面的铅垂距离（其间为水），$h_2$ 为两支水银面的高差（其间为水银）。若原卷本意为右支水银面反而高于左支，则等压面方程改为 $p_A+\gamma h_1=p_a+\gamma_{\mathrm{Hg}}h_2$，即 $p_A=p_a+\gamma_{\mathrm{Hg}}h_2-\gamma h_1$。
+
+第 4 题：压力体与液体位于受压面异侧时为虚压力体，其铅垂分力方向向上；位于同侧（压力体内确有液体）时为实压力体，铅垂分力方向向下。
+
+第 7 题：流体微团的运动可分解为平移、旋转与变形（线变形、角变形）三部分。刚体可作平移与旋转，但不能发生线变形与角变形，故流体所独有者为（角）变形运动。
+
+第 8 题：题面明确写“速度势函数”，故按 $u_x=\frac{\partial\varphi}{\partial x}$、$u_y=\frac{\partial\varphi}{\partial y}$ 求：$u_x=\frac{\partial}{\partial x}(2xy-y)=2y$，$u_y=\frac{\partial}{\partial y}(2xy-y)=2x-1$，且 $\frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}=0$ 满足不可压缩条件。若该函数原意为流函数（符号 $\psi=2xy-y$），则 $u_x=\frac{\partial\psi}{\partial y}=2x-1$、$u_y=-\frac{\partial\psi}{\partial x}=-2y$，也满足连续性方程；原卷此处只可辨出 $2xy-y$，故按题面文字取势函数解，对答案时请留意这一字之差。
+\end{tishi}
+
+\section{四、简答题（共 12 分，每小题 4 分）}
+
+\answ{1.（4 分）重力场中静止流体等压面的形状及原因}
+
+\begin{jie}
+形状：一族水平面。原因：等压面与质量力相垂直。重力场中作用于静止流体的质量力只有重力，方向铅垂向下，故等压面只能是垂直于重力的水平面；同理，连通器内同种静止液体的同一水平面为等压面。
+\end{jie}
+
+\answ{2.（4 分）尼古拉兹人工粗糙管实验曲线中 $\lambda$ 的分区规律}
+
+\begin{jie}
+尼古拉兹实验曲线分为五个区域：层流区、层流到紊流的过渡区、紊流光滑区、紊流过渡粗糙区、紊流粗糙区（阻力平方区）。
+
+其中 $\lambda$ 只与 $\Rey$ 有关的区域是：层流区（$\Rey<2320$，$\lambda=\frac{64}{\Rey}$）与紊流光滑区（$\lambda=\frac{0.3164}{\Rey^{0.25}}$）；
+$\lambda$ 只与 $\Delta/d$ 有关的区域是：紊流粗糙区（阻力平方区），此时 $\lambda=f\left(\frac{\Delta}{d}\right)$，与 $\Rey$ 无关。
+其余两区（层流到紊流的过渡区、紊流过渡粗糙区）中 $\lambda$ 既与 $\Rey$ 有关，也与 $\Delta/d$ 有关。
+\end{jie}
+
+\answ{3.（4 分）模型实验的相似准则选择}
+
+\begin{jie}
+有压管流中黏滞力与压力起主导作用、重力影响可忽略，应选雷诺准则，即模型与原型雷诺数相等（$\Rey_m=\Rey_p$）；
+明渠流动是具有自由液面的重力流，重力起主导作用，应选弗劳德准则，即模型与原型弗劳德数相等（$Fr_m=Fr_p$）。
+\end{jie}
+
+\section{五、计算题（共 58 分）}
+
+\answ{1.（10 分）扇形闸门上的静水总压力}
+
+\begin{jie}
+\textbf{已知：}扇形（圆弧）闸门，中心角 $\alpha=45^\circ$，宽度 $B=1\,\mathrm{m}$（垂直于图面），可绕铰链 $C$ 旋转；上游水深 $H=3\,\mathrm{m}$，圆弧以 $C$ 为圆心；取水的重度 $\gamma=9.8\,\mathrm{kN/m^3}$。
+\textbf{按图设定：}圆弧闸面的上端 $b$ 位于自由液面（该处相对压强为零），下端 $a$ 与铰链 $C$ 同高（闸底），$\angle aCb=\alpha=45^\circ$。
+\textbf{求：}作用在闸门上的静水总压力的大小和方向。
+
+\textbf{（1）圆弧半径。}
+\[
+r=\frac{H}{\sin\alpha}=\frac{3}{\sin45^\circ}=4.243\ \mathrm{m}
+\]
+
+\textbf{（2）水平分力。}等于圆弧面在水流方向上的铅垂投影面（高 $H$、宽 $B$）所受的总压力：
+\[
+P_x=\frac{1}{2}\gamma H^2B=\frac{1}{2}\times9.8\times3^2\times1=44.1\ \mathrm{kN}
+\]
+方向水平指向下游。
+
+\textbf{（3）铅垂分力。}压力体为圆弧面以外、自由液面以下、过 $a$、$b$ 两端铅垂面之间的空间：
+\[
+V=\int_{x_a}^{x_b}(H-z)\,\mathrm{d}x,\qquad z=\sqrt{r^2-x^2}
+\]
+其中 $x$ 自圆心 $C$ 起算，$x_a=-r=-4.243\,\mathrm{m}$、$x_b=-r\cos45^\circ=-3.000\,\mathrm{m}$，积分得
+\[
+V=H^2\left(\sqrt{2}-\frac{\pi}{4}-\frac{1}{2}\right)=9\times0.1288=1.159\ \mathrm{m^3}
+\]
+\[
+P_z=\gamma VB=9.8\times1.159\times1=11.4\ \mathrm{kN}
+\]
+压力体为实压力体，故 $P_z$ 的方向铅垂向下。
+
+\textbf{（4）总压力及其方向。}
+\[
+P=\sqrt{P_x^2+P_z^2}=\sqrt{44.1^2+11.4^2}=45.5\ \mathrm{kN}
+\]
+\[
+\theta=\arctan\frac{P_z}{P_x}=\arctan\frac{11.4}{44.1}=14.4^\circ
+\]
+
+\textbf{结果：}$P=45.5\,\mathrm{kN}$，方向指向下游偏下方，与水平面成 $14.4^\circ$。
+
+\textbf{（5）校核。}圆弧面上各点压强均沿半径方向指向圆心 $C$，故合力作用线必通过铰链 $C$，对 $C$ 的力矩为零，这与扇形（弧形）闸门启闭力很小的特点一致。
+\end{jie}
+
+\begin{tishi}
+第 1 题：原卷图 4 只标出 $\alpha=45^\circ$、$B=1\,\mathrm{m}$、$H=3\,\mathrm{m}$ 与半径符号 $r$，未给出半径数值，也未注明水位是否与闸顶齐平。本解答按“圆弧以铰链 $C$ 为圆心、圆弧上端 $b$ 恰在自由液面、下端 $a$ 与 $C$ 同高，$\angle aCb=45^\circ$”读图求解，故 $r=H/\sin45^\circ=4.243\,\mathrm{m}$。若原卷“中心角”另有含义（例如指圆弧的总中心角），则 $r$ 与压力体体积都随之改变。此外闸门自重与铰链摩擦力均未计入，题意只问水压力的合力。
+\end{tishi}
+
+\answ{2.（8 分）敞口水池经变径管路排出所需水头与 $M$ 点压强}
+
+\begin{jie}
+\textbf{已知：}质量流量 $q_m=15\,\mathrm{kg/s}$；$d_1=100\,\mathrm{mm}=0.1\,\mathrm{m}$，$d_2=75\,\mathrm{mm}=0.075\,\mathrm{m}$；水的密度 $\rho=1000\,\mathrm{kg/m^3}$；不计水头损失；管路水平敷设，$H$ 为池中水面到管轴线的铅垂距离；$M$ 点位于第二管段中央。
+\textbf{求：}（1）所需水头 $H$；（2）$M$ 点的相对压强。
+
+\textbf{（1）两管段的过流面积与流速。}
+\[
+A_1=\frac{\pi d_1^2}{4}=7.854\times10^{-3}\ \mathrm{m^2},\qquad A_2=\frac{\pi d_2^2}{4}=4.418\times10^{-3}\ \mathrm{m^2}
+\]
+\[
+v_1=\frac{q_m}{\rho A_1}=\frac{15}{1000\times7.854\times10^{-3}}=1.91\ \mathrm{m/s},\qquad v_2=\frac{q_m}{\rho A_2}=3.40\ \mathrm{m/s}
+\]
+
+\textbf{（2）列伯努利方程求所需水头 $H$。}以管轴线为基准面，池中水面（0--0）与管道出口断面（2--2）均为大气压、池面流速近似为零：
+\[
+H=\frac{v_2^2}{2g}=\frac{3.40^2}{2\times9.8}=0.589\ \mathrm{m}
+\]
+
+\textbf{（3）第二管段中央 $M$ 点的相对压强。}$M$ 点所在管段为等径水平管段，由 $M$ 至出口同径、同高程且不计水头损失，出口又通大气：
+\[
+\frac{p_M}{\gamma}+\frac{v_2^2}{2g}=\frac{v_2^2}{2g},\qquad p_M=0
+\]
+
+\textbf{（4）校核。}第一管段内的相对压强为
+\[
+p=\frac{\rho}{2}\left(v_2^2-v_1^2\right)=\frac{1000}{2}\left(3.40^2-1.91^2\right)=3.94\ \mathrm{kPa}
+\]
+由池面到该断面的能量方程 $\frac{p}{\gamma}+\frac{v_1^2}{2g}=0.402+0.186=0.588\,\mathrm{m}=H$，与（2）一致，计算自洽。
+
+\textbf{结果：}$H\approx0.59\,\mathrm{m}$；$M$ 点相对压强 $p_M=0$（等于大气压）。
+\end{jie}
+
+\begin{tishi}
+第 2 题：原卷题面“水从口水池”应为“敞口水池”，已按敞口池（水面压强等于大气压）计算。图 5 中 $M$ 点标在第二管段（$d_2$ 段）中部，故按第二管段求 $p_M$；因该管段与出口同径、同高程且不计水头损失，出口又通大气，所以 $p_M=0$（相对压强）。若原意是把 $M$ 取在第一管段（$d_1$ 段）中央，则 $\frac{p_M}{\gamma}=H-\frac{v_1^2}{2g}=0.402\,\mathrm{m}$，即 $p_M=3.94\,\mathrm{kPa}$。两种取法只差“第二管段”的所指，对答案时请核对原卷图 5 中 $M$ 的标注位置。
+\end{tishi}
+
+\answ{3.（14 分）水流对水平弯管的作用力}
+
+\begin{jie}
+\textbf{已知：}弯管水平放置，进、出口直径 $d_1=100\,\mathrm{mm}$、$d_2=75\,\mathrm{mm}$，进口平均流速 $v_1=1.5\,\mathrm{m/s}$，折转角 $\theta=30^\circ$，出口流入大气，不计水头损失；取 $\rho=1000\,\mathrm{kg/m^3}$。
+\textbf{求：}水流对弯管的作用力 $F_x$、$F_y$。
+
+\textbf{（1）出口流速与流量。}
+\[
+v_2=v_1\left(\frac{d_1}{d_2}\right)^2=1.5\times\left(\frac{100}{75}\right)^2=2.667\ \mathrm{m/s}
+\]
+\[
+Q=A_1v_1=\frac{\pi d_1^2}{4}v_1=7.854\times10^{-3}\times1.5=1.178\times10^{-2}\ \mathrm{m^3/s},\qquad \rho Q=11.78\ \mathrm{kg/s}
+\]
+
+\textbf{（2）进口断面的相对压强。}弯管水平，出口压强为大气压（相对压强为零），由伯努利方程
+\[
+p_1=\frac{\rho}{2}\left(v_2^2-v_1^2\right)=\frac{1000}{2}\left(2.667^2-1.5^2\right)=2431\ \mathrm{Pa}
+\]
+\[
+p_1A_1=2431\times7.854\times10^{-3}=19.09\ \mathrm{N}
+\]
+
+\textbf{（3）列动量方程求弯管对水流的作用力。}取进口 1--1 与出口 2--2 之间的液体为控制体，$x$ 轴沿进口流速方向，$y$ 轴在水平面内与之垂直并指向弯管折转的一侧：
+\[
+p_1A_1+R_x=\rho Q\left(v_2\cos\theta-v_1\right)
+\]
+\[
+R_x=11.78\times\left(2.667\times0.8660-1.5\right)-19.09=-9.55\ \mathrm{N}
+\]
+\[
+R_y=\rho Q\left(v_2\sin\theta-0\right)=11.78\times2.667\times0.5=15.71\ \mathrm{N}
+\]
+
+\textbf{（4）由牛顿第三定律求水流对弯管的作用力。}$F=-R$：
+\[
+F_x=-R_x=+9.55\ \mathrm{N},\qquad F_y=-R_y=-15.71\ \mathrm{N}
+\]
+\[
+F=\sqrt{F_x^2+F_y^2}=\sqrt{9.55^2+15.71^2}=18.4\ \mathrm{N}
+\]
+
+\textbf{结果：}$F_x=9.55\,\mathrm{N}$，方向与进口流速相同（指向下游）；$F_y=15.71\,\mathrm{N}$，方向与弯管折转方向相反；合力 $F=18.4\,\mathrm{N}$。
+
+\textbf{（5）校核。}本题与 2017 年试题中的弯管题（$d_1=100\,\mathrm{mm}$、$d_2=75\,\mathrm{mm}$、$v_1=1.5\,\mathrm{m/s}$、$\theta=30^\circ$）数据完全相同，2017 年原答案卷给出的两方向分力为 9.58 N 与 15.75 N，本解答为 9.55 N 与 15.71 N，二者相符（差异属取位误差）。
+\end{jie}
+
+\begin{tishi}
+第 3 题：原卷 OCR 把 $\theta$ 拾作 0，按题面“水平弯管流入大气”与图 6 的折转角应取 $\theta=30^\circ$。又题问“水流对弯管的作用力”，最终结果应取液体所受反力的相反数：$R_x$、$R_y$ 是弯管对水流的作用力，二者差一个负号，作答时不要混淆方向。
+\end{tishi}
+
+\answ{4.（8 分）钢管输水时水塔水面高出管道出口的高度}
+
+\begin{jie}
+\textbf{已知：}$Q=52.5\,\mathrm{L/s}=0.0525\,\mathrm{m^3/s}$；管长 $l=300\,\mathrm{m}$，管径 $d=0.2\,\mathrm{m}$；沿程阻力系数 $\lambda=0.025$；局部水头损失按沿程水头损失的 10\% 计。
+\textbf{求：}水塔水面比管道出口高多少（即图 7 中的 $H$）。
+
+\textbf{（1）管内平均流速。}
+\[
+A=\frac{\pi d^2}{4}=\frac{\pi\times0.2^2}{4}=3.142\times10^{-2}\ \mathrm{m^2},\qquad v=\frac{Q}{A}=\frac{0.0525}{3.142\times10^{-2}}=1.671\ \mathrm{m/s}
+\]
+\[
+\frac{v^2}{2g}=\frac{1.671^2}{2\times9.8}=0.1425\ \mathrm{m}
+\]
+
+\textbf{（2）沿程水头损失。}
+\[
+h_f=\lambda\frac{l}{d}\frac{v^2}{2g}=0.025\times\frac{300}{0.2}\times0.1425=5.34\ \mathrm{m}
+\]
+
+\textbf{（3）局部水头损失。}
+\[
+h_j=10\%\times h_f=0.53\ \mathrm{m}
+\]
+
+\textbf{（4）列伯努利方程求所需高差。}以管道出口为基准面，水塔水面与出口均通大气、断面流速水头不计：
+\[
+H=h_f+h_j=5.34+0.53=5.87\ \mathrm{m}
+\]
+
+\textbf{结果：}水塔水面应比管道出口高约 $5.9\,\mathrm{m}$。
+
+\textbf{（5）校核。}管内雷诺数
+\[
+\Rey=\frac{vd}{\nu}=\frac{1.671\times0.2}{1.0\times10^{-6}}=3.3\times10^{5}
+\]
+处于紊流过渡粗糙区至粗糙区，取 $\lambda=0.025$ 是合理的；水头损失虽只有数米量级，但与 $300$ m 管长、$1.7$ m/s 的流速相称。
+\end{jie}
+
+\begin{tishi}
+第 4 题：原卷题面给出“水头为 20 m”，与所问“水塔水面要比管道出口高多少”互相矛盾——按所给流量、管径、管长与 $\lambda$ 算得所需高差仅约 5.9 m。本解答按图 7 与设问求解，得 $H\approx5.9\,\mathrm{m}$；若原卷确以 20 m 为给定的作用水头，则该水头远大于所需水头，管道输送 52.5 L/s 的能力有很大富余。
+\end{tishi}
+
+\answ{5.（10 分）平板尾端边界层厚度与平板两面摩擦阻力}
+
+\begin{jie}
+\textbf{已知：}平板宽 $b=0.5\,\mathrm{m}$、长 $l=0.8\,\mathrm{m}$，顺流置于水中，与水流相对速度 $v=2\,\mathrm{m/s}$；水的运动黏度 $\nu=10^{-6}\,\mathrm{m^2/s}$，密度 $\rho=10^3\,\mathrm{kg/m^3}$；转捩点雷诺数 $\Rey_{x,cr}=5\times10^5$。
+题给层流边界层厚度 $\frac{\delta}{x}=\frac{5.48}{\sqrt{\Rey_x}}$、紊流边界层厚度 $\frac{\delta}{x}=\frac{0.38}{\Rey_x^{1/5}}$、层流摩阻系数 $C_f=\frac{1.328}{\sqrt{\Rey_l}}$、紊流摩阻系数 $C_f=\frac{0.074}{\Rey_l^{1/5}}$。
+\textbf{求：}平板尾端边界层厚度 $\delta$ 及平板两面的摩擦阻力 $F_D$。
+
+\textbf{（1）判别边界层类型。}
+\[
+\Rey_l=\frac{vl}{\nu}=\frac{2\times0.8}{10^{-6}}=1.6\times10^6>5\times10^5
+\]
+\[
+x_{cr}=\frac{\Rey_{x,cr}\nu}{v}=\frac{5\times10^5\times10^{-6}}{2}=0.25\ \mathrm{m}<l=0.8\ \mathrm{m}
+\]
+故平板上层流段与紊流段并存，为混合边界层。
+
+\textbf{（2）尾端边界层厚度。}按“整板以紊流计算、扣除层流段长度上的紊流部分、再加上层流部分”：
+\[
+\delta=\frac{0.38l}{\Rey_l^{1/5}}-\frac{0.38x_{cr}}{\Rey_{cr}^{1/5}}+\frac{5.48x_{cr}}{\sqrt{\Rey_{cr}}}
+\]
+其中 $\Rey_l^{1/5}=(1.6\times10^6)^{0.2}=17.41$，$\Rey_{cr}^{1/5}=(5\times10^5)^{0.2}=13.80$，$\sqrt{\Rey_{cr}}=707.1$，代入得
+\[
+\delta=0.01746-0.00689+0.00194=0.0125\ \mathrm{m}=12.5\ \mathrm{mm}
+\]
+
+\textbf{（3）平板单面摩擦阻力。}
+\[
+F_{D1}=\frac{1}{2}\rho v^2b\left[\frac{0.074l}{\Rey_l^{1/5}}-\frac{0.074x_{cr}}{\Rey_{cr}^{1/5}}+\frac{1.328x_{cr}}{\sqrt{\Rey_{cr}}}\right]
+\]
+\[
+F_{D1}=\frac{1}{2}\times1000\times2^2\times0.5\times\left(0.003401-0.001341+0.000469\right)=2.53\ \mathrm{N}
+\]
+
+\textbf{（4）平板两面摩擦阻力。}
+\[
+F_D=2F_{D1}=2\times2.53=5.06\ \mathrm{N}
+\]
+
+\textbf{结果：}$\delta=12.5\,\mathrm{mm}$，$F_D=5.06\,\mathrm{N}$。
+
+\textbf{（5）校核。}单面平均摩阻系数
+\[
+C_f=\frac{F_{D1}}{\frac{1}{2}\rho v^2bl}=\frac{2.53}{800}=0.00316
+\]
+用题给的层流、紊流摩阻系数公式也可算得
+\[
+C_f=\frac{0.074}{\Rey_l^{1/5}}-\frac{x_{cr}}{l}\left(\frac{0.074}{\Rey_{cr}^{1/5}}-\frac{1.328}{\sqrt{\Rey_{cr}}}\right)=0.00316
+\]
+两者一致。
+\end{jie}
+
+\begin{tishi}
+第 5 题：原卷 OCR 把 $\nu$ 拾作 $10^{0}\,\mathrm{m^2/s}$、把 $\rho$ 拾作 $10\,\mathrm{kg/m^3}$、把 $\Rey_{x,cr}$ 拾作 $5\times10^{0}$，按流体力学常识与题给判别式应分别为 $\nu=10^{-6}\,\mathrm{m^2/s}$、$\rho=10^{3}\,\mathrm{kg/m^3}$、$\Rey_{x,cr}=5\times10^{5}$，本解答按此取值。因转捩点 $x_{cr}=0.25\,\mathrm{m}$ 在板长以内，边界层为混合边界层，不能整板按层流或整板按紊流计算；紊流厚度与摩阻公式中的 $\Rey_x$ 均取当地雷诺数。
+\end{tishi}
+
+\answ{6.（8 分）弧形闸门闸下泄流模型的相似换算}
+
+\begin{jie}
+\textbf{已知：}长度比尺 $k_l=\frac{l_m}{l_p}=0.05$；模型下游收缩断面平均流速 $v_m=2\,\mathrm{m/s}$，流量 $Q_m=35\,\mathrm{L/s}=0.035\,\mathrm{m^3/s}$，水流作用在闸门上的总压力 $P_m=40\,\mathrm{N}$。闸下泄流为有自由液面的重力流，模型按弗劳德准则设计。
+\textbf{求：}原型收缩断面的平均流速 $v_p$、流量 $Q_p$ 和闸门上的总压力 $P_p$。
+
+\textbf{（1）相似比尺。}弗劳德相似，且模型与原型为同种流体、同重力场：
+\[
+k_v=\frac{v_m}{v_p}=k_l^{1/2}=0.05^{1/2}=0.2236
+\]
+\[
+k_Q=\frac{Q_m}{Q_p}=k_l^2k_v=k_l^{5/2}=0.05^{2.5}=5.590\times10^{-4}
+\]
+\[
+k_F=\frac{P_m}{P_p}=k_l^3=0.05^3=1.25\times10^{-4}
+\]
+
+\textbf{（2）原型收缩断面平均流速。}
+\[
+v_p=\frac{v_m}{k_v}=\frac{2}{0.2236}=8.94\ \mathrm{m/s}
+\]
+
+\textbf{（3）原型流量。}
+\[
+Q_p=\frac{Q_m}{k_Q}=\frac{0.035}{5.590\times10^{-4}}=62.6\ \mathrm{m^3/s}
+\]
+
+\textbf{（4）原型闸门上的总压力。}
+\[
+P_p=\frac{P_m}{k_F}=\frac{40}{1.25\times10^{-4}}=3.2\times10^5\ \mathrm{N}=320\ \mathrm{kN}
+\]
+
+\textbf{结果：}$v_p=8.94\,\mathrm{m/s}$，$Q_p=62.6\,\mathrm{m^3/s}$，$P_p=320\,\mathrm{kN}$。
+
+\textbf{（5）校核。}由面积比尺 $k_l^2$ 与流速比尺 $k_l^{1/2}$ 相乘得 $k_Q=k_l^{5/2}$；由力的比尺与 $\Rey$ 无关的弗劳德相似关系 $k_F=\rho k_Qk_v$ 亦可得 $k_F=k_l^3$，各比尺相互匹配。
+\end{jie}
+
+\begin{tishi}
+第 6 题：原卷比尺写作 $k_l=0.05$（OCR 下标“$l$”不清），其含义为长度比尺 $l_m/l_p$。闸下泄流为重力主导的自由表面流动，只能按弗劳德准则换算；若误用雷诺准则，各比尺将完全不同。
+\end{tishi}

@@ -1,0 +1,873 @@
+\chapter*{第 1 章 绪论}\addcontentsline{toc}{chapter}{第 1 章 绪论}\markboth{第 1 章 绪论}{}
+
+\anstitle{第 1 章 习题解答}
+
+\sloppy
+\emergencystretch=2em
+
+\begin{tishi}
+\textbf{题源说明：}本章收录的是\textbf{孔珑《工程流体力学》（第四版）第 2 章"流体及其物理性质"
+的课后习题全套解答}（孔珑原书题号 2-1 至 2-17，共 17 题），按本册归章规则列入\textbf{第 1 章 绪论}。
+每题的"孔珑原书题号"在标题中随题给出；解答依据《工程流体力学 学习指导及习题解答》
+（陈洁、袁铁江 编著）第 2 章"课后习题解答"，并按本册体例补入"已知—依据—步骤—结果—易错提醒"五段。
+全书数据与原书一致；原书 OCR 有出入之处已在题目章末集中列出。
+\end{tishi}
+
+\noindent\textbf{第 1.1 题（孔珑 2-1）\quad 求物质的相对密度}
+
+\begin{jie}
+\textbf{已知：}某物质密度 $\rho=2.94\ \mathrm{g/cm^3}$；取水的密度 $\rho_w=1000\ \mathrm{kg/m^3}$。
+
+\textbf{求：}该物质的相对密度 $d$。
+
+\textbf{依据：}相对密度定义为该物质密度与同体积水的密度之比（教材式 1.1--1.4 的密度定义及其推论）
+\[ d=\frac{\rho}{\rho_w} \]
+相对密度是一个\textbf{无量纲}量，数值上等于该物质密度与国际单位制下水的密度数值之比。
+
+\textbf{第 1 步\quad 统一单位}
+
+\[ \rho=2.94\ \mathrm{g/cm^3}=2.94\times10^{3}\ \mathrm{kg/m^3}=2940\ \mathrm{kg/m^3} \]
+因为 $1\ \mathrm{g/cm^3}=10^{3}\ \mathrm{kg/m^3}$。
+
+\textbf{第 2 步\quad 代入定义式}
+
+\[ d=\frac{\rho}{\rho_w}=\frac{2940\ \mathrm{kg/m^3}}{1000\ \mathrm{kg/m^3}}=2.94 \]
+
+\textbf{结果：}该物质的相对密度 $d=2.94$（无量纲）。
+
+\textbf{量纲自检：}$d$ 是两个同量纲量之比，结果无单位；数值 $2.94$ 与"$\mathrm{g/cm^3}$ 下的密度数值"
+相同，这正是相对密度最常见的快捷用法。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：单位不换也"碰巧对"。}
+因为 $\rho_w=1000\ \mathrm{kg/m^3}=1\ \mathrm{g/cm^3}$，所以用 $\mathrm{g/cm^3}$ 直接除以 1 也得到 2.94；
+但这只是数值巧合，答卷时必须先化成国际单位再比，否则遇到 $\rho_w$ 取 $998\ \mathrm{kg/m^3}$ 之类的题目就会出错。
+
+\textbf{易错点二：相对密度不是密度。}
+相对密度 $d$ 无量纲，密度 $\rho$ 的单位是 $\mathrm{kg/m^3}$；
+工程上称"相对密度 0.855 的原油"，指的是 $d=0.855$，即 $\rho=855\ \mathrm{kg/m^3}$。
+\end{yicuo}
+
+\noindent\textbf{第 1.2 题（孔珑 2-2）\quad 由烟气各组分体积分数求烟气密度}
+
+\begin{jie}
+\textbf{已知：}烟气各组分的体积分数
+$\alpha_{\mathrm{CO_2}}=13.5\%$，$\alpha_{\mathrm{SO_2}}=0.3\%$，$\alpha_{\mathrm{O_2}}=5.2\%$，
+$\alpha_{\mathrm{N_2}}=76\%$，$\alpha_{\mathrm{H_2O}}=5\%$；
+各组分在标准状态下的密度依次为
+$\rho_{\mathrm{CO_2}}=1.967$，$\rho_{\mathrm{SO_2}}=2.927$，$\rho_{\mathrm{O_2}}=1.429$，
+$\rho_{\mathrm{N_2}}=1.251$，$\rho_{\mathrm{H_2O}}=0.804\ \mathrm{kg/m^3}$。
+
+\textbf{求：}标准状态下烟气的密度 $\rho$。
+
+\textbf{依据：}气体混合物的密度按\textbf{体积分数加权平均}（教材式 1.1、1.2 在混合气体中的推广）
+\[ \rho=\sum_i \alpha_i\rho_i \]
+其道理是：体积分数等于各组分在单位体积混合物中占据的体积，把各组分在该体积中的质量相加再除以总体积即得。
+
+\textbf{第 1 步\quad 逐项求各组分的质量贡献}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcccc@{}}
+\toprule
+组分 & 体积分数 $\alpha_i$ & 组分密度 $\rho_i/(\mathrm{kg/m^3})$ & $\alpha_i\rho_i/(\mathrm{kg/m^3})$ \\
+\midrule
+$\mathrm{CO_2}$ & 0.135 & 1.967 & 0.265545 \\
+$\mathrm{SO_2}$ & 0.003 & 2.927 & 0.008781 \\
+$\mathrm{O_2}$   & 0.052 & 1.429 & 0.074308 \\
+$\mathrm{N_2}$   & 0.760 & 1.251 & 0.950760 \\
+$\mathrm{H_2O}$  & 0.050 & 0.804 & 0.040200 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{第 2 步\quad 求和}
+
+\[ \rho=0.265545+0.008781+0.074308+0.950760+0.040200=1.3396\ \mathrm{kg/m^3}\approx1.34\ \mathrm{kg/m^3} \]
+
+\textbf{结果：}标准状态下该烟气的密度 $\rho\approx1.34\ \mathrm{kg/m^3}$（原书取
+$1.341\ \mathrm{kg/m^3}$，两者相差不足 $0.1\%$，原因是各组分的密度取值与进位略有不同；
+本章第 1.3 题直接引用原书结果 $1.341\ \mathrm{kg/m^3}$）。
+
+\textbf{量纲自检：}$\alpha_i$ 无量纲，乘积的单位与 $\rho_i$ 相同（$\mathrm{kg/m^3}$），
+合计仍是密度单位，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：体积分数不能当质量分数用。}
+若误按 $\rho=\dfrac{1}{\sum\alpha_i/\rho_i}$（质量分数加权式）计算，会得到约
+$1.285\ \mathrm{kg/m^3}$，比正确值小约 $4\%$。
+\textbf{口诀：}给\textbf{体积分数}直接加权求和，给\textbf{质量分数}才用调和平均。
+
+\textbf{易错点二：各组分的密度必须是"同一状态"下的值。}
+本题五个组分密度都是标准状态（$0\ ^{\circ}\mathrm{C}$、$101325\ \mathrm{Pa}$）的值，
+不能有的取 $0\ ^{\circ}\mathrm{C}$、有的取 $20\ ^{\circ}\mathrm{C}$。
+
+\textbf{易错点三：$\alpha_i$ 是百分数，代入时要换成小数。}
+把 $13.5\%$ 当成 $13.5$ 代入会算出比空气重十几倍的荒谬结果。
+\end{yicuo}
+
+\noindent\textbf{第 1.3 题（孔珑 2-3）\quad 工作状态下烟气的密度和运动黏度}
+
+\begin{jie}
+\textbf{已知：}由孔珑 2-2 题，标准状态下烟气密度 $\rho_0=1.341\ \mathrm{kg/m^3}$
+（对应 $p_0=101325\ \mathrm{Pa}$、$T_0=273\ \mathrm{K}$）；
+实测烟气温度 $t=170\ ^{\circ}\mathrm{C}$，即 $T=273+170=443\ \mathrm{K}$；
+实测静计示压强 $p_e=1432\ \mathrm{Pa}$；当地大气压强 $p_a=100858\ \mathrm{Pa}$；
+各组分在 $170\ ^{\circ}\mathrm{C}$ 时的苏士兰常数与标准状态动力黏度见表。
+
+\textbf{求：}工作状态下烟气的密度 $\rho$ 与运动黏度 $\nu$。
+
+\textbf{依据：}（1）气体状态方程 $\rho=p/(RT)$，写成相对形式
+\[ \frac{\rho}{\rho_0}=\frac{p}{p_0}\cdot\frac{T_0}{T} \]
+其中绝对压强 $p=p_a+p_e$；
+（2）计算混合气体黏度要先算各组分在 $T$ 下的动力黏度（苏士兰公式），再按 Wilke 公式混合；
+（3）运动黏度 $\nu=\mu/\rho$（教材式 1.11）。
+
+\textbf{第 1 步\quad 求绝对压强与工作状态密度}
+
+\[ p=p_a+p_e=100858+1432=102290\ \mathrm{Pa} \]
+\[ \rho=\rho_0\frac{p}{p_0}\cdot\frac{T_0}{T}=1.341\times\frac{102290}{101325}\times\frac{273}{443}
+        =1.341\times1.00952\times0.61625=0.834\ \mathrm{kg/m^3} \]
+原书取 $\rho=0.8381\ \mathrm{kg/m^3}$。本册按原书数据继续计算运动黏度，以与全书结果一致。
+
+\textbf{第 2 步\quad 求各组分在 $170\ ^{\circ}\mathrm{C}$ 时的动力黏度（苏士兰公式）}
+
+\[ \mu_i=\mu_{0i}\frac{273+S_i}{T+S_i}\left(\frac{T}{273}\right)^{3/2},\qquad
+   \left(\frac{443}{273}\right)^{3/2}=2.0671 \]
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lcccc@{}}
+\toprule
+组分 & $\mu_{0i}/(10^{-6}\ \mathrm{Pa\cdot s})$ & $S_i/\mathrm{K}$ & $\dfrac{273+S_i}{T+S_i}$ & $\mu_i/(10^{-6}\ \mathrm{Pa\cdot s})$ \\
+\midrule
+$\mathrm{CO_2}$ & 16.8 & 254 & 0.7561 & 26.2573 \\
+$\mathrm{SO_2}$ & 11.6 & 306 & 0.7730 & 18.5353 \\
+$\mathrm{O_2}$   & 19.2 & 125 & 0.7007 & 27.8096 \\
+$\mathrm{N_2}$   & 16.6 & 104 & 0.6892 & 23.6491 \\
+$\mathrm{H_2O}$  & 8.93 & 961 & 0.8789 & 16.2238 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{第 3 步\quad 按 Wilke 公式混合（相对分子质量 $M_i$ 依次为 $44$、$64$、$32$、$28$、$18$）}
+
+\[ \mu=\frac{\sum_i\alpha_i\sqrt{M_i}\,\mu_i}{\sum_i\alpha_i\sqrt{M_i}} \]
+分子（单位 $10^{-6}$）：
+\[ 0.135\times\sqrt{44}\times26.2573+0.003\times\sqrt{64}\times18.5353
+   +0.052\times\sqrt{32}\times27.8096+0.76\times\sqrt{28}\times23.6491
+   +0.05\times\sqrt{18}\times16.2238 \]
+\[ =23.5131+0.4448+8.1804+95.1058+3.4416=130.6857 \]
+分母：
+\[ 0.8955+0.0240+0.2942+4.0215+0.2121=5.4473 \]
+\[ \mu=\frac{130.6857\times10^{-6}}{5.4473}=23.9909\times10^{-6}\ \mathrm{Pa\cdot s} \]
+
+\textbf{第 4 步\quad 求运动黏度}
+
+\[ \nu=\frac{\mu}{\rho}=\frac{23.9909\times10^{-6}}{0.8381}
+     =28.6253\times10^{-6}\ \mathrm{m^2/s}\approx2.863\times10^{-5}\ \mathrm{m^2/s} \]
+
+\textbf{结果：}工作状态下烟气密度 $\rho\approx0.834\sim0.838\ \mathrm{kg/m^3}$
+（原书 $0.8381\ \mathrm{kg/m^3}$）；动力黏度 $\mu\approx23.99\times10^{-6}\ \mathrm{Pa\cdot s}$；
+运动黏度 $\nu\approx2.863\times10^{-5}\ \mathrm{m^2/s}$。
+
+\textbf{量纲自检：}$\mathrm{Pa\cdot s/(kg/m^3)}=\mathrm{(kg/(m\cdot s^2))\cdot s/(kg/m^3)}
+=\mathrm{m^2/s}$，与运动黏度单位一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：压强要用绝对压强。}
+静计示压强 $p_e=1432\ \mathrm{Pa}$ 是相对压强，必须加上当地大气压：
+$p=p_a+p_e=102290\ \mathrm{Pa}$。
+直接用 $p_a$ 或只用 $p_e$ 都会算错密度。
+
+\textbf{易错点二：温度必须用热力学温度（K）。}
+$170\ ^{\circ}\mathrm{C}$ 要写成 $273+170=443\ \mathrm{K}$，
+用 $170$ 代入会得到比空气重得多的荒谬结果。
+
+\textbf{易错点三：混合气体黏度不是各组分黏度的简单加权平均。}
+本题若按体积分数直接平均，得 $\mu=0.135\times26.2573+\cdots=23.51\times10^{-6}\ \mathrm{Pa\cdot s}$，
+虽然与 Wilke 结果接近，但方法不对；Wilke 公式的权重是 $\alpha_i\sqrt{M_i}$。
+
+\textbf{易错点四：本题第二问所需的苏士兰式与 Wilke 混合式超出 818 考纲}
+（见题目章末提示）。复习时应把力气花在
+"由状态方程求密度 $\to$ 由 $\nu=\mu/\rho$ 求运动黏度"这条主线上。
+\end{yicuo}
+
+\noindent\textbf{第 1.4 题（孔珑 2-4）\quad 由压强增量与密度变化求体积模量}
+
+\begin{jie}
+\textbf{已知：}压强增量 $\Delta p=50000\ \mathrm{Pa}$；液体密度增长 $0.02\%$，
+即 $\dfrac{\Delta\rho}{\rho}=0.0002$。
+
+\textbf{求：}该液体的体积模量 $K$。
+
+\textbf{依据：}体积模量（体积弹性模量）的定义（教材式 1.5--1.7）
+\[ K=\frac{1}{k}=-\frac{\Delta p}{\Delta V/V}=\rho\frac{\dd p}{\dd\rho} \]
+由于压强增大时液体体积减小、密度增大，故 $K$ 也可直接写成
+$K=\dfrac{\Delta p}{\Delta\rho/\rho}$，这样分子分母都是正的，不易出错。
+
+\textbf{第 1 步\quad 写出相对密度变化}
+
+\[ \frac{\Delta\rho}{\rho}=0.02\%=\frac{0.02}{100}=2\times10^{-4} \]
+
+\textbf{第 2 步\quad 代入定义式}
+
+\[ K=\frac{\Delta p}{\Delta\rho/\rho}=\frac{50000}{2\times10^{-4}}
+     =2.5\times10^{8}\ \mathrm{Pa}=250\ \mathrm{MPa} \]
+
+\textbf{结果：}该液体的体积模量 $K=2.5\times10^{8}\ \mathrm{Pa}=250\ \mathrm{MPa}$。
+
+\textbf{量纲自检：}$\mathrm{Pa}/1=\mathrm{Pa}$，正确。
+水的体积模量约 $2.1\times10^{9}\ \mathrm{Pa}$，本题 $2.5\times10^{8}\ \mathrm{Pa}$ 略小一个数量级，
+说明所给液体比水更易压缩，但仍属"一般工程问题可视为不可压缩"的量级。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$0.02\%$ 不能写成 $0.02$ 或 $0.2$。}
+$0.02\%=2\times10^{-4}$，写成 $2\times10^{-2}$ 会让结果小 $100$ 倍。
+
+\textbf{易错点二：$K$ 越大越难压缩。}
+$K$ 与体积压缩系数 $k$ 互为倒数；"$K$ 值越大，液体越容易压缩"是错误的说法。
+
+\textbf{易错点三：用体积式还是密度式要统一。}
+本题给的是\textbf{密度}相对变化，用 $K=\Delta p/(\Delta\rho/\rho)$ 一步即可；
+若用 $K=-\Delta p/(\Delta V/V)$，必须记住体积是\textbf{减小}的，$\Delta V<0$，否则会算出负值。
+\end{yicuo}
+
+\noindent\textbf{第 1.5 题（孔珑 2-5）\quad 气体等温与等熵过程的体积模量}
+
+\begin{jie}
+\textbf{已知：}气体初压 $p_1=1.01325\times10^{5}\ \mathrm{Pa}$，压缩后压强
+$p_2=3.923\times10^{5}\ \mathrm{Pa}$，故压强增量
+\[ \Delta p=p_2-p_1=3.923\times10^{5}-1.01325\times10^{5}=2.90975\times10^{5}\ \mathrm{Pa} \]
+等熵指数 $\kappa=1.4$。
+
+\textbf{求：}等温过程体积模量 $K_T$ 与等熵过程体积模量 $K_s$。
+
+\textbf{依据：}（1）体积模量定义 $K=-\dfrac{\Delta p}{\Delta V/V}$（教材式 1.5--1.7）；
+（2）等温过程 $pV=$ 常数，故 $K_T=p$；
+（3）等熵过程 $pV^{\kappa}=$ 常数，故 $K_s=\kappa p$。
+
+\textbf{第 1 步\quad 等温过程：由状态方程求体积比}
+
+\[ p_1V_1=p_2V_2\quad\Longrightarrow\quad
+   \frac{V_2}{V_1}=\frac{p_1}{p_2}=\frac{1.01325\times10^{5}}{3.923\times10^{5}}=0.25828 \]
+\[ \frac{V_1-V_2}{V_1}=1-0.25828=0.74172 \]
+
+\textbf{第 2 步\quad 代入定义式求等温体积模量}
+
+\[ K_T=\frac{\Delta p}{(V_1-V_2)/V_1}
+       =\frac{2.90975\times10^{5}}{0.74172}
+       =3.923\times10^{5}\ \mathrm{Pa} \]
+可见 $K_T$ 恰好等于压缩后的压强 $p_2$，与"等温 $K=p$"的结论一致。
+
+\textbf{第 3 步\quad 求等熵体积模量}
+
+\[ K_s=\kappa p_2=1.4\times3.923\times10^{5}=5.492\times10^{5}\ \mathrm{Pa} \]
+
+\textbf{结果：}等温过程 $K_T=3.923\times10^{5}\ \mathrm{Pa}=0.392\ \mathrm{MPa}$；
+等熵过程 $K_s=5.492\times10^{5}\ \mathrm{Pa}=0.549\ \mathrm{MPa}$；
+两者的比值为 $K_s/K_T=\kappa=1.4$。
+
+\textbf{量纲自检：}$\mathrm{Pa}/1=\mathrm{Pa}$，正确。
+气体的体积模量与压强同量级（$10^{5}\ \mathrm{Pa}$），比液体（$10^{9}\ \mathrm{Pa}$）小四个数量级，
+这说明\textbf{气体的压缩性远比液体显著}。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\Delta V$ 的正负号。}
+压缩时 $V_2<V_1$，分母取 $(V_1-V_2)/V_1$ 或取 $(\Delta V/V)$ 加负号都可以，
+但\textbf{不能}既取 $\Delta V=V_2-V_1$（负值）又漏掉定义式前的负号。
+
+\textbf{易错点二：等熵时不要漏 $\kappa$。}
+"等温 $K=p$、等熵 $K=\kappa p$"是两个不同结论，
+把等熵也算成 $K=p$ 会漏掉 $1.4$ 这个因子。
+
+\textbf{易错点三：本题题面在原书 OCR 中残缺。}
+本册按原书解答反推补全了 $p_1$、$p_2$，数值与书末答案完全吻合；
+考试中遇到"气体从 $p_1$ 压缩到 $p_2$ 求体积模量"的题，按上述定义式一步求解即可，
+不必记经验公式。
+\end{yicuo}
+
+\noindent\textbf{第 1.6 题（孔珑 2-6）\quad 由排出油量与压强降求油槽体积}
+
+\begin{jie}
+\textbf{已知：}油槽初始压强 $p_1=4.9033\times10^{5}\ \mathrm{Pa}$；排出石油
+$\Delta m=40\ \mathrm{kg}$ 后压强降到 $p_2=9.8067\times10^{4}\ \mathrm{Pa}$；
+石油密度 $\rho=880\ \mathrm{kg/m^3}$；石油体积模量 $K=1.32\times10^{9}\ \mathrm{Pa}$。
+
+\textbf{求：}油槽的体积 $V$。
+
+\textbf{依据：}体积模量定义 $K=-\dfrac{\Delta p}{\Delta V/V}$（教材式 1.5--1.7），
+即 $\Delta V=-\dfrac{V\Delta p}{K}$。
+
+\textbf{第 1 步\quad 求排出的石油所占体积}
+
+排出 $40\ \mathrm{kg}$ 石油，槽内石油体积相应减少
+\[ \Delta V=-\frac{\Delta m}{\rho}=-\frac{40}{880}=-0.04545\ \mathrm{m^3} \]
+
+\textbf{第 2 步\quad 求压强变化量}
+
+\[ \Delta p=p_2-p_1=9.8067\times10^{4}-4.9033\times10^{5}
+        =(0.98067-4.9033)\times10^{5}=-3.9226\times10^{5}\ \mathrm{Pa} \]
+
+\textbf{第 3 步\quad 由定义式反求油槽体积}
+
+\[ V=-\frac{K\Delta V}{\Delta p}
+     =\frac{K\Delta m}{\rho\,(p_1-p_2)}
+     =\frac{1.32\times10^{9}\times40}{880\times3.9226\times10^{5}} \]
+分子 $=5.28\times10^{10}$；分母 $=880\times3.9226\times10^{5}=3.4519\times10^{8}$，故
+\[ V=\frac{5.28\times10^{10}}{3.4519\times10^{8}}=153\ \mathrm{m^3} \]
+
+\textbf{结果：}油槽的体积 $V\approx153\ \mathrm{m^3}$。
+
+\textbf{量纲自检：}$\dfrac{\mathrm{Pa\cdot kg}}{\mathrm{kg/m^3}\cdot\mathrm{Pa}}=\mathrm{m^3}$，
+单位正确；$153\ \mathrm{m^3}$ 相当于一个直径约 $7\ \mathrm{m}$、高约 $4\ \mathrm{m}$ 的油罐，量级合理。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\Delta p$ 的正负要与 $\Delta V$ 对应。}
+排出油后压强降低，$\Delta p<0$；同时体积减少，$\Delta V<0$。
+若两个都写成正值，代入 $K=-\Delta p/(\Delta V/V)$ 就会得到负体积。
+
+\textbf{易错点二：排出的质量要先化成体积。}
+$\Delta V=\Delta m/\rho$（本题 $40/880=0.0455\ \mathrm{m^3}$），
+直接拿 $40$ 当代替体积会算出相差 $880$ 倍的结果。
+
+\textbf{易错点三：压强数量级。}
+油槽压强 $4.9033\times10^{5}\ \mathrm{Pa}$ 约为 $5$ 个大气压，属工业油槽的常见工况；
+若误按 $4.9033\times10^{6}\ \mathrm{Pa}$（约 $50$ 个大气压）计算，会得到约 $15\ \mathrm{m^3}$，
+与原书答案 $153\ \mathrm{m^3}$ 相差十倍。
+\end{yicuo}
+
+\noindent\textbf{第 1.7 题（孔珑 2-7）\quad 热水锅炉每小时流出的水量}
+
+\begin{jie}
+\textbf{已知：}流入锅炉的水流量 $Q=50\ \mathrm{m^3/h}$，水温 $t_1=70\ ^{\circ}\mathrm{C}$；
+流出水温 $t_2=90\ ^{\circ}\mathrm{C}$，即温升 $\Delta T=20\ ^{\circ}\mathrm{C}$；
+水的体积膨胀系数 $\alpha_V=0.00064\ /^{\circ}\mathrm{C}$。
+
+\textbf{求：}从锅炉每小时流出多少立方米的水。
+
+\textbf{依据：}体积膨胀系数的定义（教材式 1.8）
+\[ \alpha_V=\frac{1}{V}\frac{\Delta V}{\Delta T}
+   \quad\Longrightarrow\quad \Delta V=\alpha_V V\Delta T \]
+即温度升高 $\Delta T$ 时，一定质量的水体积增加 $\alpha_V V\Delta T$。
+
+\textbf{第 1 步\quad 求每小时水的体积增量}
+
+\[ \Delta V=\alpha_V V\Delta T=0.00064\times50\times20=0.64\ \mathrm{m^3/h} \]
+
+\textbf{第 2 步\quad 求每小时流出的水体积}
+
+\[ Q_{\mathrm{out}}=Q+\Delta V=50+0.64=50.64\ \mathrm{m^3/h} \]
+
+\textbf{结果：}从锅炉每小时流出 $50.64\ \mathrm{m^3}$ 的水。
+
+\textbf{量纲自检：}$\alpha_V\Delta T=0.00064\times20=0.0128$ 无量纲，
+乘 $V$（$\mathrm{m^3}$）得体积，单位正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：体积膨胀系数不是"体积增加量"。}
+$\alpha_V=0.00064\ /^{\circ}\mathrm{C}$ 意味着"每升高 $1\ ^{\circ}\mathrm{C}$，
+体积增加原体积的 $0.00064$ 倍"，必须乘 $V$ 和 $\Delta T$ 才是体积增量。
+
+\textbf{易错点二：问的是流出量，不是增量。}
+锅炉出口每小时排出的是\textbf{全部}水，即 $50+0.64=50.64\ \mathrm{m^3/h}$；
+只答 $0.64\ \mathrm{m^3/h}$ 是把"膨胀量"当成了"流量"。
+
+\textbf{易错点三：}本题的物理意义正是"热水采暖系统为什么要设膨胀水箱"：
+水受热膨胀，多出来的体积必须有地方容纳，否则会把管路胀裂。
+\end{yicuo}
+
+\noindent\textbf{第 1.8 题（孔珑 2-8）\quad 压缩机压缩空气体积减小的百分数}
+
+\begin{jie}
+\textbf{已知：}压缩前绝对压强 $p_1=9.8067\times10^{4}\ \mathrm{Pa}$、温度
+$T_1=273+20=293\ \mathrm{K}$；压缩后 $p_2=5.8840\times10^{5}\ \mathrm{Pa}$、
+$T_2=273+78=351\ \mathrm{K}$。
+
+\textbf{求：}空气体积减小的百分数。
+
+\textbf{依据：}气体状态方程 $p=\rho RT$，写成"一定质量气体"的形式
+$\dfrac{pV}{T}=$ 常数。
+
+\textbf{第 1 步\quad 由状态方程写出体积比}
+
+\[ \frac{p_1V_1}{T_1}=\frac{p_2V_2}{T_2}
+   \quad\Longrightarrow\quad
+   \frac{V_2}{V_1}=\frac{p_1}{p_2}\cdot\frac{T_2}{T_1} \]
+
+\textbf{第 2 步\quad 代入数值}
+
+\[ \frac{V_2}{V_1}=\frac{9.8067\times10^{4}}{5.8840\times10^{5}}\times\frac{351}{293}
+   =0.16667\times1.19795=0.19966\approx\frac{1}{5} \]
+
+\textbf{第 3 步\quad 求体积减小的百分数}
+
+\[ \frac{V_1-V_2}{V_1}=1-\frac{V_2}{V_1}=1-0.19966=0.80034\approx80\% \]
+
+\textbf{结果：}空气的体积减小了约 $80\%$（即压缩到原来的 $1/5$）。
+
+\textbf{量纲自检：}$V_2/V_1$ 是两个压强比与两个温度比的乘积，结果是纯数，
+再化为百分数，做法正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：温度必须用 K。}
+$20\ ^{\circ}\mathrm{C}\to293\ \mathrm{K}$，$78\ ^{\circ}\mathrm{C}\to351\ \mathrm{K}$；
+若误用 $20/78$，体积比会算成 $0.0427$，"减小 $96\%$"，明显偏离合理值。
+
+\textbf{易错点二：分母取 $V_1$ 还是 $V_2$。}
+"减小了百分之多少"以\textbf{原有体积 $V_1$} 为基准，
+即 $(V_1-V_2)/V_1$；以 $V_2$ 为基准会得 $400\%$，荒谬。
+
+\textbf{易错点三：不要把压强、温度搞反。}
+压强升高 $6$ 倍、温度升高 $1.2$ 倍，体积应缩小约 $5$ 倍——
+用这一条粗略判断可以快速发现分子分母是否写反。
+\end{yicuo}
+
+\noindent\textbf{第 1.9 题（孔珑 2-9）\quad 由动力黏度与密度求运动黏度}
+
+\begin{jie}
+\textbf{已知：}油的动力黏度 $\mu=2.9\times10^{-4}\ \mathrm{Pa\cdot s}$；
+密度 $\rho=678\ \mathrm{kg/m^3}$。
+
+\textbf{求：}油的运动黏度 $\nu$。
+
+\textbf{依据：}动力黏度与运动黏度的关系（教材式 1.11）
+\[ \nu=\frac{\mu}{\rho} \]
+
+\textbf{第 1 步\quad 代入}
+
+\[ \nu=\frac{2.9\times10^{-4}\ \mathrm{Pa\cdot s}}{678\ \mathrm{kg/m^3}}
+     =4.277\times10^{-7}\ \mathrm{m^2/s} \]
+
+\textbf{结果：}该油在给定温度下的运动黏度 $\nu\approx4.28\times10^{-7}\ \mathrm{m^2/s}$。
+
+\textbf{量纲自检：}$\mathrm{Pa\cdot s}=\mathrm{kg/(m\cdot s)}$，
+$\mathrm{kg/(m\cdot s)}\div\mathrm{kg/m^3}=\mathrm{m^2/s}$，与运动黏度单位一致；
+数量级 $10^{-7}$ 说明这是黏度较大、密度中等的油品，结果合理。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：不要把 $\nu$ 与 $\mu$ 的关系写反。}
+给 $\mu$ 求 $\nu$ 用 $\nu=\mu/\rho$；给 $\nu$ 求 $\mu$ 用 $\mu=\nu\rho$。
+写反会得到约 $2.34\times10^{9}\ \mathrm{m^2/s}$ 的荒谬结果。
+
+\textbf{易错点二：单位不要混。}
+$\mathrm{Pa\cdot s}$ 与 $\mathrm{kg/m^3}$ 都是国际单位，可直接相除；
+若 $\mu$ 给的是 $\mathrm{P}$（泊）或 $\mathrm{cP}$（厘泊），必须先换算
+（$1\ \mathrm{P}=0.1\ \mathrm{Pa\cdot s}$，$1\ \mathrm{cP}=10^{-3}\ \mathrm{Pa\cdot s}$）。
+
+\textbf{易错点三：$\nu$ 不表示黏性大小。}
+运动黏度只是因为它在雷诺数中作为整体出现才被单独定义，其数值还随密度变化，
+不能说"$\nu$ 越大黏性越大"。
+\end{yicuo}
+
+\noindent\textbf{第 1.10 题（孔珑 2-10）\quad 由 $0\ ^{\circ}\mathrm{C}$ 的黏度求 $150\ ^{\circ}\mathrm{C}$ 的动力黏度}
+
+\begin{jie}
+\textbf{已知：}空气在 $0\ ^{\circ}\mathrm{C}$（$273\ \mathrm{K}$）时运动黏度
+$\nu_0=13.2\times10^{-6}\ \mathrm{m^2/s}$、密度 $\rho_0=1.29\ \mathrm{kg/m^3}$；
+待求温度 $T=273+150=423\ \mathrm{K}$；苏士兰常数 $S=111\ \mathrm{K}$。
+
+\textbf{求：}$150\ ^{\circ}\mathrm{C}$ 时空气的动力黏度 $\mu_{150}$。
+
+\textbf{依据：}（1）$\nu=\mu/\rho$（教材式 1.11）；
+（2）苏士兰公式
+\[ \mu=\mu_0\frac{273+S}{T+S}\left(\frac{T}{273}\right)^{3/2} \]
+
+\textbf{第 1 步\quad 由运动黏度求 $0\ ^{\circ}\mathrm{C}$ 时的动力黏度}
+
+\[ \mu_0=\nu_0\rho_0=13.2\times10^{-6}\times1.29=17.028\times10^{-6}\ \mathrm{Pa\cdot s} \]
+
+\textbf{第 2 步\quad 求温度修正的两个因子}
+
+\[ \frac{273+S}{T+S}=\frac{273+111}{423+111}=\frac{384}{534}=0.71910,\qquad
+   \left(\frac{423}{273}\right)^{3/2}=1.54945^{1.5}=1.92852 \]
+
+\textbf{第 3 步\quad 代入苏士兰公式}
+
+\[ \mu_{150}=17.028\times10^{-6}\times0.71910\times1.92852
+        =23.61\times10^{-6}\ \mathrm{Pa\cdot s} \]
+
+\textbf{结果：}$150\ ^{\circ}\mathrm{C}$ 时空气的动力黏度
+$\mu_{150}\approx23.6\times10^{-6}\ \mathrm{Pa\cdot s}=2.36\times10^{-5}\ \mathrm{Pa\cdot s}$。
+
+\textbf{量纲自检：}两个修正因子都是无量纲量，$\mu$ 的单位与 $\mu_0$ 相同（$\mathrm{Pa\cdot s}$）；
+结果 $\mu_{150}>\mu_0$，与"气体黏度随温度升高而增大"的结论一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：苏士兰公式里两个温度地位不同。}
+分母 $(T+S)$ 用\textbf{工作温度}，分子 $(273+S)$ 用\textbf{参考温度}，
+且 $T$ 全部取热力学温度；把 $423$ 写成 $150$ 会完全出错。
+
+\textbf{易错点二：先算 $\mu_0$ 再修温度，不能跳过第一步。}
+题目给的是运动黏度 $\nu_0$，必须先乘密度化成动力黏度 $\mu_0=\nu_0\rho_0$，
+再代苏士兰公式；直接对 $\nu_0$ 做温度修正从物理上就不对。
+
+\textbf{易错点三：结论方向。}
+空气（气体）升温黏度\textbf{增大}，液体升温黏度\textbf{减小}，
+两者趋势相反，这是 818 考试的必背结论（2022 年判断题第 6 题即考此点）。
+\end{yicuo}
+
+\noindent\textbf{第 1.11 题（孔珑 2-11）\quad 恩氏黏度换算为动力黏度}
+
+\begin{jie}
+\textbf{已知：}石油的恩氏黏度 $^{\circ}\mathrm{E}=8.5$；石油密度 $\rho=850\ \mathrm{kg/m^3}$。
+
+\textbf{求：}石油的动力黏度 $\mu$。
+
+\textbf{依据：}（1）恩氏黏度换算为运动黏度的经验式
+\[ \nu=0.0731\ ^{\circ}\mathrm{E}-\frac{0.0631}{^{\circ}\mathrm{E}}\qquad(\mathrm{cm^2/s}) \]
+（2）$\mu=\nu\rho$（教材式 1.11）。
+
+\textbf{第 1 步\quad 把恩氏黏度换算成运动黏度}
+
+\[ \nu=0.0731\times8.5-\frac{0.0631}{8.5}=0.62135-0.00742=0.61393\ \mathrm{cm^2/s} \]
+
+\textbf{第 2 步\quad 化成国际单位}
+
+\[ \nu=0.61393\ \mathrm{cm^2/s}=0.61393\times10^{-4}\ \mathrm{m^2/s}=6.139\times10^{-5}\ \mathrm{m^2/s} \]
+因为 $1\ \mathrm{cm^2}=10^{-4}\ \mathrm{m^2}$。
+
+\textbf{第 3 步\quad 求动力黏度}
+
+\[ \mu=\nu\rho=0.61393\times10^{-4}\times850=0.0522\ \mathrm{Pa\cdot s} \]
+
+\textbf{结果：}石油的动力黏度 $\mu\approx0.0522\ \mathrm{Pa\cdot s}=52.2\ \mathrm{mPa\cdot s}$。
+
+\textbf{量纲自检：}$\mathrm{m^2/s}\times\mathrm{kg/m^3}=\mathrm{kg/(m\cdot s)}=\mathrm{Pa\cdot s}$，
+单位正确；$52.2\ \mathrm{mPa\cdot s}$ 与常见重油在常温下的黏度量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：恩氏黏度的单位是"度"（$^{\circ}\mathrm{E}$），不是黏度单位。}
+$^{\circ}\mathrm{E}$ 只是比值（规定温度下流出时间的比值），必须先经经验式化成
+$\mathrm{cm^2/s}$ 才进入计算。
+
+\textbf{易错点二：$\mathrm{cm^2/s}$ 换成 $\mathrm{m^2/s}$ 是 $10^{-4}$，不是 $10^{-2}$。}
+$1\ \mathrm{cm^2}=(10^{-2}\ \mathrm{m})^2=10^{-4}\ \mathrm{m^2}$；
+若误乘 $10^{-2}$，$\mu$ 会大 $100$ 倍。
+
+\textbf{易错点三：}$0.0631/^{\circ}\mathrm{E}$ 是"减"项。
+恩氏黏度较大时这一项影响很小（本题仅 $-0.0074\ \mathrm{cm^2/s}$），
+但在低恩氏黏度时不可忽略；写成加号会带来系统偏差。
+
+\textbf{易错点四：}恩氏黏度计属教材黏度测量部分的扩展内容，
+818 考纲未单列此考点，只需了解"恩氏黏度 $\to$ 运动黏度 $\to$ 动力黏度"的换算思路。
+\end{yicuo}
+
+\noindent\textbf{第 1.12 题（孔珑 2-12）\quad 由平板受力与速度求液体黏度}
+
+\begin{jie}
+\textbf{已知：}两平行平板间距 $h=0.5\ \mathrm{mm}=5\times10^{-4}\ \mathrm{m}$，
+下板固定；上板单位面积受力 $\tau=2\ \mathrm{N/m^2}$，以 $U=0.25\ \mathrm{m/s}$ 匀速平动；
+板间液体速度按线性分布。
+
+\textbf{求：}该液体的动力黏度 $\mu$。
+
+\textbf{依据：}牛顿内摩擦定律（教材式 1.9、1.10）$\tau=\mu\dfrac{\dd u}{\dd y}$；
+速度线性分布时 $\dfrac{\dd u}{\dd y}=\dfrac{U}{h}$，故
+\[ \tau=\mu\frac{U}{h}\quad\Longrightarrow\quad \mu=\frac{\tau h}{U} \]
+
+\textbf{第 1 步\quad 明确切应力}
+
+题给"每平方米有 $2\ \mathrm{N}$ 的力"，即切应力
+\[ \tau=2\ \mathrm{N/m^2}=2\ \mathrm{Pa} \]
+
+\textbf{第 2 步\quad 求速度梯度}
+
+\[ \frac{\dd u}{\dd y}=\frac{U}{h}=\frac{0.25}{5\times10^{-4}}=500\ \mathrm{s^{-1}} \]
+
+\textbf{第 3 步\quad 求黏度}
+
+\[ \mu=\frac{\tau}{\dd u/\dd y}=\frac{2}{500}=4\times10^{-3}\ \mathrm{Pa\cdot s} \]
+或直接代 $\mu=\dfrac{\tau h}{U}=\dfrac{2\times5\times10^{-4}}{0.25}=4\times10^{-3}\ \mathrm{Pa\cdot s}$。
+
+\textbf{结果：}该液体的动力黏度 $\mu=4\times10^{-3}\ \mathrm{Pa\cdot s}=4\ \mathrm{mPa\cdot s}$。
+
+\textbf{量纲自检：}$\dfrac{\mathrm{Pa}\cdot\mathrm{m}}{\mathrm{m/s}}
+=\mathrm{Pa\cdot s}$，单位正确；
+$4\ \mathrm{mPa\cdot s}$ 与 $20\ ^{\circ}\mathrm{C}$ 左右轻油、煤油的黏度量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\mathrm{N/m^2}$ 就是 $\mathrm{Pa}$。}
+题目给的是"每平方米的力"，已经就是切应力，不必再乘面积；
+若当成总力 $F=2\ \mathrm{N}$ 又去乘面积，结果会差若干个数量级。
+
+\textbf{易错点二：$0.5\ \mathrm{mm}=5\times10^{-4}\ \mathrm{m}$。}
+写成 $5\times10^{-3}$ 会使黏度小 $10$ 倍。
+
+\textbf{易错点三：受剪面积。}
+本题求的是\textbf{动力黏度}，用 $\tau=\mu U/h$ 与面积无关；
+只有问"上板所受的总阻力 $T$"时才需要乘板面积 $A$（$T=\mu AU/h$）。
+\end{yicuo}
+
+\noindent\textbf{第 1.13 题（孔珑 2-13）\quad 滑动轴承摩擦阻力消耗的功率}
+
+\begin{jie}
+\textbf{已知：}轴直径 $d=0.2\ \mathrm{m}$；转速 $n=2830\ \mathrm{r/min}$；
+轴承（轴瓦）内径 $D=0.2016\ \mathrm{m}$；轴承宽度 $l=0.3\ \mathrm{m}$；
+润滑油动力黏度 $\mu=0.245\ \mathrm{Pa\cdot s}$。
+
+\textbf{求：}克服摩擦阻力所消耗的功率 $P$。
+
+\textbf{依据：}（1）牛顿内摩擦定律 $\tau=\mu\dfrac{\dd u}{\dd y}$，
+间隙内速度线性分布时 $\dfrac{\dd u}{\dd y}=\dfrac{u}{h}$，故摩擦力
+$F=\mu\dfrac{A u}{h}$（教材式 1.9、1.10）；
+（2）轴的表面线速度 $u=\dfrac{\pi d n}{60}$；
+（3）功率 $P=Fu$。
+
+\textbf{第 1 步\quad 求径向间隙}
+
+\[ h=\frac{D-d}{2}=\frac{0.2016-0.2}{2}=0.0008\ \mathrm{m} \]
+
+\textbf{第 2 步\quad 求轴的表面线速度}
+
+\[ u=\frac{\pi d n}{60}=\frac{\pi\times0.2\times2830}{60}=29.64\ \mathrm{m/s} \]
+
+\textbf{第 3 步\quad 求受剪面积与摩擦力}
+
+\[ A=\pi d l=\pi\times0.2\times0.3=0.1885\ \mathrm{m^2} \]
+\[ F=\mu\frac{A u}{h}=\frac{0.245\times0.1885\times29.64}{0.0008}=1711\ \mathrm{N} \]
+
+\textbf{第 4 步\quad 求功率}
+
+\[ P=Fu=1711\times29.64=5.07\times10^{4}\ \mathrm{W}\approx50.7\ \mathrm{kW} \]
+
+\textbf{结果：}克服摩擦阻力所消耗的功率 $P\approx50.7\ \mathrm{kW}$
+（原书取摩擦力 $F=1710.15\ \mathrm{N}$，功率 $50.7\times10^{3}\ \mathrm{W}$）。
+
+\textbf{量纲自检：}$\mathrm{Pa\cdot s}\times\mathrm{m^2}\times\dfrac{\mathrm{m/s}}{\mathrm{m}}
+=\mathrm{Pa\cdot m^2}=\mathrm{N}$，再乘 $\mathrm{m/s}$ 得 $\mathrm{W}$，单位正确；
+$50.7\ \mathrm{kW}$ 与高速轴承的功耗量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：转速必须化成线速度。}
+$n=2830\ \mathrm{r/min}$ 不是速度，必须用 $u=\pi d n/60$ 换算
+（分母的 $60$ 是把分钟换成秒）；直接拿 $2830$ 当速度用会得到荒谬结果。
+
+\textbf{易错点二：间隙要用半径方向的差值。}
+$h=(D-d)/2$，因为 $D$、$d$ 都是\textbf{直径}；
+漏掉除以 $2$ 会使摩擦力小一半。
+
+\textbf{易错点三：功率是 $F u$ 而不是 $F$。}
+$\mathrm{N}$ 与 $\mathrm{W}$ 不能混；本题先求力、再乘线速度才是功率。
+
+\textbf{易错点四：}$A$ 用 $\pi d l$ 而不是 $\pi D l$。
+受剪面是轴的外圆柱面（也是轴瓦的内圆柱面），直径用轴的 $d$；
+两者相差 $0.8\%$，对结果影响不大，但概念上要清楚。
+\end{yicuo}
+
+\noindent\textbf{第 1.14 题（孔珑 2-14）\quad 由角减速度求流体的黏度}
+
+\begin{jie}
+\textbf{已知：}转子转动惯量 $J=50\times0.3^{2}=4.5\ \mathrm{kg\cdot m^2}$；
+转速 $n=600\ \mathrm{r/min}$，轴在该转速下的角减速度
+$\varepsilon=0.02\ \mathrm{rad/s^2}$；
+轴套长度 $l=5\ \mathrm{cm}=0.05\ \mathrm{m}$；轴直径 $d=2\ \mathrm{cm}=0.02\ \mathrm{m}$；
+间隙 $h=0.05\ \mathrm{mm}=5\times10^{-5}\ \mathrm{m}$。
+
+\textbf{求：}间隙内流体的动力黏度 $\mu$。
+
+\textbf{依据：}（1）转动方程 $M=J\varepsilon$；
+（2）摩擦力矩与摩擦力的关系 $M=F\cdot\dfrac{d}{2}$；
+（3）牛顿内摩擦定律 $F=\mu\dfrac{A u}{h}$（教材式 1.9、1.10），
+其中 $u=\dfrac{\pi d n}{60}$、$A=\pi d l$。
+
+\textbf{第 1 步\quad 求轴的表面线速度}
+
+\[ u=\frac{\pi d n}{60}=\frac{\pi\times0.02\times600}{60}=0.628\ \mathrm{m/s} \]
+
+\textbf{第 2 步\quad 求摩擦力矩与摩擦力}
+
+\[ M=J\varepsilon=4.5\times0.02=0.09\ \mathrm{N\cdot m} \]
+\[ F=\frac{M}{d/2}=\frac{0.09}{0.01}=9\ \mathrm{N} \]
+
+\textbf{第 3 步\quad 求受剪面积}
+
+\[ A=\pi d l=\pi\times0.02\times0.05=3.14\times10^{-3}\ \mathrm{m^2} \]
+
+\textbf{第 4 步\quad 由牛顿内摩擦定律反求黏度}
+
+\[ \mu=\frac{Fh}{Au}=\frac{9\times5\times10^{-5}}{3.14\times10^{-3}\times0.628}
+     =\frac{4.5\times10^{-4}}{1.973\times10^{-3}}=0.228\ \mathrm{Pa\cdot s} \]
+
+\textbf{结果：}间隙内流体的动力黏度 $\mu\approx0.228\ \mathrm{Pa\cdot s}$。
+
+\textbf{量纲自检：}$\dfrac{\mathrm{N}\cdot\mathrm{m}}{\mathrm{m^2}\cdot(\mathrm{m/s})}
+=\dfrac{\mathrm{N}}{\mathrm{m}\cdot\mathrm{s^{-1}}}=\mathrm{Pa\cdot s}$，单位正确；
+$0.228\ \mathrm{Pa\cdot s}$ 与常用润滑油在常温下的黏度量级相符。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：角减速度给出的是力矩，不是力。}
+必须先用 $M=J\varepsilon$ 求力矩，再用 $F=M/(d/2)$ 化成力；
+把 $\varepsilon=0.02$ 直接当力使用是最典型的丢分点。
+
+\textbf{易错点二：力臂是半径 $d/2$，不是直径 $d$。}
+$d=2\ \mathrm{cm}=0.02\ \mathrm{m}$，力臂 $d/2=0.01\ \mathrm{m}$。
+
+\textbf{易错点三：间隙 $0.05\ \mathrm{mm}=5\times10^{-5}\ \mathrm{m}$。}
+写成 $5\times10^{-4}$ 会使黏度大 $10$ 倍。
+
+\textbf{易错点四：本题题面在原书 OCR 中开头残缺，}
+本册按原书解答中的 $J\varepsilon=50\times0.3^{2}\times0.02=0.09\ \mathrm{N\cdot m}$
+反推补入了转动惯量 $J$，其余数据与原书一致。
+\end{yicuo}
+
+\noindent\textbf{第 1.15 题（孔珑 2-15）\quad 油温升高后推动活塞所需的力减少的百分数}
+
+\begin{jie}
+\textbf{已知：}活塞直径 $d=5.00\ \mathrm{cm}$，缸体内径 $D=5.01\ \mathrm{cm}$，
+径向间隙 $h=(D-d)/2=0.005\ \mathrm{cm}=5\times10^{-5}\ \mathrm{m}$；
+活塞运动速度不变；润滑油为相对密度 $d=0.855$ 的原油，
+由教材图 2-5 查得
+\[ 0\ ^{\circ}\mathrm{C}\ \text{时}\ \mu_1=1.6\times10^{-2}\ \mathrm{Pa\cdot s},\qquad
+   120\ ^{\circ}\mathrm{C}\ \text{时}\ \mu_2=2.2\times10^{-3}\ \mathrm{Pa\cdot s} \]
+（即 $0\ ^{\circ}\mathrm{C}$ 时 $\mu_1=1.6\times10^{-2}\ \mathrm{Pa\cdot s}$，
+$120\ ^{\circ}\mathrm{C}$ 时 $\mu_2=2.2\times10^{-3}\ \mathrm{Pa\cdot s}$）
+
+\textbf{求：}推动活塞所需的力减少的百分数。
+
+\textbf{依据：}牛顿内摩擦定律 $F=\mu\dfrac{A u}{h}$（教材式 1.9、1.10）。
+间隙几何（$A$、$h$）与活塞速度均不变，故
+\[ F\propto\mu \]
+即\textbf{推力与润滑油的动力黏度成正比}，温度升高后力的相对减少量就等于黏度的相对减少量。
+
+\textbf{第 1 步\quad 写出力的相对变化}
+
+\[ \frac{\Delta F}{F_1}=\frac{F_1-F_2}{F_1}=\frac{\mu_1-\mu_2}{\mu_1} \]
+
+\textbf{第 2 步\quad 代入数据}
+
+\[ \frac{\Delta F}{F_1}=\frac{1.6\times10^{-2}-2.2\times10^{-3}}{1.6\times10^{-2}}
+   =\frac{16-2.2}{16}=0.8625 \]
+
+\textbf{结果：}当润滑油温度由 $0\ ^{\circ}\mathrm{C}$ 升高到 $120\ ^{\circ}\mathrm{C}$ 时，
+推动活塞所需的力\textbf{减少约 $86\%$}
+（精确值 $86.25\%$，减少后的力只有原来的 $13.75\%$）。
+
+\textbf{量纲自检：}分子分母同为黏度，结果是纯数，化为百分数即可；
+$\mu_2<\mu_1$ 保证了"减少"而不是"增加"。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：问"减少的百分数"不是"减少后的百分数"。}
+本题答案是 $86.25\%$，不是 $13.75\%$；
+若题目问"力是原来的百分之多少"，则答 $13.75\%$。
+
+\textbf{易错点二：必须先判断 $\mu_2<\mu_1$。}
+原油（液体）温度升高黏度减小，若查图查出 $\mu_2>\mu_1$ 一定是读数或个位数错误：
+$120\ ^{\circ}\mathrm{C}$ 的黏度只可能是 $10^{-3}$ 量级，不可能是 $10^{-2}$ 量级。
+
+\textbf{易错点三：}活塞推力 $F=\mu Au/h$ 中的 $A=\pi d l$、$h$ 在温度变化前后都不变，
+所以"力与黏度成正比"这一步是本题的关键；
+漏掉这一步而去分别算 $0\ ^{\circ}\mathrm{C}$ 与 $120\ ^{\circ}\mathrm{C}$ 的力，
+会因缺活塞长度 $l$ 而算不下去。
+\end{yicuo}
+
+\noindent\textbf{第 1.16 题（孔珑 2-16）\quad 水在玻璃管中上升的高度}
+
+\begin{jie}
+\textbf{已知：}玻璃管内径 $d=10\ \mathrm{mm}=0.01\ \mathrm{m}$；水温 $20\ ^{\circ}\mathrm{C}$，
+取水的表面张力系数 $\sigma=0.0728\ \mathrm{N/m}$、密度 $\rho=998\ \mathrm{kg/m^3}$；
+水与玻璃的接触角 $\theta=10^{\circ}$；取 $g=9.8\ \mathrm{m/s^2}$。
+
+\textbf{求：}水在管中上升的高度 $h$。
+
+\textbf{依据：}毛细现象（教材 1.3.4 节）。管内液面上升 $h$ 后受力平衡：
+与管壁接触的整圈接触线长 $\pi d$，表面张力在竖直方向的合力
+$F_{\sigma}=\sigma\pi d\cos\theta$ 向上，液柱重力
+$G=\rho g\dfrac{\pi d^{2}}{4}h$ 向下。令两者相等：
+\[ \sigma\pi d\cos\theta=\rho g\frac{\pi d^{2}}{4}h
+   \quad\Longrightarrow\quad
+   h=\frac{4\sigma\cos\theta}{\rho g d} \]
+
+\textbf{第 1 步\quad 算 $\cos\theta$}
+
+\[ \cos 10^{\circ}=0.9848 \]
+
+\textbf{第 2 步\quad 代入公式}
+
+\[ h=\frac{4\times0.0728\times0.9848}{998\times9.8\times0.01}
+     =\frac{0.2868}{97.80}=2.93\times10^{-3}\ \mathrm{m} \]
+
+\textbf{结果：}水在管内上升的高度 $h\approx2.93\ \mathrm{mm}$（约 $3\ \mathrm{mm}$）。
+
+\textbf{量纲自检：}$\dfrac{\mathrm{N/m}}{\mathrm{kg/m^3}\cdot(\mathrm{m/s^2})\cdot\mathrm{m}}
+=\dfrac{\mathrm{N/m}}{\mathrm{N/m}}=\mathrm{m}$，单位正确；
+液柱高约 $3\ \mathrm{mm}$，肉眼可见但不显著，符合细玻璃管中水的毛细上升量级。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：管径是\textbf{内径}，且要化成米。}
+$d=10\ \mathrm{mm}=0.01\ \mathrm{m}$；漏掉换算会得到 $2.93\ \mathrm{m}$ 的荒谬结果。
+
+\textbf{易错点二：$\cos\theta$ 不能省。}
+$\theta=10^{\circ}$ 时 $\cos\theta=0.9848$，与 $1$ 相差不大，
+但若 $\theta$ 较大（如水银 $140^{\circ}$）则必须老老实实代入。
+
+\textbf{易错点三：}$h$ 与管径成反比。
+管越细，毛细上升越高——这是公式中 $d$ 在分母上的直接结论，
+也是"测压管为什么不能太细"的原因（毛细误差会叠加到读数上）。
+
+\textbf{易错点四：}$\sigma$ 与 $\rho$ 必须取与题给温度（$20\ ^{\circ}\mathrm{C}$）一致的值。
+水的表面张力随温度升高而减小，$20\ ^{\circ}\mathrm{C}$ 取 $0.0728\ \mathrm{N/m}$ 是常用值。
+\end{yicuo}
+
+\noindent\textbf{第 1.17 题（孔珑 2-17）\quad 水银在玻璃管中下降的高度}
+
+\begin{jie}
+\textbf{已知：}玻璃管内径 $d=8\ \mathrm{mm}=0.008\ \mathrm{m}$；
+$20\ ^{\circ}\mathrm{C}$ 水银与空气接触的表面张力系数（教材表 2-9）
+$\sigma=0.5137\ \mathrm{N/m}$；水银密度 $\rho=13550\ \mathrm{kg/m^3}$；
+水银与玻璃的接触角 $\theta=140^{\circ}$；取 $g=9.8\ \mathrm{m/s^2}$。
+
+\textbf{求：}水银在管中下降的高度。
+
+\textbf{依据：}毛细现象的基本公式与第 1.16 题相同
+\[ h=\frac{4\sigma\cos\theta}{\rho g d} \]
+所不同的是水银\textbf{不能润湿}玻璃，接触角 $\theta=140^{\circ}>90^{\circ}$，
+故 $\cos\theta<0$，算出的 $h$ 为负值，表示管内液面\textbf{低于}管外自由液面（下降）。
+
+\textbf{第 1 步\quad 算 $\cos\theta$}
+
+\[ \cos 140^{\circ}=-\cos 40^{\circ}=-0.7660 \]
+
+\textbf{第 2 步\quad 代入公式}
+
+\[ h=\frac{4\times0.5137\times(-0.7660)}{13550\times9.8\times0.008}
+     =\frac{-1.5741}{1062.3}=-1.48\times10^{-3}\ \mathrm{m} \]
+
+\textbf{结果：}水银在管中下降的高度为 $|h|\approx1.48\ \mathrm{mm}$，
+即管内水银面比管外自由液面低约 $1.5\ \mathrm{mm}$。
+
+\textbf{量纲自检：}$\dfrac{\mathrm{N/m}}{\mathrm{kg/m^3}\cdot(\mathrm{m/s^2})\cdot\mathrm{m}}
+=\mathrm{m}$；符号为负恰好对应"凸形液面、液面下降"，
+与水银"不润湿玻璃、液面呈凸形"的物理事实一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$\cos 140^{\circ}$ 是负的。}
+$\cos 140^{\circ}=-0.7660$，不要把负号丢掉而算出正的上升高度；
+遇到 $\theta>90^{\circ}$ 就必须预期"下降"。
+
+\textbf{易错点二：不要用水的表面张力系数。}
+水银的表面张力系数比水大一个数量级（本题 $0.5137\ \mathrm{N/m}$），
+但水银密度又比水大 $13.5$ 倍，两者综合后下降量只有毫米量级。
+
+\textbf{易错点三：管径 $8\ \mathrm{mm}=0.008\ \mathrm{m}$。}
+漏掉换算会得到 $1.48\ \mathrm{m}$ 的荒谬结果。
+
+\textbf{易错点四：}$\sigma$ 值必须查与题给温度、接触介质一致的表格
+（本题为 $20\ ^{\circ}\mathrm{C}$ 与空气接触的情况）；
+教材表 2-9 中不同液体、不同温度的 $\sigma$ 差别不小，查错行是常见失分点。
+\end{yicuo}

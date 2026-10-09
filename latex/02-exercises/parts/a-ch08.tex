@@ -1,0 +1,969 @@
+\chapter*{第 8 章 课后习题解答}
+\addcontentsline{toc}{chapter}{第 8 章 课后习题解答}
+\markboth{第 8 章 课后习题解答}{}
+
+\anstitle{第 8 章 习题解答}
+
+\begin{tishi}
+\textbf{答案来源：}赵琴《流体力学与流体机械》原书\textbf{不附课后习题答案}，
+本册第 8 章的解答全部由编者按教材第 8 章的公式与例题方法逐步推导而成，
+公式出处已在校核时逐一对照教材（式 8.60--8.63、表 8.1--8.3）。
+每题按\textbf{已知 $\to$ 依据 $\to$ 步骤 $\to$ 结果 $\to$ 易错提醒}五段写，
+计算题一律写出单位，凡原书数值不清或需两种口径者另设提示框说明。
+
+\textbf{本章题号与教材书页：}习题 8.1--8.5 在书页 p183，习题 8.6--8.16 在书页 p184。
+其中习题 8.1 含 3 个选择题小题，习题 8.5 为证明题，其余为计算题。
+
+\textbf{本章统一口径：}（1）水取 $\rho=1000\ \mathrm{kg/m^3}$；
+（2）平板边界层转捩临界雷诺数取 $\Rey_{xcr}=5\times10^5$；
+（3）平板边界层雷诺数用 $\Rey_x=U_\infty x/\nu$，管内流用 $\Rey_d=vd/\nu$，两套不可混用；
+（4）凡平板摩擦阻力均指\textbf{单面}，题目要求双面时另乘 2。
+\end{tishi}
+
+\noindent\textbf{第 8.1 题\quad 边界层与绕流阻力的三个选择题}
+
+\begin{jie}
+\textbf{1.\ 第（1）小题：答案 D（尾部的旋涡）}
+
+汽车高速行驶时所受的阻力由\textbf{表面摩擦阻力}与\textbf{压差阻力（形状阻力）}两部分组成。
+由于车身前后\emph{逆压梯度}很大，尾部边界层严重分离，形成大范围旋涡尾流，
+车头受正压、车尾受负压，压差阻力远大于摩擦阻力。按教材 8.7.3 节：
+"当雷诺数增大时，压差阻力占到总阻力的一半……当 $\Rey=10^3\sim10^5$ 时，
+总阻力主要是压差阻力。"故主要阻力来自尾部的旋涡，选 \textbf{D}。
+
+A（汽车表面的摩擦阻力）只是次要成分；B（地面的摩擦阻力）不属于绕流阻力，且滚动摩擦
+远小于空气阻力；C（空气对头部的碰撞）只给出车头的正压，与尾部负压相比不是主导因素。
+
+\textbf{2.\ 第（2）小题：答案 B（黏性力与惯性力量级相等）}
+
+边界层是"雷诺数很大"时黏性作用被限制在物面附近薄层内的流动。按教材 8.2 节，
+层内 $\partial u/\partial y$ 极大，\textbf{黏性力与惯性力同量级}，
+这正是边界层区别于外部势流（黏性力可忽略）的本质特点，故选 \textbf{B}。
+
+A 错：黏性力\emph{大于}惯性力是极慢流动（蠕动流）或黏性底层的特点，不是整个边界层的特点，
+边界层内恰恰是二者同量级；C 错：边界层内"沿厚度方向"压强不变
+（$\partial p/\partial y\approx0$，即同一 $x$ 处层内压强等于外部压强，见 2019 年真题判断题），
+但沿流向压强是随 $x$ 变化的，绝不能说"压强变化可忽略"；D 所述
+（层内速度从壁面 0 增大到外缘的 $U_\infty$）虽然成立，但它只是\emph{速度分布}的描述，
+不是"边界层内流动特点"的标准判据。
+
+\textbf{3.\ 第（3）小题：答案 C（逆压梯度区）}
+
+按教材 8.7 节，边界层分离的必要条件是\textbf{逆压梯度与黏性同时作用}：
+$\partial p/\partial x>0$ 使流体质点减速，动能被黏性耗损后无法继续前进，
+物面附近出现回流面而使边界层脱离物面。故分离只发生在逆压梯度区（$\dd p/\dd x>0$），
+选 \textbf{C}。
+
+A（物体后部）是分离"最常见的位置"，但不是判据——在顺压区的前半部不会分离；
+B（零压梯度区）如平板绕流，$\dd p/\dd x=0$，边界层只增厚而不分离；
+D（后驻点）是正压梯度最大的位置，但流动在那里早已分离，驻点本身不是分离发生区。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}分离的判据是\textbf{逆压梯度＋黏性}，缺一不可。理想流体（无黏）
+无论压梯度如何都不会分离；实际流体在顺压梯度区也不会分离。
+
+\textbf{易错点二：}第（2）小题中 D"流动速度比外部势流小"本身是描述层内速度分布的
+\emph{正确}命题，但本题问的是"流动\emph{特点}"——教材对边界层内流动的定性刻画是
+"黏性力与惯性力同量级"，故标准答案为 B。
+
+\textbf{易错点三：}"边界层内压强不变"指的是\textbf{沿物面法向}（厚度方向）$p$ 不随 $y$ 变化，
+沿流向 $p$ 仍随 $x$ 变化。写简答题时务必分清这两个方向。
+\end{yicuo}
+
+\noindent\textbf{第 8.2 题\quad 两平行平板间的泊肃叶流动（压强差驱动）}
+
+\begin{jie}
+\textbf{已知：}平板间距 $2h$，板长 $L$（$h\ll L$），恒定压强差 $(p_1-p_2)$，
+黏性不可压缩流体，定常层流，忽略质量力。
+\textbf{求：}$u=u(y)$。
+
+\textbf{1.\ 由连续性与层流条件确定速度分布的形式。}
+
+平板无限宽（$h\ll L$），流动沿 $x$ 方向，$u=u(y)$、$w=0$。
+由连续性方程 $\dfrac{\partial u}{\partial x}+\dfrac{\partial v}{\partial y}=0$，
+充分发展流动有 $\partial u/\partial x=0$，故 $\partial v/\partial y=0$，$v=$ 常数；
+又由上下板面的无滑移条件（$y=\pm h$ 处 $v=0$）得 $v=0$。
+
+\textbf{2.\ 由 N-S 方程求压强与坐标的关系。}
+
+$y$ 方向 N-S 方程（忽略质量力）为 $0=-\dfrac{1}{\rho}\dfrac{\partial p}{\partial y}$，
+故 $p$ 与 $y$ 无关，$p=p(x)$。
+$x$ 方向 N-S 方程为
+\[
+0=-\frac{1}{\rho}\frac{\dd p}{\dd x}+\nu\frac{\dd^2u}{\dd y^2}
+\qquad\Longrightarrow\qquad
+\frac{\dd^2u}{\dd y^2}=\frac{1}{\mu}\frac{\dd p}{\dd x}=\text{常数}
+\]
+因 $p$ 沿流向线性下降，取 $\dfrac{\dd p}{\dd x}=-\dfrac{p_1-p_2}{L}$。
+
+\textbf{3.\ 积分并代入边界条件。}
+
+积分两次：$u=\dfrac{1}{2\mu}\dfrac{\dd p}{\dd x}y^2+C_1y+C_2$。
+
+由对称性，$y=0$（中线）处速度最大，$\left.\dfrac{\dd u}{\dd y}\right|_{y=0}=0\Rightarrow C_1=0$；
+又由无滑移条件 $y=\pm h$ 处 $u=0$，得 $C_2=-\dfrac{1}{2\mu}\dfrac{\dd p}{\dd x}h^2$。
+于是
+\[
+u=\frac{1}{2\mu}\left(-\frac{\dd p}{\dd x}\right)\left(h^2-y^2\right)
+\]
+
+\textbf{4.\ 结果：}
+\[
+\boxed{\,u=\frac{p_1-p_2}{2\mu L}\left(h^2-y^2\right),\qquad -h\le y\le h\,}
+\]
+速度沿 $y$ 呈\textbf{抛物线分布}，中线处最大：
+\[
+u_{\max}=\frac{(p_1-p_2)h^2}{2\mu L}
+\]
+断面平均速度与单宽流量为
+\[
+\bar u=\frac{1}{2h}\int_{-h}^{h}u\,\dd y=\frac{2}{3}u_{\max}=\frac{(p_1-p_2)h^2}{3\mu L},
+\qquad
+q=2h\bar u=\frac{2(p_1-p_2)h^3}{3\mu L}
+\]
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}本题是 N-S 方程少数有精确解的流动之一，结论与"压强差
+$(p_1-p_2)$ 成正比、与板间距的平方 $h^2$ 成正比、与 $\mu$ 成反比"必须记牢；
+2019 年真题选择题正是给出这一抛物线分布、反求通过平板的单宽流量。
+
+\textbf{易错点二：}坐标原点取在\textbf{两板中线}上，故板面为 $y=\pm h$；
+若把原点取在下板面上，板面为 $y=0$ 与 $y=2h$，写出的表达式形式不同但等价，
+卷面上必须写清自己的坐标规定。
+\end{yicuo}
+
+\noindent\textbf{第 8.3 题\quad 库特流动（压强差＋上板拖动的叠加）}
+
+\begin{jie}
+\textbf{已知：}同第 8.2 题，$y=-h$ 处下板固定（$u=0$），
+$y=+h$ 处上板以速度 $U$ 沿 $x$ 方向移动（$u=U$）。
+\textbf{求：}$u=u(y)$。
+
+\textbf{1.\ 控制方程与通解同第 8.2 题：}
+\[
+\frac{\dd^2u}{\dd y^2}=\frac{1}{\mu}\frac{\dd p}{\dd x},
+\qquad
+u=\frac{1}{2\mu}\frac{\dd p}{\dd x}y^2+C_1y+C_2
+\]
+
+\textbf{2.\ 代入本题边界条件。}
+$y=-h$：$u=0$；\quad $y=+h$：$u=U$。
+
+由上板条件 $C_2$、$C_1$ 联立求解，或直接由\textbf{叠加原理}写出：
+纯剪切流（无压强差、上板以 $U$ 拖动）为线性分布
+\[
+u_1=U\frac{y+h}{2h}=\frac{U}{2}\left(1+\frac{y}{h}\right)
+\]
+压强差驱动的泊肃叶流（第 8.2 题）为
+\[
+u_2=\frac{p_1-p_2}{2\mu L}\left(h^2-y^2\right)
+\]
+两者叠加即得本题解。
+
+\textbf{3.\ 结果：}
+\[
+\boxed{\,u=\frac{p_1-p_2}{2\mu L}\left(h^2-y^2\right)+\frac{U}{2}\left(1+\frac{y}{h}\right)\,}
+\]
+校核：$y=-h$ 时 $u=0+\dfrac{U}{2}(1-1)=0$；$y=+h$ 时 $u=0+\dfrac{U}{2}(1+1)=U$，满足边界条件。
+
+\textbf{4.\ 讨论。}
+（1）当 $p_1>p_2$（压强差驱动）时，流速进一步增大；
+（2）当上板拖动速度 $U$ 远大于压强差的作用时，可以在下板附近出现
+$u<0$ 的\textbf{回流}（压强差造成的逆流超过上板拖动的正流）；
+（3）若 $p_1=p_2$，退化为纯剪切流 $u=U(y+h)/(2h)$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}叠加原理只对\textbf{线性}问题成立。N-S 方程因对流项非线性一般不能叠加，
+本题中 $u=u(y)$ 使对流项 $(u\cdot\nabla)u\equiv0$，方程退化为线性，故可以叠加。
+
+\textbf{易错点二：}纯剪切流的表达式是 $U(y+h)/(2h)$，不是 $Uy/(2h)$——
+$y$ 从\textbf{中线}起算，写出后务必用两个边界条件各校核一次。
+\end{yicuo}
+
+\noindent\textbf{第 8.4 题\quad 三次多项式速度分布的平板层流边界层厚度与单面阻力}
+
+\begin{jie}
+\textbf{已知：}平板顺流长 $L=1.2\ \mathrm{m}$、宽 $b=0.6\ \mathrm{m}$，
+来流速度 $U_\infty=0.8\ \mathrm{m/s}$，边界层内
+\[
+\frac{u}{U_\infty}=\frac{3}{2}\left(\frac{y}{\delta}\right)-\frac{1}{2}\left(\frac{y}{\delta}\right)^3
+\]
+\textbf{（题面未给水的运动黏度，本解按常温水取 $\nu=1.0\times10^{-6}\ \mathrm{m^2/s}$，
+第 4 步同时给出含 $\nu$ 的解析式。）}
+\textbf{求：}（1）边界层厚度的最大值 $\delta_{\max}$；（2）单面摩擦阻力 $F$。
+
+\textbf{1.\ 计算位移厚度与动量损失厚度。}
+
+令 $\eta=y/\delta$，则 $u/U_\infty=\dfrac{3}{2}\eta-\dfrac{1}{2}\eta^3$。
+\[
+\delta_1=\int_0^{\delta}\left(1-\frac{u}{U_\infty}\right)\dd y
+=\delta\int_0^1\left(1-\frac{3}{2}\eta+\frac{1}{2}\eta^3\right)\dd\eta
+=\delta\left(1-\frac{3}{4}+\frac{1}{8}\right)=\frac{3}{8}\delta=0.375\delta
+\]
+\[
+\delta_2=\int_0^{\delta}\frac{u}{U_\infty}\left(1-\frac{u}{U_\infty}\right)\dd y
+=\delta\int_0^1\left(\frac{3}{2}\eta-\frac{1}{2}\eta^3\right)\left(1-\frac{3}{2}\eta+\frac{1}{2}\eta^3\right)\dd\eta
+=\frac{39}{280}\delta=0.139\,\delta
+\]
+
+\textbf{2.\ 计算壁面切应力。}
+\[
+\tau_w=\mu\left.\frac{\dd u}{\dd y}\right|_{y=0}
+=\mu\frac{U_\infty}{\delta}\left(\frac{3}{2}-0\right)=\frac{1.5\mu U_\infty}{\delta}
+\]
+
+\textbf{3.\ 代入动量积分方程求 $\delta(x)$。}
+平板动量积分方程为
+\[
+\tau_w=\rho U_\infty^2\frac{\dd\delta_2}{\dd x}
+\quad\Longrightarrow\quad
+\frac{1.5\mu U_\infty}{\delta}=\rho U_\infty^2\times0.139\frac{\dd\delta}{\dd x}
+\]
+分离变量 $\delta\,\dd\delta=10.77\dfrac{\nu}{U_\infty}\dd x$，
+积分得 $\delta=4.64\sqrt{\dfrac{\nu x}{U_\infty}}=\dfrac{4.64x}{\sqrt{\Rey_x}}$，
+即著名的 $4.64$ 常数（教材动量积分方程一节的结论一致）。
+
+\textbf{4.\ 数值计算。}
+\[
+\Rey_L=\frac{U_\infty L}{\nu}=\frac{0.8\times1.2}{10^{-6}}=9.6\times10^5,
+\qquad \sqrt{\Rey_L}=979.8
+\]
+（1）边界层最大厚度（在平板末端 $x=L$ 处）：
+\[
+\delta_{\max}=\frac{4.64L}{\sqrt{\Rey_L}}=\frac{4.64\times1.2}{979.8}
+=5.68\times10^{-3}\ \mathrm{m}\approx5.7\ \mathrm{mm}
+\]
+（2）单面摩擦阻力。单面积分得平均摩擦阻力系数
+$\displaystyle C_D=\frac{1.293}{\sqrt{\Rey_L}}$，故
+\[
+F=C_D\frac{\rho U_\infty^2}{2}bL
+=\frac{1.293}{979.8}\times\frac{1000\times0.8^2}{2}\times(0.6\times1.2)
+=1.320\times10^{-3}\times320\times0.72
+\]
+\[
+\boxed{\,\delta_{\max}\approx5.7\ \mathrm{mm},\qquad F\approx0.30\ \mathrm{N}\,}
+\]
+含 $\nu$ 的解析式为
+\[
+\delta_{\max}=4.64\sqrt{\frac{\nu L}{U_\infty}},\qquad
+F=0.6466\,b\,U_\infty^{1.5}\sqrt{\mu\rho L}
+\]
+（后一式可由 $F=\displaystyle\int_0^{L}\tau_w b\,\dd x$ 直接积分得到。）
+\end{jie}
+
+\begin{tishi}
+\textbf{关于题给速度分布（原书此处不可辨）：}本题速度分布公式在原扫描件中整行丢失，
+本册据紧随其后的习题 8.5（要求证明速度分布可写成
+$u/U_\infty=\frac32(y/\delta)-\frac12(y/\delta)^3$）补为\textbf{三次多项式}。
+若原书所给为另一种常用两层分布——\textbf{抛物线分布} $u/U_\infty=2\eta-\eta^2$，
+则 $\delta_1=\delta/3$、$\delta_2=2\delta/15$、$\tau_w=2\mu U_\infty/\delta$，
+按同一方法可得 $\delta=5.48x/\sqrt{\Rey_x}$、$C_D=1.46/\sqrt{\Rey_l}$，于是
+\[
+\delta_{\max}=\frac{5.48\times1.2}{979.8}=6.71\ \mathrm{mm},\qquad
+F=1.490\times10^{-3}\times320\times0.72=0.343\ \mathrm{N}
+\]
+两种口径相差约 13\%，结论量级相同。另：题面未给水的运动黏度，
+若取 $\nu=1.145\times10^{-6}\ \mathrm{m^2/s}$（同章习题 8.4 之外各题的常用值），
+则 $\Rey_L=8.38\times10^5$、$\delta_{\max}=6.08\ \mathrm{mm}$、$F=0.326\ \mathrm{N}$。
+凡考试中遇到"速度分布"给定而数据不全的情形，一律先写出含 $\nu$ 的解析式再代入。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：}本题 $\Rey_L=9.6\times10^5>5\times10^5$，
+严格说平板后段已转捩，本解是按\emph{题给层流速度分布}算出的口径；
+若考查真题那种平板绕流（2020 填空、2021 计算 5），必须先判流态再选公式。
+
+\textbf{易错点二：}$C_D=1.293/\sqrt{\Rey_l}$ 是\textbf{平均}摩擦阻力系数，
+$C_f=0.646/\sqrt{\Rey_x}$ 是\textbf{局部}摩擦阻力系数，两者差 2 倍，不可混用。
+
+\textbf{易错点三：}题目问"作用在平板上的单面阻力"，故湿面积只取一面 $bL$；
+若问"两面阻力"再乘 2（见第 8.9 题）。
+\end{yicuo}
+
+\noindent\textbf{第 8.5 题\quad 三次多项式速度分布的证明}
+
+\begin{jie}
+\textbf{已知：}平板顺流置于速度 $U_\infty$ 的均匀来流中，层流边界层内速度分布
+$u(y)$ 可表示为 $y$（该点至板面的距离）的 3 次多项式，边界层厚度为 $\delta$。
+
+\textbf{1.\ 写出三次多项式的一般形式。}
+\[
+u(y)=a_0+a_1y+a_2y^2+a_3y^3
+\]
+
+\textbf{2.\ 列出确定 4 个待定系数的 4 个边界条件。}
+\begin{xiaowen}
+\item $y=0$：$u=0$（无滑移条件）；
+\item $y=\delta$：$u=U_\infty$（与外部势流光滑衔接）；
+\item $y=\delta$：$\dfrac{\dd u}{\dd y}=0$（边界层外缘速度取极大，速度剖面与来流光滑相切）；
+\item $y=0$：$\dfrac{\dd^2u}{\dd y^2}=0$。依据：在物面 $y=0$ 处 $u=v=0$，
+边界层动量方程退化为 $\mu\left(\dfrac{\partial^2u}{\partial y^2}\right)_{y=0}=\dfrac{\dd p}{\dd x}$，
+而平板绕流外部是均匀流，$p=$ 常数（教材 8.3 节：边界层内压强由外部势流确定），
+故 $\dd p/\dd x=0$，即有本条件。
+\end{xiaowen}
+
+\textbf{3.\ 解出待定系数。}
+由条件（1）：$a_0=0$。
+由条件（4）：$2a_2=0\Rightarrow a_2=0$。
+由条件（3）：$a_1+3a_3\delta^2=0\Rightarrow a_1=-3a_3\delta^2$。
+由条件（2）：$a_1\delta+a_3\delta^3=U_\infty$，代入上式：
+\[
+-3a_3\delta^3+a_3\delta^3=-2a_3\delta^3=U_\infty
+\Rightarrow a_3=-\frac{U_\infty}{2\delta^3},
+\qquad a_1=\frac{3U_\infty}{2\delta}
+\]
+
+\textbf{4.\ 结果（证毕）：}
+\[
+\boxed{\,\frac{u}{U_\infty}=\frac{3}{2}\left(\frac{y}{\delta}\right)-\frac{1}{2}\left(\frac{y}{\delta}\right)^3\,}
+\]
+
+\textbf{5.\ 附：上述剖面对应的边界层特征量。}
+\[
+\delta_1=\frac{3}{8}\delta,\qquad
+\delta_2=\frac{39}{280}\delta,\qquad
+H=\frac{\delta_1}{\delta_2}=2.69,\qquad
+\tau_w=\frac{1.5\mu U_\infty}{\delta}
+\]
+把上式代入动量积分方程即得 $\delta=4.64x/\sqrt{\Rey_x}$、$C_f=0.646/\sqrt{\Rey_x}$、
+$C_D=1.293/\sqrt{\Rey_l}$（第 8.4 题即由此得解）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}第 4 个边界条件 $\left(\partial^2u/\partial y^2\right)_{y=0}=0$
+是"\textbf{平板}+边界层内压强为常数"的结论，\emph{只适用于零压梯度}；
+对曲面绕流或有压梯度的边界层，该处应为 $\mu(\partial^2u/\partial y^2)_0=\dd p/\dd x$，
+此时速度剖面必须改用含压梯度参数的 Pohlhausen 四次多项式，不能照搬本题结论。
+
+\textbf{易错点二：}四个条件中"$y=\delta$ 处 $\dd u/\dd y=0$"与"$y=\delta$ 处 $u=U_\infty$"
+是\textbf{两个独立}条件，漏掉任何一个都解不出系数。
+\end{yicuo}
+
+\noindent\textbf{第 8.6 题\quad 距平板前缘 5 m 处的边界层厚度}
+
+\begin{jie}
+\textbf{已知：}水的来流速度 $u=0.2\ \mathrm{m/s}$，$\nu=1.145\times10^{-6}\ \mathrm{m^2/s}$，
+$x=5\ \mathrm{m}$。
+\textbf{求：}$\delta$。
+
+\textbf{1.\ 先判别边界层流态（本题关键一步）。}
+\[
+\Rey_x=\frac{ux}{\nu}=\frac{0.2\times5}{1.145\times10^{-6}}=8.73\times10^5>5\times10^5
+\]
+超过转捩临界雷诺数，故该处已是\textbf{湍流边界层}，不能再用层流公式。
+
+\textbf{2.\ 取湍流边界层厚度公式（教材 8.6.2 节，假定自平板首端即为湍流）。}
+\[
+\delta=\frac{0.37x}{\Rey_x^{1/5}}
+\]
+
+\textbf{3.\ 代入计算。}
+\[
+\Rey_x^{1/5}=\left(8.73\times10^5\right)^{1/5}=15.42,
+\qquad
+\delta=\frac{0.37\times5}{15.42}=\frac{1.85}{15.42}=0.12\ \mathrm{m}
+\]
+\[
+\boxed{\,\delta\approx0.12\ \mathrm{m}=120\ \mathrm{mm}\,}
+\]
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}若不加判别直接套层流公式 $\delta=5.0x/\sqrt{\Rey_x}$，得 26.8 mm，
+比正确值小 4 倍以上——\textbf{凡平板边界层题，第一步一律算 $\Rey_x$ 并判流态}。
+
+\textbf{易错点二：}湍流边界层比层流边界层\textbf{厚得多}（本例 120 mm 对 26.8 mm），
+因为湍流脉动把动量交换带到更远的地方，切忌凭"湍流更剧烈所以更薄"的直觉。
+
+\textbf{易错点三：}严格说本题平板转捩点位于
+$x_{cr}=\nu\Rey_{xcr}/u=1.145\times10^{-6}\times5\times10^5/0.2=2.86\ \mathrm{m}$，
+$x=5\ \mathrm{m}$ 已是混合边界层；教材对 $\delta$ 只给出"自首端即为湍流"的口径，
+故按第 2 步计算，若按从 $x_{cr}$ 起算的湍流段增长，结果略小于 120 mm。
+\end{yicuo}
+
+\noindent\textbf{第 8.7 题\quad 平板长度加倍时层流摩擦阻力的增加倍数}
+
+\begin{jie}
+\textbf{已知：}平板顺流置于均匀来流中，边界层为层流；板长由 $L$ 变为 $2L$
+（来流速度 $U_\infty$、板宽 $b$ 不变）。
+\textbf{求：}摩擦阻力增加几倍。
+
+\textbf{1.\ 写出层流平板的摩擦阻力。}
+层流边界层平均摩擦阻力系数 $C_D=\dfrac{1.328}{\sqrt{\Rey_l}}$，
+故
+\[
+F=C_D\frac{\rho U_\infty^2}{2}bL
+=\frac{1.328}{\sqrt{U_\infty L/\nu}}\cdot\frac{\rho U_\infty^2}{2}bL
+=0.664\,b\sqrt{\mu\rho L}\,U_\infty^{1.5}
+\]
+可见当 $U_\infty$、$b$、$\nu$ 不变时
+\[
+F\propto\sqrt{L}
+\]
+
+\textbf{2.\ 求长度加倍的倍数。}
+\[
+\frac{F'}{F}=\sqrt{\frac{2L}{L}}=\sqrt{2}=1.414
+\]
+
+\textbf{3.\ 结果：}
+\[
+\boxed{\,\frac{F'}{F}=\sqrt{2}\approx1.41,\quad\text{即摩擦阻力约增加 }0.41\text{ 倍}\,}
+\]
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}最常见的错误是认为"长度加倍、阻力加倍"（增加 1 倍）。
+之所以不是正比关系，是因为板长增加后平均摩擦阻力系数
+$C_D\propto1/\sqrt{L}$ 反而下降，两者相乘才得 $\sqrt{L}$ 关系。
+
+\textbf{易错点二：}该 $\sqrt{L}$ 关系只在\textbf{层流}边界层成立。
+若为湍流边界层，$C_D=0.074/\Rey_l^{1/5}$，则
+$F\propto L^{4/5}$，长度加倍时 $\dfrac{F'}{F}=2^{0.8}=1.74$，即增加 $0.74$ 倍。
+（2015 年计算第 9 题、第 8.11 题考的正是这一类比例关系的对比。）
+\end{yicuo}
+
+\noindent\textbf{第 8.8 题\quad 水与油绕流 2 m 平板的末端边界层厚度}
+
+\begin{jie}
+\textbf{已知：}$u=0.8\ \mathrm{m/s}$，$L=2\ \mathrm{m}$；
+水 $\nu_1=10^{-6}\ \mathrm{m^2/s}$，油 $\nu_2=8\times10^{-5}\ \mathrm{m^2/s}$。
+\textbf{求：}平板末端的边界层厚度 $\delta$。
+
+\textbf{1.\ 水的算例。}
+\[
+\Rey_L=\frac{uL}{\nu_1}=\frac{0.8\times2}{10^{-6}}=1.6\times10^6>5\times10^5
+\]
+为\textbf{湍流边界层}：
+\[
+\delta=\frac{0.37L}{\Rey_L^{1/5}}
+=\frac{0.37\times2}{(1.6\times10^6)^{1/5}}=\frac{0.74}{17.41}=4.25\times10^{-2}\ \mathrm{m}
+\]
+
+\textbf{2.\ 油的算例。}
+\[
+\Rey_L=\frac{uL}{\nu_2}=\frac{0.8\times2}{8\times10^{-5}}=2.0\times10^4<5\times10^5
+\]
+为\textbf{层流边界层}：
+\[
+\delta=\frac{5.0L}{\sqrt{\Rey_L}}=\frac{5.0\times2}{\sqrt{2\times10^4}}=\frac{10}{141.4}=7.07\times10^{-2}\ \mathrm{m}
+\]
+
+\textbf{3.\ 结果：}
+\[
+\boxed{\,\text{水 }(\text{湍流边界层}):\ \delta\approx42.5\ \mathrm{mm};\qquad
+\text{油 }(\text{层流边界层}):\ \delta\approx70.7\ \mathrm{mm}\,}
+\]
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}两种流体必须\textbf{各自}算 $\Rey_L$ 再选公式：
+水的 $\Rey_L=1.6\times10^6$ 已超临界，用湍流公式；油的 $\Rey_L$ 只有 $2\times10^4$，
+用层流公式。若对两者套同一公式，答案全错。
+
+\textbf{易错点二：}油的运动黏度大、边界层反而\textbf{更厚}（70.7 mm 对 42.5 mm）。
+运动黏度大使边界层增长更快（$\delta\propto\sqrt{\nu x/U_\infty}$），
+不要凭"油更黏所以边界层更薄"的直觉判断。
+
+\textbf{易错点三：}本题水的算例与 2022 年真题填空题数值完全相同，
+真题目的是判断\textbf{流态}（答：湍流），本解第 1 步即为该题答案。
+\end{yicuo}
+
+\noindent\textbf{第 8.9 题\quad 正方形平板的最大边界层厚度与双面摩擦阻力}
+
+\begin{jie}
+\textbf{已知：}正方形平板边长 $L=1\ \mathrm{m}$，来流速度 $v=1\ \mathrm{m/s}$，
+水的 $\nu=10^{-6}\ \mathrm{m^2/s}$，$\rho=1000\ \mathrm{kg/m^3}$。
+\textbf{求：}边界层最大厚度与\textbf{双面}摩擦阻力（分别按全层流、全湍流计算）。
+
+先算平板（沿流向长 $1\ \mathrm{m}$）的雷诺数：
+\[
+\Rey_L=\frac{vL}{\nu}=\frac{1\times1}{10^{-6}}=1.0\times10^6
+\]
+
+\textbf{1.\ 全板层流的口径。}
+\[
+\delta_{\max}=\frac{5.0L}{\sqrt{\Rey_L}}=\frac{5.0\times1}{1000}=5.0\times10^{-3}\ \mathrm{m}=5.0\ \mathrm{mm}
+\]
+\[
+C_D=\frac{1.328}{\sqrt{\Rey_L}}=\frac{1.328}{1000}=1.328\times10^{-3}
+\]
+单面阻力与双面阻力：
+\[
+F_1=C_D\frac{\rho v^2}{2}L^2
+=1.328\times10^{-3}\times\frac{1000\times1^2}{2}\times1=0.664\ \mathrm{N}
+\]
+\[
+F_{2F}=2F_1=1.328\ \mathrm{N}
+\]
+
+\textbf{2.\ 全板湍流的口径。}
+\[
+\delta_{\max}=\frac{0.37L}{\Rey_L^{1/5}}=\frac{0.37}{15.85}=2.33\times10^{-2}\ \mathrm{m}=23.3\ \mathrm{mm}
+\]
+\[
+C_D=\frac{0.074}{\Rey_L^{1/5}}=\frac{0.074}{15.85}=4.669\times10^{-3}
+\]
+\[
+F_{2F}=2\times4.669\times10^{-3}\times\frac{1000\times1^2}{2}\times1=4.669\ \mathrm{N}
+\]
+
+\textbf{3.\ 结果：}
+\[
+\boxed{\,\text{全层流}:\ \delta_{\max}=5.0\ \mathrm{mm},\ F_{2F}\approx1.33\ \mathrm{N};\qquad
+\text{全湍流}:\ \delta_{\max}=23.3\ \mathrm{mm},\ F_{2F}\approx4.67\ \mathrm{N}\,}
+\]
+湍流口径的摩擦阻力约为层流口径的 3.5 倍，边界层厚度约 4.7 倍。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}题目明确"双面"，故阻力必须乘 2（得到 1.33 N 与 4.67 N 而不是 0.66 N 与 2.33 N）。
+真题中"平板两面摩擦阻力"（2021 年计算第 5 题）同样是这个陷阱。
+
+\textbf{易错点二：}$\Rey_L=1.0\times10^6>5\times10^5$，实际平板是层流段＋湍流段的\textbf{混合边界层}，
+题设的"全板都是层流""全板都是湍流"只是两种极限口径，用于比较流态对厚度与阻力的影响。
+\end{yicuo}
+
+\noindent\textbf{第 8.10 题\quad 水渠底面平板的摩擦阻力（混合边界层）}
+
+\begin{jie}
+\textbf{已知：}平板（水渠底面）长 $L=30\ \mathrm{m}$、宽 $b=3\ \mathrm{m}$，
+水流速度 $u_0=6\ \mathrm{m/s}$，水的 $\nu=10^{-6}\ \mathrm{m^2/s}$、$\rho=1000\ \mathrm{kg/m^3}$。
+\textbf{求：}（1）前面 $x=3\ \mathrm{m}$ 一段板面的摩擦阻力；（2）全长 $30\ \mathrm{m}$ 板面的摩擦阻力。
+
+\textbf{1.\ 判别流态。}
+\[
+x_{cr}=\frac{\nu\Rey_{xcr}}{u_0}=\frac{10^{-6}\times5\times10^5}{6}=0.083\ \mathrm{m}\ll L
+\]
+故板面上既有前段层流边界层、又有后段湍流边界层，属于\textbf{混合边界层}，
+其平均摩擦阻力系数（教材 8.6.3 节，两假设：转捩在 $x_{cr}$ 突然发生、
+湍流段可看作自平板首端开始的湍流边界层的一部分）为
+\[
+C_{fm}=\frac{0.074}{\Rey_l^{1/5}}-\frac{1700}{\Rey_l}
+\]
+
+\textbf{2.\ 前面 $x=3\ \mathrm{m}$ 一段的阻力。}
+\[
+\Rey_x=\frac{u_0x}{\nu}=\frac{6\times3}{10^{-6}}=1.8\times10^7,
+\qquad \Rey_x^{1/5}=28.25
+\]
+\[
+C_{fm1}=\frac{0.074}{28.25}-\frac{1700}{1.8\times10^7}
+=2.619\times10^{-3}-9.44\times10^{-5}=2.525\times10^{-3}
+\]
+\[
+F_1=C_{fm1}\frac{\rho u_0^2}{2}\,b\,x
+=2.525\times10^{-3}\times\frac{1000\times6^2}{2}\times(3\times3)
+=2.525\times10^{-3}\times18000\times9=409\ \mathrm{N}
+\]
+
+\textbf{3.\ 全长 $L=30\ \mathrm{m}$ 板面的阻力。}
+\[
+\Rey_L=\frac{u_0L}{\nu}=\frac{6\times30}{10^{-6}}=1.8\times10^8,
+\qquad \Rey_L^{1/5}=44.78
+\]
+\[
+C_{fm}=\frac{0.074}{44.78}-\frac{1700}{1.8\times10^8}
+=1.6525\times10^{-3}-9.44\times10^{-6}=1.643\times10^{-3}
+\]
+\[
+F_2=1.643\times10^{-3}\times18000\times(3\times30)
+=1.643\times10^{-3}\times18000\times90=2.66\times10^3\ \mathrm{N}
+\]
+
+\textbf{4.\ 结果：}
+\[
+\boxed{\,\text{(1) }F_1\approx409\ \mathrm{N};\qquad\text{(2) }F_2\approx2.66\ \mathrm{kN}\,}
+\]
+\end{jie}
+
+\begin{tishi}
+\textbf{全湍流口径的对照值：}若忽略层流段、按"自平板首端即为湍流"计算
+（$C_D=0.074/\Rey_l^{1/5}$），则
+\[
+F_1=2.619\times10^{-3}\times18000\times9=424\ \mathrm{N},\qquad
+F_2=1.6525\times10^{-3}\times18000\times90=2.68\ \mathrm{kN}
+\]
+与混合边界层的结果分别相差 3.7\% 与 0.6\%——因为 $x_{cr}=0.083\ \mathrm{m}$ 太短，
+层流段几乎可以忽略。教材给出混合边界层公式的原因就在于此：
+$\Rey_l$ 不太大时层流段的修正不可忽略，$\Rey_l$ 很大时修正项 $1700/\Rey_l$ 迅速衰减。
+凡题目给了 $\Rey_{xcr}$，优先用混合边界层公式。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：}湿面积取 $b$ 乘"沿流向的长度"（$3\times3$ 与 $3\times30$），
+不要错用 $30\times30$ 或漏乘宽度。
+
+\textbf{易错点二：}混合边界层的修正项 $1700/\Rey_l$ 不能漏（它代表把前段层流转捩成湍流所省下的阻力）；
+也不要把它与 $\Rey_{xcr}$ 的修正式混用。
+
+\textbf{易错点三：}本题两问都是"从板前缘算起"的一段（前 3 m 和全长 30 m），
+故两问都用混合公式；若问"从 $x=3\ \mathrm{m}$ 到 $x=30\ \mathrm{m}$ 这一段"，
+则应把全长阻力减去前 3 m 阻力。
+\end{yicuo}
+
+\noindent\textbf{第 8.11 题\quad 矩形平板两种放置方向的摩擦阻力之比}
+
+\begin{jie}
+\textbf{已知：}平板面积 $2\ \mathrm{m}\times8\ \mathrm{m}=16\ \mathrm{m^2}$，
+来流速度 $u=3\ \mathrm{m/s}$，水的 $\nu=10^{-6}\ \mathrm{m^2/s}$、$\rho=1000\ \mathrm{kg/m^3}$。
+\textbf{求：}$F_1/F_2$（$F_1$ 为长边顺流，$F_2$ 为短边顺流）。
+
+\textbf{1.\ 两种放法的沿流向长度与雷诺数。}
+长边顺流：$L_1=8\ \mathrm{m}$，$b_1=2\ \mathrm{m}$，
+$\Rey_{L1}=\dfrac{3\times8}{10^{-6}}=2.4\times10^7$；
+短边顺流：$L_2=2\ \mathrm{m}$，$b_2=8\ \mathrm{m}$，
+$\Rey_{L2}=\dfrac{3\times2}{10^{-6}}=6.0\times10^6$。
+两者均远大于 $5\times10^5$，按教材 8.6.2 节口径取\textbf{湍流边界层}
+（自平板首端即为湍流，不考虑平板壁面粗糙度的影响）。
+
+\textbf{2.\ 写出两种放法的阻力。}
+
+两种放法的湿面积相同，均为 $A=bL=16\ \mathrm{m^2}$，故
+\[
+F=C_D\frac{\rho u^2}{2}A,\qquad C_D=\frac{0.074}{\Rey_L^{1/5}}
+\]
+\[
+\frac{F_1}{F_2}=\left(\frac{\Rey_{L2}}{\Rey_{L1}}\right)^{1/5}
+=\left(\frac{6.0\times10^6}{2.4\times10^7}\right)^{1/5}
+=\left(\frac{2}{8}\right)^{1/5}=0.25^{0.2}
+\]
+
+\textbf{3.\ 数值。}
+\[
+0.25^{0.2}=\mathrm{e}^{-0.2773}=0.758
+\]
+（分项核算：$\Rey_{L1}^{1/5}=29.93$，$C_{D1}=2.472\times10^{-3}$，
+$F_1=2.472\times10^{-3}\times4500\times16=178.0\ \mathrm{N}$；
+$\Rey_{L2}^{1/5}=22.68$，$C_{D2}=3.263\times10^{-3}$，
+$F_2=3.263\times10^{-3}\times4500\times16=234.9\ \mathrm{N}$；
+$F_1/F_2=178.0/234.9=0.758$。）
+
+\textbf{4.\ 结果：}
+\[
+\boxed{\,\frac{F_1}{F_2}=\left(\frac{2}{8}\right)^{1/5}\approx0.76\,}
+\]
+即\textbf{长边顺着流速方向放置时摩擦阻力较小}。
+\end{jie}
+
+\begin{tishi}
+\textbf{若按混合边界层计算：}用 $C_{fm}=0.074/\Rey_L^{1/5}-1700/\Rey_L$，则
+$C_{fm1}=2.472\times10^{-3}-7.08\times10^{-5}=2.401\times10^{-3}$、
+$C_{fm2}=3.263\times10^{-3}-2.83\times10^{-4}=2.980\times10^{-3}$，
+$F_1/F_2=2.401/2.980=0.81$。
+两种口径分别给出 $0.76$（全湍流）与 $0.81$（混合）。
+2015 年 818 计算第 9 题为本题原题，其答案卷按全湍流口径给出 $0.76$，
+故考试作答以 \textbf{0.76} 为准。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：}不要把 $b$ 与 $L$ 弄反。长边顺流时被绕流的"弦长"是 $8\ \mathrm{m}$，
+只有把 $8\ \mathrm{m}$ 放在\emph{流向}上才是"长边顺流"。
+
+\textbf{易错点二：}两种放法的湿面积完全相同（$16\ \mathrm{m^2}$），
+所以比值只取决于 $\Rey_L^{1/5}$，即只取决于流向长度之比——
+这正是本题结论"沿流向的尺度越大、阻力越小"的由来。
+\end{yicuo}
+
+\noindent\textbf{第 8.12 题\quad 平底船底面边界层阻力所需功率}
+
+\begin{jie}
+\textbf{已知：}平板（船底）宽 $b=10\ \mathrm{m}$、长 $L=50\ \mathrm{m}$，
+船速 $v=4\ \mathrm{m/s}$，水的 $\nu=10^{-6}\ \mathrm{m^2/s}$、$\rho=1000\ \mathrm{kg/m^3}$，
+转捩临界雷诺数 $\Rey_{xcr}=5\times10^5$。
+\textbf{求：}克服边界层阻力所需的功率 $P$。
+
+\textbf{1.\ 雷诺数与转捩点。}
+\[
+\Rey_L=\frac{vL}{\nu}=\frac{4\times50}{10^{-6}}=2.0\times10^8,
+\qquad
+x_{cr}=\frac{\nu\Rey_{xcr}}{v}=\frac{10^{-6}\times5\times10^5}{4}=0.125\ \mathrm{m}\ll L
+\]
+故为\textbf{混合边界层}。
+
+\textbf{2.\ 混合边界层平均摩擦阻力系数（教材 8.6.3 节）。}
+\[
+C_{fm}=\frac{0.074}{\Rey_L^{1/5}}-\frac{1700}{\Rey_L}
+\]
+\[
+\Rey_L^{1/5}=\left(2.0\times10^8\right)^{1/5}=45.73,\qquad
+\frac{0.074}{45.73}=1.618\times10^{-3},\qquad
+\frac{1700}{2.0\times10^8}=8.5\times10^{-6}
+\]
+\[
+C_{fm}=1.618\times10^{-3}-8.5\times10^{-6}=1.610\times10^{-3}
+\]
+
+\textbf{3.\ 边界层摩擦阻力（只计船底一面，湿面积 $bL$）。}
+\[
+F_D=C_{fm}\frac{\rho v^2}{2}bL
+=1.610\times10^{-3}\times\frac{1000\times4^2}{2}\times(10\times50)
+=1.610\times10^{-3}\times8000\times500
+\]
+\[
+F_D=6.44\times10^3\ \mathrm{N}
+\]
+
+\textbf{4.\ 所需功率。}
+\[
+P=F_Dv=6.44\times10^3\times4=2.58\times10^4\ \mathrm{W}
+\]
+
+\textbf{5.\ 结果：}
+\[
+\boxed{\,F_D\approx6.4\ \mathrm{kN},\qquad P\approx25.8\ \mathrm{kW}\,}
+\]
+（2018 年 818 计算第 9 题为本题原题，答案卷取 $C_{fm}=0.0016$，得
+$F_D=6.4\ \mathrm{kN}$、$P=25.6\ \mathrm{kW}$，与本题结果一致。）
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}只算船底\textbf{一面}（湿面积 $bL$），不要把船的两侧或双面都算进去。
+
+\textbf{易错点二：}功率是"阻力 $\times$ 速度"（$P=Fv$），不是阻力本身；
+单位换算 $6.44\ \mathrm{kN}\times4\ \mathrm{m/s}=25.8\ \mathrm{kW}$。
+
+\textbf{易错点三：}本题 $x_{cr}=0.125\ \mathrm{m}$ 极小，若忽略层流段直接取
+$C_D=0.074/\Rey_L^{1/5}=0.001618$，得 $P=25.9\ \mathrm{kW}$，
+与用混合公式的结果相差不到 0.5\%。但\emph{答题时必须写出混合边界的判别与公式}，
+因为题目给了 $\Rey_{xcr}$ 这一条件。
+\end{yicuo}
+
+\noindent\textbf{第 8.13 题\quad 降落伞的直径}
+
+\begin{jie}
+\textbf{已知：}重物重 $W=45\ \mathrm{kN}=4.5\times10^4\ \mathrm{N}$，
+要求落地速度不超过 $u=10\ \mathrm{m/s}$，阻力系数 $C_D=2$，
+空气密度 $\rho=1.2\ \mathrm{kg/m^3}$，不计伞重。
+\textbf{求：}降落伞直径 $d$。
+
+\textbf{1.\ 由力平衡建立方程。}
+落地速度"不超过"10 m/s 即\textbf{终极速度}（等速下落），
+此时绕流阻力与重力平衡（不计伞重、不计浮力）：
+\[
+W=C_D\frac{\rho u^2}{2}A
+\]
+其中 $A$ 为伞的\textbf{迎流投影面积}（即伞口圆面积）$A=\pi d^2/4$。
+
+\textbf{2.\ 求迎流投影面积。}
+\[
+A=\frac{W}{C_D\dfrac{\rho u^2}{2}}
+=\frac{4.5\times10^4}{2\times\dfrac{1.2\times10^2}{2}}
+=\frac{4.5\times10^4}{120}=375\ \mathrm{m^2}
+\]
+
+\textbf{3.\ 求直径。}
+\[
+d=\sqrt{\frac{4A}{\pi}}=\sqrt{\frac{4\times375}{3.1416}}=\sqrt{477.5}=21.9\ \mathrm{m}
+\]
+
+\textbf{4.\ 结果：}
+\[
+\boxed{\,A\approx375\ \mathrm{m^2},\qquad d\approx21.9\ \mathrm{m}\,}
+\]
+即降落伞伞口直径约需 $21.9\ \mathrm{m}$（$45\ \mathrm{kN}$ 的重物约合 $4.6\ \mathrm{t}$，
+其空投伞本身就是二十多米量级，结果量级合理）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}面积必须用\textbf{迎流投影面积} $\pi d^2/4$，
+不能用半球面的表面积 $2\pi r^2=\pi d^2/2$。若误用后者，会算得 $d=15.5\ \mathrm{m}$，
+偏小 30\%。
+
+\textbf{易错点二：}"要求落地速度不超过 10 m/s"给出的是\textbf{等速（终极）状态}，
+此时阻力等于重力；若误以为还要考虑加速度，就会多出一个质量项。
+
+\textbf{易错点三：}若题中给的是"伞衣（球面）平均直径"，则与"伞口直径"不同，
+真题、教材例题中均按迎流投影面积（伞口圆面积）处理。
+\end{yicuo}
+
+\noindent\textbf{第 8.14 题\quad 汽车克服空气阻力所消耗的功率}
+
+\begin{jie}
+\textbf{已知：}车速 $v=80\ \mathrm{km/h}$，迎风面积 $A=2\ \mathrm{m^2}$，
+阻力系数 $C_D=0.4$，空气密度 $\rho=1.25\ \mathrm{kg/m^3}$。
+\textbf{求：}克服空气阻力所消耗的功率 $P$。
+
+\textbf{1.\ 单位换算。}
+\[
+v=\frac{80}{3.6}=22.22\ \mathrm{m/s}
+\]
+
+\textbf{2.\ 空气阻力（教材 8.7.2 节式(8.62)）。}
+\[
+D=C_D\frac{\rho v^2}{2}A
+=0.4\times\frac{1.25\times22.22^2}{2}\times2
+=0.4\times308.6\times2=246.9\ \mathrm{N}
+\]
+
+\textbf{3.\ 功率。}
+\[
+P=Dv=246.9\times22.22=5.49\times10^3\ \mathrm{W}
+\]
+或用 $P=C_D\dfrac{\rho v^3}{2}A$ 直接计算：
+$P=0.4\times\dfrac{1.25\times22.22^3}{2}\times2=0.4\times0.625\times2\times10974=5487\ \mathrm{W}$。
+
+\textbf{4.\ 结果：}
+\[
+\boxed{\,D\approx247\ \mathrm{N},\qquad P\approx5.5\ \mathrm{kW}\,}
+\]
+（约合 $7.4$ 马力，与一般轿车以 80 km/h 定速行驶时克服空气阻力所占的功率量级相符。）
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}km/h 必须换成 m/s（除以 3.6）；若忘记换算，会算得 $D=6.17\ \mathrm{N}$、
+$P=494\ \mathrm{W}$，差 1000 倍以上。
+
+\textbf{易错点二：}功率 $P=Fv$ 中的 $v$ 是\textbf{车速}（而不是风速或其他速度）。
+
+\textbf{易错点三：}注意本题的迎风面积 $A=2\ \mathrm{m^2}$ 是题给值，
+是"垂直于运动方向的投影面积"；不要把它与汽车表面积的 2 倍混淆。
+\end{yicuo}
+
+\noindent\textbf{第 8.15 题\quad 烟气能带走的粉尘直径（自由沉降）}
+
+\begin{jie}
+\textbf{已知：}烟气上升速度 $V_0=0.5\ \mathrm{m/s}$，气体密度 $\rho=0.25\ \mathrm{kg/m^3}$，
+气体动力黏性系数 $\mu=5\times10^{-5}\ \mathrm{N\cdot s/m^2}$，
+粉尘密度 $\rho'=1200\ \mathrm{kg/m^3}$，粉尘按小圆球处理。
+\textbf{求：}能被烟气带走的粉尘最大直径 $d_{\max}$。
+
+\textbf{1.\ 判据。}
+粉尘在烟气中的绝对速度为 $u_s=|V_0-u_t|$（教材 8.7.2 节）：
+当烟气的上升速度\emph{等于}粉尘的自由沉降速度 $u_t$ 时粉尘悬浮；
+$V_0>u_t$ 时粉尘被带走，$V_0<u_t$ 时粉尘沉降。
+故能被带走的最大直径对应 $u_t=V_0=0.5\ \mathrm{m/s}$ 的临界状态。
+
+\textbf{2.\ 求气体运动黏度。}
+\[
+\nu=\frac{\mu}{\rho}=\frac{5\times10^{-5}}{0.25}=2.0\times10^{-4}\ \mathrm{m^2/s}
+\]
+
+\textbf{3.\ 先假定斯托克斯区并导出直径公式。}
+自由沉降速度（教材式(8.63)）为
+\[
+u_t=\sqrt{\frac{4d(\rho'-\rho)g}{3C_D\rho}}
+\]
+斯托克斯区 $C_D=\dfrac{24}{\Rey}=\dfrac{24\nu}{u_t d}$，代入并整理：
+\[
+u_t^2=\frac{4d(\rho'-\rho)g}{3\rho}\cdot\frac{u_td}{24\nu}
+\quad\Longrightarrow\quad
+u_t=\frac{d^2(\rho'-\rho)g}{18\rho\nu}=\frac{d^2(\rho'-\rho)g}{18\mu}
+\]
+（上式即斯托克斯沉降公式，可见 $u_t\propto d^2$：\emph{粉尘越粗沉降越快}。）
+
+\textbf{4.\ 令 $u_t=V_0$ 反解直径。}
+\[
+d_{\max}=\sqrt{\frac{18\mu V_0}{(\rho'-\rho)g}}
+=\sqrt{\frac{18\times5\times10^{-5}\times0.5}{(1200-0.25)\times9.81}}
+=\sqrt{\frac{4.5\times10^{-4}}{1.177\times10^4}}
+\]
+\[
+d_{\max}=\sqrt{3.82\times10^{-8}}=1.96\times10^{-4}\ \mathrm{m}
+\]
+
+\textbf{5.\ 验算雷诺数（必须做）。}
+\[
+\Rey=\frac{u_t d_{\max}}{\nu}=\frac{0.5\times1.96\times10^{-4}}{2.0\times10^{-4}}=0.49<1
+\]
+落在斯托克斯区，第 3 步的假定成立。
+
+\textbf{6.\ 结果：}
+\[
+\boxed{\,d_{\max}\approx1.96\times10^{-4}\ \mathrm{m}\approx0.2\ \mathrm{mm}\,}
+\]
+即直径约 $0.2\ \mathrm{mm}$ 以下的粉尘将被烟气带走，更粗的粉尘会沉降下来。
+\end{jie}
+
+\begin{tishi}
+\textbf{与教材【例 8.4】的对照：}教材同节【例 8.4】对同一类问题
+（烟气 $u=0.5\ \mathrm{m/s}$、$\rho=0.2\ \mathrm{kg/m^3}$、
+$\nu=230\times10^{-6}\ \mathrm{m^2/s}$、煤粉 $\rho'=1300\ \mathrm{kg/m^3}$）
+问 $d=0.1\ \mathrm{mm}$ 的煤粉是否沉降，按同一方法算得
+$u_t=0.278\ \mathrm{m/s}<0.5\ \mathrm{m/s}$，结论为"被烟气带走"。
+本题数据（$\mu=5\times10^{-5}$、$\rho=0.25$）折合 $\nu=2.0\times10^{-4}\ \mathrm{m^2/s}$，
+与例题的 $2.3\times10^{-4}$ 同量级，两个结果互相印证。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：}不要凭直觉认为"颗粒越大越容易被吹走"。
+由 $u_t\propto d^2$ 可见颗粒越粗沉降越快，烟气的上升速度一旦小于 $u_t$，
+粉尘就要沉降。本题问的是"能带走多大"，即求 $u_t=V_0$ 的临界直径。
+
+\textbf{易错点二：}用斯托克斯区公式后\textbf{必须验算 $\Rey$}（本例 $\Rey=0.49<1$ 成立）。
+若算得 $\Rey>1$，应改用过渡区 $C_D\approx18.5/\Rey^{0.6}$ 重新试算，
+直到 $\Rey$ 与假定一致（教材 8.7.2 节明确指出"一般要经过多次试算"）。
+
+\textbf{易错点三：}$\rho'/\rho=1200/0.25=4800$，浮力项 $\rho$ 可忽略不计，
+但写公式时仍应保留密度差 $(\rho'-\rho)$ 的完整形式。
+\end{yicuo}
+
+\noindent\textbf{第 8.16 题\quad 钢球沉降法测定油的动力黏度}
+
+\begin{jie}
+\textbf{已知：}油 $\rho=900\ \mathrm{kg/m^3}$，钢球 $d=3\ \mathrm{mm}=3\times10^{-3}\ \mathrm{m}$、
+$\rho'=7788\ \mathrm{kg/m^3}$，沉降速度 $u=12\ \mathrm{cm/s}=0.12\ \mathrm{m/s}$。
+\textbf{求：}油的动力黏度 $\mu$。
+
+\textbf{1.\ 由等速沉降（力平衡）求阻力系数。}
+钢球等速沉降时，重力＝浮力＋绕流阻力：
+\[
+\frac{\pi d^3}{6}\rho'g=\frac{\pi d^3}{6}\rho g+C_D\frac{\rho u^2}{2}\cdot\frac{\pi d^2}{4}
+\]
+约去 $\dfrac{\pi d^2}{4}$ 并整理得
+\[
+C_D=\frac{4dg(\rho'-\rho)}{3\rho u^2}
+=\frac{4\times3\times10^{-3}\times9.81\times(7788-900)}{3\times900\times0.12^2}
+=\frac{4\times3\times10^{-3}\times9.81\times6888}{3\times900\times0.0144}
+\]
+\[
+C_D=\frac{810.9}{38.88}=20.86
+\]
+
+\textbf{2.\ 由 $C_D$ 与 $\Rey$ 的关系求运动黏度。}
+斯托克斯区 $C_D=\dfrac{24}{\Rey}$，故
+\[
+\Rey=\frac{24}{C_D}=\frac{24}{20.86}=1.15
+\]
+又 $\Rey=\dfrac{ud}{\nu}$，于是
+\[
+\nu=\frac{ud}{\Rey}=\frac{0.12\times3\times10^{-3}}{1.15}=3.13\times10^{-4}\ \mathrm{m^2/s}
+\]
+
+\textbf{3.\ 求动力黏度。}
+\[
+\mu=\rho\nu=900\times3.13\times10^{-4}=0.282\ \mathrm{Pa\cdot s}
+\]
+
+\textbf{4.\ 结果（并作校核）：}
+\[
+\boxed{\,\mu\approx0.28\ \mathrm{Pa\cdot s}\,}
+\]
+把 $\nu=\mu/\rho$、$C_D=24/\Rey$ 代回第 1 步的力平衡式，可把结果化为
+不显含 $\rho$ 的斯托克斯公式
+\[
+\mu=\frac{d^2(\rho'-\rho)g}{18u}
+=\frac{(3\times10^{-3})^2\times6888\times9.81}{18\times0.12}
+=\frac{0.6081}{2.16}=0.282\ \mathrm{Pa\cdot s}
+\]
+两式结果一致（2019 年 818 计算第 7 题为本题原题，标准答案 $\mu\approx0.281\ \mathrm{Pa\cdot s}$）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}用到的 $\Rey=1.15$ 略大于斯托克斯区的严格上限（$\Rey<1$），
+此时 $C_D=24/\Rey$ 只是近似式。教材对圆球自由沉降即采用该式，
+故本例按教材口径作答；若严格按教材图 8.13 的实线取值，
+应在 $C_D=24/\Rey$ 与过渡区公式之间迭代，结果约为 $0.29\sim0.30\ \mathrm{Pa\cdot s}$。
+
+\textbf{易错点二：}沉降速度须先换成 m/s（$12\ \mathrm{cm/s}=0.12\ \mathrm{m/s}$）。
+
+\textbf{易错点三：}力平衡式中钢球受的重力与浮力都用\emph{球的体积}
+$\pi d^3/6$，浮力中的密度是\textbf{油的}密度 $\rho$，阻力中的迎流面积是
+$\pi d^2/4$，三个量不要混。
+
+\textbf{易错点四：}本题求的是\textbf{动力}黏度（$\mathrm{Pa\cdot s}$），
+不要把运动黏度 $\nu$ 的值当答案交上去。
+\end{yicuo}

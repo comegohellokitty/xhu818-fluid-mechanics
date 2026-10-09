@@ -1,0 +1,51 @@
+# ===== 原始资料（版权属于原作者/出版社，不随本仓库发布）=====
+/from-user/
+*.pdf.orig
+
+# ===== 中间产物（体积大、可重新生成）=====
+00-images/
+01-extracted/
+02-ocr/
+07-for-review/
+_tmp_fig/
+diag_*.txt
+latex/_mk/
+latex/_t2014/
+latex/_smoke/
+latex/_build*/
+latex/_fig*/
+latex/**/_chk/
+latex/**/_build*/
+latex/**/_fig*/
+latex/**/_tmp*/
+# 历年试题原卷影印件（扫描件，版权属于出题单位，不随仓库发布；
+# 本地放入后 apA-scan.tex 会自动收录，缺失时只打印提示框）
+latex/03-exams/figures/
+latex/**/*.aux
+latex/**/*.log
+latex/**/*.out
+latex/**/*.toc
+latex/**/*.fls
+latex/**/*.fdb_latexmk
+latex/**/*.xdv
+latex/**/*.synctex.gz
+latex/**/*.bbl
+latex/**/*.blg
+latex/**/xhu818.sty
+
+# 各文档目录里编译出来的中间 PDF 与检查用截图（最终成品只在 /pdf/ 下发布）
+latex/**/main.pdf
+latex/**/check*.png
+latex/**/smoke*.png
+
+# 含原卷影印附录的完整版成品（版权原因，仅存本地，不随仓库发布）
+/pdf-local/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+
+# ===== 系统 =====
+Thumbs.db
+desktop.ini
+.DS_Store

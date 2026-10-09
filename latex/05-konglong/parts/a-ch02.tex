@@ -1,0 +1,509 @@
+\chapter*{第 2 章 流体静力学}\addcontentsline{toc}{chapter}{第 2 章 流体静力学}\markboth{第 2 章 流体静力学}{}
+
+\anstitle{第 2 章 习题解答}
+
+\begin{tishi}
+本章解答对应题目页的 31 道题，题号即孔珑《工程流体力学（第四版）》第 3 章课后习题的原书题号（3-1 至 3-31）。解答在原书配套辅导书解答的基础上整理，补齐了必要的中间步骤与物理说明；凡对方程的移项、数值或坐标口径作过订正的地方，在该题之后用框标出，请与题目页的说明对照阅读。除题给数据外，统一取 $g=9.8$ m/s$^2$、大气压 $p_a=101325$ Pa、水的密度 $1000$ kg/m$^3$、水银密度 $13600$ kg/m$^3$。
+\end{tishi}
+
+\noindent\textbf{第 3-1 题\quad 烟囱底部内外的压强差}
+
+\begin{jie}
+\textbf{已知}：$H=20$ m，烟气温度 $t_g=300$，烟气密度 $\rho_g=(1.25-0.0027t)$ kg/m$^3$，空气密度 $\rho_a=1.29$ kg/m$^3$。\textbf{依据}：重力场中静止流体的压强分布 $p=p_0+\rho gh$；烟囱顶部内外相通，顶部压强相同，底部内外的压强差即烟囱的抽力。
+
+烟气密度
+\[ \rho_g=1.25-0.0027\times300=0.44\ \mathrm{kg/m^3} \]
+以烟囱顶部为公共基准，底部外侧空气压强与内侧烟气压强分别为
+\[ p_{a}=p_0+\rho_a gH,\qquad p_{g}=p_0+\rho_g gH \]
+故底部内外的压强差
+\[ \Delta p=p_a-p_g=(\rho_a-\rho_g)gH=(1.29-0.44)\times9.8\times20=166.6\ \mathrm{Pa} \]
+\textbf{结果}：$\Delta p=166.6$ Pa，底部外侧空气压强高于内侧烟气压强，形成 166.6 Pa 的抽力，烟气被自然排出。
+\end{jie}
+
+\noindent\textbf{第 3-2 题\quad 竖直煤气管两截面间管内煤气的密度}
+
+\begin{jie}
+\textbf{已知}：$H=20$ m，$\rho_a=1.28$ kg/m$^3$，$\rho_w=1000$ kg/m$^3$，$h_1=100$ mm，$h_2=115$ mm；忽略测压计中气柱的影响。\textbf{依据}：静压强基本方程；两支 U 形管分别取其中最低的同种液体面为等压面；管外大气压沿高程按空气柱变化。
+
+设下截面处管内煤气压强为 $p_1$、上截面处为 $p_2$，两处大气压满足 $p_{a1}=p_{a2}+\rho_a gH$，两测压管分别给出
+\[ p_1=p_{a1}+\rho_w gh_1,\qquad p_2=p_{a2}+\rho_w gh_2 \]
+两式相减并代入大气压关系，得
+\[ p_1-p_2=\rho_a gH+\rho_w g(h_1-h_2) \]
+而管内高 $H$ 的煤气柱给出 $p_1-p_2=\rho_g gH$，于是
+\[ \rho_g=\rho_a+\frac{\rho_w(h_1-h_2)}{H}=1.28+\frac{1000\times(0.100-0.115)}{20}=0.53\ \mathrm{kg/m^3} \]
+\textbf{结果}：$\rho_g=0.53$ kg/m$^3$。
+\end{jie}
+
+\noindent\textbf{第 3-3 题\quad U 形压差计测两容器的压强差}
+
+\begin{jie}
+\textbf{已知}：$h=0.15$ m，$\rho_{Hg}=13600$ kg/m$^3$，$\rho_w=1000$ kg/m$^3$。\textbf{依据}：连通液体中同一水平面上（等压面）压强相等；两容器的水面同高时两水银面高差只反映两容器的压强差。
+
+设 $A$ 侧水银面比 $B$ 侧高 $h$，两容器内水面同高。取较低水银面所在的水平面为等压面，由等压面条件可得
+\[ p_B+\rho_w gh=p_A+\rho_{Hg}gh \]
+故
+\[ p_B-p_A=(\rho_{Hg}-\rho_w)gh=(13600-1000)\times9.8\times0.15=18522\ \mathrm{Pa} \]
+\textbf{结果}：两容器压强差的绝对值为 18522 Pa（约 18.5 kPa），水银面较高的一侧容器内压强较低。
+\end{jie}
+
+\noindent\textbf{第 3-4 题\quad U 形测压计测容器内水面的绝对压强与真空度}
+
+\begin{jie}
+\textbf{已知}：$h_1=0.25$ m，$h_2=1.61$ m，$h_3=1$ m，$\rho_{Hg}=13600$ kg/m$^3$，$\rho_w=1000$ kg/m$^3$，$p_a=101325$ Pa。\textbf{依据}：取较低水银面为等压面；自液面向上压强减小、向下压强增大。
+
+容器 $A$ 内水面高程为 $h_1$，低于测压计中的水银面；由于容器内压强很低（真空），$A$ 侧水银面被抬起，其高程 $h_2$ 高于开口侧水银面高程 $h_3$。取高程 $h_3$ 处的较低水银面为等压面：开口侧该面通大气，压强为 $p_a$；容器侧同高程处仍在水银柱内，故该面压强可由容器内水面经水柱（自 $h_1$ 升到 $h_2$，压强减小 $\rho_w g(h_2-h_1)$）再经汞柱（自 $h_2$ 降到 $h_3$，压强增大 $\rho_{Hg}g(h_2-h_3)$）得到
+\[ p_a=p_A-\rho_w g(h_2-h_1)+\rho_{Hg}g(h_2-h_3) \]
+\[ p_A=p_a+\rho_w g(h_2-h_1)-\rho_{Hg}g(h_2-h_3)=101325+13328-81300=33353\ \mathrm{Pa} \]
+真空度为
+\[ p_v=p_a-p_A=101325-33353=67972\ \mathrm{Pa} \]
+\textbf{结果}：容器内水面的绝对压强为 33353 Pa（约 33.4 kPa），真空度为 67972 Pa（约 68.0 kPa），计示压强为 $-67972$ Pa。
+\end{jie}
+
+\begin{yicuo}
+原书"取等压面"式写作 $p_a-\rho_{Hg}g(h_2-h_3)=p_A-\rho_w g(h_2-h_1)$，其中汞柱项的符号与按等压面直接写出的上式相差一个移项（其最终结果 33353 Pa 与真空度 67972 Pa 是正确的）。本题要点是：容器内为真空，绝对压强低于大气压，故真空度 $p_v=p_a-p_A$ 为正，而计示压强为负值，二者不要混用。
+\end{yicuo}
+
+\noindent\textbf{第 3-5 题\quad 加压容器底部 U 形水银测压计的读数}
+
+\begin{jie}
+\textbf{已知}：$F=5788$ N，$d=0.4$ m，$h_1=30$ cm（油，$\rho_{oil}=800$ kg/m$^3$），$h_2=50$ cm（水），$\rho_{Hg}=13600$ kg/m$^3$，$p_a=101325$ Pa。\textbf{依据}：帕斯卡定律——盖上加的力在液体中形成均匀增加的压强 $F/(\pi d^2/4)$；取容器底部水银面的等压面。
+
+\[ p_a+\frac{F}{\pi d^2/4}+\rho_{oil}gh_1+\rho_w gh_2=p_a+\rho_{Hg}gH \]
+\[ \frac{5788}{0.1256}+800\times9.8\times0.3+1000\times9.8\times0.5=13600\times9.8H \]
+\[ 46082.8+2352+4900=133280H \]
+\[ H=\frac{53334.8}{133280}=0.40\ \mathrm{m} \]
+\textbf{结果}：测压计中水银柱的高差 $H=0.40$ m。
+\end{jie}
+
+\noindent\textbf{第 3-6 题\quad 两根 U 形测压管的液面深度}
+
+\begin{jie}
+\textbf{已知}：上管水银面距自由液面 $h_1=60$ cm，管内水银柱高 $h_2=25$ cm，下管水银柱高 $h_3=30$ cm，$\rho_{Hg}=13600$ kg/m$^3$。\textbf{依据}：两测压管上端均通大气，分别取低处水银面为等压面写方程，再相减消去容器内液面压强 $p_0$。
+
+设容器内自由液面上的压强为 $p_0$。上面测压管
+\[ p_0+\rho_w gh_1=p_a+\rho_{Hg}gh_2 \]
+下面测压管（其水银面距自由液面的深度记为 $h_4$）
+\[ p_0+\rho_w gh_4=p_a+\rho_{Hg}gh_3 \]
+两式相减
+\[ \rho_w g(h_1-h_4)=\rho_{Hg}g(h_2-h_3) \]
+\[ 1000\times(0.6-h_4)=13600\times(0.25-0.30)=-680\Rightarrow h_4=1.28\ \mathrm{m} \]
+\textbf{结果}：$h_4=1.28$ m。
+\end{jie}
+
+\noindent\textbf{第 3-7 题\quad 封闭油水容器油面的压强}
+
+\begin{jie}
+\textbf{已知}：油层厚 $h_1=30$ cm，$\rho_{oil}=800$ kg/m$^3$；与容器相通一侧的水银面在油水分界面以下 $h_2=50$ cm 处，开口一侧的水银面在油面以下 $h_3=40$ cm 处，$\rho_{Hg}=13600$ kg/m$^3$，$p_a=101325$ Pa。\textbf{依据}：取容器一侧水银面为等压面；压强自液面向下增大。
+
+油面在油水界面以上 $h_1$，容器侧水银面在油水界面以下 $h_2$，即油面以下 $h_1+h_2$；开口侧水银面在油面以下 $h_3$，故汞柱高为 $h_1+h_2-h_3$。取容器侧水银面为等压面
+\[ p_e+\rho_{oil}gh_1+\rho_w gh_2=p_a+\rho_{Hg}g(h_1+h_2-h_3) \]
+\[ p_e=101325+13600\times9.8\times(0.3+0.5-0.4)-800\times9.8\times0.3-1000\times9.8\times0.5 \]
+\[ p_e=101325+53312-2352-4900=147385\ \mathrm{Pa} \]
+油面上的计示压强
+\[ p_{e0}=p_e-p_a=147385-101325=46060\ \mathrm{Pa} \]
+\textbf{结果}：油面上的绝对压强为 147385 Pa，计示压强为 46060 Pa（约 46.1 kPa）。
+\end{jie}
+
+\begin{yicuo}
+原书解答把 147385 Pa 直接作为题问"计示压强"的答案，与问法口径不符：147385 Pa 是绝对压强。油面上的计示压强应为 $p_{e0}=p_e-p_a=46060$ Pa。
+\end{yicuo}
+
+\noindent\textbf{第 3-8 题\quad 水压机大活塞的直径}
+
+\begin{jie}
+\textbf{已知}：$F_1=4905$ N，$F_2=147$ N，$a=15$ cm，$b=75$ cm，$d_1=5$ cm，力的校正系数 $\eta=0.9$。\textbf{依据}：杠杆平衡求小活塞上的力；帕斯卡定律使小活塞产生的压强等值传到大活塞；摩擦损失用 $\eta$ 计入。
+
+杠杆两端力臂分别为 $a$ 与 $a+b$，小活塞上的力
+\[ F'=F_2\frac{a+b}{a}=147\times\frac{0.15+0.75}{0.15}=882\ \mathrm{N} \]
+两活塞上力的关系为
+\[ F_1=\eta F'\left(\frac{d_2}{d_1}\right)^2\Rightarrow\left(\frac{d_2}{d_1}\right)^2=\frac{4905}{0.9\times882}=6.179 \]
+\[ \frac{d_2}{d_1}=2.486,\qquad d_2=2.486\times5=12.43\ \mathrm{cm} \]
+\textbf{结果}：大活塞直径 $d_2=12.43$ cm（原书结果 12.4289 cm）。
+\end{jie}
+
+\noindent\textbf{第 3-9 题\quad 双液式微压计所测的压强差}
+
+\begin{jie}
+\textbf{已知}：$d_1=50$ mm，$d_2=5$ mm，$\rho_1=870$ kg/m$^3$（酒精，$A$ 杯），$\rho_2=830$ kg/m$^3$（煤油，$B$ 杯），分界面上升 $h=280$ mm。\textbf{依据}：分界面为等压面；两杯液面的变化由体积守恒确定：分界面上升 $h$ 时，$A$ 杯液面下降、$B$ 杯液面上升同一数值 $\delta$，且 $\pi d_1^2\delta/4=\pi d_2^2h/4$，即 $\delta=\varepsilon h$，$\varepsilon=(d_2/d_1)^2$。
+
+\[ \varepsilon=\left(\frac{d_2}{d_1}\right)^2=\left(\frac{5}{50}\right)^2=0.01,\qquad \delta=0.01h \]
+取上升后的分界面为等压面
+\[ p_A+\rho_1g(h+\delta)=p_B+\rho_2g(h-\delta) \]
+\[ \Delta p=p_A-p_B=\rho_2gh(1-\varepsilon)-\rho_1gh(1+\varepsilon) \]
+\[ =830\times9.8\times0.28\times0.99-870\times9.8\times0.28\times1.01=2254.7-2411.2=-156.4\ \mathrm{Pa} \]
+\textbf{结果}：$A$、$B$ 两杯液面压强差的大小为 156.4 Pa，$B$ 杯（煤油）液面上的压强较高（$p_A-p_B=-156.4$ Pa，与原书印出的 $-156.408$ Pa 一致）。
+\end{jie}
+
+\noindent\textbf{第 3-10 题\quad 复式水银测压计测锅炉蒸汽压强}
+
+\begin{jie}
+\textbf{已知}：$H=3$ m，$h_1=1.4$ m，$h_2=2.5$ m，$h_3=1.2$ m，$h_4=2.3$ m，$\rho_{Hg}=13600$ kg/m$^3$，$\rho_w=1000$ kg/m$^3$，$p_a=101325$ Pa。\textbf{依据}：复式测压计由两段水银柱与两段水柱串联，逐段用静压强基本方程，取两处水银与水的分界面为等压面，两式相加消去中间未知压强 $p_2$。
+
+设锅炉水面上的蒸汽绝对压强为 $p$，两水银与水的分界面分别在高程 $h_1$ 与 $h_3$，中间交界处的压强记为 $p_2$：
+\[ p+\rho_w g(H-h_1)=p_{Hg}g(h_2-h_1)+p_2 \]
+\[ p_2+\rho_w g(h_2-h_3)=p_a+\rho_{Hg}g(h_4-h_3) \]
+两式相加并整理
+\[ p=\rho_{Hg}g(h_4-h_3+h_2-h_1)-\rho_w g(H-h_1+h_2-h_3)+p_a \]
+\[ p=13600\times9.8\times2.2-1000\times9.8\times2.9+101325=293216-28420+101325=366121\ \mathrm{Pa} \]
+\textbf{结果}：锅炉水面上的蒸汽绝对压强 $p=366121$ Pa（约 366 kPa）。
+\end{jie}
+
+\noindent\textbf{第 3-11 题\quad 倾斜微压计的读数换算}
+
+\begin{jie}
+\textbf{已知}：酒精 $\rho=810$ kg/m$^3$，$\alpha=45^\circ$，$l=20$ cm；第二问改用 $\rho_w=998$ kg/m$^3$ 的水、$\alpha=30^\circ$，压强差不变。\textbf{依据}：倾斜管内液柱的竖直高度为 $l\sin\alpha$，所测压强差 $\Delta p=\rho gl\sin\alpha$；忽略玻璃管与宽广容器的截面积比。
+
+（1）
+\[ \Delta p=\rho gl\sin\alpha=810\times9.8\times0.2\times\sin45^\circ=1122.6\ \mathrm{Pa} \]
+（2）压强差不变，读数为
+\[ l'=\frac{\Delta p}{\rho_w g\sin\alpha}=\frac{1122.6}{998\times9.8\times\sin30^\circ}=0.2296\ \mathrm{m} \]
+\textbf{结果}：（1）压强差为 1122.6 Pa；（2）改用 30$^\circ$ 倾斜的水微压计时，管中水沿管上升 $l'=0.2296$ m（约 230 mm）。
+\end{jie}
+
+\noindent\textbf{第 3-12 题\quad 汽车上 U 形管两支管的液面高差}
+
+\begin{jie}
+\textbf{已知}：$l=500$ mm，$a=0.5$ m/s$^2$。\textbf{依据}：等加速直线运动容器中压强的全微分 $\dd p=\rho(f_x\dd x+f_z\dd z)$，等压面上 $\dd p=0$。
+
+取 $x$ 沿行驶方向、$z$ 铅垂向上，则 $f_x=-a$、$f_y=0$、$f_z=-g$，自由液面（等压面）方程为
+\[ -a\dd x-g\dd z=0\Rightarrow a\Delta x+g\Delta z=0 \]
+两支管相距 $l$，故液面高差
+\[ \Delta z=\frac{a}{g}l=\frac{0.5\times0.5}{9.8}=0.0255\ \mathrm{m}=25.5\ \mathrm{mm} \]
+\textbf{结果}：两支管液面高差 $\Delta z=25.5$ mm，后侧（惯性方向一侧）支管液面高于前侧。
+\end{jie}
+
+\begin{tishi}
+原书此题印出的结果为 0.0225 m。按等压面方程 $\Delta z=(a/g)l=0.5\times0.5/9.8=0.0255$ m，原书此处疑为排印或识别之误，本册取 25.5 mm。
+\end{tishi}
+
+\noindent\textbf{第 3-13 题\quad 油罐车制动时端面所受的液体总压力}
+
+\begin{jie}
+\textbf{已知}：$\rho=1000$ kg/m$^3$，$u=36$ km/h，$D=2$ m，$h=0.3$ m，$l=4$ m，均匀制动距离 $s=100$ m，$p_a=101325$ Pa。\textbf{依据}：匀减速的加速度 $a=u^2/(2s)$；等加速直线运动容器的压强分布式。
+
+车速 $u=36000/3600=10$ m/s，制动加速度的大小
+\[ a=\frac{u^2}{2s}=\frac{10^2}{2\times100}=0.5\ \mathrm{m/s^2} \]
+取 $x$ 沿车前进方向、$z$ 铅垂向上、原点在罐轴线上，制动时加速度 $a=-0.5$ m/s$^2$，故 $f_x=-a=0.5$ m/s$^2$、$f_z=-g$，
+\[ \dd p=\rho(f_x\dd x+f_z\dd z)\Rightarrow p=-\rho ax-\rho gz+C \]
+原书解答取 $x=0$ 截面的自由液面高出罐轴线 $D/2+h=1.3$ m，且该处压强为大气压，故
+\[ p_a=-\rho a\times0-\rho g\times1.3+C\Rightarrow C=p_a+\rho g\times1.3=101325+1000\times9.8\times1.3=114065\ \mathrm{Pa} \]
+前端面圆心处 $x=l=4$ m、$z=0$：
+\[ p_{c}=-\rho al+C=-1000\times(-0.5)\times4+114065=116065\ \mathrm{Pa} \]
+\[ p_{ec}=p_{c}-p_a=116065-101325=14740\ \mathrm{Pa} \]
+圆端面上计示压强沿 $z$ 线性分布，对圆形面积分时其面积平均恰等于圆心处的计示压强，故
+\[ F=p_{ec}\frac{\pi D^2}{4}=14740\times\pi\times1^2=46283.6\ \mathrm{N} \]
+\textbf{结果}：作用在前端面（侧面 $A$）上的力 $F=46283.6$ N（约 46.3 kN），方向沿车前进方向。
+\end{jie}
+
+\begin{yicuo}
+题给 $h=0.3$ m 在本题中按原书解答读作"$x=0$ 处自由液面高出罐轴线 $D/2+h=1.3$ m"，本册沿用该口径；若把 $h$ 理解为静止时的液面高度，则积分常数 $C$ 与结果 $F$ 都会不同。作题时先明确所取的坐标原点与已知点的压强，再定积分常数。
+\end{yicuo}
+
+\noindent\textbf{第 3-14 题\quad 水刚好不溢出时容器的最小高度}
+
+\begin{jie}
+\textbf{已知}：底边 $b=0.2$ m，容器质量 $m_1=4$ kg，水深 $h=0.15$ m，小车质量 $m_3=6$ kg，重物质量 $m_2=25$ kg，摩擦系数 $\mu=0.3$。\textbf{依据}：牛顿第二定律求系统的加速度；等加速直线运动容器的自由液面方程与水体积不变。
+
+容器与水的总重产生的摩擦力
+\[ f=(\rho b^2h+m_1)g\mu=(1000\times0.2\times0.2\times0.15+4)\times9.8\times0.3=29.4\ \mathrm{N} \]
+对系统用牛顿第二定律，取运动方向为正
+\[ a=\frac{m_2g-f}{m_2+m_1+m_3}=\frac{25\times9.8-29.4}{25+4+6}=6.16\ \mathrm{m/s^2} \]
+自由液面与水平面成角 $\theta$，$\tan\theta=a/g$。水的体积不变，液面绕容器中点转动，前后液面高差为 $ab/g$，故容器的最小高度
+\[ H=h+\frac{ab}{2g}=0.15+\frac{6.16\times0.2}{2\times9.8}=0.2129\ \mathrm{m} \]
+\textbf{结果}：容器的最小高度 $H=0.2129$ m（约 213 mm）。
+\end{jie}
+
+\noindent\textbf{第 3-15 题\quad 铅垂等加速运动容器底部的压强}
+
+\begin{jie}
+\textbf{已知}：$h=2$ m，$a=4.9$ m/s$^2$，$\rho=1000$ kg/m$^3$，$p_a=101325$ Pa。\textbf{依据}：容器作铅垂等加速运动时，铅垂方向的单位质量力 $f_z=a-g$（$a$ 向下为正），液面仍为水平面，底部计示压强为 $\rho h(g-a)$。
+
+（1）容器底部的绝对静压强
+\[ p=p_a+\rho h(g-a)=101325+1000\times2\times(9.8-4.9)=111125\ \mathrm{Pa} \]
+（2）令 $p=p_a$，由 $g-a=0$ 得
+\[ a=g=9.8\ \mathrm{m/s^2} \]
+（3）令 $p=0$，由 $p_a+\rho h(g-a)=0$ 得
+\[ a=g+\frac{p_a}{\rho h}=9.8+\frac{101325}{1000\times2}=60.46\ \mathrm{m/s^2} \]
+\textbf{结果}：（1）底部绝对压强 111125 Pa；（2）$a=9.8$ m/s$^2$（与重力加速度相等，即自由落体）时底部压强为大气压；（3）$a=60.46$ m/s$^2$ 时底部绝对压强等于零。
+\end{jie}
+
+\noindent\textbf{第 3-16 题\quad 旋转容器中水刚好不溢出与刚好露出底面时的转速}
+
+\begin{jie}
+\textbf{已知}：$d=0.3$ m（$R=0.15$ m），$H=0.5$ m，$h=0.3$ m。\textbf{依据}：等角速度旋转容器的自由液面为抛物面 $z=\omega^2r^2/(2g)$，容器边缘与中心的高差 $Z=\omega^2R^2/(2g)$；水量不变时液面绕原静止液面转动，中心下降 $Z/2$、边缘上升 $Z/2$。
+
+（1）水刚好不溢出：边缘液面恰好升到容器顶，
+\[ \frac{Z}{2}=H-h=0.2\ \mathrm{m}\Rightarrow Z=0.4\ \mathrm{m} \]
+\[ \omega=\frac{\sqrt{2gZ}}{R}=\frac{\sqrt{2\times9.8\times0.4}}{0.15}=18.67\ \mathrm{rad/s},\qquad n_1=\frac{60\omega}{2\pi}=178.4\ \mathrm{r/min} \]
+（2）水刚好露出底面：液面顶点触及底面、边缘恰好到容器顶（多余的水已溢出），$Z=H=0.5$ m，
+\[ \omega=\frac{\sqrt{2gZ}}{R}=\frac{\sqrt{9.8}}{0.15}=20.87\ \mathrm{rad/s},\qquad n_2=\frac{60\omega}{2\pi}=199.4\ \mathrm{r/min} \]
+此时水量为抛物面以下的体积 $\pi R^2Z/2=\pi R^2H/2$，停止旋转后水深
+\[ h_2=\frac{Z}{2}=\frac{H}{2}=0.25\ \mathrm{m} \]
+\textbf{结果}：（1）$n_1=178.4$ r/min；（2）$n_2=199.4$ r/min，停止旋转后水深 0.25 m。
+\end{jie}
+
+\noindent\textbf{第 3-17 题\quad 离心浇铸时铁水的计示压强与螺栓拉力}
+
+\begin{jie}
+\textbf{已知}：$\rho=7138$ kg/m$^3$，$h=0.2$ m，$d=0.9$ m（$R=0.45$ m），上箱及砂重 $G=10$ kN，$n=600$ r/min。\textbf{依据}：等角速度旋转容器的计示压强分布 $p_e=\rho g\left[\omega^2r^2/(2g)-z\right]$（$z$ 自自由液面最低点向上量，最低点在 $z=-h$）；顶盖所受液体总压力与上箱重之差即螺栓群所受拉力。
+
+\[ \omega=\frac{2\pi n}{60}=\frac{2\pi\times600}{60}=20\pi=62.83\ \mathrm{rad/s} \]
+（1）圆筒壁面处 $r=R=0.45$ m、$z=-h=-0.2$ m，
+\[ p_e=\rho g\left[\frac{\omega^2R^2}{2g}+h\right]=7138\times9.8\times\left[\frac{(20\pi)^2\times0.45^2}{2\times9.8}+0.2\right]\approx2.864\times10^6\ \mathrm{Pa} \]
+（2）顶盖上计示压强 $p_e=\rho g\left[\omega^2r^2/(2g)+h\right]$，对顶盖面积分后减去上箱及砂重
+\[ F=\int_0^{R}\rho g\left[\frac{\omega^2r^2}{2g}+h\right]2\pi r\dd r-G=2\pi\rho g\left[\frac{\omega^2R^4}{8g}+\frac{hR^2}{2}\right]-G \]
+\[ F=2\pi\times7138\times9.8\times(2.063+0.02025)-10000\approx9.05\times10^5\ \mathrm{N} \]
+\textbf{结果}：（1）圆筒壁面上铁水的计示压强约 $2.864\times10^3$ kPa；（2）螺栓群所受总拉力约 905 kN（原书 905.086 kN），方向向上。
+\end{jie}
+
+\noindent\textbf{第 3-18 题\quad 顶盖总压力为零时的转速}
+
+\begin{jie}
+\textbf{已知}：$d=1.2$ m（$R=0.6$ m），$r_0=0.43$ m，测压管水位高出盖顶 $h=0.5$ m。\textbf{依据}：等角速度旋转容器的计示压强分布；顶盖总压力为零即 $\int_0^{R}p_e2\pi r\dd r=0$。
+
+由 $r=r_0$ 处测压管水位给出 $p_e(r_0)=\rho gh$，故盖顶面上
+\[ p_e=\rho gh+\frac{\rho\omega^2}{2}(r^2-r_0^2) \]
+顶盖总压力
+\[ F=\int_0^{R}p_e2\pi r\dd r=2\pi\left[\frac{\rho gh}{2}R^2+\frac{\rho\omega^2}{2}\left(\frac{R^4}{4}-\frac{r_0^2R^2}{2}\right)\right]=0 \]
+消去公因子并整理
+\[ gh=\omega^2\left(\frac{r_0^2}{2}-\frac{R^2}{4}\right)=\frac{\omega^2(8r_0^2-d^2)}{16} \]
+\[ \omega=\sqrt{\frac{16gh}{8r_0^2-d^2}}=\sqrt{\frac{16\times9.8\times0.5}{8\times0.43^2-1.2^2}}=\sqrt{\frac{78.4}{0.0392}}=44.7\ \mathrm{rad/s} \]
+\[ n=\frac{60\omega}{2\pi}=\frac{60\times44.7}{2\pi}=427\ \mathrm{r/min} \]
+\textbf{结果}：转速 $n=427$ r/min 时顶盖所受静水总压力为零。
+\end{jie}
+
+\noindent\textbf{第 3-19 题\quad 油面接触底板时的转速与容器内压强}
+
+\begin{jie}
+\textbf{已知}：$d=0.6$ m（$R=0.3$ m），$H=0.5$ m，$h=0.4$ m，$\rho_{oil}=800$ kg/m$^3$，$\rho_w=1000$ kg/m$^3$。\textbf{依据}：油水分界面为等压面（抛物面 $z=\omega^2r^2/(2g)$）；油体积不变；界面上轴心点与 $r=r_1$ 点的压强相等。
+
+（1）油面开始接触底板时，油水分界面在轴心处触及底板、在 $r=r_1$ 处触及顶盖。油体积不变，
+\[ \frac{\pi r_1^2H}{2}=\pi R^2(H-h)\Rightarrow r_1=\sqrt{\frac{2R^2(H-h)}{H}}=\sqrt{\frac{2\times0.3^2\times0.1}{0.5}}=0.1897\ \mathrm{m} \]
+（2）界面上轴心点的压强为油柱压力 $\rho_{oil}gH$，$r=r_1$ 点的压强为 $\rho_w\omega^2r_1^2/2$（顶盖中心通大气），二者相等，
+\[ \rho_{oil}gH=\rho_w\frac{\omega^2r_1^2}{2}\Rightarrow\omega=\frac{\sqrt{2gH}}{r_1}=\frac{\sqrt{9.8}}{0.1897}=16.5\ \mathrm{rad/s} \]
+\[ n=\frac{60\omega}{2\pi}=157.6\ \mathrm{r/min} \]
+（3）压强：顶盖中心为 0；底板中心
+\[ p=\rho_{oil}gH=800\times9.8\times0.5=3920\ \mathrm{Pa} \]
+底板外围
+\[ p_3=\rho_{oil}gH+\rho_w\frac{\omega^2R^2}{2}=3920+1000\times\frac{16.5^2\times0.3^2}{2}=16171\ \mathrm{Pa} \]
+顶盖外围
+\[ p_4=p_3-\rho_w gH=16171-1000\times9.8\times0.5=11271\ \mathrm{Pa} \]
+\textbf{结果}：$n=157.6$ r/min 时油面开始接触底板；此时顶盖中心 0、顶盖外围 11271.25 Pa、底板中心 3920 Pa、底板外围 16171.25 Pa。
+\end{jie}
+
+\noindent\textbf{第 3-20 题\quad 斜壁上圆形闸门的总压力与压力中心}
+
+\begin{jie}
+\textbf{已知}：$d=0.5$ m，$a=1$ m（闸门顶端沿斜壁到水面的距离），$\alpha=60^\circ$。\textbf{依据}：平面上的总压力 $P=\rho gh_CA$；压力中心 $y_D=y_C+J_C/(y_CA)$，$y$ 自液面沿斜壁量起。
+
+\[ h_C=\left(a+\frac{d}{2}\right)\sin60^\circ=(1+0.25)\times0.866=1.0825\ \mathrm{m} \]
+\[ A=\frac{\pi d^2}{4}=0.19635\ \mathrm{m^2},\qquad J_C=\frac{\pi d^4}{64}=\frac{\pi\times0.5^4}{64}=0.003068\ \mathrm{m^4} \]
+\[ P=\rho gh_CA=9800\times1.0825\times0.19635=2083\ \mathrm{N} \]
+\[ y_C=a+\frac{d}{2}=1.25\ \mathrm{m} \]
+\[ y_D=y_C+\frac{J_C}{y_CA}=1.25+\frac{0.003068}{1.25\times0.19635}=1.25+0.0125=1.2625\ \mathrm{m} \]
+\textbf{结果}：总压力 $P=2083$ N（约 2.08 kN）；压力中心沿斜壁距水面 1.2625 m，比圆心低 0.0125 m。
+\end{jie}
+
+\noindent\textbf{第 3-21 题\quad 自动开启式水闸铰链的位置}
+
+\begin{jie}
+\textbf{已知}：$\alpha=60^\circ$，深水侧 $H=2$ m，浅水侧 $h=0.4$ m，闸门宽度记为 $b$。\textbf{依据}：单侧水压力 $F_p=\rho gh_CA=\rho gH^2b/(2\sin\alpha)$，压力中心沿闸门面距液面 $2H/(3\sin\alpha)$；对铰链 $O$ 的力矩平衡。
+
+两侧水压力分别为
+\[ F_{p1}=\frac{\rho gH^2b}{2\sin\alpha},\qquad F_{p2}=\frac{\rho gh^2b}{2\sin\alpha} \]
+两侧压力中心沿闸门面距各自液面
+\[ x_{D1}=\frac{2H}{3\sin\alpha},\qquad x_{D2}=\frac{2h}{3\sin\alpha} \]
+设铰链 $O$ 至闸门下端的距离为 $x$，则压力中心在闸门下端以上 $H/(3\sin\alpha)$、$h/(3\sin\alpha)$ 处，对 $O$ 的力臂为
+\[ d_1=x-\frac{H}{3\sin\alpha},\qquad d_2=x-\frac{h}{3\sin\alpha} \]
+闸门开始自动开启时合力矩为零，
+\[ F_{p1}d_1=F_{p2}d_2 \]
+\[ H^2\left(x-\frac{H}{3\sin\alpha}\right)=h^2\left(x-\frac{h}{3\sin\alpha}\right) \]
+\[ x=\frac{H^3-h^3}{3\sin\alpha(H^2-h^2)}=\frac{H^2+Hh+h^2}{3\sin\alpha(H+h)}=\frac{4+0.8+0.16}{3\times0.866\times2.4}=0.795\ \mathrm{m} \]
+\textbf{结果}：铰链 $O$ 至闸门下端的距离 $x=0.795$ m。
+\end{jie}
+
+\noindent\textbf{第 3-22 题\quad 3/4 圆柱面上压力体与铅垂分力的方向}
+
+\begin{jie}
+压力体由受力曲面 $ABCD$、自由液面（或其延长面）与过曲面各边界点的铅垂母线围成。求总压力铅垂分力 $P_z$ 的步骤为：
+
+（1）由测压管液面定出自由液面的位置（必要时把液面延长到曲面所在范围）；
+
+（2）自曲面各点向自由液面（或其延长面）作铅垂母线，母线所围的体积即压力体；
+
+（3）压力体的形状只由几何关系决定，与其中有无液体无关；液体在压力体之内时为实压力体，$P_z$ 铅垂向下；液体在压力体之外（体积由"假想的液体"围成）时为虚压力体，$P_z$ 铅垂向上；$P_z$ 的大小均为 $\rho gV_p$；
+
+（4）三种情形中测压管液面分别为 $V_1$、$V_2$、$V_3$，液面高低不同即自由液面位置不同，压力体的形状与虚实随之改变，逐一按第（2）（3）步判断后作图即可（原书答案为三幅压力体图）。作图得到的压力体截面面积乘以闸门宽度即为 $V_p$，这是 3-25、3-26 这类曲面压力计算的基础。
+\end{jie}
+
+\begin{tishi}
+本题是画图题，判定的关键只有两条：压力体的边界是"曲面加自由液面（或延长面）加铅垂母线"；虚实取决于液体在压力体的哪一侧。液面位置越高，被液体淹没的曲面范围越大，实压力体的部分越大；液面越低，虚压力体越大。画图时先定液面，再作铅垂母线，最后标出 $P_z$ 的箭头方向，不要凭直觉画。
+\end{tishi}
+
+\noindent\textbf{第 3-23 题\quad 盛水球体上半球的螺栓拉力}
+
+\begin{jie}
+\textbf{已知}：球直径 $d=2$ m，球内充满水，下半球固定。\textbf{依据}：取上半球内的水体为研究对象，列铅垂方向平衡。水体受三个作用：下方水体经赤道平面传来的向上压力、自身重力、上半球壳对水体的作用力。
+
+赤道平面（水深 $R=d/2$ 处）压强为 $\rho gR$，其向上压力
+\[ F_1=\rho gR\cdot\pi R^2=\rho g\pi R^3 \]
+上半球内水体的重力
+\[ G=\rho g\frac{2}{3}\pi R^3 \]
+设上半球壳对水体的作用力为 $F'$（向下），由平衡
+\[ \rho g\pi R^3=\rho g\frac{2}{3}\pi R^3+F'\Rightarrow F'=\rho g\frac{\pi R^3}{3} \]
+水体对上半球壳的作用力与 $F'$ 大小相等、方向相反（向上），即为使螺栓受拉的力
+\[ F=\rho g\frac{\pi R^3}{3}=\rho g\frac{\pi d^3}{24}=1000\times9.8\times1.04667=10257.33\ \mathrm{N} \]
+\textbf{结果}：作用于螺栓上的力 $F\approx1.03\times10^4$ N（约 10.26 kN），方向使上半球受拉。
+\end{jie}
+
+\noindent\textbf{第 3-24 题\quad 储水设备半球面所受的总压力}
+
+\begin{jie}
+\textbf{已知}：$C$ 点绝对压强 $p_C=196120$ Pa，$h=2$ m，$R=1$ m，$\rho_w=1000$ kg/m$^3$，$p_a=101325$ Pa。\textbf{依据}：曲面总压力的水平分力与铅垂分力，$P_x=\rho gh_CA_x$、$P_z=\rho gV_p$；把 $C$ 点压强折算为测压管水柱高。
+
+$C$ 点压强折算的水柱高
+\[ h_c=\frac{p_C-p_a}{\rho_wg}=\frac{196120-101325}{1000\times9.8}=9.672\ \mathrm{m} \]
+半球面左右对称，水平分力
+\[ P_x=0 \]
+压力体由半球面、过半球底面 $AB$ 的铅垂母线以及折算自由液面围成，其体积
+\[ V_p=\pi R^2(h_c-h)+\frac{\pi R^3}{3}=\pi\times1\times(9.672-2)+\frac{\pi\times1}{3}=25.14\ \mathrm{m^3} \]
+\[ P_z=\rho_wgV_p=1000\times9.8\times25.14=2.463\times10^5\ \mathrm{N} \]
+\textbf{结果}：作用于半球 $AB$ 的总压力 $P=P_z=246.3$ kN（原书结果 246.33 kN），方向铅垂向上。
+\end{jie}
+
+\begin{tishi}
+原书压力体体积的表达式在 OCR 文本（page-0037、page-0038）中残缺，可辨认出 $h_c=9.672$ m 与结果 $P_z=\rho gV_p=246.33$ kN。由结果反推 $V_p=246330/9800=25.14$ m$^3$，与上式相符，本册按此式计算。
+\end{tishi}
+
+\noindent\textbf{第 3-25 题\quad 扇形闸门上的总压力}
+
+\begin{jie}
+\textbf{已知}：宽度 $B=1$ m，圆心角 $\alpha=45^\circ$，上游水头 $H=3$ m。\textbf{依据}：曲面总压力的水平分力按曲面在铅垂面内的投影计算，$F_{px}=\rho g(h/2)A_x$；铅垂分力 $F_{pz}=\rho gV_p$；圆弧面上各点压强沿半径指向圆心，故合力作用线必通过圆心 $O$。
+
+水平分力（投影为高 $H$、宽 $B$ 的矩形）
+\[ F_{px}=\rho g\frac{H}{2}BH=1000\times9.8\times\frac{3}{2}\times3\times1=44100\ \mathrm{N} \]
+圆弧面半径
+\[ R=\frac{H}{\sin\alpha}=\frac{3}{\sin45^\circ}=4.243\ \mathrm{m} \]
+压力体由圆弧面、自由液面（$z=H$）与过圆弧下端的铅垂线围成，其截面面积
+\[ A_p=R(1-\cos\alpha)H-\int_{H}^{R}\sqrt{R^2-z^2}\dd z=3.728-2.569=1.159\ \mathrm{m^2} \]
+\[ F_{pz}=\rho gV_p=\rho gA_pB=1000\times9.8\times1.159\times1=11358\ \mathrm{N} \]
+\[ F=\sqrt{F_{px}^2+F_{pz}^2}=\sqrt{44100^2+11358^2}=45546\ \mathrm{N} \]
+合力与铅垂方向的夹角
+\[ \theta=\arctan\frac{F_{px}}{F_{pz}}=\arctan\frac{44100}{11358}=75.6^\circ \]
+\textbf{结果}：水对闸门作用力的大小 $F=45546$ N（约 45.5 kN），方向与铅垂方向成 75.6$^\circ$（原书取 $V_p=1.163$ m$^3$，得 $F_{pz}=11398.4$ N、$F=45549.2$ N、$\theta=75^\circ30'$）；由于圆弧面上压强均指向圆心，合力作用线通过圆心 $O$。
+\end{jie}
+
+\noindent\textbf{第 3-26 题\quad 扇形闸门的总压力与压力中心}
+
+\begin{jie}
+\textbf{已知}：$R=7.5$ m，挡水深 $h=4.8$ m，圆心角 $\alpha=43^\circ$，旋转轴距渠底 $H=5.8$ m，水平投影 $a=2.7$ m，闸门宽度 $B=6.4$ m。\textbf{依据}：曲面总压力的水平分力与铅垂分力；圆弧面上压强沿半径指向圆心，故合力通过圆心 $O$，其作用线与圆弧面的交点即压力中心。
+
+水平分力（投影为高 $h$、宽 $B$ 的矩形）
+\[ F_{px}=\rho g\frac{h}{2}hB=9800\times2.4\times4.8\times6.4=722534\ \mathrm{N} \]
+压力体由圆弧面、自由液面与过圆弧两端的铅垂母线围成，原书取截面面积 $A_p=8.3958$ m$^2$，故
+\[ V_p=A_pB=8.3958\times6.4=53.732\ \mathrm{m^3} \]
+\[ F_{pz}=\rho gV_p=1000\times9.8\times53.732=526573.6\ \mathrm{N} \]
+\[ F=\sqrt{F_{px}^2+F_{pz}^2}=\sqrt{722534^2+526573.6^2}=894055\ \mathrm{N} \]
+设压力中心与圆心 $O$ 的连线与铅垂方向的夹角为 $\beta$，则
+\[ \sin\beta=\frac{F_{pz}}{F}=\frac{526573.6}{894055}=0.589,\qquad \beta=36.1^\circ \]
+压力中心位于 $O$ 点以下的竖直距离
+\[ R\sin\beta=R\frac{F_{pz}}{F}=7.5\times0.589=4.42\ \mathrm{m} \]
+\textbf{结果}：作用在闸门上的总压力 $F\approx8.94\times10^5$ N（约 894 kN）；压力中心在过 $O$ 的合力作用线与圆弧面的交点上，位于 $O$ 点下方 4.42 m 处。
+\end{jie}
+
+\noindent\textbf{第 3-27 题\quad 提起封闭孔口的空心金属球所需的最小力}
+
+\begin{jie}
+\textbf{已知}：球重 $W=2.452$ N，半径 $r=4$ cm，孔口直径 $d=5$ cm，水深 $H=20$ cm，$\rho_w=1000$ kg/m$^3$。\textbf{依据}：曲面总压力的压力体法；提起球所需的最小力等于球重与水对球的净向下压力之和。
+
+球落在孔口上时与孔口圆周相切，切点到孔口平面的球缺高
+\[ h=r-\sqrt{r^2-(d/2)^2}=4-\sqrt{16-6.25}=0.8775\ \mathrm{cm} \]
+孔口平面以上的球面受水压向下，其对应体积 $V_2=127.46$ cm$^3$；伸入孔口内的球缺受水压向上，其体积
+\[ V_1=\pi h^2\left(r-\frac{h}{3}\right)=\pi\times0.8775^2\times\left(4-\frac{0.8775}{3}\right)=8.964\ \mathrm{cm^3} \]
+水对球的净向下压力
+\[ F_p=\rho_wg(V_2-V_1)=1000\times9.8\times(127.46-8.964)\times10^{-6}=1.161\ \mathrm{N} \]
+故提起球所需的最小力
+\[ F=W+F_p=2.452+1.161=3.613\ \mathrm{N} \]
+\textbf{结果}：提起该球体所需的最小力 $F=3.613$ N。
+\end{jie}
+
+\begin{tishi}
+原书压力体公式的 OCR 文本（page-0039、page-0040）残缺，可辨认出 $V_1=8.964$ cm$^3$、$V_2=127.46$ cm$^3$ 与结果 $F=3.613$ N。本题的关键是把球面分成两段看：孔口平面以上的球面受向下的水压力（压力体体积 $V_2$），伸入孔口内的球缺受向上的水压力（球缺体积 $V_1$），净压力方向向下。
+\end{tishi}
+
+\noindent\textbf{第 3-28 题\quad 汽油箱底部锥阀的提升力}
+
+\begin{jie}
+\textbf{已知}：$d_1=100$ mm，$d_2=50$ mm，$d_3=25$ mm，$a=100$ mm，$b=50$ mm，$p=9.806\times10^3$ Pa（压强表读数），汽油密度 $\rho=830$ kg/m$^3$，略去阀芯自重与摩擦。\textbf{依据}：锥阀上下两侧各对应一个压力体，阀芯所受的液体作用力为两压力体液体重力之差。
+
+（1）压强表读数折算为液柱高（按原书取 $\rho=1000$ kg/m$^3$）
+\[ \frac{p}{\rho g}=\frac{9.806\times10^3}{1000\times9.8}=1.0\ \mathrm{m} \]
+自由液面在阀尖以上 $H=1.0+b=1.05$ m。上侧压力体为环形柱体
+\[ V_{p1}=\frac{\pi(d_1^2-d_3^2)}{4}H=\frac{\pi(0.1^2-0.025^2)}{4}\times1.05=7.727\times10^{-3}\ \mathrm{m^3} \]
+下侧压力体由两段锥体与环形柱体组合而成
+\[ V_{p2}=6.4434\times10^{-3}\ \mathrm{m^3} \]
+故提升阀芯所需的初始力
+\[ F=\rho g(V_{p1}-V_{p2})=1000\times9.8\times(7.727-6.4434)\times10^{-3}=12.579\ \mathrm{N} \]
+（2）当 $F=0$ 时上下两侧压力体相等（$V_{p1}=V_{p2}$），由此得自由液面高 $H=0.1777$ m，箱中空气的计示压强
+\[ p_e=\rho g(H-b)=1000\times9.8\times(0.1777-0.05)=1251.46\ \mathrm{Pa} \]
+\textbf{结果}：（1）提升阀芯所需的初始力 $F=12.579$ N；（2）$F=0$ 时箱中空气的计示压强 $p_e=1251.46$ Pa。
+\end{jie}
+
+\begin{yicuo}
+原书把压强表读数折算为液柱时取 $\rho=1000$ kg/m$^3$，与题给的汽油密度 830 kg/m$^3$ 不一致。本册沿用原书口径（$F=12.579$ N、$p_e=1251.46$ Pa）；若严格按汽油密度计算，各压力体的液柱高与 $\rho g$ 均需相应换算，结果将明显不同，作题时以题给密度为准。
+\end{yicuo}
+
+\noindent\textbf{第 3-29 题\quad 旋转容器上盖、底面与侧面所受的总压力}
+
+\begin{jie}
+\textbf{已知}：$d=1$ m，$H=1.5$ m，$\rho=900$ kg/m$^3$，$n=50$ r/min，顶盖中心开孔通大气。\textbf{依据}：等角速度旋转容器的压强分布 $p_e=\rho gz+\rho\omega^2r^2/2$（顶盖中心计示压强为零，$z$ 自顶盖向下量）；面上的总压力由面积分求得。
+
+\[ \omega=\frac{2\pi n}{60}=\frac{2\pi\times50}{60}=5.236\ \mathrm{rad/s} \]
+（1）顶盖（$z=0$）
+\[ F_{p1}=\int_0^{d/2}\frac{\rho\omega^2r^2}{2}2\pi r\dd r=\frac{\pi\rho\omega^2}{4}\left(\frac{d}{2}\right)^4=\frac{\pi^3\rho n^2d^4}{57600}=1209.34\ \mathrm{N} \]
+（2）底面（$z=H$，压强为顶盖压强再加 $\rho gH$）
+\[ F_{p2}=F_{p1}+\rho gH\frac{\pi d^2}{4}=1209.34+\pi\rho gH\left(\frac{d}{2}\right)^2=11594.89\ \mathrm{N} \]
+（3）侧面（$r=d/2$，压强沿高度线性增大）
+\[ F_{p3}=\int_0^{H}\left(\rho gz+\frac{\rho\omega^2R^2}{2}\right)2\pi R\dd z=\frac{\pi^3\rho n^2d^3H}{7200}+\frac{\pi\rho gdH^2}{2}=45668.74\ \mathrm{N} \]
+\textbf{结果}：上盖所受总压力 $F_{p1}=1209.34$ N（向上），底面 $F_{p2}=11594.89$ N（向下），侧面 $F_{p3}=45668.74$ N（水平）。
+\end{jie}
+
+\noindent\textbf{第 3-30 题\quad 浮筒的沉没深度与增加量}
+
+\begin{jie}
+\textbf{已知}：$d_1=3.4$ m，$d_2=3.6$ m，浮筒与桥梁自重 $W=29.43\times10^4$ N，外载荷 $F=9.81\times10^4$ N，$\rho=1000$ kg/m$^3$。\textbf{依据}：阿基米德原理——浮力等于排开水的重力；浮筒下沉时室内水面同时上升，由室内水的体积不变把二者联系起来。
+
+（1）只有自重时
+\[ W=\rho g\frac{\pi d_1^2}{4}H\Rightarrow H=\frac{4W}{\rho g\pi d_1^2}=\frac{4\times29.43\times10^4}{1000\times9.8\times3.14\times3.4^2}=3.3093\ \mathrm{m} \]
+（2）加上外载荷时浮筒的总沉没深度
+\[ H'=\frac{4(F+W)}{\rho g\pi d_1^2}=\frac{4\times(9.81+29.43)\times10^4}{1000\times9.8\times3.14\times3.4^2}=4.412\ \mathrm{m} \]
+设浮筒再下沉 $h$，室内水面上升 $\Delta h$，则 $H'=H+h+\Delta h$。由室内水的体积不变
+\[ \frac{\pi d_1^2}{4}h=\frac{\pi(d_2^2-d_1^2)}{4}\Delta h \]
+消去 $\Delta h$ 得
+\[ h=(H'-H)\left[1-\left(\frac{d_1}{d_2}\right)^2\right]=(4.412-3.3093)\times\left[1-\left(\frac{3.4}{3.6}\right)^2\right]=0.119\ \mathrm{m} \]
+\textbf{结果}：（1）浮筒沉没深度 $H=3.31$ m；（2）加外载荷后浮筒增加的沉没深度 $h=0.119$ m。
+\end{jie}
+
+\noindent\textbf{第 3-31 题\quad 钢筋混凝土沉箱的漂浮稳定性}
+
+\begin{jie}
+\textbf{已知}：沉箱长 6 m、宽 5 m、高 5 m，底厚 0.5 m，侧壁厚 0.3 m，钢筋混凝土密度 $\rho_1=2400$ kg/m$^3$，海水密度 $\rho_2=1025$ kg/m$^3$。\textbf{依据}：浮力等于重力定出排水体积与吃水；由浮心、重心的高度求稳心半径 $r_m=J/V$ 与初稳性高 $h_m=r_m-e$，$h_m>0$ 则漂浮稳定。
+
+混凝土体积
+\[ V_1=6\times5\times5-5.4\times4.4\times4.5=150-106.92=43.08\ \mathrm{m^3} \]
+由浮力等于重力
+\[ \rho_1V_1g=\rho_2Vg\Rightarrow V=\frac{2400\times43.08}{1025}=100.87\ \mathrm{m^3} \]
+吃水
+\[ T=\frac{V}{6\times5}=3.36\ \mathrm{m} \]
+重心高度（自箱底量起，外轮廓体积 150 m$^3$ 的形心高 2.5 m、内腔体积 106.92 m$^3$ 的形心高 2.75 m）
+\[ h_C=\frac{150\times2.5-106.92\times2.75}{43.08}=1.88\ \mathrm{m} \]
+浮心高度
+\[ h_D=\frac{T}{2}=1.68\ \mathrm{m} \]
+重心与浮心的偏心距
+\[ e=h_C-h_D=0.20\ \mathrm{m} \]
+水线面为 $6\times5$ 的矩形，其惯性矩与稳心半径
+\[ J=\frac{6\times5^3}{12}=62.5\ \mathrm{m^4},\qquad r_m=\frac{J}{V}=\frac{62.5}{100.87}=0.62\ \mathrm{m} \]
+初稳性高
+\[ h_m=r_m-e=0.62-0.20=0.42\ \mathrm{m}>0 \]
+\textbf{结果}：初稳性高为正（$h_m=0.42$ m），所以沉箱在海面上漂浮是稳定的。
+\end{jie}

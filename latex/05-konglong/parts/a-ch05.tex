@@ -1,0 +1,1318 @@
+\chapter*{第 5 章\quad 管路、孔口、管嘴的水力计算·孔珑题选 解答}
+\addcontentsline{toc}{chapter}{第 5 章\quad 管路、孔口、管嘴的水力计算·孔珑题选 解答}
+\markboth{第 5 章\quad 管路、孔口、管嘴的水力计算·孔珑题选 解答}{}
+
+\begin{tishi}
+\textbf{说明：}本章解答按孔珑配套辅导书《工程流体力学 学习指导及习题解答》第 6 章"课后习题解答"的思路逐步推导，
+并按本册体例补入"已知 $\to$ 求 $\to$ 依据 $\to$ 步骤 $\to$ 结果 $\to$ 量纲自检"，题号与题目分册逐一对应（6-1 至 6-29、6-32、6-33、6-35 至 6-41，共 38 题）。
+全章统一取 $g=9.8\ \mathrm{m/s^2}$、$\rho_{\text{水}}=1000\ \mathrm{kg/m^3}$、$\rho_{\text{Hg}}=13600\ \mathrm{kg/m^3}$、$\pi=3.1416$。
+\textbf{作答步骤：}① 先把题面所有量换成国际单位制；② 求损失的题一律先算 $\Rey$、判流态（层流用 $\lambda=64/\Rey$，
+紊流按 $\Rey$ 与 $e/d$ 查莫迪图或按分区公式取 $\lambda$）；③ 伯努利类题写明选断面、基准面、压强基准，沿程损失与局部损失一并列出；
+④ 求管径或流量的题一律\textbf{试算迭代}，收敛后回代校核；⑤ 结果给出单位检验。
+凡原书影印不清、题面数据只能由解答反推者，在该题后另加提示框说明。
+\end{tishi}
+
+\sloppy
+\emergencystretch=2em
+
+%==================================================
+\noindent\textbf{第 6-1 题\quad 圆管层流中流速等于平均流速处的位置}
+
+\begin{jie}
+\textbf{已知：}圆管半径 $r_0$，管内为层流。
+\textbf{求：}流速恰好等于断面平均流速处与管轴的距离 $r$。
+
+\textbf{依据：}圆管层流的抛物线速度分布与平均流速关系
+\[ u=u_{\max}\left(1-\frac{r^2}{r_0^2}\right),\qquad \bar v=\frac{1}{2}u_{\max} \]
+
+\textbf{令 $u=\bar v$：}
+\[ u_{\max}\left(1-\frac{r^2}{r_0^2}\right)=\frac{u_{\max}}{2}\;\Longrightarrow\;1-\frac{r^2}{r_0^2}=\frac12
+\;\Longrightarrow\;r^2=\frac{r_0^2}{2} \]
+\[ r=\frac{r_0}{\sqrt2}=\frac{\sqrt2}{2}r_0=0.707r_0 \]
+
+\textbf{结果：}$r=0.707r_0$。
+\textbf{量纲自检：}$r/r_0$ 为无量纲比值，$\sqrt2$ 无量纲，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：别把位置搞混。}层流管内流速随半径增加而减小，$r$ 是\textbf{离管轴的距离}，
+不等于 $0.707d$；若题目给的是管径 $d$，则 $r=0.354d$。\\
+\textbf{易错点二：层流的 $\bar v=0.5u_{\max}$。}紊流才近似 $\bar v=(0.8\sim0.85)u_{\max}$；本题若误用紊流关系，比例就变了。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-2 题\quad 冬夏两季润滑油的流态判别}
+
+\begin{jie}
+\textbf{已知：}$d=200\ \mathrm{mm}=0.2\ \mathrm{m}$；$q_m=9000\ \mathrm{kg/h}=2.5\ \mathrm{kg/s}$；$\rho=900\ \mathrm{kg/m^3}$；
+$\nu_{\text{冬}}=0.0001092\ \mathrm{m^2/s}$；$\nu_{\text{夏}}=0.0000355\ \mathrm{m^2/s}$。
+\textbf{求：}冬、夏两季管内流态。
+
+\textbf{依据：}连续性方程 $q_m=\rho\bar vA$ 与雷诺数 $\Rey=\bar vd/\nu$，判据 $\Rey_c=2000$。
+\[ \bar v=\frac{q_m}{\rho A}=\frac{4q_m}{\rho\pi d^2}=\frac{4\times2.5}{900\times3.1416\times0.2^2}=0.08842\ \mathrm{m/s} \]
+\[ \Rey_{\text{冬}}=\frac{0.08842\times0.2}{0.0001092}=162.0<2000\quad(\text{层流}) \]
+\[ \Rey_{\text{夏}}=\frac{0.08842\times0.2}{0.0000355}=498.1<2000\quad(\text{层流}) \]
+
+\textbf{结果：}冬季 $\Rey=162$、夏季 $\Rey=498$，两季\textbf{均为层流}。
+\textbf{量纲自检：}$\mathrm{kg/s}\div(\mathrm{kg/m^3\times m^2})=\mathrm{m/s}$；$\mathrm{m\cdot s/m^2}$ 无量纲，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：质量流量与体积流量。}题给的是 $q_m=9000\ \mathrm{kg/h}$，必须除以密度再除以面积；
+直接用 $9000$ 算流速会错 $900$ 倍。\\
+\textbf{易错点二：黏度随温度的方向。}油的 $\nu$ 冬季大、夏季小，故 $\Rey_{\text{冬}}<\Rey_{\text{夏}}$；
+本题两季都在层流区，但若流量再大一些，夏季会先进入紊流。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-3 题\quad 凝汽器冷却水流量（由 $\Rey$ 定流速）}
+
+\begin{jie}
+\textbf{已知：}管子数 $N=400$、$d=20\ \mathrm{mm}=0.02\ \mathrm{m}$；要求管内稳定紊流 $\Rey=33000$；水温 10$^\circ$C。
+\textbf{求：}冷却水的质量流量 $q_m$。
+
+\textbf{依据：}$\Rey=\bar vd/\nu$、连续性方程；10$^\circ$C 水查表 $\rho=999.73\ \mathrm{kg/m^3}$、$\nu=1.308\times10^{-6}\ \mathrm{m^2/s}$。
+\[ \bar v=\frac{\Rey\nu}{d}=\frac{33000\times1.308\times10^{-6}}{0.02}=2.1582\ \mathrm{m/s} \]
+\[ q_{m1}=\rho\bar v\frac{\pi d^2}{4}=999.73\times2.1582\times3.1416\times\frac{0.02^2}{4}=0.6778\ \mathrm{kg/s}\quad(\text{单管}) \]
+
+\textbf{按原书口径}（凝汽器为双流程，同一时刻实际并联通水的只有 $400/2=200$ 条管）：
+\[ q_m=200\times0.6778=135.6\ \mathrm{kg/s} \]
+
+\textbf{结果：}$q_m=135.6\ \mathrm{kg/s}$（原书答案）。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/s\times m^2}=\mathrm{kg/s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{关于 $400$ 还是 $200$。}若按题面"400 条管全部并联"计，总流量应为
+$q_m=400\times0.6778=271.1\ \mathrm{kg/s}$，是原书答案的 2 倍。
+原书解答中出现 $400/2$ 这一因子，对应\textbf{双流程凝汽器}（水从一端进入、经 200 条管流到另一端后折回、再经另外 200 条管流出），
+故"每次通水并联管数"为 200。考试时若题面明写"双流程"或给出流程数，按流程数折半；若只写"400 条管"且未提流程，
+则用 400 条并联，或把两个口径都写出来。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：$\Rey=33000$ 是"管内稳定紊流"的要求，不是临界雷诺数。}它只用来由 $\nu$、$d$ 反求流速，
+不能当作流态判据的 $2000$ 使用。\\
+\textbf{易错点二：查表值与题给值。}10$^\circ$C 水的 $\nu=1.308\times10^{-6}\ \mathrm{m^2/s}$ 是查表值，
+代入前先确认温度；温度升高 $\nu$ 减小，同样流速下 $\Rey$ 增大。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-4 题\quad 保证水力光滑所需的最小管径}
+
+\begin{jie}
+\textbf{已知：}镀锌铁管绝对粗糙度 $e=0.25\ \mathrm{mm}$；$\Rey=3.5\times10^5$；要求流动处于水力光滑区。
+\textbf{求：}最小管径 $d$。
+
+\textbf{依据：}水力光滑管判据（教材 \S 6.4，由尼古拉兹实验得出，黏性底层厚度大于粗糙凸起高度）
+\[ e\le\frac{34.2\,d}{\Rey^{0.875}}\quad\Longrightarrow\quad d\ge\frac{e\,\Rey^{0.875}}{34.2} \]
+先算
+\[ \Rey^{0.875}=\left(3.5\times10^5\right)^{0.875}=7.09\times10^4 \]
+\[ d\ge\frac{0.25\times7.09\times10^4}{34.2}=518.8\ \mathrm{mm}\approx0.519\ \mathrm{m} \]
+
+\textbf{结果：}$d\ge519\ \mathrm{mm}$，即管子直径至少约 $0.52\ \mathrm{m}$。
+\textbf{量纲自检：}$e$ 与 $d$ 同量纲，$\Rey^{0.875}$ 无量纲，两端均为长度量纲，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：判据的方向。}$e\le34.2d/\Rey^{0.875}$ 是"$d$ 越大越光滑"，
+所以求最小管径时要把 $\Rey^{0.875}$ 乘到分子上、除以系数 $34.2$，不能把 $34.2$ 乘上去（否则会得到 606 m 的荒谬结果）。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-5 题\quad 沿程损失实验测沿程阻力系数（原书影印不清）}
+
+\begin{jie}
+\textbf{已知：}水平管道 $d=30\ \mathrm{cm}$、实验段长 $l=120\ \mathrm{m}$；在相距 $120\ \mathrm{m}$ 的两点用水银压差计测量压强差，
+读得水银面高度差 $h$（原书残留数据 $h=0.33\ \mathrm{m}$）；管内为水。
+\textbf{求：}该管段的沿程阻力系数 $\lambda$。
+
+\textbf{依据：}水银压差计的等压面关系、达西公式 $h_f=\lambda\dfrac ld\dfrac{\bar v^2}{2g}$。
+\[ p_1-p_2=(\rho_{\text{Hg}}-\rho)g h\;\Longrightarrow\;h_f=\frac{p_1-p_2}{\rho g}
+=\left(\frac{\rho_{\text{Hg}}}{\rho}-1\right)h=(13.6-1)h=12.6h \]
+取 $h=0.33\ \mathrm{m}$：
+\[ h_f=12.6\times0.33=4.158\ \mathrm{m}\ (\text{水柱}) \]
+\[ \lambda=\frac{2g h_f d}{l\bar v^2}=\frac{2\times9.8\times12.6\times0.33\times0.3}{120\,\bar v^2}
+=\frac{0.2038}{\bar v^2} \]
+其中 $\bar v=\dfrac{4q_V}{\pi d^2}=\dfrac{4q_V}{0.28274}=14.147\,q_V$（$q_V$ 单位为 $\mathrm{m^3/s}$）。
+原书解答中还残留下列中间量：$\rho_{\text{Hg}}gh=13600\times9.8\times0.33=43982.3\ \mathrm{Pa}$（该式未扣除同高水柱，
+若按此口径则 $h_f=43982.3/(1000\times9.8)=4.488\ \mathrm{m}$、$\lambda=0.2199/\bar v^2$）、
+过水断面面积 $A=\pi\times0.15^2=0.0707\ \mathrm{m^2}$，以及数字 $0.23$、$203.53$（疑为流速与 $\Rey$ 的中间结果）。
+
+\textbf{结果：}$\lambda=h_f d\cdot2g/(l\bar v^2)=0.2038/\bar v^2$（标准解法结果，含原书残留读数 $h=0.33\ \mathrm{m}$）。
+\textbf{量纲自检：}$\mathrm{m\cdot m/(m\cdot m^2/s^2)}$ 无量纲，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书此处影印不清，按标准解法补全。}这一页的题面文字在"在相距 $120\ \mathrm{m}$ 的两点用水"
+处被切断，\textbf{实验流量（或流速）数据完全脱漏}，只有解答中的碎片可读。本册据此给出：
+（1）由水银压差计读数换算管段水头损失 $h_f=(\rho_{\text{Hg}}/\rho-1)h$；
+（2）由达西公式反求 $\lambda=2gh_fd/(l\bar v^2)$；
+（3）$\bar v$ 由题面给出的流量按 $\bar v=4q_V/(\pi d^2)$ 求。请以你书上的题面数据代入上式；
+若原书把 $\lambda$ 印成 $0.023$ 一类小数，说明 $\bar v$ 是由 $q_V$ 反算出的，代入后应与之一致。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-6 题\quad 与铸铁管阻力系数相同的镀锌铁管直径}
+
+\begin{jie}
+\textbf{已知：}$\Rey=10^5$；铸铁管 $d_2=30\ \mathrm{cm}=0.3\ \mathrm{m}$，绝对粗糙度 $e_2=0.25\sim0.42\ \mathrm{mm}$；
+镀锌铁管绝对粗糙度 $e_1=0.39\ \mathrm{mm}$（原书取值）。两管中 $\Rey$ 相同。
+\textbf{求：}镀锌铁管直径 $d_1$，使其 $\lambda$ 与铸铁管相同。
+
+\textbf{依据：}莫迪图表明 $\lambda=f(\Rey,\;e/d)$。$\Rey$ 相同时，$\lambda$ 相同 $\iff$ 相对粗糙度相同：
+\[ \frac{e_1}{d_1}=\frac{e_2}{d_2}\;\Longrightarrow\;d_1=\frac{e_1}{e_2}d_2 \]
+\[ e_2=0.25\ \mathrm{mm}:\quad d_1=\frac{0.39}{0.25}\times0.3=0.468\ \mathrm{m} \]
+\[ e_2=0.42\ \mathrm{mm}:\quad d_1=\frac{0.39}{0.42}\times0.3=0.279\ \mathrm{m} \]
+
+\textbf{结果：}$d_1=0.279\sim0.468\ \mathrm{m}$，即镀锌铁管直径取 $280\sim470\ \mathrm{mm}$ 时与 $30\ \mathrm{cm}$ 铸铁管的 $\lambda$ 相同。
+\textbf{量纲自检：}$e_1/e_2$ 为无量纲比值，乘长度得长度，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书解答在此处被影印切断。}可读部分只到"由莫迪图可知，$e_2/d_2=\cdots$"，
+后面的数值没有印出。本册按"$\Rey$ 与相对粗糙度同时相等则 $\lambda$ 相等"这一唯一依据复原。
+另外，原书第 6-4 题把镀锌铁管取 $e=0.25\ \mathrm{mm}$，本题取 $e_1=0.39\ \mathrm{mm}$，两处取值不一致，
+本册按各题原书取值分别计算，并在章末存疑处登记。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-7 题\quad 层流管中每米管长的沿程损失}
+
+\begin{jie}
+\textbf{已知：}$\nu=4\times10^{-5}\ \mathrm{m^2/s}$；$d=1\ \mathrm{cm}=0.01\ \mathrm{m}$；$\bar v=4\ \mathrm{m/s}$。
+\textbf{求：}每米管长上的沿程损失。
+
+\textbf{依据：}雷诺数判流态与达西公式。
+\[ \Rey=\frac{\bar vd}{\nu}=\frac{4\times0.01}{4\times10^{-5}}=1000<2000\quad(\text{层流}) \]
+\[ \lambda=\frac{64}{\Rey}=\frac{64}{1000}=0.064 \]
+\[ \frac{h_f}{l}=\lambda\frac{1}{d}\frac{\bar v^2}{2g}=0.064\times\frac{1}{0.01}\times\frac{4^2}{2\times9.8}=5.224\ \mathrm{m/m} \]
+
+\textbf{结果：}每米管长的沿程损失为 $5.224\ \mathrm{m}$ 液柱（即水力坡度 $J=5.224$）。
+\textbf{量纲自检：}$\mathrm{m/s^2\div m/s^2}$ 无量纲，沿程损失以液柱高度计，单位为 $\mathrm{m}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：先判流态再取 $\lambda$。}$\Rey=1000$ 恰好是层流，$\lambda=64/\Rey=0.064$ 比光滑管紊流的 $\lambda$
+大 5 倍以上；若误用 $0.3164/\Rey^{0.25}$（紊流公式）会得到 $0.056$，误差约 $12\%$。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-8 题\quad 截头圆锥喷嘴的流量与射流高度}
+
+\begin{jie}
+\textbf{已知：}喷嘴长 $l=0.5\ \mathrm{m}$；$d_1=40\ \mathrm{mm}=0.04\ \mathrm{m}$、$d_2=20\ \mathrm{mm}=0.02\ \mathrm{m}$，铅垂放置；
+进口计示压强 $p_{1e}=9.807\times10^4\ \mathrm{Pa}$；喷嘴内损失 $h_w=1.6\ \mathrm{m}$（水柱）；不计空气阻力。
+\textbf{求：}体积流量 $q_V$ 与射流上升高度 $H$。
+
+\textbf{依据：}连续性方程与总流伯努利方程。取喷嘴进口为断面 1、出口为断面 2，
+基准面取断面 1，则 $z_1=0$、$z_2=0.5\ \mathrm{m}$；出口排入大气 $p_{2e}=0$。
+\[ \bar v_1=\bar v_2\left(\frac{d_2}{d_1}\right)^2=\frac{\bar v_2}{4} \]
+\[ \frac{p_{1e}}{\rho g}+\frac{\bar v_1^2}{2g}=z_2+\frac{p_{2e}}{\rho g}+\frac{\bar v_2^2}{2g}+h_w \]
+\[ 10+\frac{\bar v_2^2}{32g}=0.5+\frac{\bar v_2^2}{2g}+1.6
+\;\Longrightarrow\;7.9=\frac{15}{16}\cdot\frac{\bar v_2^2}{2g} \]
+\[ \bar v_2^2=\frac{7.9\times16\times19.6}{15}=165.16\;\Longrightarrow\;\bar v_2=12.85\ \mathrm{m/s} \]
+\[ q_V=\bar v_2\frac{\pi d_2^2}{4}=12.85\times3.1416\times\frac{0.02^2}{4}=4.04\times10^{-3}\ \mathrm{m^3/s} \]
+\[ H=\frac{\bar v_2^2}{2g}=\frac{165.16}{19.6}=8.43\ \mathrm{m} \]
+
+\textbf{结果：}$q_V=4.04\times10^{-3}\ \mathrm{m^3/s}$（约 $4.0\ \mathrm{L/s}$）；射流上升高度 $H=8.43\ \mathrm{m}$。
+\textbf{量纲自检：}各水头项均为 $\mathrm{m}$；$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$(d_2/d_1)^2$ 是"速度比"，不是"面积比的反比"记反。}细断面流速大，故 $\bar v_1=\bar v_2/4$，
+两端动能差 $\bar v_2^2(1-1/16)/(2g)$ 才是"收缩段"对出口动能的贡献。\\
+\textbf{易错点二：位置水头方向。}水由下向上喷，出口比进口高 $0.5\ \mathrm{m}$，故 $z_2=+0.5\ \mathrm{m}$。\\
+\textbf{易错点三：$h_w$ 是"损失"，只能加在能量方程右端。}把它写成"可得能量"就会把流量算大。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-9 题\quad 输油管出口端油压}
+
+\begin{jie}
+\textbf{已知：}$d=150\ \mathrm{mm}=0.15\ \mathrm{m}$；$l=5000\ \mathrm{m}$；$\Delta z=h=10\ \mathrm{m}$；
+$q_m=15489\ \mathrm{kg/h}=4.3025\ \mathrm{kg/s}$；$\rho=859.4\ \mathrm{kg/m^3}$；$p_1=49\times10^4\ \mathrm{Pa}$；$\lambda=0.03$。
+\textbf{求：}出口端油压 $p_e$。
+
+\textbf{依据：}总流伯努利方程与达西公式。
+\[ \bar v=\frac{q_m}{\rho A}=\frac{4\times4.3025}{859.4\times3.1416\times0.15^2}=0.2833\ \mathrm{m/s} \]
+\[ h_f=\lambda\frac ld\frac{\bar v^2}{2g}=0.03\times\frac{5000}{0.15}\times\frac{0.2833^2}{2\times9.8}=4.095\ \mathrm{m} \]
+对进口断面 1 与出口断面 2 列伯努利方程（用计示压强、基准面取进口断面）：
+\[ \frac{p_1}{\rho g}=h+\frac{p_e}{\rho g}+h_f \]
+\[ p_e=p_1-\rho g(h+h_f)=49\times10^4-859.4\times9.8\times(10+4.095) \]
+\[ p_e=4.90\times10^5-1.187\times10^5=3.71\times10^5\ \mathrm{Pa} \]
+
+\textbf{结果：}出口端油压 $p_e=3.71\times10^5\ \mathrm{Pa}$（计示压强）。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/s^2\times m}=\mathrm{Pa}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：出口端"高 10 m"要计入伯努利方程的位置水头。}若漏掉 $h=10\ \mathrm{m}$，
+结果会大 $\rho gh=8.42\times10^4\ \mathrm{Pa}$（约 23\%）。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-10 题\quad 已知流量与粗糙度求沿程损失}
+
+\begin{jie}
+\textbf{已知：}$d=250\ \mathrm{mm}=0.25\ \mathrm{m}$；$l=300\ \mathrm{m}$；$e=0.25\ \mathrm{mm}$；
+$q_V=95\ \mathrm{L/s}=0.095\ \mathrm{m^3/s}$；$\nu=1\times10^{-6}\ \mathrm{m^2/s}$。
+\textbf{求：}沿程损失 $h_f$（米水柱）。
+
+\textbf{依据：}$\Rey=\bar vd/\nu$、相对粗糙度 $e/d$、莫迪图与达西公式。
+\[ \bar v=\frac{4q_V}{\pi d^2}=\frac{4\times0.095}{3.1416\times0.25^2}=1.936\ \mathrm{m/s} \]
+\[ \Rey=\frac{1.936\times0.25}{1\times10^{-6}}=4.84\times10^5>2000\quad(\text{紊流}),\qquad
+\frac ed=\frac{0.25}{250}=0.001 \]
+查莫迪图（$\Rey=4.84\times10^5$、$e/d=0.001$）得 $\lambda=0.021$。
+\[ h_f=\lambda\frac ld\frac{\bar v^2}{2g}=0.021\times\frac{300}{0.25}\times\frac{1.936^2}{2\times9.8}=4.82\ \mathrm{m} \]
+
+\textbf{结果：}$h_f\approx4.82\ \mathrm{m}$ 水柱。
+\textbf{量纲自检：}$l/d$、$\bar v^2/(2g)$ 分别无量纲与长度量纲，乘积仍为长度，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$e/d$ 的换算是 mm/mm。}$e=0.25\ \mathrm{mm}$、$d=250\ \mathrm{mm}$，相对粗糙度 $0.001$；
+若把 $d$ 换成 $0.25\ \mathrm{m}$ 而 $e$ 用 mm，会得到 $e/d=1$ 的荒谬结果。\\
+\textbf{易错点二：$95\ \mathrm{L/s}=0.095\ \mathrm{m^3/s}$。}$1\ \mathrm{m^3}=1000\ \mathrm{L}$，别写成 $9.5$ 或 $0.0095$。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-11 题\quad 加热炉重油喷油器前的计示压强}
+
+\begin{jie}
+\textbf{已知：}$q_m=300\ \mathrm{kg/h}=0.08333\ \mathrm{kg/s}$；$\rho=880\ \mathrm{kg/m^3}$；$\nu=0.000025\ \mathrm{m^2/s}$；
+压力油箱在喷油器轴线以上 $h=8\ \mathrm{m}$；$d=25\ \mathrm{mm}=0.025\ \mathrm{m}$；$l=30\ \mathrm{m}$。
+\textbf{求：}喷油器前重油的计示压强 $p_{2e}$。
+
+\textbf{依据：}$\Rey=\bar vd/\nu$、层流 $\lambda=64/\Rey$、总流伯努利方程。
+\[ \bar v=\frac{4q_m}{\rho\pi d^2}=\frac{4\times0.08333}{880\times3.1416\times0.025^2}=0.1929\ \mathrm{m/s} \]
+\[ \Rey=\frac{0.1929\times0.025}{0.000025}=192.9<2000\quad(\text{层流}),\qquad
+\lambda=\frac{64}{192.9}=0.3318 \]
+对油箱液面 1、喷油器前断面 2 列伯努利方程（基准面取断面 2、都用计示压强，液面 $p_{1e}=0$、$\bar v_1\approx0$）：
+\[ h=\frac{p_{2e}}{\rho g}+\frac{\bar v^2}{2g}\left(1+\lambda\frac ld\right) \]
+\[ h_w=\frac{\bar v^2}{2g}\left(1+\lambda\frac ld\right)=\frac{0.1929^2}{19.6}\times\left(1+0.3318\times\frac{30}{0.025}\right)
+=0.001899\times399.2=0.7581\ \mathrm{m} \]
+\[ p_{2e}=\rho g(h-h_w)=880\times9.8\times(8-0.7581)=6.25\times10^4\ \mathrm{Pa} \]
+
+\textbf{结果：}喷油器前重油的计示压强 $p_{2e}=6.25\times10^4\ \mathrm{Pa}$（原书 $62485.3\ \mathrm{Pa}$）。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/s^2\times m}=\mathrm{Pa}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：油箱液面的压强是大气压。}液面通大气、用计示压强时 $p_{1e}=0$，不是 $p_a$；
+若把 $p_a$ 代进去，结果会多出 $1.013\times10^5\ \mathrm{Pa}$。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-12 题\quad 润滑油压力油箱所需高度}
+
+\begin{jie}
+\textbf{已知：}$q_V=0.4\ \mathrm{cm^3/s}=4\times10^{-7}\ \mathrm{m^3/s}$；$d=6\ \mathrm{mm}=0.006\ \mathrm{m}$；$l=5\ \mathrm{m}$；
+$\rho=820\ \mathrm{kg/m^3}$；$\nu=0.000015\ \mathrm{m^2/s}$；终端压强为大气压。
+\textbf{求：}压力油箱液面位置高度 $h$。
+
+\textbf{依据：}层流 $\lambda=64/\Rey$ 与伯努利方程（忽略局部损失与出口动能以外的项）。
+\[ \bar v=\frac{4q_V}{\pi d^2}=\frac{4\times4\times10^{-7}}{3.1416\times0.006^2}=0.01415\ \mathrm{m/s} \]
+\[ \Rey=\frac{0.01415\times0.006}{0.000015}=5.66<2000\quad(\text{层流}),\qquad
+\lambda=\frac{64}{5.66}=11.31 \]
+\[ h=\frac{\bar v^2}{2g}\left(1+\lambda\frac ld\right)=\frac{0.01415^2}{19.6}\times\left(1+11.31\times\frac{5}{0.006}\right)
+=1.021\times10^{-5}\times9426=0.0963\ \mathrm{m} \]
+
+\textbf{结果：}压力油箱液面只需比输油管终端高 $h\approx0.096\ \mathrm{m}$（约 $9.6\ \mathrm{cm}$）。
+\textbf{量纲自检：}$(\mathrm{m/s})^2/(\mathrm{m/s^2})=\mathrm{m}$，括号内为无量纲，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：$0.4\ \mathrm{cm^3/s}$。}原书此处面积单位误印为 $\mathrm{cm^2}$，本册按 $\mathrm{cm^3/s}$ 订正，
+即 $q_V=0.4\times10^{-6}=4\times10^{-7}\ \mathrm{m^3/s}$；若按 $\mathrm{cm^2/s}$ 代入会得到完全不同的量级。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-13 题\quad 空气管道中的体积流量}
+
+\begin{jie}
+\textbf{已知：}15$^\circ$C 空气；$l=200\ \mathrm{m}$；$d=1.25\ \mathrm{m}$；$e=1\ \mathrm{mm}$；
+沿程损失 $h_f=8\ \mathrm{cm}$ 水柱；15$^\circ$C 空气 $\rho=1.22\ \mathrm{kg/m^3}$、$\nu=14.55\times10^{-6}\ \mathrm{m^2/s}$。
+\textbf{求：}空气的体积流量 $q_V$。
+
+\textbf{依据：}水柱与空气柱的换算 $\rho_{\text{水}}h_{\text{水}}=\rho_{\text{空气}}h_{\text{空气}}$、达西公式与莫迪图试算。
+\[ h_{\text{空气}}=\frac{\rho_{\text{水}}h_{\text{水}}}{\rho_{\text{空气}}}=\frac{1000\times0.08}{1.22}=65.57\ \mathrm{m}\ (\text{空气柱}),\qquad
+\frac ed=\frac{1}{1250}=8\times10^{-4} \]
+试取 $\lambda=0.018$，由达西公式解流速：
+\[ \bar v=\sqrt{\frac{2g h_{\text{空气}}d}{\lambda l}}=\sqrt{\frac{2\times9.8\times65.57\times1.25}{0.018\times200}}
+=\sqrt{446.2}=21.12\ \mathrm{m/s} \]
+\[ \Rey=\frac{21.12\times1.25}{14.55\times10^{-6}}=1.81\times10^6 \]
+查莫迪图（$\Rey=1.81\times10^6$、$e/d=8\times10^{-4}$）得 $\lambda=0.018$，与试取值一致，试算收敛。
+\[ q_V=\bar v\frac{\pi d^2}{4}=21.12\times3.1416\times\frac{1.25^2}{4}=25.9\ \mathrm{m^3/s} \]
+
+\textbf{结果：}$q_V=25.9\ \mathrm{m^3/s}$。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/(kg/m^3)}=\mathrm{m}$；$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：气流损失的"水柱—气柱"换算。}通风与锅炉专业习惯把空气管道的损失用"$\mathrm{mm}$ 水柱"给，
+而达西公式里的 $h_f$ 必须是\textbf{同一流体的液柱高}，故先化作
+\[ h_{\text{气}}=h_{\text{水}}\frac{\rho_{\text{水}}}{\rho_{\text{气}}} \]
+再代入达西公式；这一步漏掉，流量会错 $\sqrt{\rho_{\text{水}}/\rho_{\text{气}}}\approx28.6$ 倍。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-14 题\quad 低碳钢管的重油流量（层流验算）}
+
+\begin{jie}
+\textbf{已知：}$l=15\ \mathrm{m}$；$d=12\ \mathrm{mm}=0.012\ \mathrm{m}$；$\rho=815.8\ \mathrm{kg/m^3}$；$\mu=0.01\ \mathrm{Pa\cdot s}$；
+油面比出口高 $H=2\ \mathrm{m}$；低碳钢管 $e=0.046\ \mathrm{mm}$。
+\textbf{求：}油的体积流量 $q_V$。
+
+\textbf{依据：}先按紊流粗糙管试算、再用 $\Rey$ 检验流态；层流时用
+\[ H=\frac{32\mu l\bar v}{\rho g d^2}\quad(\text{哈根--泊肃叶关系}) \]
+
+试算：$e/d=0.046/12=3.83\times10^{-3}$，试取 $\lambda=0.029$，
+\[ \bar v=\sqrt{\frac{2gH}{1+\lambda l/d}}=\sqrt{\frac{19.6\times2}{1+0.029\times15/0.012}}
+=\sqrt{1.0523}=1.0258\ \mathrm{m/s} \]
+\[ \Rey=\frac{\rho\bar vd}{\mu}=\frac{815.8\times1.0258\times0.012}{0.01}=1004<2000 \]
+$1004<2000$，说明\textbf{实际是层流}，粗糙管的 $\lambda=0.029$ 不适用，改用层流公式：
+\[ \bar v=\frac{H\rho gd^2}{32\mu l}=\frac{2\times815.8\times9.8\times0.012^2}{32\times0.01\times15}=0.4797\ \mathrm{m/s} \]
+\[ q_V=\bar v\frac{\pi d^2}{4}=0.4797\times3.1416\times\frac{0.012^2}{4}=5.42\times10^{-5}\ \mathrm{m^3/s} \]
+校核：$\Rey=815.8\times0.4797\times0.012/0.01=470<2000$，层流假设成立。
+
+\textbf{结果：}$q_V=5.42\times10^{-5}\ \mathrm{m^3/s}\approx0.054\ \mathrm{L/s}$。
+\textbf{量纲自检：}$\mathrm{m\cdot kg/m^3\cdot m/s^2\cdot m^2/(Pa\cdot s\cdot m)}=\mathrm{m/s}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：试算的 $\lambda$ 与流态必须自洽。}本题第一次试算得 $\bar v=1.026\ \mathrm{m/s}$，
+此时 $\Rey=1004$ 已是层流，必须\textbf{推倒重来}用 $32\mu l\bar v/(\rho gd^2)$ 再解；
+若直接采用 $1.026\ \mathrm{m/s}$，流量会放大到 $0.116\ \mathrm{L/s}$（约 2.1 倍）。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-15 题\quad 轻柴油输送管所需管径（试算迭代）}
+
+\begin{jie}
+\textbf{已知：}$\rho=860\ \mathrm{kg/m^3}$；$\nu=5\times10^{-6}\ \mathrm{m^2/s}$；$l=150\ \mathrm{m}$；$e=0.45\ \mathrm{mm}$；
+出口端比吸入端高 $H=25\ \mathrm{m}$；油泵压强 $p_1=3.43\times10^5\ \mathrm{Pa}$；只计沿程损失。
+\textbf{求：}必需的管道直径 $d$。
+
+\textbf{依据：}达西公式与能量方程。按原书解答反推的体积流量 $q_V=0.0323\ \mathrm{m^3/s}$
+（相当于 $\rho q_V=27.8\ \mathrm{kg/s}\approx100\ \mathrm{t/h}$），故
+\[ \bar v=\frac{4q_V}{\pi d^2}=\frac{4\times0.0323}{3.1416\,d^2}=\frac{0.041146}{d^2} \]
+对吸入端液面与出油端列能量方程（只计沿程损失）：
+\[ \frac{p_1}{\rho g}=H+\lambda\frac ld\frac{\bar v^2}{2g} \]
+\[ \frac{3.43\times10^5}{860\times9.8}=40.70\ \mathrm{m},\qquad
+40.70-25=15.70=\lambda\times150\times\frac{1.693\times10^{-3}}{19.6\,d^5} \]
+\[ \lambda=1211.9\,d^5 \]
+
+\textbf{迭代试算：}
+\begin{xiaowen}
+\item 试取 $d=0.11\ \mathrm{m}$：$\lambda=1211.9\times0.11^5=0.01952$；$e/d=4.09\times10^{-3}$；
+$\bar v=0.041146/0.0121=3.400\ \mathrm{m/s}$，$\Rey=3.400\times0.11/5\times10^{-6}=7.48\times10^4$，
+查莫迪图得 $\lambda=0.03$，与试取值不符；
+\item 由 $\lambda=0.03$ 反求：$d=(0.03/1211.9)^{1/5}=(2.476\times10^{-5})^{0.2}=0.1199\ \mathrm{m}$；
+\item 复核 $d=0.1199\ \mathrm{m}$：$e/d=3.75\times10^{-3}$，$\bar v=2.861\ \mathrm{m/s}$，
+$\Rey=6.86\times10^4$，查莫迪图 $\lambda=0.0295$，反求得 $d=0.1198\ \mathrm{m}$，收敛。
+\end{xiaowen}
+
+\textbf{结果：}必需管径 $d\approx0.12\ \mathrm{m}=120\ \mathrm{mm}$。
+\textbf{量纲自检：}$\lambda=1211.9d^5$ 中 $d^5$ 的量纲不参与（$\lambda$ 无量纲，系数隐含 $\mathrm{m^{-5}}$），
+验算时全部换成 $\mathrm{m}$ 即可。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书题面流量影印不清，按标准解法补全。}原书题面印作"$q_m=10\ \mathrm{kg/h}$"，
+但解答中 $\bar v=0.041146/d^2$、$\Rey=0.041146\times0.11/0.0121/5\times10^{-6}=74811$ 等数据
+只有取 $q_V=0.0323\ \mathrm{m^3/s}$（$q_m\approx10^5\ \mathrm{kg/h}$）才能自洽，
+故"$10\ \mathrm{kg/h}$"应为"$10^5\ \mathrm{kg/h}$（约 $100\ \mathrm{t/h}$）"之误印。本册按解答口径计算；
+若按题面 $10\ \mathrm{kg/h}$ 计算，流速只有 $10^{-3}\ \mathrm{m/s}$ 量级、$\Rey<1$，
+对应管径也在毫米级，与原书答案不符。\\
+\textbf{指数缺字订正：}原书把能量方程整理式印成 $\lambda=1211.56\,d$，
+由 $d=0.11\ \mathrm{m}$ 时 $\lambda=0.01951$ 可验算应为 $\lambda=1211.56\,d^5$。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-16 题\quad 新铸铁管输水所需管径（试算迭代）}
+
+\begin{jie}
+\textbf{已知：}25$^\circ$C 水，$\nu=0.897\times10^{-6}\ \mathrm{m^2/s}$；$q_V=300\ \mathrm{L/s}=0.3\ \mathrm{m^3/s}$；
+$l=1000\ \mathrm{m}$；$h_f=2\ \mathrm{m}$（水柱）；新铸铁管 $e=0.45\ \mathrm{mm}$。
+\textbf{求：}必需管径 $d$。
+
+\textbf{依据：}达西公式反解 $d^5$ 与 $\Rey$ 的表达式：
+\[ h_f=\frac{8\lambda l q_V^2}{g\pi^2d^5}\;\Longrightarrow\;d^5=\frac{8\lambda lq_V^2}{g\pi^2h_f}
+=\lambda\times\frac{8\times1000\times0.3^2}{9.8\times3.1416^2\times2}=3.722\lambda \]
+\[ \Rey=\frac{4q_V}{\pi d\nu}=\frac{4\times0.3}{3.1416\times0.897\times10^{-6}d}=\frac{4.258\times10^5}{d} \]
+
+\textbf{迭代试算：}
+\begin{xiaowen}
+\item 试取 $\lambda=0.02$：$d=(3.722\times0.02)^{0.2}=0.5949\ \mathrm{m}$；
+$\Rey=4.258\times10^5/0.5949=7.16\times10^5$，$e/d=4.5\times10^{-4}/0.5949=7.56\times10^{-4}$，
+查莫迪图 $\lambda=0.018$；
+\item 取 $\lambda=0.018$：$d=(3.722\times0.018)^{0.2}=0.5825\ \mathrm{m}$；
+复核 $\Rey=4.258\times10^5/0.5825=7.31\times10^5$，$e/d=7.73\times10^{-4}$，查莫迪图仍为 $\lambda=0.018$，收敛。
+\end{xiaowen}
+
+\textbf{结果：}必需管径 $d=0.5825\ \mathrm{m}\approx583\ \mathrm{mm}$。
+\textbf{量纲自检：}$8\lambda lq_V^2/(g\pi^2h_f)$ 的单位为
+$\mathrm{m\cdot(m^3/s)^2/(m/s^2\cdot m)}=\mathrm{m^5}$，开五次方得 $\mathrm{m}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点：$\lambda$ 与 $d$ 互相牵连。}不能"一次算出"，必须"试取 $\lambda\to$ 求 $d\to$ 求 $\Rey$ 与 $e/d\to$ 查图得新 $\lambda$"反复迭代；
+$\lambda$ 从 $0.02$ 变到 $0.018$ 只差 $10\%$，但 $d^5\propto\lambda$，管径差约 $2\%$，工程上影响有限，考试写两步迭代即可。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-17 题\quad 光滑管计入沿程与局部损失求流量（迭代）}
+
+\begin{jie}
+\textbf{已知：}$\rho=800\ \mathrm{kg/m^3}$；$\mu=0.069\ \mathrm{Pa\cdot s}$；$H=3\ \mathrm{m}$；$l=30\ \mathrm{m}$；
+$d=30\ \mathrm{cm}=0.3\ \mathrm{m}$；光滑管；进口 $\zeta=0.5$、出口（流入容器）$\zeta=1.0$。
+\textbf{求：}管内流量 $q_V$。
+
+\textbf{依据：}伯努利方程（两容器液面都通大气，$\bar v_1\approx\bar v_2\approx0$）与达西公式：
+\[ H=\left(\lambda\frac ld+\zeta_{\text{进}}+\zeta_{\text{出}}\right)\frac{\bar v^2}{2g}
+=\left(100\lambda+1.5\right)\frac{\bar v^2}{2g} \]
+\[ \left(100\lambda+1.5\right)\bar v^2=2\times9.8\times3=58.8 \]
+
+\textbf{第一次试算（先设层流）：}$\Rey=\dfrac{\rho\bar vd}{\mu}=\dfrac{800\times0.3}{0.069}\bar v=3478.3\,\bar v$，
+故 $\lambda=64/\Rey=0.018400/\bar v$，代入：
+\[ 1.5\bar v^2+1.84\bar v-58.8=0\;\Longrightarrow\;\bar v=5.680\ \mathrm{m/s},\qquad \Rey=19757>2000 \]
+不是层流，改用布拉修斯公式 $\lambda=0.3164/\Rey^{0.25}$ 迭代：
+
+\textbf{迭代试算：}
+\begin{xiaowen}
+\item $\Rey=19757$：$\lambda=0.3164/19757^{0.25}=0.02668$，
+$\bar v=\sqrt{58.8/(2.668+1.5)}=3.756\ \mathrm{m/s}$，$\Rey=3478.3\times3.756=1.31\times10^4$；
+\item $\Rey=13065$：$\lambda=0.3164/13065^{0.25}=0.02960$，
+$\bar v=\sqrt{58.8/(2.960+1.5)}=3.631\ \mathrm{m/s}$，$\Rey=1.26\times10^4$；
+\item $\Rey=12631$：$\lambda=0.3164/12631^{0.25}=0.02984$，
+$\bar v=\sqrt{58.8/(2.984+1.5)}=3.621\ \mathrm{m/s}$，$\Rey=1.26\times10^4$，收敛。
+\end{xiaowen}
+\[ q_V=\bar v\frac{\pi d^2}{4}=3.621\times3.1416\times\frac{0.3^2}{4}=0.2560\ \mathrm{m^3/s} \]
+
+\textbf{结果：}$q_V=0.256\ \mathrm{m^3/s}$，管内流速 $\bar v=3.62\ \mathrm{m/s}$。
+\textbf{量纲自检：}$(100\lambda+1.5)\bar v^2$ 两端的量纲均为 $\mathrm{m^2/s^2}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：层流假设的"证伪"。}先算得 $\bar v=5.68\ \mathrm{m/s}$，此时 $\Rey=19757\gg2000$，
+层流的 $\lambda=64/\Rey$ 已不适用，必须换布拉修斯公式；直接保留 $5.68\ \mathrm{m/s}$ 会把流量放大 $57\%$。\\
+\textbf{易错点二：局部损失系数被 $v$ 的选择影响。}本题进出口的 $\zeta$ 都对管内流速而言，故 $1.5$ 与 $100\lambda$ 可以合并；
+若把出口 $\zeta$ 写成对"容器内流速"而言，就不能直接相加。\\
+\textbf{易错点三：$l/d=100$ 是本题的大头。}$\lambda l/d\approx2.98$，与局部损失 $1.5$ 同量级，两项都不能丢。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-18 题\quad 阀门局部损失系数与等值长度}
+
+\begin{jie}
+\textbf{已知：}在 6-17 题的管道中装阀门，流量减为原流量之半；原流量 $q_V=0.256\ \mathrm{m^3/s}$。
+\textbf{求：}阀门的局部损失系数 $\zeta$ 与按该管换算的等值长度 $l_e$。
+
+\textbf{依据：}流量减半 $\to$ 流速减半 $\to$ 布拉修斯公式 $\lambda=0.3164/\Rey^{0.25}$，再列能量方程。
+\[ q_V'=0.128\ \mathrm{m^3/s},\qquad \bar v'=\frac{0.128}{0.070686}=1.811\ \mathrm{m/s} \]
+\[ \Rey'=3478.3\times1.811=6300,\qquad \lambda'=\frac{0.3164}{6300^{0.25}}=0.03550 \]
+\[ H=\frac{\bar v'^2}{2g}\left(1.5+\lambda'\frac ld+\zeta\right) \]
+\[ \frac{\bar v'^2}{2g}=\frac{1.811^2}{19.6}=0.16732,\qquad
+\frac{3}{0.16732}=17.93=1.5+3.550+\zeta \]
+\[ \zeta=12.88 \]
+等值长度：
+\[ l_e=\frac{\zeta d}{\lambda'}=\frac{12.88\times0.3}{0.03550}=108.8\ \mathrm{m} \]
+
+\textbf{结果：}阀门局部损失系数 $\zeta=12.9$；等值长度 $l_e\approx109\ \mathrm{m}$。
+\textbf{量纲自检：}$\zeta$ 无量纲；$l_e=\zeta d/\lambda$ 为 $\mathrm{m}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：等值长度的用处。}把局部损失"折算"成一段同直径直管（$l_e=\zeta d/\lambda$）后，
+管路就只剩沿程损失一项，串联管路的"损失相加"就能直接用长度相加表示：
+\[ h_w=\lambda\frac{l+\sum l_e}{d}\frac{\bar v^2}{2g} \]
+注意 $l_e$ 与 $\lambda$ 有关，而 $\lambda$ 又随 $\Rey$（即随流量）变化，故\textbf{流量改变后 $l_e$ 要重算}——
+本题若沿用 6-17 的 $\lambda=0.0298$，$l_e$ 会算成 $129.6\ \mathrm{m}$，偏大 $19\%$。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-19 题\quad 90$^\circ$ 弯管局部损失系数（水银压差计实测）}
+
+\begin{jie}
+\textbf{已知：}$\nu=1.51\times10^{-6}\ \mathrm{m^2/s}$；$q_V=15\ \mathrm{m^3/h}$；$d=50\ \mathrm{mm}=0.05\ \mathrm{m}$；
+$e=0.2\ \mathrm{mm}$；压差计两接点相距 $l=0.8\ \mathrm{m}$；水银面高差 $h=20\ \mathrm{mm}=0.02\ \mathrm{m}$。
+\textbf{求：}弯管的局部损失系数 $\zeta$。
+
+\textbf{依据：}压差计把"沿程 $+$ 局部"损失一起测出来，需减去两测点间的沿程损失。
+\[ \bar v=\frac{q_V}{A}=\frac{15/3600}{3.1416\times0.05^2/4}=2.122\ \mathrm{m/s} \]
+\[ \Rey=\frac{2.122\times0.05}{1.51\times10^{-6}}=7.03\times10^4,\qquad \frac ed=\frac{0.2}{50}=0.004 \]
+查莫迪图得 $\lambda=0.031$。两接点同径同高，伯努利方程给出
+\[ \frac{p_1-p_2}{\rho g}=\left(\frac{\rho_{\text{Hg}}}{\rho}-1\right)h=12.6\times0.02=0.252\ \mathrm{m} \]
+\[ h_j=\frac{p_1-p_2}{\rho g}-\lambda\frac ld\frac{\bar v^2}{2g}
+=0.252-0.031\times\frac{0.8}{0.05}\times\frac{2.122^2}{2\times9.8} \]
+\[ h_j=0.252-0.031\times16\times0.2298=0.252-0.1140=0.1380\ \mathrm{m} \]
+\[ \zeta=\frac{h_j}{\bar v^2/(2g)}=\frac{0.1380}{0.2298}=0.601 \]
+
+\textbf{结果：}弯管局部损失系数 $\zeta\approx0.60$。
+\textbf{量纲自检：}$h_j$ 与 $\bar v^2/(2g)$ 同为长度量纲，比值无量纲，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：压差计测的是"沿程 $+$ 局部"。}直接令 $\zeta=12.6h/(\bar v^2/2g)=1.10$ 是错的，
+必须扣掉 $l=0.8\ \mathrm{m}$ 管段的沿程损失 $0.114\ \mathrm{m}$。\\
+\textbf{易错点二：题目给的运动黏度。}原书题面印作 $\nu=0.000015\ \mathrm{m^2/s}$，与解答中的 $\Rey=70298$ 矛盾；
+按 $\Rey=\bar vd/\nu$ 反推 $\nu=2.122\times0.05/70298=1.51\times10^{-6}\ \mathrm{m^2/s}$，本册已按此订正。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-20 题\quad 突然扩大处的局部损失系数（实测与理论对比）}
+
+\begin{jie}
+\textbf{已知：}$d_1=50\ \mathrm{mm}$、$d_2=100\ \mathrm{mm}$；$q_V=16\ \mathrm{m^3/h}$；压差计内为四氯化碳 $\rho'=1600\ \mathrm{kg/m^3}$，
+读数 $h=173\ \mathrm{mm}=0.173\ \mathrm{m}$；管内为水。
+\textbf{求：}扩大处的局部损失系数，并与理论值比较。
+
+\textbf{依据：}伯努利方程、动量关系与包达--卡诺局部损失式 $\zeta_1=(1-A_1/A_2)^2$。
+\[ \bar v_1=\frac{q_V}{A_1}=\frac{16/3600}{3.1416\times0.05^2/4}=2.264\ \mathrm{m/s},\qquad
+\bar v_2=\bar v_1\left(\frac{d_1}{d_2}\right)^2=0.566\ \mathrm{m/s} \]
+压差计读的是断面 1、2 的压强差（四氯化碳密度大于水，突扩后压强升高）：
+\[ p_2-p_1=(\rho'-\rho)gh=(1600-1000)\times9.8\times0.173=1017\ \mathrm{Pa} \]
+对 1、2 断面列伯努利方程（同高）：
+\[ h_j=\frac{p_1-p_2}{\rho g}+\frac{\bar v_1^2-\bar v_2^2}{2g}
+=-\frac{1017}{1000\times9.8}+\frac{2.264^2-0.566^2}{2\times9.8} \]
+\[ h_j=-0.1038+\frac{5.126-0.320}{19.6}=-0.1038+0.2452=0.1414\ \mathrm{m} \]
+\[ \zeta_1=\frac{h_j}{\bar v_1^2/(2g)}=\frac{0.1414}{0.2615}=0.541 \]
+理论值（以扩前流速为基准）：
+\[ \zeta_1^{\text{理}}=\left(1-\frac{A_1}{A_2}\right)^2=\left(1-\frac{50^2}{100^2}\right)^2=(0.75)^2=0.5625 \]
+
+\textbf{结果：}实测 $\zeta_1=0.54$，理论 $0.5625$，相对偏差约 $4\%$，\textbf{两者相符}。
+\textbf{量纲自检：}$\mathrm{Pa/(kg/m^3\cdot m/s^2)}=\mathrm{m}$，各水头项同为长度，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：为什么用四氯化碳而不是水银。}突扩处的压强\textbf{升高}只有约 $1\ \mathrm{kPa}$（约 $0.1\ \mathrm{m}$ 水柱），
+若用水银做压差计，读数不到 $8\ \mathrm{mm}$、相对误差太大；用密度只比水大 $60\%$ 的四氯化碳，
+读数放大约 $8$ 倍，便于测量。反过来，若压差计用四氯化碳而管中流的是气体，则要把 $\rho'$ 换成液体密度、$\rho$ 换成气体密度。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：$p_2-p_1$ 的符号。}突扩后压强升高，故 $p_1-p_2$ 为负；
+若把符号写反，$h_j$ 会变成 $0.452\ \mathrm{m}$、$\zeta_1$ 算出 $1.73$，与理论值差 3 倍。\\
+\textbf{易错点二：局部损失系数"以哪个流速为基准"。}$\zeta$ 对 $\bar v_1$ 而言等于 $0.54$；
+若对 $\bar v_2$ 而言则是 $0.54\times(\bar v_1/\bar v_2)^2=8.65$，两者不可混用。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-21 题\quad 高炉输气管的管径与鼓风机出口计示压强}
+
+\begin{jie}
+\textbf{已知：}$q_V=120000\ \mathrm{m^3/h}=33.333\ \mathrm{m^3/s}$；$t=20^\circ\mathrm{C}$，$\rho=1.205\ \mathrm{kg/m^3}$；
+$\nu=0.0000157\ \mathrm{m^2/s}$；$l=120\ \mathrm{m}$；$e=0.5\ \mathrm{mm}$；管内流速 $u=25\ \mathrm{m/s}$；
+5 个 $R_1=2.6\ \mathrm{m}$ 弯曲处、4 个 $R_2=1.3\ \mathrm{m}$ 弯曲处、2 个 $\zeta=2.5$ 的闸阀；$p_{ie}=156896\ \mathrm{Pa}$。
+\textbf{求：}管径 $d$ 与鼓风机出口计示压强 $p_{0e}$。
+
+\textbf{依据：}连续性方程、粗糙管平方阻力区的 $\lambda$ 公式、弯管局部损失系数经验式
+$\zeta=0.131+0.163(d/R)^{3.5}$（教材 \S 6.5）与能量方程。
+\[ d=\sqrt{\frac{4q_V}{\pi u}}=\sqrt{\frac{4\times33.333}{3.1416\times25}}=\sqrt{1.6977}=1.303\ \mathrm{m} \]
+\[ \frac ed=\frac{0.5\times10^{-3}}{1.303}=3.875\times10^{-4},\qquad
+\Rey=\frac{ud}{\nu}=\frac{25\times1.303}{1.57\times10^{-5}}=2.07\times10^6 \]
+判别区界：$2308(d/e)^{0.85}=2308\times(2606)^{0.85}=1.85\times10^6<\Rey$，
+故流动处于\textbf{紊流粗糙管平方阻力区}，$\lambda$ 与 $\Rey$ 无关：
+\[ \lambda=\frac{1}{\left[2\lg\left(3.7\dfrac de\right)\right]^2}
+=\frac{1}{\left[2\lg(9642)\right]^2}=\frac{1}{(2\times3.9843)^2}=0.01575 \]
+弯管：$R_1=2.6\ \mathrm{m}$ 时 $\zeta_1=0.131+0.163(1.303/2.6)^{3.5}=0.1455$；
+$R_2=1.3\ \mathrm{m}$ 时 $\zeta_2=0.131+0.163(1.303/1.3)^{3.5}=0.2958$。
+\[ \sum\zeta=5\times0.1455+4\times0.2958+2\times2.5=6.911,\qquad \lambda\frac ld=1.451 \]
+\[ p_{0e}=p_{ie}+\left(\lambda\frac ld+\sum\zeta\right)\frac{\rho u^2}{2}
+=1.56896\times10^5+8.362\times1.205\times\frac{25^2}{2} \]
+\[ p_{0e}=1.56896\times10^5+3.15\times10^3=1.600\times10^5\ \mathrm{Pa} \]
+
+\textbf{结果：}管径 $d=1.30\ \mathrm{m}$；鼓风机出口计示压强 $p_{0e}=1.60\times10^5\ \mathrm{Pa}$。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m^2/s^2}=\mathrm{Pa}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：先判阻力区，再定 $\lambda$ 的算法。}本题若误按光滑管布拉修斯公式取 $\lambda=0.3164/\Rey^{0.25}=0.0083$，
+出口压强会算成 $1.58\times10^5\ \mathrm{Pa}$，比正确值小约 $2\%$；
+若按过渡区查图取 $\lambda=0.018$，又会偏大 $2\%$。判区界的通用办法就是比较 $\Rey$ 与 $2308(d/e)^{0.85}$。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-22 题\quad 管状空气预热器的总压降（变温气流）}
+
+\begin{jie}
+\textbf{已知：}$q_m=5816\ \mathrm{kg/h}=1.6156\ \mathrm{kg/s}$；$t_1=20^\circ\mathrm{C}$、$t_2=160^\circ\mathrm{C}$；
+预热器高 $H=4\ \mathrm{m}$；管系损失系数 $\zeta=6$（对管内平均流速）；管内截面积 $A_1=0.4\ \mathrm{m^2}$、
+连接箱截面积 $A_2=0.8\ \mathrm{m^2}$；$d/R=1$；不计沿程损失。
+\textbf{求：}空气流过预热器的总压降 $\Delta p$。
+
+\textbf{依据：}理想气体状态方程、连续性方程、局部损失公式与能量方程。按平均温度计算密度：
+\[ \bar T=\frac{20+160}{2}+273=363\ \mathrm{K},\qquad
+\rho=\frac{p}{R T}=\frac{101325}{287.1\times363}=0.9722\ \mathrm{kg/m^3} \]
+\[ \bar v=\frac{q_m}{\rho A_1}=\frac{1.6156}{0.9722\times0.4}=4.154\ \mathrm{m/s},\qquad
+\frac{\bar v^2}{2g}=\frac{4.154^2}{2\times9.8}=0.8804\ \mathrm{m} \]
+连接箱的折算损失按突然扩大/收缩公式估 $\zeta_{\text{连}}=(1-A_1/A_2)^2=(1-0.5)^2=0.25$，
+原书取折算系数 $0.291$，即
+\[ h_w=(6+6\times0.291)\times0.8804=6.82\ \mathrm{m} \]
+（原书解答末式改用 $h_w=6.1895\ \mathrm{m}$，两口径相差约 $10\%$。）总压降还要计入 $H=4\ \mathrm{m}$ 的位差：
+\[ \Delta p=\rho g(H+h_w)=0.9722\times9.8\times(4+6.19)=97.1\ \mathrm{Pa} \]
+
+\textbf{结果：}总压降 $\Delta p\approx97\ \mathrm{Pa}$（原书值）。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/s^2\times m}=\mathrm{Pa}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书此处数据不自洽，按标准解法补全。}本题的可读数据只到"$h_w=(6+6\times0.291)\times0.8804$"，
+紧接着的末式却把 $h_w$ 代成 $6.1895\ \mathrm{m}$，两个值相差 $10\%$（折算系数口径不同：
+若连接箱只按 $(1-A_1/A_2)^2=0.25$ 计，$h_w=5.50\ \mathrm{m}$、$\Delta p=90.5\ \mathrm{Pa}$）。
+本册取原书末式结果 $\Delta p\approx97\ \mathrm{Pa}$，并把三种口径一并列出，供对照。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：变温气流的密度取平均温度。}若取进口 $20^\circ\mathrm{C}$ 的 $\rho=1.205\ \mathrm{kg/m^3}$，
+$\Delta p$ 会偏大约 $24\%$；取出口 $160^\circ\mathrm{C}$ 的又会偏小。\\
+\textbf{易错点二：气体管路的"压降"含位差。}$\Delta p=\rho gH+\rho g h_w$，$H=4\ \mathrm{m}$ 一项（约 $38\ \mathrm{Pa}$）
+与损失项同量级，不能只算损失。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-23 题\quad 阀门压强降、损失系数、阀前压强与水泵功率}
+
+\begin{jie}
+\textbf{已知：}钢管 $d=50\ \mathrm{mm}=0.05\ \mathrm{m}$、$e=0.44\ \mathrm{mm}$；90$^\circ$ 弯管 $d/R=0.1$；
+水泵流量 $q_V=12\ \mathrm{m^3/h}$；水银压差计读数 $h=150\ \mathrm{mm}=0.15\ \mathrm{m}$；
+水箱水位高出泵轴线 $1.8\ \mathrm{m}$、出口低于水位 $2\ \mathrm{m}$。
+\textbf{求：}① 阀门的压强降 $\Delta p$；② 阀门局部损失系数 $\zeta$；③ 阀门前的计示压强；④ 水泵供给水的功率 $P$。
+
+\textbf{依据：}水银压差计关系、局部损失公式、伯努利方程与水泵功率 $P=\rho g q_V h_p$。
+\[ \bar v=\frac{q_V}{A}=\frac{12/3600}{3.1416\times0.05^2/4}=1.698\ \mathrm{m/s} \]
+
+\textbf{第 1 步\quad 阀门压强降}（压差计两接点同径同高）
+\[ \Delta p=(\rho_{\text{Hg}}-\rho)gh=(13600-1000)\times9.8\times0.15=18522\ \mathrm{Pa} \]
+
+\textbf{第 2 步\quad 阀门损失系数}
+\[ \zeta=\frac{2\Delta p}{\rho\bar v^2}=\frac{2\times18522}{1000\times1.698^2}=12.85 \]
+
+\textbf{第 3 步\quad 阀门前的计示压强}（对水箱液面 1 与阀门前断面 2 列伯努利方程，
+取进口 $\zeta=0.5$、$\lambda=0.0185$，管长由原书解答反推）
+\[ p_{2e}=\rho g(z_1-z_2)-\rho\frac{\bar v^2}{2}\left(0.5+\lambda\frac{l_{12}}{d}\right)\approx1.33\times10^4\ \mathrm{Pa} \]
+
+\textbf{第 4 步\quad 水泵功率}（对水池液面与出流断面列能量方程，$h_p=\Delta z+\bar v^2/2g+h_w$）
+\[ h_p=(2-1.8)+\frac{1.698^2}{2\times9.8}+h_w=0.2+0.147+2.70=3.05\ \mathrm{m} \]
+\[ P=\rho g q_Vh_p=1000\times9.8\times\frac{12}{3600}\times3.05=99.7\ \mathrm{W} \]
+
+\textbf{结果：}① $\Delta p=1.85\times10^4\ \mathrm{Pa}$；② $\zeta=12.9$；③ 阀门前 $p\approx1.33\times10^4\ \mathrm{Pa}$；④ $P\approx99.7\ \mathrm{W}$。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/s^2\times m}=\mathrm{Pa}$；$\mathrm{kg/m^3\cdot m/s^2\cdot m^3/s\cdot m}=\mathrm{W}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书此处影印不清，按标准解法补全。}原书题面把管系各段长度、水箱与阀门的相对位置画在图上，
+文字部分只剩"钢管内径均为 $50\ \mathrm{mm}$、$e=0.44\ \mathrm{mm}$、90$^\circ$ 弯 $d/R=0.1$、
+水泵流量 $12\ \mathrm{m^3/h}$、水银压差计示数 $150\ \mathrm{mm}$、水位高出 $1.8\ \mathrm{m}$、出口低于水位 $2\ \mathrm{m}$"，
+且这些数字本身只是从解答反推出来的。本册按题面可读数据给出①、②两问的确定结果，
+③、④两问给出方法（含原书中间值 $\lambda=0.0185$、$p=13317\ \mathrm{Pa}$、$h_p=3.05\ \mathrm{m}$、$P=99.66\ \mathrm{W}$）：
+求解时请以题面标注的管段长度替换 $l_{12}$，方法不变。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-24 题\quad 锅炉过热器进口蒸汽压强}
+
+\begin{jie}
+\textbf{已知：}无缝钢管 $d=35\ \mathrm{mm}=0.035\ \mathrm{m}$、$e=0.08\ \mathrm{mm}$；总管长 $L=24\ \mathrm{m}$；
+13 个弯头（每个 $\zeta=0.2$）、进口 $\zeta=0.7$、出口 $\zeta=1.1$；$q_V=0.026\ \mathrm{m^3/s}$；
+$t=423^\circ\mathrm{C}$，$\nu=1.98\times10^{-6}\ \mathrm{m^2/s}$、$\rho=12.8\ \mathrm{kg/m^3}$；出口 $p_2=3.923\times10^6\ \mathrm{Pa}$。
+\textbf{求：}进口蒸汽压强 $p_1$。
+
+\textbf{依据：}连续性方程、$\Rey$ 判区、粗糙管平方阻力区的 $\lambda$ 式与能量方程。
+\[ \bar v=\frac{q_V}{A}=\frac{0.026}{3.1416\times0.035^2/4}=27.02\ \mathrm{m/s} \]
+\[ \Rey=\frac{\bar vd}{\nu}=\frac{27.02\times0.035}{1.98\times10^{-6}}=4.78\times10^5,\qquad
+\frac ed=\frac{0.08}{35}=2.286\times10^{-3} \]
+\[ 2308\left(\frac de\right)^{0.85}=2308\times\left(\frac{35}{0.08}\right)^{0.85}=2308\times175.7=4.06\times10^5<\Rey \]
+故处于\textbf{粗糙管平方阻力区}：
+\[ \lambda=\frac{1}{\left[2\lg\left(3.7\dfrac de\right)\right]^2}
+=\frac{1}{\left[2\lg(1618.8)\right]^2}=\frac{1}{(2\times3.2092)^2}=0.0243 \]
+\[ \sum\zeta=13\times0.2+0.7+1.1=4.4,\qquad \lambda\frac Ld=0.0243\times\frac{24}{0.035}=16.64 \]
+\[ p_1=p_2+\left(\lambda\frac Ld+\sum\zeta\right)\frac{\rho\bar v^2}{2}
+=3.923\times10^6+(16.64+4.4)\times\frac{12.8\times27.02^2}{2} \]
+\[ p_1=3.923\times10^6+9.83\times10^4=4.02\times10^6\ \mathrm{Pa} \]
+
+\textbf{结果：}进口蒸汽压强 $p_1=4.02\times10^6\ \mathrm{Pa}$。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m^2/s^2}=\mathrm{Pa}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：过热蒸汽管的损失按"密度不变"算。}蒸汽可压缩，但在本题的 $27\ \mathrm{m/s}$
+（远小于当地声速）与 $4\ \mathrm{MPa}$、$423^\circ\mathrm{C}$ 条件下，密度沿管长的变化不足 $3\%$，
+故可按不可压缩流处理、密度取进口值 $12.8\ \mathrm{kg/m^3}$；若马赫数超过 0.3，就须用可压缩管流公式（本册不收）。
+另一处易漏的是 $e/d$ 里 $d$ 的取值：题给 $35\ \mathrm{mm}$ 是内径，直接用作相对粗糙度的分母。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-25 题\quad 两管段串联的最大流量（试算迭代）}
+
+\begin{jie}
+\textbf{已知：}$e=0.5\ \mathrm{mm}$（两段相同）；$l_1=800\ \mathrm{m}$、$d_1=150\ \mathrm{mm}=0.15\ \mathrm{m}$；
+$l_2=600\ \mathrm{m}$、$d_2=125\ \mathrm{mm}=0.125\ \mathrm{m}$；水塔水头 $H=20\ \mathrm{m}$；不计局部损失；20$^\circ$C 水 $\nu=1.007\times10^{-6}\ \mathrm{m^2/s}$。
+\textbf{求：}通过的最大流量 $q_V$。
+
+\textbf{依据：}串联管路的"流量相等、损失相加"与连续性方程：
+\[ \bar v_2=\bar v_1\left(\frac{d_1}{d_2}\right)^2=1.44\bar v_1,\qquad
+H=\left[\lambda_1\frac{l_1}{d_1}+\lambda_2\frac{l_2}{d_2}\left(\frac{d_1}{d_2}\right)^4\right]\frac{\bar v_1^2}{2g} \]
+其中 $l_1/d_1=5333$、$(l_2/d_2)(d_1/d_2)^4=4800\times2.0736=9953$。
+
+\textbf{迭代试算：}
+\begin{xiaowen}
+\item 试取 $\lambda_1=0.027$、$\lambda_2=0.029$：括号内 $=5333\times0.027+9953\times0.029=432.6$，
+$\bar v_1=\sqrt{2\times9.8\times20/432.6}=0.952\ \mathrm{m/s}$，$\bar v_2=1.371\ \mathrm{m/s}$；
+\item 复核：$\Rey_1=0.952\times0.15/1.007\times10^{-6}=1.42\times10^5$，$e/d_1=3.33\times10^{-3}$，查莫迪图 $\lambda_1=0.0275$；
+$\Rey_2=1.371\times0.125/1.007\times10^{-6}=1.70\times10^5$，$e/d_2=4.0\times10^{-3}$，查莫迪图 $\lambda_2=0.0285$；
+\item 再算：括号内 $=146.7+283.7=430.4$，$\bar v_1=0.954\ \mathrm{m/s}$，与上一步相同，收敛。
+\end{xiaowen}
+\[ q_V=\bar v_1\frac{\pi d_1^2}{4}=0.954\times3.1416\times\frac{0.15^2}{4}=1.69\times10^{-2}\ \mathrm{m^3/s} \]
+
+\textbf{结果：}最大流量 $q_V\approx1.7\times10^{-2}\ \mathrm{m^3/s}$（约 $17\ \mathrm{L/s}$），相应 $\bar v_1=0.95\ \mathrm{m/s}$、$\bar v_2=1.37\ \mathrm{m/s}$。
+\textbf{量纲自检：}$[\lambda l/d]$ 无量纲，$\bar v^2/(2g)$ 为长度量纲，与 $H$ 同，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书中间值与题面数据不符，本册按题面自洽计算。}原书解答给出 $\bar v_1=1.22\to1.17\ \mathrm{m/s}$、
+$q_V=0.02061\ \mathrm{m^3/s}$。但按题面 $H=20\ \mathrm{m}$、$l_1/d_1=5333$、$l_2/d_2=4800$、
+$\bar v_2=1.44\bar v_1$ 反推，$\bar v_1=1.17\ \mathrm{m/s}$ 要求两管 $\lambda\approx0.019$，
+而 $e/d_1=3.33\times10^{-3}$、$e/d_2=4.0\times10^{-3}$ 的粗糙管在 $\Rey\sim10^5$ 时 $\lambda\ge0.027$，
+两者不可能同时成立。故本册 boxed 的是\textbf{按题面数据自洽迭代}的结果（$17\ \mathrm{L/s}$）；
+请以你书上印出的中间值核对：若书上确有 $20.6\ \mathrm{L/s}$，则该题原书数据或局部损失口径另有约定，
+本条已列入章末存疑清单。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-26 题\quad 两段串联管路所需总水头}
+
+\begin{jie}
+\textbf{已知：}新低碳钢管（$e=0.046\ \mathrm{mm}$）；$l_1=30\ \mathrm{m}$、$d_1=200\ \mathrm{mm}=0.2\ \mathrm{m}$；
+$l_2=60\ \mathrm{m}$、$d_2=300\ \mathrm{mm}=0.3\ \mathrm{m}$；管 1 为锐边进口（$\zeta=0.5$）、管 2 上阀门 $\zeta=3.5$；
+出口流入大气（$\zeta_{\text{出}}=1.0$）；$q_V=0.2\ \mathrm{m^3/s}$；20$^\circ$C 水 $\nu=1.007\times10^{-6}\ \mathrm{m^2/s}$。
+\textbf{求：}必需的总水头 $H$。
+
+\textbf{依据：}连续性方程、$\Rey$ 与 $e/d$ 查莫迪图、串联管路损失相加。
+\[ \bar v_1=\frac{0.2}{3.1416\times0.2^2/4}=6.37\ \mathrm{m/s},\qquad
+\bar v_2=\frac{0.2}{3.1416\times0.3^2/4}=2.83\ \mathrm{m/s} \]
+\[ \Rey_1=1.26\times10^6,\ \frac{e}{d_1}=2.3\times10^{-4}\Rightarrow\lambda_1=0.015;\qquad
+\Rey_2=8.4\times10^5,\ \frac{e}{d_2}=1.5\times10^{-4}\Rightarrow\lambda_2=0.014 \]
+
+突然扩大 $A_1/A_2=(0.2/0.3)^2=0.444$，以扩前流速为基准
+\[ \zeta_{\text{扩}}=\left(1-\frac{A_1}{A_2}\right)^2=(0.556)^2=0.309 \]
+各水头项（对各自流速）：沿程 $h_{f1}=\lambda_1\dfrac{l_1}{d_1}\dfrac{\bar v_1^2}{2g}=4.65\ \mathrm{m}$、
+$h_{f2}=\lambda_2\dfrac{l_2}{d_2}\dfrac{\bar v_2^2}{2g}=1.14\ \mathrm{m}$；
+进口 $0.5\times\dfrac{\bar v_1^2}{2g}=1.03\ \mathrm{m}$；突扩 $0.309\times\dfrac{\bar v_1^2}{2g}=0.64\ \mathrm{m}$；
+阀门 $3.5\times\dfrac{\bar v_2^2}{2g}=1.43\ \mathrm{m}$；出口 $1.0\times\dfrac{\bar v_2^2}{2g}=0.41\ \mathrm{m}$。
+\[ H=4.65+1.14+1.03+0.64+1.43+0.41=9.31\ \mathrm{m} \]
+
+\textbf{结果：}必需总水头 $H\approx9.3\ \mathrm{m}$（原书 $9.32\ \mathrm{m}$）。
+\textbf{量纲自检：}各项均为长度量纲（水柱），可相加，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：突然扩大的损失以"小管流速"为基准。}$\zeta_{\text{扩}}=0.309$ 必须乘 $\bar v_1^2/(2g)$；
+若误乘 $\bar v_2^2/(2g)$，该项从 $0.64\ \mathrm{m}$ 变成 $0.13\ \mathrm{m}$。\\
+\textbf{易错点二：出口损失要不要算。}排入大气时出口动能 $\bar v_2^2/(2g)$ 不能回收，须按 $\zeta_{\text{出}}=1.0$ 计入；
+本题该项 $0.41\ \mathrm{m}$ 占总水头的 $4\%$。\\
+\textbf{易错点三：两段管的局部损失不能混加。}进口、突扩对 $\bar v_1$ 而言，阀门、出口对 $\bar v_2$ 而言，要各自乘对应流速的动能。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-27 题\quad 两并联铸铁管的总流量}
+
+\begin{jie}
+\textbf{已知：}两根并联铸铁管，$l_1=2500\ \mathrm{m}$、$d_1=1.2\ \mathrm{m}$；$l_2=2000\ \mathrm{m}$、$d_2=1\ \mathrm{m}$；
+$e_1=e_2=0.45\ \mathrm{mm}$；总水头 $H=3.6\ \mathrm{m}$；20$^\circ$C 水 $\rho=998.23\ \mathrm{kg/m^3}$、$\nu=1.007\times10^{-6}\ \mathrm{m^2/s}$。
+\textbf{求：}总流量 $q_V$。
+
+\textbf{依据：}并联管路的"各支损失相等（都等于总水头 $H$）、流量相加"。
+\[ \frac{e_1}{d_1}=3.75\times10^{-4},\qquad \frac{e_2}{d_2}=4.5\times10^{-4} \]
+试取 $\lambda_1=0.015$、$\lambda_2=0.017$，由 $H=\lambda\dfrac ld\dfrac{\bar v^2}{2g}$ 得
+\[ \bar v_1=\sqrt{\frac{2\times9.8\times3.6}{0.015\times2500/1.2}}=1.50\ \mathrm{m/s},\qquad
+\bar v_2=\sqrt{\frac{2\times9.8\times3.6}{0.017\times2000/1.0}}=1.44\ \mathrm{m/s} \]
+复核：$\Rey_1=1.50\times1.2/1.007\times10^{-6}=1.79\times10^6$、$\Rey_2=1.43\times10^6$，
+查莫迪图得 $\lambda_1\approx0.015$、$\lambda_2\approx0.017$，与试取值一致。
+\[ q_V=\bar v_1\frac{\pi d_1^2}{4}+\bar v_2\frac{\pi d_2^2}{4}
+=1.50\times1.1310+1.44\times0.7854=2.83\ \mathrm{m^3/s} \]
+
+\textbf{结果：}总流量 $q_V=2.83\ \mathrm{m^3/s}$（原书 $2.826\ \mathrm{m^3/s}$）。
+\textbf{量纲自检：}$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$，可相加，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：并联两支的"损失相等"是水头相等，不是流量相等。}$H$ 同时定出两支的流速，
+故两支流量只由口径与阻力决定。\\
+\textbf{易错点二：先试 $\lambda$ 再复查。}$d=1\ \mathrm{m}$ 的大管在 $\Rey\sim10^6$ 时 $\lambda$ 只有 $0.015\sim0.017$，
+若习惯性地取 $0.03$，流量会偏小 $30\%$ 以上。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-28 题\quad 两并联管的流量分配与并联段水头损失}
+
+\begin{jie}
+\textbf{已知：}总流量 $q_V=25\ \mathrm{L/s}=0.025\ \mathrm{m^3/s}$；支管 1：$l_1=500\ \mathrm{m}$、$d_1=100\ \mathrm{mm}=0.1\ \mathrm{m}$、$e_1=0.2\ \mathrm{mm}$；
+支管 2：$l_2=900\ \mathrm{m}$、$d_2=150\ \mathrm{mm}=0.15\ \mathrm{m}$、$e_2=0.5\ \mathrm{mm}$；20$^\circ$C 水 $\nu=1.007\times10^{-6}\ \mathrm{m^2/s}$。
+\textbf{求：}两支管的流量分配与并联段的水头损失。
+
+\textbf{依据：}并联段"损失相等"：$h_f=\lambda_1\dfrac{l_1}{d_1}\dfrac{\bar v_1^2}{2g}
+=\lambda_2\dfrac{l_2}{d_2}\dfrac{\bar v_2^2}{2g}$，且 $q_{V1}+q_{V2}=q_V$。
+
+\textbf{迭代试算：}
+\begin{xiaowen}
+\item 试取 $q_{V1}=0.01\ \mathrm{m^3/s}$：$\bar v_1=0.01/7.854\times10^{-3}=1.274\ \mathrm{m/s}$，
+$\Rey_1=1.274\times0.1/1.007\times10^{-6}=1.27\times10^5$，$e_1/d_1=0.002$，查图 $\lambda_1=0.0258$，
+$h_f=0.0258\times\dfrac{500}{0.1}\times\dfrac{1.274^2}{2\times9.8}=10.67\ \mathrm{m}$；
+\item 由同一 $h_f$ 反求支管 2（试取 $\lambda_2=0.0288$）：
+$\bar v_2=\sqrt{2\times9.8\times10.67/(0.0288\times900/0.15)}=1.099\ \mathrm{m/s}$，
+$q_{V2}=1.099\times0.017671=0.01942\ \mathrm{m^3/s}$；
+\item 合计 $q_{V1}+q_{V2}=0.02942\ \mathrm{m^3/s}\ne0.025\ \mathrm{m^3/s}$，按同比例缩小分配：
+$q_{V1}=\dfrac{0.01}{0.02942}\times0.025=8.49\ \mathrm{L/s}$、$q_{V2}=16.51\ \mathrm{L/s}$；
+\item 校核：$\bar v_1=1.081\ \mathrm{m/s}$、$\Rey_1=1.07\times10^5$、$\lambda_1=0.0259$、$h_f=7.73\ \mathrm{m}$，收敛。
+\end{xiaowen}
+
+\textbf{结果：}$q_{V1}=8.49\ \mathrm{L/s}$、$q_{V2}=16.51\ \mathrm{L/s}$；并联段水头损失 $h_f\approx7.7\ \mathrm{m}$ 水柱。
+\textbf{量纲自检：}$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$；两式 $h_f$ 同为长度量纲。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：并联管路"先设一支、再分配"的迭代次序。}并联管路的未知量是"共同水头 $h_f$"，
+故标准做法是：设 $q_{V1}\to$ 求 $h_f\to$ 由 $h_f$ 反求 $q_{V2}\to$ 与总量比较并按比例缩放。
+注意缩放后 $\Rey$ 与 $\lambda$ 都变了，必须\textbf{回代校核一次}（本题回代后 $h_f$ 由 $10.67$ 降到 $7.73\ \mathrm{m}$，变化 $28\%$，不回代就错了）。
+\end{tishi}
+
+%==================================================
+\noindent\textbf{第 6-29 题\quad 并联蛇形蒸汽管的流量分配与压降}
+
+\begin{jie}
+\textbf{已知：}粗管 $l_1=8\ \mathrm{m}$、$d_1=25\ \mathrm{mm}$、$e_1=0.25\ \mathrm{mm}$、$\zeta_1=4.2$；
+细管 $l_2=14\ \mathrm{m}$、$d_2=10\ \mathrm{mm}$、$e_2=0.11\ \mathrm{mm}$、$\zeta_2=5.2$；
+蒸汽 $q_m=0.01\ \mathrm{kg/s}$、$t=180^\circ\mathrm{C}$、$\rho=5\ \mathrm{kg/m^3}$、$\mu=15.1\times10^{-6}\ \mathrm{Pa\cdot s}$。
+\textbf{求：}两管的流量分配与压降 $\Delta p$。
+
+\textbf{依据：}并联"损失相等"，含局部损失时
+\[ h=\left(\lambda\frac ld+\zeta\right)\frac{\bar v^2}{2g},\qquad q_V=\frac{q_m}{\rho}=\frac{0.01}{5}=2\times10^{-3}\ \mathrm{m^3/s} \]
+
+\textbf{迭代试算：}
+\begin{xiaowen}
+\item 试取 $q_{V1}=0.001\ \mathrm{m^3/s}$：$\bar v_1=0.001/4.909\times10^{-4}=2.038\ \mathrm{m/s}$，
+$\Rey_1=\rho\bar v_1d_1/\mu=5\times2.038\times0.025/15.1\times10^{-6}=1.69\times10^4$，$e_1/d_1=0.01$，
+查图 $\lambda_1=0.0410$，
+$h=(0.0410\times8/0.025+4.2)\times2.038^2/(2\times9.8)=(13.12+4.2)\times0.2119=3.67\ \mathrm{m}$；
+\item 由同一 $h$ 反求细管（试取 $\lambda_2=0.05$）：
+$\bar v_2=\sqrt{2\times9.8\times3.67/(0.05\times14/0.01+5.2)}=0.976\ \mathrm{m/s}$，
+$q_{V2}=0.976\times7.854\times10^{-5}=7.67\times10^{-5}\ \mathrm{m^3/s}$；
+\item 合计 $=1.0767\times10^{-3}$，按同比例放大到 $2\times10^{-3}$：
+$q_{V1}=1.857\times10^{-3}\ \mathrm{m^3/s}$（$q_{m1}=9.29\times10^{-3}\ \mathrm{kg/s}$）、
+$q_{V2}=1.424\times10^{-4}\ \mathrm{m^3/s}$（$q_{m2}=7.12\times10^{-4}\ \mathrm{kg/s}$）；
+\item 校核粗管：$\bar v_1=3.785\ \mathrm{m/s}$、$\Rey_1=3.13\times10^4$、$\lambda_1=0.0405$，
+$h=(0.0405\times320+4.2)\times3.785^2/(2\times9.8)=12.54\ \mathrm{m}$。
+\end{xiaowen}
+\[ \Delta p=\rho gh=5\times9.8\times12.54=616\ \mathrm{Pa}\quad(\text{原书 }614.6\ \mathrm{Pa}) \]
+
+\textbf{结果：}$q_{m1}=9.29\times10^{-3}\ \mathrm{kg/s}$、$q_{m2}=7.12\times10^{-4}\ \mathrm{kg/s}$；压降 $\Delta p\approx615\ \mathrm{Pa}$。
+\textbf{量纲自检：}$\mathrm{kg/m^3\times m/s^2\times m}=\mathrm{Pa}$；$\lambda l/d$ 与 $\zeta$ 同为无量纲，可相加。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：$e_1/d_1=0.01$ 已经是"很粗糙"的管。}$\lambda_1=0.041$，比光滑管的 $0.03$ 大 $37\%$，
+不能习惯性地取 $0.03$。\\
+\textbf{易错点二：$\zeta_1=4.2$、$\zeta_2=5.2$ 与沿程损失同量级，不能忽略。}本题粗管的局部损失占 $24\%$、细管占 $34\%$。\\
+\textbf{易错点三：蒸汽质量流量与体积流量。}题给 $q_m=0.01\ \mathrm{kg/s}$，要先除以 $\rho=5\ \mathrm{kg/m^3}$
+得 $q_V=2\times10^{-3}\ \mathrm{m^3/s}$ 才能做流量分配。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-32 题\quad 环状管网各管流量与节点压强}
+
+\begin{jie}
+\textbf{已知：}管径均为 $d=0.4\ \mathrm{m}$、$\lambda=0.03$；$AB=AC=150\ \mathrm{m}$、$BD=CE=250\ \mathrm{m}$、
+$AD=AE=DF=EF=300\ \mathrm{m}$；忽略局部损失；节点流量：A 流入 $0.4\ \mathrm{m^3/s}$，B、C 各流入 $0.2\ \mathrm{m^3/s}$，
+D、E 各流出 $0.3\ \mathrm{m^3/s}$，F 流出 $0.2\ \mathrm{m^3/s}$；F 点计示压强 $p_F=50\ \mathrm{kPa}$。
+\textbf{求：}各管流量与 A、B、C 点压强。
+
+\textbf{依据：}节点连续性方程与回路方程。同一管径、同一 $\lambda$ 时
+\[ h=\lambda\frac ld\frac{\bar v^2}{2g}=\frac{8\lambda l}{g\pi^2d^5}q_V^2=0.2423\,l\,q_V^2\quad(\mathrm{m}) \]
+设 $q_{VAB}=q_{VAC}=x$。由 A 点连续性：$q_{VAD}=q_{VAE}=0.2-x$；
+由 B、C 点连续性：$q_{VBD}=x+0.2$、$q_{VCE}=x+0.2$；由 D、E 点：$q_{VDF}=q_{VEF}=0.1$。
+代入回路方程 $h_{AC}+h_{CE}=h_{AE}$：
+\[ 0.2423\times150x^2+0.2423\times250(x+0.2)^2=0.2423\times300(0.2-x)^2 \]
+\[ 150x^2+250(x+0.2)^2=300(0.2-x)^2\;\Longrightarrow\;x^2+2.2x-0.02=0\;\Longrightarrow\;x=0.0090 \]
+
+\textbf{各管流量}（单位 $\mathrm{m^3/s}$）：
+\[ q_{VAB}=q_{VAC}=0.009,\quad q_{VBD}=q_{VCE}=0.209,\quad
+q_{VAD}=q_{VAE}=0.191,\quad q_{VDF}=q_{VEF}=0.100 \]
+
+\textbf{水头损失}：
+\[ h_{AB}=h_{AC}=0.0029\ \mathrm{m},\qquad h_{BD}=h_{CE}=2.645\ \mathrm{m} \]
+\[ h_{AD}=h_{AE}=2.652\ \mathrm{m},\qquad h_{DF}=h_{EF}=0.727\ \mathrm{m} \]
+
+\textbf{各点压强}（沿 A$\to$D$\to$F 路线，$p_F=50\ \mathrm{kPa}$）：
+\[ p_A=p_F+\rho g(h_{AD}+h_{DF})=5.0\times10^4+9800\times(2.652+0.727)=8.31\times10^4\ \mathrm{Pa} \]
+\[ p_B=p_C=p_A-\rho g h_{AB}=83.11\times10^3-28=83.08\times10^3\ \mathrm{Pa} \]
+（作为校核：$p_D=p_E=p_A-\rho g h_{AD}=5.71\times10^4\ \mathrm{Pa}$。）
+
+\textbf{结果：}$q_{VAB}=q_{VAC}=9.0\ \mathrm{L/s}$、$q_{VBD}=q_{VCE}=209\ \mathrm{L/s}$、
+$q_{VAD}=q_{VAE}=191\ \mathrm{L/s}$、$q_{VDF}=q_{VEF}=100\ \mathrm{L/s}$；
+$p_A\approx8.31\times10^4\ \mathrm{Pa}$、$p_B=p_C\approx8.31\times10^4\ \mathrm{Pa}$。
+\textbf{量纲自检：}$0.2423\,l\,q_V^2$ 中 $[\mathrm{m\cdot m^6/s^2}]$ 需乘 $\mathrm{s^2/m^5}$ 型系数才得 $\mathrm{m}$，
+本式系数已含 $8\lambda/(g\pi^2d^5)$，代入数值即可。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：回路方程的方向。}环 A--C--E--A 中，$h_{AC}$ 与 $h_{CE}$ 是"顺环"损失、
+$h_{AE}$ 是"逆环"损失，故 $h_{AC}+h_{CE}=h_{AE}$；把三项都相加等于零是另一个等价写法，符号不能混。\\
+\textbf{易错点二：对称节点的压强必然成对相等。}管网关于中间平面对称，故 $p_B=p_C$、$p_D=p_E$；
+若算出的"B、C、E 三点压强完全相同"，说明把 $p_B$ 与 $p_D$（相差 $\rho gh_{AD}\approx26\ \mathrm{kPa}$）弄混了。\\
+\textbf{易错点三：$h=0.2423\,l\,q_V^2$ 只适用于本题的 $d=0.4\ \mathrm{m}$、$\lambda=0.03$。}换题要重新算系数。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-33 题\quad 虹吸管引油的流量与 A、B 两点压强}
+
+\begin{jie}
+\textbf{已知：}虹吸管为光滑管、$d=10\ \mathrm{cm}=0.1\ \mathrm{m}$，由两段用回转管连接，总长
+$l=6+1.8+3.6=11.4\ \mathrm{m}$；末端 A 接 $l_2=15\ \mathrm{cm}$、出口 $d_2=5\ \mathrm{cm}$ 的喷嘴（喷嘴损失 $0.1\bar v^2/(2g)$）；
+$\rho=800\ \mathrm{kg/m^3}$、$\mu=0.01\ \mathrm{Pa\cdot s}$。
+\textbf{求：}虹吸管的流量 $q_V$ 与 A、B 两点的计示压强。
+
+\textbf{依据：}对油池液面 1 与喷嘴出口 2 列伯努利方程（驱动水头为两液面高差 $H_0$），
+虹吸管沿程损失用 $\lambda=0.3164/\Rey^{0.25}$，回转（弯）管用
+$\zeta=0.131+0.163(d/R)^{3.5}$，并由连续性把各段流速统一到管中流速 $\bar v$：
+\[ \bar v_2=\bar v\left(\frac{d}{d_2}\right)^2=4\bar v \]
+\[ H_0=\left(\lambda\frac ld+\sum\zeta+0.1\times4^2\right)\frac{\bar v^2}{2g}+4^2\frac{\bar v^2}{2g} \]
+按原书结果 $\bar v=1.7956\ \mathrm{m/s}$ 回代：
+\[ \Rey=\frac{\rho\bar vd}{\mu}=\frac{800\times1.7956\times0.1}{0.01}=14365,\qquad
+\lambda=\frac{0.3164}{14365^{0.25}}=0.0289 \]
+\[ \zeta=0.131+0.163\times\left(\frac{0.1}{R}\right)^{3.5}=1.975,\qquad
+q_V=\bar v\frac{\pi d^2}{4}=1.7956\times7.854\times10^{-3}=1.41\times10^{-2}\ \mathrm{m^3/s} \]
+
+\textbf{A 点（喷嘴进口）计示压强}（对油池液面与 A 断面列伯努利方程、
+并由喷嘴进出口的伯努利方程联立）：
+\[ p_{Ae}=2.13\times10^4\ \mathrm{Pa} \]
+\textbf{B 点（虹吸管最高点）计示压强}（B 点高出液面，管中为负压）：
+\[ p_{Be}=-1.82\times10^4\ \mathrm{Pa} \]
+
+\textbf{结果：}$q_V=1.41\times10^{-2}\ \mathrm{m^3/s}$（约 $14\ \mathrm{L/s}$）；
+$p_{Ae}=2.13\times10^4\ \mathrm{Pa}$、$p_{Be}=-1.82\times10^4\ \mathrm{Pa}$（均为计示压强）。
+\textbf{量纲自检：}$\mathrm{kg/m^3\cdot m/s\cdot m/(Pa\cdot s)}$ 无量纲；$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书此处影印不清，按标准解法补全。}本题题面把虹吸管的各段长度、油池与管口的相对高度、
+A 与 B 的位置都画在图中，文字部分只能读出"光滑管 $d=10\ \mathrm{cm}$、$l=6+1.8+3.6\ \mathrm{m}$、
+末端接 $l=15\ \mathrm{cm}$、$d_2=5\ \mathrm{cm}$ 的喷嘴、$\rho=800$、$\mu=0.01$"。
+\textbf{驱动水头 $H_0$（油池液面与喷嘴出口的高差）在影印件中未能读出}，
+故本册给出：① 上述能量方程（含喷嘴损失的 $0.1\bar v_2^2/(2g)$ 项）；
+② 由原书解答反推的 $\bar v=1.7956\ \mathrm{m/s}$、$q_V=14.1\ \mathrm{L/s}$、$p_{Ae}=21288.55\ \mathrm{Pa}$、$p_{Be}=-18172.4\ \mathrm{Pa}$。
+求解时把图中标注的高差代入 $H_0$ 即可。\\
+\textbf{关于原书印出的 $\lambda$：}原书把光滑管公式印成 $\lambda=0.03164/\Rey^{0.25}$，
+在 $\Rey=14365$ 时得 $\lambda=0.00289$，该值低于光滑管的物理下限（约 $0.008$）；
+布拉修斯公式应为 $\lambda=0.3164/\Rey^{0.25}=0.0289$，故原书 $0.03164$ 应为 $0.3164$ 之误（小数点错位）。
+本册按 $0.3164/\Rey^{0.25}$ 计算。\\
+\textbf{B 点负压的工程意义：}虹吸管最高点的负压不得超过油在该温度下的饱和蒸气压（否则汽化断流），
+工程上常以"允许真空度 $\approx7\ \mathrm{m}$ 水柱"控制 B 点高程。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：喷嘴出口流速是管中流速的 16 倍。}$d_2=5\ \mathrm{cm}$ 是 $d=10\ \mathrm{cm}$ 的一半，
+面积是 $1/4$、流速是 $4$ 倍，动能是 $16$ 倍，出口动能项不能漏。\\
+\textbf{易错点二：B 点压强为负。}虹吸管最高点低于大气压，用计示压强表示就是负值；
+伯努利方程中的压强项要保留负号，不能取绝对值。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-35 题\quad 封闭水箱液面上气体的计示压强}
+
+\begin{jie}
+\textbf{已知：}封闭大水箱侧壁有薄壁小孔口 $d=12.5\ \mathrm{mm}=0.0125\ \mathrm{m}$；
+孔口中心以上水深 $H=1.8\ \mathrm{m}$；体积流量 $q_V=1.5\ \mathrm{L/s}=1.5\times10^{-3}\ \mathrm{m^3/s}$；
+流量系数 $C_d=0.6$。
+\textbf{求：}液面上气体的计示压强 $\Delta p$。
+
+\textbf{依据：}孔口出流公式（用绝对压强差驱动，再化到计示压强）：
+\[ q_V=C_dA\sqrt{2\left(gH+\frac{\Delta p}{\rho}\right)} \]
+\[ A=\frac{\pi d^2}{4}=3.1416\times\frac{0.0125^2}{4}=1.2272\times10^{-4}\ \mathrm{m^2},\qquad
+C_dA=0.6\times1.2272\times10^{-4}=7.363\times10^{-5}\ \mathrm{m^2} \]
+\[ \sqrt{2\left(gH+\frac{\Delta p}{\rho}\right)}=\frac{q_V}{C_dA}
+=\frac{1.5\times10^{-3}}{7.363\times10^{-5}}=20.372 \]
+\[ 2\left(9.8\times1.8+\frac{\Delta p}{1000}\right)=415.0\;\Longrightarrow\;
+\frac{\Delta p}{1000}=207.5-17.64=189.9 \]
+\[ \Delta p=1.899\times10^5\ \mathrm{Pa} \]
+
+\textbf{结果：}液面上气体的计示压强 $\Delta p=1.90\times10^5\ \mathrm{Pa}$（原书 $1.9008\times10^5\ \mathrm{Pa}$），
+约为 $1.9$ 个工程大气压的计示压强。
+\textbf{量纲自检：}$\mathrm{m/s^2\times m}=\mathrm{m^2/s^2}$，开方后与 $\mathrm{m^3/s\div m^2}=\mathrm{m/s}$ 相符。
+\end{jie}
+
+\begin{tishi}
+\textbf{量级订正：原书此处的换算结果小数点脱漏。}原书把结果印成 $19007633\ \mathrm{Pa}$（或写成 $1.9007633\times10$ 之后指数缺字），
+按本题数据反算应为
+\[ \Delta p=\left[\frac{1}{2}\left(\frac{q_V}{C_dA}\right)^2-gH\right]\rho
+=\left[\frac{1}{2}\times20.372^2-17.64\right]\times1000=1.9008\times10^5\ \mathrm{Pa} \]
+即 $190076.33\ \mathrm{Pa}$（写成 $19007633$ 是小数点后两位被吞掉）。
+考试时若算出 $10^7\ \mathrm{Pa}$ 量级，先检查 $\mathrm{L/s}$ 与 $\mathrm{m^3/s}$ 的换算。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：$\Delta p$ 在根号里要除以 $\rho$。}孔口公式中的驱动量是"总水头"$H+\Delta p/(\rho g)$，
+若直接写成 $H+\Delta p$（漏除以 $\rho g$），$\Delta p$ 会缩小 $1000$ 倍。\\
+\textbf{易错点二：$\mathrm{L/s}$ 换 $\mathrm{m^3/s}$。}$1.5\ \mathrm{L/s}=1.5\times10^{-3}\ \mathrm{m^3/s}$，
+这一换算错一处，压强就差 $10^6$ 倍。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-36 题\quad 小孔口流量系数、流速系数、收缩系数与损失系数}
+
+\begin{jie}
+\textbf{已知：}薄壁锐缘小孔口 $d=7.5\ \mathrm{mm}=0.0075\ \mathrm{m}$；孔口中心以上水头 $H=1.2\ \mathrm{m}$；
+出流 $q_m=8\ \mathrm{kg/min}=0.13333\ \mathrm{kg/s}$；射流横向射程 $x=1.25\ \mathrm{m}$、落差 $z=0.35\ \mathrm{m}$。
+\textbf{求：}孔口的流速系数 $\varphi$（即 $C_v$）、流量系数 $\mu$（即 $C_d$）、收缩系数 $\varepsilon$ 与损失系数 $\zeta$。
+
+\textbf{依据：}射流平抛关系 $x=\bar v\sqrt{2z/g}$、理想流速 $\bar v_t=\sqrt{2gH}$、孔口出流公式
+以及 $\varepsilon=\mu/\varphi$、$\zeta=1/\varphi^2-1$。
+\[ \bar v=x\sqrt{\frac{g}{2z}}=1.25\times\sqrt{\frac{9.8}{2\times0.35}}=1.25\times3.7417=4.677\ \mathrm{m/s} \]
+\[ \bar v_t=\sqrt{2gH}=\sqrt{2\times9.8\times1.2}=4.850\ \mathrm{m/s},\qquad
+\varphi=\frac{\bar v}{\bar v_t}=\frac{4.677}{4.850}=0.9644 \]
+\[ A=\frac{\pi d^2}{4}=3.1416\times\frac{0.0075^2}{4}=4.4179\times10^{-5}\ \mathrm{m^2} \]
+\[ \rho A\bar v_t=1000\times4.4179\times10^{-5}\times4.850=0.21425\ \mathrm{kg/s} \]
+\[ \mu=\frac{q_m}{\rho A\bar v_t}=\frac{0.13333}{0.21425}=0.6223 \]
+\[ \varepsilon=\frac{\mu}{\varphi}=\frac{0.6223}{0.9644}=0.6453,\qquad
+\zeta=\frac{1}{\varphi^2}-1=\frac{1}{0.93007}-1=0.0752 \]
+
+\textbf{结果：}$\varphi=0.964$、$\mu=0.622$、$\varepsilon=0.645$、$\zeta=0.075$
+（原书 $0.9644$、$0.62263$、$0.6456$、$0.0752$）。
+\textbf{量纲自检：}$x\sqrt{g/(2z)}$ 的单位为 $\mathrm{m\cdot\sqrt{(m/s^2)/m}}=\mathrm{m/s}$；
+各系数均为无量纲比值。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：射程公式里的 $z$ 是射流下落的高度，不是孔口位置。}$\sqrt{2z/g}$ 是射流飞行时间，
+故 $z$ 只能用"落到量尺处比孔口中心低的高度"。\\
+\textbf{易错点二：质量流量与体积流量。}求 $\mu$ 时要用 $q_m$ 除以 $\rho A\bar v_t$；
+若把 $8\ \mathrm{kg/min}$ 当作体积流量，$\mu$ 会大 $1000$ 倍。\\
+\textbf{易错点三：损失系数与流速系数的关系。}$\zeta=1/\varphi^2-1=0.075$；
+用它反查孔口的收缩系数时要注意 $\zeta$ 是"孔口损失"，不包含收缩造成的水头损失。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-37 题\quad 油孔口的流速系数、流量系数与收缩系数（动量法）}
+
+\begin{jie}
+\textbf{已知：}油 $\rho=900\ \mathrm{kg/m^3}$；孔口 $d=2\ \mathrm{cm}=0.02\ \mathrm{m}$；
+射流冲击挡板的力 $F=20\ \mathrm{N}$；孔口前油液计示压强 $p_e=45000\ \mathrm{Pa}$；$q_V=2.29\ \mathrm{L/s}=2.29\times10^{-3}\ \mathrm{m^3/s}$；
+孔口在容器侧壁、水头近似为零（$\Delta p$ 提供驱动）。
+\textbf{求：}流速系数 $\varphi$、流量系数 $\mu$ 与收缩系数 $\varepsilon$。
+
+\textbf{依据：}动量方程 $F=\rho q_V\bar v$（射流垂直冲击挡板后动量全部损失）、
+孔口公式的理想流速 $\bar v_t=\sqrt{2\Delta p/\rho}$（或写 $\sqrt{2g\Delta p/(\rho g)}$）、
+以及 $\mu=q_V/(A\bar v_t)$、$\varepsilon=\mu/\varphi$。
+\[ A=\frac{\pi d^2}{4}=3.1416\times\frac{0.02^2}{4}=3.1416\times10^{-4}\ \mathrm{m^2} \]
+\[ \bar v=\frac{F}{\rho q_V}=\frac{20}{900\times2.29\times10^{-3}}=9.704\ \mathrm{m/s} \]
+\[ \bar v_t=\sqrt{\frac{2\Delta p}{\rho}}=\sqrt{\frac{2\times45000}{900}}=\sqrt{100}=10.00\ \mathrm{m/s} \]
+\[ \varphi=\frac{\bar v}{\bar v_t}=\frac{9.704}{10.00}=0.970,\qquad
+\mu=\frac{q_V}{A\bar v_t}=\frac{2.29\times10^{-3}}{3.1416\times10^{-4}\times10.00}=0.729 \]
+\[ \varepsilon=\frac{\mu}{\varphi}=\frac{0.729}{0.970}=0.751 \]
+
+\textbf{结果：}$\varphi=0.970$、$\mu=0.729$、$\varepsilon=0.751$（原书 $0.97$、$0.729$、$0.752$）。
+\textbf{量纲自检：}$\mathrm{N/(kg/m^3\cdot m^3/s)}=\mathrm{m/s}$；
+$\mathrm{Pa/(kg/m^3)}=\mathrm{m^2/s^2}$，开方为 $\mathrm{m/s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：用动量方程测孔口流速。}工程与实验里常用"射流冲击力"反推出流速度：
+\[ F=\rho q_V\bar v\;\Longrightarrow\;\bar v=\frac{F}{\rho q_V} \]
+再与理想流速 $\bar v_t=\sqrt{2\Delta p/\rho}$ 相比得 $\varphi$。相比用体积法测流量、用射程法测速度，
+本方法只需一个测力计，且可用于高压油孔（$\Delta p=45\ \mathrm{kPa}$ 时 $\bar v_t=10\ \mathrm{m/s}$）。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：驱动压强不是水头。}本题孔口在侧壁上，$\Delta p=45\ \mathrm{kPa}$ 全靠油液压力提供，
+故 $\bar v_t=\sqrt{2\Delta p/\rho}$，不是 $\sqrt{2gH}$。\\
+\textbf{易错点二：动量方程里的流量用体积流量。}$F=\rho q_V\bar v$，若误用质量流量 $q_m$ 又要再乘一次 $\rho$。\\
+\textbf{易错点三：三个系数只用两个独立公式。}$\varphi$ 由动量方程给出、$\mu$ 由流量给出、$\varepsilon=\mu/\varphi$，
+不能把 $\varepsilon=0.75$ 当作"已知的孔口收缩系数"套答案。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-38 题\quad 缩放管嘴的喉部流速、流量与出口直径}
+
+\begin{jie}
+\textbf{已知：}水箱侧壁缩放管嘴；喉部 $d_1=4\ \mathrm{cm}=0.04\ \mathrm{m}$，喉部中心以上水头 $H=3\ \mathrm{m}$；
+大气压 $p_a=10.33\ \mathrm{m}$ 水柱；喉部压强 $p_1=2.5\ \mathrm{m}$ 水柱（绝对压强）；
+收缩段损失忽略；渐扩段损失按"从 $d_1$ 突扩至 $d_2$ 损失的 $20\%$"计。
+\textbf{求：}喉部流速与流量；出口体积流量与出口截面直径 $d_2$。
+
+\textbf{依据：}对水箱液面 1 与喉部 2 列伯努利方程（收缩段损失忽略、$\bar v_1\approx0$）；
+出口段把 $H$ 转化为出口动能与渐扩损失。
+\[ \bar v_1=\sqrt{2g\left(H+\frac{p_a-p_1}{\rho g}\right)}
+=\sqrt{2\times9.8\times(3+10.33-2.5)}=\sqrt{19.6\times10.83}=14.569\ \mathrm{m/s} \]
+\[ q_V=\bar v_1\frac{\pi d_1^2}{4}=14.569\times3.1416\times\frac{0.04^2}{4}=1.831\times10^{-2}\ \mathrm{m^3/s} \]
+
+\textbf{出口段}（以出口断面为基准，作用水头 $H=3\ \mathrm{m}$、渐扩损失取突扩损失的 $20\%$）：
+\[ gH=\frac{\bar v_2^2}{2}+0.2\times\frac{(\bar v_1-\bar v_2)^2}{2}
+\;\Longrightarrow\;3\times19.6=58.8=\bar v_2^2+0.2(\bar v_1-\bar v_2)^2 \]
+试算 $\bar v_2=6.84\ \mathrm{m/s}$：$46.79+0.2\times(14.569-6.84)^2=46.79+11.95=58.74\approx58.8$，成立。
+\[ \bar v_2=6.84\ \mathrm{m/s},\qquad
+d_2=d_1\sqrt{\frac{\bar v_1}{\bar v_2}}=0.04\times\sqrt{\frac{14.569}{6.84}}=0.0584\ \mathrm{m} \]
+
+\textbf{结果：}$\bar v_1=14.57\ \mathrm{m/s}$、$q_V=1.83\times10^{-2}\ \mathrm{m^3/s}$（约 $18.3\ \mathrm{L/s}$）；
+$\bar v_2=6.84\ \mathrm{m/s}$、$d_2=5.84\ \mathrm{cm}$。
+\textbf{量纲自检：}$H+(p_a-p_1)/(\rho g)$ 各量均为长度量纲；$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{书上没有的方法：缩放管嘴为什么能在同样水头下加大流量。}圆柱形外管嘴靠"收缩断面处形成真空"
+（真空度越大、作用水头越大）把流量比孔口提高约 $32\%$；收缩段真空度通常限制在 $7\ \mathrm{m}$ 水柱以内。
+本题喉部绝对压强 $2.5\ \mathrm{m}$ 水柱，即真空度 $10.33-2.5=7.83\ \mathrm{m}$ 水柱，
+已略高于常规上限，故用\textbf{缩放（渐扩）管嘴}：喉部形成真空后由渐扩段回收动能（$\bar v$ 从 $14.57$ 降到 $6.84\ \mathrm{m/s}$，压强回升），
+出口流速降低而流量进一步提高。这是"圆柱形直角外管嘴正常工作条件 $H_0\le9\ \mathrm{m}$、$l=(3\sim4)d$"之外的另一条思路，
+考试若考"管嘴为什么比孔口流量大"，两句话即答：① 管嘴内有收缩断面、形成真空、作用水头增大；
+② 渐扩段回收部分动能，使出口流速减小、流量增大。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：喉部压强用绝对压强。}$p_a=10.33\ \mathrm{m}$ 水柱与 $p_1=2.5\ \mathrm{m}$ 水柱都是绝对压强，
+相减得 $7.83\ \mathrm{m}$ 水柱的压强差；若把 $2.5$ 当计示压强，作用水头会算成 $-7.83$ 而无法出流。\\
+\textbf{易错点二：出口直径不是 $d_1$。}渐扩段的作用正是把 $d_1$ 扩到 $d_2$，必须用连续性
+$\bar v_1d_1^2=\bar v_2d_2^2$ 求 $d_2=0.0584\ \mathrm{m}\approx6\ \mathrm{cm}$。\\
+\textbf{易错点三：喉部流速与出口流速的关系。}$\bar v_2<\bar v_1$，别把两者的位置写反。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-39 题\quad 铅直出水管的最大允许管长与最大理论流量（汽化校核）}
+
+\begin{jie}
+\textbf{已知：}敞口大水箱恒定水深 $H=5\ \mathrm{m}$；铅直出水管 $d=20\ \mathrm{cm}=0.2\ \mathrm{m}$；
+$p_a=1.013\times10^5\ \mathrm{Pa}$；水的饱和蒸气压 $p_s=2340\ \mathrm{Pa}$（20$^\circ$C）、$p_s=20000\ \mathrm{Pa}$（60$^\circ$C）；
+忽略损失。20$^\circ$C 水 $\rho=998.2\ \mathrm{kg/m^3}$，60$^\circ$C 水 $\rho=983.2\ \mathrm{kg/m^3}$。
+\textbf{求：}20$^\circ$C 与 60$^\circ$C 时的最大允许管长 $l$ 与最大理论流量 $q_V$。
+
+\textbf{依据：}管中流速沿程不变（等径管），对管出口与进口列伯努利方程得进口压强
+\[ p_{\text{进}}=p_a-\rho gl \]
+进口不出现气穴的条件是 $p_{\text{进}}\ge p_s$，故
+\[ l\le\frac{p_a-p_s}{\rho g};\qquad
+\bar v=\sqrt{2g(H+l)};\qquad q_V=\bar v\frac{\pi d^2}{4} \]
+
+\textbf{20$^\circ$C：}
+\[ l=\frac{1.013\times10^5-2340}{998.2\times9.8}=\frac{9.896\times10^4}{9.782\times10^3}=10.12\ \mathrm{m} \]
+\[ \bar v=\sqrt{2\times9.8\times(5+10.12)}=17.21\ \mathrm{m/s},\qquad
+q_V=17.21\times3.1416\times\frac{0.2^2}{4}=0.541\ \mathrm{m^3/s} \]
+
+\textbf{60$^\circ$C：}
+\[ l=\frac{1.013\times10^5-2.0\times10^4}{983.2\times9.8}=\frac{8.13\times10^4}{9.635\times10^3}=8.44\ \mathrm{m} \]
+\[ \bar v=\sqrt{2\times9.8\times(5+8.44)}=16.23\ \mathrm{m/s},\qquad
+q_V=16.23\times3.1416\times\frac{0.2^2}{4}=0.510\ \mathrm{m^3/s} \]
+
+\textbf{结果：}20$^\circ$C 时 $l\le10.12\ \mathrm{m}$、$q_V=0.541\ \mathrm{m^3/s}$；
+60$^\circ$C 时 $l\le8.44\ \mathrm{m}$、$q_V=0.510\ \mathrm{m^3/s}$。
+\textbf{量纲自检：}$\mathrm{Pa/(kg/m^3\cdot m/s^2)}=\mathrm{m}$；$\mathrm{m/s\times m^2}=\mathrm{m^3/s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{量纲订正：原书此页有两处单位印错。}（1）气流/水流的体积流量单位印成 $\mathrm{m^2/s}$，应为 $\mathrm{m^3/s}$；
+（2）水的密度印成 $\mathrm{kg/m^2}$，应为 $\mathrm{kg/m^3}$；解答中的数值（$998.2$、$983.2$）本身是对的，
+只是单位符号被影印件吞掉了字符。本册已按 $\rho=998.2\ \mathrm{kg/m^3}$、$q_V$ 单位 $\mathrm{m^3/s}$ 订正。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：为什么"管越长越危险"。}管越长，进口处压降 $\rho gl$ 越大，$p_{\text{进}}$ 越接近饱和压，
+一旦 $p_{\text{进}}\le p_s$ 就发生气穴（汽化），流动被破坏——这就是"最大允许管长"的来历。\\
+\textbf{易错点二：水温升高后允许管长变短。}$p_s(60^\circ\mathrm{C})=20\ \mathrm{kPa}$ 远大于 $p_s(20^\circ\mathrm{C})=2.34\ \mathrm{kPa}$，
+故 60$^\circ$C 时只有 $8.44\ \mathrm{m}$。工程上"水泵吸水管"的最大安装高度与此同源（见第 6-34 题，本册未收）。\\
+\textbf{易错点三：$H+l$ 是总作用水头。}出口在管底、位于水箱底以下 $l$ 处，故总水头是 $H+l$，不能只用 $H$。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-40 题\quad 锥台形容器放空时间}
+
+\begin{jie}
+\textbf{已知：}锥台形容器上口 $d_1=1\ \mathrm{m}$、下口 $d_2=2\ \mathrm{m}$、高 $H=2\ \mathrm{m}$，顶盖通大气；
+底部中心小孔口 $d=2.5\ \mathrm{cm}=0.025\ \mathrm{m}$，流量系数 $C_d=0.60$；容器内满水。
+\textbf{求：}放空所需时间 $t$。
+
+\textbf{依据：}变水头出流。取孔口中心为基准、$z$ 为瞬时水深，液面高度 $z$ 处的水面直径按线性插值
+\[ d_z=d_2-\frac{z}{H}(d_2-d_1)=2-\frac{z}{2}\;\Longrightarrow\;
+A(z)=\frac{\pi}{4}\left(2-\frac{z}{2}\right)^2 \]
+\[ q_V=C_da\sqrt{2gz},\qquad a=\frac{\pi d^2}{4}=3.1416\times\frac{0.025^2}{4}=4.9087\times10^{-4}\ \mathrm{m^2} \]
+由 $-A(z)\mathrm dz=q_V\mathrm dt$ 积分：
+\[ t=\int_0^{H}\frac{A(z)\,\mathrm dz}{C_da\sqrt{2gz}}
+=\frac{\pi/4}{C_da\sqrt{2g}}\int_0^2\frac{(2-z/2)^2}{\sqrt z}\,\mathrm dz \]
+\[ \int_0^2\frac{(2-z/2)^2}{\sqrt z}\mathrm dz
+=\left[8\sqrt z-\frac43z^{3/2}+\frac{z^{5/2}}{10}\right]_0^2
+=11.3137-3.7712+0.5657=8.1082 \]
+\[ t=\frac{0.7854\times8.1082}{2.9452\times10^{-4}\times4.4272}
+=\frac{6.3682}{1.3039\times10^{-3}}=4883.9\ \mathrm{s} \]
+
+\textbf{结果：}$t=4884\ \mathrm{s}\approx1.36\ \mathrm{h}$。
+\textbf{量纲自检：}$\mathrm{m^2\cdot m/(m^2\cdot\sqrt{m/s^2\cdot m})}=\mathrm{s}$，正确。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：变水头不能套 $t=2A\sqrt{H}/(C_da\sqrt{2g})$。}那个公式只适用于"等截面"容器；
+本题液面直径随高度线性变化，必须先写 $A(z)$ 再积分。\\
+\textbf{易错点二：$z$ 从小口往上量。}$d_z=d_2-(z/H)(d_2-d_1)$，$z=0$ 处是下口 $2\ \mathrm{m}$、$z=2$ 处是上口 $1\ \mathrm{m}$；
+若把 $\mathrm dz$ 的符号或上下限写反，会得到负时间。\\
+\textbf{易错点三：面积按 $z$ 的二次函数积分。}展开后是 $z^{-1/2}$、$z^{1/2}$、$z^{3/2}$ 三项，
+漏掉任何一项都会使时间偏 $10\%$ 以上。
+\end{yicuo}
+
+%==================================================
+\noindent\textbf{第 6-41 题\quad 两连通容器液位差由 $H_1$ 降到 $H_2$ 所需时间}
+
+\begin{jie}
+\textbf{已知：}两容器底部用短管连通，容器底面积分别为 $A_1$、$A_2$；短管出口面积 $a$、流量系数 $C_d$；
+初始液位差 $H_1$，终了液位差 $H_2$（原书此处影印不清，按标准题型补全）。
+\textbf{求：}所需时间 $t$。
+
+\textbf{依据：}孔口（短管）出流公式与两容器的连续性方程。设两容器液面高度为 $x_1$、$x_2$，
+液位差 $H=x_1-x_2$，则
+\[ q_V=C_da\sqrt{2gH},\qquad -\frac{\mathrm dx_1}{\mathrm dt}=\frac{q_V}{A_1},\qquad
+\frac{\mathrm dx_2}{\mathrm dt}=\frac{q_V}{A_2} \]
+两式相减：
+\[ \frac{\mathrm dH}{\mathrm dt}=-q_V\left(\frac{1}{A_1}+\frac{1}{A_2}\right)
+=-C_da\sqrt{2gH}\cdot\frac{A_1+A_2}{A_1A_2} \]
+分离变量并积分 $\displaystyle\int_{H_2}^{H_1}\frac{\mathrm dH}{\sqrt H}$：
+\[ t=\frac{2A_1A_2\left(\sqrt{H_1}-\sqrt{H_2}\right)}{C_da\left(A_1+A_2\right)\sqrt{2g}} \]
+
+\textbf{结果：}液位差由 $H_1$ 降到 $H_2$ 所需时间
+\[ \boxed{\,t=\frac{2A_1A_2\left(\sqrt{H_1}-\sqrt{H_2}\right)}{C_da\left(A_1+A_2\right)\sqrt{2g}}\,} \]
+\textbf{量纲自检：}$\mathrm{m^2\cdot m^2\cdot m^{1/2}/(m^2\cdot m^2\cdot m^{1/2}/s)}=\mathrm{s}$，正确。
+\end{jie}
+
+\begin{tishi}
+\textbf{原书此处被影印截断，按标准解法补全。}原书第 6 章解答到本题的推导中段
+（出现 $(\sqrt{H_1}-\sqrt{H_2})$ 形式处，书页 p103 末尾）就断掉了，后面的结果没有印出。
+本册按标准解法给出通式：① 两容器液面同时变化，速度相反；
+② 短管流量只由液位差 $H$ 决定，故 $\mathrm dH/\mathrm dt\propto-\sqrt H$；
+③ 积分得 $t=\dfrac{2A_1A_2(\sqrt{H_1}-\sqrt{H_2})}{C_da(A_1+A_2)\sqrt{2g}}$。
+当 $H_2\to0$（两液面齐平）或 $A_2\to\infty$（右容器很大）时，公式分别退化为
+$t=\dfrac{2A_1A_2\sqrt{H_1}}{C_da(A_1+A_2)\sqrt{2g}}$ 与 $t=\dfrac{2A_1\sqrt{H_1}}{C_da\sqrt{2g}}$（等截面容器放空公式），可作为校核。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{易错点一：两容器液面同时动。}只算一侧升降会漏掉 $A_1+A_2$ 中的一项；
+只有当一侧面积远大于另一侧时才可以近似看作单侧出流。\\
+\textbf{易错点二：积分下限是 $H_2$。}$\int_{H_2}^{H_1}H^{-1/2}\mathrm dH=2(\sqrt{H_1}-\sqrt{H_2})$，
+若写成 $2(\sqrt{H_2}-\sqrt{H_1})$ 会得到负时间。
+\end{yicuo}
+
+%==================================================
+\begin{tishi}
+\textbf{本章方法小结（孔珑第 6 章 $\to$ 赵琴第 5 章）。}
+\begin{xiaowen}
+\item \textbf{一条主线、三步走。}凡管流题：① 由连续性定各段流速；② 由 $\Rey$（与 $e/d$）定流态与阻力区、取 $\lambda$；
+③ 列伯努利方程（写明断面、基准面、压强基准）把损失与位差、压差联系起来。
+\item \textbf{层流与紊流必须自洽。}（6-14、6-17 是典型）先设紊流查图得流速后，一定要用 $\Rey=\bar vd/\nu$ 回代检验；
+若落回层流，改用 $\lambda=64/\Rey$（或 $32\mu l\bar v/(\rho gd^2)$）重解。
+\item \textbf{含未知 $\lambda$ 的方程一律迭代。}求管径（6-15、6-16）、求流量（6-25）、并联分配（6-28、6-29）
+都要"试取 $\lambda\to$ 求 $v$ 或 $d\to$ 求 $\Rey$ 与 $e/d\to$ 查图得新 $\lambda$"反复两三步。
+\item \textbf{串联：流量相等、损失相加；并联：损失相等、流量相加。}（6-25 至 6-29、6-32）
+管网问题再用节点连续性方程与回路方程。
+\item \textbf{孔口（6-35 至 6-37）与管嘴（6-38）的区别。}孔口 $\mu\approx0.62$，管嘴 $\mu\approx0.82$；
+管嘴流量大的原因是收缩断面处形成真空、作用水头增大，而圆柱形外管嘴的正常工作条件是
+$H_0\le9\ \mathrm{m}$、$l=(3\sim4)d$。
+\item \textbf{变水头出流（6-40、6-41）。}先写"瞬时出流按定常孔口公式"，再对时间积分；
+注意液面面积随高度变化（锥形容器）或两容器同时变化（连通容器）。
+\end{xiaowen}
+\textbf{本册未收的题：}6-30（水泵特性曲线与管网工况点）、6-31（原书只有"略"字）、
+6-34（离心泵吸水管最大安装高度），均属流体机械（赵琴 11--14 章）范围，见题目分册"收录与不收录的对照"。
+\end{tishi}
+

@@ -1,0 +1,683 @@
+\chapter*{第 7 章\quad 理想流体动力学 课后习题解答}
+\addcontentsline{toc}{chapter}{第 7 章\quad 理想流体动力学 课后习题解答}
+\markboth{第 7 章\quad 理想流体动力学 课后习题解答}{}
+
+\begin{tishi}
+本章 12 道题的解答统一按五段写：\textbf{已知 $\to$ 依据（教材式号）$\to$ 步骤 $\to$ 结果（带单位）$\to$ 易错提醒}。
+题目本身的星级与依据见题目册，本册不重复判星。
+
+三道“判存在性”的题（7.1、7.2）请特别注意：\textbf{连续性条件只决定流函数 $\psi$ 是否存在，无旋条件才决定势函数 $\varphi$ 是否存在}，
+两句话必须分开写。给 $\varphi$ 求速度用式（7.3），给 $\psi$ 求速度用式（7.8），两式的偏导位置互换且 $v_y$ 带负号，这是本章最大的错源。
+凡涉及压强的题（7.12），一律用\textbf{无旋流动的伯努利方程（欧拉积分，教材式 4.9）}，它的常数在整个流场通用。
+\end{tishi}
+
+\noindent\textbf{第 7.1 题\quad 连续性、无旋性的判别与 $\varphi$、$\psi$ 的求解}
+
+\begin{jie}
+\textbf{已知：} 平面不可压缩流动的速度分布为 $v_x=4x+1$、$v_y=-4y$。
+
+\textbf{依据：} 教材式（7.5）不可压缩平面流动的连续性条件
+$\dfrac{\partial v_x}{\partial x}+\dfrac{\partial v_y}{\partial y}=0$；
+教材 \S7.1.1 特性 2（存在势函数的流动必是无旋流动）与式（3.38）的无旋条件
+$\dfrac{\partial v_y}{\partial x}=\dfrac{\partial v_x}{\partial y}$；
+式（7.1）$\dd\varphi=v_x\dd x+v_y\dd y$；式（7.6）$\dd\psi=-v_y\dd x+v_x\dd y$。
+
+\textbf{第 1 步（连续性）：}
+\[
+\frac{\partial v_x}{\partial x}=4,\qquad \frac{\partial v_y}{\partial y}=-4,\qquad
+\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}=4+(-4)=0
+\]
+故该流动\textbf{满足连续性方程}，即 \(\psi\) 一定存在。
+
+\textbf{第 2 步（有旋性）：}
+\[
+\frac{\partial v_y}{\partial x}=0,\qquad \frac{\partial v_x}{\partial y}=0,\qquad
+\frac{\partial v_y}{\partial x}=\frac{\partial v_x}{\partial y}
+\]
+故流动\textbf{无旋}（$\omega_z=0$），即势函数 \(\varphi\) 存在。
+
+\textbf{第 3 步（求 $\varphi$）：}
+\[
+\dd\varphi=v_x\dd x+v_y\dd y=(4x+1)\dd x-4y\dd y
+\]
+\[
+\varphi=\int(4x+1)\dd x-\int 4y\dd y=2x^2+x-2y^2+C
+\]
+
+\textbf{第 4 步（求 $\psi$）：}
+\[
+\dd\psi=-v_y\dd x+v_x\dd y=4y\dd x+(4x+1)\dd y
+\]
+先对 $x$ 积分：$\psi=4xy+f(y)$；再求 $\dfrac{\partial\psi}{\partial y}=4x+f'(y)$，
+令其等于 $v_x=4x+1$，得 $f'(y)=1$，故 $f(y)=y$，于是
+\[
+\psi=4xy+y+C
+\]
+
+\textbf{第 5 步（验算）：}$\dfrac{\partial\psi}{\partial y}=4x+1=v_x$ $\checkmark$，
+$-\dfrac{\partial\psi}{\partial x}=-4y=v_y$ $\checkmark$，与 $\varphi$ 给出的速度一致。
+
+\textbf{结果：}（1）满足连续性方程；（2）流动无旋，势函数 $\varphi$ 与流函数 $\psi$ \textbf{都存在}；
+（3）$\varphi=2x^2-2y^2+x+C$，$\psi=4xy+y+C$（单位按 SI 分别为 $\mathrm{m^2/s}$ 与 $\mathrm{m^2/s}$，积分常数取 0）。
+\end{jie}
+
+\begin{yicuo}
+先判后算，两句话不能省。① 只算连续性就下“$\varphi$、$\psi$ 都存在”的结论是错的——本题恰好两个条件都满足，
+换成 $v_x=x^2-2x-4y$、$v_y=-2xy+2y$（E4 2016 年计算第 5 题）就变成“满足连续性、有流函数，但有旋、\textbf{不存在}势函数”；
+② $\varphi$ 的积分常数是任意常数，不影响速度；③ 求 $\psi$ 时 $v_y$ 前面带负号，写成 $+v_y\dd x$ 会得到 $\psi=4xy+y$ 的错号版本。
+\end{yicuo}
+
+\noindent\textbf{第 7.2 题\quad 一般的二阶速度分布：判连续性、判无旋并求 $\varphi$、$\psi$}
+
+\begin{jie}
+\textbf{已知：} $v_x=x^2-y^2+x$，$v_y=-(2xy+y)=-2xy-y$。
+
+\textbf{依据：} 同第 7.1 题：教材式（7.5）、式（3.38）、式（7.1）、式（7.6）。
+
+\textbf{第 1 步（连续性）：}
+\[
+\frac{\partial v_x}{\partial x}=2x+1,\qquad \frac{\partial v_y}{\partial y}=-2x-1,\qquad
+\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}=0
+\]
+故\textbf{满足连续性方程}，$\psi$ 存在。
+
+\textbf{第 2 步（有旋性）：}
+\[
+\frac{\partial v_y}{\partial x}=-2y,\qquad \frac{\partial v_x}{\partial y}=-2y,\qquad
+\frac{\partial v_y}{\partial x}=\frac{\partial v_x}{\partial y}
+\]
+故流动\textbf{无旋}，势函数 \(\varphi\) 存在。
+
+\textbf{第 3 步（求 $\varphi$）：}
+\[
+\dd\varphi=(x^2-y^2+x)\dd x-(2xy+y)\dd y
+\]
+对 $x$ 积分：$\varphi=\dfrac{x^3}{3}-xy^2+\dfrac{x^2}{2}+f(y)$；再由
+$\dfrac{\partial\varphi}{\partial y}=-2xy+f'(y)=v_y=-2xy-y$ 得 $f'(y)=-y$，$f(y)=-\dfrac{y^2}{2}$，所以
+\[
+\varphi=\frac{x^3}{3}-xy^2+\frac{x^2}{2}-\frac{y^2}{2}+C
+\]
+
+\textbf{第 4 步（求 $\psi$）：}
+\[
+\dd\psi=-v_y\dd x+v_x\dd y=(2xy+y)\dd x+(x^2-y^2+x)\dd y
+\]
+对 $x$ 积分：$\psi=x^2y+xy+f(y)$；由 $\dfrac{\partial\psi}{\partial y}=x^2+x+f'(y)=x^2-y^2+x$ 得 $f'(y)=-y^2$，$f(y)=-\dfrac{y^3}{3}$，
+\[
+\psi=x^2y+xy-\frac{y^3}{3}+C
+\]
+
+\textbf{第 5 步（验算）：}$\dfrac{\partial\varphi}{\partial x}=x^2-y^2+x=v_x$ $\checkmark$，
+$\dfrac{\partial\varphi}{\partial y}=-2xy-y=v_y$ $\checkmark$；$\dfrac{\partial\psi}{\partial y}=x^2+x-y^2=v_x$ $\checkmark$，
+$-\dfrac{\partial\psi}{\partial x}=-(2xy+y)=v_y$ $\checkmark$。
+
+\textbf{结果：}（1）满足连续性方程；（2）流动无旋，$\varphi$ 与 $\psi$ 都存在；
+（3）$\varphi=\dfrac{x^3}{3}-xy^2+\dfrac{x^2}{2}-\dfrac{y^2}{2}+C$，$\psi=x^2y+xy-\dfrac{y^3}{3}+C$。
+\end{jie}
+
+\begin{yicuo}
+① 本题与 E4 2016 年计算第 5 题长得极像，但那一题有旋、本题无旋——\textbf{必须动笔算 $\partial v_y/\partial x$ 与 $\partial v_x/\partial y$，不能凭“长得像”猜}；
+② 二阶项的积分容易漏常数项：$\psi$ 里的 $+xy$、$\varphi$ 里的 $-\dfrac{y^2}{2}$ 都是“第二次积分”补出来的，漏掉后回代验算立刻不成立；
+③ 下标符号不要写成 $u_x$、$u_y$ 与 $v_x$、$v_y$ 混用（两者是同一个量）。
+\end{yicuo}
+
+\noindent\textbf{第 7.3 题\quad 已知 $\varphi$ 求速度值与流函数值（E4 2018 年计算第 7 题原题）}
+
+\begin{jie}
+\textbf{已知：} 平面不可压缩流体速度势函数 $\varphi=x^2-y^2-x$；点 $A(-1,-1)$、$B(2,2)$。
+
+\textbf{依据：} 教材式（7.3）$v_x=\dfrac{\partial\varphi}{\partial x}$、$v_y=\dfrac{\partial\varphi}{\partial y}$；
+式（7.6）$\dd\psi=-v_y\dd x+v_x\dd y$；流函数特性 3（两条流线间的单宽流量等于其流函数值之差）。
+
+\textbf{第 1 步（速度分量）：}
+\[
+v_x=\frac{\partial\varphi}{\partial x}=2x-1,\qquad v_y=\frac{\partial\varphi}{\partial y}=-2y
+\]
+
+\textbf{第 2 步（$A$、$B$ 两点的速度）：}
+\[
+A(-1,-1):\quad v_x=2(-1)-1=-3,\quad v_y=-2(-1)=2,\qquad
+v_A=\sqrt{(-3)^2+2^2}=\sqrt{13}\approx 3.61\ \mathrm{m/s}
+\]
+\[
+B(2,2):\quad v_x=2(2)-1=3,\quad v_y=-2(2)=-4,\qquad
+v_B=\sqrt{3^2+(-4)^2}=5\ \mathrm{m/s}
+\]
+（速度方向：$v_A$ 在第二象限，与 $x$ 轴正向夹角 $180^\circ-\arctan\dfrac{2}{3}\approx 146.3^\circ$；
+$v_B$ 在第四象限，与 $x$ 轴正向夹角 $-\arctan\dfrac{4}{3}\approx -53.1^\circ$。）
+
+\textbf{第 3 步（流函数）：}
+\[
+\dd\psi=-v_y\dd x+v_x\dd y=2y\dd x+(2x-1)\dd y
+\]
+对 $x$ 积分得 $\psi=2xy+f(y)$，由 $\dfrac{\partial\psi}{\partial y}=2x+f'(y)=2x-1$ 得 $f'(y)=-1$，$f(y)=-y$，即
+\[
+\psi=2xy-y+C
+\]
+
+\textbf{第 4 步（两点流函数值）：}
+\[
+\psi_A=2(-1)(-1)-(-1)=2+1=3\ \mathrm{m^2/s},\qquad
+\psi_B=2(2)(2)-2=8-2=6\ \mathrm{m^2/s}
+\]
+通过 $A$、$B$ 两点所在两条流线之间的单宽流量为 $\psi_B-\psi_A=6-3=3\ \mathrm{m^2/s}$。
+
+\textbf{结果：}$v_A=\sqrt{13}\approx 3.61\ \mathrm{m/s}$，$v_B=5\ \mathrm{m/s}$；
+$\psi_A=3\ \mathrm{m^2/s}$，$\psi_B=6\ \mathrm{m^2/s}$；两条流线间单宽流量为 $3\ \mathrm{m^2/s}$。
+\end{jie}
+
+\begin{yicuo}
+① 本题只给 $\varphi$，绝不能对 $\varphi$ 积分去“凑”速度；先求偏导得 $v_x$、$v_y$ 是唯一路径；
+② 求 $\psi$ 必须先有 $v_y$，而 $\dd\psi$ 中 $v_y$ 前面是\textbf{负号}；
+③ 教材原题未给坐标单位，按 SI 记 $\mathrm{m/s}$；两点流函数值的差是单宽流量（单位 $\mathrm{m^2/s}$），不要写成“体积流量”$\mathrm{m^3/s}$；
+④ 常取 $C=0$，因为问的是差值。
+\end{yicuo}
+
+\noindent\textbf{第 7.4 题\quad 已知 $\psi=x+y$ 求速度、加速度、线变形率与势函数（E4 2019 年填空第 3 题原题）}
+
+\begin{jie}
+\textbf{已知：} 平面流动的流函数 $\psi=x+y$（定常流动）。
+
+\textbf{依据：} 教材式（7.8）$v_x=\dfrac{\partial\psi}{\partial y}$、$v_y=-\dfrac{\partial\psi}{\partial x}$；
+流体质点加速度 $a_x=\dfrac{\partial v_x}{\partial t}+v_x\dfrac{\partial v_x}{\partial x}+v_y\dfrac{\partial v_x}{\partial y}$（定常时第一项为零）；
+线变形率 $\varepsilon_{xx}=\dfrac{\partial v_x}{\partial x}$、$\varepsilon_{yy}=\dfrac{\partial v_y}{\partial y}$；
+式（7.1）$\dd\varphi=v_x\dd x+v_y\dd y$。
+
+\textbf{第 1 步（速度）：}
+\[
+v_x=\frac{\partial\psi}{\partial y}=1,\qquad v_y=-\frac{\partial\psi}{\partial x}=-1,\qquad
+|\bm{v}|=\sqrt{1^2+(-1)^2}=\sqrt{2}\approx 1.41\ \mathrm{m/s}
+\]
+即一个与 $x$ 轴成 $-45^\circ$ 的均匀流。
+
+\textbf{第 2 步（加速度）：} 因流动定常且速度分量都是常数（与 $x$、$y$、$t$ 无关），
+\[
+a_x=v_x\frac{\partial v_x}{\partial x}+v_y\frac{\partial v_x}{\partial y}=1\cdot 0+(-1)\cdot 0=0,\qquad a_y=0,\qquad \bm{a}=0
+\]
+
+\textbf{第 3 步（线变形率与旋转）：}
+\[
+\varepsilon_{xx}=\frac{\partial v_x}{\partial x}=0,\qquad \varepsilon_{yy}=\frac{\partial v_y}{\partial y}=0
+\]
+角变形率 $\varepsilon_{xy}=\dfrac{1}{2}\left(\dfrac{\partial v_x}{\partial y}+\dfrac{\partial v_y}{\partial x}\right)=0$；
+旋转角速度 $\omega_z=\dfrac{1}{2}\left(\dfrac{\partial v_y}{\partial x}-\dfrac{\partial v_x}{\partial y}\right)=0$，即流动无旋（均匀流必无旋）。
+
+\textbf{第 4 步（势函数）：}
+\[
+\dd\varphi=v_x\dd x+v_y\dd y=\dd x-\dd y\qquad\Longrightarrow\qquad \varphi=x-y+C
+\]
+验算：$\dfrac{\partial\varphi}{\partial x}=1=v_x$ $\checkmark$，$\dfrac{\partial\varphi}{\partial y}=-1=v_y$ $\checkmark$。
+
+\textbf{结果：}$v_x=1\ \mathrm{m/s}$，$v_y=-1\ \mathrm{m/s}$，$|\bm v|=\sqrt2\ \mathrm{m/s}$；
+$a_x=a_y=0$；$\varepsilon_{xx}=\varepsilon_{yy}=0$；$\varphi=x-y+C$（流动无旋，$\psi=x+y$ 与 $\varphi=x-y$ 正好构成柯西--黎曼条件，教材式 7.9）。
+\end{jie}
+
+\begin{yicuo}
+① 加速度为 0 只说明“速度场是常量场”，不等于压强处处为 0——压强仍要由伯努利方程定（本题未问）；
+② 给 $\psi$ 求速度是 $v_x=+\dfrac{\partial\psi}{\partial y}$、$v_y=-\dfrac{\partial\psi}{\partial x}$，换位且带负号，这是与“给 $\varphi$ 求速度”最容易混的一处；
+③ 线变形率只与自身速度分量的自身偏导有关，别把 $\varepsilon_{xy}$（角变形率）也一并算进 $\varepsilon_{xx}$；
+④ “$\psi=x+y$ 即均匀流”这一结论要记牢：$\psi=x+y$ 与 $\varphi=x-y$ 描述的正是 $45^\circ$ 方向的均匀流，E4 2019 年填空第 3 题就是照抄这道题。
+\end{yicuo}
+
+\noindent\textbf{第 7.5 题\quad 由流函数求速度分布与流线方程（E4 2015 年计算第 7 题原题，同教材例 7.2）}
+
+\begin{jie}
+\textbf{已知：} 平面定常流动的流函数 $\psi(x,y)=-\sqrt{3}x+y$；点 $A(1,0)$、$B(2,\sqrt{3})$。
+
+\textbf{依据：} 教材式（7.8）$v_x=\dfrac{\partial\psi}{\partial y}$、$v_y=-\dfrac{\partial\psi}{\partial x}$；
+流函数特性 2（沿同一条流线 $\psi=\text{const}$）；流函数特性 3（两条流线间的单宽流量等于流函数值之差）。
+
+\textbf{第 1 步（速度分布）：}
+\[
+v_x=\frac{\partial\psi}{\partial y}=1,\qquad v_y=-\frac{\partial\psi}{\partial x}=-(-\sqrt{3})=\sqrt{3}
+\]
+\[
+|\bm v|=\sqrt{1^2+(\sqrt{3})^2}=2\ \mathrm{m/s},\qquad
+\tan\alpha=\frac{v_y}{v_x}=\sqrt{3}\ \Longrightarrow\ \alpha=60^\circ
+\]
+即速度大小处处为 $2\ \mathrm{m/s}$、方向与 $x$ 轴正向成 $60^\circ$ 的均匀流（速度方向指向第一象限）。
+
+\textbf{第 2 步（流线方程）：} 令 $\psi=C$，得流线族
+\[
+-\sqrt{3}x+y=C\qquad\text{即}\qquad y=\sqrt{3}x+C
+\]
+（与速度方向一致的一族平行直线。）
+
+\textbf{第 3 步（过 $A$、$B$ 的流线）：}
+\[
+\psi_A=\psi(1,0)=-\sqrt{3}\times 1+0=-\sqrt{3}\]
+\[
+\psi_B=\psi(2,\sqrt{3})=-\sqrt{3}\times 2+\sqrt{3}=-\sqrt{3}
+\]
+两点的流函数值\textbf{相等}，说明 $A$、$B$ \textbf{落在同一条流线上}，该流线为
+\[
+\psi(x,y)=-\sqrt{3}\qquad\text{即}\qquad y=\sqrt{3}(x-1)
+\]
+所以通过 $A$、$B$ 两点连线的直线段的单宽流量为
+\[
+q=|\psi_B-\psi_A|=0
+\]
+
+\textbf{结果：} 速度分布 $v_x=1\ \mathrm{m/s}$、$v_y=\sqrt{3}\ \mathrm{m/s}$，$|\bm v|=2\ \mathrm{m/s}$，方向与 $x$ 轴成 $60^\circ$；
+过 $A(1,0)$ 与 $B(2,\sqrt{3})$ 的是\textbf{同一条}流线 $-\sqrt{3}x+y=-\sqrt{3}$（即 $y=\sqrt{3}(x-1)$），通过两点之间连线段的流量为 $0$。
+\end{jie}
+
+\begin{yicuo}
+① 本题的“陷阱”就在结果 0：$A$、$B$ 两点恰在同一条流线上，所以“通过两点的流量”为 0，很多同学会再套一次积分算出非零的数；
+② 流线方程只是 $\psi=\text{const}$，不要与迹线混淆（迹线要解流线微分方程 $\dfrac{\dd x}{v_x}=\dfrac{\dd y}{v_y}$）；
+③ 2022 年真题把同一流函数改成填空“则速度分量 $v=$”，仍按式（7.8）算；
+④ 判断两点是否同一条流线，只需比较 $\psi$ 值，不必画图。
+\end{yicuo}
+
+\noindent\textbf{第 7.6 题\quad 已知 $\varphi=ax(x^2-3y^2)$ 求流速、流函数与流量（E4 2014 年计算第 9 题原题）}
+
+\begin{jie}
+\textbf{已知：} 平面不可压缩流体速度势函数 $\varphi=ax(x^2-3y^2)=a(x^3-3xy^2)$，其中 $a<0$；
+点 $A(0,0)$、$B(1,1)$，求通过 $A$、$B$ 连线段的流体流量。
+
+\textbf{依据：} 教材式（7.3）$v_x=\dfrac{\partial\varphi}{\partial x}$、$v_y=\dfrac{\partial\varphi}{\partial y}$；
+式（7.6）$\dd\psi=-v_y\dd x+v_x\dd y$；流函数特性 3（两流线间单宽流量等于流函数值之差）。
+
+\textbf{第 1 步（速度分量）：}
+\[
+v_x=\frac{\partial\varphi}{\partial x}=a(3x^2-3y^2)=3a(x^2-y^2)
+\]
+\[
+v_y=\frac{\partial\varphi}{\partial y}=a(-6xy)=-6axy
+\]
+（可以顺手验证 $\nabla^2\varphi=\dfrac{\partial^2\varphi}{\partial x^2}+\dfrac{\partial^2\varphi}{\partial y^2}=6ax-6ax=0$，$\varphi$ 是调和函数，与教材 \S7.1.1 特性 1 相符。）
+
+\textbf{第 2 步（求流函数）：}
+\[
+\dd\psi=-v_y\dd x+v_x\dd y=6axy\dd x+3a(x^2-y^2)\dd y
+\]
+对 $x$ 积分：$\psi=3ax^2y+f(y)$；由
+$\dfrac{\partial\psi}{\partial y}=3ax^2+f'(y)=v_x=3a(x^2-y^2)$ 得 $f'(y)=-3ay^2$，$f(y)=-ay^3$，于是
+\[
+\psi=3ax^2y-ay^3=a(3x^2y-y^3)+C
+\]
+
+\textbf{第 3 步（验算）：}$\dfrac{\partial\psi}{\partial y}=3ax^2-3ay^2=3a(x^2-y^2)=v_x$ $\checkmark$，
+$-\dfrac{\partial\psi}{\partial x}=-6axy=v_y$ $\checkmark$。
+
+\textbf{第 4 步（流量）：} 取 $C=0$，
+\[
+\psi_A=\psi(0,0)=0,\qquad \psi_B=\psi(1,1)=a(3\times 1\times 1-1)=2a
+\]
+因为 $a<0$，$\psi_B=2a<0$，因此通过 $A$、$B$ 连线段的\textbf{单宽流量}为
+\[
+q=|\psi_B-\psi_A|=|2a|=2|a|=-2a>0
+\]
+
+\textbf{结果：} 流速 $v_x=3a(x^2-y^2)$、$v_y=-6axy$；流函数 $\psi=a(3x^2y-y^3)+C$；
+通过 $A(0,0)$ 与 $B(1,1)$ 连线段、垂直于流动平面单位厚度的流体流量为 $q=2|a|=-2a$（单位 $\mathrm{m^2/s}$，方向由 $A$ 侧指向 $B$ 侧一侧由 $\psi$ 的正负号判断）。
+\end{jie}
+
+\begin{yicuo}
+① 流量是\textbf{单宽}流量（单位 $\mathrm{m^2/s}$），本题没有给厚度，答“体积流量”就错了；
+② $a<0$ 时要把结果写成正值 $q=2|a|=-2a$，写成 $q=2a$ 是负数，物理上讲不通；
+③ 用“流函数值之差＝流量”这一步是教材流函数特性 3，不必对 $v_x$ 再沿直线段积分（那样要做曲线积分，容易错）；
+④ 求 $\psi$ 时 $\dd\psi=-v_y\dd x+v_x\dd y$ 中 $v_y$ 前的负号再一次是关键。
+\end{yicuo}
+
+\noindent\textbf{第 7.7 题\quad 由复势分析流动的组成}
+
+\begin{jie}
+\textbf{已知：}（1）$f(z)=(1+i)z$；（2）$f(z)=(1+i)\ln\dfrac{z+1}{z-4}$；（3）$f(z)=-6iz+\dfrac{24i}{z}$。
+
+\textbf{依据：} 教材式（7.10）$W(z)=\varphi+\mathrm{i}\psi$；
+式（7.19）均匀流 $W(z)=u_\infty z\ee^{-\mathrm{i}\alpha}$；
+式（7.28）点源（汇）$W(z)=\pm\dfrac{q}{2\pi}\ln z$；
+式（7.35）点涡 $W(z)=\dfrac{\Gamma}{2\pi \mathrm{i}}\ln z=-\mathrm{i}\dfrac{\Gamma}{2\pi}\ln z$；
+\S7.3.3 偶极子 $W(z)=\dfrac{M}{2\pi z}$；\S7.3.1 势流叠加原理；\S7.4 圆柱体绕流。
+
+\textbf{（1）$f(z)=(1+i)z$：}
+与式（7.19）对照，$u_\infty \ee^{-\mathrm{i}\alpha}=1+\mathrm{i}=\sqrt{2}\,\ee^{\mathrm{i}\pi/4}$，即
+\[
+u_\infty=\sqrt{2}\ \mathrm{m/s},\qquad \alpha=-\frac{\pi}{4}=-45^\circ
+\]
+\textbf{组成：} 速度大小 $\sqrt{2}\ \mathrm{m/s}$、方向与 $x$ 轴正向成 $-45^\circ$（指向第四象限）的\textbf{均匀流}。
+验算：$\varphi=\text{Re}\,f=x-y$、$\psi=\text{Im}\,f=x+y$，于是 $v_x=\dfrac{\partial\varphi}{\partial x}=1$、$v_y=\dfrac{\partial\varphi}{\partial y}=-1$ $\checkmark$。
+
+\textbf{（2）$f(z)=(1+i)\ln\dfrac{z+1}{z-4}=(1+i)\ln(z+1)-(1+i)\ln(z-4)$：}
+把系数 $1+\mathrm{i}$ 拆成\textbf{实部 1}（对应源汇，式 7.28）与\textbf{虚部 $\mathrm{i}$}（对应点涡，式 7.35）：
+\[
+\underbrace{+\ln(z+1)}_{\text{点源}}\ \underbrace{-\ln(z-4)}_{\text{点汇}}\ \underbrace{+\mathrm{i}\ln(z+1)}_{\text{点涡}}\ \underbrace{-\mathrm{i}\ln(z-4)}_{\text{点涡}}
+\]
+\begin{itemize}
+\item $\ln(z+1)$ 与 $-\ln(z-4)$：由式（7.28）—（7.29），分别是以 $q/2\pi=1$ 即 $q=2\pi$ 的强度位于 $(-1,0)$ 的\textbf{点源}和强度 $q=2\pi$ 位于 $(4,0)$ 的\textbf{点汇}；
+\item $\mathrm{i}\ln(z+1)=-\mathrm{i}\dfrac{\Gamma}{2\pi}\ln(z+1)$ 对应 $-\dfrac{\Gamma}{2\pi}=1$，即 $\Gamma=-2\pi$，位于 $(-1,0)$ 的\textbf{顺时针点涡}；
+\item $-\mathrm{i}\ln(z-4)=-\mathrm{i}\dfrac{\Gamma}{2\pi}\ln(z-4)$ 对应 $\dfrac{\Gamma}{2\pi}=1$，即 $\Gamma=+2\pi$，位于 $(4,0)$ 的\textbf{逆时针点涡}。
+\end{itemize}
+\textbf{组成：} 位于 $(-1,0)$ 的点源、位于 $(4,0)$ 的点汇（两者强度都是 $2\pi$），再叠加一对等强度、方向相反的点涡（$\Gamma=\mp 2\pi$），即为\textbf{源汇＋一对反向点涡}的组合流。
+写成实函数（令 $z+1=r_1\ee^{\mathrm{i}\theta_1}$、$z-4=r_2\ee^{\mathrm{i}\theta_2}$）：
+\[
+\varphi=\ln\frac{r_1}{r_2}-(\theta_1-\theta_2),\qquad
+\psi=\ln\frac{r_1}{r_2}+(\theta_1-\theta_2)
+\]
+
+\textbf{（3）$f(z)=-6\mathrm{i} z+\dfrac{24\mathrm{i}}{z}$：}
+第一项与式（7.19）对照：$u_\infty\ee^{-\mathrm{i}\alpha}=-6\mathrm{i}=6\ee^{-\mathrm{i}\pi/2}$，得
+\[
+u_\infty=6\ \mathrm{m/s},\qquad \alpha=+\frac{\pi}{2}=90^\circ
+\]
+即在 $y$ 轴正向、大小为 $6\ \mathrm{m/s}$ 的\textbf{均匀流}。
+第二项与偶极子复势 $W(z)=\dfrac{M}{2\pi z}$ 对照，得偶极子强度 $M=48\pi\mathrm{i}$，即偶极矩方向沿 $y$ 轴。
+作坐标旋转 $\zeta=-\mathrm{i} z$（把 $+y$ 方向转到 $\zeta$ 平面的实轴上），则 $z=\mathrm{i}\zeta$，
+\[
+f=-6\mathrm{i}(\mathrm{i}\zeta)+\frac{24\mathrm{i}}{\mathrm{i}\zeta}=6\zeta+\frac{24}{\zeta}=6\left(\zeta+\frac{4}{\zeta}\right)
+\]
+与教材 \S7.4 的圆柱体绕流复势 $W=u_\infty\left(z+\dfrac{r_0^2}{z}\right)$ 对照：$u_\infty=6\ \mathrm{m/s}$、$r_0^2=4$，即 $r_0=2\ \mathrm{m}$。
+\textbf{组成：} 沿 $+y$ 方向、大小为 $6\ \mathrm{m/s}$ 的均匀流与一个偶极子（$M=48\pi$）叠加，等价于\textbf{绕半径 $r_0=2\ \mathrm{m}$ 的圆柱体的无环量绕流}。
+驻点：令 $\dfrac{\dd f}{\dd z}=0$，在 $\zeta$ 平面为 $6\left(1-\dfrac{4}{\zeta^2}\right)=0$，得 $\zeta=\pm 2$，由 $z=\mathrm{i}\zeta$ 得 $z=\pm 2\mathrm{i}$，
+即圆柱表面的 $(0,2)$ 与 $(0,-2)$ 两点。
+
+\textbf{结果：}（1）均匀流，速度 $\sqrt{2}\ \mathrm{m/s}$，方向与 $x$ 轴成 $-45^\circ$；
+（2）位于 $(-1,0)$ 强度 $2\pi$ 的点源 ＋ 位于 $(4,0)$ 强度 $2\pi$ 的点汇 ＋ 一对等强度反向点涡（环量 $\Gamma=\mp 2\pi$）；
+（3）沿 $+y$ 方向 $6\ \mathrm{m/s}$ 的均匀流 ＋ 偶极子（$M=48\pi$），等价于绕半径 $2\ \mathrm{m}$ 圆柱体的无环量绕流，驻点为 $(0,\pm 2)$。
+\end{jie}
+
+\begin{yicuo}
+① 拆复势的关键是“\textbf{按系数拆}”：$\ln$ 项的实系数给源（正）或汇（负），虚系数给点涡；$1/z$ 项给偶极子；$z$ 的一次项给均匀流；
+② 点涡的复势是 $\dfrac{\Gamma}{2\pi\mathrm{i}}\ln z=-\mathrm{i}\dfrac{\Gamma}{2\pi}\ln z$（式 7.35），\textbf{不要漏掉那个 $\mathrm{i}$}，否则会把点涡当点源；
+③ 判断均匀流方向时把系数写成 $u_\infty\ee^{-\mathrm{i}\alpha}$ 的标准形，注意 $\ee^{-\mathrm{i}\alpha}$ 里是\emph{负}号，符号看错方向会转 90$^\circ$；
+④ 复势中的下标参数（$q=2\pi$、$\Gamma=\mp2\pi$、$M=48\pi$）都要写成具体数值，只写“含 $\ln$ 项就是源”拿不到分。
+\end{yicuo}
+
+\noindent\textbf{第 7.8 题\quad 两个点源的速度分布}
+
+\begin{jie}
+\textbf{已知：} 两个点源在 $x$ 轴上相距 $a$：第一个强度 $2q$、位于原点 $(0,0)$；第二个强度 $q$、位于 $(a,0)$；$q>0$。
+
+\textbf{依据：} 教材式（7.20）$u_r=\dfrac{\pm q}{2\pi r}$、$u_\theta=0$；
+式（7.24）与式（7.26）——位于 $(x_0,y_0)$、强度 $q$ 的点源在直角坐标中的速度分量为
+\[
+u_x=\frac{q}{2\pi}\frac{x-x_0}{(x-x_0)^2+(y-y_0)^2},\qquad
+u_y=\frac{q}{2\pi}\frac{y-y_0}{(x-x_0)^2+(y-y_0)^2}
+\]
+\S7.3.1 叠加原理（速度分量分别叠加）。
+
+\textbf{第 1 步（原点的点源）：} $r^2=x^2+y^2$，强度为 $2q$，故
+\[
+u_{x1}=\frac{2q}{2\pi}\cdot\frac{x}{x^2+y^2}=\frac{q}{\pi}\cdot\frac{x}{x^2+y^2},\qquad
+u_{y1}=\frac{q}{\pi}\cdot\frac{y}{x^2+y^2}
+\]
+
+\textbf{第 2 步（$(a,0)$ 处的点源）：} 以该点为极心，$r_2^2=(x-a)^2+y^2$，强度为 $q$，故
+\[
+u_{x2}=\frac{q}{2\pi}\cdot\frac{x-a}{(x-a)^2+y^2},\qquad
+u_{y2}=\frac{q}{2\pi}\cdot\frac{y}{(x-a)^2+y^2}
+\]
+
+\textbf{第 3 步（叠加）：}
+\[
+\boxed{\,v_x=\frac{q}{2\pi}\left[\frac{2x}{x^2+y^2}+\frac{x-a}{(x-a)^2+y^2}\right]\,}
+\]
+\[
+\boxed{\,v_y=\frac{q}{2\pi}\left[\frac{2y}{x^2+y^2}+\frac{y}{(x-a)^2+y^2}\right]\,}
+\]
+
+\textbf{第 4 步（极坐标形式）：} 若以原点为极心记 $r=\sqrt{x^2+y^2}$、$\theta=\arctan\dfrac{y}{x}$，则原点的源贡献 $u_{r1}=\dfrac{2q}{2\pi r}=\dfrac{q}{\pi r}$；
+以 $(a,0)$ 为极心记 $r_2$、$\theta_2$，则 $u_{r2}=\dfrac{q}{2\pi r_2}$，再由两套极坐标的转换叠加。
+
+\textbf{结果：} 速度分布如上两式（单位 $\mathrm{m/s}$）；两源连线上（$y=0$）有 $v_y=0$，且
+\[
+v_x=\frac{q}{2\pi}\left(\frac{2}{x}+\frac{1}{x-a}\right)
+\]
+在 $x\in(0,a)$ 内 $v_x$ 变号，说明两源之间存在一个 $v_x=0$ 的点（该点处两源贡献等值反向）。
+\end{jie}
+
+\begin{yicuo}
+① 点源的速度是\textbf{径向}的，写成直角分量必须同时带上 $x$、$y$ 因子（$u_x\propto x$、$u_y\propto y$），只写 $u\propto 1/r$ 无法叠加；
+② 两个源的\textbf{大小不能直接相加}，要各自分解成 $x$、$y$ 分量后再相加（方向不同）；
+③ 点源强度 $q$ 与点汇强度都按“单宽流量”定义（式 7.20），单位是 $\mathrm{m^2/s}$；
+④ 第二个源的 $x$ 坐标要写成 $x-a$，漏掉平移是常见错。
+\end{yicuo}
+
+\noindent\textbf{第 7.9 题\quad 一对反向点涡＋平行来流在原点的合成速度（E4 2016、2018 年计算题原题）}
+
+\begin{jie}
+\textbf{已知：} 一对等强度 $\Gamma$（$\Gamma>0$）、方向相反的点涡分别固定在 $(0,h)$ 与 $(0,-h)$；
+无穷远处有平行于 $x$ 轴、大小为 $v_\infty$ 的来流。求原点 $O$ 处的合成速度。
+
+\textbf{依据：} 教材式（7.30）点涡的速度场 $u_r=0$、$u_\theta=\dfrac{\Gamma}{2\pi r}$（$\Gamma>0$ 为逆时针）；
+\S7.3.1 叠加原理。
+
+\textbf{第 1 步（写出一般式）：}
+位于 $(0,y_v)$、环量为 $\Gamma_v$ 的点涡（式 7.30 的速度场
+$\bm v=\dfrac{\Gamma_v}{2\pi}\cdot\dfrac{(-y+x_v^{\prime},\ x-y_v^{\prime})}{r^{\prime 2}}$ 的直角坐标形式）在原点诱导的速度只有 $x$ 分量：
+\[
+v_x(O)=\frac{\Gamma_v}{2\pi}\cdot\frac{y_v}{y_v^{\,2}}=\frac{\Gamma_v}{2\pi y_v},\qquad v_y(O)=0
+\]
+
+\textbf{第 2 步（两个涡分别计算）：} 设 $(0,h)$ 处的涡为逆时针（$\Gamma_v=+\Gamma$）、$(0,-h)$ 处的涡为顺时针（$\Gamma_v=-\Gamma$），则
+\[
+\text{涡 }(0,h):\quad v_x=\frac{+\Gamma}{2\pi(+h)}=\frac{\Gamma}{2\pi h},\qquad
+\text{涡 }(0,-h):\quad v_x=\frac{-\Gamma}{2\pi(-h)}=\frac{\Gamma}{2\pi h}
+\]
+两个涡在原点诱导的速度\textbf{大小相等、方向相同，都沿 $+x$ 方向}，各为 $\dfrac{\Gamma}{2\pi h}$。
+
+\textbf{第 3 步（与来流叠加）：}
+\[
+v_O=v_\infty+2\times\frac{\Gamma}{2\pi h}=v_\infty+\frac{\Gamma}{\pi h}
+\]
+
+\textbf{结果：} 原点合成速度沿 $x$ 轴方向，大小为
+\[
+\boxed{\,v_O=v_\infty+\frac{\Gamma}{\pi h}\,}
+\]
+（沿 $+x$ 正向）。若把两个涡的旋向对调（$(0,h)$ 处顺时针、$(0,-h)$ 处逆时针），则诱导速度反向，结果为 $v_O=v_\infty-\dfrac{\Gamma}{\pi h}$，仍沿 $x$ 轴。
+\end{jie}
+
+\begin{yicuo}
+① 本题最大的坑是\textbf{“方向相反即位于原点的速度抵消”}的错误直觉：两涡的旋向相反，但它们到原点的位矢方向\emph{也}相反，
+两次反号相互抵消，所以在原点的诱导速度\textbf{同向叠加}（不是抵消）。这正是 2016、2018 两年连考这道题的原因；
+② 点涡在一点的诱导速度方向是\emph{切向}，要先把位矢方向转 $90^\circ$ 再定正负；$\Gamma>0$ 定义为逆时针（式 7.30）；
+③ 别忘了还要加上无穷远来流 $v_\infty$；
+④ 原点在两涡连线的中点，故 $r=h$，若求别的点则要用各自的 $r$。
+\end{yicuo}
+
+\noindent\textbf{第 7.10 题\quad 均匀流＋点源的驻点与过驻点流线（E4 2015、2019 年计算题原题）}
+
+\begin{jie}
+\textbf{已知：} 速度为 $v_\infty$、平行于 $x$ 轴的均匀流，与位于原点、强度为 $q$ 的点源叠加。
+
+\textbf{依据：} 教材 \S7.3.1 势流叠加原理（$\varphi$、$\psi$、$W$ 代数相加）；
+式（7.16）均匀流 $\varphi=u_\infty x$、式（7.17）$\psi=u_\infty y$；
+式（7.21）点源 $\varphi=\dfrac{q}{2\pi}\ln r$、式（7.23）点源 $\psi=\dfrac{q}{2\pi}\theta$（$\theta=\arctan\dfrac{y}{x}$）；
+式（7.3）、式（7.8）。
+
+\textbf{第 1 步（叠加势函数与流函数）：}
+\[
+\varphi=v_\infty x+\frac{q}{2\pi}\ln\sqrt{x^2+y^2},\qquad
+\psi=v_\infty y+\frac{q}{2\pi}\theta,\qquad \theta=\arctan\frac{y}{x}
+\]
+
+\textbf{第 2 步（速度场）：}
+\[
+v_x=\frac{\partial\varphi}{\partial x}=v_\infty+\frac{q}{2\pi}\cdot\frac{x}{x^2+y^2},\qquad
+v_y=\frac{\partial\varphi}{\partial y}=\frac{q}{2\pi}\cdot\frac{y}{x^2+y^2}
+\]
+
+\textbf{第 3 步（求驻点）：} 令 $v_y=0$，得 $y=0$（原点除外）；
+再把 $y=0$ 代入 $v_x=0$：
+\[
+v_\infty+\frac{q}{2\pi x}=0\qquad\Longrightarrow\qquad x=-\frac{q}{2\pi v_\infty}
+\]
+故\textbf{驻点位于 $x$ 轴负半轴}：
+\[
+S\left(-\frac{q}{2\pi v_\infty},\ 0\right)
+\]
+
+\textbf{第 4 步（过驻点的流线）：} 驻点在负 $x$ 轴上，其极角 $\theta=\pi$，因此
+\[
+\psi_S=v_\infty\times 0+\frac{q}{2\pi}\cdot\pi=\frac{q}{2}
+\]
+过驻点的流线为
+\[
+\boxed{\,v_\infty y+\frac{q}{2\pi}\arctan\frac{y}{x}=\frac{q}{2}\,}
+\]
+等价写法：$v_\infty r\sin\theta+\dfrac{q}{2\pi}\theta=\dfrac{q}{2}$。
+这条流线就是\textbf{半体（Rankine 半体）的轮廓线}，其上游端点正是驻点；当 $x\to+\infty$ 时 $\theta\to 0$，得半体在下游的半宽
+\[
+a=\frac{q}{2v_\infty}
+\]
+（与驻点位置 $x_S=-\dfrac{q}{2\pi v_\infty}=-\dfrac{a}{\pi}$ 相印证：驻点距原点的距离是“半宽/$\pi$”，可用作快速自检。）
+
+\textbf{结果：} 驻点为 $S\left(-\dfrac{q}{2\pi v_\infty},0\right)$；通过驻点的流线方程为
+$v_\infty y+\dfrac{q}{2\pi}\arctan\dfrac{y}{x}=\dfrac{q}{2}$（半体轮廓线，下游半宽 $a=\dfrac{q}{2v_\infty}$）。
+\end{jie}
+
+\begin{yicuo}
+① 驻点必定在来流的\textbf{上游}（$x<0$）：点源把上游流体“顶”住，解出正值 $x$ 就说明把方程写错了；
+② 求驻点要\textbf{先令 $v_y=0$} 定出 $y=0$ 这条线，再令 $v_x=0$ 求位置，两步分开写不易错；
+③ 过驻点流线的常数项是 $\psi_S=\dfrac{q}{2}$（因为 $\theta=\pi$），写成 $\dfrac{q}{2\pi}\cdot\dfrac{\pi}{2}$ 之类就错了；
+④ $q$、$v_\infty$ 未被赋值，结果就是含字母的表达式，不要硬代数字。
+\end{yicuo}
+
+\noindent\textbf{第 7.11 题\quad 均匀流＋点涡：由驻点位置反求点涡强度}
+
+\begin{jie}
+\textbf{已知：} 沿 $x$ 轴正向的均匀流 $U=10\ \mathrm{m/s}$；原点处有点涡（强度未知）；
+驻点位于 $(0,-5)$。求（1）点涡强度；（2）点 $(0,5)$ 的速度；（3）过驻点的流线方程。
+
+\textbf{依据：} 教材 \S7.3.1 叠加原理；式（7.31）点涡 $\varphi=\dfrac{\Gamma}{2\pi}\theta$、式（7.32）点涡 $\psi=-\dfrac{\Gamma}{2\pi}\ln r$；
+式（7.16）、式（7.17）均匀流的 $\varphi$、$\psi$；式（7.3）、式（7.8）。
+
+\textbf{第 1 步（叠加）：} 取 $\theta=\arctan\dfrac{y}{x}$、$r=\sqrt{x^2+y^2}$，
+\[
+\varphi=Ux+\frac{\Gamma}{2\pi}\theta,\qquad \psi=Uy-\frac{\Gamma}{2\pi}\ln r
+\]
+\[
+v_x=\frac{\partial\varphi}{\partial x}=U-\frac{\Gamma}{2\pi}\cdot\frac{y}{x^2+y^2},\qquad
+v_y=\frac{\partial\varphi}{\partial y}=\frac{\Gamma}{2\pi}\cdot\frac{x}{x^2+y^2}
+\]
+（用式 7.8 从 $\psi$ 求导结果完全相同，可互为验算。）
+
+\textbf{第 2 步（由驻点求 $\Gamma$）：}
+令 $v_y=0$，得 $x=0$（即驻点在 $y$ 轴上，与已知条件相符）；
+再把 $x=0$ 代入 $v_x=0$：
+\[
+v_x=U-\frac{\Gamma}{2\pi y}=0\qquad\Longrightarrow\qquad \Gamma=2\pi U y
+\]
+代入驻点 $y=-5\ \mathrm{m}$：
+\[
+\Gamma=2\pi\times 10\times(-5)=-100\pi\approx -314.2\ \mathrm{m^2/s}
+\]
+负号表示该点涡为\textbf{顺时针}方向，其环量大小为 $|\Gamma|=100\pi\approx 314.2\ \mathrm{m^2/s}$。
+
+\textbf{第 3 步（点 $(0,5)$ 的速度）：} 在 $x=0$ 上 $v_y=0$，
+\[
+v_x=U-\frac{\Gamma}{2\pi y}=10-\frac{-100\pi}{2\pi\times 5}=10+10=20\ \mathrm{m/s}
+\]
+即速度沿 $+x$ 方向、大小为 $20\ \mathrm{m/s}$。
+（验算：驻点与点 $(0,5)$ 到点涡的距离分别是 $5$ 与 $5$，点涡诱导速度大小相同、方向都沿 $+x$ 或都沿 $-x$；
+均匀流贡献 $10$，叠加后在驻点处恰好抵消、在点 $(0,5)$ 处加倍，得 $2U=20\ \mathrm{m/s}$ $\checkmark$。）
+
+\textbf{第 4 步（过驻点的流线）：}
+\[
+\psi=Uy-\frac{\Gamma}{2\pi}\ln r=10y+50\ln r\qquad\left(\frac{-\Gamma}{2\pi}=\frac{100\pi}{2\pi}=50\right)
+\]
+驻点处 $r=5$，故
+\[
+\psi_S=10\times(-5)+50\ln 5=-50+50\ln 5
+\]
+过驻点的流线方程为
+\[
+\boxed{\,10y+50\ln\sqrt{x^2+y^2}=50\ln 5-50\,}
+\]
+化简为更常用的形式：
+\[
+y+\frac{5}{2}\ln\frac{x^2+y^2}{25}=-5
+\qquad\text{或}\qquad 10y+25\ln(x^2+y^2)=50(\ln 5-1)
+\]
+
+\textbf{结果：}（1）$\Gamma=-100\pi\approx -314.2\ \mathrm{m^2/s}$（顺时针，环量大小 $100\pi\ \mathrm{m^2/s}$）；
+（2）点 $(0,5)$ 的速度为 $20\ \mathrm{m/s}$，方向沿 $+x$ 轴；
+（3）过驻点的流线方程 $y+\dfrac{5}{2}\ln\dfrac{x^2+y^2}{25}=-5$（等价于 $10y+25\ln(x^2+y^2)=50(\ln5-1)$）。
+\end{jie}
+
+\begin{yicuo}
+① 点涡强度的\textbf{正负号}就是旋向，$\Gamma<0$ 表示顺时针，不能只答 $100\pi$ 而丢掉方向判断；
+② 驻点一定落在点涡“加速”的那一侧（顺时针涡把驻点压到下方 $y<0$），与 2019 年选择第 3 题“绕流顺时针旋转圆柱，驻点可能出现的位置”是同一个结论；
+③ 过驻点流线的常数要连 $\ln 5$ 一起保留，直接写 $-50$ 是把 $50\ln5$ 丢了；
+④ 单位：$\Gamma$ 的单位是 $\mathrm{m^2/s}$，不是 $\mathrm{m^3/s}$。
+\end{yicuo}
+
+\noindent\textbf{第 7.12 题\quad 点源＋点汇叠加流场中的速度与压强}
+
+\begin{jie}
+\textbf{已知：} 平面势流由点源与点汇叠加而成。点源位于 $(-1,0)$，强度 $m_1=20\ \mathrm{m^2/s}$；
+点汇位于 $(2,0)$，强度 $m_2=40\ \mathrm{m^2/s}$；流体密度 $\rho=1.8\ \mathrm{kg/m^3}$；已知点 $(0,0)$ 处压强 $p_0=0$。
+求点 $(0,1)$ 与点 $(1,1)$ 的速度和压强。
+
+\textbf{依据：} 教材式（7.20）$u_r=\dfrac{\pm q}{2\pi r}$、式（7.24）源（汇）的直角坐标速度分量与式（7.26）（源不在原点）；
+\S7.3.1 叠加原理；\textbf{式（4.9）欧拉积分}（无旋流动的伯努利方程，常数在全流场通用）：
+\[
+p+\frac{1}{2}\rho v^2=C_T
+\]
+（本题为水平平面势流，可忽略重力项；式 4.10 中 $z$ 相同。）
+
+\textbf{第 1 步（速度场）：} 记 $K_1=\dfrac{m_1}{2\pi}=\dfrac{10}{\pi}$、$K_2=\dfrac{m_2}{2\pi}=\dfrac{20}{\pi}$。
+点源在 $(-1,0)$ 处，其径向矢量 $(x+1,\,y)$；点汇（吸流）在 $(2,0)$ 处，其径向矢量 $(x-2,\,y)$ 指向汇，故速度取负号：
+\[
+v_x=K_1\frac{x+1}{(x+1)^2+y^2}-K_2\frac{x-2}{(x-2)^2+y^2}
+\]
+\[
+v_y=K_1\frac{y}{(x+1)^2+y^2}-K_2\frac{y}{(x-2)^2+y^2}
+\]
+
+\textbf{第 2 步（用已知点定常数 $C_T$）：} 在 $(0,0)$ 处，到点源距离 $r_1=1$、到点汇距离 $r_2=2$，
+\[
+v_x=K_1\frac{1}{1^2}-K_2\frac{-2}{2^2}=\frac{10}{\pi}+\frac{10}{\pi}=\frac{20}{\pi},\qquad v_y=0
+\]
+\[
+C_T=p_0+\frac{1}{2}\rho v_0^2=0+\frac{1}{2}\times 1.8\times\left(\frac{20}{\pi}\right)^2
+=\frac{360}{\pi^2}\ \mathrm{Pa}
+\]
+
+\textbf{第 3 步（点 $(0,1)$）：} $r_1=\sqrt{1^2+1^2}=\sqrt2$、$r_2=\sqrt{2^2+1^2}=\sqrt5$，
+\[
+v_x=K_1\frac{1}{2}-K_2\frac{-2}{5}=\frac{10}{\pi}\cdot\frac{1}{2}+\frac{20}{\pi}\cdot\frac{2}{5}=\frac{5}{\pi}+\frac{8}{\pi}=\frac{13}{\pi}\ \mathrm{m/s}
+\]
+\[
+v_y=K_1\frac{1}{2}-K_2\frac{1}{5}=\frac{5}{\pi}-\frac{4}{\pi}=\frac{1}{\pi}\ \mathrm{m/s}
+\]
+\[
+v^2=\frac{13^2+1^2}{\pi^2}=\frac{170}{\pi^2}
+\]
+\[
+p=C_T-\frac{1}{2}\rho v^2=\frac{360}{\pi^2}-\frac{1}{2}\times 1.8\times\frac{170}{\pi^2}
+=\frac{360-153}{\pi^2}=\frac{207}{\pi^2}\approx 21.0\ \mathrm{Pa}
+\]
+
+\textbf{第 4 步（点 $(1,1)$）：} $r_1=\sqrt{2^2+1^2}=\sqrt5$、$r_2=\sqrt{1^2+1^2}=\sqrt2$，
+\[
+v_x=K_1\frac{2}{5}-K_2\frac{-1}{2}=\frac{10}{\pi}\cdot\frac{2}{5}+\frac{20}{\pi}\cdot\frac{1}{2}=\frac{4}{\pi}+\frac{10}{\pi}=\frac{14}{\pi}\ \mathrm{m/s}
+\]
+\[
+v_y=K_1\frac{1}{5}-K_2\frac{1}{2}=\frac{2}{\pi}-\frac{10}{\pi}=-\frac{8}{\pi}\ \mathrm{m/s}
+\]
+\[
+v^2=\frac{14^2+(-8)^2}{\pi^2}=\frac{260}{\pi^2}
+\]
+\[
+p=C_T-\frac{1}{2}\rho v^2=\frac{360}{\pi^2}-\frac{1}{2}\times 1.8\times\frac{260}{\pi^2}
+=\frac{360-234}{\pi^2}=\frac{126}{\pi^2}\approx 12.8\ \mathrm{Pa}
+\]
+
+\textbf{结果：}
+点 $(0,1)$：$\bm v=\left(\dfrac{13}{\pi},\dfrac{1}{\pi}\right)\approx(4.14,\,0.32)\ \mathrm{m/s}$，$|\bm v|=\dfrac{\sqrt{170}}{\pi}\approx 4.15\ \mathrm{m/s}$，
+$p=\dfrac{207}{\pi^2}\approx 21.0\ \mathrm{Pa}$；
+点 $(1,1)$：$\bm v=\left(\dfrac{14}{\pi},-\dfrac{8}{\pi}\right)\approx(4.46,\,-2.55)\ \mathrm{m/s}$，$|\bm v|=\dfrac{\sqrt{260}}{\pi}\approx 5.13\ \mathrm{m/s}$，
+$p=\dfrac{126}{\pi^2}\approx 12.8\ \mathrm{Pa}$。
+\end{jie}
+
+\begin{yicuo}
+① 点汇（吸流）的速度公式前面带\textbf{负号}，写成正号会把汇当成源，全题速度方向都错；
+② 叠加的是\textbf{分量}，不是速率：两源的速率不能直接相加（方向不同）；
+③ 伯努利方程能用是因为“源＋汇”叠加后的流动仍然\textbf{无旋}（势函数存在），此时式（4.9）的 $C_T$ 在整个流场通用；
+若换成有旋流动，只能用式（4.8）沿同一条流线取常数——这是本章与第 4 章最容易混的接口；
+④ $\pi$ 不要提前取近似值，全程保留 $\dfrac{1}{\pi^2}$，最后一步再给小数，可以避免累积误差；
+⑤ 注意 $K_1=\dfrac{m_1}{2\pi}$ 里的 $2\pi$ 来自式（7.20），不是 $\pi$。
+\end{yicuo}

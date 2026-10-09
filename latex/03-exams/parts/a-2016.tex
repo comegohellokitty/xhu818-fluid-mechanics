@@ -1,0 +1,599 @@
+\chapter{2016 年 818 工程流体力学试题参考答案}
+
+\begin{tishi}
+本答案由原卷拍照件整理，个别步骤与符号已按流体力学标准写法规范化。
+原卷封面与答案卷首页所印科目代码为「817 工程流体力学」（与本书 2016 年试题章的说明一致），
+本册按现行 818 编排，考查内容体系不变。
+\end{tishi}
+
+\answ{一、选择题（共 30 分，每小题 3 分）}
+
+\begin{enumerate}[label={}]
+  \item 1.~B \quad 2.~C \quad 3.~D \quad 4.~B \quad 5.~A
+  \item 6.~C \quad 7.~B \quad 8.~B \quad 9.~C \quad 10.~B
+\end{enumerate}
+
+\begin{tishi}
+\textbf{选择题简要理由（原答卷只给字母，此处按流体力学补写）：}
+\begin{enumerate}
+  \item 第 1 题：液体的黏性主要来自分子间的内聚力（气体的黏性主要来自分子热运动），故（B）对。
+  \item 第 2 题：相对压强以当地大气压为零点，故（C）对。
+  \item 第 3 题：重力场中做加速直线运动的液体，其自由面（等压面）与重力、惯性力的合力处处正交，故（D）对。
+  \item 第 4 题：均匀流的速度不随流程变化，迁移加速度为零，故（B）对。
+  \item 第 5 题：铅垂管中水自上而下流动，等径时两断面流速相同，由能量方程
+    $z_1+\dfrac{p_1}{\gamma}=z_2+\dfrac{p_2}{\gamma}+h_f$，等号左端之差即两断面测压管水头差 $h$，
+    故 $h_f=h$，选（A）。（原卷选项 D 的 OCR 作乱码，按与 A、B、C 同一物理量关系补为 $h_f=h-l$，不影响本题答案。）
+  \item 第 6 题：湍流过渡区的沿程阻力系数与雷诺数和相对粗糙度 $\Delta/d$ 都有关，故（C）对。
+  \item 第 7 题：圆管层流 $\tau=\mu\dfrac{\dd u}{\dd r}$ 沿半径线性分布，管轴处为零、管壁处最大，故（B）对。
+  \item 第 8 题：$d$、$\nu$、$\lambda$ 一定时，黏性底层厚度随流量（雷诺数）增大而减小，故（B）对。
+  \item 第 9 题：长管出流的流量只取决于作用水头、管长、管径与粗糙度，与管道安装高度无关，故 $Q_1=Q_2$，选（C）。
+  \item 第 10 题：孔口出流 $\mu=\varepsilon\varphi$，$v$ 系数 $\varphi\approx0.97$、收缩系数 $\varepsilon\approx0.64$、流量系数 $\mu\approx0.62$，
+    由小到大为流量系数、收缩系数、流速系数，故（B）对。
+\end{enumerate}
+\end{tishi}
+
+\answ{二、填空题（共 30 分，每空 3 分）}
+
+\noindent\textbf{1.}\quad $a_x=3\,\mathrm{m/s^2}$，$a_y=-2\,\mathrm{m/s^2}$。
+
+\smallskip
+\noindent\textbf{2.}\quad $p_{A,\mathrm{abs}}=157976\,\mathrm{N/m^2}\approx157.98\,\mathrm{kPa}$。
+
+\smallskip
+\noindent\textbf{3.}\quad $\dfrac{v^{2}}{gl}$；\qquad $\dfrac{p\,l^{4}}{\rho Q^{2}}$。
+
+\smallskip
+\noindent\textbf{4.}\quad 雷诺数相等（即 $\Rey_m=\Rey_p$，雷诺准则）。
+
+\smallskip
+\noindent\textbf{5.}\quad 抛物线（断面流速按抛物线规律分布）。
+
+\smallskip
+\noindent\textbf{6.}\quad 管中心最大流速 $u_{\max}=12.7\,\mathrm{cm/s}$；$r=20\,\mathrm{mm}$ 处流速 $u=10.7\,\mathrm{cm/s}$；
+管壁处切应力 $\tau_0=0.078\,\mathrm{N/m^2}$。
+
+\begin{tishi}
+\textbf{填空题复算（原答卷只给数值，此处补出算式）：}
+\begin{enumerate}
+  \item 第 1 题：$a_x=u_x\dfrac{\partial u_x}{\partial x}+u_y\dfrac{\partial u_x}{\partial y}=(1+2)\times1+(-1+3)\times0=3$；
+    $a_y=u_x\dfrac{\partial u_y}{\partial x}+u_y\dfrac{\partial u_y}{\partial y}=0+(-1+3)\times(-1)=-2$。
+  \item 第 3 题：$\left[\dfrac{v^{2}}{gl}\right]=\dfrac{(LT^{-1})^{2}}{LT^{-2}\cdot L}=1$，
+    $\left[\dfrac{p\,l^{4}}{\rho Q^{2}}\right]=\dfrac{ML^{-1}T^{-2}\cdot L^{4}}{ML^{-3}\cdot L^{6}T^{-2}}=1$，两者均为无量纲组合。
+  \item 第 6 题：$\mu=\rho\nu=850\times0.18\times10^{-4}=0.0153\,\mathrm{Pa\cdot s}$；
+    层流 $u_{\max}=2v=2\times6.35=12.7\,\mathrm{cm/s}$；
+    $u=u_{\max}\left[1-\left(\dfrac rR\right)^{2}\right]=12.7\times\left[1-\left(\dfrac{20}{50}\right)^{2}\right]=12.7\times0.84=10.7\,\mathrm{cm/s}$；
+    管壁切应力 $\tau_0=\mu\left|\dfrac{\dd u}{\dd r}\right|_{r=R}=\dfrac{2\mu u_{\max}}{R}
+    =\dfrac{2\times0.0153\times0.127}{0.05}=0.078\,\mathrm{N/m^2}$。
+\end{enumerate}
+\end{tishi}
+
+\begin{tishi}
+\textbf{第 2 题（U 形水银测压计）的两种读法：}原卷答案为 $157976\,\mathrm{N/m^2}$，其算式相当于
+$p_{A,\mathrm{abs}}=p_a+\gamma_{\mathrm{Hg}}(h_1+h)=98000+133280\times(0.15+0.3)=157976\,\mathrm{N/m^2}$，
+即把 $h_1$、$h$ 两段都按水银柱计算。若按「左管 $h_1$ 段为水柱、$h$ 为两水银面高差」的常见布置，则
+$p_{A,\mathrm{abs}}=p_a+\gamma_{\mathrm{Hg}}h-\gamma_{w}h_1=98000+133280\times0.3-9800\times0.15=136514\,\mathrm{N/m^2}\approx136.5\,\mathrm{kPa}$。
+\textbf{原卷图略，$h_1$ 与 $h$ 的标注位置无法判读}，两种读法并列如上，请对照原卷影印核实。
+\end{tishi}
+
+\answ{三、计算题（共 90 分）（1、2、3、4、5、6、7 题必做，8、9、10、11 题任选做两道）}
+
+\noindent 原卷要求第 1--7 题必做、第 8--11 题任选做两道；为便于复习，本答案把 11 道题全部给出。
+
+\paragraph{第 1 题（两半球形盖上的液体总压力，12 分）}
+\begin{jie}
+\textbf{已知：}$d=0.5\,\mathrm{m}$，$h=2.0\,\mathrm{m}$，$H=2.5\,\mathrm{m}$，水 $\rho=1000\,\mathrm{kg/m^3}$（$\gamma=9800\,\mathrm{N/m^3}$）。
+由原卷图与原卷答案：侧盖中心（容器轴线）在自由液面以下 $H=2.5\,\mathrm{m}$；
+顶盖底圆所在平面在自由液面以下 $\left(H-\dfrac h2\right)=1.5\,\mathrm{m}$。
+
+\textbf{求解目标：}顶盖、侧盖上的液体总压力。
+
+\textbf{（1）顶盖}：盖前后、左右压力大小相等、方向相反，互相抵消，只剩铅垂分力。压力体为
+「以盖底圆为底、高为 $\left(H-\dfrac h2\right)$ 的铅垂柱体减去半球体积」：
+\[
+P_z=\rho gV=\rho g\left[\frac{\pi d^{2}}{4}\left(H-\frac h2\right)-\frac{\pi d^{3}}{12}\right]
+=9800\times\left[\frac{\pi\times0.5^{2}}{4}\times1.5-\frac{\pi\times0.5^{3}}{12}\right]
+=9800\times0.2618=2.57\times10^{3}\,\mathrm{N},
+\]
+原卷给出 $2564.3\,\mathrm{N}$（取位差异），方向\textbf{向上}。
+
+\textbf{（2）侧盖}：总压力由铅垂分力与水平分力合成。铅垂分力（压力体为半球体）
+\[
+P_z=\rho gV=\rho g\frac{\pi d^{3}}{12}=9800\times\frac{\pi\times0.5^{3}}{12}=320.5\,\mathrm{N}\quad(\text{向上}),
+\]
+水平分力（按铅垂投影面、用形心点压强，形心在自由液面以下 $H$ 处）
+\[
+P_x=\rho gh_cA_x=\rho gH\frac{\pi d^{2}}{4}
+=9800\times2.5\times\frac{\pi\times0.5^{2}}{4}=4808.1\,\mathrm{N}\quad(\text{向右}).
+\]
+总压力大小与方向
+\[
+P=\sqrt{P_x^{2}+P_z^{2}}=\sqrt{4808.1^{2}+320.5^{2}}=4818.8\,\mathrm{N},
+\qquad
+\theta=\arctan\frac{P_z}{P_x}=\arctan\frac{320.5}{4808.1}=3^{\circ}51',
+\]
+方向自水平线向右上方偏（原卷值；按上式数字复算约为 $3^{\circ}49'$）。
+
+\textbf{答：}顶盖所受液体总压力 $P_z\approx2564.3\,\mathrm{N}$，铅垂向上；
+侧盖所受液体总压力 $P\approx4818.8\,\mathrm{N}$，方向向右并向上偏约 $3^{\circ}51'$。
+\end{jie}
+
+\begin{tishi}
+\textbf{说明（侧盖铅垂分力的方向）：}原卷对侧盖铅垂分力写「向上」（$+\rho g\pi d^{3}/12$）。
+若按原卷图（半球盖凸出容器外壁、水充满盖内）判断，压力体与液体同侧属实压力体，
+该分力方向应为\textbf{向下}，大小同为 $320.5\,\mathrm{N}$，此时合力改为向右下方偏 $3^{\circ}51'$。
+本册照原卷答案的方向与数值给出，请对照原卷影印图核对。
+\end{tishi}
+
+\paragraph{第 2 题（虹吸管，8 分）}
+\begin{jie}
+\textbf{已知：}$H_A=0$，$H_B=6\,\mathrm{m}$，$H_C=7\,\mathrm{m}$，$H_D=4\,\mathrm{m}$（均自池底起算，故水池液面高程为 $6\,\mathrm{m}$）；
+管内等直径（各断面流速相同）；不计能量损失；$p_a=98000\,\mathrm{N/m^2}$，$\gamma=9800\,\mathrm{N/m^3}$。
+
+\textbf{求解目标：}断面平均流速 $v$ 及 $A$、$B$、$C$ 三断面的绝对压强。
+
+\textbf{（1）流速}：以池底为基准面，对自由液面（$z=6\,\mathrm{m}$、$p_a$、$v\approx0$）与出口断面 $D$（$z=4\,\mathrm{m}$、$p_a$）列能量方程
+\[
+6+\frac{p_a}{\rho g}+0=4+\frac{p_a}{\rho g}+\frac{v^{2}}{2g}
+\ \Longrightarrow\
+\frac{v^{2}}{2g}=2\,\mathrm{m},\qquad
+v=\sqrt{2\times9.8\times2}=6.26\,\mathrm{m/s}.
+\]
+
+\textbf{（2）$A$ 断面（进口，$z=0$）}：对液面与 $A$ 断面列能量方程
+\[
+6+\frac{p_a}{\rho g}+0=0+\frac{p_{A,\mathrm{abs}}}{\rho g}+\frac{v^{2}}{2g}
+\ \Longrightarrow\
+\frac{p_{A,\mathrm{abs}}}{\rho g}=6+10-2=14\,\mathrm{m},\qquad
+p_{A,\mathrm{abs}}=9800\times14=137.2\,\mathrm{kPa}.
+\]
+
+\textbf{（3）$B$ 断面（与水池液面齐高，$z=6\,\mathrm{m}$）}
+\[
+6+\frac{p_a}{\rho g}+0=6+\frac{p_{B,\mathrm{abs}}}{\rho g}+\frac{v^{2}}{2g}
+\ \Longrightarrow\
+p_{B,\mathrm{abs}}=9800\times(10-2)=78.4\,\mathrm{kPa}.
+\]
+
+\textbf{（4）$C$ 断面（管中最高点，$z=7\,\mathrm{m}$）}
+\[
+6+\frac{p_a}{\rho g}+0=7+\frac{p_{C,\mathrm{abs}}}{\rho g}+\frac{v^{2}}{2g}
+\ \Longrightarrow\
+p_{C,\mathrm{abs}}=9800\times(10-1-2)=68.6\,\mathrm{kPa}.
+\]
+
+\textbf{答：}$v=6.26\,\mathrm{m/s}$；$p_{A,\mathrm{abs}}=137.2\,\mathrm{kPa}$，$p_{B,\mathrm{abs}}=78.4\,\mathrm{kPa}$，$p_{C,\mathrm{abs}}=68.6\,\mathrm{kPa}$。
+\end{jie}
+
+\paragraph{第 3 题（水平输油管与油泵扬程，8 分）}
+\begin{jie}
+\textbf{已知：}$l=800\,\mathrm{m}$，$d=50\,\mathrm{mm}=0.05\,\mathrm{m}$，$Q=135\,\mathrm{L/min}=2.25\times10^{-3}\,\mathrm{m^3/s}$，
+$\rho=920\,\mathrm{kg/m^3}$，$\mu=0.056\,\mathrm{Pa\cdot s}$。
+
+\textbf{求解目标：}输油泵扬程 $H$。
+
+断面平均流速
+\[
+v=\frac{4Q}{\pi d^{2}}=\frac{4\times2.25\times10^{-3}}{\pi\times0.05^{2}}
+=\frac{2.25\times10^{-3}}{1.9635\times10^{-3}}=1.146\,\mathrm{m/s},
+\]
+雷诺数与沿程阻力系数
+\[
+\Rey=\frac{\rho vd}{\mu}=\frac{920\times1.146\times0.05}{0.056}=941<2300\ \text{（层流）},
+\qquad
+\lambda=\frac{64}{\Rey}=\frac{64}{941}=0.068 .
+\]
+沿程水头损失
+\[
+h_f=\lambda\frac ld\frac{v^{2}}{2g}=0.068\times\frac{800}{0.05}\times\frac{1.146^{2}}{2\times9.8}
+=0.068\times16000\times0.0670=72.84\,\mathrm{m}.
+\]
+管路水平、等径，泵扬程只需克服沿程损失
+\[
+H=h_f+\Delta z+\frac{p_2-p_1}{\rho g}=72.84+0+0=72.84\,\mathrm{m}.
+\]
+
+\textbf{答：}输油泵扬程 $H\approx72.8\,\mathrm{m}$（油柱）。
+\end{jie}
+
+\paragraph{第 4 题（水射流冲击斜置平板，12 分）}
+\begin{jie}
+\textbf{已知：}$v_0=6\,\mathrm{m/s}$，射流与平板夹角 $\alpha=60^{\circ}$，$A_0=0.01\,\mathrm{m^2}$，
+水平射流，不计水流与平板之间的摩擦。射流量 $Q_0=v_0A_0=6\times0.01=0.06\,\mathrm{m^3/s}$。
+
+\textbf{求解目标：}（1）射流对平板的作用力 $F$；（2）分流后两股流量之比 $Q_1/Q_2$。
+
+\textbf{（1）}取射流为控制体，列垂直于平板方向的动量方程：来流速度在板面法向的投影为 $v_0\sin\alpha$，
+分流后两股流的法向速度为零，故平板对射流的作用力
+\[
+F'=0-\left(-\rho Q_0v_0\sin\alpha\right)=\rho Q_0v_0\sin\alpha
+=1000\times0.06\times6\times\sin60^{\circ}=1000\times0.06\times6\times0.866=312\,\mathrm{N},
+\]
+由牛顿第三定律，射流对平板的作用力
+\[
+F=F'=0.312\,\mathrm{kN}\quad(\text{方向垂直于平板，沿板面法向}).
+\]
+
+\textbf{（2）}沿平板方向列动量方程：平板光滑且两股流在同一水平面上，由伯努利方程得 $v_1=v_2=v_0$，故
+\[
+0=(\rho Q_1v_1-\rho Q_2v_2)-\rho Q_0v_0\cos\alpha
+\ \Longrightarrow\
+Q_1-Q_2=Q_0\cos\alpha=0.06\times0.5=0.03\,\mathrm{m^3/s},
+\]
+又由连续性
+\[
+Q_1+Q_2=Q_0=0.06\,\mathrm{m^3/s},
+\]
+联立解得 $Q_1=0.045\,\mathrm{m^3/s}$、$Q_2=0.015\,\mathrm{m^3/s}$，于是
+\[
+\frac{Q_1}{Q_2}=\frac{1+\cos\alpha}{1-\cos\alpha}=\frac{1.5}{0.5}=3 .
+\]
+
+\textbf{答：}（1）射流对平板的作用力 $F=0.312\,\mathrm{kN}$（垂直于平板）；（2）$Q_1:Q_2=3:1$。
+\end{jie}
+
+\begin{tishi}
+原卷此题的算式完整（y 轴、x 轴两个动量方程与伯努利方程均列出），
+但第（2）问末尾的比值数字被 OCR 丢光（只余「代入上式，解得 $Q/Q_2$」），本册按动量方程复算为 $Q_1/Q_2=3$。
+\end{tishi}
+
+\paragraph{第 5 题（平面流动的连续性与有旋性，10 分）}
+\begin{jie}
+\textbf{已知：}平面流动 $u_x=x^{2}-2x-4y$，$u_y=-2xy+2y$。
+
+\textbf{求解目标：}（1）是否满足连续性方程；（2）是否有旋；（3）如存在 $\varphi$、$\psi$，求出它们。
+
+\textbf{（1）连续性方程}
+\[
+\frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}=(2x-2)+(-2x+2)=0,
+\]
+故该流动\textbf{满足}不可压缩流体的连续性方程。
+
+\textbf{（2）旋转角速度}
+\[
+\omega_z=\frac12\left(\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}\right)
+=\frac12\left(-2y+4\right)=2-y,
+\]
+除 $y=2$ 一条线外 $\omega_z$ 不为零，故流动\textbf{有旋}。
+
+\textbf{（3）}流动有旋，\textbf{不存在速度势函数} $\varphi$；
+但满足连续性方程，\textbf{存在流函数} $\psi$。由
+\[
+u_x=\frac{\partial\psi}{\partial y}=x^{2}-2x-4y
+\ \Longrightarrow\
+\psi=x^{2}y-2xy-2y^{2}+f(x),
+\]
+再由
+\[
+-\frac{\partial\psi}{\partial x}=u_y=-2xy+2y
+\ \Longrightarrow\
+-2xy+2y-f'(x)=-2xy+2y
+\ \Longrightarrow\
+f'(x)=0,\qquad f(x)=C ,
+\]
+取 $C=0$，得流函数
+\[
+\psi=x^{2}y-2xy-2y^{2}.
+\]
+
+\textbf{答：}（1）满足连续性方程；（2）有旋（$\omega_z=2-y$）；（3）有旋故无速度势函数，
+流函数为 $\psi=x^{2}y-2xy-2y^{2}$（积分常数 $C$ 取零）。
+\end{jie}
+
+\begin{tishi}
+原卷此处写「所以 $f(x)=0$，即 $f(x)=C$」，按流函数求解过程应为 $f'(x)=0$（原卷丢掉导数撇号），
+故 $f(x)=C$；原卷「流函数为 $y=x^{2}y-2xy-2y^{2}$」中的 $y$ 系 $\psi$ 的 OCR 误读。
+\end{tishi}
+
+\paragraph{第 6 题（铅垂管路起始断面的压强，10 分）}
+\begin{jie}
+\textbf{已知：}水由水箱经直径 $d$、长 $L$ 的铅垂管路自由流入大气；水箱液面高于管路起始断面 $A$ 为 $h$，
+管路出口在 $A$ 以下 $L$ 处；沿程阻力系数 $\lambda$，局部阻力忽略。
+
+\textbf{求解目标：}（1）$A$ 断面压强；（2）$A$ 点压强等于大气压时的 $h$。
+
+\textbf{（1）}以 $A$ 断面为基准面。对液面（$z=h$、$p=p_a$、$v\approx0$）与管出口断面（$z=-L$、$p=p_a$）列伯努利方程
+\[
+h+L=\frac{v^{2}}{2g}+\lambda\frac Ld\frac{v^{2}}{2g}
+\ \Longrightarrow\
+\frac{v^{2}}{2g}=\frac{h+L}{1+\lambda L/d}.
+\]
+再对液面与 $A$ 断面列伯努利方程（$A$ 断面表压强记为 $p_A$）
+\[
+h+\frac{p_a}{\rho g}=0+\frac{p_A}{\rho g}+\frac{v^{2}}{2g}
+\ \Longrightarrow\
+\frac{p_A}{\rho g}=h-\frac{h+L}{1+\lambda L/d}
+=\frac{L(\lambda h-d)}{d+\lambda L},
+\]
+即
+\[
+p_A=\rho g\left(h-\frac{h+L}{1+\lambda L/d}\right)=\rho g\,\frac{L(\lambda h-d)}{d+\lambda L}.
+\]
+
+\textbf{（2）}$A$ 点压强等于大气压，即表压强为零（$p_A=0$），由上式
+\[
+h=\frac{h+L}{1+\lambda L/d}
+\ \Longrightarrow\
+h\,\frac{\lambda L}{d}=L
+\ \Longrightarrow\
+h=\frac d\lambda .
+\]
+
+\textbf{答：}（1）$p_A=\rho g\left(h-\dfrac{h+L}{1+\lambda L/d}\right)=\rho g\,\dfrac{L(\lambda h-d)}{d+\lambda L}$；
+（2）当 $h=\dfrac d\lambda$ 时 $A$ 点压强等于大气压。
+\end{jie}
+
+\begin{tishi}
+原卷本题第（2）问的结果只剩一个「$\lambda$」字（OCR 缺失），已按上式补为 $h=d/\lambda$；
+原卷图中 $A$ 断面与管出口的相对位置由原卷答案中出现的 $h+L$ 反推（液面在 $A$ 以上 $h$、出口在 $A$ 以下 $L$），
+若原卷图另有标高，请以原卷图为准。
+\end{tishi}
+
+\paragraph{第 7 题（相似比尺与压强差换算，10 分）}
+\begin{jie}
+\textbf{已知：}原型为输油管，$d=15\,\mathrm{cm}=0.15\,\mathrm{m}$，$Q_p=0.18\,\mathrm{m^3/s}$，管内介质为油；
+模型为水，同直径 $d=0.15\,\mathrm{m}$，$Q_m=0.018\,\mathrm{m^3/s}$；重力场相同（$g_m=g_p$）；
+模型量得 $5\,\mathrm{m}$ 长管路两端的压强水头差为 $h_m$（\textbf{原卷数值 OCR 不清}，原卷答案按 $h_m=0.05\,\mathrm{m}$ 水柱计算）。
+
+\textbf{求解目标：}原型管两端的压强差 $\Delta p$（用油柱高表示）。
+
+原型与模型的断面平均流速
+\[
+v_p=\frac{4Q_p}{\pi d^{2}}=\frac{4\times0.18}{\pi\times0.15^{2}}=10.19\,\mathrm{m/s},
+\qquad
+v_m=\frac{4Q_m}{\pi d^{2}}=\frac{4\times0.018}{\pi\times0.15^{2}}=1.019\,\mathrm{m/s},
+\qquad
+\frac{v_p}{v_m}=10 .
+\]
+压强（压差）起主导作用，动力相似取\textbf{欧拉准则}
+\[
+\frac{\Delta p_m}{\rho_m v_m^{2}}=\frac{\Delta p_p}{\rho_p v_p^{2}} .
+\]
+化为油柱高（压强水头）形式，并利用 $g_m=g_p$：
+\[
+\frac{\Delta p_p}{\rho_p g_p}
+=\frac{\Delta p_m}{\rho_m g_m}\left(\frac{v_p}{v_m}\right)^{2}\frac{g_m}{g_p}
+=h_m\times100 .
+\]
+取 $h_m=0.05\,\mathrm{m}$，则 $5\,\mathrm{m}$ 长输油管两端的压强差
+\[
+\frac{\Delta p_p}{\rho_p g_p}=0.05\times\left(\frac{10.19}{1.019}\right)^{2}=0.05\times100=5\,\mathrm{m}\ (\text{油柱}),
+\]
+按管长线性折算到 $100\,\mathrm{m}$ 长的输油管
+\[
+\frac{\Delta p_p}{\rho_p g_p}=5\times\frac{100}{5}=100\,\mathrm{m}\ (\text{油柱}).
+\]
+
+\textbf{答：}按原型管长 $100\,\mathrm{m}$ 计，管两端的压强差 $\Delta p_p\approx100\,\mathrm{m}$ 油柱
+（$5\,\mathrm{m}$ 管段的相应值为 $5\,\mathrm{m}$ 油柱），即 $\Delta p_p=\rho_pg_p\times100\,\mathrm{m}$（油柱）。
+\end{jie}
+
+\begin{tishi}
+\textbf{本题的数值缺口：}「模型 $5\,\mathrm{m}$ 长管路两端的压强水头差」在试题与答案卷中均无法判读
+（试题转写中该空为下划线），原卷答案的算式残片为
+$\dfrac{\Delta p_p}{\rho_pg_p}=0.05\times\left(\dfrac{10.19}{1.019}\right)^{2}=5\,\mathrm{m}$（油柱）与
+$\dfrac55\times100=100\,\mathrm{m}$（油柱），本册据此取模型值 $h_m=0.05\,\mathrm{m}$ 水柱、原型管长 $100\,\mathrm{m}$。
+一般地 $\Delta p_p/(\rho_pg_p)=100h_m$；若原卷给出的 $h_m$、管长另有其值，按此式替换即可。
+\end{tishi}
+
+\paragraph{第 8 题（点涡对与均匀流的合成速度，10 分）}
+\begin{jie}
+\textbf{已知：}平面上 $(0,\,h)$、$(0,\,-h)$ 处有一对等强度、方向相反的点涡（强度 $\Gamma>0$），
+另有平行于 $x$ 轴、来自无穷远的均匀来流 $v_x$。
+
+\textbf{求解目标：}原点处合成速度的大小与方向。
+
+取 $(0,\,h)$ 处为 $+\Gamma$、$(0,\,-h)$ 处为 $-\Gamma$，叠加后的速度势
+\[
+\varphi=v_xx+\frac{\Gamma}{2\pi}\arctan\frac{y-h}{x}-\frac{\Gamma}{2\pi}\arctan\frac{y+h}{x},
+\]
+速度分量
+\[
+u=\frac{\partial\varphi}{\partial x}
+=v_x+\frac{\Gamma}{2\pi}\left[-\frac{y-h}{x^{2}+(y-h)^{2}}+\frac{y+h}{x^{2}+(y+h)^{2}}\right],
+\]
+\[
+v=\frac{\partial\varphi}{\partial y}
+=\frac{\Gamma}{2\pi}\left[\frac{x}{x^{2}+(y-h)^{2}}-\frac{x}{x^{2}+(y+h)^{2}}\right].
+\]
+代入原点坐标 $(0,\,0)$：
+\[
+u=v_x+\frac{\Gamma}{2\pi}\left(\frac{h}{h^{2}}+\frac{h}{h^{2}}\right)=v_x+\frac{\Gamma}{\pi h},
+\qquad
+v=\frac{\Gamma}{2\pi}\left(\frac{0}{h^{2}}-\frac{0}{h^{2}}\right)=0 .
+\]
+
+\textbf{答：}原点处合成速度沿 $x$ 轴方向，大小为 $v_x+\dfrac{\Gamma}{\pi h}$——
+一对反向点涡在原点的诱导速度方向相同、互相叠加，且与来流同向。
+\end{jie}
+
+\begin{tishi}
+原卷答案此题的势函数、速度分量算式均在，末行只余「$\Gamma/(\pi h)$」碎片；
+本册按其符号约定（$(0,h)$ 处 $+\Gamma$）给出。若两涡的旋向与本册所设相反，则诱导速度反向，
+合成速度改为 $v_x-\Gamma/(\pi h)$，\textbf{请对照原卷图确定两涡的旋向}。
+\end{tishi}
+
+\paragraph{第 9 题（梯形断面均匀流的水力最佳断面，10 分；旧大纲超纲）}
+\begin{jie}
+\textbf{已知：}梯形断面均匀流渠道，边坡系数 $m=1.5$，糙率 $n=0.025$，底坡 $i=0.002$，流量 $Q=3.0\,\mathrm{m^3/s}$。
+
+\textbf{求解目标：}水力最佳断面的底宽 $b$ 与水深 $h$。
+
+水力最佳断面（湿周 $\chi$ 最小）条件
+\[
+\frac bh=2\left(\sqrt{1+m^{2}}-m\right)=2\left(\sqrt{1+1.5^{2}}-1.5\right)
+=2\times(1.803-1.5)=0.606\approx0.6 ,
+\]
+即 $b=0.6h$，于是
+\[
+A=h(b+mh)=h(0.6h+1.5h)=2.1h^{2},
+\qquad
+\chi=b+2h\sqrt{1+m^{2}}=4.21h,
+\qquad
+R=\frac A\chi=\frac h2 .
+\]
+谢才系数（曼宁公式）
+\[
+C=\frac1nR^{1/6}=\frac{1}{0.025}\left(\frac h2\right)^{1/6}=35.63\,h^{1/6},
+\]
+由谢才公式 $Q=AC\sqrt{Ri}$
+\[
+Q=2.1h^{2}\times35.63h^{1/6}\times\sqrt{\frac h2\times0.002}
+=2.37h^{8/3}=3.0\,\mathrm{m^3/s},
+\]
+解得
+\[
+h=\left(\frac{3.0}{2.37}\right)^{3/8}=1.09\,\mathrm{m},
+\qquad
+b=0.6h=0.66\,\mathrm{m}.
+\]
+
+\textbf{答：}水力最佳断面 $h\approx1.09\,\mathrm{m}$、$b\approx0.66\,\mathrm{m}$（$b/h\approx0.6$），湿周 $\chi\approx4.6\,\mathrm{m}$。
+\end{jie}
+
+\begin{tishi}
+\textbf{本题属旧大纲（明渠均匀流）内容，现行 818 不考}，此处按原卷答案给出。
+原卷答案的算式与结果（$\dfrac bh=0.6$、$R=\dfrac h2$、$A=2.1h^{2}$、$C=35.63h^{1/6}$、
+$Q=CA\sqrt{Ri}=2.37h^{8/3}=3\,\mathrm{m^3/s}$、$h=1.09\,\mathrm{m}$、$b=0.66\,\mathrm{m}$）与本册一致；
+流量单位原卷 OCR 作 $\mathrm{m^2/s}$，已按流量改正为 $\mathrm{m^3/s}$。
+\end{tishi}
+
+\paragraph{第 10 题（船体摩擦阻力与功率，10 分）}
+\begin{jie}
+\textbf{已知：}船长 $L=50\,\mathrm{m}$（按同一长度的相当平板计算，取沿流向长度），浸水面积 $S=469\,\mathrm{m^2}$，
+航速 $U=15\,\mathrm{m/s}$，水的运动黏度 $\nu=0.011\,\mathrm{cm^2/s}=1.1\times10^{-6}\,\mathrm{m^2/s}$，$\rho=1000\,\mathrm{kg/m^3}$。
+
+\textbf{求解目标：}摩擦阻力 $F$ 与克服该阻力所需的功率 $P$。
+
+雷诺数
+\[
+\Rey_L=\frac{UL}{\nu}=\frac{15\times50}{1.1\times10^{-6}}=6.818\times10^{8}>5\times10^{5},
+\]
+属混合边界层（以湍流为主），取
+\[
+C_f=\frac{0.074}{\Rey_L^{1/5}}-\frac{1700}{\Rey_L}
+=\frac{0.074}{58.44}-2.5\times10^{-6}
+=1.266\times10^{-3}-0.003\times10^{-3}=0.00126 .
+\]
+摩擦阻力
+\[
+F=C_f\frac{\rho U^{2}}{2}S
+=0.00126\times\frac{1000\times15^{2}}{2}\times469
+=0.00126\times112500\times469=66680\,\mathrm{N},
+\]
+克服阻力所需的功率
+\[
+P=FU=66680\times15=1.0002\times10^{6}\,\mathrm{W}\approx1000.2\,\mathrm{kW}.
+\]
+
+\textbf{答：}船的摩擦阻力 $F\approx6.67\times10^{4}\,\mathrm{N}$（约 $66.7\,\mathrm{kN}$），
+克服该阻力所需功率 $P\approx1000\,\mathrm{kW}$。
+\end{jie}
+
+\begin{tishi}
+运动黏度原卷 OCR 作 $0.01l\,\mathrm{cm^2/s}$（数字不清），试题转写与本答案均按 $\nu=0.011\,\mathrm{cm^2/s}$ 的量级判读；
+原卷答案的摩阻系数算式残片中另有孤立数字「$1.46$」，与 $\dfrac{0.074}{\Rey_L^{1/5}}$、
+$\Rey_{x,cr}=5\times10^{5}$ 等常用量都对不上（2015 年答案同类题亦出现该数字），\textbf{存疑待核}。
+\end{tishi}
+
+\paragraph{第 11 题（空气等熵管流的质量流量，10 分；旧大纲超纲）}
+\begin{jie}
+\textbf{已知：}空气在管道内作恒定等熵流动，$t_1=62\,^{\circ}\mathrm{C}$（即 $T_1=335\,\mathrm{K}$），
+$p_1=650\,\mathrm{kPa}$，$A_1=0.001\,\mathrm{m^2}$；$p_2=452\,\mathrm{kPa}$，$A_2=5.12\times10^{-4}\,\mathrm{m^2}$；
+$R=287\,\mathrm{J/(kg\cdot K)}$，$k=1.4$。
+
+\textbf{求解目标：}质量流量 $Q_m$。
+
+进口密度（气体状态方程）
+\[
+\rho_1=\frac{p_1}{RT_1}=\frac{650\times10^{3}}{287\times(273+62)}
+=\frac{650\times10^{3}}{287\times335}=6.76\,\mathrm{kg/m^3}.
+\]
+等熵过程方程（$p/\rho^{k}=$ 常数）
+\[
+\rho_2=\rho_1\left(\frac{p_2}{p_1}\right)^{1/k}
+=6.76\times\left(\frac{452\times10^{3}}{650\times10^{3}}\right)^{1/1.4}
+=6.76\times0.772=5.21\,\mathrm{kg/m^3}.
+\]
+连续性方程 $\rho_1A_1v_1=\rho_2A_2v_2$ 给出两断面流速关系
+\[
+v_1=\frac{\rho_2A_2}{\rho_1A_1}\,v_2
+=\frac{5.21\times5.12\times10^{-4}}{6.76\times1\times10^{-3}}\,v_2=0.395\,v_2 .
+\]
+等熵能量方程
+\[
+\frac{k}{k-1}\frac{p_1}{\rho_1}+\frac{v_1^{2}}{2}
+=\frac{k}{k-1}\frac{p_2}{\rho_2}+\frac{v_2^{2}}{2},
+\]
+代入数值
+\[
+\frac{1.4}{1.4-1}\times\frac{650\times10^{3}}{6.76}+\frac{(0.395v_2)^{2}}{2}
+=\frac{1.4}{1.4-1}\times\frac{452\times10^{3}}{5.21}+\frac{v_2^{2}}{2},
+\]
+\[
+336538+0.078v_2^{2}=303647+0.5v_2^{2}
+\ \Longrightarrow\
+0.422v_2^{2}=32891
+\ \Longrightarrow\
+v_2=279.2\,\mathrm{m/s}.
+\]
+质量流量
+\[
+Q_m=\rho_2A_2v_2=5.21\times5.12\times10^{-4}\times279.2=0.74\,\mathrm{kg/s}.
+\]
+
+\textbf{答：}$Q_m\approx0.74\,\mathrm{kg/s}$。
+\end{jie}
+
+\begin{tishi}
+\textbf{本题属旧大纲（气体动力学）内容，现行 818 不考}，此处按原卷答案给出。
+原卷 $A_2$ 的指数无法判读（作 $5.12\times10^{\sim}$），$A_2=5.12\times10^{-4}\,\mathrm{m^2}$ 系按等熵流动的
+质量守恒与面积比自洽性反推；原卷答案的算式与结果（$\rho_1=6.76\,\mathrm{kg/m^3}$、$\rho_2=5.21\,\mathrm{kg/m^3}$、
+$v_1=0.395v_2$、$v_2=279.19\,\mathrm{m/s}$、$Q_m=0.74\,\mathrm{kg/s}$）与本册一致。
+\end{tishi}
+
+\answ{本卷答案卷的 OCR 校订与存疑汇总}
+
+\begin{tishi}
+\textbf{（一）原答案卷辨认情况：}原答案卷为手机拍照件，共 5 页（页脚「第 X 页共 5 页」）。
+选择题 10 题的字母完整读出；填空题 6 小题共 10 个空的数值完整读出；
+计算题 11 题均有答案残片，其中第 1 题的顶盖压力体公式、第 4 题第（2）问的比值、第 6 题第（2）问的结果、
+第 7 题模型压强水头差的数值被 OCR 打散或整块丢失，已按标准解法重算补全，凡属推测之处均在相应提示框中注明。
+答案卷首页题头写「817 工程流体力学」，与当年试题一致。
+
+\textbf{（二）逐条修正（原 $\to$ 改）：}
+\begin{enumerate}
+  \item 原卷填空题题号与数值粘连（「1.3 / 3 / $-2$」「2.157976」）$\to$ 第 1 题两空为 $a_x=3$、$a_y=-2$，
+    第 2 题为 $p_{A,\mathrm{abs}}=157976\,\mathrm{N/m^2}$。
+  \item 原卷第 3 题的两个答案分式散落在 OCR 页首（$\dfrac{v^{2}}{gl}$、$\dfrac{p\,l^{4}}{\rho Q^{2}}$ 两处碎片）$\to$ 归位到第 3 题的两个空。
+  \item 原卷计算第 1 题顶盖的公式支离破碎（只余「$P=\rho gV=\rho g\ h\ \pi d^{3}$」与 $2564.3\,\mathrm{N}$）$\to$
+    依原卷影印补为 $P_z=\rho g\left[\dfrac{\pi d^{2}}{4}\left(H-\dfrac h2\right)-\dfrac{\pi d^{3}}{12}\right]=2564.3\,\mathrm{N}$（向上）。
+  \item 原卷计算第 2 题 $B$、$C$ 两式的断面标高丢失（「$6+\dots=6+\dots$」「$6+\dots=7+\dots$」）$\to$
+    补为 $z_B=6\,\mathrm{m}$、$z_C=7\,\mathrm{m}$，得 $p_{B,\mathrm{abs}}=78.4\,\mathrm{kPa}$、$p_{C,\mathrm{abs}}=68.6\,\mathrm{kPa}$。
+  \item 原卷计算第 3 题「$H_m=h_j$」$\to$ 油泵扬程 $H=h_f=72.84\,\mathrm{m}$；流速式中分母数字粘连，已按 $v=4Q/(\pi d^{2})$ 复原。
+  \item 原卷计算第 4 题「$V=V_2=v_0=6\,\mathrm{m/s}$」$\to$ $v_1=v_2=v_0=6\,\mathrm{m/s}$（下标 OCR 丢失）；
+    第（2）问末尾比值缺失 $\to$ $Q_1/Q_2=3$。
+  \item 原卷计算第 5 题「所以 $f(x)=0$，即 $f(x)=C$」$\to$ 应为 $f'(x)=0$、$f(x)=C$（丢掉导数撇号）；
+    「流函数为 $y=x^{2}y-2xy-2y^{2}$」$\to$ $\psi=x^{2}y-2xy-2y^{2}$（$\psi$ 被读作 $y$）。
+  \item 原卷计算第 6 题第（2）问只余一个「$\lambda$」$\to$ 补为 $h=d/\lambda$。
+  \item 原卷计算第 7 题把 $\rho_pg_p$、$\rho_mg_m$ 打成「$P_pS_p$」「$P_mg_m$」等 $\to$ 统一为 $\rho_pg_p$、$\rho_mg_m$。
+  \item 原卷计算第 9 题流量单位作 $\mathrm{m^2/s}$ $\to$ $\mathrm{m^3/s}$；
+    并注意 $b/h$ 取精确值 $0.606$（原卷取 $0.6$，两者相差约 $1\%$）。
+  \item 原卷计算第 11 题「由等过程方程」$\to$「等熵过程方程」（漏「熵」字）。
+  \item 原卷计算第 11 题 $A_2=5.12\times10^{\sim}$ 的指数缺失 $\to$ 按面积比与质量守恒自洽反推为 $10^{-4}$。
+\end{enumerate}
+
+\textbf{（三）仍无法判读、已作标注的地方：}
+\begin{enumerate}
+  \item 填空题第 2 题：原卷图略，$h_1$ 与 $h$ 的标注位置无法判读。原卷答案 $157976\,\mathrm{N/m^2}$ 相当于两段都按水银柱计；
+    若 $h_1=0.15\,\mathrm{m}$ 为水柱，则应为 $136514\,\mathrm{N/m^2}\approx136.5\,\mathrm{kPa}$（两种读法已在正文并列）。
+  \item 计算第 1 题：侧盖铅垂分力的方向。原卷答案写「向上」，按图中半球盖凸出容器外壁、水在盖内判断应为「向下」，
+    大小同为 $320.5\,\mathrm{N}$，已在正文注明并照原卷给出。
+  \item 计算第 6 题：$A$ 断面与管出口的相对位置（表现为 $h+L$）系由原卷答案的算式反推，请对照原卷图核对标高。
+  \item 计算第 7 题：模型 $5\,\mathrm{m}$ 长管路的压强水头差数值整块丢失（正文记为 $h_m$，按原卷答案的算式取 $0.05\,\mathrm{m}$ 水柱）；
+    原型管长 $100\,\mathrm{m}$ 亦系据原卷答案末行「$\frac55\times100$」反推。
+  \item 计算第 8 题：原卷图未标两涡的旋向，正文按 $(0,h)$ 处 $+\Gamma$ 求解并给出反向时的结果。
+  \item 计算第 10 题：$\nu$ 的原卷数值不清（$0.01l$），摩阻系数算式残片中的「$1.46$」无法与常用公式对应。
+  \item 计算第 9、11 题：明渠均匀流与气体动力学属旧大纲/超纲内容，现行 818 不考；
+    第 11 题 $A_2$ 的指数为自洽反推，原卷数值请以影印件为准。
+\end{enumerate}
+\end{tishi}

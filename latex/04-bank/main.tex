@@ -1,0 +1,28 @@
+\documentclass[UTF8,a4paper,11pt,fontset=windows,openany]{ctexbook}
+\usepackage{xhu818}
+\renewcommand{\xhuheadname}{818 题库汇编（含星级重要度）}
+
+\begin{document}
+
+\xhucover{818 工程流体力学\\[6pt] 题库汇编}{西华大学工程流体力学题库 · 逐题星级重要度标注}{%
+本册把考生提供的题库类资料（《流体力学与流体机械》试题库（四）、
+西华选择题题库精简版、补充题库）合并整理为一册，\textbf{逐题标注重要度星级}，
+答案统一置于书末。\\[6pt]
+星级不是主观印象，而是按\textbf{文件依据}判定：是否在历年真题中出现过、出现几次、
+是否被考情分析列为重点章节，详见前言"星级判定依据"。}
+
+\tableofcontents
+
+\input{parts/00-front}
+
+\part{题目}
+\InputIfFileExists{parts/q-b1}{}{}
+\InputIfFileExists{parts/q-b2}{}{}
+\InputIfFileExists{parts/q-b3}{}{}
+
+\part{参考答案}
+\InputIfFileExists{parts/a-b1}{}{}
+\InputIfFileExists{parts/a-b2}{}{}
+\InputIfFileExists{parts/a-b3}{}{}
+
+\end{document}

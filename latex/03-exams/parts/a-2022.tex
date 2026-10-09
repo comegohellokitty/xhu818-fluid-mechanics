@@ -1,0 +1,466 @@
+\chapter{2022 年 818 工程流体力学试题参考答案（当年科目代码 818）}
+
+\begin{tishi}
+\textbf{原资料未提供 2022 年答案卷，本册解答由编者按流体力学标准解法独立给出，仅供对答案与自检使用。}
+题面正本见 \texttt{parts/q-2022.tex}，本册未作任何改动；凡原卷影印模糊、OCR 误读或明显排印脱漏之处，
+均在各题后的“说明”框中列出所取假设与数值校订意见。
+
+\textbf{本卷结构（满分 150 分）：}一、单项选择题 30 分（10 小题，每小题 3 分）；
+二、判断题 20 分（10 小题，每小题 2 分）；三、填空题 30 分（10 空，每空 3 分）；
+四、简答题 12 分（3 小题，每小题 4 分）；五、计算题 58 分（6 小题，8、12、10、10、12、6 分）。
+\end{tishi}
+
+\section{一、单项选择题（共 30 分，每小题 3 分）}
+
+\answ{答案}
+\begin{center}
+1.~B\qquad 2.~D\qquad 3.~A\qquad 4.~A\qquad 5.~C\qquad 6.~A\qquad 7.~B\qquad 8.~A\qquad 9.~B\qquad 10.~C
+\end{center}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em]
+  \item 连续介质假设把流体视为连续无间隙的介质，其物理量（密度、速度、压强）可看作空间与时间的连续函数，故选 B。
+  \item 不可压缩流体指密度不随压强而变的流体，故选 D。
+  \item 测压管水头线 $z+\dfrac{p}{\rho g}$ 的坡度小于零，表示该水头沿程减小，故测压管水头线沿程下降，选 A。
+  \item 由质量守恒 $\rho_1A_1v_1=\rho_2A_2v_2$：入口 $A_1=0.4\times0.4=0.16\ \mathrm{m^2}$，
+        出口 $A_2=\dfrac{\pi d^2}{4}=0.0491\ \mathrm{m^2}$；
+        $Q_m=\rho_1A_1v_1=1.2\times0.16\times4=0.77\ \mathrm{kg/s}$，
+        $\rho_2=\dfrac{Q_m}{A_2v_2}=\dfrac{0.77}{0.0491\times3}=5.22\ \mathrm{kg/m^3}$，选 A。
+  \item 重力场中由平衡微分方程得 $\mathrm{d}p=-\rho g\,\mathrm{d}z$（$z$ 取向上为正），选 C。
+  \item 两水池水面处流速近似为零、压强为大气压，伯努利方程取这两点最简便，选 A。
+  \item 虹吸管最高处出现真空（相对压强为负），故选 B。
+  \item 圆柱形直角外管嘴正常工作的条件是作用水头 $H_0\le 9\ \mathrm{m}$ 且管嘴长度 $l=(3\sim 4)d$，选 A。
+  \item $Re_1=\dfrac{vd_1}{\nu}=\dfrac{0.2\times0.01}{1.308\times10^{-6}}=1.5\times10^{3}<2300$（层流）；
+        $Re_2=\dfrac{vd_2}{\nu}=\dfrac{0.2\times0.03}{1.308\times10^{-6}}=4.6\times10^{3}>2300$（湍流），故一为层流、一为湍流，选 B。
+  \item 层流时 $h_f=\dfrac{128\mu lQ}{\pi\rho g d^{4}}\propto d^{-4}$，直径减小一半则压强损失增大 $2^{4}=16$ 倍，选 C。
+\end{enumerate}
+\end{tishi}
+
+\section{二、判断题（正确的填“$\surd$”，错误的填“$\times$”，共 20 分，每小题 2 分）}
+
+\answ{答案}
+\begin{center}
+1.~$\times$\qquad 2.~$\surd$\qquad 3.~$\times$\qquad 4.~$\surd$\qquad 5.~$\surd$\\[4pt]
+6.~$\times$\qquad 7.~$\surd$\qquad 8.~$\surd$\qquad 9.~$\surd$\qquad 10.~$\times$
+\end{center}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em]
+  \item 错。临界雷诺数（圆管下临界雷诺数约 2300）是流态判别用的无量纲数，与流体黏度无关。
+  \item 对。两同轴圆柱间隙很小时，间隙内速度按直线规律变化，$\dfrac{\mathrm{d}u}{\mathrm{d}r}=\dfrac{U}{h}$，
+        故内筒表面切应力 $\tau=\mu\dfrac{U}{h}$。
+  \item 错。质量力（重力、惯性力）与流体质量成正比，属非接触的长程力；通过接触面传递的是表面力。
+  \item 对。湍流核心区与壁面之间始终存在一极薄的黏性底层（层流底层）。
+  \item 对。流体机械过流部件内雷诺数很大，一般处于湍流水力粗糙区（阻力平方区），故提高过流部件表面质量可显著降低水力损失。
+  \item 错。管道自大容器直角进口时的局部阻力系数 $\zeta\approx0.5$；$\zeta=1.0$ 对应的是突然扩大至无限大容器（出口）的情形。
+  \item 对。动能修正系数 $\alpha\ge1$（层流 $\alpha=2$、湍流 $\alpha\approx1.05\sim1.1$），流速分布越不均匀其值越大。
+  \item 对。液体分子间距小，黏性主要来自分子间的内聚力；气体黏性则主要来自分子热运动的动量交换。
+  \item 对。有压管道内黏滞力起主导作用，阀门实验首先须满足雷诺相似准则。
+  \item 错。湍流水力粗糙区（阻力平方区）内沿程阻力系数 $\lambda$ 只与相对粗糙度有关，与雷诺数无关。
+\end{enumerate}
+\end{tishi}
+
+\section{三、填空题（共 30 分，每空 3 分）}
+
+\answ{答案}
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em]
+  \item $v_1=\sqrt{2g\Delta h}$
+  \item 压强最大的是 \textbf{5} 点，压强最小的是 \textbf{1} 点
+  \item 离心惯性力（惯性力）产生的压强，即 $\dfrac{1}{2}\rho\omega^{2}r^{2}$
+  \item $Q_1/Q_2=2$，即 $Q_1=2Q_2$
+  \item $45\ \mathrm{m/s}$
+  \item 湍流（平板末端的边界层为湍流边界层）
+  \item $v_x=1\ \mathrm{m/s}$，$v_y=\sqrt{3}\ \mathrm{m/s}\approx1.73\ \mathrm{m/s}$，$a=0$
+\end{enumerate}
+
+\begin{tishi}
+\textbf{各空说明：}
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em]
+  \item 毕托管：1 点为总压（驻点）孔、2 点为静压孔，两测压管的读数差即两点的压强水头差 $\Delta h$。
+        对 1、2 两点写伯努利方程，驻点 $v_1=0$（或按相对速度处理），得
+        $\dfrac{v^{2}}{2g}=\Delta h$，故 $v_1=\sqrt{2g\Delta h}$。
+        本题图 2 为“同种液体、两根竖直测压管”的形式，故无 $\left(\rho'\middle/\rho-1\right)$ 修正项。
+  \item 图 3 中容器被隔板分成若干腔室，各腔液面高低不同，说明各腔液面上的气体压强不同
+        （1、3、4 腔密闭，2 腔与大气相通），而各腔水体在下部彼此连通，故同一水平面上压强相等，
+        压强只随深度增大。比较五点位置：\textbf{5 点最低}（位于最深腔室液面以下的液体中），故压强最大；
+        \textbf{1 点最高}（位于左侧腔室液面上方的稀薄气体中），故压强最小。
+  \item 相对平衡时，液体内部任一点的压强由液面压强 $p_0$、自重产生的压强 $\rho g h$
+        和离心惯性力产生的压强 $\dfrac{1}{2}\rho\omega^{2}r^{2}$ 三部分组成，即
+        $p=p_0+\rho g\!\left(\dfrac{\omega^{2}r^{2}}{2g}-z\right)$。
+  \item 并联管路各支管水头损失相等 $h_{f1}=h_{f2}$，直径与 $\lambda$ 相同时
+        $h_f\propto \dfrac{l v^{2}}{2g}$，故 $\dfrac{v_1}{v_2}=\sqrt{\dfrac{l_2}{l_1}}=2$，
+        同直径时 $\dfrac{Q_1}{Q_2}=\dfrac{v_1}{v_2}=2$。
+  \item 温度相同则空气的运动黏度 $\nu$ 相同，雷诺相似给出
+        $\dfrac{v_m}{v_p}=\dfrac{L_p}{L_m}=\dfrac{1}{k}=\dfrac{3}{2}$，
+        而 $v_p=108\ \mathrm{km/h}=30\ \mathrm{m/s}$，故 $v_m=1.5\times30=45\ \mathrm{m/s}$。
+  \item $Re_L=\dfrac{v_0L}{\nu}=\dfrac{0.8\times2}{10^{-6}}=1.6\times10^{6}>Re_{x,cr}=5\times10^{5}$，
+        故平板末端的边界层已由层流转捩为湍流。
+  \item 平面流动流函数 $\psi=-\sqrt{3}\,x+y$，由 $v_x=\dfrac{\partial\psi}{\partial y}=1\ \mathrm{m/s}$、
+        $v_y=-\dfrac{\partial\psi}{\partial x}=\sqrt{3}\ \mathrm{m/s}$；速度场均匀且定常，
+        各点速度的大小与方向均不变，故加速度 $a=0$。
+\end{enumerate}
+\end{tishi}
+
+\begin{tishi}
+\textbf{第 2 空（图 3）的补充说明：}原卷图 3 影印件模糊，题面只述“容器由隔板分成各腔、
+各腔液面高低不同”。若按“各腔完全隔绝、每腔液面直接与大气相通”理解，则 1、2、3、4 四点
+均在其腔液面上、压强同为大气压而无法分出最小者，与题目要求不符；
+故本册按“各腔水体下部连通、各腔液面上方气体压强不同（密闭腔）”的读法作答，
+此时 1 点所在腔液面最高、液面上方气体为稀薄气体，1 点压强最小，5 点最深、压强最大。
+复习时请以课堂讲法为准。
+\end{tishi}
+
+\section{四、简答题（共 12 分，每小题 4 分）}
+
+\answ{1.（4 分）气体与液体的黏度随温度变化的趋势是否一致，为什么？}
+
+不一致，二者趋势相反。液体分子间距很小，分子间的内聚力（引力）是黏性的主要来源；
+温度升高时分子间内聚力减小、分子更容易相对滑动，故液体黏度随温度升高而减小。
+气体分子间距大，黏性主要来自分子无规则热运动引起的动量交换；温度升高时分子热运动加剧、
+动量交换增强，故气体黏度随温度升高而增大。因此液体的 $\mu$ 随 $T$ 升高而减小，气体的 $\mu$ 随 $T$ 升高而增大。
+
+\answ{2.（4 分）流线和迹线是如何定义的？分别描述什么情况？}
+
+\textbf{流线}是某一瞬时在流场中画出的一条曲线，该曲线上所有流体质点的速度矢量都与曲线相切，
+即曲线上各点的切线方向与该瞬时该点流体质点的速度方向一致。流线描述的是\emph{某一瞬时}
+流场中各点速度方向的分布情况（流场的瞬时流动图像）；流线一般不相交（驻点、奇点除外），
+其疏密反映流速的大小。
+
+\textbf{迹线}是同一个流体质点在不同时刻所经历的轨迹（运动轨迹），描述的是\emph{某一特定流体质点}
+在一段时间内的运动历程。迹线总是随时间而延伸，同一质点在不同时刻占据的位置连成迹线。
+对于定常流动，流线与迹线重合；非定常流动时二者一般不相重合。
+
+\answ{3.（4 分）均匀流是如何定义的？其特点有哪些？}
+
+\textbf{定义：}均匀流是流线为平行直线的流动，即各过流断面上的流速分布沿程不变、
+流体只能沿流动方向产生均匀的直线运动（过流断面沿程不变）。
+
+\textbf{特点：}（1）各过流断面面积相等、断面平均流速相等，流速沿程不变；
+（2）流线为平行直线，过流断面为平面，各断面的流速分布相同；
+（3）迁移加速度（位变加速度）为零，故均匀流的加速度只可能来自当地加速度（非定常时），
+定常均匀流中质点加速度为零；
+（4）同一过流断面上动水压强按静水压强规律分布，即 $z+\dfrac{p}{\rho g}=\text{const}$，
+测压管水头面为水平面且与流线正交；
+（5）均匀流中无局部水头损失，只有沿程水头损失。
+
+\section{五、计算题（共 58 分）}
+
+\answ{1.（8 分）圆柱形油桶内两种油的深度及两测压管内的油面高度}
+
+\begin{jie}
+\textbf{已知：}油桶为等截面圆柱（各层横截面积 $A$ 相同）；轻油 $\rho_1=6632\ \mathrm{kg/m^3}$、
+重油 $\rho_2=8877\ \mathrm{kg/m^3}$；两种油重量相等，总液深 $h_1+h_2=5\ \mathrm{m}$；
+桶右侧接两根测压管，分别与轻油层、重油层相通。
+
+\textbf{求：}（1）两种油的深度 $h_1$、$h_2$；（2）两测压管内油面上升的高度。
+
+\textbf{（1）两种油的深度}\\
+两种油重量相等：
+\[
+\rho_1gh_1A=\rho_2gh_2A\quad\Longrightarrow\quad \frac{h_1}{h_2}=\frac{\rho_2}{\rho_1}=\frac{8877}{6632}=1.3385
+\]
+与总液深联立：
+\[
+h_1+h_2=1.3385h_2+h_2=2.3385h_2=5\ \mathrm{m}
+\]
+\[
+h_2=\frac{5}{2.3385}=2.138\ \mathrm{m},\qquad h_1=1.3385h_2=2.862\ \mathrm{m}
+\]
+
+\textbf{（2）两测压管内的油面高度}\\
+取桶底为基准面，则桶内油面高程 $z_0=h_1+h_2=5.000\ \mathrm{m}$。
+
+轻油测压管在轻油层内引出，管内盛轻油，其油面与桶内自由液面同高：
+\[
+z_1=z_0=5.000\ \mathrm{m}
+\]
+
+重油测压管在重油层内引出，管中重油柱的压强与桶内同一水平面的压强相等。
+对轻、重油分界面取等压面（界面处相对压强 $p=\rho_1gh_1$），对管内重油应用静压强基本方程：
+\[
+\rho_2g(z_2-h_2)=\rho_1gh_1\quad\Longrightarrow\quad z_2=h_2+\frac{\rho_1h_1}{\rho_2}
+=2.138+\frac{6632\times2.862}{8877}=2.138+2.138=4.276\ \mathrm{m}
+\]
+
+\textbf{结果：}$h_1=2.862\ \mathrm{m}$，$h_2=2.138\ \mathrm{m}$；
+轻油测压管内油面距桶底 $5.000\ \mathrm{m}$（与桶内油面齐平）；
+重油测压管内油面距桶底 $4.276\ \mathrm{m}$（比桶内油面低 $0.724\ \mathrm{m}$）。
+
+\textbf{校核：}等重条件 $\rho_1h_1=6632\times2.862=1.898\times10^{4}$ 与
+$\rho_2h_2=8877\times2.138=1.898\times10^{4}$ 相等，成立。
+\end{jie}
+
+\begin{tishi}
+\textbf{第 1 题说明（关于密度数值）：}原卷印作 $\rho_1=6632\ \mathrm{kg/m^3}$、$\rho_2=8877\ \mathrm{kg/m^3}$。
+经对原卷影印件放大目视核对，该数值确为原卷所印，并非 OCR 误读；但其量级不合油品常理
+（油品密度约 $0.8\times10^{3}\ \mathrm{kg/m^3}$），应系原卷排印时脱漏小数点。
+查得该题原出处（《工程流体力学》课程作业习题·第 1 章水静力学第 1.3 题）作
+$\rho_1=663.26\ \mathrm{kg/m^3}$、$\rho_2=887.75\ \mathrm{kg/m^3}$。因本题两问的结果只依赖比值
+$\rho_1/\rho_2$（等重条件给出 $\rho_1h_1=\rho_2h_2$，深度比与两测压管高差均由比值决定），
+故按原卷印面数值 6632/8877 求解与按教材数值求解结果完全一致：
+$h_1=2.862\ \mathrm{m}$、$h_2=2.138\ \mathrm{m}$、$z_2=4.276\ \mathrm{m}$。
+题面正本 \texttt{parts/q-2022.tex} 未作改动，此处仅作校订记录。
+\end{tishi}
+
+\answ{2.（12 分）圆柱形压力罐端盖板及上、下半圆筒所受的水压力}
+
+\begin{jie}
+\textbf{已知：}圆柱形压力罐半径 $R=0.5\ \mathrm{m}$、长 $l=2\ \mathrm{m}$，罐顶压力表读数
+$p_m=23.72\ \mathrm{kPa}$（相对压强，即罐内最高处的相对压强）；罐内充满水，
+$\rho=1000\ \mathrm{kg/m^3}$，取 $\rho g=9.8\times10^{3}\ \mathrm{N/m^3}$、$\pi=3.14$。
+
+\textbf{求：}（1）端部平面盖板所受的水压力；（2）上、下半圆筒所受的水压力。
+
+\textbf{（1）端部平面盖板}\\
+盖板为铅垂平面，其形心即圆心，圆心处相对压强为
+\[
+p_C=p_m+\rho gR=23.72\times10^{3}+9.8\times10^{3}\times0.5=2.862\times10^{4}\ \mathrm{Pa}
+\]
+\[
+P=p_CA_C=(p_m+\rho gR)\pi R^{2}=2.862\times10^{4}\times3.14\times0.5^{2}=2.247\times10^{4}\ \mathrm{N}=22.47\ \mathrm{kN}
+\]
+方向沿罐轴、由水指向端盖（两端盖各受 $22.47\ \mathrm{kN}$，方向相反）。
+
+\textbf{（2）上、下半圆筒}\\
+圆柱面上的水压力左右对称、水平分力互相抵消，只有铅垂分力，可用压力体法计算。
+表压 $p_m$ 折合等效液柱高
+\[
+\frac{p_m}{\rho g}=\frac{23.72\times10^{3}}{9.8\times10^{3}}=2.42\ \mathrm{m}
+\]
+即把自由液面抬高到圆心以上 $\left(\dfrac{p_m}{\rho g}+R\right)$ 处，再按敞口容器画压力体。
+
+上半圆筒（受压面朝上，压力体为实压力体）：
+\[
+P_{\text{上}}=\rho g\left[\left(\frac{p_m}{\rho g}+R\right)2R-\frac{\pi R^{2}}{2}\right]l
+=9.8\times10^{3}\times\left[(2.42+0.5)\times1-0.3927\right]\times2=4.954\times10^{4}\ \mathrm{N}=49.54\ \mathrm{kN}
+\]
+方向铅垂向上。
+
+下半圆筒（受压面朝下，压力体为虚压力体）：
+\[
+P_{\text{下}}=\rho g\left[\left(\frac{p_m}{\rho g}+R\right)2R+\frac{\pi R^{2}}{2}\right]l
+=9.8\times10^{3}\times\left[(2.42+0.5)\times1+0.3927\right]\times2=6.493\times10^{4}\ \mathrm{N}=64.93\ \mathrm{kN}
+\]
+方向铅垂向下。
+
+\textbf{结果：}端部平面盖板受水压力 $P=22.47\ \mathrm{kN}$（轴向）；
+上半圆筒受 $49.54\ \mathrm{kN}$ 的铅垂向上水压力，下半圆筒受 $64.93\ \mathrm{kN}$ 的铅垂向下水压力。
+（若要求连接螺栓的总拉力，则 $T=P_{\text{上}}=49.54\ \mathrm{kN}$。）
+
+\textbf{校核：}上、下半圆筒所受铅垂力之差
+\[
+P_{\text{下}}-P_{\text{上}}=64.93-49.54=15.39\ \mathrm{kN}
+\]
+恰等于罐内水的重量
+\[
+\rho g\pi R^{2}l=9.8\times10^{3}\times3.14\times0.5^{2}\times2=15.39\ \mathrm{kN}
+\]
+成立，说明两式与压力体计算自洽。
+\end{jie}
+
+\answ{3.（10 分）文丘里流量计所通过的流量}
+
+\begin{jie}
+\textbf{已知：}文丘里管水平安装；上游断面 $\dfrac{p_1}{\rho g}=1\ \mathrm{m}$、喉道断面 $\dfrac{p_2}{\rho g}=0.4\ \mathrm{m}$（均为测压管水头）；
+水管断面积 $A_1=0.002\ \mathrm{m^2}$、喉道断面积 $A_2=0.001\ \mathrm{m^2}$；
+两断面间水头损失 $h_w=0.05\dfrac{v_1^{2}}{2g}$。
+
+\textbf{求：}通过流量 $Q$。
+
+\textbf{公式：}连续方程给出
+\[
+v_1A_1=v_2A_2\quad\Longrightarrow\quad v_2=\frac{A_1}{A_2}v_1=2v_1
+\]
+对 1、2 两断面写伯努利方程（水平管 $z_1=z_2$，动能修正系数取 1，损失计入 $h_w$）：
+\[
+\frac{p_1}{\rho g}+\frac{v_1^{2}}{2g}=\frac{p_2}{\rho g}+\frac{v_2^{2}}{2g}+h_w
+\]
+
+\textbf{代入：}
+\[
+1+\frac{v_1^{2}}{2g}=0.4+\frac{4v_1^{2}}{2g}+0.05\frac{v_1^{2}}{2g}
+\]
+\[
+0.6=\left(4-1+0.05\right)\frac{v_1^{2}}{2g}=3.05\frac{v_1^{2}}{2g}
+\quad\Longrightarrow\quad
+\frac{v_1^{2}}{2g}=\frac{0.6}{3.05}=0.1967\ \mathrm{m}
+\]
+\[
+v_1=\sqrt{2g\times0.1967}=\sqrt{2\times9.8\times0.1967}=1.964\ \mathrm{m/s}
+\]
+
+\textbf{结果：}
+\[
+Q=v_1A_1=1.964\times0.002=3.93\times10^{-3}\ \mathrm{m^3/s}=3.93\ \mathrm{L/s}
+\]
+
+\textbf{校核：}$v_2=2v_1=3.93\ \mathrm{m/s}$，两断面速度水头之差与损失之和为
+\[
+\frac{v_2^{2}-v_1^{2}}{2g}+h_w=\frac{3.93^{2}-1.964^{2}}{2\times9.8}+0.05\times0.1967
+=0.5903+0.0098=0.600\ \mathrm{m}
+\]
+与题给两断面测压管水头差 $1-0.4=0.6\ \mathrm{m}$ 一致，成立。
+\end{jie}
+
+\answ{4.（10 分）水电站压力水管渐变段所受的水平推力}
+
+\begin{jie}
+\textbf{已知：}渐变段水平放置，$D_1=1.5\ \mathrm{m}$、$D_2=1\ \mathrm{m}$，
+起始断面相对压强 $p_1=400\ \mathrm{kPa}$，流量 $Q=1.8\ \mathrm{m^3/s}$，不计水头损失。
+
+\textbf{求：}渐变段所受的水平推力。
+
+\textbf{（1）两断面的平均流速}
+\[
+A_1=\frac{\pi D_1^{2}}{4}=1.767\ \mathrm{m^2},\qquad v_1=\frac{Q}{A_1}=\frac{1.8}{1.767}=1.019\ \mathrm{m/s}
+\]
+\[
+A_2=\frac{\pi D_2^{2}}{4}=0.7854\ \mathrm{m^2},\qquad v_2=\frac{Q}{A_2}=\frac{1.8}{0.7854}=2.292\ \mathrm{m/s}
+\]
+
+\textbf{（2）断面 2 的压强}（水平、不计水头损失）
+\[
+\frac{p_1}{\rho g}+\frac{v_1^{2}}{2g}=\frac{p_2}{\rho g}+\frac{v_2^{2}}{2g}
+\]
+\[
+p_2=p_1+\frac{\rho}{2}\left(v_1^{2}-v_2^{2}\right)
+=400\times10^{3}+\frac{1000}{2}\left(1.019^{2}-2.292^{2}\right)=400\times10^{3}-2107=3.979\times10^{5}\ \mathrm{Pa}
+\]
+
+\textbf{（3）动量方程}\\
+取 1-1、2-2 断面之间的水体为控制体。设渐变段管壁对水体的作用力为 $R'$（沿水流方向为正），
+由动量方程
+\[
+p_1A_1-p_2A_2+R'=\rho Q\left(v_2-v_1\right)
+\]
+\[
+R'=\rho Q(v_2-v_1)-p_1A_1+p_2A_2
+=1000\times1.8\times(2.292-1.019)-400\times10^{3}\times1.767+397.9\times10^{3}\times0.7854
+\]
+\[
+R'=2292-706800+312500=-3.92\times10^{5}\ \mathrm{N}
+\]
+即管壁对水体的作用力大小为 $3.92\times10^{5}\ \mathrm{N}$、方向与水流方向相反（指向上游）。
+
+\textbf{结果：}由牛顿第三定律，水体对渐变段的作用力为
+\[
+R=-R'=3.92\times10^{5}\ \mathrm{N}=392\ \mathrm{kN}
+\]
+方向沿水流方向（指向下游），即水流的动水压力把渐变段向下游推。
+
+\textbf{校核：}以“水体所受外力之合力等于动量变化率”复核，
+\[
+p_1A_1-p_2A_2-R=706.8-312.5-392.1=2.2\ \mathrm{kN}
+\]
+而 $\rho Q(v_2-v_1)=1000\times1.8\times1.273=2.29\ \mathrm{kN}$，两者一致（计算取 $p_2A_2$ 的舍入所致），成立。
+\end{jie}
+
+\answ{5.（12 分）水泵的安装高程与水泵功率}
+
+\begin{jie}
+\textbf{已知：}$Q=0.2\ \mathrm{m^3/s}$；湖面高程 $\nabla_1=85\ \mathrm{m}$，水池水面高程 $\nabla_3=105\ \mathrm{m}$；
+吸水管与压水管直径相等 $d_1=d_2=0.5\ \mathrm{m}$；吸水管长 $l_1=10\ \mathrm{m}$，压水管长 $l_2=1000\ \mathrm{m}$；
+泵的允许真空高度 $h_v=4.5\ \mathrm{m}$；底阀 $\zeta_e=2.5$、$90^\circ$ 弯头 $\zeta_b=0.3$、
+$120^\circ$ 弯头 $\zeta_d=0.2$、泵入口前渐变收缩段 $\zeta_g=0.1$；
+吸水管与压水管沿程阻力系数相等 $\lambda=0.022$；泵效率 $\eta_p=0.7$。
+
+\textbf{求：}（1）水泵安装高程 $z_s$；（2）水泵的功率。
+
+\textbf{（1）安装高程}\\
+管内流速与速度水头
+\[
+v=\frac{4Q}{\pi d^{2}}=\frac{4\times0.2}{3.14\times0.5^{2}}=1.019\ \mathrm{m/s},\qquad
+\frac{v^{2}}{2g}=\frac{1.019^{2}}{2\times9.8}=0.0530\ \mathrm{m}
+\]
+吸水管水头损失（沿程 + 底阀 + $90^\circ$ 弯头 + 入口前渐变收缩段）
+\[
+h_{w(1-2)}=\left(\lambda\frac{l_1}{d}+\zeta_e+\zeta_b+\zeta_g\right)\frac{v^{2}}{2g}
+=\left(0.022\times\frac{10}{0.5}+2.5+0.3+0.1\right)\times0.0530=3.34\times0.0530=0.177\ \mathrm{m}
+\]
+对湖面 1-1 与泵入口 2-2 写能量方程，并令泵入口真空度等于允许真空高度
+$\dfrac{p_a-p_2}{\rho g}=h_v$：
+\[
+\nabla_1+\frac{p_a}{\rho g}=z_s+\frac{p_2}{\rho g}+\frac{v^{2}}{2g}+h_{w(1-2)}
+\]
+\[
+z_s=\nabla_1+h_v-\frac{v^{2}}{2g}-h_{w(1-2)}=85+4.5-0.053-0.177=89.27\ \mathrm{m}
+\]
+
+\textbf{（2）水泵功率}\\
+静提水高度
+\[
+H_{st}=\nabla_3-\nabla_1=105-85=20\ \mathrm{m}
+\]
+管路总水头损失（沿程按吸水管与压水管全长计，局部含底阀、$90^\circ$ 弯头、渐变收缩段与 $120^\circ$ 弯头）
+\[
+h_w=\left(\lambda\frac{l_1+l_2}{d}+\zeta_e+\zeta_b+\zeta_g+\zeta_d\right)\frac{v^{2}}{2g}
+=\left(0.022\times\frac{1010}{0.5}+3.1\right)\times0.0530=(44.44+3.1)\times0.0530=2.52\ \mathrm{m}
+\]
+泵所需扬程
+\[
+H=H_{st}+h_w=20+2.52=22.52\ \mathrm{m}
+\]
+水泵功率（轴功率）
+\[
+P=\frac{\rho gQH}{\eta_p}=\frac{9.8\times10^{3}\times0.2\times22.52}{0.7}=6.31\times10^{4}\ \mathrm{W}=63.1\ \mathrm{kW}
+\]
+
+\textbf{结果：}水泵安装高程 $z_s\approx89.27\ \mathrm{m}$（即泵轴线高程约 $89.3\ \mathrm{m}$，高出湖面约 $4.27\ \mathrm{m}$）；
+水泵功率 $P\approx63\ \mathrm{kW}$（按 $\rho g=9.8\times10^{3}$、$\pi=3.14$ 计）。
+
+\textbf{校核：}由安装高程反算泵入口真空度
+\[
+\frac{p_a-p_2}{\rho g}=z_s-\nabla_1+\frac{v^{2}}{2g}+h_{w(1-2)}=89.27-85+0.053+0.177=4.50\ \mathrm{m}=h_v
+\]
+正好用满允许真空高度，满足不产生汽蚀的要求；若 $z_s$ 再抬高，泵入口真空度将超过 $h_v$。
+\end{jie}
+
+\begin{tishi}
+\textbf{第 5 题说明：}（1）题面“压水管和压水管的沿程阻力系数相等 $\lambda=0.022$”一句，
+前后重复，应为“吸水管和压水管”之误，本册照原卷字面保留并在此指出，计算按“吸水管与压水管沿程阻力系数相同”处理。
+（2）其中 $120^\circ$ 弯头 $\zeta_d=0.2$ 计入压水管（吸水管段只计底阀、$90^\circ$ 弯头与入口前渐变收缩段）；
+若把 $\zeta_d$ 也计入吸水管，$z_s$ 仅减小 $0.2\times0.053=0.011\ \mathrm{m}$，对结果无实质影响。
+（3）本题按泵的“允许真空高度”即泵入口断面的真空度 $\dfrac{p_a-p_2}{\rho g}$ 理解，
+安装高度按 $z_s=\nabla_1+h_v-\dfrac{v^{2}}{2g}-h_{w(1-2)}$ 计算，与教材水泵安装高度算例
+$h_s=h_v-\dfrac{v^{2}}{2g}-h_w$ 的写法一致。
+（4）功率为轴功率，不再计传动效率与电机效率；若另计压水管出口损失（$\zeta=1.0$），
+则 $H=22.57\ \mathrm{m}$、$P=63.2\ \mathrm{kW}$，相差不到 $0.5\%$。
+\end{tishi}
+
+\answ{6.（6 分）$t=0$ 时通过点 $(1,1)$ 的流线}
+
+\begin{jie}
+\textbf{已知：}平面流动速度场 $v_x=x(1+2t)$，$v_y=y$，$v_z=0$。
+
+\textbf{求：}$t=0$ 时通过点 $(1,1)$ 的流线方程。
+
+\textbf{公式：}流线的微分方程为
+\[
+\frac{\mathrm{d}x}{v_x}=\frac{\mathrm{d}y}{v_y}
+\]
+
+\textbf{代入：}
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{v_y}{v_x}=\frac{y}{x(1+2t)}
+\quad\Longrightarrow\quad
+\frac{\mathrm{d}y}{y}=\frac{1}{1+2t}\cdot\frac{\mathrm{d}x}{x}
+\]
+积分得
+\[
+\ln y=\frac{1}{1+2t}\ln x+C_1
+\quad\Longrightarrow\quad
+y=Cx^{\frac{1}{1+2t}}
+\]
+
+\textbf{结果：}当 $t=0$ 时 $y=Cx$；将点 $(1,1)$ 代入得 $C=1$，故所求流线为
+\[
+\boxed{\,y=x\,}
+\]
+即 $t=0$ 时过点 $(1,1)$ 的流线是过该点、斜率为 1 的直线。
+
+\textbf{校核：}将 $y=x$ 代入速度场，该线上任一点的速度方向
+$\dfrac{\mathrm{d}y}{\mathrm{d}x}\Big|_{t=0}=\dfrac{v_y}{v_x}=\dfrac{y}{x}=1$，
+与直线 $y=x$ 的斜率一致，且该直线过点 $(1,1)$，成立。
+\end{jie}

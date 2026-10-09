@@ -1,0 +1,959 @@
+\chapter{管路、孔口、管嘴的水力计算}
+
+\begin{yijubox}
+E1 \texttt{8-1考情分析.pptx} slide33：第五章 管路、孔口、管嘴的水力计算＝\textbf{考试计算题重点}。\\
+E2 \texttt{9-1考点分析.pptx}：计算题占 50\% 分值；第四章是主要考点、需掌握计算套路；\textbf{第五章同为主要计算考点}。\\
+E1 slide16 各题型考法：简答考\emph{水头损失分类及定义}；选择判断题考\emph{概念辨析}；填空考\emph{名词定义与小计算}；计算考\emph{伯努利方程、动量方程}。\\
+E4 真题落点：2022 年 818 单选第 3、7、8、9、10 题均在本章；2015 年试题填空考"层流断面平均速度＝0.5 倍最大速度""$\Rey$ 判流态""U 形水银压差计"，计算第 3 题考"突然缩小水头损失"；2026 回忆版简答考"水击现象""层流与雷诺数关系"，计算第 5 题考"管嘴体积流量（书上例题）"；题库 \texttt{10.pdf} 选择第 10 题、计算第 2 题也在本章。\\
+\textbf{本章结论}：这是全书\textbf{篇幅最大、计算题命中率最高}的一章。一句话概括考法——
+选择填空考\emph{判据与系数}（雷诺数、长管/短管、光滑/粗糙、串联/并联），简答考\emph{水头损失分类与水击}，
+计算题考\emph{长管/短管 + 孔口/管嘴}。复习策略＝把判据背成条件反射，把五六个系数（$\lambda$、$\zeta$、$\mu$、$\varphi$、$\varepsilon$、$c$）的取值与含义记牢。
+\end{yijubox}
+
+\section{流动阻力和水头损失}
+
+\begin{kaodian}{5}{水头损失的两种形式与叠加原理}
+\textbf{是什么：}实际流体都有黏性，流动过程中流体内部、流体与管壁之间都存在摩擦与撞击，
+机械能不可逆地转化为热能，沿流动方向总水头一定下降，这部分损失叫\textbf{水头损失}，用 $h_w$ 表示。
+
+\textbf{两种形式（必背，考简答/填空）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+类别 & 成因 & 发生位置 \\
+\midrule
+沿程水头损失 $h_f$ & 黏性摩擦\emph{沿整个流程连续作用}（质点之间、流体与管壁之间） & 等直径直管段 \\
+局部水头损失 $h_j$ & 边界急剧变化使流速的大小与方向被迫重组，产生\textbf{漩涡}，漩涡耗能 & 弯头、阀门、变径、进出口等局部管件 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+阻力还可按内因、外因分：流体之间的摩擦与掺混＝\textbf{内部阻力}（受管径、流量、黏度影响）；
+流体与管壁的摩擦撞击＝\textbf{外部阻力}（受接触面积、管壁粗糙度、流量影响）。
+
+\begin{gongshi}{水头损失的叠加原理}
+\[ h_w=\sum h_f+\sum h_j \]
+\textbf{含义：}一段管路的总水头损失＝各直管段沿程水头损失之和＋各局部管件的局部水头损失之和。
+之所以能直接相加，是因为它们消耗的都是同一股流体的机械能，且各自独立计算。\\
+\textbf{适用条件：}恒定流、液体充满全管；两个局部损失之间隔有足够长的直管段，彼此不干扰。
+\end{gongshi}
+
+\textbf{常考题型：}简答（"水头损失分几类？各自定义与成因？"）；填空（"总水头损失＝\rule{2cm}{0.4pt}"）；
+选择（判断某一损失属沿程还是局部）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E1 slide16「简答考水头损失分类及定义」；E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{易}
+
+\begin{banfa}
+记忆锚点：\textbf{"沿程＝黏性沿程摩擦，局部＝漩涡耗能"}。
+考场上一看到"弯头、阀门、突然扩大、出口"就写 $h_j$；一看到"管长 $l$、管径 $d$"就写 $h_f$。
+简答答题模板：先分两类，再各给一句成因，最后写 $h_w=\sum h_f+\sum h_j$ 收尾。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{4}{有效断面的水力要素：湿周、水力半径与当量直径}
+\textbf{是什么：}决定沿程阻力大小的断面几何量。流道面积 $A$ 越大，内部阻力越小；
+湿周 $\chi$（有效断面上流体与固体边壁接触的周界长度）越大、管壁越粗糙，外部阻力越大。
+
+\begin{gongshi}{湿周、水力半径、当量直径与相对粗糙度}
+\[ \chi\ (\mathrm{m}),\qquad R_h=\frac{A}{\chi}\ (\mathrm{m}),\qquad d_e=4R_h,\qquad \frac{\Delta}{d} \]
+\textbf{含义：}$R_h=A/\chi$ 称\textbf{水力半径}，综合反映断面的"通畅"程度——$R_h$ 越大，阻力越小；
+$d_e=4R_h$ 称\textbf{当量直径}，作用是把圆管的一切公式直接搬到非圆断面上；
+$\Delta$ 为管壁粗糙突起的平均高度（\textbf{绝对粗糙度}），$\Delta/d$ 为\textbf{相对粗糙度}。\\
+\textbf{适用条件：}当量直径只用于\textbf{雷诺数与沿程阻力}的折算，\emph{不能}用于过流面积与流量计算，
+即不等于 $\pi d_e^2/4$（圆管除外）。
+\end{gongshi}
+
+\textbf{常用断面的水力半径：}圆管 $R_h=\dfrac{\pi d^2/4}{\pi d}=\dfrac{d}{4}$；
+矩形 $a\times b$：$R_h=\dfrac{ab}{2(a+b)}$；同心环缝：$R_h=\dfrac{D-d}{4}$。
+
+\textbf{常用管壁绝对粗糙度 $\Delta$：}普通钢管 0.19 mm；干净铸铁管 0.45 mm；污秽金属管 0.75$\sim$0.9 mm；
+水管道 0.25$\sim$1.25 mm；混凝土槽 0.8$\sim$9.0 mm。
+
+\textbf{常考题型：}填空（给矩形或环形断面求 $R_h$、$d_e$）；选择（"当量直径能否用于求流量"）；
+计算（非圆管算雷诺数）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E5 题库选择第 10 题（圆管与方管沿程损失比 0.886，必须先算当量直径）；E1 slide33「第五章＝考试计算题重点」}\quad\nandu{中}
+
+\begin{yicuo}
+① \textbf{当量直径不是"等效面积"}：它是 $d_e=4A/\chi$。若误按 $d_e=\sqrt{4A/\pi}$ 再代入 $Q=Av$，答案必错。
+② 只有圆管才有 $d_e=d$；矩形、环缝都不等，别把特征尺寸当 $d_e$。
+③ 水力半径 $R_h$ 与几何半径 $r_0$ 差 2 倍：圆管 $R_h=r_0/2=d/4$。
+④ "湿周"必须是与\textbf{固体边壁}接触的那部分周界，明渠的\emph{自由水面不算湿周}。
+\end{yicuo}
+\end{kaodian}
+
+\section{黏性流体的两种流态}
+
+\begin{kaodian}{5}{雷诺实验与两种流态}
+\textbf{实验（雷诺实验）：}英国物理学家雷诺用一只稳水位箱、一支水平玻璃管和一根颜色水针做实验。
+步骤与现象：保持水箱水位恒定，微开出口阀门，颜色水在玻璃管内呈\emph{一条清晰的直线}；
+逐渐开大阀门，颜色水线开始\emph{抖动、弯曲}；开度足够大后颜色水\emph{扩散、布满全管}。
+反向关小阀门可倒序复现。
+
+\textbf{两种流态（定义必背）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+流态 & 特征 & 阻力来源 \\
+\midrule
+层流 & 流体质点\emph{互不干扰、各自成层}，沿管轴做平滑直线运动，层间不混合不碰撞 & 层间黏性摩擦力 \\
+湍流（紊流） & 流体质点\emph{互相掺混、杂乱无章}；主体做轴向运动的同时有\textbf{径向脉动} & 黏性摩擦＋掺混与涡旋 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{过渡流}只是层流到湍流的中间不稳定状态，\textbf{不是独立流型}（流型只有层流与湍流两种）；
+工程计算中常把它归入湍流。
+
+\textbf{临界流速：}流态转变时的流速。层流转为湍流时称\textbf{上临界流速} $v_{cu}$；
+湍流转为层流时称\textbf{下临界流速} $v_{cd}$，且 $v_{cu}>v_{cd}$（说明流态转变有"迟滞"）。
+
+\textbf{水头损失的实验测定：}在等直径水平试验段两端接出两根测压管，稳定流时由伯努利方程得
+$h_f=\dfrac{p_1-p_2}{\rho g}$，据此画出 $h_f$ 与 $v$ 的关系曲线，即得两种流态的不同规律。
+
+\begin{jielun}
+\textbf{层流：}$h_f\propto v^{1.0}$（直线）；\textbf{湍流：}$h_f\propto v^{1.75\sim2.0}$（曲线）。
+这两段"直线／曲线"就是雷诺实验最重要的定量结论，简答与选择题都爱考。
+\end{jielun}
+
+\textbf{常考题型：}简答（描述雷诺实验现象与结论）；选择（"过渡流是否为独立流型"）；
+空（"层流时 $h_f$ 与 $v$ 的几次方成正比"）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2026 回忆版简答考"层流与雷诺数关系"；E1 slide16「简答考水头损失分类及定义」；E1 slide33「第五章＝考试计算题重点」}\quad\nandu{易}
+
+\begin{banfa}
+实验现象用\textbf{三句话}背：直线 $\to$ 抖动 $\to$ 满管扩散。
+被问"为什么两种流态的水头损失规律不同"，落脚点是：\emph{层流只有黏性摩擦，湍流多了质点掺混与涡旋，耗能随速度增长更快}。
+上、下临界流速的关系记成"上去难、下来容易"，即 $v_{cu}>v_{cd}$。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{5}{层流与湍流的判别标准——雷诺数}
+\textbf{是什么：}实验证明，影响流态的因素是流速 $v$、管径 $d$、密度 $\rho$、黏度 $\mu$ 四个量；
+它们组成的复合数群 $\dfrac{\rho v d}{\mu}$ 就是判别流态的准则，称\textbf{雷诺数}。
+$v$、$d$、$\rho$ 越大、$\mu$ 越小，越容易从层流转变为湍流。
+
+\begin{gongshi}{雷诺数与流态判据}
+\[ \Rey=\frac{\rho v d}{\mu}=\frac{vd}{\nu}\quad\text{（圆管）},\qquad
+   \Rey=\frac{v d_e}{\nu}=\frac{4vR_h}{\nu}\quad\text{（非圆管）} \]
+\[ \Rey_c\approx 2300\ \text{（下临界）；工程判据：}\ \Rey<2000\ \text{层流},\quad \Rey>2300\ \text{湍流} \]
+\textbf{含义：}$\Rey$ 的物理意义是\textbf{惯性力与黏性力之比}。
+$\Rey$ 大 $\to$ 惯性力占主导 $\to$ 湍流；$\Rey$ 小 $\to$ 黏性力占主导 $\to$ 层流。
+所以 $\Rey$ 越大，湍流程度越高。\\
+\textbf{适用条件：}特征长度必须与特征速度配对——圆管取 $d$，非圆管取当量直径 $d_e$；
+$\nu$、$\mu$ 取该温度下的值。\textbf{下临界雷诺数才是判别标准}（上临界雷诺数不稳定、随扰动变化大，不能作判据）。
+\end{gongshi}
+
+\textbf{临界雷诺数的取值：}实验测得下临界 $\Rey_c\approx 2300$（教材常写 2320），上临界可高到 13800；
+工程计算为安全起见把临界值取为 \textbf{2000}——$\Rey<2000$ 按层流算，$\Rey>2000$ 按湍流算。
+
+\begin{zhenti}{2022 年 818 单选第 9 题}{单项选择题}
+直径分别为 $d=10\ \mathrm{mm}$、$d=30\ \mathrm{mm}$ 的两根圆管，管内水流运动黏度相同、平均流速相同时，判别两管中水流的流态。
+\end{zhenti}
+\noindent\textbf{要点：}两管流速相同，$\Rey=\dfrac{vd}{\nu}\propto d$，管径大的雷诺数大。分别算出 $\Rey_1$、$\Rey_2$ 后与 2000（或 2300）比较，得到"小管层流、大管湍流"这类结论。\textbf{关键是把 $d$ 换算成米。}
+
+\begin{zhenti}{2015 年试题 填空}{填空题（原题）}
+水管直径为 $10\ \mathrm{mm}$，管中水的平均流速 $v=0.2\ \mathrm{m/s}$，其运动黏度 $\nu=1.308\times10^{-6}\ \mathrm{m^2/s}$，
+则管中水流的流态为\rule{2cm}{0.4pt}；如将管径改为 $30\ \mathrm{mm}$、流速不变时，流态为\rule{2cm}{0.4pt}。
+\end{zhenti}
+\noindent\textbf{解：}$\Rey_1=\dfrac{0.2\times0.01}{1.308\times10^{-6}}=1529<2000$，\textbf{层流}；
+$\Rey_2=\dfrac{0.2\times0.03}{1.308\times10^{-6}}=4587>2000$，\textbf{湍流}。
+
+\textbf{常考题型：}选择/填空（给 $v$、$d$、$\nu$ 判流态，或问 $\Rey$ 的物理意义）；
+简答（"层流与雷诺数的关系"）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2022 年 818 单选第 9 题；E4 2015 年试题填空"$\Rey$ 判流态"；E4 2026 回忆版简答"层流与雷诺数关系"；E1 slide33「第五章＝考试计算题重点」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{判流态三步走：}① 统一单位（mm$\to$m）；② $\Rey=\dfrac{vd}{\nu}$（给的是动力黏度 $\mu$ 就先算 $\nu=\mu/\rho$）；
+③ 与 2000/2300 比。\\
+\textbf{反推式：}题目问"欲保持层流，最大流速是多少"$\to$ 令 $\Rey=2000$，得 $v_{\max}=\dfrac{2000\nu}{d}$。
+题目问"最小管径能达到多大流量仍为层流"同理令 $\Rey=2000$。\\
+\textbf{速记：}$\nu$ 的量纲是 $\mathrm{L^2/T}$，$\Rey$ 无量纲；$\Rey$ 中的 $d$ 一定是\emph{内径}。
+\end{banfa}
+
+\begin{yicuo}
+① \textbf{判据用下临界雷诺数}，不用上临界雷诺数。
+② $\Rey=\dfrac{vd}{\nu}$ 用的是\textbf{运动黏度} $\nu$；给动力黏度 $\mu$ 时必须先除密度，这一步历年都在丢分。
+③ 非圆管必须用\textbf{当量直径} $d_e=4R_h$，不能随便取某个边长。
+④ 层流与湍流的 $h_f\sim v$ 关系是 $v^1$ 与 $v^{1.75\sim2}$，不要写成 $v$ 与 $v^2$ 以外的东西。
+\end{yicuo}
+\end{kaodian}
+
+\section{圆管中的层流流动}
+
+\begin{kaodian}{4}{圆管层流的切应力分布与速度分布}
+\textbf{推导思路（理解即可，不要求证）：}在半径为 $r_0$ 的圆管中取半径 $r$、长 $l$ 的圆柱体液流，
+两端压差 $\Delta p=p_1-p_2$ 推着它走，周围表面的黏性摩擦力拖着它，等速流动时二者平衡，
+再用牛顿内摩擦定律积分即得速度分布。
+
+\begin{gongshi}{圆管层流的切应力分布、速度分布}
+\[ \tau=\frac{\rho g J r}{2}=\frac{\Delta p}{2l}r,\qquad
+   u=\frac{\rho g J}{4\mu}\left(r_0^2-r^2\right)=\frac{\Delta p}{4\mu l}\left(r_0^2-r^2\right) \]
+\textbf{含义：}切应力 $\tau$ 在断面上呈\textbf{线性分布}——管轴处为零，管壁处最大
+$\tau_0=\dfrac{\rho g J r_0}{2}$；速度 $u$ 沿半径呈\textbf{抛物线（旋转抛物面）分布}——
+管轴处最大、管壁处为零。\\
+\textbf{适用条件：}只适用于\textbf{圆管、层流、恒定流、不可压缩牛顿流体}；
+$J=h_f/l$ 为水力坡度（单位长度的水头损失）。
+\end{gongshi}
+
+\textbf{速度分布的五个特点（简答常考）：}① 抛物线形；② 管中心流速最大；③ 沿壁方向渐减；
+④ 管壁处流速为零（黏附条件）；⑤ 断面平均流速为最大流速的一半。
+
+\textbf{常考题型：}选择（"圆管层流过流断面上切应力的分布"$\to$管轴处为零、与半径成正比）；
+简答（层流速度分布特点）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2015 年试题选择（圆管层流过流断面切应力分布）；E4 2015 年试题填空"层流断面平均速度＝0.5 倍最大速度"；E1 slide33「第五章＝考试计算题重点」}\quad\nandu{中}
+
+\begin{yicuo}
+① 切应力分布是\textbf{线性}、速度分布是\textbf{抛物线}，两者千万不要互换。
+② 切应力在\emph{管轴为零、管壁最大}；速度在\emph{管轴最大、管壁为零}——方向正好相反。
+③ 水力坡度 $J=h_f/l$ 只对沿程损失成立，它与总水头线的坡度不是一回事，别混用。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{5}{圆管层流的流量公式与沿程阻力系数}
+\begin{gongshi}{最大流速、平均流速、哈根--泊肃叶流量公式}
+\[ u_{\max}=\frac{\rho g J r_0^2}{4\mu}=\frac{\Delta p\,r_0^2}{4\mu l},\qquad
+   v=\frac{u_{\max}}{2}=\frac{\Delta p\,r_0^2}{8\mu l}=\frac{\Delta p\,d^2}{32\mu l} \]
+\[ Q=\frac{\pi r_0^4\Delta p}{8\mu l}=\frac{\pi d^4\Delta p}{128\mu l} \]
+\textbf{含义：}层流时管轴处流速最大；\textbf{断面平均流速恰为最大流速的一半}
+（这一条是历年填空的常客）；流量与\textbf{管径的四次方}成正比，与压差成正比、与管长和黏度成反比。
+哈根--泊肃叶公式还可写成 $Q=\dfrac{\pi d^4\Delta p}{128\mu l}$，医学、化工里常用它测黏度。\\
+\textbf{适用条件：}圆管、\textbf{层流}、恒定流、充分发展的不可压缩牛顿流体；
+管径越小、黏度越大，越容易满足层流条件。
+\end{gongshi}
+
+\begin{gongshi}{层流的沿程水头损失与沿程阻力系数 $\lambda$}
+\[ h_f=\frac{\Delta p}{\rho g}=\frac{32\mu l v}{\rho g d^2},\qquad
+   \lambda=\frac{64}{\Rey}=\frac{64\mu}{\rho v d},\qquad
+   h_f=\lambda\frac{l}{d}\frac{v^2}{2g} \]
+\textbf{含义：}层流时沿程水头损失与平均流速的\textbf{一次方}成正比（与雷诺实验一致）；
+把上式改写成达西公式的形式，就得到层流的沿程阻力系数 $\lambda=\dfrac{64}{\Rey}$——
+它\emph{只与雷诺数有关，与管壁粗糙度无关}。\\
+\textbf{适用条件：}\textbf{仅适用于圆管层流}（$\Rey<2300$）；非圆管层流要用 $d_e$ 并把系数改为 $C/\Rey$
+（如矩形断面 $C\approx 57$）。湍流绝对不能套 $64/\Rey$。
+\end{gongshi}
+
+\begin{zhenti}{2022 年 818 单选第 10 题}{单项选择题}
+层流状态下，若管径减为原来的一半（流量不变、管长与流体性质不变），沿程压强损失增为原来的多少倍？
+\end{zhenti}
+\noindent\textbf{要点（答 16 倍）：}由 $h_f=\dfrac{32\mu lv}{\rho g d^2}$ 且 $v=\dfrac{4Q}{\pi d^2}$ 得
+$h_f\propto\dfrac{v}{d^2}\propto\dfrac{1}{d^4}$。$d\to d/2$ 时 $h_f$ 变为 $2^4=16$ 倍。
+\textbf{记住这条结论：层流、$Q$ 不变时 $h_f\propto d^{-4}$。}
+
+\textbf{常考题型：}计算（求 $Q$、$v$、$\Delta p$、$\mu$ 之一）；选择（"管径减半损失变为几倍"）；
+填空（"层流平均流速＝最大流速的\rule{1.2cm}{0.4pt}倍"）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2022 年 818 单选第 10 题（层流管径减半、压强损失倍数，答 16 倍）；E4 2015 年试题填空"层流断面平均速度＝0.5 倍最大速度"；E1 slide33「第五章＝考试计算题重点」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{层流算题固定套路：}① 判流态（不判就做风险极大）；② 层流则 $\lambda=64/\Rey$；
+③ 需要压差就用 $h_f=\dfrac{\Delta p}{\rho g}$ 或用 $Q=\dfrac{\pi d^4\Delta p}{128\mu l}$；④ 检查单位。\\
+\textbf{比例速算表（层流、$Q$ 不变）：}$h_f\propto d^{-4}$；$h_f\propto l^{1}$；$h_f\propto\mu^{1}$。
+\textbf{层流、$v$ 不变：}$h_f\propto d^{-2}$。做题先问自己"题里固定的是 $Q$ 还是 $v$"。
+\end{banfa}
+\end{kaodian}
+
+\section{湍流的沿程水头损失}
+
+\begin{kaodian}{3}{湍流的脉动与时均化、混合长度}
+\textbf{是什么：}湍流中任一点的速度大小、方向都随时间做\emph{高频无规则}的随机变化，这叫\textbf{脉动}。
+脉动使湍流不能用确定性的瞬时速度描述，工程上采用\textbf{时均化}：把瞬时速度写成时均值加脉动值。
+
+\begin{gongshi}{湍流的时均速度与脉动值}
+\[ \overline{u}=\frac{1}{T}\int_0^T u\,\dd t,\qquad u=\overline{u}+u',\qquad \overline{u'}=0 \]
+\textbf{含义：}取足够长的时段 $T$，把瞬时速度对时间取平均即得\textbf{时均速度} $\overline{u}$；
+瞬时值与其之差为\textbf{脉动值} $u'$，脉动量的时均值恒为零。
+工程上所说的"湍流速度"通常指时均速度。\\
+\textbf{适用条件：}时间平均的时段 $T$ 相对于脉动周期足够长、相对于流动变化的宏观特征时间又足够短（时均恒定）。
+\end{gongshi}
+
+\textbf{脉动带来的附加切应力（雷诺应力）：}脉动使流体微团在层间交换动量，产生附加切应力
+$\tau_t=-\rho\overline{u'v'}$；加上黏性切应力 $\mu\dfrac{\dd\overline{u}}{\dd y}$ 就是湍流中的总切应力。
+\textbf{混合长度}是普朗特为描述这种掺混而引入的假想距离，常写作 $l$，反映微团在失去原有动量前走过的距离。
+
+\textbf{常考题型：}选择/判断（"脉动是湍流的基本特征"、"时均值为零的是脉动值"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33 只要求"概念与公式套用"；E2「第五章同为主要计算考点」（本点为概念铺垫，无独立大题）}\quad\nandu{易}
+
+\begin{banfa}
+一句话辨脉动：\textbf{"湍流＝时均流动＋脉动"}；\textbf{"脉动量的时均值恒为零"}。
+选择题出现"湍流的速度分布是抛物线"$\to$错（湍流是较\emph{丰满}的指数型剖面，抛物线是层流）。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{4}{层流底层、水力光滑与水力粗糙}
+\textbf{是什么：}湍流并非整个断面都乱——紧贴管壁仍存在一层极薄的\textbf{黏性底层（层流底层）}，
+厚度记 $\delta$；$\delta$ 与管壁粗糙突起高度 $\Delta$ 的大小关系，决定了管壁粗糙度对流动有没有影响。
+
+\begin{gongshi}{层流底层厚度与光滑/粗糙判别式}
+\[ \delta\approx\frac{32.8\,d}{\Rey\sqrt{\lambda}} \]
+\[ \delta>\Delta\ \Rightarrow\ \text{水力光滑管};\qquad \delta<\Delta\ \Rightarrow\ \text{水力粗糙管} \]
+\textbf{含义：}当层流底层完全淹没管壁的粗糙突起（$\delta>\Delta$）时，湍流区感受不到粗糙度的影响，
+如同在完全光滑的管中流动，称\textbf{水力光滑管}，此时 $\lambda$ 只与 $\Rey$ 有关；
+反之粗糙突起暴露在湍流区（$\delta<\Delta$），流体撞上突起会生成漩涡、新增能量损失，称\textbf{水力粗糙管}，
+此时 $\lambda$ 与相对粗糙度有关。\\
+\textbf{适用条件：}判别用 $\delta$ 与 $\Delta$ 的比较，工程上常用经验判据 $\Rey\sqrt{\lambda}$ 与 $\dfrac{\Delta}{d}$ 的关系。
+同一根管子流量变大时 $\delta$ 变薄，可能从"水力光滑"变成"水力粗糙"。
+\end{gongshi}
+
+\textbf{常考题型：}选择（"水力光滑管是指管壁绝对粗糙度为零"$\to$错）；
+简答（"什么叫水力光滑与水力粗糙"）；填空（层流底层越薄越接近粗糙管）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{中}
+
+\begin{yicuo}
+① \textbf{"水力光滑"不等于"几何光滑"}：它是由层流底层厚度与 $\Delta$ 的相对大小决定的\emph{流动状态}，
+同一根管子在小流量下是水力光滑、大流量下是水力粗糙。
+② 层流底层\textbf{越厚}越光滑，$\delta$ 随 $\Rey$ 增大而\emph{减薄}。
+③ 不要用"新管/旧管"这类几何说法直接判光滑粗糙，必须先算 $\Rey$ 与 $\Delta/d$。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{5}{尼古拉兹实验分区、莫迪图与 $\lambda$ 的计算}
+\textbf{是什么：}尼古拉兹用人工均匀砂粒粗糙管做系统实验，测出沿程阻力系数 $\lambda$ 与
+$\Rey$、相对粗糙度 $\Delta/d$ 的关系，把流动分成五个区——这就是本章最"硬"的考点。
+
+\begin{gongshi}{达西公式（沿程水头损失通用式）}
+\[ h_f=\lambda\frac{l}{d}\frac{v^2}{2g}=\lambda\frac{8Q^2l}{\pi^2gd^5}=0.0826\,\lambda\frac{Q^2l}{d^5} \]
+\textbf{含义：}$\lambda$ 称沿程阻力系数（水力摩擦系数），它与 $\Rey$、$\Delta/d$ 有关。
+用 $Q$ 表达的形式 $0.0826\lambda Q^2l/d^5$ 在管路计算中最好用，因为它把 $v$ 消掉了。\\
+\textbf{适用条件：}\textbf{圆管、恒定流}；层流与湍流都适用，区别只在 $\lambda$ 取哪个公式；
+非圆管要用 $d_e$ 替换 $d$。
+\end{gongshi}
+
+\textbf{尼古拉兹五个分区（必背）与 $\lambda$ 公式：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+分区 & 范围 & $\lambda$ 的计算 \\
+\midrule
+I 层流区 & $\Rey<2320$ & $\lambda=\dfrac{64}{\Rey}$，与 $\Delta/d$ 无关 \\
+II 临界过渡区 & $2320<\Rey<4000$ & $\lambda$ 随 $\Rey$ 急剧增大，规律不稳定，工程上按湍流处理 \\
+III 湍流光滑区 & $4000<\Rey<26.98\left(\dfrac{d}{\Delta}\right)^{8/7}$ & $\lambda$ 只与 $\Rey$ 有关：布拉修斯式 $\lambda=\dfrac{0.3164}{\Rey^{0.25}}$（$4000<\Rey<10^5$） \\
+IV 湍流过渡区 & $26.98\left(\dfrac{d}{\Delta}\right)^{8/7}<\Rey<4160\left(\dfrac{d}{2\Delta}\right)^{0.85}$ & $\lambda=f\left(\Rey,\dfrac{\Delta}{d}\right)$，用柯列勃洛克公式 \\
+V 湍流粗糙区 & $\Rey>4160\left(\dfrac{d}{2\Delta}\right)^{0.85}$ & $\lambda$ 只与 $\dfrac{\Delta}{d}$ 有关，$h_f\propto v^2$，故又称\textbf{阻力平方区} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{gongshi}{分区实用公式}
+\[ \text{光滑区：}\ \frac{1}{\sqrt{\lambda}}=2\lg\left(\Rey\sqrt{\lambda}\right)-0.8 \]
+\[ \text{过渡区（柯列勃洛克）：}\ \frac{1}{\sqrt{\lambda}}=-2\lg\left(\frac{\Delta}{3.7d}+\frac{2.51}{\Rey\sqrt{\lambda}}\right) \]
+\[ \text{粗糙区（尼古拉兹）：}\ \frac{1}{\sqrt{\lambda}}=1.14-2\lg\frac{\Delta}{d},\qquad
+   \text{或（希弗林松）：}\ \lambda=0.11\left(\frac{\Delta}{d}\right)^{0.25} \]
+\textbf{含义：}光滑区 $\lambda$ 只随 $\Rey$ 减小而减小；过渡区 $\lambda$ 同时受 $\Rey$ 与 $\Delta/d$ 控制；
+粗糙区 $\lambda$ 与 $\Rey$ 无关，\emph{只}取决于相对粗糙度，此时 $h_f\propto v^2$。\\
+\textbf{适用条件：}柯列勃洛克式是过渡区的通用式；粗糙区公式在 $4160(d/2\Delta)^{0.85}$ 以上使用；
+人工粗糙管实验结论外推到工业管道时要偏保守（工业管按"等当量粗糙度"折算）。
+\end{gongshi}
+
+\textbf{莫迪图：}工程上把 $\lambda$、$\Rey$、$\Delta/d$ 的关系绘成\textbf{莫迪图}，横坐标 $\Rey$、纵坐标 $\lambda$、
+以 $\Delta/d$ 为参数。用法：算出 $\Rey$ 与 $\Delta/d$，查图得 $\lambda$。图中最上方一条水平线就是粗糙区。
+
+\begin{zhenti}{题库 \texttt{10.pdf} 选择题第 10 题}{单项选择题}
+圆管和正方形管道的断面面积、长度、相对粗糙度都相等，流动属湍流粗糙区，通过的流量相等，
+则两种形状管道的沿程水头损失之比为（\quad）。\\
+(A) 1.255\quad (B) 0.886\quad (C) 3.125\quad (D) 0.258
+\end{zhenti}
+\noindent\textbf{要点（答 B）：}粗糙区 $\lambda$ 只与 $\Delta/d$ 有关，而两者相对粗糙度相等且面积相等，
+故 $\lambda$ 相同；由 $h_f\propto lQ^2/(\lambda^{-1}d^5)$ 归结为 $h_f\propto d^{-5}$。
+圆管 $d$ 与方管当量直径 $d_e=4A/\chi$ 之比决定结果，得 $h_{\text{圆}}/h_{\text{方}}=0.886$。
+\textbf{关键动作：方管必须换算当量直径 $d_e=4A/\chi$。}
+
+\textbf{常考题型：}选择/填空（判断某流动属哪个区、给 $\Rey$ 与 $\Delta/d$ 求 $\lambda$）；
+计算（先用 $\lambda$ 公式再算 $h_f$，常需\emph{迭代}）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E5 题库选择第 10 题（圆管与方管沿程损失比 0.886）；E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{判区口诀：}先算 $\Rey$——小于 2320 层流（$64/\Rey$）；再算 $26.98(d/\Delta)^{8/7}$ 与 $4160(d/2\Delta)^{0.85}$
+两个界值，就落进光滑区／过渡区／粗糙区。
+\textbf{工程速判：}相对粗糙度小时常在光滑区用布拉修斯式；相对粗糙度大、$\Rey$ 大时按粗糙区取
+$\lambda=0.11(\Delta/d)^{0.25}$；拿不准就一律用柯列勃洛克式（通用）。
+\textbf{迭代技巧：}$\lambda$ 出现在等式两边时，先取 $\lambda_0=0.03$ 代进去算两次就能收敛，
+比"试差法"更快；若用迭代，写清初值与迭代次数，阅卷可给过程分。
+\end{banfa}
+
+\begin{yicuo}
+① \textbf{$\lambda=64/\Rey$ 只适用于圆管层流}，湍流套用必错。
+② 布拉修斯式 $\lambda=0.3164/\Rey^{0.25}$ 只适用于\textbf{湍流光滑区}（约 $4000<\Rey<10^5$）。
+③ 粗糙区 $\lambda$ \textbf{与 $\Rey$ 无关}，只看 $\Delta/d$，不要再去查 $\Rey$。
+④ 临界过渡区规律不稳定，考试若遇到直接按湍流处理，不要试图精确算 $\lambda$。
+⑤ 莫迪图读数有误差，最后一步务必核对数量级（水管的 $\lambda$ 一般在 0.02$\sim$0.05 之间）。
+\end{yicuo}
+\end{kaodian}
+
+\section{局部水头损失}
+
+\begin{kaodian}{4}{局部水头损失公式与突然扩大（包达--卡诺公式）}
+\textbf{是什么：}流体经过局部管件时，边界形状突变使主流与壁面脱离、形成漩涡，
+流速重新分布、质点互相撞击，由此产生的机械能损失即\textbf{局部水头损失} $h_j$。
+
+\begin{gongshi}{局部水头损失通用式}
+\[ h_j=\zeta\frac{v^2}{2g} \]
+\textbf{含义：}$\zeta$ 称\textbf{局部阻力系数}，无量纲，由管件几何形状决定；
+$v$ 一般取\emph{管件下游}（较小断面）的断面平均流速——$\zeta$ 的数值必须与所用 $v$ 配套，
+这是查表时最容易出错的一点。\\
+\textbf{适用条件：}局部损失与沿程损失互不干扰（管件之间隔有足够长的直管）；
+一般用实验测定的 $\zeta$，几何相似时 $\zeta$ 在湍流粗糙区近似为常数。
+\end{gongshi}
+
+\begin{gongshi}{突然扩大的局部水头损失（包达--卡诺公式）}
+\[ h_j=\frac{\left(v_1-v_2\right)^2}{2g},\qquad
+   \zeta_1=\left(1-\frac{A_1}{A_2}\right)^2,\qquad
+   \zeta_2=\left(\frac{A_2}{A_1}-1\right)^2 \]
+\textbf{含义：}突然扩大管中，局部损失等于\textbf{两断面流速差的动能}——
+原因是大断面一侧出现环形漩涡区，损失与速度差直接挂钩。
+$\zeta_1$ 对应小断面流速 $v_1$，$\zeta_2$ 对应大断面流速 $v_2$。\\
+\textbf{适用条件：}湍流（该式在层流中不成立）；若 $A_2\to\infty$（管出口流入大容器），
+则 $h_j=\dfrac{v_1^2}{2g}$，即 $\zeta=1.0$。
+\end{gongshi}
+
+\textbf{突然缩小：}损失比突然扩大小得多，常用经验式 $\zeta_2=0.5\left(1-\dfrac{A_2}{A_1}\right)$（$A_2$ 为小断面），
+且 $\zeta$ 对应\emph{小断面}流速。
+
+\begin{zhenti}{2015 年试题 计算第 3 题}{计算题}
+水平突然缩小管路 $d_1=15\ \mathrm{cm}$、$d_2=10\ \mathrm{cm}$，水的流量 $Q=2\ \mathrm{m^3/min}$，
+用水银测压计测得读数 $h=8\ \mathrm{cm}$，求突然缩小的水头损失。
+\end{zhenti}
+\noindent\textbf{思路：}① 由连续性方程求 $v_1$、$v_2$；② 用水银压差计读数换算两断面压差
+$\dfrac{p_1-p_2}{\rho g}=\left(\dfrac{\rho_{Hg}}{\rho}-1\right)h$；③ 对两断面列伯努利方程，
+水平管 $z_1=z_2$，得 $h_j=\dfrac{p_1-p_2}{\rho g}+\dfrac{v_1^2-v_2^2}{2g}$。
+
+\textbf{常考题型：}计算（突然扩大/缩小的 $h_j$、$\zeta$）；填空（U 形水银压差计换算）；
+选择（哪个管件 $\zeta$ 最大）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2015 年试题计算第 3 题"突然缩小水头损失"；E4 2015 年试题填空"U 形水银压差计"；E1 slide33「第五章＝考试计算题重点」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{压差计换算通式（必背）：}$\dfrac{p_1-p_2}{\rho g}=\left(\dfrac{\rho'}{\rho}-1\right)h$，
+$\rho'$ 为测压计工作液体（水银时 $\rho'/\rho=13.6$）。正接、倒接的区别只影响正负号。\\
+\textbf{突然扩大做题三步：}① 算 $v_1$、$v_2$；② 判 $A_1$、$A_2$ 谁大；③ 直接代 $\dfrac{(v_1-v_2)^2}{2g}$，
+不必求 $\zeta$。\\
+\textbf{记住"扩大损失远大于缩小"}：这是出口损失 $\zeta=1.0$ 而进口只有 $0.5$ 的根本原因。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{典型局部阻力系数与当量长度法}
+\textbf{典型 $\zeta$ 值表（必记几个）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+管件 & 局部阻力系数 $\zeta$（对应下游/小断面流速） & 说明 \\
+\midrule
+管道进口（锐缘） & 0.5 & 出口流入大容器时取 1.0 \\
+管道出口（流入大容器） & 1.0 & 相当于突然扩大 $A_2\to\infty$ \\
+突然扩大 & $\left(1-\dfrac{A_1}{A_2}\right)^2$ & 对应小断面流速 \\
+突然缩小 & $0.5\left(1-\dfrac{A_2}{A_1}\right)$ & 对应小断面流速 \\
+渐扩管 & 与扩张角、面积比有关 & 扩张角宜小于 $8^\circ$，角大则损失急增 \\
+渐缩管 & 0.05$\sim$0.1（损失很小） & 收缩流稳定、不易脱离 \\
+$90^\circ$ 弯头 & 0.5$\sim$1.0 & 与 $R/d$ 有关，$R/d$ 大则小 \\
+闸阀（全开／半开） & 约 0.1$\sim$0.2／2$\sim$5 & 阀门开度是调节流量的主要手段 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{gongshi}{当量长度法}
+\[ h_j=\lambda\frac{l_e}{d}\frac{v^2}{2g},\qquad
+   h_w=\lambda\frac{l+\sum l_e}{d}\frac{v^2}{2g} \]
+\textbf{含义：}把局部损失折算成"同等损失的直管长度" $l_e$，称\textbf{当量长度}；
+于是全管路损失统一写成沿程损失的形式，管件当作附加管长处理，算短管时非常方便。\\
+\textbf{适用条件：}$l_e$ 与 $\lambda$ 有关的管件（如弯头、阀门）需按同一 $\lambda$ 折算；
+进出口这类 $\zeta$ 与 $\lambda$ 无关的管件也可折算，但换算值随 $\lambda$ 变。
+\end{gongshi}
+
+\textbf{常考题型：}填空（"进口局部阻力系数为\rule{1.2cm}{0.4pt}"）；
+计算（短管计算中把 $\sum\zeta$ 化为附加长度）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33「第五章＝考试计算题重点」；E4 2015 年试题计算第 3 题（局部损失计算）；E2「第五章同为主要计算考点」}\quad\nandu{易}
+
+\begin{banfa}
+\textbf{两个"1 和 0.5"必背：}进口 $\zeta=0.5$、出口 $\zeta=1.0$——它们几乎出现在每道长管/短管的题里。
+\textbf{"全开小、半开大"}：阀门开度越小 $\zeta$ 越大，节流调节就是靠它。
+\textbf{当量长度法的价值：}$\dfrac{l+\sum l_e}{d}$ 一个分式搞定全管路，比逐项累加不易漏项。
+\end{banfa}
+
+\begin{yicuo}
+① $\zeta$ 必须与它所乘的 $v$ \textbf{配套}：查表时先看清表里 $v$ 是"小断面流速"还是"出口流速"。
+② 出口 $\zeta=1.0$ 不是"出口有阻力"，而是\emph{动能全部损失掉}，别理解成"出口被堵住"。
+③ 渐扩管的损失通常\emph{大于}同面积比的突然扩大以外的一切管件中的渐缩管，
+答题时不要因为"渐扩过渡平缓"就认为损失小。
+\end{yicuo}
+\end{kaodian}
+
+\section{孔口、管嘴出流}
+
+\begin{kaodian}{5}{薄壁小孔口自由出流}
+\textbf{是什么：}器壁上开的孔洞叫\textbf{孔口}；液体经孔口泄出叫\textbf{孔口出流}。
+孔口具有尖锐边缘、液体流过时只有线接触，称\textbf{薄壁孔口}，其阻力只有孔口处的局部阻力。
+孔口高度 $e<\dfrac{1}{10}H$ 时为\textbf{小孔口}，可认为孔口断面上各点水头都等于孔口中心的水头；
+出流于大气称\textbf{自由出流}，出流于液体中称\textbf{淹没出流}。
+
+\begin{gongshi}{薄壁小孔口自由出流的流速与流量}
+\[ v_c=\varphi\sqrt{2gH_0},\qquad Q=A_cv_c=\varepsilon A\varphi\sqrt{2gH_0}=\mu A\sqrt{2gH_0},\qquad \mu=\varepsilon\varphi \]
+\[ H_0=H+\frac{p_1-p_c}{\rho g}+\frac{v_1^2}{2g} \]
+\textbf{含义：}$H_0$ 称\textbf{作用水头}；$\varphi=\dfrac{1}{\sqrt{1+\zeta_{\text{孔}}}}$ 称\textbf{流速系数}
+（实际流速与理想流速之比）；$\varepsilon=\dfrac{A_c}{A}$ 称\textbf{收缩系数}（收缩断面面积与孔口面积之比）；
+$\mu=\varepsilon\varphi$ 称\textbf{流量系数}（实际流量与理想流量之比）。
+孔口的局部阻力系数 $\zeta_{\text{孔}}=\dfrac{1}{\varphi^2}-1$。\\
+\textbf{适用条件：}薄壁、小孔口、自由出流、定水头（液面位置不变）、完善收缩。
+自由出流时收缩断面压强为大气压，故 $p_1-p_c=0$，$H_0=H+\dfrac{v_1^2}{2g}$；
+容器很大时 $v_1\approx0$，则 $H_0=H$。
+\end{gongshi}
+
+\textbf{薄壁圆形小孔口完善收缩的典型系数（必背）：}
+$\varepsilon=0.63\sim0.64$，$\varphi=0.97\sim0.98$，$\mu=\varepsilon\varphi=0.60\sim0.62$。
+取常见值 $\varepsilon\approx0.64$、$\varphi\approx0.97$、$\mu\approx0.62$。
+孔口 $\zeta_{\text{孔}}=\dfrac{1}{0.97^2}-1\approx0.06$，其他型式孔口的 $\zeta$ 都大于此值。
+
+\textbf{常考题型：}计算（求 $Q$、$H$、孔口直径）；填空（"孔口流量系数的典型值"）；
+选择（流速系数与流量系数的区别与大小关系）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2026 回忆版计算第 5 题"管嘴体积流量（书上例题）"；E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{一图记三个系数：}$\varepsilon$ 只管\emph{面积收缩}（$<1$），$\varphi$ 只管\emph{速度折减}（$<1$），
+$\mu=\varepsilon\varphi$ 是二者的乘积，所以 $\mu<\varphi$ 且 $\mu<\varepsilon$ 之一不一定成立——
+对孔口 $\mu\approx0.62$，比 $\varepsilon$ 略小、比 $\varphi$ 小很多。
+\textbf{做题模板：}① 算 $H_0$；② 判孔口是大是小；③ 取 $\mu$ 代入 $Q=\mu A\sqrt{2gH_0}$；④ 反求 $H$ 时先平方。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{3}{大孔口出流与孔口淹没出流}
+\textbf{大孔口：}孔口高度 $e\ge\dfrac{1}{10}H$ 时，孔口上下缘的水头差别不能忽略，
+必须沿竖向积分求流量。设孔口上缘、下缘水头分别为 $H_1$、$H_2$，孔口宽 $b$，则
+\[ Q=\frac{2}{3}\mu b\sqrt{2g}\left(H_2^{3/2}-H_1^{3/2}\right) \]
+工程上常取孔口中心水头 $H_c=\dfrac{H_1+H_2}{2}$ 近似代入小孔口公式，误差不大。
+
+\textbf{孔口淹没出流：}孔口出流到下游液体中。公式形式上与小孔口自由出流完全相同：
+\[ v_c=\varphi\sqrt{2gH},\qquad Q=\mu A\sqrt{2gH} \]
+区别有二：① 此时 $H$ 是\textbf{上、下游液面差}（而不是孔口以上的水深）；
+② 分母中的"1"代表突然扩大的局部阻力系数（出口动能损失在下游液体中）。
+$\varepsilon$、$\varphi$、$\mu$ 的数值与自由出流相差不大，实用上认为相等。
+
+\textbf{常考题型：}选择（"大孔口与小孔口的判别条件"$\to e<H/10$）；
+填空（"淹没出流时 $H$ 代表\rule{2cm}{0.4pt}"）。
+\textbf{重要度 \xstarfull{3}}\quad\yiju{E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」（大孔口为次重点）}\quad\nandu{中}
+
+\begin{yicuo}
+① \textbf{自由出流与淹没出流最容易混}：自由出流的 $H$ 是\emph{孔口中心到上游液面的水深}；
+淹没出流的 $H$ 是\emph{上下游液面高差}。写错这一点全题皆错。
+② 大孔口的判别是 $e\ge H/10$，不是看孔口绝对尺寸（$10\ \mathrm{cm}$ 的孔在浅箱里也是大孔口）。
+③ 淹没出流下游若不静止（有流速），还需在 $H$ 上加下游流速水头差。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{5}{圆柱形外管嘴与正常工作条件}
+\textbf{是什么：}在孔口上接一段短管（长度约为孔径的 $3\sim4$ 倍）就是\textbf{管嘴}。
+液体进入管嘴后在距进口约 $0.5d$ 处形成\textbf{收缩断面}，随后又扩张充满整个管嘴再流出。
+
+\begin{gongshi}{圆柱形外管嘴的出流公式与真空度}
+\[ v=\varphi\sqrt{2gH_0},\qquad Q=\mu A\sqrt{2gH_0},\qquad \mu=\varphi\approx0.82 \]
+\[ \text{收缩断面真空度：}\ \frac{p_a-p_c}{\rho g}\approx0.75H_0 \]
+\textbf{含义：}管嘴出口断面被液流充满，\textbf{没有收缩}，故 $\varepsilon=1$、$\mu=\varphi=0.82$，
+比孔口的 $\mu\approx0.62$ 大得多（管嘴的"吸力"来自收缩断面的真空，相当于额外增加了作用水头）。
+收缩断面处的真空度约为作用水头的 0.75 倍。\\
+\textbf{适用条件：}\textbf{必须满足两个正常工作条件}：
+① 作用水头 $H_0\le 9\ \mathrm{m}$（真空度不超过约 $7\ \mathrm{m}$ 水柱）；
+② 管嘴长度 $l=(3\sim4)d$。两者\textbf{缺一不可}。
+\end{gongshi}
+
+\begin{jielun}
+\textbf{为什么 $H_0\le9\ \mathrm{m}$：}由真空度 $\approx0.75H_0$，若 $H_0$ 太大，
+收缩断面绝对压强降到液体汽化压强以下，液体汽化、外部空气被吸入管嘴，液流脱离管壁、
+管嘴不再"充满"，$Q=\mu A\sqrt{2gH_0}$ 失效（$\mu$ 骤降到接近孔口值）。\\
+\textbf{为什么 $l=(3\sim4)d$：}太短则液流尚未充满管嘴就已流出，收缩仍在，$\mu$ 接近孔口值；
+太长则摩擦损失增大，性质变成短管。$3\sim4d$ 正是"刚好充满又摩擦不大"的长度。
+\end{jielun}
+
+\begin{zhenti}{2022 年 818 单选第 8 题}{单项选择题}
+圆柱形直角外管嘴正常工作的条件是（\quad）。答：作用水头 $H_0\le9\ \mathrm{m}$，且管嘴长度 $l=(3\sim4)d$。
+\end{zhenti}
+
+\textbf{其他型式管嘴：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+型式 & 流量系数 $\mu$ & 特点与用途 \\
+\midrule
+圆柱形外管嘴 & 0.82 & 最常用，出口为满流，$Q$ 比孔口大 30\% 左右 \\
+圆柱形内管嘴 & 约 0.71 & 管嘴伸入容器，水头损失大，$\mu$ 偏小 \\
+圆锥形扩张管嘴 & 0.45$\sim$0.50 & $\mu$ 小但出口流速低、压强高，作喷射泵、水轮机尾水管 \\
+圆锥形收缩管嘴 & 0.94$\sim$0.97 & 损失最小、$\mu$ 最大，用于消防水枪、水力采煤喷嘴 \\
+流线形管嘴 & 约 0.98 & 损失最小，$\mu$ 最大，但加工复杂 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{孔口与管嘴流量系数之比（常考结论）：}$\dfrac{\mu_{\text{管嘴}}}{\mu_{\text{孔口}}}=\dfrac{0.82}{0.62}\approx1.32$，
+即同样水头、同样断面积下管嘴比孔口多出约 32\% 的流量。
+原因是孔口出口有收缩（$\varepsilon<1$）且收缩断面处无真空"增水头"；
+管嘴出口无收缩（$\varepsilon=1$）且收缩断面存在约 $0.75H_0$ 的真空度，相当于增大了作用水头。
+
+\begin{zhenti}{2026 年真题回忆版 计算第 5 题}{计算题}
+求管嘴的体积流量（书上例题）。
+\end{zhenti}
+\noindent\textbf{思路：}先算 $H_0=H+\dfrac{v_1^2}{2g}$（容器大则 $H_0\approx H$），
+再用 $Q=\mu A\sqrt{2gH_0}$，圆柱形外管嘴取 $\mu=0.82$。
+\textbf{务必检查} $H_0\le9\ \mathrm{m}$ 与 $l=(3\sim4)d$；若 $H_0>9\ \mathrm{m}$，题目给的条件本身就不成立。
+
+\textbf{常考题型：}选择（"圆柱形外管嘴正常工作条件"）；计算（管嘴流量、真空度）；
+简答（孔口与管嘴流量系数为何不同）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2022 年 818 单选第 8 题（圆柱形直角外管嘴正常工作条件 $H_0\le9\ \mathrm{m}$、$l=(3\sim4)d$）；E4 2026 回忆版计算第 5 题（管嘴体积流量，书上例题）}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{"9 米、三四倍"口诀记正常条件}，并在答题时\emph{解释为什么}——这是拿满分的关键：
+$H_0>9\ \mathrm{m}$ 时收缩断面真空度过大 $\to$ 空气吸入 $\to$ 管嘴失效。
+\textbf{系数速查：}孔口 $\mu=0.62$、管嘴 $\mu=0.82$、收缩管嘴 $\mu=0.95$、流线形 $\mu=0.98$。
+\textbf{"为什么管嘴流量大"的标准两句话：}① 出口无收缩，有效面积大；② 收缩断面真空形成"抽吸"作用，
+相当于增大了作用水头。
+\end{banfa}
+
+\begin{yicuo}
+① 管嘴正常工作的\textbf{两个条件缺一不可}，只写"$l=(3\sim4)d$"要丢分，只写"$H_0\le9\ \mathrm{m}$"也丢分，
+必须两条并给出理由。
+② $H_0=9\ \mathrm{m}$ 是\textbf{作用水头}，不是"孔口到液面的高度"——若容器有压，二者不同。
+③ 管嘴 $\mu=\varphi=0.82$ 是因为 $\varepsilon=1$；孔口 $\mu=\varepsilon\varphi=0.62$ 是因为 $\varepsilon\approx0.64$。
+④ 管嘴长度的单位是"$d$ 的倍数"，$l=(3\sim4)d$ 别误写成 $l=(3\sim4)$ m。
+\end{yicuo}
+\end{kaodian}
+
+\section{管路的水力计算}
+
+\begin{kaodian}{5}{长管与短管的判别}
+\textbf{是什么：}把压力管路按计算中是否忽略局部损失与流速水头分成两类。
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+类别 & 定义（教材口径） & 典型场合 \\
+\midrule
+长管 & 与沿程水头损失相比，\textbf{流速水头和局部水头损失可以忽略}的管路 & 室外管路、油田地面集输管路、外输管路 \\
+短管 & \textbf{流速水头和局部水头损失不能忽略}的管路 & 室内管路、联合站与计量间内管件较多的管路、水泵吸水管 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{判别要点（必背）：}
+① \textbf{长管和短管不按管道的绝对长度决定}——三里长的管子也可能是短管，三十米的也可能是长管；
+② 管路上有较大局部损失管件（局部开启的闸门、喷嘴、底阀等）时，\emph{即使管道很长}局部损失也不能略去，必须按短管算；
+③ 把管道按长管计算能简化计算过程，但在不能判断"流速水头与局部损失之和远小于沿程损失"之前，
+按短管计算不会产生较大误差（即\emph{拿不准就当短管算}）。
+
+\begin{gongshi}{长管的能量方程}
+\[ z_1+\frac{p_1}{\rho g}=z_2+\frac{p_2}{\rho g}+h_f,\qquad
+   H=\left(z_1+\frac{p_1}{\rho g}\right)-\left(z_2+\frac{p_2}{\rho g}\right)=h_f \]
+\textbf{含义：}长管忽略流速水头与局部损失后，伯努利方程只剩位置水头、压强水头与沿程损失；
+$H$ 称\textbf{作用水头}（管路两端的总水头之差），全部用于克服沿程阻力。\\
+\textbf{适用条件：}长管（忽略 $\sum h_j$ 与 $\dfrac{v^2}{2g}$）；恒定流、液体充满全管、等直径段之间无分流。
+因为忽略了流速水头，长管的\textbf{总水头线与测压管水头线重合}。
+\end{gongshi}
+
+\begin{zhenti}{2022 年 818 单选第 3 题}{单项选择题}
+测压管水头线坡度小于零时，沿程各断面的测压管水头如何变化？
+\end{zhenti}
+\noindent\textbf{要点：}测压管水头线坡度 $=\dfrac{\dd}{\dd s}\left(z+\dfrac{p}{\rho g}\right)$，
+小于零说明\emph{沿程下降}，反映机械能（对长管即总水头）沿程被阻力消耗。
+\textbf{注意}：测压管水头线可以沿程上升（如渐扩管、突扩后），但\emph{总水头线一定沿程下降}。
+
+\begin{zhenti}{题库 \texttt{10.pdf} 选择题第 9 题}{单项选择题}
+有压管道的总水头线与测压管水头线的基本规律是（\quad）。\\
+(A) 总水头线是沿程下降的。（B）测压管水头线沿程有可升可降。（C）测压管水头线是沿程下降的。（D）总水头线和测压管水头线沿程可升可降。
+\end{zhenti}
+\noindent\textbf{要点（答 A）：}总水头线因阻力耗能必须\textbf{沿程下降}；测压管水头线则可能升、可能降。
+
+\textbf{常考题型：}选择/判断（长管短管判别、总水头线规律）；简答（"长管与短管的区别"）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2022 年 818 单选第 3 题（测压管水头线坡度）；E5 题库选择第 9 题（总水头线沿程下降）；E5 题库计算第 2 题（水箱垂直管道出流 $Q$ 与管长 $l$ 的关系）}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{判断口诀："长管只看 $h_f$，短管连 $v^2/2g$ 一起算。"}
+\textbf{得分技巧：}答题时先写一句"本题按长管（或短管）计算"，这一步就是明确的给分点；
+若题目没说明且管件很多，就按短管算并注明理由。
+\textbf{总头线／测压管水头线的三条铁律：}总水头线\emph{只降不升}；测压管水头线\emph{可升可降}；
+长管中二者\emph{重合}。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{5}{简单长管的三个基本问题}
+\begin{gongshi}{长管的沿程损失与雷诺数}
+\[ h_f=\lambda\frac{l}{d}\frac{v^2}{2g}=0.0826\,\lambda\frac{Q^2l}{d^5},\qquad
+   \Rey=\frac{4Q}{\pi d\nu} \]
+\textbf{含义：}把 $v=\dfrac{4Q}{\pi d^2}$ 代入达西公式即得用流量表示的形式；
+雷诺数直接用流量表达 $\Rey=\dfrac{4Q}{\pi d\nu}$。层流时 $\lambda=\dfrac{64}{\Rey}=\dfrac{16\pi d\nu}{Q}$，
+代回得 $h_f\approx4.15\,\dfrac{\nu Ql}{d^4}$（层流长管专用，与 $d^4$ 成反比）。\\
+\textbf{适用条件：}圆管、恒定流；层流式仅当 $\Rey<2300$；湍流时 $\lambda$ 由第 5.4 节分区公式确定。
+\end{gongshi}
+
+\textbf{三个基本问题：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+问题 & 已知 & 求解方法与难点 \\
+\midrule
+第一类 & $d$、$l$、$Q$（及流体性质） & 求 $h_f$。可直接计算：算 $v$、$\Rey$、判区、取 $\lambda$、代入达西式 \\
+第二类 & $d$、$l$、$h_f$ & 求 $Q$。$\Rey$ 含 $Q$、$\lambda$ 又含 $\Rey$，须用\textbf{试差法或迭代} \\
+第三类 & $l$、$Q$、$h_f$ & 求 $d$。$d$ 隐含在 $\Rey$ 与 $\Delta/d$ 中，同样须试差；工程上先选定\textbf{经济流速}再选标准管径 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{经济流速：}流速过大，管子易磨损、迅速关阀时易产生较大水击压力而破裂；
+流速过小，液体中杂质易在管中沉淀、侵蚀管壁并增大阻力。一般油田内部管路取 $1\sim2\ \mathrm{m/s}$，
+外输管路取 $1\sim3\ \mathrm{m/s}$ 为宜。
+
+\begin{zhenti}{题库 \texttt{10.pdf} 计算第 2 题}{计算题}
+水箱中的水通过垂直管道向大气出流。设水箱水深为 $H$，管道直径 $d$，长度 $l$，沿程阻力系数 $\lambda$，
+局部阻力系数 $\zeta$。试求：① 在什么条件下流量 $Q$ 不随管长 $l$ 而变？② 什么条件下 $Q$ 随管长 $l$ 的加大而增加？
+③ 什么条件下 $Q$ 随管长 $l$ 的加大而减小？
+\end{zhenti}
+\noindent\textbf{思路（按短管列能量方程）：}由液面到出口断面列伯努利方程，
+$H+l=\left(\lambda\dfrac{l}{d}+\zeta+1\right)\dfrac{v^2}{2g}$，得
+$v=\sqrt{\dfrac{2g(H+l)}{\lambda l/d+\zeta+1}}$。
+讨论 $\dfrac{\partial Q}{\partial l}$ 的符号即得三种情形：
+① 当 $H=0$（或 $H$ 与 $l$ 的组合使分子分母同比例变化）时 $Q$ 与 $l$ 无关；
+② 当 $H$ 相对 $l$ 起主导（$\zeta$ 很大、$\lambda l/d$ 很小）时 $Q$ 随 $l$ 增大而增大；
+③ 当 $l$ 起主导时 $Q$ 随 $l$ 增大而减小。
+\textbf{这题的关键是：把"水箱水深 $H$"与"管长 $l$"都放进作用水头，并用 $\zeta$ 与 $\lambda l/d$ 的相对大小讨论。}
+
+\textbf{常考题型：}计算（三类问题之一，第二、三类多需迭代）；
+简答（"为什么第二、三类问题要用试差法"）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E5 题库计算第 2 题（水箱垂直管道出流 $Q$ 与管长 $l$ 的关系）；E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{第一类问题 5 步模板：}① $v=\dfrac{4Q}{\pi d^2}$；② $\Rey=\dfrac{vd}{\nu}$；③ 判别层流／湍流及分区；
+④ 取 $\lambda$；⑤ $h_f=\lambda\dfrac{l}{d}\dfrac{v^2}{2g}$。\\
+\textbf{第二、三类问题的迭代写法（拿过程分）：}设 $\lambda_0=0.03\to$ 求 $Q_0\to$ 算 $\Rey_0\to$ 查新 $\lambda_1\to$ 求 $Q_1$，
+一般两次即收敛。答题时把两次结果都写上，并注明"已收敛"。\\
+\textbf{单位速查：}$1\ \mathrm{L/s}=10^{-3}\ \mathrm{m^3/s}$；$\nu$ 给 $\mathrm{mm^2/s}$ 要换成 $\mathrm{m^2/s}$（除以 $10^6$）。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{5}{串联管路与并联管路}
+\begin{gongshi}{串联管路的水力特征}
+\[ Q_1=Q_2=\cdots=Q_n=Q,\qquad h_f=\sum_{i=1}^{n}h_{fi}=h_{f1}+h_{f2}+\cdots+h_{fn} \]
+\textbf{含义：}串联管路各段流量\textbf{相同}（连续性原理）；全线水头损失为各段\textbf{之和}（能量守恒原理）。
+节点处满足 $\sum Q_i=0$（进为正、出为负）。\\
+\textbf{适用条件：}恒定流、管段之间无分流（无节点流出）；各段可分别用各自的 $d_i$、$l_i$、$\lambda_i$ 算 $h_{fi}$。
+\end{gongshi}
+
+\begin{gongshi}{并联管路的水力特征}
+\[ Q=\sum_{i=1}^{n}Q_i=Q_1+Q_2+\cdots+Q_n,\qquad
+   h_{f1}=h_{f2}=\cdots=h_{fn}=h_{A\to B} \]
+\textbf{含义：}并联管路各支管的\textbf{水头损失相等}（都是同一对节点 $A$、$B$ 之间的能量差），
+总流量为各支管\textbf{流量之和}。\\
+\textbf{适用条件：}恒定流；各支管的两端节点相同；不计节点处的局部损失或已把它计入支管。
+\end{gongshi}
+
+\textbf{串并联求解套路：}
+\begin{enumerate}
+\item 串联：从总 $Q$ 出发，逐段算 $v_i$、$\Rey_i$、$\lambda_i$、$h_{fi}$，最后累加即得所需水头 $H$。
+\item 并联：先写 $h_{f1}=h_{f2}$ 的比例式。由 $h_f=0.0826\lambda\dfrac{Q^2l}{d^5}$ 得
+$\dfrac{Q_1}{Q_2}=\sqrt{\dfrac{\lambda_2l_2d_1^5}{\lambda_1l_1d_2^5}}$，求出流量分配比，再配合 $Q_1+Q_2=Q$ 解出各支管流量，
+最后代回任一式求 $h_{A\to B}$。
+\end{enumerate}
+
+\textbf{串、并联在长输管线上的用途：}① 增加输送流量（并联）；② 延伸输送距离（串联）；
+③ 克服翻越点。
+
+\textbf{常考题型：}计算（并联流量分配、串联总水头）——\textbf{本章最高频的大题}；
+选择（"并联管路各支管的水头损失相等还是流量相等"）。
+\textbf{重要度 \xstarfull{5}}\quad\yiju{E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点，需掌握计算套路」；E4 2026 回忆版计算第 5 题（管路类计算）}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{一句话记住串并联：串联"流量相等、损失相加"；并联"损失相等、流量相加"。}
+反过来记是最常见的失分点，考场上先写下这句话再列式。\\
+\textbf{并联题必用比例式：}$Q_i\propto\sqrt{\dfrac{d_i^5}{\lambda_i l_i}}$（$\lambda$ 相同时 $\propto\sqrt{d^5/l}$）。
+由比例式 + 总流量两个方程即可解出全部 $Q_i$，比设未知数迭代快得多。\\
+\textbf{并联题的检查：}$\sum Q_i$ 必须等于总流量；各支管算出的 $h_f$ 必须相同——用这两条自查。
+\end{banfa}
+
+\begin{yicuo}
+① \textbf{并联读成"流量相等"、串联读成"损失相等"}是历年最高频的概念失分点。
+② 并联支管中\textbf{短管阻力小的那条流量大}，不是"管径大流量就大"（还与 $l$、$\lambda$ 有关）。
+③ 串联管路中若某段突然扩大，该处还有局部损失，别只累加沿程损失。
+④ 并联管路的两支管长度、直径不同也可以，唯一必须相同的是\emph{两端节点}。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{4}{分支管路与管网}
+\textbf{是什么：}自某一点分开后\emph{不再汇合}的管路叫\textbf{分支管路}；由多条支管、环状管段组成的系统叫\textbf{管网}。
+
+\textbf{分支管路的水力特征：}① 节点处流量平衡（流入＝流出）；
+② 沿任一条干线，总水头损失＝该线各段损失之和 $h_f=\sum h_{fi}$；
+③ 节点处 $\left(z+\dfrac{p}{\gamma}\right)$ 为定值（测压管水头在节点唯一）。
+
+\textbf{分支管路的求解特点：}与并联的"损失相等"不同，分支管路各支管\emph{流量未知且互不相等}，
+通常以\textbf{节点为枢纽}：先求各支管到节点所需的测压管水头，再由节点水头与各支管阻力反求流量，
+并用节点流量平衡校验。
+
+\textbf{常考题型：}填空（分支管路节点流量平衡）；计算（给节点水头求各支管流量）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{节点法三步：}① 在节点列 $\sum Q=0$；② 由已知支管反求节点测压管水头
+$z+\dfrac{p}{\gamma}$；③ 用该水头算其余支管流量。\\
+\textbf{与并联的区别一句话：}并联是\emph{两端都固定}（损失相等），分支是\emph{只有一端固定}（节点水头相等）。
+\end{banfa}
+\end{kaodian}
+
+\begin{kaodian}{4}{短管的水力计算、虹吸管与水泵管路}
+\begin{gongshi}{短管的实用计算通式}
+\[ H_0=z_1-z_2+\frac{p_1-p_2}{\rho g}+\frac{v_1^2}{2g}=(1+\zeta_c)\frac{v_2^2}{2g} \]
+\[ Q=\mu A\sqrt{2gH_0},\qquad \mu=\frac{1}{\sqrt{1+\zeta_c}},\qquad
+   \zeta_c=\sum\lambda_i\frac{l_i}{d_i}\left(\frac{v_i}{v_2}\right)^2+\sum\zeta_j\left(\frac{v_j}{v_2}\right)^2 \]
+\textbf{含义：}短管必须把沿程损失、局部损失和出口流速水头全部计入。
+$\zeta_c$ 称\textbf{综合阻力系数}，做法是\emph{一切损失都折算成出口流速 $v_2$ 的动能倍数}：
+不同管径段的 $v_i$ 用连续性方程 $v_i=v_2\left(\dfrac{d_2}{d_i}\right)^2$ 折算。
+$\mu$ 称短管的流量系数。\\
+\textbf{适用条件：}短管（不能忽略 $\sum h_j$ 与 $\dfrac{v^2}{2g}$）；
+自由出流时 $H_0=H+\dfrac{v_1^2}{2g}$（$H$ 为上游液面到出口中心的高差），
+淹没出流时 $H_0$ 为\textbf{上下游液面差}。
+\end{gongshi}
+
+\textbf{水泵吸水管与汽蚀：}列自吸水池液面到水泵进口断面的伯努利方程，可得安装高度
+\[ [h_s]=\frac{p_a}{\rho g}-\frac{p_v}{\rho g}-h_w-\frac{v^2}{2g} \]
+（$p_v$ 为液体在当时温度下的汽化压强）。水泵进口压强必须高于 $p_v$，否则发生\textbf{汽蚀}——
+这与泵的\textbf{允许吸上真空高度 $H_s$} 是同一件事的两种说法。
+
+\textbf{虹吸管：}外形呈倒 U 形、靠上下游液面高差驱动的管路。计算两步：
+① 对上下游液面列能量方程求流量 $Q$ 与管内流速；
+② 对\emph{最高断面}列能量方程求该处压强，要求\textbf{最高处压强不低于液体的汽化压强}——
+即最高处出现\emph{负压（真空）}，通常限制其真空度不超过 $7\sim8\ \mathrm{m}$ 水柱。
+所以虹吸管的最高点不能离上游液面太高。
+
+\begin{zhenti}{2022 年 818 单选第 7 题、题库 \texttt{10.pdf} 选择第 8 题}{单项选择题}
+虹吸管最高处的压强（\quad）。（A）大于大气压（B）等于大气压（C）小于大气压（D）无法确定
+\end{zhenti}
+\noindent\textbf{要点（答 C）：}虹吸管最高处位于上游液面以上，能量方程给出
+$\dfrac{p}{\rho g}=\dfrac{p_a}{\rho g}-h-\dfrac{v^2}{2g}-h_w<0$（相对压强为负），故\textbf{小于大气压}。
+这一条也是"最高点不能太高"的原因。
+
+\begin{zhenti}{题库 \texttt{10.pdf} 计算第 4 题}{计算题}
+一台水泵 $n=1450\ \mathrm{r/min}$，$H$--$Q$ 性能曲线由表给出；管路系统综合阻力数 $S=0.024\times10^6\ \mathrm{s^2/m^5}$，
+几何扬水高度 $H_z=6\ \mathrm{m}$，上下两水池水面均为大气压。求：（1）水泵运行的工作参数 $(Q,H,N,\eta)$；
+（2）可采取哪些方式调节运行工况？（3）节流阀调节使 $Q=8\ \mathrm{L/s}$ 时各工作参数。
+\end{zhenti}
+\noindent\textbf{要点：}管路特性曲线 $H=H_z+SQ^2=6+0.024\times10^6Q^2$；
+与泵的 $H$--$Q$ 曲线的\textbf{交点即工况点}，读出 $Q$、$H$，再由 $\eta$ 算轴功率。
+调节方式：节流调节、变速调节、切割叶轮、并联或串联泵。节流后工况点沿泵曲线左移，$H$ 增大、$Q$ 减小、效率下降。
+
+\textbf{常考题型：}计算（短管流量、吸水管安装高度、虹吸管最高处压强、水泵工况点）；
+选择（虹吸管最高处压强、允许吸上真空高度含义）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2022 年 818 单选第 7 题（虹吸管最高处压强）；E5 题库选择第 8 题（虹吸管最高处压强小于大气压）、第 14 题（允许吸上真空高度 $H_s$）；E5 题库计算第 4 题（水泵工况点与节流调节）}\quad\nandu{难}
+
+\begin{banfa}
+\textbf{短管计算三步：}① 写能量方程，左右各写全（含 $\dfrac{v^2}{2g}$ 与 $\sum h_j$）；
+② 把所有速度折算成出口速度，凑成 $\zeta_c$；③ 用 $Q=\mu A\sqrt{2gH_0}$ 求流量。\\
+\textbf{虹吸管两问两答：}问流量$\to$用上下游液面高差；问最高处压强$\to$以上游液面到最高点的高差列式。
+两个方程不要用混。\\
+\textbf{汽蚀一句话：}进口压强降到汽化压强以下 $\to$ 液体汽化形成气泡 $\to$ 气泡在高压区溃灭冲击叶片 $\to$ 汽蚀破坏。
+\end{banfa}
+\end{kaodian}
+
+\section{管路中的水击}
+
+\begin{kaodian}{4}{水击现象、相长与直接／间接水击}
+\textbf{是什么：}由于某种原因引起管内液体流速\emph{突然变化}（迅速开关阀门、突然停泵等），
+管内压强随之急剧升降，并以压力波的形式在管内往复传播，这种现象叫\textbf{水击现象}，也叫\textbf{水锤}。
+阀门突然关闭时流速骤减、压强首先急剧升高，称\textbf{正水击}；阀门突然开启时流速骤增、压强首先降低，称\textbf{负水击}。
+
+\textbf{发生水击的物理原因（简答要点）：}
+① \textbf{外因}——管路中流速突然变化；
+② \textbf{内因}——液体具有\textbf{惯性}和\textbf{压缩性}，管壁具有\textbf{弹性}。
+惯性力图维持液体原来的运动状态，压缩性与管壁弹性则改变体积、缓和流动。
+水击中的液流参数随时间和位置变化，属于\textbf{不稳定流动}。
+
+\begin{gongshi}{水击的相长、直接水击与水击压强}
+\[ T=\frac{2L}{c},\qquad
+   t\le T\ \Rightarrow\ \text{直接水击};\quad t>T\ \Rightarrow\ \text{间接水击} \]
+\[ \Delta p=\rho c\left(v_0-v\right) \]
+\textbf{含义：}$L$ 为管道长度、$c$ 为水击波传播速度，$T=\dfrac{2L}{c}$ 称\textbf{相长}（压力波往返一次的时间）。
+\textbf{直接水击：}阀门关闭时间 $t\le T$，压力波尚未返回，阀门前达到最大升压；
+\emph{直接水击危害最大}。\textbf{间接水击：}关闭时间 $t>T$，压力波在关闭过程中已部分返回叠加，
+$\Delta p$ 小于直接水击，故\textbf{延长关闭时间就能把直接水击变成间接水击}。
+水击压强增量由儒科夫斯基公式 $\Delta p=\rho c(v_0-v)$ 给出，$v$ 为关闭后的流速（完全关闭时 $v=0$，
+$\Delta p=\rho c v_0$）。\\
+\textbf{适用条件：}直接水击公式只适用于 $t\le T$；考虑液体压缩性与管壁弹性；
+$\Delta p$ 是压强\emph{增量}，实际压强为 $p_0+\Delta p$。
+\end{gongshi}
+
+\textbf{常考题型：}简答（"什么是水击现象？原因与危害？"）——2026 回忆版原题；
+选择/填空（相长公式、直接与间接水击的判别、水击压强的增减方向）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2026 回忆版简答考"水击现象"；E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{简化式：}$t\le\dfrac{2L}{c}$ 直接水击（$\Delta p$ 最大），$t>\dfrac{2L}{c}$ 间接水击。
+\textbf{简答答题模板（四句）：}① 定义（流速突变$\to$压强急剧升降$\to$波在管内传播）；
+② 原因（外因流速突变，内因液体的惯性＋压缩性＋管壁弹性）；③ 分类（正／负水击，直接／间接水击）；
+④ 危害与防护。\\
+\textbf{正负水击速判：}关阀门$\to$流速减小$\to$压强升高（正水击）；开阀门$\to$流速增大$\to$压强降低（负水击）。
+\end{banfa}
+
+\begin{yicuo}
+① 湍流不是水击的前提，水击处理的是\textbf{不稳定流动}，与第 5.2 节的层流湍流是两套体系。
+② $\Delta p=\rho c(v_0-v)$ 中 $c$ 是\textbf{压力波传播速度}（约 $1000\ \mathrm{m/s}$ 量级），
+不是管内流速，两者相差三个数量级。
+③ 相长是"往返一次"的时间，故为 $\dfrac{2L}{c}$，不是 $\dfrac{L}{c}$。
+④ 直接水击才用 $\Delta p=\rho c v_0$；间接水击的 $\Delta p$ 必须由具体关闭过程求出，不能直接套。
+\end{yicuo}
+\end{kaodian}
+
+\begin{kaodian}{4}{水击波速、危害与防护措施}
+\begin{gongshi}{水击波传播速度}
+\[ c=\frac{\sqrt{K/\rho}}{\sqrt{1+\dfrac{DK}{\delta E}}} \]
+\textbf{含义：}$\sqrt{K/\rho}$ 是液体中的声速（$K$ 为液体体积弹性模量）；
+分母中的 $\dfrac{DK}{\delta E}$ 是对\textbf{管壁弹性}的修正（$D$ 为管径、$\delta$ 为管壁厚度、$E$ 为管材弹性模量）。
+管壁越硬、管径越小、壁越厚，$c$ 越接近声速；
+管壁有弹性会吸收一部分能量，使 $c$ 减小、水击压强减小（这正是采用弹性管道或加设弹性元件能减轻水击的机理）。
+\\
+\textbf{适用条件：}薄壁圆管、管壁弹性与液体压缩性同时考虑；若管壁视为绝对刚性，则 $c=\sqrt{K/\rho}$。
+\end{gongshi}
+
+\textbf{水击的危害与防护措施（简答必背）：}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+环节 & 具体做法 & 原理 \\
+\midrule
+延长关闭时间 & 把 $t$ 拉长到 $t>\dfrac{2L}{c}$，使直接水击变为间接水击 & 压力波在关闭过程中返回叠加，抵消部分升压 \\
+设空气阀／空气包 & 在阀门或管道前装空气包、空气阀 & 气体可压缩，吸收水击能量 \\
+设调压塔 & 在管道中间设调压塔（井） & 提供自由液面，压力波在此反射、泄压 \\
+装水锤消除器 & 在阀门前装安全阀、水锤消除器 & 超过允许压强时泄水，保护管路 \\
+加大管径 & 降低管内流速 $v_0$ & $\Delta p=\rho c(v_0-v)\propto v_0$，流速低则升压小 \\
+缩短管路 & 减小 $L$，即减小相长 $T$ & 缩短压力波往返时间 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{常考题型：}简答（"水击的危害与防护措施"）；填空（水击波速公式的影响因素）。
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2026 回忆版简答考"水击现象"；E1 slide33「第五章＝考试计算题重点」；E2「第五章同为主要计算考点」}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{防护措施记成"三长两吸一泄压"}：延长关闭时间、延长（缩短）管路视情况、加大管径＝降流速；
+空气包、调压塔＝吸收；安全阀／水锤消除器＝泄压。\\
+\textbf{波速公式只记结构：}$c=\dfrac{\sqrt{K/\rho}}{\sqrt{1+DK/(\delta E)}}$。
+考试若问"管壁弹性对水击的影响"，答"分母大于 1，$c$ 减小，$\Delta p$ 减小"。\\
+\textbf{答题注意：}水击简答要写满\emph{定义＋原因＋危害＋措施}四块，2026 年原题就是简答，分值可观。
+\end{banfa}
+\end{kaodian}
+
+\section{本章小结}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lccX@{}}
+\toprule
+考点 & 重要度 & 难度 & 一句话抓住 \\
+\midrule
+水头损失两种形式与叠加 & \xstarfull{5} & 易 & 沿程＝黏性摩擦，局部＝漩涡耗能；$h_w=\sum h_f+\sum h_j$ \\
+湿周、水力半径与当量直径 & \xstarfull{4} & 中 & $R_h=A/\chi$，$d_e=4R_h$；只能用于 $\Rey$ 与阻力折算 \\
+雷诺实验与两种流态 & \xstarfull{5} & 易 & 直线／抖动／满管；层流 $h_f\propto v$，湍流 $h_f\propto v^{1.75\sim2}$ \\
+雷诺数与流态判别 & \xstarfull{5} & 中 & $\Rey=vd/\nu$，下临界 2300、工程取 2000；$\Rey$＝惯性力／黏性力 \\
+层流切应力与速度分布 & \xstarfull{4} & 中 & 切应力线性、速度抛物线；$v=u_{\max}/2$ \\
+层流流量与 $\lambda=64/\Rey$ & \xstarfull{5} & 中 & $Q=\pi d^4\Delta p/(128\mu l)$；$\lambda$ 只与 $\Rey$ 有关 \\
+湍流脉动与时均化 & \xstarfull{3} & 易 & 瞬时值＝时均值＋脉动值，脉动时均为零 \\
+层流底层、水力光滑与粗糙 & \xstarfull{4} & 中 & $\delta>\Delta$ 光滑，$\delta<\Delta$ 粗糙；同一管随流量变 \\
+尼古拉兹分区与 $\lambda$ 计算 & \xstarfull{5} & 难 & 层流 $64/\Rey$；光滑区 $0.3164/\Rey^{0.25}$；粗糙区只看 $\Delta/d$ \\
+局部水头损失与突然扩大 & \xstarfull{4} & 中 & $h_j=\zeta v^2/2g$；突扩 $h_j=(v_1-v_2)^2/2g$ \\
+典型 $\zeta$ 值与当量长度法 & \xstarfull{3} & 易 & 进口 0.5、出口 1.0；$h_j=\lambda(l_e/d)v^2/2g$ \\
+薄壁小孔口自由出流 & \xstarfull{5} & 中 & $Q=\mu A\sqrt{2gH_0}$；$\varepsilon\approx0.64$、$\varphi\approx0.97$、$\mu\approx0.62$ \\
+大孔口与淹没出流 & \xstarfull{3} & 中 & 大孔口 $e\ge H/10$；淹没出流 $H$＝上下游液面差 \\
+圆柱形外管嘴与正常条件 & \xstarfull{5} & 中 & $\mu=0.82$；$H_0\le9\ \mathrm{m}$ 且 $l=(3\sim4)d$，缺一不可 \\
+长管与短管的判别 & \xstarfull{5} & 中 & 不按长度分；长管忽略 $h_j$ 与 $v^2/2g$，短管必须计入 \\
+简单长管三个基本问题 & \xstarfull{5} & 难 & 第一类直接算；第二、三类必须迭代 \\
+串联与并联管路 & \xstarfull{5} & 难 & 串联流量相等、损失相加；并联损失相等、流量相加 \\
+分支管路与管网 & \xstarfull{4} & 难 & 节点流量平衡，节点测压管水头唯一 \\
+短管、虹吸管与水泵管路 & \xstarfull{4} & 难 & $Q=\mu A\sqrt{2gH_0}$；虹吸管最高处压强小于大气压 \\
+水击现象、相长与分类 & \xstarfull{4} & 中 & $T=2L/c$；$t\le T$ 直接水击，$t>T$ 间接水击 \\
+水击波速与防护 & \xstarfull{4} & 中 & $c=\sqrt{K/\rho}/\sqrt{1+DK/(\delta E)}$；延长关闭时间等 \\
+\bottomrule
+\end{tabularx}
+\end{center}

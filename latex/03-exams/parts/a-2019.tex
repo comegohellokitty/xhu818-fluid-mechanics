@@ -1,0 +1,689 @@
+\chapter{2019 年工程流体力学试题参考答案（当年科目代码 821）}
+
+\begin{tishi}
+本答案由原卷拍照件整理，个别步骤与符号已按流体力学标准写法规范化。
+
+\textbf{关于科目代码：}原卷封面印“考试科目代码及名称：821 工程流体力学”，
+当年代码为 821，与现行的 818 不同，本册照原卷保留 821，不改写成 818。
+
+\textbf{关于原答案卷：}答案卷共 4 页，系手机拍照，页面畸变、页码错乱、公式大量缺漏。
+本册撰稿时已把答案卷（PDF）逐页渲染为图片并\textbf{目视核对}，
+凡原卷能辨认者照原卷转写，凡公式缺漏、字迹不清者按标准解法重算补全，并在该小题后注明。
+答案卷不判星（无难度星标、无考点码）。
+\end{tishi}
+
+\section{一、选择题（共 10 分，每小题 2 分）}
+
+\answ{答案}
+\begin{center}
+1.~A\qquad 2.~D\qquad 3.~C\qquad 4.~C\qquad 5.~C
+\end{center}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}
+  \item 气体的黏性来自分子热运动引起的动量交换（液体的黏性则主要来自分子间内聚力），故选 A。
+  \item 恒定均匀流的当地加速度 $\partial\bm v/\partial t=0$、迁移加速度 $(\bm v\cdot\nabla)\bm v=0$，
+        二者均为零，故合加速度为零，选 D。
+  \item $\rho gz+p+\rho\alpha v^{2}/2$ 三项的量纲均为压强，表示\textbf{单位体积}流体具有的机械能
+        （$\mathrm{J/m^{3}}$），选 C。
+  \item 按长管计算 $H=\lambda\dfrac{L}{d}\dfrac{v^{2}}{2g}$，$Q$ 只由作用水头与管长、管径、粗糙度决定，
+        与管道的安装高度无关，故 $Q_1=Q_2$，选 C。
+  \item 量纲核对：$\dfrac{pl^{4}}{\rho Q^{2}}$ 的分子为 $\mathrm{M\,L^{3}T^{-2}}$，
+        分母为 $\mathrm{M\,L^{-3}}\times\mathrm{L^{6}T^{-2}}=\mathrm{M\,L^{3}T^{-2}}$，比值为纯数，选 C。
+\end{enumerate}
+\end{tishi}
+
+\section{二、判断题（正确的打 $\surd$，错误的打 $\times$，共 20 分，每小题 2 分）}
+
+\answ{答案}
+\begin{center}
+1.~$\times$\qquad 2.~$\surd$\qquad 3.~$\surd$\qquad 4.~$\times$\qquad 5.~$\surd$\qquad
+6.~$\surd$\qquad 7.~$\surd$\qquad 8.~$\times$\qquad 9.~$\surd$\qquad 10.~$\surd$
+\end{center}
+
+\begin{tishi}
+\textbf{各题一句话理由：}
+\begin{enumerate}
+  \item 错。圆管层流的切应力沿半径\textbf{线性}分布（$\tau=\tau_0 r/R$），
+        呈抛物线分布的是\textbf{流速}剖面。
+  \item 对。弗劳德数 $\mathrm{Fr}=v/\sqrt{gL}$ 的物理意义是惯性力与重力之比。
+  \item 对。湍流光滑区的沿程阻力系数只与雷诺数有关（如布拉修斯公式 $\lambda=0.3164/\Rey^{0.25}$），
+        与相对粗糙度无关。
+  \item 错。水力坡度按定义取 $J=-\dfrac{\mathrm dH}{\mathrm ds}$：因总水头沿程只降不升，
+        $\mathrm dH<0$，在前加负号正是为了保证 $J$ 为正值，故不能说“水力坡度小于零”。
+  \item 对。长管计算中局部水头损失与速度水头相对沿程损失很小，可以略去。
+  \item 对。管嘴出流要求液体在出口断面\textbf{满管}流出（收缩断面处形成真空、起抽吸作用），
+        否则退化为孔口出流。
+  \item 对。水击的实质是管道中液体的\textbf{压缩性}与管壁\textbf{弹性}的共同作用，
+        分析有压管路水击时必须计及液体的压缩性。
+  \item 错。瑞利法的限制在于待定指数个数须与基本量纲个数（通常为 3 个）相称，
+        物理量个数多于基本量纲数时量纲方程无法唯一求解，并非“不能超过 4 个”。
+  \item 对。无环量理想流体绕流静止翼型时 $\Gamma=0$，升力 $L=\rho v\Gamma=0$；
+        理想流体又无黏性阻力（达朗贝尔佯谬），故阻力与升力均为零。
+  \item 对。普朗特边界层方程给出 $\partial p/\partial y=0$，
+        即同一 $x$ 坐标处边界层内、外的压强相等。
+\end{enumerate}
+\end{tishi}
+
+\section{三、填空题（共 30 分，每空 3 分）}
+
+\answ{答案}
+\begin{center}
+\begin{tabular}{@{}p{0.94\linewidth}@{}}
+1.\ $\dfrac{\partial N}{\partial t}+(\bm v\cdot\nabla)N$（即随体导数 $\dfrac{\mathrm dN}{\mathrm dt}$）\tabularnewline
+2.\ $(x+t)(y-t)=C$\tabularnewline
+3.\ $u_x=1$；\ $u_y=-1$；\ $a_x=0$；\ $a_y=0$；\ $\varphi=x-y$\tabularnewline
+4.\ $\eta=\dfrac{\rho gQH_m}{P}=\dfrac{\gamma QH_m}{P}$\tabularnewline
+5.\ $\omega\le\sqrt{\dfrac{4g(H-h)}{R^{2}}}=\dfrac{2}{R}\sqrt{g(H-h)}$，其中 $R=D/2$\tabularnewline
+6.\ $q=\dfrac{4}{3}bu_{\max}$\tabularnewline
+\end{tabular}
+\end{center}
+
+\begin{tishi}
+\textbf{各空说明：}
+\begin{enumerate}
+  \item 随体（质点）导数等于局部导数加位变（迁移）导数。
+  \item 二维非恒定流的流线微分方程为 $\dfrac{\mathrm dx}{x+t}=\dfrac{\mathrm dy}{-y+t}$，
+        积分得 $\ln(x+t)=-\ln(t-y)+C'$，即 $(x+t)(y-t)=C$。
+  \item 由 $\psi=x+y$ 得 $u_x=\dfrac{\partial\psi}{\partial y}=1$、$u_y=-\dfrac{\partial\psi}{\partial x}=-1$；
+        流动均匀且定常，故 $a_x=a_y=0$；再由 $\dfrac{\partial\varphi}{\partial x}=u_x=1$、
+        $\dfrac{\partial\varphi}{\partial y}=u_y=-1$ 积分，得 $\varphi=x-y$。
+  \item 泵内流体实际获得的功率为 $\gamma QH_m$，泵的轴功率为 $P$，故 $\eta=\gamma QH_m/P$。
+  \item 容器绕 $z$ 轴等角速度旋转后液面为旋转抛物面 $z=\dfrac{\omega^{2}r^{2}}{2g}$：
+        由体积守恒，水面中心下降的高度与边缘上升的高度相等，均为 $\dfrac{\omega^{2}R^{2}}{4g}$。
+        要求边缘处水面不高于容器口，即 $h+\dfrac{\omega^{2}R^{2}}{4g}\le H$，于是
+        $\omega\le\dfrac{2}{R}\sqrt{g(H-h)}$，与填 $\sqrt{\dfrac{4g(H-h)}{R^{2}}}$ 等价。
+  \item 单宽流量
+        \[
+        q=\int_{-b}^{b}u_{\max}\left[1-\left(\frac{y}{b}\right)^{2}\right]\mathrm dy
+        =u_{\max}\left(2b-\frac{2b}{3}\right)=\frac{4}{3}bu_{\max}
+        \]
+\end{enumerate}
+\end{tishi}
+
+\section{四、作图题（共 7 分）}
+
+\answ{答案}
+
+以题图中的 $0$--$0$ 为基准面，逐个标出 $A$、$B$、$C$ 三点的三种水头：
+
+\textbf{（1）位置水头。}由基准面 $0$--$0$ 分别铅垂量至 $A$、$B$、$C$ 三点，得 $z_A$、$z_B$、$z_C$；
+三点位置水头各不相同，越靠上越大。
+
+\textbf{（2）压强水头。}容器液面上作用气体压强 $p_0$，液面本身即具有压强水头 $p_0/(\rho g)$；
+液体内任一点的压强水头等于该点自液面算起的淹没深度再加上 $p_0/(\rho g)$。设液面的位置水头为 $z_s$，则
+\[
+\frac{p_A}{\rho g}=z_s+\frac{p_0}{\rho g}-z_A,\qquad
+\frac{p_B}{\rho g}=z_s+\frac{p_0}{\rho g}-z_B,\qquad
+\frac{p_C}{\rho g}=z_s+\frac{p_0}{\rho g}-z_C
+\]
+
+\textbf{（3）测压管水头。}测压管水头等于位置水头与压强水头之和：
+\[
+z_A+\frac{p_A}{\rho g}=z_B+\frac{p_B}{\rho g}=z_C+\frac{p_C}{\rho g}
+=z_s+\frac{p_0}{\rho g}=\text{常数}
+\]
+即三点测压管水头相等，在图上就是\textbf{同一条水平线}（测压管水头面为水平面），
+容器右侧测压管内的液面恰好与该水平线齐平。
+
+\begin{tishi}
+原答案卷即在题图上直接标注：以 $0$--$0$ 为基准面量出的 $z_A$、$z_B$、$z_C$，
+以及 $p_0$、$\dfrac{p_A}{\rho g}$、$\dfrac{p_B}{\rho g}$、$\dfrac{p_C}{\rho g}$ 与测压管液面所在的那条水平线。
+原卷只标符号、未给数值，故本册只按静止液体静压强关系给出上述公式表述；
+各线段的实际位置与长度请对照原卷影印件。
+\end{tishi}
+
+\section{五、简答题（共 16 分）}
+
+\answ{1.（6 分）系统与控制体的区别}
+
+\textbf{答：}系统（体系）是包含确定不变的物质（流体质点）的集合，与外界没有质量交换；
+系统运动时其位置、形状都可能发生变化，但系统内的流体质量保持不变。
+系统着眼于确定的流体质点，采用\textbf{拉格朗日}观点。
+控制体是位置、形状都保持不变的空间区域，其边界（控制面）在空间固定，
+流体质点可以穿越控制面自由出入控制体，可以有质量和能量穿过控制面。
+控制体着眼于固定的空间区域，采用\textbf{欧拉}观点。
+两者由雷诺输运定理相联系。
+
+\answ{2.（4 分）不同流态下沿程损失与流速的关系}
+
+\textbf{答：}层流时，沿程水头损失与平均流速的\textbf{一次方}成正比，即 $h_f\propto v^{1}$；
+湍流时，沿程水头损失与平均流速的 $1.75\sim2$ 次方成正比，即 $h_f\propto v^{1.75\sim2}$。
+（层流 $\lambda=64/\Rey\propto v^{-1}$，代入达西公式得 $h_f\propto v$；
+湍流时 $\lambda$ 约为常数或随 $\Rey$ 缓变，故 $h_f\propto v^{1.75\sim2}$。）
+
+\answ{3.（3 分）均匀流绕流顺时针转动圆柱时驻点的可能位置}
+
+\textbf{答：}取环量 $\Gamma$ 以逆时针为正，则顺时针转动的圆柱 $\Gamma<0$。
+绕流圆柱表面的切向速度为
+\[
+v_\theta=-2u_\infty\sin\theta+\frac{\Gamma}{2\pi r_0}
+\]
+（$u_\infty$ 为来流速度，$r_0$ 为圆柱半径）。令 $v_\theta=0$ 得驻点条件
+\[
+\sin\theta=\frac{\Gamma}{4\pi u_\infty r_0}
+\]
+于是分三种情形：
+\begin{itemize}
+  \item 当 $|\Gamma|<4\pi u_\infty r_0$ 时，圆柱表面上存在\textbf{两个}驻点，
+        位于圆柱表面的第 3、4 象限（下半部），且关于 $y$ 轴对称；
+  \item 当 $|\Gamma|=4\pi u_\infty r_0$ 时，两个驻点重合为\textbf{一个}，位于圆柱表面的最下端；
+  \item 当 $|\Gamma|>4\pi u_\infty r_0$ 时，圆柱表面上不再有驻点，
+        驻点脱离圆柱表面、沿 $y$ 轴下移到流场中的某个位置。
+\end{itemize}
+
+\answ{4.（3 分）直接水击与间接水击哪个危害更大}
+
+\textbf{答：}\textbf{直接水击}的危害更大。因为直接水击时阀门关闭（或开启）的时间
+$T_s\le\dfrac{2L}{c}$（$L$ 为管长、$c$ 为水击波的传播速度），
+水击波尚未从水池反射回来，反射的\textbf{减压波}来不及到达阀门处削弱升压，
+故阀门处的压强升高达到最大值；间接水击时，反射回来的减压波已到达阀门处并与升压波叠加，
+使最大压强升高显著降低。水击压强按 $\Delta p=\rho c\Delta v$ 估算。
+
+\section{六、证明题（共 17 分）}
+
+\answ{1.（7 分）圆形闸门水压力对过形心水平轴的力矩与形心水深无关}
+
+\begin{jie}
+\textbf{已知：}圆形闸门直径 $D$（原卷图注为 $125$ cm），闸门平面与水面夹角为 $\theta$，
+闸门形心 $C$ 处水深为 $h_C$，闸门可绕通过形心 $C$ 的水平轴旋转。
+\textbf{求证：}水压力对该水平轴的力矩 $M$ 与形心水深 $h_C$ 无关。
+
+\textbf{（1）闸门所受水压力的大小。}（$A$ 为闸门面积）
+\[
+P=\gamma h_C A=\rho gh_C A
+\]
+
+\textbf{（2）压力中心与形心的距离。}压力中心 $D$ 在形心 $C$ 之下，沿闸门平面偏离形心的距离为
+\[
+e=\frac{J_C}{y_C A}
+\]
+其中 $J_C$ 为闸门面积对过形心水平轴的惯性矩，$y_C$ 为形心沿闸门平面到水面的斜距。
+圆形平面 $J_C=\dfrac{\pi R^{4}}{4}=\dfrac{\pi D^{4}}{64}$（$R=D/2$），
+且 $h_C=y_C\sin\theta$，即 $y_C=\dfrac{h_C}{\sin\theta}$。
+
+\textbf{（3）求力矩。}水压力垂直于闸门平面，压力中心偏离形心的距离 $e$ 就是该力对过形心水平轴的力臂，故
+\[
+M=Pe=\gamma h_C A\cdot\frac{J_C}{y_C A}
+=\gamma J_C\frac{h_C}{y_C}
+=\gamma J_C\sin\theta
+=\gamma\frac{\pi R^{4}}{4}\sin\theta
+=\frac{\gamma\pi D^{4}\sin\theta}{64}
+\]
+式中只含 $\gamma$、$\theta$、$D$，$h_C$ 已被约去，故力矩与形心水深 $h_C$ 无关，得证。
+
+\textbf{结果：}$\boxed{M=\dfrac{\gamma\pi D^{4}\sin\theta}{64}=\dfrac{\gamma\pi R^{4}\sin\theta}{4}}$，与 $h_C$ 无关。
+取 $D=1.25$ m、$\gamma=9.8\,\mathrm{kN/m^{3}}$，则
+\[
+M=9.8\times10^{3}\times\frac{\pi\times1.25^{4}}{64}\sin\theta
+=1174\sin\theta\ \mathrm{N\cdot m}
+\]
+\end{jie}
+
+\answ{2.（10 分）射流斜冲击平板后两股分流时平板所受的力（推证）}
+
+\begin{jie}
+\textbf{已知：}来流流量 $Q$、平均流速 $v$（断面 $0$--$0$，垂直于平板）；
+射流冲击直立平板后分成两股：沿板面直泻而下的流量 $Q_1$、与板面成倾角 $\alpha$ 射出的流量 $Q_2$，
+两股分流的平均速度均等于 $v$；不计摩擦力和重力的影响。
+设平板对水流的作用力为 $F$，方向水平向左（逆来流方向）。
+\textbf{求证：}$F=\rho Qv\left(1-\sqrt{\dfrac{1-Q_1/Q_2}{1+Q_1/Q_2}}\right)$。
+
+\textbf{证明：}
+\textbf{（1）连续性方程。}
+\[
+Q=Q_1+Q_2
+\]
+
+\textbf{（2）沿平板面（铅垂）方向的动量方程。}来流在板面方向没有动量，
+两股出流沿板面的分量必须相互抵消：
+\[
+\rho Q_2v\sin\alpha-\rho Q_1v=0
+\quad\Longrightarrow\quad
+\sin\alpha=\frac{Q_1}{Q_2}
+\]
+
+\textbf{（3）垂直于板面（水平）方向的动量方程。}取来流方向为正：
+\[
+F=\rho Qv-\rho Q_2v\cos\alpha
+=\rho Qv\left(1-\frac{Q_2}{Q}\cos\alpha\right)
+\]
+
+\textbf{（4）化为题给形式。}由 $\sin\alpha=\dfrac{Q_1}{Q_2}$ 得
+\[
+\cos\alpha=\sqrt{1-\left(\frac{Q_1}{Q_2}\right)^{2}}
+=\sqrt{\left(1-\frac{Q_1}{Q_2}\right)\left(1+\frac{Q_1}{Q_2}\right)}
+\]
+再由 $Q=Q_1+Q_2$，即 $\dfrac{Q_2}{Q}=\dfrac{1}{1+Q_1/Q_2}$，于是
+\[
+\frac{Q_2}{Q}\cos\alpha
+=\frac{\sqrt{\left(1-\frac{Q_1}{Q_2}\right)\left(1+\frac{Q_1}{Q_2}\right)}}{1+\frac{Q_1}{Q_2}}
+=\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}}
+\]
+代入第（3）步即得
+\[
+\boxed{F=\rho Qv\left(1-\sqrt{\frac{1-Q_1/Q_2}{1+Q_1/Q_2}}\right)}
+\]
+得证。
+\end{jie}
+
+\section{七、计算题（共 50 分）（1、2、3、4 题必做，5、6、7 题任选做一道）}
+
+\answ{1.（10 分）文丘里流量计测竖直水管中的流量}
+
+\begin{jie}
+\textbf{已知：}竖直水管宽断面 $d_1=300$ mm（断面 $1$--$1$）、喉部 $d_2=150$ mm（断面 $2$--$2$）；
+水银压差计读数 $\Delta h=20$ mm；取 $\rho=1000\,\mathrm{kg/m^{3}}$、$\rho_{Hg}=13600\,\mathrm{kg/m^{3}}$、
+$g=9.8\,\mathrm{m/s^{2}}$。
+\textbf{求：}水流量 $Q$。
+
+\textbf{（1）由压差计读数求两断面的测压管水头差。}
+\[
+\left(z_1+\frac{p_1}{\rho g}\right)-\left(z_2+\frac{p_2}{\rho g}\right)
+=\left(\frac{\rho_{Hg}}{\rho}-1\right)\Delta h
+=(13.6-1)\times0.02=0.252\ \mathrm{m}
+\]
+
+\textbf{（2）对 $1$--$1$、$2$--$2$ 断面列伯努利方程。}（断面间不计水头损失，取 $\alpha_1=\alpha_2=1$）
+\[
+z_1+\frac{p_1}{\rho g}+\frac{v_1^{2}}{2g}=z_2+\frac{p_2}{\rho g}+\frac{v_2^{2}}{2g}
+\]
+整理得
+\[
+\frac{v_2^{2}-v_1^{2}}{2g}
+=\left(z_1+\frac{p_1}{\rho g}\right)-\left(z_2+\frac{p_2}{\rho g}\right)=0.252\ \mathrm{m}
+\]
+
+\textbf{（3）由连续性方程消去 $v_1$。}$v_1A_1=v_2A_2$，即
+\[
+v_1=v_2\frac{A_2}{A_1}=v_2\left(\frac{d_2}{d_1}\right)^{2}=v_2\left(\frac{150}{300}\right)^{2}=\frac{v_2}{4}
+\]
+代入上式：
+\[
+\frac{v_2^{2}}{2g}\left[1-\left(\frac{A_2}{A_1}\right)^{2}\right]=0.252
+\quad\Longrightarrow\quad
+v_2^{2}=\frac{2\times9.8\times0.252}{1-\left(\frac{1}{4}\right)^{2}}
+=\frac{4.9392}{0.9375}=5.269\ \mathrm{m^{2}/s^{2}}
+\]
+\[
+v_2=\sqrt{5.269}=2.296\ \mathrm{m/s}
+\]
+
+\textbf{（4）求流量。}
+\[
+A_2=\frac{\pi d_2^{2}}{4}=\frac{\pi\times0.15^{2}}{4}=1.767\times10^{-2}\ \mathrm{m^{2}}
+\]
+\[
+Q=v_2A_2=2.296\times1.767\times10^{-2}=0.0406\ \mathrm{m^{3}/s}
+\]
+
+\textbf{结果：}$\boxed{Q\approx0.0406\ \mathrm{m^{3}/s}}$（约 $40.6$ L/s）。
+
+校核：$v_1=\dfrac{v_2}{4}=0.574$ m/s，
+$\dfrac{v_2^{2}-v_1^{2}}{2g}=\dfrac{5.269-0.329}{19.6}=0.252$ m，与压差计读数完全一致。
+\end{jie}
+
+\begin{tishi}
+\textbf{本题的两个答案（原卷漏乘一个因子）：}原答案卷已写出
+$\dfrac{v_2^{2}}{2g}\left[1-\left(\dfrac{A_2}{A_1}\right)^{2}\right]=0.252$ m，
+却直接取 $v_2=\sqrt{2\times9.8\times0.252}=2.223$ m/s，即\textbf{未代入}括号内的因子，
+由此得 $Q=v_2A_2=2.223\times1.767\times10^{-2}=0.039$ m³/s。
+本册按原卷所列式子完整代入，得 $v_2=2.296$ m/s、$Q=0.0406$ m³/s，
+与原卷答案差约 $4\%$，差异来源即上述漏乘的 $\left[1-\left(A_2/A_1\right)^{2}\right]=0.9375$。
+\end{tishi}
+
+\answ{2.（10 分）毛细管测定油液的运动粘度}
+
+\begin{jie}
+\textbf{已知：}毛细管直径 $d=4.0$ mm $=0.004$ m，长度 $L=0.5$ m；
+流量 $Q=1.0\,\mathrm{cm^{3}/s}=1.0\times10^{-6}\,\mathrm{m^{3}/s}$ 时，
+两测压管的液面落差 $h=15$ cm $=0.15$ m；管中为层流。
+\textbf{求：}油液的运动粘度 $\nu$。
+
+\textbf{（1）管内平均流速。}
+\[
+A=\frac{\pi d^{2}}{4}=\frac{\pi\times0.004^{2}}{4}=1.257\times10^{-5}\ \mathrm{m^{2}},
+\qquad
+v=\frac{Q}{A}=\frac{1.0\times10^{-6}}{1.257\times10^{-5}}=0.0796\ \mathrm{m/s}
+\]
+
+\textbf{（2）用达西公式与层流阻力系数建立关系。}测压管落差即该管段的沿程水头损失 $h_f=h$：
+\[
+h_f=\lambda\frac{L}{d}\frac{v^{2}}{2g},
+\qquad
+\lambda=\frac{64}{\Rey}=\frac{64\nu}{vd}
+\]
+代入并整理：
+\[
+h_f=\frac{64\nu}{vd}\cdot\frac{L}{d}\cdot\frac{v^{2}}{2g}
+=\frac{32\nu Lv}{gd^{2}}
+\quad\Longrightarrow\quad
+\nu=\frac{gd^{2}h_f}{32Lv}
+\]
+
+\textbf{（3）代入数据。}
+\[
+\nu=\frac{9.8\times0.004^{2}\times0.15}{32\times0.5\times0.0796}
+=\frac{9.8\times1.6\times10^{-5}\times0.15}{1.274}
+=\frac{2.352\times10^{-5}}{1.274}=1.85\times10^{-5}\ \mathrm{m^{2}/s}
+\]
+
+\textbf{结果：}$\boxed{\nu\approx1.85\times10^{-5}\ \mathrm{m^{2}/s}}$
+（即 $18.5\,\mathrm{mm^{2}/s}=18.5$ cSt）。
+
+校核：（1）雷诺数 $\Rey=\dfrac{vd}{\nu}=\dfrac{0.0796\times0.004}{1.85\times10^{-5}}=17.2<2000$，
+层流假设成立；（2）直接用哈根——泊肃叶公式
+$\nu=\dfrac{\pi gd^{4}h_f}{128LQ}
+=\dfrac{\pi\times9.8\times0.004^{4}\times0.15}{128\times0.5\times1.0\times10^{-6}}
+=1.85\times10^{-5}\,\mathrm{m^{2}/s}$，与上面一致。
+\end{jie}
+
+\begin{tishi}
+题干所求为\textbf{运动粘度}（原卷 OCR 曾把流量指数拾作 $1.0\,\mathrm{cm^{2}/s}$，
+经渲染核对原卷所印为 $1.0\,\mathrm{cm^{3}/s}$）。
+本解所得 $\nu=1.85\times10^{-5}\,\mathrm{m^{2}/s}$ 与原答案卷完全一致。
+\end{tishi}
+
+\answ{3.（10 分）模型实验换算输油管的压强水头差}
+
+\begin{jie}
+\textbf{已知：}原型为输油管，直径 $d_p=15$ cm、流量 $Q_p=0.18\,\mathrm{m^{3}/s}$；
+模型用输水管，管径与原型相同 $d_m=15$ cm、流量 $Q_m=0.018\,\mathrm{m^{3}/s}$；
+测得 $5$ m 长输水管两端的压强水头差 $\dfrac{\Delta p_m}{\rho_mg_m}=5$ cm $=0.05$ m（水柱）。
+\textbf{求：}$100$ m 长输油管两端的压强水头差 $\dfrac{\Delta p_p}{\rho_pg_p}$（用油柱高表示）。
+
+\textbf{（1）求原型与模型的断面平均流速。}两管管径相同：
+\[
+A=\frac{\pi\times0.15^{2}}{4}=1.767\times10^{-2}\ \mathrm{m^{2}}
+\]
+\[
+v_p=\frac{Q_p}{A}=\frac{0.18}{1.767\times10^{-2}}=10.19\ \mathrm{m/s},
+\qquad
+v_m=\frac{Q_m}{A}=\frac{0.018}{1.767\times10^{-2}}=1.019\ \mathrm{m/s}
+\]
+
+\textbf{（2）流动相似：压强（欧拉）准则。}压降以同名无量纲数（欧拉数）表示时应相等：
+\[
+\frac{\Delta p_m}{\rho_mv_m^{2}}=\frac{\Delta p_p}{\rho_pv_p^{2}}
+\quad\Longrightarrow\quad
+\frac{\Delta p_p}{\rho_pg_p}
+=\frac{\Delta p_m}{\rho_mg_m}\cdot\frac{v_p^{2}}{v_m^{2}}\cdot\frac{g_m}{g_p}
+\]
+（模型与原型都在重力场中，$g_m=g_p$。）
+
+\textbf{（3）按 $5$ m 管长换算。}
+\[
+\frac{\Delta p_p}{\rho_pg_p}
+=\frac{\Delta p_m}{\rho_mg_m}\left(\frac{v_p}{v_m}\right)^{2}
+=0.05\times\left(\frac{10.19}{1.019}\right)^{2}
+=0.05\times10^{2}=5\ \text{m（油柱）}
+\]
+
+\textbf{（4）换算到 $100$ m 管长。}输油管的沿程压强水头差与管长成正比：
+\[
+\frac{\Delta p_p}{\rho_pg_p}=5\times\frac{100}{5}=100\ \text{m（油柱）}
+\]
+
+\textbf{结果：}$\boxed{\dfrac{\Delta p_p}{\rho_pg_p}=100\ \text{m（油柱）}}$，
+折合压强 $\Delta p_p=\rho_pg_p\times100\ \mathrm{m}$（题中未给油的密度，故以油柱高表示）。
+
+校核：$\dfrac{v_p}{v_m}=\dfrac{Q_p}{Q_m}=10$，由 $\Delta h\propto\dfrac{v^{2}L}{d}$ 可得
+$\dfrac{\Delta h_p}{\Delta h_m}=10^{2}\times\dfrac{100}{5}=2000$，
+即 $\Delta h_p=0.05\times2000=100$ m（油柱），与上面分两步算得的结果一致。
+\end{jie}
+
+\begin{tishi}
+原答案卷的写法是：先由欧拉准则得 $5$ m 管长对应 $\dfrac{\Delta p_p}{\rho_pg_p}=5$ m（油柱），
+再按 $\dfrac{5}{5}\times100=100$ m（油柱）换算到 $100$ m。
+本册补写了“沿程压强水头差与管长成正比”这一步依据，数值与原卷一致。
+\end{tishi}
+
+\answ{4.（10 分）输水管的水头损失与切应力分布}
+
+\begin{jie}
+\textbf{已知：}输水管直径 $d=250$ mm（半径 $R=0.125$ m）、管长 $L=200$ m，
+管壁切应力 $\tau_0=46\,\mathrm{N/m^{2}}$；取 $\rho=1000\,\mathrm{kg/m^{3}}$、$g=9.8\,\mathrm{m/s^{2}}$。
+\textbf{求：}（1）$100$ m 长管上的水头损失 $h_f$；
+（2）圆管中心与 $r=100$ mm 处的切应力。
+
+\textbf{（1）由管壁切应力求管段两端的压强差。}圆管均匀流中切应力沿半径按线性分布：
+\[
+\tau=\frac{\Delta p\,r}{2L}
+\]
+管壁处 $r=R$、$\tau=\tau_0$，故 $200$ m 管段两端的压强差为
+\[
+\Delta p=\frac{2L\tau_0}{R}=\frac{2\times200\times46}{0.125}
+=1.472\times10^{5}\ \mathrm{Pa}=147.2\ \mathrm{kPa}
+\]
+
+\textbf{（2）求 $100$ m 长管上的水头损失。}单位管长的水头损失为 $\dfrac{\Delta p}{\rho gL}$，故
+\[
+h_f=\frac{\Delta p}{\rho gL}\times100
+=\frac{1.472\times10^{5}}{1000\times9.8\times200}\times100
+=0.0751\times100=7.51\ \mathrm{m}
+\]
+
+\textbf{（3）求各点切应力。}
+圆管中心 $r=0$ 处：
+\[
+\tau_{r=0}=\frac{\Delta p\times0}{2L}=0
+\]
+$r=100$ mm 处：
+\[
+\tau=\frac{\Delta p\,r}{2L}=\frac{1.472\times10^{5}\times0.1}{2\times200}=36.8\ \mathrm{Pa}
+\]
+（也可用线性分布式校核：$\tau=\tau_0\dfrac{r}{R}=46\times\dfrac{100}{125}=36.8$ Pa。）
+
+\textbf{结果：}$\boxed{h_f(100\ \mathrm{m})\approx7.51\ \mathrm{m}}$，
+$\boxed{\tau_{r=0}=0}$，$\boxed{\tau_{r=100\,\mathrm{mm}}=36.8\ \mathrm{Pa}}$。
+\end{jie}
+
+\begin{tishi}
+原答案卷把压强差写作 $\Delta p=2L\tau/R=2\times0.2\times46/0.125=147.2\ \mathrm{Pa}$：
+其中 $L$ 记作 $0.2$、压强单位写作 Pa，按题给 $L=200$ m 与数值 $147.2$ 应为
+$\Delta p=1.472\times10^{5}\,\mathrm{Pa}=147.2$ kPa，本册按后者转写（数值 $147.2$ 未改）。
+原答案卷只给出 $\Delta p$、$\tau_{r=0}$ 与 $\tau_{r=100\,\mathrm{mm}}$，
+\textbf{未写出 100 m 管长的水头损失}，本册按 $\Delta p$ 补算得 $h_f=7.51$ m。
+\end{tishi}
+
+\answ{5.（10 分）均匀流与点源叠加后的驻点位置及过驻点流线}
+
+\begin{jie}
+\textbf{已知：}速度为 $v_\infty$、平行于 $x$ 轴的均匀流，与位于原点、强度为 $q$ 的点源叠加（平面势流）。
+\textbf{求：}叠加后流场中的驻点位置，以及经过驻点的流线方程。
+
+\textbf{（1）写出叠加后的势函数与流函数。}
+\[
+\phi=v_\infty x+\frac{q}{2\pi}\ln\sqrt{x^{2}+y^{2}},
+\qquad
+\psi=v_\infty y+\frac{q}{2\pi}\arctan\frac{y}{x}
+\]
+
+\textbf{（2）求速度分量。}
+\[
+v_x=\frac{\partial\phi}{\partial x}=v_\infty+\frac{q}{2\pi}\frac{x}{x^{2}+y^{2}},
+\qquad
+v_y=\frac{\partial\phi}{\partial y}=\frac{q}{2\pi}\frac{y}{x^{2}+y^{2}}
+\]
+
+\textbf{（3）求驻点位置。}令 $v_x=0$、$v_y=0$：由 $v_y=0$ 得 $y=0$，
+代入 $v_x=0$ 得
+\[
+v_\infty+\frac{q}{2\pi}\frac{1}{x}=0
+\quad\Longrightarrow\quad
+x=-\frac{q}{2\pi v_\infty}
+\]
+即驻点位于负 $x$ 轴上：
+\[
+\boxed{\left(-\frac{q}{2\pi v_\infty},\ 0\right)}
+\]
+
+\textbf{（4）求过驻点的流线方程。}驻点处 $y=0$、$x=-\dfrac{q}{2\pi v_\infty}<0$，
+故 $\arctan\dfrac{y}{x}=\arctan 0=0$，代入流函数得 $\psi_{\text{驻点}}=0$。
+于是经过驻点的流线为
+\[
+\boxed{v_\infty y+\frac{q}{2\pi}\arctan\frac{y}{x}=0}
+\]
+该流线是把点源流与均匀流分开的\textbf{分界流线}（驻点流线），它经过驻点并在下游形成源流的包络。
+\end{jie}
+
+\begin{tishi}
+\textbf{关于过驻点流线的常数（两种记法）：}本解按原答案卷所写
+$\psi=v_\infty y+\dfrac{q}{2\pi}\arctan\dfrac{y}{x}$（辐角取主值，$|\arctan|\le\pi/2$），
+驻点处 $\arctan 0=0$，故过驻点流线为 $\psi=0$。
+若按教材常用的“辐角 $\theta$ 取 $0\sim2\pi$”写法 $\psi=v_\infty y+\dfrac{q}{2\pi}\theta$，
+则同一分界流线在驻点处 $\theta=\pi$，应写作 $\psi=\dfrac{q}{2}$，即
+$v_\infty y+\dfrac{q}{2\pi}\theta=\dfrac{q}{2}$。
+两种写法只相差常数 $q/2$，代表的是\textbf{同一条流线}，两者都对；
+本册按原答案卷取 $\psi=0$ 的写法，特此说明差异来源。
+\end{tishi}
+
+\answ{6.（10 分）收缩喷管的质量流量}
+
+\begin{jie}
+\textbf{已知：}空气滞止参数 $p_0=10.35\times10^{5}$ Pa、$T_0=350$ K；
+收缩喷管出口直径 $d=15$ mm；出口外环境压强 $p_b=5\times10^{5}$ Pa；
+$R=287\,\mathrm{J/(kg\cdot K)}$，$k=1.4$。
+\textbf{求：}喷管的质量流量 $Q_m$。
+
+\textbf{（1）判断出口是否达到临界状态。}
+\[
+\frac{p_b}{p_0}=\frac{5\times10^{5}}{10.35\times10^{5}}=0.4831,
+\qquad
+\frac{p_*}{p_0}=\left(\frac{2}{k+1}\right)^{\frac{k}{k-1}}
+=\left(\frac{2}{2.4}\right)^{3.5}=0.5283
+\]
+因 $\dfrac{p_b}{p_0}<\dfrac{p_*}{p_0}$，收缩喷管出口处达到声速，即出口为\textbf{临界状态}：
+$v_e=c_*$、$p_e=p_*$、$T_e=T_*$。
+
+\textbf{（2）临界温度与临界声速。}
+\[
+T_*=T_0\frac{2}{k+1}=350\times0.8333=291.7\ \mathrm{K}
+\]
+\[
+c_*=\sqrt{kRT_*}=\sqrt{1.4\times287\times291.7}=\sqrt{1.172\times10^{5}}=342.3\ \mathrm{m/s}
+\]
+
+\textbf{（3）临界密度。}先求滞止密度 $\rho_0=\dfrac{p_0}{RT_0}$：
+\[
+\rho_0=\frac{10.35\times10^{5}}{287\times350}=10.30\ \mathrm{kg/m^{3}}
+\]
+\[
+\rho_*=\rho_0\left(\frac{2}{k+1}\right)^{\frac{1}{k-1}}
+=10.30\times0.8333^{2.5}=10.30\times0.6339=6.53\ \mathrm{kg/m^{3}}
+\]
+
+\textbf{（4）质量流量。}
+\[
+A_e=\frac{\pi d^{2}}{4}=\frac{\pi\times0.015^{2}}{4}=1.767\times10^{-4}\ \mathrm{m^{2}}
+\]
+\[
+Q_m=\rho_*c_*A_e=6.53\times342.3\times1.767\times10^{-4}=0.395\ \mathrm{kg/s}
+\]
+
+\textbf{结果：}$\boxed{Q_m\approx0.395\ \mathrm{kg/s}}$（与原答案卷 $0.3951$ kg/s 一致）。
+
+校核：用临界流量的合并公式
+\[
+Q_m=A_e\rho_0\sqrt{kRT_0}\left(\frac{2}{k+1}\right)^{\frac{k+1}{2(k-1)}}
+\]
+其中 $\sqrt{kRT_0}=\sqrt{1.4\times287\times350}=375.1$ m/s，
+$\left(\dfrac{2}{2.4}\right)^{3}=0.5787$，代入得
+$Q_m=1.767\times10^{-4}\times10.30\times375.1\times0.5787=0.395$ kg/s，与上面一致。
+\end{jie}
+
+\begin{tishi}
+本题属\textbf{气体动力学（一元可压缩流动）}内容，为旧大纲/复试范围，
+现行 818 大纲不要求；原卷把 5、6、7 三题列为“任选做一道”，本题即其中之一。
+\end{tishi}
+
+\answ{7.（10 分）钢球沉降法测油液的动力粘度}
+
+\begin{jie}
+\textbf{已知：}油液密度 $\rho=900\,\mathrm{kg/m^{3}}$；
+小钢球直径 $d=3$ mm $=0.003$ m、密度 $\rho'=7788\,\mathrm{kg/m^{3}}$；
+钢球最终（匀速）的沉降速度 $v=12$ cm/s $=0.12$ m/s；取 $g=9.8\,\mathrm{m/s^{2}}$。
+\textbf{求：}油液的动力粘度 $\mu$。
+
+\textbf{（1）钢球匀速沉降时的受力平衡。}阻力与浮力之和等于重力：
+\[
+F_D+F_B=G
+\]
+\[
+G=\frac{\pi d^{3}}{6}\rho'g,
+\qquad
+F_B=\frac{\pi d^{3}}{6}\rho g
+\]
+
+\textbf{（2）小雷诺数下的绕流阻力（斯托克斯定律）。}取 $C_D=\dfrac{24}{\Rey}$、迎流面积 $A=\dfrac{\pi d^{2}}{4}$：
+\[
+F_D=\frac{1}{2}\rho v^{2}C_DA
+=\frac{1}{2}\rho v^{2}\cdot\frac{24\mu}{\rho vd}\cdot\frac{\pi d^{2}}{4}
+=3\pi\mu vd
+\]
+
+\textbf{（3）整理出粘度表达式。}
+\[
+3\pi\mu vd=\frac{\pi d^{3}}{6}\left(\rho'-\rho\right)g
+\quad\Longrightarrow\quad
+\mu=\frac{d^{2}\left(\rho'-\rho\right)g}{18v}
+\]
+
+\textbf{（4）代入数据。}
+\[
+\mu=\frac{0.003^{2}\times(7788-900)\times9.8}{18\times0.12}
+=\frac{9\times10^{-6}\times6888\times9.8}{2.16}
+=\frac{0.6075}{2.16}=0.281\ \mathrm{Pa\cdot s}
+\]
+
+\textbf{结果：}$\boxed{\mu\approx0.281\ \mathrm{Pa\cdot s}}$（即 $281$ mPa$\cdot$s）。
+\end{jie}
+
+\begin{tishi}
+\textbf{校核与适用性：}$\Rey=\dfrac{\rho vd}{\mu}=\dfrac{900\times0.12\times0.003}{0.281}=1.15$，
+略大于斯托克斯定律的适用范围（一般要求 $\Rey<1$）。
+若按 Oseen 修正 $C_D=\dfrac{24}{\Rey}\left(1+\dfrac{3}{16}\Rey\right)$，可得 $\mu\approx0.33\,\mathrm{Pa\cdot s}$。
+原答案卷取 $\mu=0.28\,\mathrm{Pa\cdot s}$，与本册 $0.281$ 仅在有效数字上略有差别。
+\end{tishi}
+
+\answ{本卷 OCR 校订与存疑汇总}
+
+\begin{tishi}
+\textbf{（一）本册对原卷（答案卷与试题卷）所作的订正：}
+\begin{enumerate}
+  \item 科目代码：原卷封面所印为 \textbf{821}，并非 818，本册照原卷保留 821
+        （历年科目代码逐年变动，考查体系一致）。
+  \item 计算第 7 题钢球密度：原卷 OCR 作 $7788\,\mathrm{kg/m^{2}}$，
+        按物理量改正为 $\mathrm{kg/m^{3}}$（数值 $7788$ 未改）。
+  \item 计算第 6 题临界密度：原答案卷作 $6.5318\,\mathrm{kg/m^{2}}$，
+        量纲应为 $\mathrm{kg/m^{3}}$（数值未改）。
+  \item 计算第 4 题：原答案卷把压强单位写作 Pa（且出现 $L=0.2$），
+        按题给 $L=200$ m 应为 $1.472\times10^{5}\,\mathrm{Pa}=147.2$ kPa（数值 $147.2$ 未改）。
+  \item 简答第 3 题：原答案卷第三行作 $|\Gamma|>\pi u_\infty r_0$，
+        与前两行的临界值 $4\pi u_\infty r_0$ 不一致，应为 $|\Gamma|>4\pi u_\infty r_0$。
+  \item 计算第 3 题：原答案卷由 $5$ m 管长的结果直接乘 $100/5$ 得出 $100$ m 管长的结果，
+        本册补写了“沿程压强水头差与管长成正比”这一步依据。
+  \item 填空题第 1 空：原答案卷写作 $\dfrac{\partial N}{\partial t}+(\bm v\cdot\nabla)N$，
+        与题干“$\dfrac{\mathrm dN}{\mathrm dt}=$”对应，即随体导数的展开式，本册照原卷转写。
+  \item 填空题第 5 空：原答案卷根号为二次根号
+        $\omega\le\sqrt{\dfrac{4g(H-h)}{R^{2}}}$，与按抛物面体积守恒推得的
+        $\omega\le\dfrac{2}{R}\sqrt{g(H-h)}$ 一致。
+\end{enumerate}
+
+\textbf{（二）存疑与请对照原卷影印复核之处：}
+\begin{enumerate}
+  \item 计算第 1 题：原答案卷漏乘 $\left[1-\left(\dfrac{A_2}{A_1}\right)^{2}\right]$。
+        本册给出完整代入的结果（$v_2=2.296$ m/s、$Q=0.0406$ m³/s），
+        与原卷的 $v_2=2.223$ m/s、$Q=0.039$ m³/s \textbf{并存}，差异约 $4\%$。
+  \item 计算第 5 题：过驻点流线的常数，原卷写 $\psi=0$（辐角取主值）；
+        若按 $\theta\in(0,2\pi)$ 的写法应为 $\psi=q/2$。两者相差常数 $q/2$，是同一条流线。
+  \item 计算第 7 题：$\Rey\approx1.15$ 已略超斯托克斯定律的适用范围，
+        按 Oseen 修正可得 $\mu\approx0.33$ Pa$\cdot$s，请按课堂要求取用；原卷取 $0.28$ Pa$\cdot$s。
+  \item 作图题：原卷只在题图上标注各水头符号与测压管液面，未给数值，
+        本册按静止液体静压强关系给出公式表述；各线段的实际位置请对照原卷影印件。
+  \item 判断题第 8 题：原卷判“$\times$”（本册从原卷）。
+        该题“不超过 4 个”的说法本身不严密——瑞利法的限制由\textbf{基本量纲个数}
+        （通常为 3 个）决定，复习时应按此理解。
+\end{enumerate}
+\end{tishi}

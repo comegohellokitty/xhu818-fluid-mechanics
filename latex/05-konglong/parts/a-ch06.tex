@@ -1,0 +1,674 @@
+\chapter*{第 6 章\quad 相似理论与量纲分析·孔珑题选 解答}
+\addcontentsline{toc}{chapter}{第 6 章\quad 相似理论与量纲分析·孔珑题选 解答}
+\markboth{第 6 章\quad 相似理论与量纲分析·孔珑题选 解答}{}
+\anstitle{第 6 章 习题解答}
+
+\begin{tishi}
+\noindent\textbf{题源}\quad 本解答对应孔珑《工程流体力学》（第四版）配套《工程流体力学 学习指导及习题解答》第 5 章“相似原理和量纲分析”5.3 节课后习题 5-1 至 5-17，归入赵琴《流体力学与流体机械》第 6 章“相似理论与量纲分析”。共 17 题，题号连续，全部作答。
+
+\noindent\textbf{使用说明}\quad 解答统一用“已知、求、依据、步骤、结果、量纲自检”六段式；比尺写作 $k$（如 $k_l$、$k_u$、$k_p$、$k_F$），原型量不加撇号、模型量加全加撇号。模型试验题的共同思路是“先判断哪一种力起主要作用，再选相似准则”：自由表面重力流（堰流、明渠、船模兴波、水库放空）取 $\Fr$ 准则；管内与绕流黏性流（管流、汽车与飞机绕流、热处理炉烟气）取 $\Rey$ 准则；不可压缩绕流的压强换算取 $\Eu$ 准则。量纲分析题（5-12 至 5-17）用瑞利法或布金汉 $\pi$ 定理，二者本质相同，物理量个数少于 5 个时用瑞利法较方便，5 个及以上用 $\pi$ 定理较方便。
+\end{tishi}
+
+\sloppy\emergencystretch=2em
+
+\noindent\textbf{第 6.1 题（孔珑 5-1）\quad 用基本量纲 L、T、M 表示体积流量、质量流量、角速度、力矩、功、功率的量纲}
+
+\begin{jie}
+\textbf{已知：}所求物理量为体积流量 $q_V$、质量流量 $q_m$、角速度 $\omega$、力矩 $M$、功 $W$、功率 $P$，基本量纲为 L（长度）、T（时间）、M（质量）。
+
+\textbf{求：}以上六个量的量纲。
+
+\textbf{依据：}量纲的定义——导出量的量纲可写成基本量纲幂次的乘积，指数由该量的定义式确定；量纲式不受单位制影响。
+
+\textbf{第 1 步（体积流量）}\quad 体积流量是单位时间的体积：
+\[\dim q_V=\frac{\mathrm{L^{3}}}{\mathrm{T}}=\mathrm{L^{3}T^{-1}}\]
+
+\textbf{第 2 步（质量流量）}\quad 质量流量是单位时间的质量：
+\[\dim q_m=\frac{\mathrm{M}}{\mathrm{T}}=\mathrm{MT^{-1}}\]
+也可由 $q_m=\rho q_V$ 核对：$\mathrm{ML^{-3}}\cdot\mathrm{L^{3}T^{-1}}=\mathrm{MT^{-1}}$，两法一致。
+
+\textbf{第 3 步（角速度）}\quad 角速度是单位时间的转角，弧度本身无量纲：
+\[\dim\omega=\frac{1}{\mathrm{T}}=\mathrm{T^{-1}}\]
+
+\textbf{第 4 步（力矩与功）}\quad 力矩 $M=Fl=ma\cdot l$，功 $W=Fs=ma\cdot s$，二者同为力乘长度：
+\[\dim M=\dim W=\mathrm{MLT^{-2}}\cdot\mathrm{L}=\mathrm{ML^{2}T^{-2}}\]
+
+\textbf{第 5 步（功率）}\quad 功率是单位时间的功，也可写成力与速度之积：
+\[\dim P=\frac{\mathrm{ML^{2}T^{-2}}}{\mathrm{T}}=\mathrm{ML^{2}T^{-3}},\qquad \dim P=\mathrm{MLT^{-2}}\cdot\mathrm{LT^{-1}}=\mathrm{ML^{2}T^{-3}}\]
+
+\textbf{结果：}
+\[\dim q_V=\mathrm{L^{3}T^{-1}},\qquad \dim q_m=\mathrm{MT^{-1}},\qquad \dim\omega=\mathrm{T^{-1}}\]
+\[\dim M=\dim W=\mathrm{ML^{2}T^{-2}},\qquad \dim P=\mathrm{ML^{2}T^{-3}}\]
+
+\textbf{量纲自检：}六个结果中 L、T、M 的指数均为整数；力矩与功的量纲完全相同，都是 $\mathrm{ML^{2}T^{-2}}$，这恰说明量纲分析无法区分量纲相同的物理量（本章难点第 3 条），力矩与功只能靠物理意义和定义式区分。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}体积流量是 $\mathrm{L^{3}T^{-1}}$（体积是 $\mathrm{L^{3}}$），不是 $\mathrm{L^{2}T^{-1}}$；$\mathrm{L^{2}T^{-1}}$ 是运动黏度的量纲。
+
+\textbf{易错点二：}力矩与功同量纲，都是 $\mathrm{ML^{2}T^{-2}}$；不要给力矩写成 $\mathrm{MLT^{-2}}$（那是力的量纲）。
+
+\textbf{易错点三：}角速度、转速、角频率的量纲都是 $\mathrm{T^{-1}}$，但单位不同：$1\ \mathrm{r/min}=\frac{2\pi}{60}\ \mathrm{rad/s}$，换算时不要漏掉 $2\pi$。
+
+\textbf{易错点四：}功率的量纲是 $\mathrm{ML^{2}T^{-3}}$，不要漏掉一个 T 而写成 $\mathrm{ML^{2}T^{-2}}$（那成了功）。
+\end{yicuo}
+
+\noindent\textbf{第 6.2 题（孔珑 5-2）\quad 溢流堰模型试验的比尺换算}
+
+\begin{jie}
+\textbf{已知：}长度比例尺 $k_l=1/20$；原型堰上水头 $h=3\ \mathrm{m}$；模型体积流量 $q'_V=0.19\ \mathrm{m^3/s}$；模型堰顶计示压强 $p'_e=-1960\ \mathrm{Pa}$。
+
+\textbf{求：}模型堰上水头 $h'$；原型体积流量 $q_V$；原型堰顶计示压强 $p_e$。
+
+\textbf{依据：}溢流堰是有自由表面的重力流，重力起主要作用，按弗劳德准则 $\Fr=\Fr'$，取 $g'=g$：
+\[k_u=k_l^{1/2}\]
+流量 $q_V=bhu\sim l^{2}u$，故流量比尺为
+\[k_{q_V}=k_l^{2}k_u=k_l^{5/2}\]
+计示压强按欧拉准则换算，$k_\rho=1$，且 $k_u^{2}=k_l$：
+\[k_p=k_\rho k_u^{2}=k_l\]
+
+\textbf{第 1 步（几何相似）}\quad
+\[h'=k_l h=\frac{3}{20}=0.15\ \mathrm{m}\]
+
+\textbf{第 2 步（流量比尺）}\quad
+\[k_{q_V}=k_l^{5/2}=\left(\frac{1}{20}\right)^{2.5}=5.590\times10^{-4}\]
+\[q_V=\frac{q'_V}{k_{q_V}}=\frac{0.19}{5.590\times10^{-4}}=339.9\ \mathrm{m^3/s}\]
+等价地 $q_V=q'_V\sqrt{20^{5}}=0.19\times1788.9=339.9\ \mathrm{m^3/s}$。
+
+\textbf{第 3 步（压强比尺）}\quad
+\[k_p=k_l=\frac{1}{20},\qquad p_e=\frac{p'_e}{k_p}=-1960\times20=-39200\ \mathrm{Pa}\approx-39.2\ \mathrm{kPa}\]
+
+\textbf{结果：}$h'=0.15\ \mathrm{m}$；$q_V=339.9\ \mathrm{m^3/s}$；$p_e=-39.2\ \mathrm{kPa}$（负号表示堰顶压强低于大气压，为负压区）。
+
+\textbf{量纲自检：}$k_l^{5/2}$ 无量纲，$q'_V$ 乘无量纲数仍为 $\mathrm{m^3/s}$；$k_p=k_l$ 无量纲，$p'_e$ 乘无量纲数仍为 $\mathrm{Pa}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}溢流堰是重力控制的有自由表面流动，取弗劳德准则；若误取 $k_u=k_l$，流量比尺会算成 $k_l^{3}$，原型流量偏小 $\sqrt{20}$ 倍。
+
+\textbf{易错点二：}流量比尺是 $k_l^{5/2}$（面积比尺 $k_l^{2}$ 再乘速度比尺 $k_l^{1/2}$），不是 $k_l^{3}$，也不是 $k_l^{2}$。
+
+\textbf{易错点三：}第（3）问是计示压强，按欧拉准则 $k_p=k_\rho k_u^{2}=k_l$ 换算：$p_e=-1960\times20=-39200\ \mathrm{Pa}$；比尺是正值，负号保留。
+
+\textbf{易错点四：}模型比原型小，模型流量小、原型流量大，二者相差约 $1789$ 倍，$339.9\ \mathrm{m^3/s}$ 的量级是合理的。
+\end{yicuo}
+
+\noindent\textbf{第 6.3 题（孔珑 5-3）\quad 圆管油流的两种介质模型试验}
+
+\begin{jie}
+\textbf{已知：}原型管径 $d=0.2\ \mathrm{m}$，油的运动黏度 $\nu=4.0\times10^{-5}\ \mathrm{m^2/s}$，原型体积流量 $q_V=0.12\ \mathrm{m^3/s}$；模型管径 $d'=0.05\ \mathrm{m}$；$20^{\circ}\mathrm{C}$ 水的运动黏度 $\nu'=1.007\times10^{-6}\ \mathrm{m^2/s}$，$20^{\circ}\mathrm{C}$ 空气的运动黏度 $\nu'=15.00\times10^{-6}\ \mathrm{m^2/s}$。
+
+\textbf{求：}流动相似时模型管内应有的体积流量 $q'_V$（分别为水和空气两种模型）。
+
+\textbf{依据：}管内受迫流动由黏性力控制，按雷诺准则 $\Rey=\Rey'$：
+\[\frac{ud}{\nu}=\frac{u'd'}{\nu'}\ \Longrightarrow\ k_u=\frac{k_\nu}{k_l}\]
+又 $q_V=\frac{\pi d^{2}}{4}u$，故
+\[k_{q_V}=k_l^{2}k_u=k_l k_\nu\]
+
+\textbf{第 1 步（长度比例尺）}\quad
+\[k_l=\frac{d'}{d}=\frac{0.05}{0.2}=0.25\]
+
+\textbf{第 2 步（水模型）}\quad
+\[k_\nu=\frac{1.007\times10^{-6}}{4.0\times10^{-5}}=0.02518\]
+\[k_u=\frac{0.02518}{0.25}=0.1007,\qquad k_{q_V}=k_l k_\nu=0.25\times0.02518=6.294\times10^{-3}\]
+\[q'_V=k_{q_V}q_V=6.294\times10^{-3}\times0.12=7.55\times10^{-4}\ \mathrm{m^3/s}\]
+
+\textbf{第 3 步（空气模型）}\quad
+\[k_\nu=\frac{15.00\times10^{-6}}{4.0\times10^{-5}}=0.375\]
+\[k_u=\frac{0.375}{0.25}=1.5,\qquad k_{q_V}=0.25\times0.375=0.09375\]
+\[q'_V=0.09375\times0.12=1.125\times10^{-2}\ \mathrm{m^3/s}\]
+
+\textbf{结果：}用水做模型时 $q'_V=7.55\times10^{-4}\ \mathrm{m^3/s}$；用空气做模型时 $q'_V=1.125\times10^{-2}\ \mathrm{m^3/s}$。
+
+\textbf{量纲自检：}$k_{q_V}=k_lk_\nu$ 为无量纲数；由 $k_u=k_\nu/k_l$ 可见“运动黏度比除以长度比等于速度比”，分子分母的量纲相消。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}管内流动的相似准则是雷诺准则，不能用弗劳德准则；且雷诺数中含运动黏度 $\nu$ 而非动力黏度 $\mu$，故 $k_u=k_\nu/k_l$。
+
+\textbf{易错点二：}流量比尺是 $k_{q_V}=k_l^{2}k_u=k_lk_\nu$，容易漏掉面积比尺 $k_l^{2}$。
+
+\textbf{易错点三：}两种介质的速度比尺不同（水为 $0.1007$、空气为 $1.5$），空气模型流速比原型快，故空气模型流量反而约为水模型的 15 倍，两者不可混用。
+
+\textbf{易错点四：}$20^{\circ}\mathrm{C}$ 空气的运动黏度是 $15.00\times10^{-6}\ \mathrm{m^2/s}$，水是 $1.007\times10^{-6}\ \mathrm{m^2/s}$，查表时不要取错温度。
+\end{yicuo}
+
+\noindent\textbf{第 6.4 题（孔珑 5-4）\quad 高层建筑风压的模型换算}
+
+\begin{jie}
+\textbf{已知：}模型风速 $u'=10\ \mathrm{m/s}$；模型迎风面点 1 计示压强 $p'_{1e}=980\ \mathrm{Pa}$，背风面点 2 计示压强 $p'_{2e}=-49\ \mathrm{Pa}$；原型风速 $u=30\ \mathrm{m/s}$；模型与原型同在大气中，$\rho'=\rho$。
+
+\textbf{求：}原型对应点的计示压强 $p_{1e}$、$p_{2e}$。
+
+\textbf{依据：}建筑绕流为不可压缩流动（风速远小于声速），压强相似按欧拉准则 $\Eu=\Eu'$，由 $k_\rho=1$ 得
+\[k_p=k_\rho k_u^{2}=k_u^{2}=\left(\frac{u}{u'}\right)^{2}\]
+
+\textbf{第 1 步（速度比尺）}\quad
+\[k_u=\frac{u}{u'}=\frac{30}{10}=3\]
+
+\textbf{第 2 步（压强比尺）}\quad
+\[k_p=k_u^{2}=9\]
+
+\textbf{第 3 步（逐点换算）}\quad
+\[p_{1e}=k_p p'_{1e}=9\times980=8820\ \mathrm{Pa}=8.82\ \mathrm{kPa}\]
+\[p_{2e}=k_p p'_{2e}=9\times(-49)=-441\ \mathrm{Pa}\]
+
+\textbf{结果：}迎风面点 1 的计示压强为 $8.82\ \mathrm{kPa}$，背风面点 2 的计示压强为 $-441\ \mathrm{Pa}$。
+
+\textbf{量纲自检：}$k_p$ 是速度比尺的平方，无量纲；$p'$ 乘无量纲数仍为 $\mathrm{Pa}$。迎风面正压、背风面负压，与绕流物理现象一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}同种介质的不可压缩绕流，压强比尺与速度的平方成正比，$k_p=k_u^{2}=9$，不是 $k_p=k_u=3$。
+
+\textbf{易错点二：}负压乘正比尺仍为负压：$-49\times9=-441\ \mathrm{Pa}$，不要丢掉负号。
+
+\textbf{易错点三：}换算时必须“对应点对对应点”，两点各自乘同一个比尺；不能把迎风面的压强用到背风面上。
+\end{yicuo}
+
+\noindent\textbf{第 6.5 题（孔珑 5-5）\quad 船模兴波阻力与功率的换算}
+
+\begin{jie}
+\textbf{已知：}船模长度比例尺 $k_l=1/40$；牵引速度 $u'=0.54\ \mathrm{m/s}$；模型波阻 $F'_w=1.1\ \mathrm{N}$；不计黏性影响。
+
+\textbf{求：}原型船速度 $u$、波阻 $F_w$ 及消耗的功率 $P$。
+
+\textbf{依据：}不计黏性时兴波阻力由重力控制，按弗劳德准则 $\Fr=\Fr'$，取 $g'=g$：
+\[k_u=k_l^{1/2}\]
+阻力 $F\sim\rho l^{2}u^{2}$，且 $k_\rho=1$、$u^{2}\sim gl$：
+\[k_F=k_l^{2}k_u^{2}=k_l^{3}\]
+功率 $P=Fu$：
+\[k_P=k_Fk_u=k_l^{3}k_l^{1/2}=k_l^{7/2}\]
+
+\textbf{第 1 步（原型速度）}\quad
+\[u=\frac{u'}{k_u}=0.54\times\sqrt{40}=0.54\times6.325=3.415\ \mathrm{m/s}\]
+
+\textbf{第 2 步（波阻）}\quad
+\[k_F=k_l^{3}=\left(\frac{1}{40}\right)^{3}=\frac{1}{64000}=1.5625\times10^{-5}\]
+\[F_w=\frac{F'_w}{k_F}=1.1\times64000=70400\ \mathrm{N}=7.04\times10^{4}\ \mathrm{N}\]
+
+\textbf{第 3 步（功率）}\quad
+\[k_P=k_l^{7/2}=\left(\frac{1}{40}\right)^{3.5}=2.471\times10^{-6}\]
+\[P=\frac{F'_wu'}{k_P}=\frac{1.1\times0.54}{2.471\times10^{-6}}=2.404\times10^{5}\ \mathrm{W}=240.4\ \mathrm{kW}\]
+
+\textbf{结果：}$u=3.415\ \mathrm{m/s}$；$F_w=7.04\times10^{4}\ \mathrm{N}$；$P=2.404\times10^{5}\ \mathrm{W}$（约 $240\ \mathrm{kW}$）。
+
+\textbf{量纲自检：}$k_u$、$k_F$、$k_P$ 均无量纲；$F'u'$ 的量纲为 $\mathrm{N\cdot m/s}=\mathrm{W}$，除以无量纲比尺仍为功率。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}不计黏性时兴波阻力由重力控制，取弗劳德准则；若误用雷诺准则，速度比尺将算成 $1/k_l=40$，结果完全错误。
+
+\textbf{易错点二：}兴波阻力的比尺是 $k_F=k_l^{3}$（由 $F\sim\rho l^{2}u^{2}$ 且 $u^{2}\sim gl$ 得到），不是 $k_l^{2}$。
+
+\textbf{易错点三：}功率比尺是 $k_P=k_Fk_u=k_l^{7/2}$，不要漏掉速度比尺 $k_u$；原型功率是模型功率的 $1/k_P\approx4.05\times10^{5}$ 倍。
+
+\textbf{易错点四：}船模阻力含摩擦阻力与兴波阻力两部分，本题明确“不计黏性影响”，只用于换算兴波阻力。
+\end{yicuo}
+
+\noindent\textbf{第 6.6 题（孔珑 5-6）\quad 模型水库放空时间的换算}
+
+\begin{jie}
+\textbf{已知：}模型水库长度比例尺 $k_l=1/225$；模型放空库水时间 $t'=4\ \mathrm{min}$。
+
+\textbf{求：}原型水库放空库水时间 $t$。
+
+\textbf{依据：}开闸放水是重力控制的流动，按弗劳德准则 $k_u=k_l^{1/2}$；库容 $V\sim l^{3}$、流量 $q_V\sim l^{5/2}$，故
+\[k_t=\frac{k_V}{k_{q_V}}=\frac{k_l^{3}}{k_l^{5/2}}=k_l^{1/2}\]
+
+\textbf{第 1 步（时间比尺）}\quad
+\[k_t=\sqrt{\frac{1}{225}}=\frac{1}{15}\]
+
+\textbf{第 2 步（原型时间）}\quad
+\[t=\frac{t'}{k_t}=4\times15=60\ \mathrm{min}=1\ \mathrm{h}\]
+
+\textbf{结果：}原型水库完全放空需 $60\ \mathrm{min}$，即 $1\ \mathrm{h}$。
+
+\textbf{量纲自检：}$k_t$ 无量纲，时间仍以 min 计；也可由 $k_t=k_l/k_u=k_l^{1/2}$ 得到同一结果，两条路径互相验证。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}重力相似下时间比尺是 $k_l^{1/2}$，不是 $k_l$。
+
+\textbf{易错点二：}模型小、放空快，原型大、放空慢，原型时间应是模型时间的 15 倍，而不是 $\sqrt{225}$ 倍以外的别的值。
+
+\textbf{易错点三：}时间比尺可由“体积比尺除以流量比尺”直接推出，不必绕道流速比尺，但两条路径的结果必须相同，可用于自查。
+\end{yicuo}
+
+\noindent\textbf{第 6.7 题（孔珑 5-7）\quad 汽车风洞试验的模型尺寸与风阻}
+
+\begin{jie}
+\textbf{已知：}原型汽车高 $l=1.5\ \mathrm{m}$；最大行驶速度 $u=108\ \mathrm{km/h}=30\ \mathrm{m/s}$；风洞试验段最大风速 $u'=45\ \mathrm{m/s}$；模型风阻 $F'=1500\ \mathrm{N}$；模型与原型均在空气中、温度相同，$\nu'=\nu$。
+
+\textbf{求：}模型高度 $l'$；原型在最大行驶速度下的风阻 $F$。
+
+\textbf{依据：}汽车绕流由黏性力控制，按雷诺准则
+\[\frac{ul}{\nu}=\frac{u'l'}{\nu'}\ \Longrightarrow\ l'=l\frac{u}{u'}\]
+力的比尺为
+\[k_F=k_\rho k_l^{2}k_u^{2}\]
+其中 $k_l=l'/l$、$k_u=u'/u$。
+
+\textbf{第 1 步（模型高度）}\quad
+\[l'=l\frac{u}{u'}=1.5\times\frac{30}{45}=1.0\ \mathrm{m}\]
+
+\textbf{第 2 步（力的比尺）}\quad
+\[k_l=\frac{1.0}{1.5}=\frac{2}{3},\qquad k_u=\frac{45}{30}=1.5,\qquad k_\rho=1\]
+\[k_F=k_\rho k_l^{2}k_u^{2}=\left(\frac{2}{3}\right)^{2}\times(1.5)^{2}=1\]
+
+\textbf{第 3 步（原型风阻）}\quad
+\[F=\frac{F'}{k_F}=1500\ \mathrm{N}\]
+
+\textbf{结果：}模型高 $1.0\ \mathrm{m}$；原型在 $108\ \mathrm{km/h}$ 时的风阻为 $1500\ \mathrm{N}$，与模型测得值相等。
+
+\textbf{量纲自检：}$k_l$、$k_F$ 均无量纲，长度仍以 $\mathrm{m}$ 计、力仍以 $\mathrm{N}$ 计；$k_F=1$ 是“同介质雷诺相似下模型阻力等于原型阻力”的必然结果。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}速度先统一单位，$108\ \mathrm{km/h}=30\ \mathrm{m/s}$。
+
+\textbf{易错点二：}风洞能提供的最大风速 $45\ \mathrm{m/s}$ 就是模型试验风速；由雷诺准则 $u'l'=ul$ 得模型高度 $l'=lu/u'=1.0\ \mathrm{m}$，即模型比原型小 $2/3$，就必须用更快的风速。
+
+\textbf{易错点三：}力的比尺不能想当然写成 $k_l^{2}$；本题 $k_F=k_\rho k_l^{2}k_u^{2}=1$ 是 $k_u=1/k_l$ 的巧合结果。
+
+\textbf{易错点四：}模型与原型的流体都是空气且温度相同，取 $k_\rho=1$ 才成立；若用不同温度或不同介质，必须改用 $k_\rho\ne1$ 的公式。
+\end{yicuo}
+
+\noindent\textbf{第 6.8 题（孔珑 5-8）\quad 天然气输送管道的水模型试验}
+
+\begin{jie}
+\textbf{已知：}天然气 $\rho=1.86\ \mathrm{kg/m^3}$、$\nu=1.3\times10^{-5}\ \mathrm{m^2/s}$、$u=20\ \mathrm{m/s}$；模型水 $\rho_w=998\ \mathrm{kg/m^3}$、$\nu_w=1.007\times10^{-6}\ \mathrm{m^2/s}$；长度比例尺 $k_l=1/10$；模型每 $0.1\ \mathrm{m}$ 管长的压强降 $\Delta p'=1000\ \mathrm{Pa}$。
+
+\textbf{求：}模型内水流速 $u'$；原型（天然气管道）每米管长的压强降。
+
+\textbf{依据：}管内流动由黏性力控制，按雷诺准则 $\Rey=\Rey'$ 得速度比尺
+\[k_u=\frac{k_\nu}{k_l}\]
+压强降按欧拉准则 $\Eu=\Eu'$ 换算，压强比尺为
+\[k_p=k_\rho k_u^{2}\]
+单位管长压强降（压强梯度）的比尺为 $k_p/k_l$。
+
+\textbf{第 1 步（模型流速）}\quad
+\[k_\nu=\frac{\nu_w}{\nu}=\frac{1.007\times10^{-6}}{1.3\times10^{-5}}=0.07746\]
+\[k_u=\frac{0.07746}{0.1}=0.7746,\qquad u'=k_uu=0.7746\times20=15.49\ \mathrm{m/s}\]
+
+\textbf{第 2 步（压强比尺）}\quad
+\[k_\rho=\frac{\rho_w}{\rho}=\frac{998}{1.86}=536.6,\qquad k_p=k_\rho k_u^{2}=536.6\times0.7746^{2}=321.9\]
+
+\textbf{第 3 步（原型压强梯度）}\quad 先把模型的“每 $0.1\ \mathrm{m}$”化成“每米”：
+\[\left(\frac{\Delta p}{l}\right)'=\frac{1000}{0.1}=10^{4}\ \mathrm{Pa/m}\]
+\[\frac{\Delta p}{l}=\left(\frac{\Delta p}{l}\right)'\frac{k_l}{k_p}=10^{4}\times\frac{0.1}{321.9}=3.11\ \mathrm{Pa/m}\]
+
+\textbf{结果：}模型内水流速 $u'=15.49\ \mathrm{m/s}$；天然气管道每米压强降约 $3.11\ \mathrm{Pa/m}$。
+
+\textbf{量纲自检：}$k_u$、$k_p$ 无量纲；$k_p/k_l$ 是压强梯度的比尺，$\mathrm{Pa/m}$ 乘无量纲数仍是 $\mathrm{Pa/m}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}题目给的是“每 $0.1\ \mathrm{m}$ 管长压强降 $1000\ \mathrm{Pa}$”，必须先化成单位管长的量 $10^{4}\ \mathrm{Pa/m}$ 再乘比尺。
+
+\textbf{易错点二：}压强降的比尺是 $k_p=k_\rho k_u^{2}$，含密度比尺；本题两种介质密度相差 536 倍，漏掉 $k_\rho$ 结果会差几百倍。
+
+\textbf{易错点三：}压强梯度的比尺是 $k_p/k_l$（长度也要换算），不是 $k_p$。
+
+\textbf{易错点四：}速度比尺 $k_u=k_\nu/k_l=0.7746<1$，模型流速小于原型流速；因为水的黏度远小于天然气的黏度，模型只能用较低流速才与原型雷诺数相等。
+\end{yicuo}
+
+\noindent\textbf{第 6.9 题（孔珑 5-9）\quad 热处理炉烟气流动的水模型速度比尺}
+
+\begin{jie}
+\textbf{已知：}烟气运动黏度 $\nu=9.0\times10^{-5}\ \mathrm{m^2/s}$；模型水温 $10^{\circ}\mathrm{C}$，运动黏度 $\nu'=1.308\times10^{-6}\ \mathrm{m^2/s}$；长度比例尺 $k_l=1/10$。
+
+\textbf{求：}速度比例尺 $k_u$。
+
+\textbf{依据：}炉内烟气流动由黏性力控制，按雷诺准则 $\Rey=\Rey'$：
+\[k_u=\frac{k_\nu}{k_l}\]
+
+\textbf{第 1 步（黏度比尺）}\quad
+\[k_\nu=\frac{\nu'}{\nu}=\frac{1.308\times10^{-6}}{9.0\times10^{-5}}=0.01453\]
+
+\textbf{第 2 步（速度比尺）}\quad
+\[k_u=\frac{0.01453}{0.1}=0.1453\]
+
+\textbf{结果：}速度比例尺 $k_u=0.1453$，即模型内水的流速只需为炉内烟气流速的 $14.53\%$。
+
+\textbf{量纲自检：}$k_u$ 无量纲；因 $\nu'<\nu$ 且 $k_l<1$，故 $k_u<1$，与物理判断一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}$\nu=9.0\times10^{-5}\ \mathrm{m^2/s}$ 是烟气在 $600^{\circ}\mathrm{C}$ 下的运动黏度（温度高、黏度大），不能改用常温烟气数据。
+
+\textbf{易错点二：}模型水温是 $10^{\circ}\mathrm{C}$，对应 $\nu'=1.308\times10^{-6}\ \mathrm{m^2/s}$；不要误用 $20^{\circ}\mathrm{C}$ 水的 $1.007\times10^{-6}\ \mathrm{m^2/s}$。
+
+\textbf{易错点三：}$k_u=k_\nu/k_l$，$k_l=1/10$ 使 $k_u$ 放大 10 倍：$\frac{0.01453}{0.1}=0.1453$，不要漏除。
+\end{yicuo}
+
+\noindent\textbf{第 6.10 题（孔珑 5-10）\quad 机翼试验的开口风洞与压力风洞}
+
+\begin{jie}
+\textbf{已知：}原型机翼弦长 $b=1.5\ \mathrm{m}$；原型气压 $p_a=10^{5}\ \mathrm{Pa}$、气温 $t=10^{\circ}\mathrm{C}$（$T=283\ \mathrm{K}$）、飞行速度 $u=180\ \mathrm{km/h}=50\ \mathrm{m/s}$；长度比例尺 $k_l=1/3$；空气动力黏度 $10^{\circ}\mathrm{C}$ 时 $\mu=1.75\times10^{-5}\ \mathrm{Pa\cdot s}$、$25^{\circ}\mathrm{C}$ 时 $\mu'=1.82\times10^{-5}\ \mathrm{Pa\cdot s}$。(a) 开口风洞 $p'=101325\ \mathrm{Pa}$、$t'=25^{\circ}\mathrm{C}$（$T'=298\ \mathrm{K}$）；(b) 压力风洞 $p''=1\ \mathrm{MPa}$、$t''=30^{\circ}\mathrm{C}$（$T''=303\ \mathrm{K}$）、$\mu''=1.854\times10^{-5}\ \mathrm{Pa\cdot s}$。
+
+\textbf{求：}(a) 开口风洞试验段风速及该试验存在的问题；(b) 压力风洞试验段风速。
+
+\textbf{依据：}翼型阻力由黏性力控制，按雷诺准则
+\[\frac{\rho ub}{\mu}=\frac{\rho'u'b'}{\mu'}\ \Longrightarrow\ k_u=\frac{k_\mu}{k_\rho k_l}\]
+空气按理想气体 $p=\rho RT$，得密度比尺
+\[k_\rho=\frac{\rho'}{\rho}=\frac{p'}{p_a}\cdot\frac{T}{T'}\]
+
+\textbf{第 1 步（开口风洞）}\quad
+\[k_\rho=\frac{101325}{10^{5}}\times\frac{283}{298}=1.01325\times0.94966=0.9622\]
+\[k_\mu=\frac{1.82\times10^{-5}}{1.75\times10^{-5}}=1.04\]
+\[k_u=\frac{k_\mu}{k_\rho k_l}=\frac{1.04}{0.9622/3}=3.242\]
+\[u'=k_uu=3.242\times50=162.1\ \mathrm{m/s}\]
+
+\textbf{第 2 步（开口风洞的问题）}\quad 该风速下马赫数约 $M=162/340\approx0.48$，而原型飞行时 $M=50/340\approx0.15$。压缩性影响在 $M\approx0.48$ 时已不可忽略，模型与原型不能同时满足雷诺准则和马赫数相等，压缩性相似被破坏；此外 $162\ \mathrm{m/s}$ 的风速在普通开口风洞中也难以实现。因此开口风洞不宜用于本题的翼型阻力试验。
+
+\textbf{第 3 步（压力风洞）}\quad
+\[k_\rho=\frac{p''}{p_a}\cdot\frac{T}{T''}=\frac{10^{6}}{10^{5}}\times\frac{283}{303}=10\times0.93399=9.340\]
+\[k_\mu=\frac{1.854\times10^{-5}}{1.75\times10^{-5}}=1.059\]
+\[k_u=\frac{k_\mu}{k_\rho k_l}=\frac{1.059}{9.340/3}=0.3401\]
+\[u''=k_uu=0.3401\times50=17.0\ \mathrm{m/s}\]
+（原书取 $k_\mu=1.85/1.75=1.057$，得 $k_u=0.3395$、$u''=16.97\ \mathrm{m/s}$，与本解一致到三位有效数字。）
+
+\textbf{结果：}(a) 开口风洞所需风速约 $162.1\ \mathrm{m/s}$，但该风速下马赫数远大于原型，压缩性相似被破坏，试验不合理；(b) 压力风洞所需风速约 $17.0\ \mathrm{m/s}$。
+
+\textbf{量纲自检：}$k_\rho$ 由 $\rho=p/(RT)$ 得到，无量纲；$k_u$ 无量纲，风速仍以 $\mathrm{m/s}$ 计。压力风洞靠把气压提高到 10 倍、密度提高到 $9.34$ 倍，才把满足雷诺准则所需的风速降到 $17\ \mathrm{m/s}$。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}$180\ \mathrm{km/h}=50\ \mathrm{m/s}$，换算系数为 $1/3.6$，先统一单位再代入。
+
+\textbf{易错点二：}理想气体密度比尺是 $k_\rho=k_p/k_T$，温度必须用热力学温度 $T=283\ \mathrm{K}$、$T'=298\ \mathrm{K}$、$T''=303\ \mathrm{K}$，不能用摄氏温度相除。
+
+\textbf{易错点三：}雷诺准则含密度，速度比尺是 $k_u=k_\mu/(k_\rho k_l)$；漏掉 $k_\rho$ 会把开口风洞的风速算大 3 倍以上。
+
+\textbf{易错点四：}“开口风洞有什么问题”要从两方面答：一是压缩性（马赫数）不相似，雷诺准则与马赫数不能同时满足；二是所需风速过大，工程上难以实现。只答“风速太大”不完整。
+\end{yicuo}
+
+\noindent\textbf{第 6.11 题（孔珑 5-11）\quad 风机的相似换算（比例定律）}
+
+\begin{jie}
+\textbf{已知：}叶轮直径 $d=0.4\ \mathrm{m}$；转速 $n=1400\ \mathrm{r/min}$；体积流量 $q_V=1.39\ \mathrm{m^3/s}$；全压 $p=128\ \mathrm{Pa}$；效率 $\eta=70\%$；空气密度 $\rho=1.20\ \mathrm{kg/m^3}$。
+
+\textbf{求：}原工况消耗功率 $P$；三种相似变动下的 $q'_V$、$p'$、$P'$。
+
+\textbf{依据：}风机流动相似时，流量、全压、功率满足相似换算（比例定律）：
+\[q_V\propto nd^{3},\qquad p\propto\rho n^{2}d^{2},\qquad P\propto\rho n^{3}d^{5}\]
+故各比尺为
+\[k_{q_V}=k_nk_l^{3},\qquad k_p=k_\rho k_n^{2}k_l^{2},\qquad k_P=k_\rho k_n^{3}k_l^{5}\]
+其中 $k_l=d'/d$、$k_n=n'/n$、$k_\rho=\rho'/\rho$。消耗功率由风机全压与流量定义：
+\[P=\frac{q_Vp}{\eta}\]
+
+\textbf{第 1 步（原工况功率）}\quad
+\[P=\frac{q_Vp}{\eta}=\frac{1.39\times128}{0.70}=254.2\ \mathrm{W}\]
+
+\textbf{第 2 步（① 转速变为 $2800\ \mathrm{r/min}$）}\quad $k_n=2$，$k_l=1$，$k_\rho=1$：
+\[k_{q_V}=2,\qquad k_p=2^{2}=4,\qquad k_P=2^{3}=8\]
+\[q'_V=2.78\ \mathrm{m^3/s},\qquad p'=512\ \mathrm{Pa},\qquad P'=2033.4\ \mathrm{W}\]
+
+\textbf{第 3 步（② 相似放大，$d'=0.8\ \mathrm{m}$）}\quad $k_l=2$，$k_n=1$，$k_\rho=1$：
+\[k_{q_V}=k_l^{3}=8,\qquad k_p=k_l^{2}=4,\qquad k_P=k_l^{5}=32\]
+\[q'_V=11.12\ \mathrm{m^3/s},\qquad p'=512\ \mathrm{Pa},\qquad P'=8133.4\ \mathrm{W}\]
+
+\textbf{第 4 步（③ 密度变为 $1.29\ \mathrm{kg/m^3}$）}\quad $k_\rho=1.29/1.20=1.075$，$k_n=k_l=1$：
+\[k_{q_V}=1,\qquad k_p=k_\rho=1.075,\qquad k_P=k_\rho=1.075\]
+\[q'_V=1.39\ \mathrm{m^3/s},\qquad p'=137.6\ \mathrm{Pa},\qquad P'=273.2\ \mathrm{W}\]
+
+\textbf{结果：}原工况 $P=254.2\ \mathrm{W}$；① 转速加倍时 $q'_V=2.78\ \mathrm{m^3/s}$、$p'=512\ \mathrm{Pa}$、$P'=2033.4\ \mathrm{W}$；② 直径加倍时 $q'_V=11.12\ \mathrm{m^3/s}$、$p'=512\ \mathrm{Pa}$、$P'=8133.4\ \mathrm{W}$；③ 密度增大到 $1.075$ 倍时 $q'_V=1.39\ \mathrm{m^3/s}$、$p'=137.6\ \mathrm{Pa}$、$P'=273.2\ \mathrm{W}$。
+
+\textbf{量纲自检：}三个比尺均无量纲；$q_Vp$ 的量纲为 $\mathrm{m^3/s}\times\mathrm{Pa}=\mathrm{W}$，与 $P\propto\rho n^{3}d^{5}$ 一致（$\mathrm{kg/m^3}\times\mathrm{s^{-3}}\times\mathrm{m^{5}}=\mathrm{kg\cdot m^{2}/s^{3}}=\mathrm{W}$）。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}效率 $\eta$ 只用于原工况由流量与全压求轴功率 $P=q_Vp/\eta$；相似换算时假定效率不变，三种变动后的功率都用比尺乘原功率。
+
+\textbf{易错点二：}几何相似放大时流量比尺是 $k_l^{3}$（不是 $k_l^{2}$），直径加倍流量变成 8 倍，$1.39\times8=11.12\ \mathrm{m^3/s}$。
+
+\textbf{易错点三：}转速加倍时流量、全压、功率分别按 $2$、$4$、$8$ 倍增长（功率与转速的三次方成正比），这正是风机超速容易过载的原因。
+
+\textbf{易错点四：}改变空气密度只影响全压与功率（都按 $k_\rho$ 一次方正比），不改变体积流量。
+
+\textbf{易错点五：}三种变动都以原工况的 $1.39\ \mathrm{m^3/s}$、$128\ \mathrm{Pa}$、$254.2\ \mathrm{W}$ 为基准，不要以上一问的结果为基准，也不要三种变动叠加。
+\end{yicuo}
+
+\noindent\textbf{第 6.12 题（孔珑 5-12）\quad 用瑞利法导出水平毛细管流量表达式}
+
+\begin{jie}
+\textbf{已知：}水平毛细管的体积流量 $q_V$ 与管径 $d$、动力黏度 $\mu$、压强梯度 $\Delta p/l$ 有关，共 4 个物理量。
+
+\textbf{求：}流量表达式。
+
+\textbf{依据：}瑞利法——设待求量是各物理量的幂函数之积，用各量的量纲代入、由量纲一致性（量纲和谐原理）确定各指数。物理量个数少于 5 个时用瑞利法最方便（本章难点第 2 条）。
+
+\textbf{第 1 步（设幂函数形式）}\quad
+\[q_V=k\,d^{a_1}\mu^{a_2}\left(\frac{\Delta p}{l}\right)^{a_3}\]
+其中 $k$ 为待定无量纲系数。
+
+\textbf{第 2 步（写出各量的量纲）}\quad
+\[\dim q_V=\mathrm{L^{3}T^{-1}},\qquad \dim d=\mathrm{L},\qquad \dim\mu=\mathrm{ML^{-1}T^{-1}},\qquad \dim\frac{\Delta p}{l}=\mathrm{ML^{-2}T^{-2}}\]
+
+\textbf{第 3 步（代入并比较指数）}\quad
+\[\mathrm{L^{3}T^{-1}}=\mathrm{L}^{a_1}\left(\mathrm{ML^{-1}T^{-1}}\right)^{a_2}\left(\mathrm{ML^{-2}T^{-2}}\right)^{a_3}\]
+按三个基本量纲分别列方程：
+\[\mathrm{M}:a_2+a_3=0,\qquad \mathrm{T}:-a_2-2a_3=-1,\qquad \mathrm{L}:a_1-a_2-2a_3=3\]
+
+\textbf{第 4 步（解方程组）}\quad 由 T 式与 M 式相加得 $-a_3=-1$，故
+\[a_3=1,\qquad a_2=-1,\qquad a_1=3+a_2+2a_3=4\]
+
+\textbf{第 5 步（写出结果）}\quad
+\[q_V=k\,d^{4}\mu^{-1}\frac{\Delta p}{l}=k\frac{\Delta p\,d^{4}}{\mu l}\]
+
+\textbf{结果：}$q_V=k\dfrac{\Delta p\,d^{4}}{\mu l}$，其中 $k$ 为无量纲系数，由实验或严格解确定。
+
+\textbf{量纲自检：}$\dfrac{\mathrm{ML^{-2}T^{-2}}\cdot\mathrm{L^{4}}}{\mathrm{ML^{-1}T^{-1}}\cdot\mathrm{L}}=\mathrm{L^{3}T^{-1}}$，与 $\dim q_V$ 完全一致。取 $k=\pi/128$ 即得水平圆管的泊肃叶定律 $q_V=\dfrac{\pi d^{4}\Delta p}{128\mu l}$，可见瑞利法一步给出了正确的函数形式。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}瑞利法中待求量 $q_V$ 放在等式左边（被决定量），其余物理量的指数才是待定的；指数个数（3 个）应等于基本量纲个数，方程才封闭。
+
+\textbf{易错点二：}$\Delta p/l$ 是压强梯度，量纲为 $\mathrm{ML^{-2}T^{-2}}$；把它误当作 $\Delta p$ 会解出错误的指数。
+
+\textbf{易错点三：}对 M、T、L 三个基本量纲必须各列一个方程，共三个，漏一个就无法定出 $a_1=4$。
+
+\textbf{易错点四：}瑞利法只能确定函数形式，无量纲系数 $k$ 必须由实验确定——量纲分析不能给出无量纲常数，也不能区分量纲相同的物理量。
+\end{yicuo}
+
+\noindent\textbf{第 6.13 题（孔珑 5-13）\quad 用 $\pi$ 定理导出薄壁孔口出流流速表达式}
+
+\begin{jie}
+\textbf{已知：}薄壁孔口出流流速 $v$ 与孔口直径 $d$、孔口上水头 $H$、流体密度 $\rho$、动力黏度 $\mu$、表面张力 $\sigma$、重力加速度 $g$ 有关，含 $v$ 共 7 个物理量。
+
+\textbf{求：}孔口出流流速的表达式。
+
+\textbf{依据：}布金汉 $\pi$ 定理——设物理方程含 $n$ 个物理量、涉及 $m$ 个基本量纲，则可组成 $n-m$ 个相互独立的无量纲量（$\pi$ 数）；取 $m$ 个量纲独立的基本变量，将其余各量与之组成 $\pi$ 数。本题 $n=7$、$m=3$，故有 $4$ 个 $\pi$ 数。
+
+\textbf{第 1 步（写物理方程）}\quad
+\[F\left(H,\ \sigma,\ \mu,\ g,\ d,\ v,\ \rho\right)=0\]
+
+\textbf{第 2 步（选基本变量）}\quad 取 $d$（$\mathrm{L}$）、$v$（$\mathrm{LT^{-1}}$）、$\rho$（$\mathrm{ML^{-3}}$）为基本变量；三者含 L、T、M 的指数矩阵行列式不为零，量纲独立，可代替 L、T、M。
+
+\textbf{第 3 步（组成 $\pi$ 数）}\quad 各物理量与基本变量的幂次组合使之无量纲：
+\[\pi_1=\frac{H}{d},\qquad \pi_2=\frac{\sigma}{\rho v^{2}d}=\frac{1}{\mathrm{We}}\]
+\[\pi_3=\frac{\mu}{\rho vd}=\frac{1}{\Rey},\qquad \pi_4=\frac{gd}{v^{2}}\]
+其中 $\mathrm{We}=\rho v^{2}d/\sigma$ 为韦伯数，$\Rey=\rho vd/\mu$ 为雷诺数。
+
+\textbf{第 4 步（确定被决定的 $\pi$ 数）}\quad $\pi_4$ 中含待求量 $v$，属被决定的无量纲量而非定性准则数，故写成
+\[\pi_4=f\left(\pi_1,\ \pi_2,\ \pi_3\right)\ \Longrightarrow\ \frac{gd}{v^{2}}=f\left(\frac{H}{d},\ \Rey,\ \mathrm{We}\right)\]
+
+\textbf{第 5 步（解出流速）}\quad
+\[v=f\left(\frac{H}{d},\ \Rey,\ \mathrm{We}\right)\sqrt{gd}\]
+
+\textbf{结果：}$v=f\!\left(\dfrac{H}{d},\ \Rey,\ \mathrm{We}\right)\sqrt{gd}$；若记 $\varphi(H/d)=\sqrt{d/H}\,f(H/d)$，也可写成 $v=\varphi\!\left(\dfrac{H}{d}\right)\sqrt{gH}$。
+
+\textbf{物理含义：}重力（$gd/v^{2}$ 一类准则）、黏性力（$\Rey$）、表面张力（$\mathrm{We}$）与孔口几何（$H/d$）共同决定孔口出流流速；当 $\Rey$ 与 $\mathrm{We}$ 都很大（黏性与表面张力影响可忽略）时，$v=\varphi(H/d)\sqrt{gH}$，即托里拆利公式 $v=\varphi\sqrt{2gH}$ 的普遍形式。
+
+\textbf{量纲自检：}$\pi_1$ 至 $\pi_4$ 均无量纲；$f\sqrt{gd}$ 的量纲为 $\sqrt{\mathrm{LT^{-2}}\cdot\mathrm{L}}=\mathrm{LT^{-1}}$，正是流速的量纲。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}$n-m=7-3=4$，是 4 个无量纲量。
+
+\textbf{易错点二：}基本变量必须量纲独立（本题 $d$、$v$、$\rho$）；若漏掉含 M 的量（如只取 $H$、$d$、$v$），量纲行列式为零，无法表示三个基本量纲。
+
+\textbf{易错点三：}含待求量 $v$ 的 $\pi_4=gd/v^{2}$ 不能与其它 $\pi$ 数并列成定性准则数，必须把 $v$ 解出来，否则得不到流速的显式表达式。
+
+\textbf{易错点四：}$\mathrm{We}$ 与 $\Rey$ 都以 $d$ 为特征长度；若改用 $H$ 作特征长度，$\pi$ 数会变，但最终结论（函数形式）等价。
+\end{yicuo}
+
+\begin{tishi}
+\noindent\textbf{第 6.13 题影印说明}\quad 原书此处影印不清：解答末段（$\pi_4$ 与 $f$ 的具体写法、$(gd)^{1/2}$ 前的符号）只残存零散字符，难以逐字辨读；本册按标准 $\pi$ 定理解法补全。题面所给 7 个物理量清晰可辨，结论 $v=f(H/d,\ \Rey,\ \mathrm{We})\sqrt{gd}$ 与教材一致。
+\end{tishi}
+
+\noindent\textbf{第 6.14 题（孔珑 5-14）\quad 用 $\pi$ 定理导出小球运动阻力表达式}
+
+\begin{jie}
+\textbf{已知：}小球在不可压缩黏性流体中运动的阻力 $F_D$ 与小球直径 $d$、速度 $v$、流体密度 $\rho$、动力黏度 $\mu$ 有关，共 5 个物理量。
+
+\textbf{求：}阻力表达式。
+
+\textbf{依据：}布金汉 $\pi$ 定理，$n=5$、$m=3$，故有 $n-m=2$ 个 $\pi$ 数。
+
+\textbf{第 1 步（写物理方程）}\quad
+\[F\left(F_D,\ d,\ v,\ \rho,\ \mu\right)=0\]
+
+\textbf{第 2 步（选基本变量并验证量纲独立）}\quad 取 $d$、$v$、$\rho$ 为基本变量。设 $d^{a}v^{b}\rho^{c}$ 的量纲为 $\mathrm{L}^{a+b-3c}\mathrm{T}^{-b}\mathrm{M}^{c}$，令其分别等于 L、T、M 的量纲，解出的 $a$、$b$、$c$ 唯一，说明三者量纲独立（量纲矩阵行列式不为零），可代替 L、T、M。
+
+\textbf{第 3 步（组成 $\pi$ 数）}\quad
+\[\pi_1=\frac{F_D}{\rho d^{2}v^{2}},\qquad \pi_2=\frac{\mu}{\rho vd}=\frac{1}{\Rey}\]
+
+\textbf{第 4 步（写出准则方程并解出阻力）}\quad
+\[\pi_1=f\left(\pi_2\right)\ \Longrightarrow\ F_D=f\left(\Rey\right)\rho d^{2}v^{2}\]
+
+\textbf{结果：}$F_D=f(\Rey)\,\rho d^{2}v^{2}$。
+
+\textbf{物理含义与扩展：}工程上写成阻力系数形式 $F_D=C_D\cdot\dfrac{\rho v^{2}}{2}\cdot\dfrac{\pi d^{2}}{4}$，可见 $C_D$ 只是 $\Rey$ 的函数；斯托克斯区（$\Rey<1$）$C_D=24/\Rey$，对应 $F_D=3\pi\mu dv$，与 $f(\Rey)$ 的量纲形式一致。
+
+\textbf{量纲自检：}$\pi_1$ 的量纲为 $\dfrac{\mathrm{MLT^{-2}}}{\mathrm{ML^{-3}}\cdot\mathrm{L^{2}}\cdot\mathrm{L^{2}T^{-2}}}$，无量纲；$f(\Rey)\rho d^{2}v^{2}$ 的量纲为 $\mathrm{MLT^{-2}}$，正是力的量纲。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}物理量个数 5 减去基本量纲数 3 等于 2，只有 2 个 $\pi$ 数，不要误写成 5 个。
+
+\textbf{易错点二：}基本变量必须量纲独立：$d$、$v$、$\rho$ 满足，$d$、$v$、$\mu$ 也可以，但不能同时取两个几何量或漏掉含 M 的量。
+
+\textbf{易错点三：}阻力不是 $\mu$ 的显函数，而是通过 $\Rey=\rho vd/\mu$ 影响；$F_D$ 与 $\rho$、$d^{2}$、$v^{2}$ 的正比关系必须由量纲分析得出，不能凭印象写。
+\end{yicuo}
+
+\noindent\textbf{第 6.15 题（孔珑 5-15）\quad 用 $\pi$ 定理导出三角形堰流量表达式}
+
+\begin{jie}
+\textbf{已知：}通过三角形堰的体积流量 $q_V$ 与堰上水头 $H$、槽口半顶角 $\theta$、重力加速度 $g$、液体密度 $\rho$、动力黏度 $\mu$、表面张力 $\sigma$ 有关，含 $q_V$ 共 7 个物理量。
+
+\textbf{求：}流量的表达式。
+
+\textbf{依据：}布金汉 $\pi$ 定理，$n=7$、$m=3$，故有 $n-m=4$ 个 $\pi$ 数；$\theta$ 本身是无量纲量，直接作为一个 $\pi$ 数。
+
+\textbf{第 1 步（写物理方程）}\quad
+\[F\left(q_V,\ H,\ \theta,\ g,\ \rho,\ \mu,\ \sigma\right)=0\]
+
+\textbf{第 2 步（选基本变量）}\quad 取 $H$（$\mathrm{L}$）、$\rho$（$\mathrm{ML^{-3}}$）、$g$（$\mathrm{LT^{-2}}$）为基本变量，三者量纲独立，可代替 L、M、T。
+
+\textbf{第 3 步（组成 $\pi$ 数）}\quad
+\[\pi_1=\frac{q_V}{H^{5/2}g^{1/2}},\qquad \pi_2=\frac{\mu}{\rho H^{3/2}g^{1/2}}=\frac{1}{\Rey}\]
+\[\pi_3=\frac{\sigma}{\rho gH^{2}}=\frac{1}{\mathrm{We}},\qquad \pi_4=\theta\]
+
+\textbf{第 4 步（解出流量）}\quad 待求量 $q_V$ 在 $\pi_1$ 中，故
+\[\pi_1=f\left(\pi_2,\ \pi_3,\ \pi_4\right)\ \Longrightarrow\ q_V=f\left(\Rey,\ \mathrm{We},\ \theta\right)H^{5/2}\sqrt{g}\]
+
+\textbf{结果：}$q_V=f\!\left(\Rey,\ \mathrm{We},\ \theta\right)H^{2}\sqrt{gH}$。
+
+\textbf{物理含义：}忽略黏性与表面张力的影响时 $q_V=\varphi(\theta)H^{2}\sqrt{gH}$，即流量与堰上水头的 $5/2$ 次方成正比；V 形（三角形）堰的理论解 $q_V=\dfrac{8}{15}\tan\dfrac{\theta}{2}\sqrt{2g}\,H^{5/2}$ 正是这个形式（$\varphi(\theta)=\dfrac{8}{15}\sqrt{2}\tan\dfrac{\theta}{2}$），可见量纲分析所得的函数形式与理论解完全一致。
+
+\textbf{量纲自检：}$\pi_1$ 的量纲为 $\dfrac{\mathrm{L^{3}T^{-1}}}{\mathrm{L^{5/2}}\cdot\mathrm{L^{1/2}T^{-1}}}$，无量纲；$H^{2}\sqrt{gH}$ 的量纲为 $\mathrm{L^{2}}\cdot\mathrm{LT^{-1}}=\mathrm{L^{3}T^{-1}}$，与流量的量纲一致。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}$\theta$ 是无量纲的几何角，它本身构成一个 $\pi$ 数，不要给它再配幂次。
+
+\textbf{易错点二：}$7-3=4$ 个 $\pi$ 数，其中 $\pi_4=\theta$；漏掉 $\theta$ 就会少一个 $\pi$ 数，也不可能得到含 $\theta$ 的正确形式。
+
+\textbf{易错点三：}$\pi_1=q_V/(H^{5/2}g^{1/2})$，不要写成 $q_V/(H^{2}g)$ 或 $q_V/(H^{3}g^{1/2})$，用一次量纲核对即可发现错误。
+
+\textbf{易错点四：}因 $q_V\propto H^{5/2}$，堰上水头的读数误差会以 $5/2$ 倍放大到流量上，实测时必须仔细测水头。
+\end{yicuo}
+
+\noindent\textbf{第 6.16 题（孔珑 5-16）\quad 用 $\pi$ 定理导出孔板流量计流量表达式}
+
+\begin{jie}
+\textbf{已知：}流体通过孔板流量计的体积流量 $q_V$ 与孔板前后压差 $\Delta p$、管道内径 $d$、管内流速 $u$、孔板孔径 $d_0$、流体密度 $\rho$、动力黏度 $\mu$ 有关，含 $q_V$ 共 7 个物理量。
+
+\textbf{求：}流量 $q_V$ 的表达式。
+
+\textbf{依据：}布金汉 $\pi$ 定理，$n=7$、$m=3$，故有 $n-m=4$ 个 $\pi$ 数。
+
+\textbf{第 1 步（写物理方程）}\quad
+\[F\left(q_V,\ \Delta p,\ d,\ u,\ d_0,\ \rho,\ \mu\right)=0\]
+
+\textbf{第 2 步（选基本变量）}\quad 取 $\Delta p$（$\mathrm{ML^{-1}T^{-2}}$）、$d$（$\mathrm{L}$）、$\rho$（$\mathrm{ML^{-3}}$）为基本变量；若用 $q_V$ 组成 $\pi_1$，则 $\sqrt{\Delta p/\rho}$ 恰是特征速度，写法最简洁。
+
+\textbf{第 3 步（组成 $\pi$ 数）}\quad
+\[\pi_1=\frac{q_V}{d^{2}}\sqrt{\frac{\rho}{\Delta p}},\qquad \pi_2=u\sqrt{\frac{\rho}{\Delta p}}\]
+\[\pi_3=\frac{d_0}{d},\qquad \pi_4=\frac{\mu}{d\sqrt{\Delta p\,\rho}}\]
+
+\textbf{第 4 步（解出流量）}\quad 待求量 $q_V$ 在 $\pi_1$ 中，故
+\[\pi_1=f\left(\pi_3,\ \pi_2,\ \pi_4\right)\ \Longrightarrow\ q_V=d^{2}\sqrt{\frac{\Delta p}{\rho}}\ f\left(\frac{d_0}{d},\ u\sqrt{\frac{\rho}{\Delta p}},\ \frac{1}{\Rey_{\Delta p}}\right)\]
+其中 $\Rey_{\Delta p}=\dfrac{d\sqrt{\Delta p\rho}}{\mu}$ 是以 $\sqrt{\Delta p/\rho}$ 为特征速度的雷诺数。
+
+\textbf{结果：}$q_V=d^{2}\sqrt{\dfrac{\Delta p}{\rho}}\ f\!\left(\dfrac{d_0}{d},\ u\sqrt{\dfrac{\rho}{\Delta p}},\ \Rey_{\Delta p}\right)$。
+
+\textbf{物理含义：}对应工程上常用的形式 $q_V=\alpha\dfrac{\pi d_0^{2}}{4}\sqrt{\dfrac{2\Delta p}{\rho}}$，即孔板流量计的流量与压差的平方根成正比（一切差压式流量计的基本原理）；流量系数 $\alpha$ 只是面积比 $d_0/d$ 与雷诺数的函数，由实验标定。
+
+\textbf{量纲自检：}$\Delta p/\rho$ 的量纲为 $\mathrm{L^{2}T^{-2}}$，故 $d^{2}\sqrt{\Delta p/\rho}$ 的量纲为 $\mathrm{L^{3}T^{-1}}$，与流量一致；$\pi_2$、$\pi_4$ 均无量纲。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}$7$ 个物理量、$3$ 个基本量纲，得到 $4$ 个 $\pi$ 数；本题保留了 $u$（与 $q_V$、$d$ 并不独立），目的是得到 $u\sqrt{\rho/\Delta p}$ 这个准则，作答时照式保留。
+
+\textbf{易错点二：}$\pi_1$ 中 $\Delta p/\rho$ 要开平方，故 $q_V\propto\sqrt{\Delta p}$；写成 $q_V\propto\Delta p$ 就错了，这是差压流量计读数的平方根关系。
+
+\textbf{易错点三：}$\pi_3=d_0/d$ 是几何准则数，不能漏；孔板流量计的流量系数正是随面积比与雷诺数变化的。
+\end{yicuo}
+
+\noindent\textbf{第 6.17 题（孔珑 5-17）\quad 用 $\pi$ 定理导出水轮机功率表达式}
+
+\begin{jie}
+\textbf{已知：}水轮机功率 $P$ 与叶轮直径 $d$、叶片宽度 $b$、转速 $n$、有效水头 $H$、水的密度 $\rho$、动力黏度 $\mu$、重力加速度 $g$ 有关，含 $P$ 共 8 个物理量。
+
+\textbf{求：}水轮机功率的表达式。
+
+\textbf{依据：}布金汉 $\pi$ 定理，$n=8$、$m=3$，故有 $n-m=5$ 个 $\pi$ 数。
+
+\textbf{第 1 步（写物理方程）}\quad
+\[F\left(P,\ d,\ b,\ n,\ H,\ \rho,\ \mu,\ g\right)=0\]
+
+\textbf{第 2 步（选基本变量）}\quad 取 $d$（$\mathrm{L}$）、$n$（$\mathrm{T^{-1}}$）、$\rho$（$\mathrm{ML^{-3}}$）为基本变量。这样用转速代替速度作基本量，与叶轮机械的工况参数一致，量纲独立。
+
+\textbf{第 3 步（组成 $\pi$ 数）}\quad
+\[\pi_1=\frac{P}{\rho n^{3}d^{5}},\qquad \pi_2=\frac{b}{d},\qquad \pi_3=\frac{H}{d}\]
+\[\pi_4=\frac{\mu}{\rho nd^{2}}=\frac{1}{\Rey},\qquad \pi_5=\frac{g}{n^{2}d}=\frac{1}{\Fr}\]
+
+\textbf{第 4 步（解出功率）}\quad 待求量 $P$ 在 $\pi_1$ 中，故
+\[\frac{P}{\rho n^{3}d^{5}}=f\left(\frac{b}{d},\ \frac{H}{d},\ \Rey,\ \Fr\right)\ \Longrightarrow\ P=f\left(\frac{b}{d},\ \frac{H}{d},\ \Rey,\ \Fr\right)\rho n^{3}d^{5}\]
+
+\textbf{结果：}$P=f\!\left(\dfrac{b}{d},\ \dfrac{H}{d},\ \Rey,\ \Fr\right)\rho n^{3}d^{5}$。
+
+\textbf{补充说明：}原书指出 $\pi_3\pi_5=\dfrac{gH}{n^{2}d^{2}}$，故也可把 $\pi_3$、$\pi_5$ 合并为无量纲组合 $\dfrac{nd}{\sqrt{gH}}$（工程上称单位转速）与 $\dfrac{gH}{n^{2}d^{2}}$（水头系数），把结果写成 $P=f\!\left(\dfrac{b}{d},\ \Rey,\ \dfrac{nd}{\sqrt{gH}}\right)\rho n^{3}d^{5}$；又因水轮机功率常写成 $P=\eta\rho gQH$，可知 $\dfrac{P}{\rho n^{3}d^{5}}$ 即功率系数。
+
+\textbf{量纲自检：}$\pi_1$ 的量纲检验：$\dfrac{\mathrm{ML^{2}T^{-3}}}{\mathrm{ML^{-3}}\cdot\mathrm{T^{-3}}\cdot\mathrm{L^{5}}}$ 无量纲；$\rho n^{3}d^{5}$ 的量纲为 $\mathrm{ML^{-3}T^{-3}L^{5}}=\mathrm{ML^{2}T^{-3}}$，正是功率的量纲。
+\end{jie}
+
+\begin{yicuo}
+\textbf{易错点一：}$8$ 个物理量、$3$ 个基本量纲，是 $5$ 个 $\pi$ 数；不要漏掉几何准则数（本题为 $b/d$、$H/d$）或重力准则数。
+
+\textbf{易错点二：}取 $d$、$n$、$\rho$ 作基本变量时得到 $\pi_5=g/(n^{2}d)$；若改取速度作基本变量，得到的会是弗劳德数 $v^{2}/(gd)$，两者互为倒数，不要混用。
+
+\textbf{易错点三：}$\pi_1=P/(\rho n^{3}d^{5})$ 中 $d$ 的指数是 $5$（不是 $3$、也不是 $2$）；这是叶轮机械著名的功率系数，用一次量纲核对即可确认。
+
+\textbf{易错点四：}$\pi_3\pi_5$ 只能作为合并后的新准则数替换原来的两个，不能既保留 $\pi_3$、$\pi_5$ 又添上它们的乘积，否则 $\pi$ 数个数就错了。
+\end{yicuo}
+
+\begin{tishi}
+\noindent\textbf{影印不清处的补全说明}\quad 5-12 至 5-17 各题原书解答中的量纲方程组与最终表达式行影印质量较差（OCR 只能辨出零散符号，$\pi$ 常被识成 n、$\rho$ 被识成 p、$\nu$ 被识成 v 或 u），本册均按标准解法（瑞利法与布金汉 $\pi$ 定理）重新推导补全，题面数据未作改动；若与原书表述有细微差别，以量纲一致性复核为准。
+\end{tishi}
+
+\begin{yicuo}
+\textbf{全章共性易错点}\quad ① 判断相似准则时先问“哪一种力起主要作用”：自由表面重力流用 $\Fr$，管内与绕流黏性流用 $\Rey$，不可压缩绕流的压强换算用 $\Eu$，可压缩流还要考虑马赫数与柯西数。② 相似准则必须写成无量纲数相等（$\Fr=\Fr'$、$\Rey=\Rey'$），再展开为各比尺之间的关系，切忌直接令 $k_u=k_l$。③ 量纲分析的三条限制：必须找全所有影响的物理量；无量纲系数只能由实验确定；量纲分析无法区分量纲相同的物理量（如力矩与功）。④ 用 $n-m$ 数 $\pi$ 数时，$m$ 是基本量纲个数（本题均为 3），不是物理量的组数。
+\end{yicuo}

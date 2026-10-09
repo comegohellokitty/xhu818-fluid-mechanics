@@ -1,0 +1,232 @@
+\chapter*{第 7 章 理想流体动力学}
+\addcontentsline{toc}{chapter}{第 7 章 理想流体动力学}
+\markboth{第 7 章 理想流体动力学}{}
+
+\begin{tishi}
+\textbf{题源：}本章题目取自孔珑主编《工程流体力学（第四版）》配套辅导书
+《工程流体力学 学习指导及习题解答》第 8 章「理想流体的有旋流动和无旋流动」的
+8.3 节「课后习题解答」段（原书书页 126--134，原书题号 8-1 至 8-16）。
+
+孔珑该章的原书章号是 8，本册按\textbf{西华 818 考纲所用赵琴教材的章号}归章：
+赵琴《流体力学与流体机械》\textbf{第 7 章「理想流体动力学」}（教材书页 119 起，习题自 150 起），
+其 7.1 速度势函数与流函数、7.2 几种基本平面势流、7.3 势流的叠加、7.4 圆柱体绕流、
+7.6 理想流体的旋涡运动、7.7 理想流体旋涡运动的基本定理、7.8 旋涡诱导速度，
+与孔珑第 8 章的内容一一对应，故\textbf{赵琴第 7 章 $\leftarrow$ 孔珑第 8 章}。
+
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+原书题号 & 处理方式 \\
+\midrule
+8-3 $\sim$ 8-16（共 14 题） & \textbf{本章收录}（有旋/无旋的判据与势函数存在条件、势函数与流函数的互求、
+基本平面势流、势流叠加与驻点、圆柱体绕流、速度环量与旋涡运动） \\
+8-1、8-2 & \textbf{本章不收}（只考不可压缩流体的连续性条件，属赵琴第 3 章「流体运动学」
+3.3 节连续性方程，按归章原则归本丛书第 3 章分册） \\
+\bottomrule
+\end{tabularx}
+
+\textbf{另需向读者交代：}① 8-3、8-4、8-5 三题中都含「是否满足连续性条件」的小问，
+其连续性部分确实与第 3 章重叠，但这三题的考查重点分别落在「有旋/无旋判据」
+「旋转角速度的极坐标表达」「先由连续性条件筛掉不可压场、再判有旋」上，
+均属赵琴第 7 章 7.1、7.6 的范围，故予收录；
+② 孔珑\textbf{第 7 章「气体的一维流动」}与\textbf{第 10 章「气体的二维流动」}属气体动力学
+（激波、马赫数、喷管）内容，超出西华 818 考纲（初试只考赵琴第 1--8 章），全书一律不收。
+\end{tishi}
+
+\begin{tishi}
+\textbf{本章考点分布（按赵琴教材第 7 章节次）：}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+教材节次 & 对应题目 \\
+\midrule
+7.1 速度势函数与流函数 & 8-3、8-5、8-8、8-9、8-10、8-11、8-12、8-13 \\
+7.2 几种基本平面势流 & 8-12(4)、8-14 \\
+7.3 势流的叠加与驻点 & 8-14、8-15 \\
+7.4 圆柱体绕流 & 8-16 \\
+7.6 理想流体的旋涡运动 & 8-4、8-5、8-6、8-7、8-16 \\
+\bottomrule
+\end{tabularx}
+
+\textbf{做题要求：}① 凡问「是否满足连续性条件」者，必须写出
+$\partial v_x/\partial x+\partial v_y/\partial y$（三维再加 $\partial v_z/\partial z$）的完整偏导式，
+并明确给出「满足/不满足」的结论；② 凡问「有旋还是无旋」者，必须写出旋转角速度分量
+$\omega_x$、$\omega_y$、$\omega_z$（平面流动只写 $\omega_z$），由 $\omega\equiv0$ 或 $\omega\neq0$ 判定，
+\textbf{不得只凭「流线是直线还是曲线」下结论}（点涡的流线是圆却无旋，平行剪切流的流线是直线却有旋）；
+③ 凡求速度势 $\varphi$ 者，须由 $\mathrm{d}\varphi=v_x\mathrm{d}x+v_y\mathrm{d}y$ 积分；
+凡求流函数 $\psi$ 者，须由 $\mathrm{d}\psi=v_x\mathrm{d}y-v_y\mathrm{d}x$ 积分，
+并写明积分常数（即基准流线）的取法；④ 势流叠加题必须分别写出各基本流动的势函数与流函数，
+再代数相加，最后求驻点与过驻点流线；⑤ 全部题目都要有实质解答，不得写「略」。
+原书题图一律用〔图示〕文字精确描述已知量，\textbf{不重绘图、不编造尺寸}；
+凡 OCR 影印不清、题面只能由解答反推、或原书推算明显有误者，在章末按题号集中说明。
+\end{tishi}
+
+\begin{ti}\sloppy\emergencystretch=2em
+
+\item[\textbf{8-3}] 下列各流场中哪几个满足连续性条件？它们是有旋流动还是无旋流动？
+\begin{xiaowen}
+  \item $v_x=k,\quad v_y=0$；
+  \item $v_x=\dfrac{kx}{x^2+y^2},\quad v_y=\dfrac{ky}{x^2+y^2}$；
+  \item $v_x=x^2+2xy,\quad v_y=y^2+2xy$；
+  \item $v_x=y+z,\quad v_y=z+x,\quad v_z=x+y$。
+\end{xiaowen}
+\tuyi{无图。(1)(2)(3) 为平面流动，(4) 为三维流动；$k$ 为大于零的常数。}
+\xstarfull{4}\quad\yiju{E4 2016 年计算题（是否满足连续性方程、是否有旋、并求速度势与流函数，同型）；E4 2026 回忆版计算第 4 题「证明势函数是否存在」；E1 slide33「第七章理想流体动力学 概念为主」；E6 教材 7.1 速度势函数存在的条件}\quad\nandu{中}
+
+\item[\textbf{8-4}] 试证明极坐标表示的不可压缩流体平面流动的连续方程和旋转角速度各为
+\[ \frac{\partial v_r}{\partial r}+\frac{v_r}{r}+\frac{1}{r}\frac{\partial v_\theta}{\partial\theta}=0,
+\qquad
+\omega_z=\frac{1}{2}\left(\frac{\partial v_\theta}{\partial r}+\frac{v_\theta}{r}-\frac{1}{r}\frac{\partial v_r}{\partial\theta}\right) \]
+\tuyi{无图。推导从直角坐标下的连续方程 $\partial v_x/\partial x+\partial v_y/\partial y=0$ 与
+$\omega_z=\frac{1}{2}\left(\partial v_y/\partial x-\partial v_x/\partial y\right)$ 出发，
+利用坐标变换 $x=r\cos\theta$、$y=r\sin\theta$ 与链式法则化到极坐标；
+$v_r$、$v_\theta$ 分别为径向速度与环向速度。}
+\xstarfull{3}\quad\yiju{E6 教材 7.6 理想流体的旋涡运动（旋转角速度的坐标表达式）、3.3 连续性方程的坐标形式；E1 slide33「第七章 概念为主」；本题为推导型基本功，真题无直接题号，故三星}\quad\nandu{难}
+
+\item[\textbf{8-5}] 确定下列各流场是否连续？是否有旋？
+\begin{xiaowen}
+  \item $v_r=0,\quad v_\theta=k$；
+  \item $v_r=-\dfrac{k}{r},\quad v_\theta=0$；
+  \item $v_r=2r\sin\theta\cos\theta,\quad v_\theta=-2r\sin^2\theta$。
+\end{xiaowen}
+\tuyi{无图。均为极坐标下的平面流动，$k$ 为大于零的常数。}
+\xstarfull{3}\quad\yiju{E4 2016 年计算题（是否连续、是否有旋，同型）；E6 教材 7.6 有旋与无旋的判据；E1 slide33「第七章 概念为主」；真题以直角坐标形式出现，本题为极坐标形式，故三星}\quad\nandu{中}
+
+\item[\textbf{8-6}] 已知有旋流动的速度场为 $v_x=x+y$，$v_y=y+z$，$v_z=x^2+y^2+z^2$。
+试求在点 $(2,\,2,\,2)$ 处角速度的分量。
+\xstarfull{3}\quad\yiju{E6 教材 7.6 旋转角速度三分的定义式；E1 slide33「第七章 概念为主」；真题无直接题号，故三星}\quad\nandu{中}
+
+\item[\textbf{8-7}] 已知有旋流动的速度场为 $v_x=2y+3z$，$v_y=2z+3x$，$v_z=2x+3y$。
+试求旋转角速度、角变形速度和涡线方程。
+\xstarfull{3}\quad\yiju{E6 教材 7.6 旋转角速度与角变形速度、7.7 涡线方程；E1 slide33「第七章 概念为主」；真题无直接题号，故三星}\quad\nandu{中}
+
+\item[\textbf{8-8}] 试证明不可压缩流体平面流动 $v_x=2xy+x$、$v_y=x^2-y^2-y$
+能满足连续方程，是一个有势流动，并求出速度势。
+\xstarfull{5}\quad\yiju{E4 2026 回忆版计算第 4 题「证明势函数存不存在」（直接命中）；E4 2016 年计算题（证明有势并求速度势，同型）；E6 教材 7.1 势函数存在的条件与求法}\quad\nandu{中}
+
+\item[\textbf{8-9}] 已知速度势 $\varphi=xy$，求速度分量和流函数，画出 $\varphi=1$、$2$、$3$ 的等势线，
+证明等势线和流线是互相正交的。
+\tuyi{无图。等势线 $\varphi=xy=C$ 是一族以 $x$ 轴、$y$ 轴为渐近线的等轴双曲线；
+$C=1,2,3$ 三条曲线画在 $xOy$ 平面的第一象限（第三象限各有一条对称的支）。}
+\xstarfull{5}\quad\yiju{E4 2015 年计算题第 7 题「已知流函数求速度分布与流线方程」（反问题，同型）；E4 2018 年计算题「已知速度势求 A、B 两点速度值与流函数值」（同型）；E6 教材 7.1 速度势与流函数的关系}\quad\nandu{中}
+
+\item[\textbf{8-10}] 不可压缩流体平面流动的速度势 $\varphi=x^2-y^2+x$，试求其流函数。
+\xstarfull{5}\quad\yiju{E4 2018 年计算题（$\varphi=x^2-y^2-x$ 求速度值与流函数，同型）；E4 2020 年填空题「已知 $\varphi=x^2-y^2-x$ 求 $u_x$、$u_y$、$\psi$」（同型）；E6 教材 7.1}\quad\nandu{中}
+
+\item[\textbf{8-11}] 不可压缩流体平面流动的流函数 $\psi=xy+2x-3y+10$。试求其速度势。
+\xstarfull{5}\quad\yiju{E4 2015 年计算题第 7 题（已知 $\psi=-3x+y$ 求速度分布与流线）；E4 2019 年填空题「已知 $\psi=x+y$ 求速度分量与速度势 $\varphi$」；E4 2022 年填空题（已知 $\psi=-\sqrt{3}\,x+y$ 求速度分量与加速度）；E6 教材 7.1}\quad\nandu{中}
+
+\item[\textbf{8-12}] 下列各流函数是否都是有势流动？
+\begin{xiaowen}
+  \item $\psi=kxy$；
+  \item $\psi=x^2-y^2$；
+  \item $\psi=k\ln(xy^2)$；
+  \item $\psi=k\left(1-\dfrac{1}{r^2}\right)r\sin\theta$。
+\end{xiaowen}
+\tuyi{(1)(2)(3) 为直角坐标下的流函数，(4) 为极坐标下的流函数（原书影印第 (4) 小题的指数
+$1/r^2$ 印得很小，须放大核对）；$k$ 为常数。}
+\xstarfull{4}\quad\yiju{E4 2026 回忆版计算第 4 题「证明势函数存不存在」；E4 2016 年计算题（判断是否有旋、是否存在势函数与流函数）；E6 教材 7.1、7.2 势函数与流函数的存在条件}\quad\nandu{中}
+
+\item[\textbf{8-13}] 试证明下列两个流场 $\varphi=x^2+x-y^2$；$\psi=2xy+y$ 是等同的。
+\xstarfull{3}\quad\yiju{E6 教材 7.1 由速度场求势函数与流函数的一致性；E4 2019 年填空题「已知 $\psi=x+y$ 求 $\varphi$」（同族基本功）；E1 slide33「第七章 概念为主」；真题无直接题号，故三星}\quad\nandu{易}
+
+\item[\textbf{8-14}] 有位于 $(1,0)$ 和 $(-1,0)$ 两点具有相同速度强度 $4\pi$ 的点源，
+试求在 $(0,0)$、$(0,1)$、$(0,-1)$ 和 $(1,1)$ 处的速度。
+\tuyi{原书无图。$xOy$ 平面上点 $(1,0)$、$(-1,0)$ 处各放置一个强度同为 $q_V=4\pi$ 的点源，
+两点关于 $y$ 轴对称、位在原点两侧。}
+\xstarfull{4}\quad\yiju{E4 2015 年计算题第 8 题（均匀流与点源叠加后求驻点与过驻点流线，势流叠加同型）；E4 2019 年计算题第 5 题（均匀流与点源叠加求驻点与过驻点流线）；E6 教材 7.2、7.3 点源与势流的叠加}\quad\nandu{中}
+
+\item[\textbf{8-15}] 将速度为 $v_\infty$、平行于 $x$ 轴的均匀等速流和在原点 $O$、强度为 $q_V$ 的点源
+叠加而成如图 8-46 所示的绕平面半体的流动，试求它的速度势和流函数，并证明平面半体的外形方程为
+$r=\dfrac{q_V(\pi-\theta)}{2\pi v_\infty\sin\theta}$，它的宽度等于 $\dfrac{q_V}{v_\infty}$。
+\tuyi{原书图 8-46：$x$ 轴沿来流方向，$v_\infty$ 自左向右（左端画有指向右的水平箭头）；
+原点 $O$ 处用星形符号标出点源；半体轮廓自上游鼻部张开、向下游逐渐变宽并趋于平行直线，
+轮廓上任一点用极坐标 $(r,\theta)$ 标注（$\theta$ 自 $x$ 轴正向量起）；
+图中在轮廓下游处用竖直尺寸线标出半体的总宽度，标注 $q_V/v_\infty$。}
+\xstarfull{5}\quad\yiju{E4 2015 年计算题第 8 题（均匀流 $\varphi=v_\infty x+\frac{q}{2\pi}\ln r$、$\psi=v_\infty y+\frac{q}{2\pi}\arctan\frac{y}{x}$，求驻点与过驻点流线，直接命中）；E4 2019 年计算题第 5 题（均匀流与点源叠加求驻点及过驻点流线）；E2 slide5 势流叠加与驻点考点；E6 教材 7.3 势流的叠加、半体绕流}\quad\nandu{难}
+
+\item[\textbf{8-16}] 长 $50\ \mathrm{m}$、直径 $1.2\ \mathrm{m}$ 的圆柱体以 $90\ \mathrm{r/min}$ 的角速度
+绕其轴旋转，密度 $\rho=1.205\ \mathrm{kg/m^3}$ 的空气流以 $80\ \mathrm{km/h}$ 的速度沿与圆柱体轴
+相垂直的方向绕流圆柱体。假设环流与圆柱体之间没有滑动，试求速度环量、升力和驻点的位置。
+\tuyi{原书无图。圆柱体的轴线垂直于纸面（即垂直于来流方向），来流 $v_\infty=80\ \mathrm{km/h}$
+沿与轴垂直的方向流过；圆柱长 $L=50\ \mathrm{m}$、直径 $d=1.2\ \mathrm{m}$，
+以 $n=90\ \mathrm{r/min}$ 绕自身轴旋转。}
+\xstarfull{5}\quad\yiju{E4 2019 年分析题「理想均匀流水平向右流动，绕流一个顺时针转动的圆柱体，分析驻点可能出现的位置」（直接命中）；E6 教材 7.4 圆柱体绕流、7.6 旋涡运动与速度环量（马格努斯升力）；E1 slide33「第七章 概念为主」}\quad\nandu{难}
+
+\end{ti}
+
+\begin{tishi}
+\textbf{未收录题号的归属（一句话说明）：}孔珑第 8 章 8-1（四个流场是否满足连续性条件）、
+8-2（由连续方程求三维流动的 $v_z$，结果为 $v_z=-z^2-2(x+y)z-z$）只涉及不可压缩流体的
+连续性条件，属赵琴第 3 章「流体运动学」3.3 节范围，按归章原则归入本丛书第 3 章分册，
+本章不重复收录。孔珑第 7 章「气体的一维流动」、第 10 章「气体的二维流动」为气体动力学内容，
+超出赵琴第 1--8 章考纲，全书不收。
+\end{tishi}
+
+\begin{tishi}
+\textbf{题面与解答的 OCR 校订、存疑说明（按题号分条）：}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.8em,itemsep=2pt]
+  \item \textbf{第 8-3 题：}题面 (3) 影印清楚，确为 $v_x=x^2+2xy$、$v_y=y^2+2xy$，
+        解答给出 $\partial v_x/\partial x+\partial v_y/\partial y=2x+2y+2y+2x\neq0$，
+        故 (3) \textbf{不满足}连续性条件，原书对 (3) 只下一个「不满足」的结论、不再讨论有旋与否；
+        (1)(2)(4) 都满足连续性条件，且都是无旋流动。
+  \item \textbf{第 8-4 题：}原书把旋转角速度写作
+        $\omega_z=\frac{1}{2}\left(\frac{\partial v_\theta}{\partial r}+\frac{v_\theta}{r}-\frac{1}{r}\frac{\partial v_r}{\partial\theta}\right)$，
+        与更常用的 $\omega_z=\frac{1}{2r}\left[\frac{\partial(rv_\theta)}{\partial r}-\frac{\partial v_r}{\partial\theta}\right]$
+        完全等价（把 $\frac{1}{r}$ 乘进括号即得），解答中两者并用，便于对照。
+  \item \textbf{第 8-5 题：}第 (1) 小题题面是 $v_\theta=k$（常数），而原书解答把
+        $\frac{\partial v_\theta}{\partial r}$ 与 $\frac{v_\theta}{r}$ 分别写成了
+        $\frac{\partial(kr)}{\partial r}$ 与 $\frac{kr}{r}$，等于按 $v_\theta=kr$ 计算，得 $\omega_z=k$；
+        按题面应得 $\omega_z=\frac{k}{2r}$。两者都不为零，「有旋」的结论相同。
+        第 (3) 小题原书解答末行的 $\omega_z$ 值影印模糊（形如 $8\sin\theta\cos\theta$，
+        疑为漏印或误印），本文按定义重算得 $\omega_z=-1$（与直角坐标下 $v_x=2y$、$v_y=0$ 的结果一致），
+        「有旋」的结论同样不变。
+  \item \textbf{第 8-12 题：}第 (3) 小题题面 $\psi=k\ln(xy^2)$ 影印清楚，但原书答案把
+        $\frac{\partial\psi}{\partial y}=\frac{2k}{y}$ 印成了 $2k$（漏掉分母 $y$）、
+        把 $\frac{\partial\psi}{\partial x}=\frac{k}{x}$ 印成了 $\frac{ky}{x}$，
+        于是印成 $v_x=2k$、$v_y=-\frac{ky}{x}$，前后并不自洽。按题面重算应为
+        $v_x=\frac{2k}{y}$、$v_y=-\frac{k}{x}$，结论「有旋、不是有势流动」与原书相同。
+        第 (4) 小题题面为 $\psi=k\left(1-\frac{1}{r^2}\right)r\sin\theta$（即 $k\left(r-\frac{1}{r}\right)\sin\theta$），
+        影印中指数 $2$ 很小、容易读成 $\frac{1}{r}$；只有按 $\frac{1}{r^2}$ 计算，才与原书
+        「$v_r=k\left(1-\frac{1}{r^2}\right)\cos\theta$、$v_\theta=-k\left(1+\frac{1}{r^2}\right)\sin\theta$、
+        无旋有势」的答案吻合，故题面按 $\frac{1}{r^2}$ 转写。
+  \item \textbf{第 8-14 题：}题面只说两点源「具有相同速度强度 $4\pi$」，未给单位；
+        本文按体积流量 $q_V=4\pi\ \mathrm{m^3/s}$ 处理，所得速度的单位为 $\mathrm{m/s}$。
+        $(1,1)$ 点的答案影印为 $v_x=\frac{4}{5}\ \mathrm{m/s}$、$v_y=\frac{12}{5}\ \mathrm{m/s}$，
+        OCR 曾把 $\frac{12}{5}$ 读作 $\frac{1}{2}$，本文以影印页为准。
+  \item \textbf{第 8-16 题：}原书在 $\sin\theta$ 的推导式中写的是正号关系
+        $\sin\theta=\frac{\Gamma}{4v_\infty\pi r_0}$，数值却写成 $-0.12717$，
+        并由此得 $\theta=187^\circ18'$ 与 $352^\circ42'$。按该正号关系应为
+        $\sin\theta=+0.1272$，即 $\theta=7^\circ18'$ 与 $172^\circ42'$。
+        两套答案相差 $180^\circ$，等价于把环流（旋转）方向取反；因题面未指明圆柱的旋转方向，
+        两种答案都成立，驻点都落在圆柱表面 $r_0=0.6\ \mathrm{m}$ 上。
+        另外，原书算 $\Gamma$ 与 $F_L$ 时取 $\pi=3.14$，故得
+        $\Gamma=21.297\ \mathrm{m^2/s}$、$F_L=-28514.3\ \mathrm{N}$；
+        若取 $\pi=3.14159$ 则 $\Gamma=21.30\ \mathrm{m^2/s}$，差异远在有效数字之外，不影响结论。
+\end{enumerate}
+\end{tishi}
+
+\begin{banfa}
+\textbf{第 7 章解题四步法：}
+\begin{enumerate}[label=(\arabic*),leftmargin=1.9em,itemsep=2pt]
+  \item \textbf{先判连续。}算出 $\partial v_x/\partial x+\partial v_y/\partial y$
+        （三维再加 $\partial v_z/\partial z$），等于零才可能是不可压缩流体的真实流场。
+  \item \textbf{再判无旋。}算 $\omega_z=\frac{1}{2}\left(\partial v_y/\partial x-\partial v_x/\partial y\right)$
+        （三维算三个分量）。$\omega\equiv0$ 则存在速度势 $\varphi$，由
+        $\mathrm{d}\varphi=v_x\mathrm{d}x+v_y\mathrm{d}y$ 积分求之；
+        平面不可压流动只要连续就存在流函数 $\psi$，由
+        $\mathrm{d}\psi=v_x\mathrm{d}y-v_y\mathrm{d}x$ 积分求之。
+        \textbf{无旋必有势、有旋必无势，但两种流动都可以有流函数}，这是最容易记错的一点。
+  \item \textbf{由 $\varphi$ 求 $\psi$（或反过来）。}先用 $v_x=\frac{\partial\varphi}{\partial x}$、
+        $v_y=\frac{\partial\varphi}{\partial y}$ 求出速度分量（若给的是 $\psi$，改用
+        $v_x=\frac{\partial\psi}{\partial y}$、$v_y=-\frac{\partial\psi}{\partial x}$），
+        再按第 (2) 步的微分式积分。$\varphi$ 与 $\psi$ 都可差任意常数，
+        通常取过原点的流线为 $\psi=0$；两点之间 $\psi$ 之差就是通过两点连线的单位厚度流量。
+  \item \textbf{势流叠加题。}写出各基本流动的 $\varphi$ 与 $\psi$ 后代数相加；
+        驻点由 $v_x=v_y=0$（或 $v_r=v_\theta=0$）解出；过驻点的流线方程，
+        由把驻点坐标代入 $\psi$ 求积分常数得到，$\psi=C$ 的等值线就是流线。
+\end{enumerate}
+\textbf{两条高频结论：}① 圆柱绕流叠加环流后，圆柱表面的环向速度为
+$v_\theta=-2v_\infty\sin\theta+\frac{\Gamma}{2\pi r_0}$，令其为零即得驻点位置；
+当 $|\Gamma|>4\pi v_\infty r_0$ 时驻点脱离圆柱表面进入流场。
+② 库塔-儒可夫斯基公式给出单位长度升力 $\rho v_\infty\Gamma$，
+故长 $L$ 的旋转圆柱所受升力为 $F_L=\rho v_\infty\Gamma L$（马格努斯效应）。
+\end{banfa}
