@@ -11,7 +11,10 @@ E4 真题证据：2026 回忆版计算题第 4 题＝\textbf{证明势函数存�
 其余内容（旋涡、空间势流）基本只考选择、判断、填空。\\
 \textbf{复习策略}：① $\varphi$ 与 $\psi$ 的定义、存在条件、互求——必须能默写、能算；
 ② 几个基本势流的 $\varphi$、$\psi$、速度场——必须能默写；
-③ 旋涡基本概念与四条定理——认得出、能判断对错即可。
+③ 旋涡基本概念与四条定理——认得出、能判断对错即可。\\
+
+\textbf{教材例题（第七章共 4 例，全部要精读）：}教材【例 7.1】（书 p121）\textbf{证明点源流动有势并求势函数}——就是 2026 回忆版计算题第 4 题的同型题；【例 7.2】（书 p123）由 $\psi=-\sqrt{3}\,x+y$ 求速度分布、流线方程与流量；【例 7.3】（书 p123）由例 7.1 的速度场求流函数（即 $\varphi$、$\psi$ 互求）；【例 7.4】（书 p146）证明均匀流的速度环量等于零。\\
+\textbf{教材课后习题 7.1、7.2（书 p150）}的第 1、2 问就是“满足连续性方程否”“势函数、流函数存在否”，与 2026 年计算题第 4 题的问法完全一致。\\
 \end{yijubox}
 
 \section{速度势函数与流函数}
@@ -27,7 +30,7 @@ E4 真题证据：2026 回忆版计算题第 4 题＝\textbf{证明势函数存�
 \textbf{无旋流动：}流体微团在运动中\textbf{不存在旋转运动}，即旋转角速度为零。
 平面无旋流动 $w_z=0$，等价于 $\dfrac{\partial u_y}{\partial x}=\dfrac{\partial u_x}{\partial y}$。
 
-\begin{gongshi}{速度势函数（势函数）$\varphi$ 的定义}
+\begin{gongshi}{速度势函数（势函数）$\varphi$ 的定义（教材式 7.1--7.3）}
 \[ u_x=\frac{\partial\varphi}{\partial x},\qquad u_y=\frac{\partial\varphi}{\partial y},\qquad u_z=\frac{\partial\varphi}{\partial z}
    \qquad\Longleftrightarrow\qquad \bu=\grad\varphi \]
 \textbf{含义：}无旋流动中三个速度分量可统一表示为同一个标量函数 $\varphi$ 的偏导数，
@@ -36,17 +39,20 @@ $\bu=\grad\varphi$。把 $\bu=\grad\varphi$ 代入无旋条件 $\bomega=\frac12\
 \textbf{适用条件：}\textbf{只要求无旋}（$\bomega=0$），\textbf{不要求}不可压缩、不要求恒定流动、
 不要求是平面流；三维、可压缩流动同样可以有速度势。\\
 \textbf{物理意义：}$-\grad\varphi$ 相当于一个"速度场"的势，故 $\varphi$ 称为速度势；
-$\varphi=$ 常数 为\textbf{等势线（等势面）}，其法线方向就是速度方向。
+$\varphi=$ 常数 为\textbf{等势线（等势面）}，其法线方向就是速度方向。\\
+\textbf{教材原话（书 p119）：}“由流动无旋条件确定的函数 $\varphi(x,y,z)$ 称为速度势函数，故无旋流又称为有势流，简称势流。”教材式 7.1 即 $\dd\varphi=u_x\dd x+u_y\dd y+u_z\dd z$，教材式 7.4 给出等势面方程 $\varphi(x,y,z)=C$。\\
+\textbf{适用条件（教材口径，书 p120--121）：}教材把速度势函数的性质列为\textbf{四个特征}：①“不可压缩无旋流动的势函数是调和函数”（满足拉普拉斯方程）；②“存在势函数的流动是无旋流动”；③ 等势面与流线正交；④ 势函数的方向导数等于速度在该方向上的投影，即 $\partial\varphi/\partial s=u_s$。填空、简答按这四条写最稳。
 \end{gongshi}
 
-\begin{gongshi}{不可压缩时 $\varphi$ 满足拉普拉斯方程}
+\begin{gongshi}{不可压缩时 $\varphi$ 满足拉普拉斯方程（教材 7.1.1 节 特征①，教材未给式号）}
 \[ \grad\cdot\bu=\grad\cdot(\grad\varphi)=\grad^2\varphi=0 \qquad\Longrightarrow\qquad
    \frac{\partial^2\varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y^2}+\frac{\partial^2\varphi}{\partial z^2}=0 \]
 \textbf{含义：}不可压缩流动的连续性方程 $\grad\cdot\bu=0$，代入 $\bu=\grad\varphi$，
 得到拉普拉斯方程 $\grad^2\varphi=0$；满足它的函数叫\textbf{调和函数}，
 所以不可压缩无旋流动的 $\varphi$ 一定是调和函数。\\
 \textbf{适用条件：}同时要求\textbf{无旋}（存在 $\varphi$）和\textbf{不可压缩}（$\grad\cdot\bu=0$）。
-可压缩无旋流中 $\varphi$ 不满足拉普拉斯方程。
+可压缩无旋流中 $\varphi$ 不满足拉普拉斯方程。\\
+\textbf{教材原话（书 p120）：}教材把这一条列为速度势函数的\textbf{第 1 个特征}：“不可压缩无旋流动的势函数是调和函数”，并强调“\textbf{拉普拉斯方程的解具有可叠加性}”——这正是教材 7.3 节势流叠加原理的根据。
 \end{gongshi}
 
 \textbf{为什么要有势函数（教材引入背景）：}黏性流体绕物体流动时若雷诺数 $\Rey$ 较大，
@@ -83,13 +89,29 @@ $\varphi=\int u_x\dd x+\int u_y\dd y$（第二步只补"含 $y$ 而不含 $x$ �
 $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原点刚性旋转）有旋
 （此时 $w_z=a$，$\varphi$ 不存在）；$u_x=y$、$u_y=-x$ 亦有旋，无速度势。
 \end{banfa}
+
+\begin{zhenti}{教材【例 7.1】（书 p121）}{证明题}
+一平面恒定不可压缩流动的流线为通过原点的向外发射的射线，速度大小 $u$ 反比于这点到原心的距离 $r$：$u=\dfrac{q}{2\pi r}$（$q$ 是正常数）。\textbf{证明这一流动是有势的}，求解势函数，并证明所得势函数是一调和函数。
+\end{zhenti}
+\noindent\textbf{教材解法（＝2026 回忆版计算题第 4 题的标准套路）：}
+先写出速度分量 $u_x=\dfrac{q}{2\pi}\dfrac{x}{x^2+y^2}$、$u_y=\dfrac{q}{2\pi}\dfrac{y}{x^2+y^2}$；
+再算 $\dfrac{\partial u_x}{\partial y}=\dfrac{\partial u_y}{\partial x}=-\dfrac{qxy}{2\pi(x^2+y^2)^2}$，两者相等即\textbf{有势}（$\varphi$ 存在）；
+积分得 $\varphi=\dfrac{q}{2\pi}\ln\sqrt{x^2+y^2}$；最后算二阶偏导验证 $\dfrac{\partial^2\varphi}{\partial x^2}+\dfrac{\partial^2\varphi}{\partial y^2}=0$，故 $\varphi$ 是\textbf{调和函数}。
+\\
+
+\begin{tishi}
+\textbf{教材同型例题与习题（专治“证明势函数存不存在”）：}\\
+① 教材第七章只有 4 个例题，\textbf{【例 7.1】（书 p121）就是“证明流动有势并求势函数”}，与 2026 回忆版计算题第 4 题同型，务必精读；\\
+② 教材\textbf{课后习题 7.1、7.2（书 p150）}的第 1、2 问是“满足连续性方程否”“势函数、流函数存在否”，问法与真题一致（习题 7.1：$u_x=4x+1$、$u_y=-4y$；习题 7.2：$u_x=x^2-y^2+x$、$u_y=-(2xy+y)$）；\\
+③ 教材\textbf{没有}“给出速度场直接证明速度势不存在”的例题——凡题目问“不存在”，按上面的方法算出 $w_z\ne0$ 即可，判据仍是教材 7.1.1 节 的“存在势函数的流动是无旋流动”。
+\end{tishi}
 \end{kaodian}
 
 \begin{kaodian}{5}{流函数 $\psi$ 的定义、存在条件与流量关系}
 \textbf{流函数的引入：}由平面流动的连续性方程引入。
 不可压缩平面流动的连续性方程为 $\dfrac{\partial u_x}{\partial x}+\dfrac{\partial u_y}{\partial y}=0$。
 
-\begin{gongshi}{流函数 $\psi$ 的定义}
+\begin{gongshi}{流函数 $\psi$ 的定义（教材式 7.5--7.8）}
 \[ u_x=\frac{\partial\psi}{\partial y},\qquad\qquad u_y=-\frac{\partial\psi}{\partial x} \]
 \textbf{含义：}形如 $\dd\psi=-u_y\dd x+u_x\dd y$ 的微分式在满足连续性方程时成为某函数 $\psi(x,y)$ 的全微分，
 比较全微分定义即得上述两式。\textbf{流函数等于常数的曲线就是流线}。\\
@@ -97,8 +119,16 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 平面流动中\textbf{可压缩也可、无旋也可}。
 对可压缩平面流动，定义推广为 $\rho u_x=\dfrac{\partial\psi}{\partial y}$、$\rho u_y=-\dfrac{\partial\psi}{\partial x}$
 （此时 $\psi$ 的量纲不再是"面积／时间"，但 $\psi=$ 常数 仍是流线）。
-轴对称流动\textbf{没有}流函数。
+轴对称流动\textbf{没有平面流函数}（上面这组定义式不适用），但\textbf{有轴对称流函数}——教材 7.5.2 节 专门给出柱坐标下的 $\psi(r,z)$（教材式 7.67、7.68），详见本章“空间势流”一节。
 \end{gongshi}
+
+\begin{tishi}
+\textbf{（对旧稿的订正·轴对称流动有没有流函数）}本书旧稿此处写“轴对称流动没有流函数”，\textbf{与教材矛盾，现按教材订正}：\\
+教材原话（书 p138）：“\textbf{轴对称流动是指流体在过某空间固定轴的所有平面上的运动情况完全相同的流动}”，并以“\textbf{轴对称流动的流函数}”为小节标题（教材 7.5.2 节）给出定义——\\
+柱坐标（$r,\theta,z$）：$ru_r=\dfrac{\partial\psi}{\partial z}$、$-ru_z=\dfrac{\partial\psi}{\partial r}$（教材式 7.67、7.68）；\\
+球坐标（$R,\theta,\beta$）：$\dfrac{\partial\psi}{\partial R}=-R\sin\theta\,u_\theta$、$\dfrac{\partial\psi}{\partial\theta}=R^2\sin\theta\,u_R$（教材式 7.69、7.70）。\\
+正确说法是：\textbf{三维流动没有“平面流函数”，但轴对称流动有“轴对称流函数”}。轴对称流函数的两条性质与平面流函数完全平行：① 等流函数线就是流线；② 教材原话（书 p139）：“\textbf{在通过包含对称轴线的流动平面上，任意两点的流函数值之差的 $2\pi$ 倍，等于通过这两点间的任意连线的回转面的流量}”，即 $Q=2\pi(\psi_A-\psi_B)$。
+\end{tishi}
 
 \begin{gongshi}{$\psi=$ 常数 是流线}
 \[ \dd\psi=-u_y\dd x+u_x\dd y=0 \qquad\Longrightarrow\qquad \frac{\dd x}{u_x}=\frac{\dd y}{u_y} \]
@@ -107,13 +137,14 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 \textbf{适用条件：}平面流动；对不可压缩流动 $\psi$ 连续单值。
 \end{gongshi}
 
-\begin{gongshi}{流函数与流量的关系}
+\begin{gongshi}{流函数与流量的关系（教材 7.1.2 节 特性③，教材未给式号）}
 \[ q_{\text{单宽}}=|\psi_2-\psi_1| \]
 \textbf{含义：}\textbf{两条流线之间所通过的流量（单位宽度）等于这两条流线的流函数值之差的绝对值}。
 二维平面问题取单位宽度，所以这是"单宽体积流量"，量纲 $\mathrm{L^2/T}$；
 两条流线编号时按"$+y$ 侧减 $-y$ 侧"或者取绝对值，可避免符号纠结。\\
 \textbf{适用条件：}不可压缩平面流动，且 $\psi$ 的定义式取 $u_x=\partial\psi/\partial y$、$u_y=-\partial\psi/\partial x$。
-把每条流线的 $\psi$ 值减去参考流线的值，就得到参考流线以外的累计流量。
+把每条流线的 $\psi$ 值减去参考流线的值，就得到参考流线以外的累计流量。\\
+\textbf{教材原话（书 p121、p123）：}流函数的第 2 条特性是“\textbf{沿同一条流线的流函数是常数}”（令 $\psi=$ 一系列常数即得一系列流线）；第 3 条特性是“\textbf{两流线间单位厚度的流量等于其流函数值之差}”。填空就按这两句写。
 \end{gongshi}
 
 \begin{gongshi}{不可压缩平面流动的 $\psi$ 满足拉普拉斯方程}
@@ -130,7 +161,7 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 \textbf{流函数} $\psi$：只要\textbf{平面流动}就存在——可压缩、不可压缩、有旋、无旋全都行。\\
 \textbf{速度势} $\varphi$：只有\textbf{无旋流动}才存在——平面可以、三维也可以，可压缩也可以，
 但\textbf{只要有一点有旋，$\varphi$ 就不存在}。\\
-所以：\textbf{有旋流有 $\psi$、没有 $\varphi$}；三维无旋流有 $\varphi$、没有 $\psi$。
+所以：\textbf{有旋流有 $\psi$、没有 $\varphi$}；三维无旋流有 $\varphi$、没有 $\psi$（唯一例外是\textbf{轴对称流动}，它有教材 7.5.2 节 的轴对称流函数）。
 \end{jielun}
 
 \textbf{常考题型：}选择/判断（"有旋流动没有速度势但有流函数"；"流函数只存在平面流动中"）；
@@ -146,6 +177,11 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 故速度场为均匀流 $\bu=(1,\sqrt{3}\,)$，大小为 2，方向与 $x$ 轴成 $60^\circ$。
 流线就是 $\psi=$ 常数 的曲线：把 $A$、$B$ 的坐标代入得 $\psi_A=-\sqrt{3}$、$\psi_B=-\sqrt{3}$，
 两点恰好在\textbf{同一条}流线上，故所求流线方程为 $y=\sqrt{3}\,x-\sqrt{3}$。
+
+\noindent\textbf{（教材出处）这道题与教材\textbf{【例 7.2】（书 p123）完全相同}：}教材原题是“一平面恒定流动的流函数为 $\psi(x,y)=-\sqrt{3}\,x+y$，求速度分布，写出通过 $A(1,0)$ 和 $B(2,\sqrt{3})$ 两点的流线方程”，连数据都是同一组。
+教材的解与结论：$u_x=\dfrac{\partial\psi}{\partial y}=1$、$u_y=-\dfrac{\partial\psi}{\partial x}=\sqrt{3}$，速度大小为 $2$、与 $x$ 正向夹角 $60^\circ$，教材原话“\textbf{这种速度分布不随地点变化的平面流叫平面均匀流}”；
+$A$、$B$ 两点的流函数值均为 $-\sqrt{3}$，所以两点在同一流线上，流线方程为 $-\sqrt{3}\,x+y=-\sqrt{3}$（即 $y=\sqrt{3}\,x-\sqrt{3}$）；两点间流量 $\Delta\psi=0$（若追问“A、B 间流量是多少”，答“\textbf{同一流线上流量为零}”）。
+另：教材\textbf{【例 7.3】（书 p123）}是“计算[例 7.1] 中平面流动的流函数”——$\varphi$、$\psi$ 互求的标准示范（把 $u_x$、$u_y$ 代入教材式 7.6 积分得 $\psi=\dfrac{q}{2\pi}\theta$）。
 
 \begin{banfa}
 \textbf{「由 $\psi$ 求速度与流线」三步：}
@@ -164,22 +200,23 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 $\varphi$ 只要\textbf{无旋}就存在（平面、三维、可压缩都行）；
 $\psi$ 只要\textbf{平面}就存在（可压缩、有旋也行）。
 "有旋流动没有速度势，但有流函数"——这句话是判断/选择题的标准答案。
-反过来"三维流动有流函数"是\textbf{错}的，\textbf{轴对称流动也没有流函数}。
+反过来"三维流动有流函数"是\textbf{错}的，\textbf{轴对称流动却有轴对称流函数}（教材 7.5.2 节，书 p138），不要把这一条一起判错。
 \end{yicuo}
 \end{kaodian}
 
 \begin{kaodian}{5}{速度势与流函数的关系：正交性、柯西-黎曼条件与互求}
-\begin{gongshi}{等势线与流线正交}
+\begin{gongshi}{等势线与流线正交（教材 7.1.3 节，教材未给式号）}
 \[ \grad\varphi\cdot\grad\psi
    =\frac{\partial\varphi}{\partial x}\frac{\partial\psi}{\partial x}
    +\frac{\partial\varphi}{\partial y}\frac{\partial\psi}{\partial y}
    =u_x(-u_y)+u_y(u_x)=0 \]
 \textbf{含义：}$\varphi$ 的梯度与 $\psi$ 的梯度互相垂直，所以\textbf{等 $\varphi$ 线与等 $\psi$ 线处处正交}——
 等 $\varphi$ 线是等势线，等 $\psi$ 线是流线，两者构成正交网格，称为\textbf{流网}。\\
-\textbf{适用条件：}平面不可压缩势流（同时存在 $\varphi$ 与 $\psi$）。
+\textbf{适用条件：}平面不可压缩势流（同时存在 $\varphi$ 与 $\psi$）。\\
+\textbf{教材原话（书 p124）：}“平面上若干等势线与流线构成了\textbf{正交曲线网}”——教材的术语是“正交曲线网”，本书其他地方叫“流网”，是同一个东西。
 \end{gongshi}
 
-\begin{gongshi}{柯西-黎曼条件}
+\begin{gongshi}{柯西-黎曼条件（教材式 7.9）}
 \[ \frac{\partial\varphi}{\partial x}=\frac{\partial\psi}{\partial y},\qquad\qquad
    \frac{\partial\varphi}{\partial y}=-\frac{\partial\psi}{\partial x} \]
 \textbf{含义：}把 $u_x=\varphi_x=\psi_y$、$u_y=\varphi_y=-\psi_x$ 两式并写即得。
@@ -224,26 +261,69 @@ $\psi$ 加上任意常数也不改变流场；
 \textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2026 回忆版计算题第 4 题（势函数存在性）；E4 2015 年试题计算题第 7 题（由流函数求速度与流线）；E2"掌握基本概念＋公式套用"}\quad\nandu{中}
 \end{kaodian}
 
+\begin{kaodian}{2}{教材 7.1.4--7.1.5 节：复势、复速度与极坐标下的 $\varphi$、$\psi$}
+\textbf{为什么补这一节：}教材 7.1 节专门讲了复变函数解法（选择题问过“平面流动的复势”“复速度的实部与虚部”），
+而 7.2 节以后所有势流的 $\varphi$、$\psi$ 都是按极坐标给出的——这两处旧稿都没有，现按教材补上。
+
+\begin{gongshi}{复势与复速度（教材式 7.10--7.12）}
+\[ W(z)=\varphi+\mathrm{i}\psi,\qquad z=x+\mathrm{i}y,\qquad
+   V=\frac{\dd W}{\dd z}=\frac{\partial\varphi}{\partial x}+\mathrm{i}\frac{\partial\psi}{\partial x}=u_x-\mathrm{i}u_y \]
+\[ V=|u|\left(\cos\alpha-\mathrm{i}\sin\alpha\right)=|u|\mathrm{e}^{-\mathrm{i}\alpha} \]
+\textbf{含义：}教材式 7.10 的 $W(z)$ 称为\textbf{复势}——把势函数与流函数拼成一个复变函数；
+教材式 7.11 的 $V=\dd W/\dd z$ 称为\textbf{复速度}，其实部是 $u_x$、\textbf{虚部是 $-u_y$}；
+教材式 7.12 说明 $V$ 的\textbf{模等于速度的大小} $|u|$、辐角等于速度方向角的相反数。
+教材原话（书 p124）：“势函数和流函数是互为共轭的调和函数”“复速度的模等于速度的绝对值”
+“可以根据共轭复变数的运算求出流场中每一点处的速度”。\\
+\textbf{适用条件：}平面不可压缩势流（$\varphi$、$\psi$ 同时存在并满足柯西-黎曼条件）；
+\textbf{虚数单位一律写 $\mathrm{i}$}（样式表没有专门的虚数单位宏）。\\
+\textbf{常用复势对照：}均匀流 $W=u_\infty z$（教材式 7.18）；点源汇 $W=\pm\dfrac{q}{2\pi}\ln z$（教材式 7.28）；
+点涡 $W=\dfrac{\Gamma}{2\pi\mathrm{i}}\ln z$（教材式 7.35）；圆柱绕流 $W=u_\infty z+\dfrac{M}{2\pi z}$（教材式 7.45）。
+\end{gongshi}
+
+\begin{gongshi}{极坐标下的 $\varphi$、$\psi$（教材式 7.13--7.15）}
+\[ u_r=\frac{\partial\varphi}{\partial r}=\frac1r\frac{\partial\psi}{\partial\theta},\qquad\qquad
+   u_\theta=\frac1r\frac{\partial\varphi}{\partial\theta}=-\frac{\partial\psi}{\partial r} \]
+\[ \dd\varphi=u_r\dd r+r u_\theta\dd\theta,\qquad\qquad
+   \dd\psi=-u_\theta\dd r+r u_r\dd\theta \]
+\textbf{含义：}前两式是\textbf{极坐标下的柯西-黎曼条件}，把 $u_r$、$u_\theta$ 同时用 $\varphi$ 和 $\psi$ 表出；
+教材式 7.14、7.15 是相应的积分式（对应直角坐标的 $\dd\varphi=u_x\dd x+u_y\dd y$、$\dd\psi=-u_y\dd x+u_x\dd y$）。\\
+\textbf{适用条件：}平面不可压缩势流；$\theta$ 由 $+x$ 轴\textbf{逆时针}量起。\\
+\textbf{用法：}题目给的是极坐标速度分量时（如 $u_r=U\cos\theta$、$u_\theta=-U\sin\theta$），
+用 $\dd\psi=-u_\theta\dd r+r u_r\dd\theta$ 积一次就能得到 $\psi$，比换成直角坐标再算快得多。
+\end{gongshi}
+
+\textbf{常考题型：}选择/填空（“复势 $W(z)=\varphi+\mathrm{i}\psi$ 的实部是\rule{1.8cm}{0.4pt}、虚部是\rule{1.8cm}{0.4pt}”；
+“复速度的模等于\rule{1.6cm}{0.4pt}”）；也可与 $\varphi$、$\psi$ 互求合并考小计算。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2“第六到第八章只有少量填空/判断/选择题，掌握基本概念＋公式套用即可”；E6 教材 7.1.4、7.1.5 节（书 p124--125）教材为独立小节}\quad\nandu{中}
+
+\begin{banfa}
+\textbf{① 复势三件套速记：}$W=\varphi+\mathrm{i}\psi$（实部势函数、虚部流函数）；
+$V=\dfrac{\dd W}{\dd z}$（实部 $u_x$、\textbf{虚部 $-u_y$}，虚部带负号是唯一的坑）。\\
+\textbf{② 极坐标看“管什么”：}$u_r$ 管进出、$u_\theta$ 管绕圈；求驻点就令两者同时为零。
+\end{banfa}
+\end{kaodian}
+
 \section{几种基本平面势流}
 
 以下四种流动是全部平面势流的"积木"。\textbf{每个都必须背出：$\varphi$、$\psi$、速度场、流线形状}。
 
 \begin{kaodian}{4}{均匀直线流（等速均匀流）}
-\begin{gongshi}{均匀直线流的 $\varphi$、$\psi$ 与速度场}
+\begin{gongshi}{均匀直线流的 $\varphi$、$\psi$ 与速度场（教材式 7.16--7.19）}
 \[ u_x=U,\quad u_y=0:\qquad \varphi=Ux,\qquad \psi=Uy \]
 \[ \text{一般情形 } u_x=a,\ u_y=b:\qquad \varphi=ax+by,\qquad \psi=-bx+ay \]
 \textbf{含义：}流场中各点速度矢量互相平行且大小相等。沿 $x$ 轴的均匀流（$U$ 沿 $+x$）
 $\varphi=Ux$、$\psi=Uy$；沿 $y$ 轴的均匀流（$u_y=V$）则 $\varphi=Vy$、$\psi=-Vx$。\\
 \textbf{适用条件：}无旋（显然 $w_z=\frac12(0-0)=0$）、不可压缩平面流动，
 是全章所有叠加问题的"底料"。\\
-\textbf{流线形状：}一组\textbf{平行于 $x$ 轴的直线}（$\psi=Uy=c$ 给出 $y=$ 常数）。
+\textbf{流线形状：}一组\textbf{平行于 $x$ 轴的直线}（$\psi=Uy=c$ 给出 $y=$ 常数）。\\
+\textbf{教材原话（书 p125）：}“\textbf{平面均匀流指在同一时刻，流场中所有点的速度矢量的大小与方向都相同的平面流动}”；教材式 7.16--7.19 依次给出 $\varphi=u_\infty x$、$\psi=u_\infty y$、$W=u_\infty z$、$W=u_\infty z\mathrm{e}^{-\mathrm{i}\alpha}$，并指出\textbf{等势线是与 $y$ 轴平行的直线簇、流线是与 $x$ 轴平行的直线簇}。
 \end{gongshi}
 \textbf{常考题型：}叠加题的基本组成部分（2015 年计算题第 8 题＝"速度为 $v_\infty$ 的均匀流＋点源"）。
 \textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2015 年试题计算题第 8 题（均匀流叠加点源）；E2"掌握基本概念＋公式套用"}\quad\nandu{易}
 \end{kaodian}
 
 \begin{kaodian}{4}{点源与点汇}
-\begin{gongshi}{点源的 $\varphi$、$\psi$ 与速度场}
+\begin{gongshi}{点源的 $\varphi$、$\psi$ 与速度场（教材式 7.20--7.25）}
 \[ u_r=\frac{Q}{2\pi r},\qquad u_\theta=0,\qquad \varphi=\frac{Q}{2\pi}\ln r,\qquad \psi=\frac{Q}{2\pi}\theta \]
 直角坐标：$u_x=\dfrac{Q}{2\pi}\dfrac{x}{x^2+y^2}$，$u_y=\dfrac{Q}{2\pi}\dfrac{y}{x^2+y^2}$。\\
 \textbf{含义：}流体从平面上一点 $o$ 沿径向均匀流向四周的流动称为\textbf{源流}，
@@ -252,10 +332,12 @@ $o$ 为\textbf{源点}；由源点流出的\textbf{单位厚度}流量 $Q$ 称�
 流速与半径 $r$ 成反比，恰使各同心圆周上的单宽流量都为 $Q$。\\
 \textbf{适用条件：}不可压缩平面势流；$r>0$，源点本身无定义。\\
 \textbf{流线形状：}以源点 $o$ 为起点的\textbf{半辐射线}（线族 $\theta=$ 常数）；
-等势线是以源点为圆心的\textbf{同心圆}，与流线正交——正好构成流网。
+等势线是以源点为圆心的\textbf{同心圆}，与流线正交——正好构成流网。\\
+\textbf{教材原话（书 p126）：}“\textbf{如果流体从某点向四周均匀径向流出}……称为点源”，“如果流体从四周往某点呈直线均匀径向流入……称为点汇”，“\textbf{流量 $q$ 为点源与点汇的强度}”。
+注意：教材把源强记作 $q$、本书记作 $Q$，含义相同（单位厚度的体积流量）；教材式 7.20--7.25 依次给出 $u_r=\pm\dfrac{q}{2\pi r}$、$\varphi=\pm\dfrac{q}{2\pi}\ln r$、$\psi=\pm\dfrac{q}{2\pi}\theta$（正号源、负号汇），教材式 7.26、7.27 为源汇不在原点时的表达式。
 \end{gongshi}
 
-\begin{gongshi}{点汇的 $\varphi$、$\psi$（源流的逆过程）}
+\begin{gongshi}{点汇的 $\varphi$、$\psi$（源流的逆过程；教材式 7.20--7.25 取负号）}
 \[ u_r=-\frac{Q}{2\pi r},\qquad \varphi=-\frac{Q}{2\pi}\ln r,\qquad \psi=-\frac{Q}{2\pi}\theta \]
 \textbf{含义：}四周流体沿平面均匀汇集到 $o$ 点被吸收，$o$ 点称为\textbf{汇点}。
 点汇流动就是点源流动的逆过程，各表达式形式相同、\textbf{只差一个符号}，可直接写出。\\
@@ -275,16 +357,18 @@ $o$ 为\textbf{源点}；由源点流出的\textbf{单位厚度}流量 $Q$ 称�
 \end{kaodian}
 
 \begin{kaodian}{4}{偶极子}
-\begin{gongshi}{偶极子的 $\varphi$、$\psi$ 与速度场（由源汇极限得到）}
-\[ \varphi=-\frac{M\cos\theta}{r}=-\frac{Mx}{x^2+y^2},\qquad\qquad
-   \psi=-\frac{M\sin\theta}{r}=-\frac{My}{x^2+y^2} \]
-其中偶极矩 $M=q\,\dd s$（$q$ 为源强、$\dd s$ 为源汇间距），令 $\dd s\to0$、$q\to\infty$ 且 $M$ 保持有限。\\
+\begin{gongshi}{偶极子的 $\varphi$、$\psi$ 与速度场（教材式 7.37--7.40）}
+\[ \varphi=+\frac{M\cos\theta}{2\pi r}=+\frac{Mx}{2\pi(x^2+y^2)},\qquad\qquad
+   \psi=-\frac{M\sin\theta}{2\pi r}=-\frac{My}{2\pi(x^2+y^2)} \]
+其中 $M=2aq$（$q$ 为源强，$2a$ 为源汇间距）：令 $2a\to0$、$q\to\infty$ 而乘积 $M=2aq$ 保持有限。
+教材原话（书 p129）：“\textbf{设源点与汇点沿 $x$ 轴无限接近，即令 $2a\to0$，同时设 $q$ 无限增大，这样就能保证乘积 $2aq$ 始终保持为一常数 $M$：$M=2aq$。这一极限状态下，源汇合成的平面流动称为偶极子流，$M$ 称偶极子强度（$M>0$）}”。\\
 \textbf{含义：}\textbf{偶极子＝源与汇无限接近的极限}：等强度的一个点源和一个点汇，
 源汇间距 $\dd s\to0$ 的同时强度无限增大，使乘积 $M=q\,\dd s$ 趋于有限常数。
-$M$ 称为\textbf{偶极矩}，其方向规定为\textbf{由汇指向源}。\\
+$M$ 称为\textbf{偶极矩}，其方向规定为\textbf{由汇指向源}（教材在 $(-a,0)$ 处放源、$(+a,0)$ 处放汇，故 $M$ 的方向就是 $-x$ 方向，书 p129）。\\
 \textbf{适用条件：}不可压缩平面势流；除原点（奇点）以外处处无旋。\\
 \textbf{流线形状：}在原点相切于 $x$ 轴的一族\textbf{圆}（$\psi=c$ 给出圆族），
-等势线是与之正交的另一族圆。
+等势线是与之正交的另一族圆。\\
+\textbf{教材原话（书 p130）：}等势线“是圆心在 $y$ 轴上、\textbf{与 $y$ 轴相切于原点的圆}，$C>0$ 时圆位于 $y$ 轴右侧，否则在 $y$ 轴左侧”；流线“是圆心在 $\left(0,-\dfrac{M}{4\pi D}\right)$ 的圆，\textbf{圆与 $x$ 轴相切于原点}，当 $D>0$ 时圆位于 $x$ 轴下方，否则位于 $x$ 轴上方”。
 \end{gongshi}
 \textbf{常考题型：}填空（"偶极子由\rule{1.8cm}{0.4pt}的极限得到"$\to$ 等强度源汇无限接近）；
 叠加题元件（均匀流＋偶极子＝圆柱体绕流）。
@@ -292,14 +376,22 @@ $M$ 称为\textbf{偶极矩}，其方向规定为\textbf{由汇指向源}。\\
 
 \begin{yicuo}
 偶极矩方向极易记混：规定为\textbf{由汇指向源}（不是由源指向汇）。
-另外偶极子的 $\varphi$、$\psi$ 里\textbf{总是带负号}（$\varphi=-M\cos\theta/r$），
+另外记住：$\varphi=+\dfrac{M\cos\theta}{2\pi r}$、$\psi=-\dfrac{M\sin\theta}{2\pi r}$——\textbf{只有 $\psi$ 带负号，$\varphi$ 是正的}（教材式 7.39、7.40，书 p130）；
 在"均匀流＋偶极子＝圆柱"的推导中，这个负号恰好用来把 $\psi$ 写成
-$\psi=Ur\sin\theta\bigl(1-a^2/r^2\bigr)$ 的形状，所以\textbf{不能丢}。
+$\psi=Ur\sin\theta\bigl(1-a^2/r^2\bigr)$ 的形状，所以\textbf{不能丢}；而分母里的 $2\pi$ 一旦丢掉，$a=\sqrt{M/(2\pi U)}$ 就再也对不上了。
 \end{yicuo}
+
+\begin{tishi}
+\textbf{（对旧稿的订正·偶极子的 $\varphi$、$\psi$）}旧稿写 $\varphi=-\dfrac{M\cos\theta}{r}$、$\psi=-\dfrac{M\sin\theta}{r}$（$M=q\,\dd s$），有两处问题：\\
+① \textbf{漏了分母中的 $2\pi$}，与本书“均匀流＋偶极子＝圆柱体绕流”一节所用的 $a=\sqrt{M/(2\pi U)}$ 自相矛盾；\\
+② 这一对 $\varphi$、$\psi$ \textbf{不满足柯西-黎曼条件}（代入 $\partial\varphi/\partial x=\partial\psi/\partial y$ 不成立），而教材式 7.37 与 7.38 给出的一对 $\varphi=+\dfrac{Mx}{2\pi(x^2+y^2)}$、$\psi=-\dfrac{My}{2\pi(x^2+y^2)}$ 严格满足。\\
+现统一按\textbf{教材式(7.37)--(7.40)（书 p129--130）}：源在 $(-a,0)$、汇在 $(+a,0)$，$M=2aq$，\textbf{$M$ 的方向由汇指向源}（即 $-x$ 方向、与来流相反，正好得到圆柱绕流）。\\
+另说明（OCR 判读）：教材式 7.38、7.40 的\textbf{负号在扫描 OCR 中丢失}，但由式 7.37 的柯西-黎曼共轭关系、以及教材 7.3.3 节的推导过程都可判定为负号，故此处按负号采用。
+\end{tishi}
 \end{kaodian}
 
 \begin{kaodian}{4}{纯环流（势涡）}
-\begin{gongshi}{纯环流的 $\varphi$、$\psi$ 与速度场}
+\begin{gongshi}{纯环流的 $\varphi$、$\psi$ 与速度场（教材式 7.30--7.32）}
 \[ u_r=0,\qquad u_\theta=\frac{\Gamma}{2\pi r},\qquad
    \varphi=\frac{\Gamma}{2\pi}\theta,\qquad \psi=-\frac{\Gamma}{2\pi}\ln r \]
 \textbf{含义：}流体绕某一点做匀速圆周运动、且速度与圆周半径\textbf{成反比}的流动。
@@ -311,13 +403,14 @@ $\psi=Ur\sin\theta\bigl(1-a^2/r^2\bigr)$ 的形状，所以\textbf{不能丢}。
 \textbf{流线形状：}以原点为圆心的\textbf{同心圆}；等势线为由原点出发的辐射线。
 \end{gongshi}
 
-\begin{gongshi}{环量与圆周速度的关系}
+\begin{gongshi}{环量与圆周速度的关系（教材式 7.30、7.83）}
 \[ \Gamma=\oint_L \bu\cdot\dd\bl=\oint_L u_\theta r\,\dd\theta=2\pi r u_\theta
    \qquad\Longrightarrow\qquad u_\theta=\frac{\Gamma}{2\pi r} \]
 \textbf{含义：}沿半径为 $r$ 的整个圆周积分，得 $\Gamma=2\pi r u_\theta$；
 由它反解出速度场 $u_\theta=\Gamma/(2\pi r)$，这就是纯环流的来源。
 $\Gamma$ 与 $r$ 无关，说明"环量"是刻画旋涡整体的量，而不是某处的速度。\\
-\textbf{适用条件：}不可压缩流体（$\rho$ 可提出积分号）；$\Gamma$ 的正负按逆时针为正的约定。
+\textbf{适用条件：}不可压缩流体（$\rho$ 可提出积分号）；$\Gamma$ 的正负按逆时针为正的约定。\\
+\textbf{教材原话（书 p127）：}“\textbf{平面上流体质点绕一固定点作匀速圆周运动，不同半径圆周上质点运动速度反比于圆周半径，这就形成了平面上一点涡}”；“$\Gamma$ 在任一圆周上是一常数，称为点涡的强度，当 $\Gamma>0$ 时，表示质点作逆时针转动”。教材式 7.30--7.32 即 $u_r=0$、$u_\theta=\dfrac{\Gamma}{2\pi r}$、$\varphi=\dfrac{\Gamma}{2\pi}\theta$、$\psi=-\dfrac{\Gamma}{2\pi}\ln r$；教材式 7.35 给出复势 $W=\dfrac{\Gamma}{2\pi\mathrm{i}}\ln z$；教材式 7.33、7.34、7.36 分别为直角坐标表达式与点涡不在原点时的表达式。
 \end{gongshi}
 
 \begin{yicuo}
@@ -341,7 +434,7 @@ $\Gamma$ 与 $r$ 无关，说明"环量"是刻画旋涡整体的量，而不是�
 均匀流（沿 $x$，$u_x=U$） & $Ux$ & $Uy$ & 平行 $x$ 轴的直线 \\
 点源（强度 $Q$） & $\dfrac{Q}{2\pi}\ln r$ & $\dfrac{Q}{2\pi}\theta$ & 由源点出发的辐射线 \\
 点汇 & $-\dfrac{Q}{2\pi}\ln r$ & $-\dfrac{Q}{2\pi}\theta$ & 指向汇点的辐射线 \\
-偶极子（偶极矩 $M$） & $-\dfrac{M\cos\theta}{r}$ & $-\dfrac{M\sin\theta}{r}$ & 与 $x$ 轴相切的圆族 \\
+偶极子（偶极矩 $M=2aq$） & $+\dfrac{M\cos\theta}{2\pi r}$ & $-\dfrac{M\sin\theta}{2\pi r}$ & 与 $x$ 轴相切的圆族 \\
 纯环流（环量 $\Gamma$） & $\dfrac{\Gamma}{2\pi}\theta$ & $-\dfrac{\Gamma}{2\pi}\ln r$ & 同心圆 \\
 \bottomrule
 \end{tabularx}
@@ -360,19 +453,51 @@ $\psi$ 中出现 $\theta$、$\psi$ 中出现 $\ln r$ 的组合方式，一律按
 \section{势流的叠加}
 
 \begin{kaodian}{4}{势流叠加原理}
-\begin{gongshi}{叠加原理}
+\begin{gongshi}{叠加原理（教材 7.3.1 节，书 p129，教材未给式号）}
 \[ \varphi=\varphi_1+\varphi_2+\cdots+\varphi_n,\qquad\qquad \psi=\psi_1+\psi_2+\cdots+\psi_n \]
 \textbf{含义：}把几个简单势流叠加成一个复合流动时，复合流动的流函数（或势函数）
 就是各原始流动的流函数（或势函数）的\textbf{简单代数相加}。
 之所以成立，是因为拉普拉斯方程是\textbf{线性}的：若 $\grad^2\varphi_1=0$、$\grad^2\varphi_2=0$，
 则 $\grad^2(\varphi_1+\varphi_2)=0$——两个调和函数的和仍是调和函数。\\
 \textbf{适用条件：}各叠加流动必须是\textbf{同一不可压缩流体的无旋流动}，且叠加后要检查叠加是否破坏了
-原有的无旋性（只在与原奇点重合处例外）。叠加后速度场也是各速度场的矢量和。
+原有的无旋性（只在与原奇点重合处例外）。叠加后速度场也是各速度场的矢量和。\\
+\textbf{教材原话（书 p129）：}“设想有 $n$ 个简单平面势流……现将 $n$ 个平面流动叠加得到一个新的平面流动，\textbf{新的流动仍然是一有势流动}”，其势函数为 $\varphi=\varphi_1+\varphi_2+\cdots+\varphi_n$、流函数为 $\psi=\psi_1+\psi_2+\cdots+\psi_n$；教材还给出\textbf{复势形式}：“它们的和 $W=W_1+W_2+\cdots+W_n$ 依然为一解析的复变函数，仍可作为某一有势流动的复势”；并指出得到 $\varphi$、$\psi$ 后“可求出流场的速度矢量，进一步以伯努利方程求出压强分布，完成流场分析”。
 \end{gongshi}
 \textbf{常考题型：}填空（"势流叠加原理的依据是控制方程是\rule{1.6cm}{0.4pt}方程"$\to$ 线性／拉普拉斯）；
 计算（叠加后求驻点、求流线，见下）。
 \textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2015 年试题计算题第 8 题（均匀流叠加点源）；E2"公式套用"；E6 教材 7.3 节}\quad\nandu{中}
 \end{kaodian}
+
+\begin{kaodian}{2}{教材 7.3.2 节：点源（汇）＋点涡＝螺旋流}
+\textbf{为什么补这一节：}教材在 7.3.2 节用一整节讲“点源（汇）与点涡—螺旋流”，并给出工程实例（水泵蜗壳）；
+而教材\textbf{没有}“均匀流＋点源＝半体”这样的独立小节（按已 OCR 的本章 31 页正文检索，无“半体”“兰肯”字样）。
+两块都要会：\textbf{教材考螺旋流，真题考半体}。
+
+\begin{gongshi}{螺旋流：点汇＋点涡的叠加（教材 7.3.2 节，书 p129，教材未给式号）}
+\[ u_r=\frac{q}{2\pi r},\qquad u_\theta=\frac{\Gamma}{2\pi r},\qquad
+   \frac{u_\theta}{u_r}=\frac{\Gamma}{q}=\text{常数},\qquad u=\frac{\sqrt{q^2+\Gamma^2}}{2\pi r} \]
+\[ \varphi=\frac{q}{2\pi}\ln r+\frac{\Gamma}{2\pi}\theta,\qquad\qquad
+   \psi=\frac{q}{2\pi}\theta-\frac{\Gamma}{2\pi}\ln r \]
+\textbf{含义：}把一个强度为 $q$ 的点汇（或点源）与一个强度为 $\Gamma$ 的点涡叠加：流体质点一面被“吸”向中心、一面绕中心旋转，
+合速度 $u$ 与径向的夹角 $\alpha$ 保持常数（$\tan\alpha=\Gamma/q$），而 $u$ 仍与 $r$ 成反比。\\
+\textbf{教材原话（书 p129）：}“平面坐标原点有一强度为 $q$ 的点汇和一强度为 $\Gamma$ 的点涡（$q>0$，$\Gamma>0$）”；
+“令 $\psi=C$，经计算可以得到 $r=C_1\mathrm{e}^{q\theta/\Gamma}$，在平面极坐标系下，这一方程代表的\textbf{等势线是平面对数螺旋线}，同样可以得到\textbf{流线也是平面对数螺旋线}，这两条曲线是正交的”；“\textbf{水泵矩形断面蜗壳中的理想流动是点源与点涡叠加的一个例子}”。\\
+\textbf{适用条件：}不可压缩平面势流；点汇（源）与点涡同在坐标原点；$q>0$、$\Gamma>0$（逆时针）。\\
+\textbf{OCR 说明：}教材 7.3.2 节的 $\varphi$、$\psi$ 公式在扫描件中只读到“$\ln r+$”“$\theta$、$\ln r$”等残形且未编号，
+上式按 7.3.1 节的叠加原理与柯西-黎曼条件写出，符号取教材“点汇＋逆时针点涡”。
+\end{gongshi}
+
+\textbf{常考题型：}选择/填空（“点源（汇）与点涡叠加得到\rule{1.8cm}{0.4pt}”$\to$ 螺旋流；“流线是\rule{1.6cm}{0.4pt}”$\to$ 对数螺旋线）；
+简答（“水泵蜗壳内的理想流动是哪两种基本势流的叠加”$\to$ 点源（汇）与点涡）。
+\textbf{重要度 \xstarfull{2}}\quad\yiju{E2“第六到第八章只有少量填空/判断/选择题，掌握基本概念＋公式套用即可”；E6 教材 7.3.2 节（书 p129）教材为独立小节且有工程实例}\quad\nandu{中}
+\end{kaodian}
+
+\begin{tishi}
+\textbf{（教材与旧稿的对照）}旧稿写的是“均匀流＋点源＝兰肯半体”，教材 7.3 节讲的是
+① 叠加原理（7.3.1）、② 点源（汇）＋点涡＝\textbf{螺旋流}（7.3.2）、③ 偶极子流（7.3.3），\textbf{没有兰肯半体}。
+但 2015 年计算题第 8 题考的正是“均匀流叠加点源求驻点与流线”，所以下面“兰肯半体”一框保留（依据是 E4 真题），
+其公式按叠加原理自行推得；考试时\textbf{教材的螺旋流与真题的半体都要会}。
+\end{tishi}
 
 \begin{kaodian}{4}{驻点与流线的求法，及兰肯半体}
 \begin{gongshi}{驻点的定义与求法}
@@ -417,7 +542,7 @@ $\psi<Q/2$ 的部分被"困"在内部，相当于一个无限长的半椭球状�
 \end{banfa}
 
 \textbf{常考题型：}计算（2015 年计算题第 8 题原文如下）。
-\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2015 年试题计算题第 8 题；E6 教材 7.3 节（兰肯半体）}\quad\nandu{中}
+\textbf{重要度 \xstarfull{4}}\quad\yiju{E4 2015 年试题计算题第 8 题；E6 教材 7.3.1 节叠加原理（教材无“半体”专节，本条公式按叠加原理推得）}\quad\nandu{中}
 
 \begin{zhenti}{2015 年试题 计算题第 8 题}{计算题（12 分）}
 将速度为 $v_\infty$ 的平行于 $x$ 轴的均匀流和在原点强度为 $q$ 的点源叠加，
@@ -426,7 +551,7 @@ $\psi<Q/2$ 的部分被"困"在内部，相当于一个无限长的半椭球状�
 \end{kaodian}
 
 \begin{kaodian}{3}{均匀流 ＋ 偶极子 ＝ 圆柱体绕流}
-\begin{gongshi}{叠加结果与驻点}
+\begin{gongshi}{叠加结果与驻点（教材式 7.41--7.45）}
 \[ \psi=U r\sin\theta\left(1-\frac{a^2}{r^2}\right),\qquad\text{其中圆半径 } a=\sqrt{\frac{M}{2\pi U}} \]
 \textbf{含义：}沿 $+x$ 的均匀流 $U$ 叠加一个偶极矩方向与来流相反（偶极子指向 $-x$、轴与 $x$ 轴重合）
 的偶极子，取 $a^2=M/(2\pi U)$，则 $\psi=0$ 的流线由两部分组成：
@@ -435,7 +560,9 @@ $r=a$ 这条流线把流场分成"圆外"和"圆内"两部分，圆内解无物�
 圆外的解就代表\smash{均匀流绕半径为 $a$ 的圆柱体的绕流}。
 \textbf{驻点}为 $r=a$、$\theta=0$ 与 $\theta=\pi$ 两点（即 $(\pm a,0)$），恰在圆柱表面的前后两点。\\
 \textbf{适用条件：}不可压缩平面势流；偶极矩方向必须与来流方向相反（若取同向，得到的仍是同样的圆，
-但流向要按速度场重新判定）。
+但流向要按速度场重新判定）。\\
+\textbf{教材原话（书 p130--131）：}“\textbf{设想将圆柱体从流场中抽去，然后在坐标原点处设置一强度 $M=2\pi u_\infty r_0^2$ 的偶极子}”（教材式 7.43、7.44 即 $\varphi=u_\infty r\cos\theta\left(1+\dfrac{r_0^2}{r^2}\right)$、$\psi=u_\infty r\sin\theta\left(1-\dfrac{r_0^2}{r^2}\right)$，教材式 7.45 为复势 $W=u_\infty z+\dfrac{M}{2\pi z}$）；
+教材指出 $\psi=0$ 的两支为 $y=0$ 与 $x^2+y^2=r_0^2$，并强调“\textbf{流体不可能穿越流线，因而理想的流线可以与固体壁面互换}”（书 p131）。
 \end{gongshi}
 \textbf{常考题型：}选择/填空（"均匀流与偶极子叠加得到\rule{1.8cm}{0.4pt}绕流"$\to$ 圆柱体）；
 与下一节（圆柱体绕流的压强与阻力）连成一道完整大题。
@@ -443,12 +570,16 @@ $r=a$ 这条流线把流场分成"圆外"和"圆内"两部分，圆内解无物�
 \end{kaodian}
 
 \begin{kaodian}{3}{点汇 ＋ 点源 ＋ 偶极子 ＝ 圆柱体带环流绕流}
-\begin{gongshi}{含环流的复合流动}
-\[ \psi=U r\sin\theta\left(1-\frac{a^2}{r^2}\right)+\frac{\Gamma}{2\pi}\ln r \]
+\begin{gongshi}{含环流的复合流动（教材式 7.51--7.58）}
+\[ \psi=U r\sin\theta\left(1-\frac{a^2}{r^2}\right)-\frac{\Gamma}{2\pi}\ln r \]
 \textbf{含义：}在"均匀流＋偶极子"（即圆柱绕流）的 $\psi$ 上再叠加一个纯环流
 （环量为 $\Gamma$），得到有环量的圆柱绕流。$\Gamma=0$ 时退化为上一节的无环量圆柱绕流。
 具体闭环流动的产生方式（如绕圆柱旋转）不在考试范围，只需知道\textbf{"环流叠加改变流线、产生升力"}。\\
-\textbf{适用条件：}不可压缩平面势流；环流为逆时针时 $\Gamma>0$。
+\textbf{适用条件：}不可压缩平面势流；环流为逆时针时 $\Gamma>0$。\\
+\textbf{（对旧稿的订正·环流项符号）}旧稿写 $\psi=Ur\sin\theta\left(1-\dfrac{a^2}{r^2}\right)+\dfrac{\Gamma}{2\pi}\ln r$，\textbf{环流项的符号反了}：
+教材式 7.32 纯环流的 $\psi=-\dfrac{\Gamma}{2\pi}\ln r$，教材式 7.54 圆柱有环量绕流的
+$\psi=u_\infty r\sin\theta\left(1-\dfrac{r_0^2}{r^2}\right)-\dfrac{\Gamma}{2\pi}\ln r$（书 p133），两处都是\textbf{负号}，故已改为减号。\\
+\textbf{教材式号（书 p133）：}有环量绕流的 $\varphi$、$\psi$ 直角坐标式为教材式 7.51、7.52，极坐标式为教材式 7.53、7.54，复势为教材式 7.55（$W=u_\infty z+\dfrac{M}{2\pi z}+\dfrac{\Gamma}{2\pi\mathrm{i}}\ln z$），速度分布为教材式 7.56、7.57，柱面上速度为教材式 7.58（$u_r=0$、$u_\theta=-2u_\infty\sin\theta+\dfrac{\Gamma}{2\pi r_0}$）。
 \end{gongshi}
 \textbf{常考题型：}填空/选择（叠加结果的组成）；与库塔-儒可夫斯基定理合并考"升力来自什么"。
 \textbf{重要度 \xstarfull{3}}\quad\yiju{E2"掌握基本概念＋公式套用"；E6 教材 7.3、7.4 节}\quad\nandu{中}
@@ -459,7 +590,7 @@ $r=a$ 这条流线把流场分成"圆外"和"圆内"两部分，圆内解无物�
 \subsection{无环流圆柱绕流与达朗贝尔佯谬}
 
 \begin{kaodian}{3}{无环量圆柱绕流：$\varphi$、$\psi$、表面速度与压强分布}
-\begin{gongshi}{无环量圆柱绕流的 $\varphi$、$\psi$ 与速度场}
+\begin{gongshi}{无环量圆柱绕流的 $\varphi$、$\psi$ 与速度场（教材式 7.41--7.47）}
 \[ \varphi=U\left(r+\frac{a^2}{r}\right)\cos\theta,\qquad\qquad
    \psi=U\left(r-\frac{a^2}{r}\right)\sin\theta \]
 \[ u_r=U\left(1-\frac{a^2}{r^2}\right)\cos\theta,\qquad
@@ -471,7 +602,7 @@ $r=a$ 这条流线把流场分成"圆外"和"圆内"两部分，圆内解无物�
 $\theta$ 由 $+x$ 轴（下游方向）量起；$\theta=0,\ \pi$ 为驻点（前后停驻点）。
 \end{gongshi}
 
-\begin{gongshi}{圆柱表面的速度最大值与压强分布}
+\begin{gongshi}{圆柱表面的速度最大值与压强分布（教材式 7.46--7.50）}
 \[ |u_{\theta}|_{\max}=2U\ \ \text{（在 }\theta=\pm90^\circ\text{ 处，即圆柱上下两侧顶点）} \]
 \[ p=p_\infty+\frac12\rho U^2\left(1-4\sin^2\theta\right) \]
 \textbf{含义：}由伯努利方程（无黏、不可压缩、沿流线）在无穷远与圆柱表面之间列式：
@@ -481,7 +612,8 @@ $\theta=\pm90^\circ$ 处 $u_\theta$ 最大（$2U$）、压强最低；
 $\theta=0,\pi$（前、后驻点）处 $u_\theta=0$、压强最高，为 $p_\infty+\frac12\rho U^2$；
 压强分布关于 $x$ 轴与 $y$ 轴均对称。\\
 \textbf{适用条件：}理想（无黏）不可压缩流体、无环量、圆柱表面上的点；
-用伯努利方程的前提是忽略质量力（或沿水平流线）且流动无旋。
+用伯努利方程的前提是忽略质量力（或沿水平流线）且流动无旋。\\
+\textbf{教材原话（书 p131--132）：}“在 $\theta=0$（B 点）和 $\theta=2\pi$（A 点）处 $u_\theta=0$，A、B 两点是\textbf{分流点，也称为驻点}。在 $\theta=\pm90^\circ$ 处 $u_\theta$ 达到最大值 $|u_\theta|=2u_\infty$”；“在圆柱表面的两个驻点处，压强达到最大值，而在圆柱表面 $\theta=\pm90^\circ$ 处压强降到最低”；“\textbf{沿圆柱面的压强系数与圆柱体的半径以及均匀流的速度、压强分布无关}”。教材式 7.49、7.50 即 $C_p=\dfrac{p-p_\infty}{\frac12\rho u_\infty^2}=1-4\sin^2\theta$。
 \end{gongshi}
 
 \textbf{常考题型：}填空（"圆柱表面最大速度为来流的\rule{1.2cm}{0.4pt}倍"$\to$ 2 倍）；
@@ -500,26 +632,31 @@ $p=p_\infty+\frac12\rho U^2(1-4)=p_\infty-\frac32\rho U^2$）。
 \end{kaodian}
 
 \begin{kaodian}{3}{达朗贝尔佯谬（阻力为零）与库塔-儒可夫斯基升力}
-\begin{gongshi}{达朗贝尔佯谬：无环量时阻力为零}
+\begin{gongshi}{达朗贝尔佯谬：无环量时阻力为零（教材 7.4.1 节柱面合力，书 p132）}
 \[ F_D=\int_0^{2\pi}-p\cos\theta\cdot a\,\dd\theta=0 \]
 \textbf{含义：}作用在圆柱上的合力由表面压强积分得到。
 $p=p_\infty+\frac12\rho U^2(1-4\sin^2\theta)$ 是 $\theta$ 的偶函数、且大小相等地
 分布在前后（$\theta$ 与 $\pi-\theta$）对应点上，于是 $x$ 方向（来流方向）的压强合力恒为零：
 \textbf{无环量时圆柱在理想流体中不受阻力}，这一反直觉结论称为\textbf{达朗贝尔佯谬}。\\
 \textbf{适用条件：}\textbf{理想（无黏）流体}、无环量、定常、不可压缩。
-真实流体中因黏性引起\textbf{边界层分离与尾涡}，圆柱前后压强不再对称，阻力并不为零。
+真实流体中因黏性引起\textbf{边界层分离与尾涡}，圆柱前后压强不再对称，阻力并不为零。\\
+\textbf{教材原话（书 p132）：}“以 $\theta_0$ 代替 $\theta$，压强值 $p$ 不变，说明圆柱体表面压强分布对称于 $x$ 轴……以 $\pi-\theta_0$ 代替 $\theta$，压强值也不变，说明圆柱体表面压强分布对称于 $y$ 轴……\textbf{这样，圆柱表面流体压强的合力为零}”；“理想均匀流绕流圆柱体时，圆柱体的\textbf{阻力 $D$ 和升力 $L$ 都等于零}”。
 \end{gongshi}
 
-\begin{gongshi}{库塔-儒可夫斯基升力定理}
+\begin{gongshi}{库塔-儒可夫斯基升力定理（教材式 7.61，书 p135）}
 \[ L=\rho U\Gamma \]
 \textbf{含义：}在均匀流叠加环量 $\Gamma$ 后，压强分布不再关于 $x$ 轴对称，
 垂直于来流方向出现合力——\textbf{单位长度圆柱所受的升力}为 $L=\rho U\Gamma$，
-方向由"来流方向旋转 90° 且与环量方向相反"定出：
-\textbf{来流沿 $+x$、环量逆时针（$\Gamma>0$）时，升力向上}（沿 $+y$）。\\
+方向由"来流方向旋转 $90^\circ$ 且与环量方向相反"定出：
+\textbf{来流沿 $+x$、环量逆时针（$\Gamma>0$）时，升力向下}（沿 $-y$）。\\
+\textbf{教材原话（书 p135）：}“上式称为库塔-儒可夫斯基升力公式，式中\textbf{负号表明圆柱体所受流体升力方向沿 $y$ 轴负向}”；“升力大小与来流速度 $u_\infty$、流体密度 $\rho$ 和旋转圆柱引起的环量 $\Gamma$ 成正比，\textbf{升力方向应将来流方向沿圆柱旋转方向反向旋转 $90^\circ$}”；该公式“可以推广应用于理想流体均匀流绕过任何形状有环量无分离的平面流动，例如具有流线型的翼型绕流等，在轴流式水泵、水轮机叶片设计中有重要应用”。\\
+\textbf{（对旧稿的订正·升力方向）}旧稿此处写“$\Gamma>0$ 时升力向上（沿 $+y$）”，\textbf{方向反了}。由教材式 7.58（$u_\theta=-2u_\infty\sin\theta+\dfrac{\Gamma}{2\pi r_0}$）可见 $\Gamma>0$ 时\textbf{圆柱上部速度减小、下部速度增大}，据伯努利方程上部压强高于下部，合力指向 $-y$——这正是教材式 7.61 出现负号的原因，也与“来流方向沿旋转方向反向旋转 $90^\circ$”一致（$+x$ 反向转 $90^\circ$ 即 $-y$）。\\
 \textbf{适用条件：}理想不可压缩流体的定常平面势流，含环量的圆柱（或任意截面柱体）绕流；
 $L$ 为\textbf{单位长度}（单位展长）上的升力，方向与来流垂直。\\
-\textbf{驻点位置随 $\Gamma$ 变化：}$\Gamma$ 增大时两个驻点沿圆柱表面往同一侧移动
-（逆时针环量使驻点下移），$\Gamma$ 增大到某临界值后，一个驻点离开壁面进入流场内部。
+\textbf{驻点位置随 $\Gamma$ 变化（教材式 7.59，书 p134）：}$\sin\theta=\dfrac{\Gamma}{4\pi u_\infty r_0}$，$\theta$ 由 $+x$ 轴逆时针量起。\\
+\textbf{（对旧稿的订正·驻点移动方向）}旧稿写“\textbf{逆时针}环量使驻点\textbf{下移}”，\textbf{与教材正好相反}。教材原话（书 p134）：“当柱体作\textbf{顺时针}转动，点涡强度 $\Gamma<0$ 时……使驻点\textbf{向下}移动”；“\textbf{当柱体作逆时针转动，驻点的位置沿 $y$ 轴向上移动}”。\\
+\textbf{教材给出的三种情形（书 p134）：}① $|\Gamma|<4\pi u_\infty r_0$：两个驻点仍在圆柱表面上并对称于 $y$ 轴，随 $|\Gamma|$ 增大\textbf{向下移动并互相靠拢}；② $|\Gamma|=4\pi u_\infty r_0$：两个驻点\textbf{重合成一点，出现在圆柱表面的最下端}；③ $|\Gamma|>4\pi u_\infty r_0$：柱面上不再有驻点，\textbf{驻点脱离柱面沿 $y$ 轴下移到某一位置}。\\
+\textbf{考场判断法：}直接把 $\Gamma$ 的正负代进 $\sin\theta=\dfrac{\Gamma}{4\pi u_\infty r_0}$——$\Gamma>0$ 时 $\sin\theta>0$，驻点在\textbf{上半柱面}（上移）；$\Gamma<0$ 时在下半柱面（下移）。教材讲完 $\Gamma<0$ 之后写的“随 $|\Gamma|$ 值的增加而向下移动，并互相靠拢”，是以 $\Gamma<0$ 为前提的，考试以公式符号为准。
 \end{gongshi}
 
 \begin{yicuo}
@@ -541,28 +678,46 @@ $L$ 为\textbf{单位长度}（单位展长）上的升力，方向与来流垂�
 \section{空间势流}
 
 \begin{kaodian}{1}{空间势流简介：空间点源汇、偶极子、绕球流动与附加质量}
-\begin{gongshi}{空间点源（三维源）的 $\varphi$ 与速度场}
+\begin{gongshi}{空间点源（三维源）的 $\varphi$ 与速度场（教材式 7.64、7.65）}
 \[ u_r=\frac{Q}{4\pi r^2},\qquad\qquad \varphi=-\frac{Q}{4\pi r} \]
 \textbf{含义：}流体由空间中一点沿半径方向均匀流出的流动。
 与平面源的最大区别是\textbf{球面积 $\propto r^2$}，所以速度为 $1/r^2$ 衰减、
 $\varphi$ 为 $-Q/(4\pi r)$（平面源是 $1/r$ 与 $\ln r$）。
 $Q$ 为体积流量。\\
-\textbf{适用条件：}不可压缩无旋空间流动；$r>0$，源点为奇点。
+\textbf{适用条件：}不可压缩无旋空间流动；$r>0$，源点为奇点。\\
+\textbf{教材原话（书 p137）：}教材用球坐标系（$R,\theta,\beta$）给出空间点源的速度分量 $u_R=\pm\dfrac{q}{4\pi R^2}$、$u_\theta=u_\beta=0$，积分得势函数（教材式 7.65）$\varphi=\mp\dfrac{q}{4\pi R}$；教材式 7.64 为空间均匀流 $\varphi=u_\infty R\cos\theta$。
+此处教材的 $R$ 与本节（以及本章其余部分）的 $r$ 含义相同，都是到场点的距离。\\
+\textbf{轴对称流函数（教材 7.5.3 节，书 p139--140，旧稿完全没写）：}教材用 7.5.2 节的轴对称流函数给出
+空间均匀流 $\psi=\dfrac12 u_\infty R^2\sin^2\theta$（教材式 7.71）、空间点源 $\psi=-\dfrac{q}{4\pi}\cos\theta$（教材式 7.72）、
+空间偶极子 $\psi=-\dfrac{M}{4\pi R}\sin^2\theta$（教材式 7.73）——这是本章流函数不能漏的一块（另见前面“轴对称流动有没有流函数”的订正框）。
 \end{gongshi}
 
 \begin{gongshi}{空间偶极子与绕球流动}
-\[ \varphi_{\text{偶极子}}=-\frac{M\cos\theta}{r^2},\qquad\qquad
+\[ \varphi_{\text{偶极子}}=+\frac{M\cos\theta}{4\pi r^2},\qquad\qquad
    \varphi_{\text{绕球}}=U\left(r+\frac{a^3}{2r^2}\right)\cos\theta \]
 \textbf{含义：}空间偶极子＝三维源汇无限接近的极限，$\varphi$ 按 $1/r^2$ 衰减；
 均匀流叠加适当强度的时空偶极子，得到\textbf{速度为 $U$ 的均匀流绕过半径 $a$ 的球}的流动，
 球面上 $u_r=0$，最大速度出现在球的赤道处。\\
-\textbf{适用条件：}不可压缩理想流体、无旋、定常；球面不穿透条件 $u_r\big|_{r=a}=0$。
+\textbf{适用条件：}不可压缩理想流体、无旋、定常；球面不穿透条件 $u_r\big|_{r=a}=0$。\\
+\textbf{教材原话（书 p138）：}空间偶极子由“在空间流动中，等强度的点源和点汇叠加”取极限得到，“首先将空间点汇置于 $+z$ 轴上，点源置于 $-z$ 轴上”，“即满足 $\lim q\Delta l=M$，$M$ 为一常数值，这样就可以得到空间偶极子流，$M$ 称为空间偶极子的强度（或偶极矩）”，其势函数为教材式 7.66。\\
+\textbf{（对旧稿的订正·空间偶极子）}旧稿写 $\varphi_{\text{偶极子}}=-\dfrac{M\cos\theta}{r^2}$，与教材式 7.66 相比\textbf{漏了 $4\pi$、且符号相反}；现按教材式 7.66 改为 $+\dfrac{M\cos\theta}{4\pi r^2}$（教材取 $M=\lim q\Delta l$，与平面偶极子 $M=2aq$ 的定义不同）。\\
+\textbf{圆球绕流的教材结论（教材式 7.74--7.78，书 p140--141）：}由零流面得 $\dfrac{M}{2\pi u_\infty}=a^3$，即 $M=2\pi u_\infty a^3$；
+$\psi=u_\infty r^2\left[1-\left(\dfrac{a}{r}\right)^3\right]\sin^2\theta$、$\varphi=u_\infty r\left[1+\dfrac12\left(\dfrac{a}{r}\right)^3\right]\cos\theta$；
+球面速度分布 $u_r=0$、$u_\theta=\dfrac32 u_\infty\sin\theta$，教材原话：“最大速度发生在 $\theta=\pm\pi/2$，
+$|u_\theta|_{\max}=\dfrac32 u_\infty$”“\textbf{绕圆球表面的速度最大值不如绕圆柱大}，这是因为绕圆球时流体有较宽裕的空间流过物体”；
+球面压强系数 $C_p=1-\dfrac94\sin^2\theta$，教材原话：“圆球表面上的压强分布是关于水平轴和铅直轴对称的，因而其合力等于零。因此，\textbf{圆球被均匀流绕过时不受流体合力作用}”。
 \end{gongshi}
 
 \noindent\textbf{附加质量（虚拟质量）：}物体在流体中做\textbf{非定常}运动时，必须带动周围流体一起加速，
 流体因此对物体产生一个附加的惯性作用，其效果相当于物体的质量增加了若干——
 这个等效增加的质量称为\textbf{附加质量（虚拟质量）}。
 记为 $m_{\text{附}}=\rho V k$（$k$ 取决于物体形状，球体 $k=0.5$）。\\
+
+\begin{tishi}
+\textbf{（教材覆盖情况说明）}在已 OCR 的本章 31 页正文（书 p119--149）中\textbf{没有出现“附加质量”或“虚拟质量”}——教材 7.5 节讲的是空间点源汇、轴对称流函数、圆球绕流与回转体（轴对称体）绕流。
+本段内容来自外校辅导书整理稿（杨树人《工程流体力学考点精讲》），真题中也无对应题目，故重要度保持 \xstarfull{1}；
+时间紧时只需记住一句：\textbf{物体作非定常运动要带动周围流体一起加速，相当于物体质量增大了若干}。
+\end{tishi}
 \textbf{常考题型：}概念选择（"附加质量反映的是\rule{1.6cm}{0.4pt}"$\to$ 带动周围流体加速的惯性效应）。
 \textbf{重要度 \xstarfull{1}}\quad\yiju{E4 历年真题中未见本章内容成题；E1 slide33"第七章＝概念为主"（仅章节级依据）}\quad\nandu{中}
 \end{kaodian}
@@ -586,15 +741,25 @@ $Q$ 为体积流量。\\
 \end{tabularx}
 \end{center}
 
-\begin{gongshi}{斯托克斯定理：速度环量与涡通量的关系}
+\begin{gongshi}{斯托克斯定理：速度环量与涡通量的关系（教材式 7.83、7.84）}
 \[ \Gamma=\oint_L \bu\cdot\dd\bl=\iint_A \bomega\cdot\dd\bA=\iint_A \Omega\,\dd A \]
 \textbf{含义：}沿封闭曲线 $L$ 的速度环量，等于穿过以 $L$ 为边界的曲面 $A$ 的\textbf{涡通量}。
 流体力学里的斯托克斯定理是数学上格林公式／斯托克斯公式在速度场与旋度上的应用，
 沟通了\textbf{线积分}（环量）与\textbf{面积分}（涡通量）两条路。\\
 \textbf{适用条件：}速度场连续可微、曲面 $A$ 以 $L$ 为边界且完全落在流场内；
 涡量为零的区域环量必为零——这正说明\textbf{无旋流动必无环量}（反之不必然，纯环流有环量却除涡心外无旋，
-故 7.2 节的纯环流必须把涡心排除在积分回路之外）。
+故 7.2 节的纯环流必须把涡心排除在积分回路之外）。\\
+\textbf{教材式号与教材原话（书 p143--146）：}涡线方程为教材式 7.81；涡通量为教材式 7.82（$J=\displaystyle\iint_A 2\omega_n\,\dd A$），教材定义是“\textbf{涡通量是指通过任一曲面的旋转角速度矢量的通量的 2 倍}”；速度环量为教材式 7.83，教材规定“\textbf{平面闭曲线的正向规定为逆时针方向}，空间闭曲线的正向由需要确定”；斯托克斯定理为教材式 7.84，教材表述是“\textbf{沿有旋流场中一闭曲线由速度矢量产生的环量 $\Gamma$ 等于该闭曲线内所有涡通量之和}”。\\
+\textbf{教材单独给出的复连通域情形（书 p146）：}“\textbf{通过复连通域的涡通量等于沿这个区域的外周线的速度环量与所有内周线的速度环量总和之差}”，即 $\Gamma_K-\sum\Gamma_k=\displaystyle\iint_A 2\omega_n\,\dd A$（教材图 7.29 用叶片叶型说明：把区域沿 AB 切开即化为单连通域）。\\
+\textbf{教材 7.6 节开篇原话（书 p143）：}“在一流场中，如果一个区域内处处旋转角速度矢量 $\bomega$ 都为 0，这一区域内的流动是无旋的即有势的。理想流体的流动可以是有势的，也可以是有旋的。但\textbf{黏性流体的流动一般是有旋的}”；“\textbf{涡线是有旋流场中某一瞬时的一条曲线，曲线上各点处的旋转角速度矢量都与这一曲线相切}”；教材并指出“恒定流动中涡线形状不随时间变化”“与涡管垂直的断面称为涡管断面，微小断面的涡管称为微元涡管。涡管内充满着做旋转运动的流体称为涡束”。
 \end{gongshi}
+
+\begin{zhenti}{教材【例 7.4】（书 p146）}{证明题}
+试证明均匀流的速度环量等于零。
+\end{zhenti}
+\noindent\textbf{教材证法：}① 取矩形封闭曲线（教材图 7.30a）：$\Gamma=\Gamma_{12}+\Gamma_{23}+\Gamma_{34}+\Gamma_{41}=bu+0-bu+0=0$；
+② 再取圆周线（教材图 7.30b）：$\Gamma_K=\displaystyle\int_0^{2\pi}u\sin\theta\cdot r\,\dd\theta=ur\int_0^{2\pi}\sin\theta\,\dd\theta=0$；
+③ 教材结论原话：“\textbf{同样，可以证明均匀流沿其他任何形状的封闭曲线的速度环量等于零}”。
 
 \textbf{常考题型：}选择（"涡量为零"，见下）；填空（"速度环量 $\Gamma$ 的方向：逆时针为\rule{1.2cm}{0.4pt}"$\to$ 正）。
 \textbf{重要度 \xstarfull{3}}\quad\yiju{E5 题库 \texttt{10.pdf} 选择第 13 题（"流体作无旋运动的特征"答"任意一点的涡量都为零"）；E2"掌握基本概念"}\quad\nandu{易}
@@ -636,7 +801,7 @@ $u$ 为该半径处的切向速度。
 \section{理想流体旋涡运动的基本定理}
 
 \begin{kaodian}{3}{汤姆孙（开尔文）定理}
-\begin{gongshi}{汤姆孙（开尔文）环量守恒定理}
+\begin{gongshi}{汤姆孙（开尔文）环量守恒定理（教材 7.7.1 节，书 p147，教材未给式号）}
 \[ \Gamma=\oint_L \bu\cdot\dd\bl=\text{常数}\qquad\text{（沿同一条封闭流体线，不随时间变化）} \]
 \textbf{含义：}在\textbf{理想、正压}流体中，当\textbf{质量力有势}时，
 沿任意一条封闭\textbf{流体线}（由同一批流体质点组成的封闭曲线）的速度环量
@@ -644,8 +809,12 @@ $u$ 为该半径处的切向速度。
 \textbf{适用条件（三项缺一不可）：}① 理想流体（无黏性）；② 正压流体（密度只是压强的函数，
 $\rho=\rho(p)$，均质不可压缩流体满足）；③ 质量力有势（如重力）。
 三者任一不满足，环量都可能随时间变化。\\
-\textbf{推论：}若某时刻流场无旋（处处 $\Gamma=0$），则涡线不会自行产生；
-反之有旋也不会凭空消失。
+\textbf{教材原话（书 p146--147）：}定理本体是“\textbf{汤姆逊定理可叙述为理想的不可压缩流体在有势质量力作用下沿一封闭流线体的速度环量不随时间变化}”，教材接着说明“作用于流体的重力是一有势力，因而在重力场中的理想正压流体将满足汤姆逊定理”——即\textbf{本体按“理想不可压缩流体＋有势质量力”叙述，再推广到正压流体}。\\
+\textbf{教材两个必背定义（书 p146）：}“\textbf{流线体是指由相同流体质点组成的线状体。流线体随主流一起运动，流动中其位置与形状均可能发生变化，但构成它的流体质点始终不变}”；“\textbf{正压流体指密度仅随压强变化的流体，液体可以视为正压流体}”。\\
+\textbf{（对旧稿的订正·术语与适用条件口径）}旧稿把封闭曲线写成“封闭流体线”，教材的专门术语是\textbf{流线体}；旧稿把三条条件并列成“理想＋正压＋有势”，而教材 7.7.1 节本体是“\textbf{理想不可压缩流体}＋有势质量力”，到 7.7.2 节才用“\textbf{正压}的理想流体在重力作用下”。\textbf{两种写法都能得分，但填空、简答按教材口径写更稳}。\\
+\textbf{推论（教材原话，书 p147）：}“\textbf{理想流体如果开始作无旋流动，流动将永远是有势的}”；
+反之，若某时刻流场无旋（处处 $\Gamma=0$），则涡线不会自行产生，有旋也不会凭空消失。
+教材的推理链是：静止理想流体沿闭曲线的环量为零 $\to$ 由汤姆逊定理环量恒为零 $\to$ 由斯托克斯定理涡通量恒为零 $\to$ 流动始终无旋。
 \end{gongshi}
 \textbf{常考题型：}选择/判断（"理想正压流体、质量力有势时，沿封闭曲线的速度环量\rule{1.6cm}{0.4pt}"$\to$ 守恒／不随时间变化）；
 简答（写出定理及三个适用条件）。
@@ -653,18 +822,23 @@ $\rho=\rho(p)$，均质不可压缩流体满足）；③ 质量力有势（如�
 \end{kaodian}
 
 \begin{kaodian}{3}{亥姆霍兹三定理与拉格朗日涡定理}
-\begin{gongshi}{亥姆霍兹三定理（涡管守恒三条）}
+\begin{gongshi}{亥姆霍兹三定理（涡管守恒三条，教材 7.7.2 节，书 p147--148）}
 \begin{enumerate}
-  \item \textbf{涡管强度不变：}在同一瞬间，沿同一涡管的各断面的涡通量保持不变
-        （$\Omega_1\dd A_1=\Omega_2\dd A_2$），即涡管强度沿管不变；
-  \item \textbf{涡管不能中断：}涡管在流体中\textbf{不能在流体内部中断}，
-        只能自行封闭成涡环，或延伸到流场边界（自由面、固体壁面）上；
-  \item \textbf{涡线随流体运动：}组成涡管的流体质点始终组成该涡管，涡线随流体一起运动。
+  \item \textbf{亥姆霍兹第一定理：}“在同一时刻，通过涡管任意涡管断面的涡通量不变”（涡管强度沿管不变，$\Omega_1\dd A_1=\Omega_2\dd A_2$）；
+  \item \textbf{亥姆霍兹第二定理：}“正压的理想流体在重力作用下，组成涡管的流体质点将始终组成涡管”（涡管随流运动时位置与形状可变，但管内流体质点不变）；
+  \item \textbf{亥姆霍兹第三定理：}“正压的理想流体在重力作用下，涡管强度不随时间而变化”。
 \end{enumerate}
-\textbf{含义：}三条都是"涡管（涡线）像物质线一样被流体带走、且强度不变"这一物理图像的不同侧面，
-是汤姆孙定理在涡管上的直接推论。\\
-\textbf{适用条件：}与汤姆孙定理相同（理想、正压、质量力有势）。
+\textbf{教材原话（书 p147--148）：}上面三条就是教材原文，直接背这三句。\\
+\textbf{适用条件：}第二、第三定理的教材表述都含“\textbf{正压的理想流体在重力作用下}”，与汤姆逊定理一致；
+教材另加一句提醒（书 p148）：“在使用上述定理时应注意它们的应用条件。工程中实际不存在理想流体，但在短时间内，可以认为流体运动满足这些条件，从而简化研究过程。”
 \end{gongshi}
+
+\begin{tishi}
+\textbf{（对旧稿的订正·亥姆霍兹三定理错位）}旧稿把“亥姆霍兹三定理”写成① 涡管强度不变、② 涡管不能中断、③ 涡线随流体运动，\textbf{与教材对不上}，差别有二：\\
+① 教材的\textbf{第二定理是“组成涡管的流体质点将始终组成涡管”}（＝旧稿的 ③），而教材的\textbf{第三定理是“涡管强度不随时间而变化”——旧稿整条缺失}，必须补上；\\
+② 旧稿的“涡管不能中断”\textbf{在教材中不是独立定理}，而是第一定理的\textbf{推论}。教材原话（书 p147）：“涡管断面面积不能减小到 $0$，否则这里的旋转角速度矢量的大小将趋近于无穷大，而这是不可能的。因此，流场中的\textbf{涡管首尾断面只能终止于液面或固壁处，或者涡管成为环状}。”选择题问“涡管能否在流体内部中断”答“不能”，依据写这句推论即可。\\
+（旧稿的 ② 不是错误结论，只是\textbf{不该占“定理”的位置}；现按教材把三条定理写准，推论另列。）
+\end{tishi}
 
 \begin{gongshi}{拉格朗日涡定理}
 \[ \text{理想正压流体、质量力有势，若某时刻流动无旋，则永远无旋} \]
@@ -688,18 +862,29 @@ $\rho=\rho(p)$，均质不可压缩流体满足）；③ 质量力有势（如�
 \end{kaodian}
 
 \begin{kaodian}{3}{毕奥-萨伐尔定理（涡对诱导速度）}
-\begin{gongshi}{毕奥-萨伐尔定理}
+\begin{gongshi}{毕奥-萨伐尔定理（教材 7.8 节，书 p148）}
 \[ \dd\bv=\frac{\Gamma}{4\pi}\frac{\dd\bl\times\br}{r^3} \]
 \textbf{含义：}一条强度为 $\Gamma$ 的\textbf{涡线段} $\dd\bl$ 在其周围空间点（相对位置矢量 $\br$、
-距离 $r$）诱导出的速度 $\dd\bv$，方向由右手定则给出：
-\textbf{右手四指顺环量 $\Gamma$ 绕涡线的方向，拇指指向涡线走向，速度方向由叉乘定出}。
+距离 $r$）诱导出的速度 $\dd\bv$，\textbf{教材原话（书 p148）：}“计算诱导速度可利用涡线与通电导线之间的相似关系，认为\textbf{涡线相当于通电导线，涡线周围产生的速度场 $u$ 相当于通电导线在其周围感应产生的磁场 $B$}”；
+“\textbf{诱导速度的方向由右手法则确定：大拇指表示旋涡转动方向，则诱导速度的方向由其余四指给出}”（教材把电流磁场公式 $\dd B=\dfrac{I\sin\alpha\,\dd l}{4\pi r^2}$ 与涡束对照，导入诱导速度）。
+旧稿写的“四指顺环量、拇指指涡线走向”方向与此一致，但考场若考“右手定则怎么用”，按教材这句写最稳。
 整个涡线（涡管）的诱导速度是各微段的叠加。\\
 \textbf{适用条件：}不可压缩流体；涡线在流场内部（公式给出的是该涡线在其他点产生的诱导速度，
 在涡线上本身 $r\to0$ 发散，需另行处理）。它把"涡"与"速度场"联系起来：
 \textbf{已知涡的分布 $\to$ 求速度场}，是涡动力学与升力面理论的基础。\\
 \textbf{常用结论：}无限长直线涡（强度 $\Gamma$）在距离 $r$ 处诱导的速度
-$u=\dfrac{\Gamma}{2\pi r}$——正是 7.2 节纯环流的速度公式（二者互为印证）。
+$u=\dfrac{\Gamma}{2\pi r}$——正是 7.2 节纯环流的速度公式（二者互为印证）。\\
+\textbf{教材式号（书 p148--149）：}任意形状涡束对任意点 $P$ 的诱导速度为教材式 7.85（$u=\displaystyle\int_l\frac{\Gamma\sin\theta}{4\pi r^2}\,\dd l$）；
+\textbf{有限长直线涡束}为教材式 7.86（$u=\dfrac{\Gamma}{4\pi r_0}(\cos\theta_2-\cos\theta_1)$，见下框的 OCR 说明）；
+\textbf{半无限长涡束} $u=\dfrac{\Gamma}{4\pi r_0}$、\textbf{无限长涡束} $u=\dfrac{\Gamma}{2\pi r_0}$（教材书 p149）——考试真正要记的是这两个特例。
 \end{gongshi}
+
+\begin{tishi}
+\textbf{（OCR 判读存疑，两说并列）}教材式 7.86 的余弦次序，在扫描 OCR 中只能读到“(cos$\theta_2$--cos$\theta_1$)”这一残形，
+而教材图 7.34 中 $\theta_1$、$\theta_2$ 标注在哪一端无法从 OCR 判读；若按 $\displaystyle\int_{\theta_1}^{\theta_2}\sin\theta\,\dd\theta$ 推，结果是 $\cos\theta_1-\cos\theta_2$。
+\textbf{两说并列，不要擅自删原说法}：题目直接给教材式 7.86 就按 $\cos\theta_2-\cos\theta_1$，自己推积分就按 $\cos\theta_1-\cos\theta_2$（两者只差一个符号，取决于 $\theta$ 从哪一端量起）。
+好在\textbf{半无限长与无限长两个特例不受次序影响}，考试优先记这两个。
+\end{tishi}
 \textbf{常考题型：}选择/填空（"无限长直线涡诱导速度与距离成\rule{1.2cm}{0.4pt}比"$\to$ 反比；
 "诱导速度的方向由\rule{1.6cm}{0.4pt}定则确定"$\to$ 右手）。
 \textbf{重要度 \xstarfull{3}}\quad\yiju{E2"掌握基本概念＋公式套用"；E6 教材 7.7、7.8 节}\quad\nandu{中}
@@ -708,14 +893,14 @@ $u=\dfrac{\Gamma}{2\pi r}$——正是 7.2 节纯环流的速度公式（二者�
 \section{旋涡诱导速度}
 
 \begin{kaodian}{1}{直线涡、涡对与涡列的诱导速度}
-\begin{gongshi}{单根无限长直线涡}
+\begin{gongshi}{单根无限长直线涡（教材式 7.85、7.86 的特例）}
 \[ u=\frac{\Gamma}{2\pi r} \]
 \textbf{含义：}强度为 $\Gamma$ 的无限长直线涡，在距涡线 $r$ 处诱导的速度大小与 $r$ 成反比；
 速度方向垂直于"涡线—场点"连线的平面，由右手定则定出。\\
 \textbf{适用条件：}无限长直涡线、不可压缩流体、场点不在涡线上。
 \end{gongshi}
 
-\begin{gongshi}{涡对与涡列（简介）}
+\begin{gongshi}{涡对与涡列（简介；教材 7.8.2 节只讲平面涡层）}
 \[ \text{等强度反向平行涡对（涡对）：两涡连线的中垂线上速度最大} \]
 \[ \text{同向涡列（卡门涡街模型）：涡列以一定速度向下游平移} \]
 \textbf{含义：}两根平行涡线组成\textbf{涡对}：\\等强度同向时为"涡旋对"，
@@ -724,7 +909,10 @@ $u=\dfrac{\Gamma}{2\pi r}$——正是 7.2 节纯环流的速度公式（二者�
 各涡互相诱导，使整列涡以某个确定的\textbf{平移速度}沿垂直于涡线的方向移动；
 这一结论是解释圆柱绕流"卡门涡街"尾涡形式的基础。\\
 \textbf{适用条件：}不可压缩流体、无限长直涡线、各涡强度恒定（无黏）；
-涡列平移速度由各涡的诱导速度叠加得到。
+涡列平移速度由各涡的诱导速度叠加得到。\\
+\textbf{教材原话（书 p150）：}“\textbf{在无限流场中布置一涡列，这一涡列由多个无限长涡束无间隔地直线排列而成，称为涡层}”；“由于 $\gamma$ 为负值，在涡层上方其速度为正，下方为负，即\textbf{当穿过涡层时，切向速度将产生间断（跃变）$\gamma$，而法向速度则是连续的}”（教材 7.8.2 节）。\\
+\textbf{教材覆盖说明：}教材 7.8.2 节只讨论\textbf{平面涡层}的速度跃变；本章已 OCR 的 31 页正文中\textbf{没有出现“涡对”}，也没有“两涡互相诱导绕转、涡列以确定速度向下游平移”的内容。
+本框的涡对、涡列结论来自外校辅导书整理稿，真题中未见成题，故重要度保持 \xstarfull{1}；考试认\textbf{“涡层切向速度间断、法向速度连续”}这句教材原话即可。
 \end{gongshi}
 \textbf{常考题型：}填空/选择（涡对、涡列的诱导速度方向判断）——真题中未见，属了解性内容。
 \textbf{重要度 \xstarfull{1}}\quad\yiju{E4 历年真题中未见成题；E1 slide33"第七章＝概念为主"（仅章节级依据）}\quad\nandu{难}
@@ -742,7 +930,9 @@ $u=\dfrac{\Gamma}{2\pi r}$——正是 7.2 节纯环流的速度公式（二者�
 $\varphi$ 与 $\psi$ 的关系（正交、CR、互求） & \xstarfull{5} & 中 & 处处正交；$\varphi_x=\psi_y$、$\varphi_y=-\psi_x$ \\
 均匀直线流 & \xstarfull{4} & 易 & $\varphi=Ux$、$\psi=Uy$ \\
 点源与点汇 & \xstarfull{4} & 易 & $u_r=Q/(2\pi r)$；$\psi=Q\theta/2\pi$ \\
-偶极子 & \xstarfull{4} & 中 & 源汇无限接近的极限；$M$ 由汇指向源 \\
+偶极子 & \xstarfull{4} & 中 & 源汇无限接近的极限；$M=2aq$，$M$ 由汇指向源 \\
+教材 7.1.4--7.1.5 节 复势与复速度 & \xstarfull{2} & 中 & $W=\varphi+\mathrm{i}\psi$；$V=\dd W/\dd z=u_x-\mathrm{i}u_y$ \\
+教材 7.3.2 节 螺旋流（点汇＋点涡） & \xstarfull{2} & 中 & 等势线与流线都是对数螺旋线 $r=C_1\mathrm{e}^{q\theta/\Gamma}$ \\
 纯环流（势涡） & \xstarfull{4} & 中 & 有势无旋；$u_\theta=\Gamma/(2\pi r)$ \\
 势流叠加、驻点与兰肯半体 & \xstarfull{4} & 中 & $\varphi=\sum\varphi_i$；驻点令 $u_x=u_y=0$ \\
 圆柱体绕流（无环量） & \xstarfull{3} & 中 & 均匀流＋偶极子；$|u_\theta|_{\max}=2U$ \\

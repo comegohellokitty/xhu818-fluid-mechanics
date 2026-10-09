@@ -121,8 +121,15 @@
 \section{逐章考点星级与依据}
 \label{sec:apA-tab}
 
-{\small
-\begin{longtable}{@{}p{0.13\textwidth}p{0.30\textwidth}cp{0.44\textwidth}@{}}
+{\small\setlength{\tabcolsep}{4pt}%
+% 列宽预算（实测溢出 24.6038pt 的根因就是这里算错了）：
+%   星列 `c` 的自然宽 = \xstarfull{5} = 51.71pt；
+%   3 处列间距 × 2 × 4pt = 24pt；
+%   三个 p 列 0.12+0.28+0.41 = 0.81\textwidth = 382.6pt（\textwidth = 472.32pt）。
+%   合计 458.3pt < 472.32pt，留 14pt 余量。
+% 原为 0.13+0.30+0.44 = 0.87\textwidth = 410.9pt，加默认 \tabcolsep=6pt 的 36pt
+% 再加 51.71pt = 498.6pt，比行宽多 26.3pt —— 实测 Overfull 24.6038pt。
+\begin{longtable}{@{}p{0.12\textwidth}p{0.28\textwidth}cp{0.41\textwidth}@{}}
 \toprule
 章 & 考点 & 星级 & 主要依据 \\
 \midrule
@@ -178,7 +185,7 @@
 \midrule
 \multicolumn{4}{@{}l}{\textbf{第 4 章\quad 流体动力学基本方程（E1/E2 点名"考试计算题重点"）}}\\
 4 & 实际流体总流的伯努利方程 & ★★★★★ & E1 slide16"计算题：伯努利方程"；E1/E2 slide33/5"第四章＝考试计算题重点"\\
-4 & 动量方程及其分量式 & ★★★★★ & E4 2015 计算（水平弯管求 $F_x,F_y$）；E4 2026 计算 3（教材例题 4.12）；E1 slide16\\
+4 & 动量方程及其分量式 & ★★★★★ & E4 2015 计算（水平弯管求 $F_x,F_y$）；E4 2026 计算 3（教材习题 4.12）；E1 slide16\\
 4 & 弯管、射流、喷嘴类综合题 & ★★★★★ & 同上 \\
 4 & 典型应用（文丘里、皮托、虹吸、孔口管嘴） & ★★★★★ & E4 2022 单选 6；E4 2026 计算 2（文丘里流量证明）\\
 4 & 带泵的伯努利方程与泵功率 & ★★★★ & E5 题库计算 4（水泵工况点与节流调节）\\
