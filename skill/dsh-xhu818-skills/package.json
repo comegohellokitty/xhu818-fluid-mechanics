@@ -2,7 +2,7 @@
   "name": "dsh-xhu818-skills",
   "version": "0.1.0",
   "private": true,
-  "description": "DeepSeek Harness skill pack: exam-prep-latex — turn scanned textbooks, past exam papers and question banks into a set of Chinese exam-prep LaTeX documents whose importance ratings are backed by traceable file-level evidence.",
+  "description": "DeepSeek Harness skill pack with two skills: xhu818-fluid-tutor — answer a student's un-solved problem or un-understood topic on the spot out of an already-built knowledge base (textbook rewrite, worked examples, past papers + answers, question banks), with the 818 importance star and its file-level evidence; and exam-prep-latex — the production pipeline that builds that knowledge base into Chinese exam-prep LaTeX documents whose importance ratings are backed by traceable file-level evidence.",
   "type": "module",
   "license": "MIT",
   "keywords": [

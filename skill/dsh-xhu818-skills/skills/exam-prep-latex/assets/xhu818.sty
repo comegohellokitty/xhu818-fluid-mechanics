@@ -96,6 +96,15 @@
 \newtcolorbox{yijubox}[1][]{enhanced,breakable,colback=black!3,colframe=black!30,boxrule=0.5pt,arc=1mm,
   left=5pt,right=5pt,top=3pt,bottom=3pt,title={\bfseries\sffamily 重要度依据},#1}
 
+% 教材例题框：\begin{liti}{4.3}{书 p61--62} 题目… \begin{jie} 解… \end{jie} \end{liti}
+% 参数 1 = 教材原编号（如 4.3），参数 2 = 书页码/出处（如 书 p61--62）。
+% 注意：tcolorbox 环境同样不能放进 \item，也不能跨 \end{ti}/\end{enumerate}。
+\newtcolorbox{liti}[2]{%
+  enhanced,breakable,colback=xhugreen!3,colframe=xhugreen!65,boxrule=0.7pt,arc=1mm,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,
+  fonttitle=\bfseries\sffamily,coltitle=white,colbacktitle=xhugreen!75,
+  title={教材例 #1\hfill\normalfont\small #2}}
+
 %====================== 标题格式 ======================%
 \RequirePackage{titlesec}
 \titleformat{\section}{\normalfont\Large\bfseries\sffamily\color{xhubrand}}{\thesection}{0.6em}{}
@@ -147,6 +156,20 @@
 \providecommand{\bx}{\bm{x}}
 \providecommand{\by}{\bm{y}}
 \providecommand{\bz}{\bm{z}}
+% 下面几个是补的：ch04 用了 \bw（相对速度矢量）而本 sty 原先没定义，
+% 未定义宏会在数学模式里报 Undefined control sequence，LaTeX 恢复时吞掉一个 $，
+% 把后续中文留在数学模式中，连带刷出 10 条 Missing character（实测 ch04.tex:442、:687）。
+\providecommand{\bw}{\bm{w}}
+\providecommand{\bg}{\bm{g}}
+\providecommand{\bp}{\bm{p}}
+\providecommand{\bW}{\bm{W}}
+\providecommand{\bE}{\bm{E}}
+\providecommand{\bS}{\bm{S}}
+\providecommand{\bG}{\bm{G}}
+\providecommand{\bbeta}{\bm{\beta}}
+\providecommand{\btheta}{\bm{\theta}}
+\providecommand{\bOmega}{\bm{\Omega}}
+\providecommand{\bGamma}{\bm{\Gamma}}
 \providecommand{\J}{J}
 
 %====================== 封面 / 题目环境 ======================%
@@ -189,8 +212,9 @@
   \end{tabularx}\par\vspace{2pt}}
 % 图示说明：原卷有图而本册用文字准确描述（原卷影印见附录）
 \newcommand{\tuyi}[1]{\par\vspace{1pt}\noindent{\footnotesize\color{xhugray}\textbf{〔图示〕}#1}\par\vspace{2pt}}
-% 解答：\begin{jie} ... \end{jie}
-\newenvironment{jie}{\par\smallskip\noindent{\bfseries\sffamily\color{xhubrand} 解：}\ignorespaces}{\par\smallskip}
+% 解答：\begin{jie} ... \end{jie}     默认印「解：」
+%   证明型例题（如教材例 7.4「试证明……」）用 \begin{jie}[证明] ... \end{jie}
+\newenvironment{jie}[1][解]{\par\smallskip\noindent{\bfseries\sffamily\color{xhubrand} #1：}\ignorespaces}{\par\smallskip}
 % 答案编号小节（用于真题答案段）
 \newcommand{\answ}[1]{\par\medskip\noindent{\bfseries\sffamily\color{xhubrand} #1}\par\nobreak\vspace{1pt}\nobreak}
 
