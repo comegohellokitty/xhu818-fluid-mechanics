@@ -42,11 +42,24 @@ Select-String -Path xhu818\latex\03-exams\parts\a-2022.tex -Pattern '文丘里'
 
 ---
 
+### 省 token 的读法（务必照做）
+
+1. **有文字层的 PDF**（本项目的五份成品、任何 Word 导出的 PDF）：`pdftotext` 直接抽，本地 0 成本。
+   `python xhu818\scripts\pdfread.py text <pdf> --pages 1-3`
+2. **扫描件**（赵琴教材、孔珑辅导书、2014/2016–2022 真题）：**OCR 早就跑过并已落盘**，直接搜，**不要重跑 OCR**。
+   `python xhu818\scripts\pdfread.py grep 水击 --lib zhqin --max 5`
+   命中行会标出 `p<扫描页>（书 p<书页>）`，可回查。
+3. **只把命中行读进上下文**（`--ctx 1` 通常够），**绝不整页、整本读**。要精读某页：
+   `python xhu818\scripts\pdfread.py page zhqin 121`（写书页码，脚本自动 +9）。
+4. 实测数据与细节见 `references/reading-pdfs.md`。
+
+---
+
 ## 路线 A：解题（学生说"这题不会"）
 
 ### A1. 读题
 - 学生发的是**图片**：直接用 `read_image` 看（这是多模态读题，最准）。看不清的小字/公式，再把图转成 PDF 用 `xhu818/scripts/ocr_pdf.py` 补 OCR。
-- 学生发的是**PDF**：先 `pdftotext` 看有没有文字层；没有（只有几字节）就走 OCR。
+- 学生发的是**PDF**：先 `python xhu818\scripts\pdfread.py which <pdf>` 判有没有文字层——有就 `text` 抽（0 成本），没有（纯扫描件）就去 `02-ocr` 里 `grep`（命中即带书页码），**不要重跑 OCR**。注意：`xhu818\pdf\` 里那五份成品**都有文字层**。
 - 学生**打字**：直接读。
 - **先复述题意**（题干 + 已知量 + 求什么），让学生能一眼确认你读对了。读错了后面全废。
 
@@ -54,11 +67,11 @@ Select-String -Path xhu818\latex\03-exams\parts\a-2022.tex -Pattern '文丘里'
 在 `references/topic-index.md`（127 个考点按章排好）里对上号，写出：
 `考点名 · 星级 ★★★★☆ · 〔依据：E4 2022 单选 3；E1 slide33"计算题基础入门"〕`
 
-星级与依据**照抄库里已有的**（`references/exam-index.md` 有 48 个考点码 K101–K805 的完整星级表）。**绝不允许自己编年份题号**——没依据就写「E6 教材 §x.x」，并把星级降下来。
+星级与依据**照抄库里已有的**（`references/exam-index.md` 有全部 **56** 个考点码 K101–K805 的完整星级表，由 `xhu818/scripts/gen_exam_index.py` 从 `xhu818/src/star_table.py` **自动生成**——要改星数请改那张表再重新生成）。**绝不允许自己编年份题号**——没依据就写「E6 教材 §x.x」，并把星级降下来。
 
 ### A3. 讲思路（先一句话，再展开）
 一句话说清："取哪两个断面（或哪个控制体）、列哪几个方程、要不要联立"。
-818 计算题的固定套路见 `references/solve-playbook.md`（伯努利、动量、静水总压力、管路、量纲分析、势流、边界层各自一套）。
+818 计算题的固定套路**分散在 `01-textbook/parts/chNN.tex` 里**：每个题型的 `gongshi` 框给公式与适用条件，`banfa` 框给「书上没有的方法」。先用 `topic-index.md` 把题对到考点，再读那一框。（原计划的 `references/solve-playbook.md` 尚未编写，见文末「待补」。）
 
 ### A4. 演算
 一步一步写，**每一步都标出它用的是哪条教材公式**（式号 + 书页）。数值代入写清楚，不要跳步。最终答案给单位、给方向（力、力矩要说明指向）。
@@ -150,5 +163,6 @@ Select-String -Path xhu818\latex\03-exams\parts\a-2022.tex -Pattern '文丘里'
 
 - `references/materials-map.md` —— 所有素材与成品的绝对路径、页码偏移、OCR 目录命名、脚本用法。
 - `references/topic-index.md` —— 教材第 1–8 章 **127 个考点**按章清单（含星级），用来把学生的问题对到考点上。
-- `references/exam-index.md` —— 考点码表（K101–K805，48 个，星级＋逐条 E1–E6 依据）、历年真题结构、2026 回忆版题目、题库来源（B1/B2/B3）。
-- `references/solve-playbook.md` —— 818 计算题六大题型的固定解题套路、常用公式表、高频易错清单。
+- `references/exam-index.md` —— **56** 个考点码（K101–K805）的星级＋逐条 E1–E6 依据，**自动生成**（改星数要改 `xhu818\src\star_table.py`，再跑 `python xhu818\scripts\gen_exam_index.py`）；另含超纲码 X1–X3、科目代码逐年、真题结构指路。
+- `references/reading-pdfs.md` —— 便宜地读 PDF／扫描件：文字层判定、OCR 缓存 grep 法、实测数据、省 token 铁律。配套脚本 `xhu818\scripts\pdfread.py`。
+- **待补**：`references/solve-playbook.md`（818 计算题六大题型的套路汇总）**尚未编写**；目前套路分散在 `01-textbook/parts/chNN.tex` 的 `gongshi`／`banfa` 框里，用 `topic-index.md` 定位即可。

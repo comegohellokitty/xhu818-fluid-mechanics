@@ -16,7 +16,7 @@
 | `xhu818\latex\05-konglong\parts\` | 孔珑配套辅导书题选：`q-ch01`–`q-ch08`＋`a-ch01`–`a-ch08` | 只收 818 考纲内的题；题在前答案在后 |
 | `xhu818\latex\common\xhu818.sty` | 样式包（星级/依据/考点/公式/例题/解答等全部盒子） | 要输出 PDF 时用 |
 | `xhu818\latex\WRITING-SPEC.md`、`EXAM-SPEC.md` | 写作与真题规范 | 含全部已知踩坑 |
-| `xhu818\src\star_table.py` | **考点码 → 星级＋依据 总表**（`STAR` 字典，48 个码）与超纲码 `OUT_OF_SCOPE` | 判考频的唯一权威表 |
+| `xhu818\src\star_table.py` | **考点码 → 星级＋依据 总表**（`STAR` 字典，**56** 个码：第 1–8 章分别 9/7/6/6/12/5/6/5）与超纲码 `OUT_OF_SCOPE` | 判考频的唯一权威表 |
 | `xhu818\src\star_rubric.md` | 证据文件 E1–E6 清单与星级判定规则 | |
 | `xhu818\src\bank_answers.md` | 题库 B2 的手写答案转录 | |
 
@@ -79,6 +79,8 @@
   - 打印中文要先 `$env:PYTHONIOENCODING='utf-8'`。
   - **数行数用 python**：PowerShell 的 `Get-Content` 会丢空行（`.Count` 得非空行数，偏低约 30%）；字节数 `p.stat().st_size` 一直准确。
 - OCR 脚本：`python xhu818\scripts\ocr_pdf.py --pdf <文件> --out <目录> [--first N] [--last N] [--px 1800] [--merge]`
+- **读 PDF／扫描件脚本**：`python xhu818\scripts\pdfread.py {which|text|grep|page|where} …` —— **优先用它，已落盘的 OCR 结果不要再重跑**（详见 `reading-pdfs.md`）
+- 考点码表生成：`python xhu818\scripts\gen_exam_index.py`（由 `xhu818\src\star_table.py` 生成本技能里的 `references/exam-index.md`）
   （单页 3 次重试、单页失败只记 `_failures.txt` 不中断；含 `install_safe_cv2_resize()` 绕开 OpenCV 间歇崩溃）。
 - poppler 24.03：`pdftoppm`（只支持 `-png`，大图加 `-scale-to 1700`）、`pdfinfo`、`pdftotext`。
 - TeX Live 2024：`D:\latex\texlive\2024\bin\windows`（用 `latexmk -xelatex`）。
