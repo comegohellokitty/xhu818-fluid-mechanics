@@ -96,7 +96,7 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 \noindent\textbf{教材解法（＝2026 回忆版计算题第 4 题的标准套路）：}
 先写出速度分量 $u_x=\dfrac{q}{2\pi}\dfrac{x}{x^2+y^2}$、$u_y=\dfrac{q}{2\pi}\dfrac{y}{x^2+y^2}$；
 再算 $\dfrac{\partial u_x}{\partial y}=\dfrac{\partial u_y}{\partial x}=-\dfrac{qxy}{2\pi(x^2+y^2)^2}$，两者相等即\textbf{有势}（$\varphi$ 存在）；
-积分得 $\varphi=\dfrac{q}{2\pi}\ln\sqrt{x^2+y^2}$；最后算二阶偏导验证 $\dfrac{\partial^2\varphi}{\partial x^2}+\dfrac{\partial^2\varphi}{\partial y^2}=0$，故 $\varphi$ 是\textbf{调和函数}。
+积分得 $\varphi=\dfrac{q}{2\pi}\ln\sqrt{x^2+y^2}$；最后算二阶偏导验证 $\dfrac{\partial^2\varphi}{\partial x^2}+\dfrac{\partial^2\varphi}{\partial y^2}=0$，故 $\varphi$ 是\textbf{调和函数}。\textbf{（完整题目原文与逐步解答见本考点后的「教材例 7.1」盒。）}
 \\
 
 \begin{tishi}
@@ -106,6 +106,40 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 ③ 教材\textbf{没有}“给出速度场直接证明速度势不存在”的例题——凡题目问“不存在”，按上面的方法算出 $w_z\ne0$ 即可，判据仍是教材 7.1.1 节 的“存在势函数的流动是无旋流动”。
 \end{tishi}
 \end{kaodian}
+
+\begin{liti}{7.1}{书 p121 · 速度势·点源流的有势性与调和性}
+\textbf{题目}（教材原题）一平面恒定不可压缩流动的流线为通过原点的向外发射的射线，
+速度大小 $u$ 反比于这点到原心的距离 $r$：$u=\dfrac{q}{2\pi r}$（$q$ 是正常数）。
+证明这一流动是有势的，求解势函数，并证明所得势函数是一调和函数。
+\tuyi{原点处是一点源，流线为自原点向外发射的射线，取极坐标 $r$、$\theta$（教材图 7.3）。}
+\begin{jie}
+① 写出速度分量。流线过原点，故速度沿径向，又 $\cos\theta=x/r$、$\sin\theta=y/r$，于是
+\[ u_x=u\cos\theta=\frac{q}{2\pi}\frac{x}{x^2+y^2},\qquad\qquad
+   u_y=u\sin\theta=\frac{q}{2\pi}\frac{y}{x^2+y^2} \]
+② 验证无旋（即证明有势）。求交叉偏导：
+\[ \frac{\partial u_x}{\partial y}=\frac{\partial u_y}{\partial x}
+   =-\frac{q}{2\pi}\cdot\frac{2xy}{\left(x^2+y^2\right)^2}
+   =-\frac{qxy}{\pi\left(x^2+y^2\right)^2} \]
+两式相等，即 $\omega_z=\frac12\left(\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}\right)=0$，
+流动无旋，所以\textbf{这一流动是有势的}，速度势 $\varphi$ 存在。
+③ 积分求势函数。由 $\dd\varphi=u_x\dd x+u_y\dd y$，
+\[ \varphi=\int\frac{q}{2\pi}\frac{x\,\dd x}{x^2+y^2}+f(y)
+   =\frac{q}{2\pi}\ln\sqrt{x^2+y^2}+f(y) \]
+再用 $\dfrac{\partial\varphi}{\partial y}=u_y$ 定待定函数：
+$\dfrac{q}{2\pi}\dfrac{y}{x^2+y^2}+f'(y)=\dfrac{q}{2\pi}\dfrac{y}{x^2+y^2}$，
+故 $f'(y)=0$、$f(y)=C$。根据教材“积分常数 $C$ 对势函数表示的流场无影响，一般认为 $C=0$”，
+令 $C=0$，得势函数
+\[ \varphi=\frac{q}{2\pi}\ln\sqrt{x^2+y^2}=\frac{q}{2\pi}\ln r \]
+它与教材式 7.20--7.25 中点源的势函数一致。
+④ 验证调和函数（求二阶偏导）：
+\[ \frac{\partial^2\varphi}{\partial x^2}=\frac{q}{2\pi}\frac{y^2-x^2}{\left(x^2+y^2\right)^2},
+   \qquad\qquad
+   \frac{\partial^2\varphi}{\partial y^2}=\frac{q}{2\pi}\frac{x^2-y^2}{\left(x^2+y^2\right)^2} \]
+\[ \frac{\partial^2\varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y^2}=0
+   \qquad\Longrightarrow\qquad \grad^2\varphi=0 \]
+所得势函数满足拉普拉斯方程，故是\textbf{调和函数}——这正是教材速度势函数的第 1 个特征。
+\end{jie}
+\end{liti}
 
 \begin{kaodian}{5}{流函数 $\psi$ 的定义、存在条件与流量关系}
 \textbf{流函数的引入：}由平面流动的连续性方程引入。
@@ -181,7 +215,7 @@ $u_x=ax$、$u_y=-ay$ 无旋（有 $\varphi$）；$u_x=-ay$、$u_y=ax$（绕原�
 \noindent\textbf{（教材出处）这道题与教材\textbf{【例 7.2】（书 p123）完全相同}：}教材原题是“一平面恒定流动的流函数为 $\psi(x,y)=-\sqrt{3}\,x+y$，求速度分布，写出通过 $A(1,0)$ 和 $B(2,\sqrt{3})$ 两点的流线方程”，连数据都是同一组。
 教材的解与结论：$u_x=\dfrac{\partial\psi}{\partial y}=1$、$u_y=-\dfrac{\partial\psi}{\partial x}=\sqrt{3}$，速度大小为 $2$、与 $x$ 正向夹角 $60^\circ$，教材原话“\textbf{这种速度分布不随地点变化的平面流叫平面均匀流}”；
 $A$、$B$ 两点的流函数值均为 $-\sqrt{3}$，所以两点在同一流线上，流线方程为 $-\sqrt{3}\,x+y=-\sqrt{3}$（即 $y=\sqrt{3}\,x-\sqrt{3}$）；两点间流量 $\Delta\psi=0$（若追问“A、B 间流量是多少”，答“\textbf{同一流线上流量为零}”）。
-另：教材\textbf{【例 7.3】（书 p123）}是“计算[例 7.1] 中平面流动的流函数”——$\varphi$、$\psi$ 互求的标准示范（把 $u_x$、$u_y$ 代入教材式 7.6 积分得 $\psi=\dfrac{q}{2\pi}\theta$）。
+另：教材\textbf{【例 7.3】（书 p123）}是“计算[例 7.1] 中平面流动的流函数”——$\varphi$、$\psi$ 互求的标准示范（把 $u_x$、$u_y$ 代入教材式 7.6 积分得 $\psi=\dfrac{q}{2\pi}\theta$）。\textbf{（【例 7.2】【例 7.3】的完整题目原文与逐步解答见本考点后的两个「教材例」盒。）}
 
 \begin{banfa}
 \textbf{「由 $\psi$ 求速度与流线」三步：}
@@ -203,6 +237,66 @@ $\psi$ 只要\textbf{平面}就存在（可压缩、有旋也行）。
 反过来"三维流动有流函数"是\textbf{错}的，\textbf{轴对称流动却有轴对称流函数}（教材 7.5.2 节，书 p138），不要把这一条一起判错。
 \end{yicuo}
 \end{kaodian}
+
+\begin{liti}{7.2}{书 p123 · 流函数·平面均匀流}
+\textbf{题目}（教材原题）一平面恒定流动的流函数为
+\[ \psi(x,y)=-\sqrt{3}\,x+y \]
+试求速度分布，写出通过 $A(1,0)$ 和 $B(2,\sqrt{3}\,)$ 两点的流线方程，
+并计算这两点流线之间的通过流量。
+\begin{jie}
+① 求速度分布。由流函数的定义式（教材式 7.8）$u_x=\dfrac{\partial\psi}{\partial y}$、
+$u_y=-\dfrac{\partial\psi}{\partial x}$：
+\[ u_x=\frac{\partial\psi}{\partial y}=1,\qquad\qquad
+   u_y=-\frac{\partial\psi}{\partial x}=\sqrt{3} \]
+② 说明速度分布的性质。平面上任一点的速度矢量大小与方向都相同：
+\[ |\bu|=\sqrt{1^2+\left(\sqrt{3}\,\right)^2}=2,\qquad\qquad
+   \alpha=\arctan\frac{\sqrt{3}}{1}=60^{\circ} \]
+教材原话：“\textbf{这种速度分布不随地点变化的平面流叫平面均匀流}”——
+故流动是速度为 $2$、与 $x$ 正向成 $60^{\circ}$ 角的平面均匀流。
+③ 求过 $A$、$B$ 两点的流线方程。流线就是 $\psi=$ 常数 的曲线，把两点坐标代入：
+\[ \psi_A=-\sqrt{3}\times 1+0=-\sqrt{3},\qquad\qquad
+   \psi_B=-\sqrt{3}\times 2+\sqrt{3}=-\sqrt{3} \]
+两点的流函数值相等，说明 $A$、$B$ \textbf{恰在同一条流线上}，两点共用同一条流线，方程为
+\[ -\sqrt{3}\,x+y=-\sqrt{3}\qquad\text{即}\qquad y=\sqrt{3}\,x-\sqrt{3} \]
+④ 计算两点流线之间的通过流量。由“两流线间单位厚度的流量等于其流函数值之差”，
+而两点流线是同一条流线：
+\[ q=\psi_A-\psi_B=-\sqrt{3}-\left(-\sqrt{3}\,\right)=0 \]
+即\textbf{通过这两点流线之间的流量为零}（教材原话：“可以看出，$A$、$B$ 两点实际上是在同一流线上”）。
+\end{jie}
+\end{liti}
+
+\begin{liti}{7.3}{书 p123 · 流函数·由 $\varphi$ 求 $\psi$（点源）}
+\textbf{题目}（教材原题）计算【例 7.1】中平面流动的流函数。
+\begin{jie}
+① 取【例 7.1】已求得的速度投影（平面直角坐标表达式）：
+\[ u_x=\frac{q}{2\pi}\frac{x}{x^2+y^2},\qquad\qquad
+   u_y=\frac{q}{2\pi}\frac{y}{x^2+y^2} \]
+② 代入流函数的全微分式（教材式 7.6）$\dd\psi=-u_y\dd x+u_x\dd y$：
+\[ \dd\psi=\frac{q}{2\pi}\frac{-y\,\dd x+x\,\dd y}{x^2+y^2} \]
+（$y$ 项前的负号来自式 7.6 的 $-u_y$，也正是右端能凑成全微分的必要条件。）
+③ 积分。上式右端括号内恰是 $\arctan(y/x)$ 的全微分：
+\[ \frac{\partial}{\partial x}\arctan\frac{y}{x}=-\frac{y}{x^2+y^2},\qquad\qquad
+   \frac{\partial}{\partial y}\arctan\frac{y}{x}=\frac{x}{x^2+y^2} \]
+于是 $\psi=\dfrac{q}{2\pi}\arctan\dfrac{y}{x}+C$；注意到 $\arctan(y/x)=\theta$，令 $C=0$，得流函数
+\[ \psi=\frac{q}{2\pi}\theta \]
+④ 校验。用极坐标下的定义式 $u_r=\dfrac1r\dfrac{\partial\psi}{\partial\theta}$：
+$\dfrac1r\cdot\dfrac{q}{2\pi}=\dfrac{q}{2\pi r}$，与【例 7.1】的速度场 $u_r=\dfrac{q}{2\pi r}$
+（也即 $\dfrac{\partial\varphi}{\partial r}$）完全一致；且 $\psi=\dfrac{q}{2\pi}\theta$ 正是教材式
+7.20--7.25 中强度为 $q$ 的点源流函数，其等值线 $\theta=$ 常数 就是【例 7.1】给出的那族射线。
+\end{jie}
+
+\begin{tishi}
+\textbf{（OCR 判读说明·此处不猜）}这道题的\textbf{最后结果式在扫描 OCR 中被打烂}：
+\texttt{page-0132.txt} 第 47--52 行只剩“积分上式，有……令 $C=0$，得流函数为……$2\pi$”，
+分数线与分母全部丢失。但\textbf{被积函数完整可读}（同页第 41--46 行，即
+$\dfrac{q}{2\pi}\dfrac{-y\,\dd x+x\,\dd y}{x^2+y^2}$），而该式的原函数唯一，就是 $\arctan(y/x)=\theta$，
+所以 $\psi=\dfrac{q}{2\pi}\theta$ 是\textbf{反推唯一确定}的结果，不是猜测。三条旁证：
+① 教材式 7.6 的符号（$-u_y\dd x+u_x\dd y$）与该被积函数严格吻合（缺了那个负号就凑不成全微分）；
+② 与教材式 7.20--7.25 的点源流函数一致；
+③ 用极坐标定义式 $\dfrac1r\dfrac{\partial\psi}{\partial\theta}$ 代回，恰得【例 7.1】的速度场。
+考试时若记不清符号，直接按点源写 $\psi=\dfrac{q}{2\pi}\theta$ 即可。
+\end{tishi}
+\end{liti}
 
 \begin{kaodian}{5}{速度势与流函数的关系：正交性、柯西-黎曼条件与互求}
 \begin{gongshi}{等势线与流线正交（教材 7.1.3 节，教材未给式号）}
@@ -759,7 +853,7 @@ $|u_\theta|_{\max}=\dfrac32 u_\infty$”“\textbf{绕圆球表面的速度最�
 \end{zhenti}
 \noindent\textbf{教材证法：}① 取矩形封闭曲线（教材图 7.30a）：$\Gamma=\Gamma_{12}+\Gamma_{23}+\Gamma_{34}+\Gamma_{41}=bu+0-bu+0=0$；
 ② 再取圆周线（教材图 7.30b）：$\Gamma_K=\displaystyle\int_0^{2\pi}u\sin\theta\cdot r\,\dd\theta=ur\int_0^{2\pi}\sin\theta\,\dd\theta=0$；
-③ 教材结论原话：“\textbf{同样，可以证明均匀流沿其他任何形状的封闭曲线的速度环量等于零}”。
+③ 教材结论原话：“\textbf{同样，可以证明均匀流沿其他任何形状的封闭曲线的速度环量等于零}”。\textbf{（完整题目与逐步解答见本考点后的「教材例 7.4」盒。）}
 
 \textbf{常考题型：}选择（"涡量为零"，见下）；填空（"速度环量 $\Gamma$ 的方向：逆时针为\rule{1.2cm}{0.4pt}"$\to$ 正）。
 \textbf{重要度 \xstarfull{3}}\quad\yiju{E5 题库 \texttt{10.pdf} 选择第 13 题（"流体作无旋运动的特征"答"任意一点的涡量都为零"）；E2"掌握基本概念"}\quad\nandu{易}
@@ -782,6 +876,29 @@ $|u_\theta|_{\max}=\dfrac32 u_\infty$”“\textbf{绕圆球表面的速度最�
 "同心圆周运动"与"无旋"并不矛盾——微团可以不转着沿圆轨走（纯环流）。
 \end{yicuo}
 \end{kaodian}
+
+\begin{liti}{7.4}{书 p146 · 速度环量·均匀流}
+\textbf{题目}（教材原题）试证明均匀流的速度环量等于零。
+\tuyi{教材图 7.30：(a) 矩形封闭曲线，四个顶点按 1、2、3、4 排列，水平边长为 $b$；
+(b) 以 $K$ 为圆心、$r$ 为半径的圆周线。两图中所讨论的都是速度为 $u$ 的水平均匀流。}
+\begin{jie}[证明]
+① 沿矩形封闭曲线（教材图 7.30a）。流体以等速度 $u$ 沿水平方向流动，矩形上、下两条水平边长为 $b$，
+按 1$\to$2$\to$3$\to$4$\to$1 绕行，有
+\[ \Gamma_{12341}=\Gamma_{12}+\Gamma_{23}+\Gamma_{34}+\Gamma_{41}=bu+0-bu+0=0 \]
+其中 1$\to$2 顺流向，$\Gamma_{12}=bu$；3$\to$4 逆流向，$\Gamma_{34}=-bu$；
+2$\to$3 与 4$\to$1 是竖直边，速度与路径垂直，$\Gamma_{23}=\Gamma_{41}=0$。
+② 沿圆周线（教材图 7.30b）。速度在圆周切向的投影为 $\pm u\sin\theta$，于是
+\[ \Gamma_K=\int_0^{2\pi}u\sin\theta\cdot r\,\dd\theta
+   =ur\int_0^{2\pi}\sin\theta\,\dd\theta=0 \]
+（切向投影取 $+u\sin\theta$ 还是 $-u\sin\theta$，取决于圆周正向取逆时针还是顺时针；
+两者只差一个符号，被积函数都是 $\sin\theta$ 的常数倍，积分同样为零。教材按 $u\sin\theta$ 写。）
+③ 教材结论原话：“\textbf{同样，可以证明均匀流沿其他任何形状的封闭曲线的速度环量等于零}。”
+④ 更一般的一句话证法（补全）：均匀流的速度是\textbf{常矢量} $\bu$，而沿任意封闭曲线 $\displaystyle\oint_L\dd\bl=0$，故
+\[ \Gamma=\oint_L\bu\cdot\dd\bl=\bu\cdot\oint_L\dd\bl=0 \]
+这与均匀流处处无旋（$\bomega=0$）是同一件事：由斯托克斯定理
+$\Gamma=\displaystyle\iint_A\bomega\cdot\dd\bA=0$，所以均匀流绕任意封闭曲线的环量都为零。
+\end{jie}
+\end{liti}
 
 \begin{kaodian}{3}{有旋流（旋涡流动）的压强分布}
 \begin{gongshi}{旋涡中沿半径方向的压强分布}

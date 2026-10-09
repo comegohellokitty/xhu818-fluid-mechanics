@@ -284,7 +284,7 @@ $\eta_{\text{泵}}$＝泵效（有效功率/轴功率），$\eta<1$ 因为泵内
 所以有效功率 $P_e$ 小于轴功率 $P$，即 $P_e<P$。有效功率与轴功率的比值称为\textbf{水泵效率}，用 $\eta$ 表示"：
 \[ \eta=\frac{P_e}{P}=\frac{\rho gQH_m}{P}\qquad\text{（教材式 4.25）} \]
 即教材的 $\eta=\dfrac{P_e}{P}$ 就是本讲义的 $\eta_{\text{泵}}=\dfrac{N_{\text{有效}}}{N_{\text{轴}}}$，$H_m$ 即 $H$，$P_e$ 即 $N_{\text{有效}}$，$P$ 即 $N_{\text{轴}}$。
-\textbf{凡带"电机的"题，教材只到轴功率 $P$，再除电机效率才是电机功率}，这一步教材例 4.2 做过完整示范（见下）。\\
+\textbf{凡带"电机的"题，教材只到轴功率 $P$，再除电机效率才是电机功率}，这一步教材例 4.2 做过完整示范（\textbf{完整题目原文与逐步解答见本考点后的「教材例 4.2」盒}）。\\
 \textbf{适用条件：}效率按题目给出的值代入；单位必须统一成国际单位（$Q$ 用 $\mathrm{m^3/s}$，
 $H$ 用 m，$\rho$ 用 $\mathrm{kg/m^3}$，得 $N$ 为 W；题给 $\mathrm{kW}$ 要换算）。\\
 \textbf{易混：}\textbf{扬程 $H$ 与功率是两个量}——同一台泵流量增大时扬程通常下降（泵的性能曲线），
@@ -311,6 +311,85 @@ $H$ 用 m，$\rho$ 用 $\mathrm{kg/m^3}$，得 $N$ 为 W；题给 $\mathrm{kW}$ 
 再对"\textbf{泵进口～出水池}"列带泵方程求 $H$；吸水管题里最常考的量是\textbf{泵允许吸上真空高度}与最大安装高度。
 \end{banfa}
 \end{kaodian}
+
+\begin{liti}{4.1}{书 p58 · 伯努利方程·变径有压管道与水银压差计}
+\textbf{题目}（教材原题）如图 4.10 所示，水池通过直径有改变的有压管道泄水。已知管道直径 $d_1=125\ \mathrm{mm}$、
+$d_2=100\ \mathrm{mm}$，喷嘴出口直径 $d_3=80\ \mathrm{mm}$；在断面 1--1、2--2 之间接水银压差计，
+读数 $\Delta h=180\ \mathrm{mm}$。不计水头损失，求管道的泄水流量 $Q$ 和喷嘴前端压力表的读数 $p$。
+
+\tuyi{水池接出一段水平有压管道：断面 1--1 处管径 $d_1=125\ \mathrm{mm}$，随后变径为 $d_2=100\ \mathrm{mm}$（断面 2--2），
+水银压差计的两支接管分别位于断面 1--1、2--2，读数 $\Delta h=180\ \mathrm{mm}$；$d_2$ 管段上装压力表，
+管道末端为 $d_3=80\ \mathrm{mm}$ 的喷嘴，喷嘴出口断面 3--3 直接排入大气。}
+
+\begin{jie}
+\textbf{① 水银压差计给出两断面的测压管水头差。}以出口管段中心轴为基准面（管道水平，故 $z_1=z_2=0$），
+水银压差计两端测压管水头之差为
+\[
+\begin{aligned}
+\left(z_1+\frac{p_1}{\rho g}\right)-\left(z_2+\frac{p_2}{\rho g}\right)&=\left(\frac{\rho_{Hg}}{\rho}-1\right)\Delta h=(13.6-1)\Delta h\\
+&=12.6\Delta h=12.6\times0.18=2.268\ \mathrm{m}
+\end{aligned}
+\]
+\textbf{② 连续性方程。}$v_2=v_1\dfrac{A_1}{A_2}=v_1\left(\dfrac{d_1}{d_2}\right)^2$。\\
+\textbf{③ 列 1--1、2--2 断面的伯努利方程（不计水头损失）：}
+\[ z_1+\frac{p_1}{\rho g}+\frac{v_1^2}{2g}=z_2+\frac{p_2}{\rho g}+\frac{v_2^2}{2g} \]
+将①代入并整理，得 $12.6\Delta h=\dfrac{v_2^2-v_1^2}{2g}=\dfrac{v_1^2}{2g}\left[\left(\dfrac{d_1}{d_2}\right)^4-1\right]$，于是
+\[ v_1=\sqrt{\frac{12.6\Delta h\times2g}{\left(d_1/d_2\right)^4-1}}
+      =\sqrt{\frac{12.6\times0.18\times2\times9.8}{\left(125/100\right)^4-1}}
+      =\sqrt{\frac{44.45}{1.4414}}=5.55\ \mathrm{m/s} \]
+\[ Q=\frac{\pi d_1^2}{4}v_1=\frac{3.14\times0.125^2}{4}\times5.55=0.068\ \mathrm{m^3/s} \]
+\textbf{④ 列压力表所在断面与 3--3 断面的伯努利方程。}压力表所在断面的管径与 2--2 断面相同（$d=100\ \mathrm{mm}$），故
+\[
+\begin{aligned}
+v&=\left(\frac{d_1}{d}\right)^2v_1=\left(\frac{0.125}{0.1}\right)^2\times5.55=8.67\ \mathrm{m/s}\\
+v_3&=\left(\frac{d_1}{d_3}\right)^2v_1=\left(\frac{0.125}{0.08}\right)^2\times5.55=13.55\ \mathrm{m/s}
+\end{aligned}
+\]
+喷嘴出口排入大气，$p_3=0$（相对压强）；两断面同高，故
+\[ \frac{p}{\rho g}+\frac{v^2}{2g}=0+\frac{v_3^2}{2g}\ \Longrightarrow\
+   p=\frac{\rho}{2}\left(v_3^2-v^2\right)=\frac{1000}{2}\left(13.55^2-8.67^2\right)=54.2\ \mathrm{kPa} \]
+\textbf{⑤ 结论：}泄水流量 $Q=0.068\ \mathrm{m^3/s}$，喷嘴前端压力表读数 $p=54.2\ \mathrm{kPa}$。
+\end{jie}
+\end{liti}
+
+\begin{tishi}
+\textbf{OCR 订正与反推校核（本讲处理）：}教材 OCR（\texttt{page-0067.txt}）在压差计关系处印作"因 …=12.6$\Delta$h"、
+速度处印作"$\frac{0.125}{0.1}\times5.55$"，分式与下标整片丢失。本讲义按\textbf{水银压差计关系}
+$\left(z_1+p_1/\rho g\right)-\left(z_2+p_2/\rho g\right)=\left(\rho_{Hg}/\rho-1\right)\Delta h$ 补出系数
+（取 $\rho_{Hg}/\rho=13.6$，得 $12.6$），并逐项反推校核：$v_1=5.55$、$v_2=8.67$、$v_3=13.55\ \mathrm{m/s}$
+分别与 $\left(125/100\right)^4-1=1.4414$、$\left(0.125/0.1\right)^2=1.5625$、$\left(0.125/0.08\right)^2=2.4414$ 一致，
+$Q=0.068\ \mathrm{m^3/s}$、$p=54.2\ \mathrm{kPa}$ 与教材答案位数一致。
+教材本题计算取 $\pi=3.14$（OCR 中"$3.14\times0.125^2$"可读），本讲义沿用。
+\end{tishi}
+
+\begin{liti}{4.2}{书 p58--59 · 带泵伯努利方程与电动机功率}
+\textbf{题目}（教材原题）如图 4.11 所示，已知离心泵的提水高度 $z=20\ \mathrm{m}$，抽水流量 $Q=35\ \mathrm{L/s}$，
+泵的效率 $\eta_1=0.82$。若吸水管路和压水管路总水头损失 $h_w=1.5\ \mathrm{mH_2O}$，电动机的效率 $\eta_2=0.95$，
+试求电动机的功率 $P$。
+
+\tuyi{吸水池液面为 1--1 断面，经吸水管接离心泵，再经压水管排入出水池，出水池液面为 2--2 断面；
+两液面高差（提水高度）$z=20\ \mathrm{m}$，两液面均通大气。}
+
+\begin{jie}
+\textbf{① 列 1--1、2--2 断面的带泵伯努利方程}（以吸水池液面为基准面，$z_1=0$）：
+\[ z_1+\frac{p_1}{\rho g}+\frac{\alpha_1v_1^2}{2g}+H=z_2+\frac{p_2}{\rho g}+\frac{\alpha_2v_2^2}{2g}+h_w \]
+\textbf{② 化简。}两液面面积很大，$v_1\approx v_2\approx0$；两液面均通大气，取相对压强 $p_1=p_2=0$，且 $z_2-z_1=z$，于是
+\[ 0+0+0+H=z+0+0+h_w\ \Longrightarrow\ H=z+h_w=20+1.5=21.5\ \mathrm{m} \]
+\textbf{③ 泵的有效功率（单位时间内传给水的能量）：}
+\[ N_{\text{有效}}=\rho gQH=1000\times9.8\times0.035\times21.5=7374.5\ \mathrm{W}=7.3745\ \mathrm{kW} \]
+\textbf{④ 电动机功率＝有效功率依次除以泵效率与电动机效率}（教材式 4.25）：
+\[ P=\frac{N_{\text{有效}}}{\eta_1\eta_2}=\frac{7.3745}{0.82\times0.95}=9.47\ \mathrm{kW} \]
+\textbf{⑤ 结论：}泵的扬程 $H=21.5\ \mathrm{m}$，电动机功率 $P=9.47\ \mathrm{kW}$。
+\end{jie}
+\end{liti}
+
+\begin{tishi}
+\textbf{OCR 订正：}教材 OCR（\texttt{page-0067.txt} 第 71--72 行）把提水高度印作"提水高度 $x=20$m"，
+而化简过程（\texttt{page-0068.txt} 第 6--15 行）印作"$p_1=p_2=0$"、"$0+0+0+H=x+0+0+h_w$"、"$H=20+1.5=21.5$（m）"。
+按带泵伯努利方程 $H=z+h_w$，该字母即\textbf{两液面高差（提水高度）$z$}，本讲义写作 $z$（教材 OCR 此处 $x$ 与 $z$ 不可分辨，
+数值 $20\ \mathrm{m}$ 与结果 $H=21.5\ \mathrm{m}$ 可读、自洽）。功率式的分子在 OCR 中印成不可判读的数字串（"17172"），
+本讲义按 $\rho gQH$ 反推为 $7374.5\ \mathrm{W}$，与教材结果 $P=9.47\ \mathrm{kW}$ 一致。
+\end{tishi}
 
 \begin{kaodian}{5}{伯努利方程的典型应用：文丘里管、皮托管、虹吸管、管嘴与孔口}
 \textbf{是什么：}伯努利方程＋连续性方程的组合应用。核心套路是\textbf{把"求速度"的问题转化成"测压差"的问题}。
@@ -547,14 +626,14 @@ $\to$ \textbf{动量方程}；\textbf{求压强、流速、流量、水头损失
 \begin{kaodian}{5}{动量方程的典型题：水平弯管、变径弯管、射流冲击、喷嘴}
 \textbf{是什么：}动量方程的四类经典应用，都遵循同一套"取控制体→选断面→建坐标→列分量式→联立连续性/伯努利"流程。
 
-\textbf{（一）水平弯管（2015 年真题题型，\textbf{教材例 4.3} 就是本题的完整范本）}
+\textbf{（一）水平弯管（2015 年真题题型，\textbf{教材例 4.3} 就是本题的完整范本；\textbf{完整题目原文与逐步解答见本考点后的「教材例 4.3」盒}）}
 教材例 4.3（书 p61--62）的题干与解法可直接背下来当模板：$d_1=500\ \mathrm{mm}$、$d_2=400\ \mathrm{mm}$、转角 $\theta=45^{\circ}$、
 $v_1=1.2\ \mathrm{m/s}$、$p_1=245\ \mathrm{kPa}$（相对压强），不计弯管水头损失。
 教材的\textbf{取控制体与受力分析}原文为："取过流断面 1-1、2-2 及管壁所围成的空间为控制体。
 分析作用在控制体内流体上的力，包括：\textbf{过流断面上的压力 $P_1$、$P_2$；弯管对水流的作用力 $F_x$、$F_y$。}
-选直角坐标系 $xoy$，\textbf{重力在 $xoy$ 水平面上无分量}。令 $\beta_1=\beta_2=1$，列总流动量方程 $x$、$y$ 轴方向的投影式"：
+选直角坐标系 $xoy$，\textbf{重力在 $xoy$ 水平面上无分量}。令 $\beta_1=\beta_2=1$，列总流动量方程 $x$、$y$ 轴方向的投影式"（\textbf{注意}：教材先把 $F_x$、$F_y$ 说成"弯管对水流的作用力"，但两条投影式与最后的方向说明都按\textbf{水流对弯管的作用力}书写，完整解答见本考点后的「教材例 4.3」盒）：
 \[ \sum F_x=P_1-P_2\cos\theta-F_x=\rho Q\left(v_2\cos\theta-v_1\right) \]
-\[ \sum F_y=-P_2\sin\theta-F_y=\rho Q\left(-v_2\sin\theta-0\right) \]
+\[ \sum F_y=P_2\sin\theta-F_y=\rho Q\left(-v_2\sin\theta-0\right) \]
 教材的完整链条是："由连续性方程，得" $v_2=v_1\dfrac{A_1}{A_2}=1.2\times\left(\dfrac{0.5}{0.4}\right)^2=1.875\ \mathrm{m/s}$、$Q=\dfrac{\pi d_1^2}{4}v_1=0.236\ \mathrm{m^3/s}$；
 "以管轴线为基准，列 1、2 断面伯努利方程"得 $p_2=243.96\ \mathrm{kPa}$；代入动量方程得 $F_x=26.38\ \mathrm{kN}$、$F_y=21.98\ \mathrm{kN}$；
 最后"\textbf{水流对弯管的作用力与弯管对水流的作用力，大小相等方向相反}"，即 $F'_x=26.38\ \mathrm{kN}$（方向与 $ox$ 轴方向相同）、
@@ -574,7 +653,7 @@ $F'_y=21.98\ \mathrm{kN}$（方向与 $oy$ 轴方向相同）。\\
 再由伯努利方程求 $p_2$，然后照（一）列分量式。此时动量的两个分量一般都不能忽略。
 竖直管段或竖弯管必须把重力 $\rho gV$ 计入相应分量。
 
-\textbf{（三）射流冲击固定平板}（\textbf{教材例 4.4} 就是本类的范本，书 p62）：教材例 4.4 为水平射流 $v_0=6\ \mathrm{m/s}$ 冲击与射流成 $\alpha=60^{\circ}$ 的斜置平板，
+\textbf{（三）射流冲击固定平板}（\textbf{教材例 4.4} 就是本类的范本，书 p62；\textbf{完整题目原文与逐步解答见本考点后的「教材例 4.4」盒}）：教材例 4.4 为水平射流 $v_0=6\ \mathrm{m/s}$ 冲击与射流成 $\alpha=60^{\circ}$ 的斜置平板，
 $A_0=0.01\ \mathrm{m^2}$，不计摩擦，求（1）射流对平板的作用力 $F$；（2）流量比 $Q_1/Q_2$。教材结论 $F'=0.312\ \mathrm{kN}$（平板对射流）、$F=0.312\ \mathrm{kN}$（射流对平板，方向与 $oy$ 反向）；
 第（2）问用 $x$ 向动量方程 $0=(\rho Q_1v_1-\rho Q_2v_2)-\rho Q_0v_0\cos\alpha$ 与 $Q_0=Q_1+Q_2$ 联立。
 教材原文要点："因整个射流在大气中，过流断面 1-1、2-2、0-0 的\textbf{压强可认为等于大气压强}。因不计水流与平板之间的摩擦力，
@@ -591,7 +670,7 @@ $F=\rho Q(v_1-v_2)$（配合断面压力 $p_1A_1$ 使用）；求喷嘴处压强
 这就是"\textbf{用动量方程求力、用伯努利方程求压强}"的两方程联用结构。
 
 \textbf{常考题型：}计算（2015 年试题水平弯管求 $F_x$、$F_y$；2026 年回忆版第 3 题＝\textbf{教材习题 4.12}——均为弯管类，
-教材例 4.3 与例 4.4 是两个直接范本）；
+教材例 4.3 与例 4.4 是两个直接范本，\textbf{完整题目原文与逐步解答见本考点后的「教材例 4.3」「教材例 4.4」盒}）；
 选择（射流冲击平板的力与流速的几次方成正比——$\rho Av^2$，\textbf{二次方}）。
 \textbf{重要度 \xstarfull{5}}\quad\yiju{E4 2015 年试题计算题（水平弯管动量方程求 $F_x$、$F_y$）；E4 2026 年回忆版计算题第 3 题＝书上动量方程习题 4.12；E2 第四章"需掌握计算套路"}\quad\nandu{难}
 
@@ -647,6 +726,107 @@ $F=\rho Q(v_1-v_2)$（配合断面压力 $p_1A_1$ 使用）；求喷嘴处压强
 \end{yicuo}
 \end{kaodian}
 
+\begin{liti}{4.3}{书 p61--62 · 动量方程·水平变径弯管}
+\textbf{题目}（教材原题）：有一水平放置的变径弯曲管道，如图 4.13 所示。已知 $d_1=500\ \mathrm{mm}$、$d_2=400\ \mathrm{mm}$，
+转角 $\theta=45^{\circ}$，断面 1--1 处流速 $v_1=1.2\ \mathrm{m/s}$、相对压强 $p_1=245\ \mathrm{kPa}$。
+若不计弯管水头损失，试求水流对弯管的作用力分量 $F_x$、$F_y$。
+
+\tuyi{图 4.13：水平放置的变径弯曲管道。管轴线位于同一水平面内（$xoy$ 取该水平面，$z$ 轴铅垂向上）。
+断面 1--1 在上游直管段，直径 $d_1=500\ \mathrm{mm}$，流速 $v_1$ 沿 $ox$ 轴正向；断面 2--2 在下游直管段，直径 $d_2=400\ \mathrm{mm}$，
+管轴线与 $ox$ 轴成 $\theta=45^{\circ}$ 角，水流绕过弯头后偏向 $oy$ 轴的反方向（故 $v_2$ 的 $x$ 向分量为 $v_2\cos\theta$、$y$ 向分量为 $-v_2\sin\theta$）。
+控制体＝断面 1--1、2--2 与管壁围成的空间。}
+
+\begin{jie}
+\textbf{① 取控制体、分析外力}（教材原文）：取过流断面 1--1、2--2 及管壁所围成的空间为控制体。
+作用在控制体内流体上的力包括：过流断面上的压力 $P_1=p_1A_1$、$P_2=p_2A_2$，以及管壁对流体的作用力
+（其反作用力即水流对弯管的作用力）。选直角坐标系 $xoy$，\textbf{重力在 $xoy$ 水平面上无分量}。令 $\beta_1=\beta_2=1$。
+
+\textbf{② 连续性方程求 $v_2$ 与 $Q$：}
+\[ v_2=v_1\frac{A_1}{A_2}=v_1\left(\frac{d_1}{d_2}\right)^2=1.2\times\left(\frac{0.5}{0.4}\right)^2=1.875\ \mathrm{m/s} \]
+\[ Q=\frac{\pi d_1^2}{4}\,v_1=\frac{3.14\times0.5^2}{4}\times1.2\approx0.236\ \mathrm{m^3/s} \]
+（教材本题取 $\pi=3.14$，故 $Q\approx0.236\ \mathrm{m^3/s}$、$\rho Q\approx236\ \mathrm{kg/s}$。）
+
+\textbf{③ 伯努利方程求 $p_2$}（以管轴线为基准面，1、2 断面都在渐变流段，$z_1=z_2$，不计水头损失）：
+\[ \frac{p_1}{\rho g}+\frac{v_1^2}{2g}=\frac{p_2}{\rho g}+\frac{v_2^2}{2g} \]
+\[ p_2=p_1+\frac{\rho}{2}\left(v_1^2-v_2^2\right)=245\times10^3+\frac{1000}{2}\left(1.2^2-1.875^2\right)=243.96\ \mathrm{kPa} \]
+
+\textbf{④ 列总流动量方程的 $x$、$y$ 向投影式}（出减进；$F_x$、$F_y$ 即\textbf{水流对弯管}的作用力分量）：
+\[ P_1-P_2\cos\theta-F_x=\rho Q\left(v_2\cos\theta-v_1\right) \]
+\[ P_2\sin\theta-F_y=\rho Q\left(-v_2\sin\theta-0\right) \]
+其中断面压力与动量流量：
+\[ P_1=p_1A_1=245\times10^3\times\frac{3.14\times0.5^2}{4}=48.08\ \mathrm{kN} \]
+\[ P_2=p_2A_2=243.96\times10^3\times\frac{3.14\times0.4^2}{4}=30.64\ \mathrm{kN} \]
+\[ \rho Q\left(v_2\cos\theta-v_1\right)=236\times\left(1.875\times0.7071-1.2\right)=0.030\ \mathrm{kN} \]
+\[ \rho Q\,v_2\sin\theta=236\times1.875\times0.7071=0.313\ \mathrm{kN} \]
+
+\textbf{⑤ 代入求解：}
+\[ F_x=P_1-P_2\cos\theta-\rho Q\left(v_2\cos\theta-v_1\right)=48.08-21.67-0.03=26.38\ \mathrm{kN} \]
+\[ F_y=P_2\sin\theta+\rho Q\,v_2\sin\theta=21.67+0.31=21.98\ \mathrm{kN} \]
+
+\textbf{⑥ 结论}：水流对弯管的作用力与弯管对水流的作用力\textbf{大小相等、方向相反}。
+\[ F_x=26.38\ \mathrm{kN},\qquad F_y=21.98\ \mathrm{kN} \]
+其中 $F_x$ 的方向与 $ox$ 轴方向相同，$F_y$ 的方向与 $oy$ 轴方向相同。
+合力大小与方向：
+\[ F=\sqrt{F_x^2+F_y^2}=\sqrt{26.38^2+21.98^2}\approx34.34\ \mathrm{kN},\qquad \arctan\frac{F_y}{F_x}=\arctan\frac{21.98}{26.38}\approx39.8^{\circ} \]
+\end{jie}
+\end{liti}
+
+\begin{tishi}
+\textbf{OCR 订正与反推校核：}① 直径、转角、$v_1$、$p_1$ 的数值 OCR 可判读，但两条投影式的上下标、希腊字母与括号全丢。
+原书为 $P_1-P_2\cos\theta-F_x=\rho Q(v_2\cos\theta-v_1)$ 与 $P_2\sin\theta-F_y=\rho Q(-v_2\sin\theta-0)$ ——
+第二式左端是 $+P_2\sin\theta$；若误用 $-P_2\sin\theta$ 将解出 $F_y=0.31-21.67=-21.36\ \mathrm{kN}$，与教材答案 21.98 kN 矛盾，
+故按原书取 $+P_2\sin\theta$。\\
+② 用 $\pi=3.14$（即 $\rho Q\approx236\ \mathrm{kg/s}$）代入，$F_x=48.08-21.67-0.03=26.38\ \mathrm{kN}$、
+$F_y=21.67+0.31=21.98\ \mathrm{kN}$，与教材答案（书 p62）以及本章例题索引表逐位一致。
+（若按 $\pi=3.14159$ 计算，得 $F_x\approx26.40\ \mathrm{kN}$、$F_y\approx21.99\ \mathrm{kN}$，差别只在 $\pi$ 的取位。）\\
+③ 教材把 $F_x$、$F_y$ 先说成"弯管对水流的作用力"、结论又写成"水流对弯管的作用力"，
+\textbf{以两条投影式的写法与最后的方向说明为准}：解出的 $F_x$、$F_y$ 均为正，即\textbf{水流对弯管}的作用力沿 $ox$、$oy$ 轴正向。
+\end{tishi}
+
+\begin{liti}{4.4}{书 p62 · 动量方程·射流冲击斜置平板}
+\textbf{题目}（教材原题）：水平方向的水射流以 $v_0=6\ \mathrm{m/s}$ 的速度冲击一斜置平板，射流与平板之间的夹角 $\alpha=60^{\circ}$，
+射流过流断面面积 $A_0=0.01\ \mathrm{m^2}$，不计水流与平板之间的摩擦力，试求：（1）射流对平板的作用力 $F$；（2）流量 $Q_1$ 与 $Q_2$ 之比。
+
+\tuyi{图 4.14：水平射流（速度 $v_0$ 沿水平方向）冲击一块斜置平板，射流轴线与平板面夹角 $\alpha=60^{\circ}$。
+射流在平板处分成沿板面两侧流出的两支 $Q_1$、$Q_2$。取 $y$ 轴垂直于平板面、$x$ 轴沿板面方向；
+控制面＝过流断面 0--0（进口）、1--1 与 2--2（两个出口）、射流侧表面及平板内壁。}
+
+\begin{jie}
+\textbf{① 取控制体、分析外力}（教材原文）：取过流断面 1--1、2--2、0--0 及射流侧表面与平板内壁为控制面构成控制体。
+因整个射流在大气中，过流断面 1--1、2--2、0--0 的\textbf{压强可认为等于大气压强}（相对压强为 0）；
+因不计水流与平板之间的摩擦力，则\textbf{平板对水流的作用力 $F'$ 与平板垂直}。
+
+\textbf{（1）求射流对平板的作用力 $F$。} 列垂直于平板方向（$y$ 轴）的动量方程：
+\[ F'=0-\left(-\rho Q_0v_0\sin\alpha\right)=\rho Q_0v_0\sin\alpha \]
+即"出减进"：出口 1--1、2--2 沿板面流出，其 $y$ 向速度分量为 0；进口 0--0 的速度在 $y$ 向的投影为 $-v_0\sin\alpha$。其中
+\[ Q_0=v_0A_0=6\times0.01=0.06\ \mathrm{m^3/s} \]
+代入得平板对射流的作用力
+\[ F'=\rho Q_0v_0\sin\alpha=1000\times0.06\times6\times0.866=311.8\ \mathrm{N}\approx0.312\ \mathrm{kN} \]
+则射流对平板的作用力 $F=0.312\ \mathrm{kN}$，\textbf{方向与 $oy$ 轴方向相反}（$F$ 与 $F'$ 等值反向）。
+
+\textbf{（2）求 $Q_1$ 与 $Q_2$ 之比。} 列沿板面方向（$x$ 轴）的动量方程：
+\[ 0=\left(\rho Q_1v_1-\rho Q_2v_2\right)-\rho Q_0v_0\cos\alpha \]
+其中 $Q_2$ 为向 $-x$ 方向流出的那一支，故其动量流在式中取负号。分别对 0--0、1--1 断面及 0--0、2--2 断面列伯努利方程
+（各断面压强均为大气压、位置水头相同），可得
+\[ v_1=v_2=v_0=6\ \mathrm{m/s} \]
+再由连续性方程 $Q_0=Q_1+Q_2$。把 $v_1=v_2=v_0$ 代入 $x$ 向动量方程，得
+\[ Q_1-Q_2=Q_0\cos\alpha=0.06\times0.5=0.03\ \mathrm{m^3/s} \]
+与 $Q_0=Q_1+Q_2$ 联立解得
+\[ Q_1=\frac{Q_0\left(1+\cos\alpha\right)}{2},\qquad Q_2=\frac{Q_0\left(1-\cos\alpha\right)}{2} \]
+\[ \frac{Q_1}{Q_2}=\frac{1+\cos60^{\circ}}{1-\cos60^{\circ}}=\frac{1.5}{0.5}=3 \]
+即 $Q_1\colon Q_2=3\colon1$（$Q_1=0.045\ \mathrm{m^3/s}$、$Q_2=0.015\ \mathrm{m^3/s}$，与 $Q_0=0.06\ \mathrm{m^3/s}$ 相容）。
+\end{jie}
+\end{liti}
+
+\begin{tishi}
+\textbf{OCR 订正与反推校核：}① OCR 把 $v_0=6\ \mathrm{m/s}$ 印成 $0=6$、$A_0$ 的下标丢失、$\mathrm{m^3/s}$ 的单位印错，
+第（2）问的答案 $\dfrac{Q_1}{Q_2}$ 只留下分式记号、等号与数值全部丢失。\\
+② 该比值由教材自己给出的两条方程唯一确定：$x$ 向动量方程给出 $Q_1-Q_2=Q_0\cos\alpha$，
+与连续性方程 $Q_0=Q_1+Q_2$ 联立即得 $\dfrac{Q_1}{Q_2}=\dfrac{1+\cos60^{\circ}}{1-\cos60^{\circ}}=3$，
+两支流量之和又正好等于 $Q_0$，故此处\textbf{不是猜测，而是由教材方程反推的唯一解}。\\
+③ 第（1）问 0.312 kN 由 $F'=\rho Q_0v_0\sin\alpha$ 反推验证，与教材答案、本章例题索引表一致。
+\end{tishi}
+
 \section{动量矩方程}
 
 \begin{kaodian}{2}{动量矩方程与离心式流体机械的欧拉方程}
@@ -689,7 +869,7 @@ $r$ 为计算点到给定轴的距离（力臂），$v_u$ 为速度在\textbf{�
 \end{gongshi}
 
 \textbf{常考题型：}\textbf{真题中本章 4.4 未见独立成题}，属了解内容；
-只需能说出"动量矩方程用来求流体对机械（叶轮）的力矩"、"离心机械欧拉方程联系扬程与速度矩 $rv_u$"。
+只需能说出"动量矩方程用来求流体对机械（叶轮）的力矩"、"离心机械欧拉方程联系扬程与速度矩 $rv_u$"。\textbf{（完整题目原文与逐步解答见本考点后的「教材例 4.5」盒。）}
 \textbf{重要度 \xstarfull{2}}\quad\yiju{E1 slide33 第四章＝考试计算题重点（章节级依据）；E2 第四章"需掌握计算套路"（章节级依据）；E4 历年真题中 4.4 节未见独立成题}\quad\nandu{易}
 
 \begin{banfa}
@@ -703,6 +883,54 @@ $H_T=\dfrac{u_2v_{2u}-u_1v_{1u}}{g}$ 两个形状，看懂"速度矩"一词即�
 \textbf{不要在 4.4 上花时间}——把时间投到 4.2 与 4.3 的计算套路上更划算。
 \end{banfa}
 \end{kaodian}
+
+\begin{liti}{4.5}{书 p63--64 · 动量矩方程·离心风机叶轮（教材 4.4 节）}
+\textbf{题目}（教材原题）：离心风机叶轮的转速 $n=1725\ \mathrm{r/min}$，叶轮进口直径 $d_1=125\ \mathrm{mm}$、进口气流角 $\alpha_1=90^{\circ}$，
+出口直径 $d_2=300\ \mathrm{mm}$、出口安放角 $\beta_2=30^{\circ}$，叶轮进出口流道宽度 $b_1=b_2=25\ \mathrm{mm}$，流量 $Q=372\ \mathrm{m^3/h}$。
+试求：（1）进口绝对速度 $v_1$ 与进口安放角 $\beta_1$；（2）出口绝对速度 $v_2$ 与出口气流角 $\alpha_2$；（3）单位重量空气通过叶轮所获得的能量 $H_T$。
+
+\tuyi{图 4.16：离心风机叶轮。气流沿径向进入叶轮，进口断面为直径 $d_1=125\ \mathrm{mm}$、宽度 $b_1=25\ \mathrm{mm}$ 的圆柱面，
+$\alpha_1=90^{\circ}$ 表示进口绝对速度沿径向（与圆周速度垂直）；气流经叶轮流道后由直径 $d_2=300\ \mathrm{mm}$、宽度 $b_2=25\ \mathrm{mm}$ 的出口圆柱面流出，
+叶片出口安放角 $\beta_2=30^{\circ}$。图中 $u$ 为圆周（牵连）速度、$v$ 为绝对速度、$w$ 为相对速度，
+$v_n$ 为径向（过流）分量、$v_u$ 为切向分量。}
+
+\begin{jie}
+\textbf{① 基本几何量。} 进、出口过流面积与圆周速度：
+\[ A_1=\pi d_1b_1=3.14\times0.125\times0.025=9.81\times10^{-3}\ \mathrm{m^2} \]
+\[ A_2=\pi d_2b_2=3.14\times0.3\times0.025=2.355\times10^{-2}\ \mathrm{m^2} \]
+\[ Q=\frac{372}{3600}=0.1033\ \mathrm{m^3/s} \]
+\[ u_1=\frac{\pi d_1n}{60}=\frac{3.14\times0.125\times1725}{60}=11.28\ \mathrm{m/s} \]
+\[ u_2=\frac{\pi d_2n}{60}=\frac{3.14\times0.3\times1725}{60}=27.08\ \mathrm{m/s} \]
+
+\textbf{② 进口速度三角形（求 $v_1$、$\beta_1$）。} 由连续性方程得进口径向分量
+\[ v_{1n}=\frac{Q}{A_1}=\frac{0.1033}{9.81\times10^{-3}}=10.53\ \mathrm{m/s} \]
+因 $\alpha_1=90^{\circ}$，进口绝对速度沿径向，故其切向分量 $v_{1u}=0$，于是
+\[ v_1=v_{1n}=10.53\ \mathrm{m/s} \]
+由速度三角形 $\bm{v}_1=\bm{w}_1+\bm{u}_1$（$w_{1u}=u_1-v_{1u}=u_1$）：
+\[ \tan\beta_1=\frac{v_{1n}}{u_1-v_{1u}}=\frac{10.53}{11.28}=0.9335,\qquad \beta_1\approx43.03^{\circ} \]
+
+\textbf{③ 出口速度三角形（求 $v_2$、$\alpha_2$）。}
+\[ v_{2n}=\frac{Q}{A_2}=\frac{0.1033}{2.355\times10^{-2}}=4.39\ \mathrm{m/s} \]
+出口相对速度 $w_2$ 与圆周速度 $u_2$ 的夹角为叶片出口安放角 $\beta_2=30^{\circ}$，故
+\[ v_{2u}=u_2-v_{2n}\cot\beta_2=27.08-4.39\times1.732=19.48\ \mathrm{m/s} \]
+\[ v_2=\sqrt{v_{2n}^2+v_{2u}^2}=\sqrt{4.39^2+19.48^2}=19.97\ \mathrm{m/s} \]
+\[ \tan\alpha_2=\frac{v_{2n}}{v_{2u}}=\frac{4.39}{19.48}=0.2254,\qquad \alpha_2\approx12.72^{\circ} \]
+
+\textbf{④ 单位重量空气获得的能量（教材式 4.33）：}
+\[ H_T=\frac{u_2v_{2u}-u_1v_{1u}}{g}=\frac{27.08\times19.48-11.28\times0}{9.8}=53.83\ \mathrm{m} \]
+（$H_T$ 即叶轮的理论扬程／理论压头，$u_2v_{2u}-u_1v_{1u}$ 是进、出口"速度矩"的有效部分之差。）
+\end{jie}
+\end{liti}
+
+\begin{tishi}
+\textbf{OCR 订正与反推校核：}① OCR 把进口直径 $d_1$ 印成 $d$、把绝对速度与径向分量都印成同一个符号、把流量单位印成 $\mathrm{m^2/h}$，
+三个速度三角形的关系式也全部丢失。\\
+② 这里的算法链是"$u=\pi dn/60$ → $v_n=Q/(\pi db)$ → 由 $\alpha_1=90^{\circ}$ 得 $v_{1u}=0$、由叶片安放角 $\beta_2$ 得
+$v_{2u}=u_2-v_{2n}\cot\beta_2$ → $H_T=(u_2v_{2u}-u_1v_{1u})/g$"，反推所得
+$u_1=11.28$、$v_1=10.53\ \mathrm{m/s}$、$\beta_1\approx43.03^{\circ}$、$u_2=27.08$、$v_{2n}=4.39$、$v_{2u}=19.48$、$v_2=19.97\ \mathrm{m/s}$、
+$\alpha_2\approx12.72^{\circ}$、$H_T=53.83\ \mathrm{m}$，与教材答案及本章例题索引表一致。\\
+③ 教材 4.4 节初试只作了解：本题只须记熟 $H_T=\dfrac{u_2v_{2u}-u_1v_{1u}}{g}$ 与出口速度三角形的画法，具体数值不必背。
+\end{tishi}
 
 \section{本章小结}
 

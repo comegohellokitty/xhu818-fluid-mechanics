@@ -95,13 +95,62 @@ $N$ 为矢量的 $\bq$ 时 $(\bu\cdot\grad)\bq$ 要对三个分量分别作用�
 \end{tabularx}
 \end{center}
 
-\textbf{教材例 3.2（书 p37，加速度计算的原型题）}：已知平面流动 $u_x=(4y-6x)t$、$u_y=(6y-9x)t$，
-（1）求 $t=2$ 时点 $(2,4)$ 处流体质点的加速度；（2）判别该流动是否为恒定流、是否为均匀流。
-教材答案（1）：$a_x=4\ \mathrm{m/s^2}$、$a_y=6\ \mathrm{m/s^2}$，即代入
-$a_x=\dfrac{\partial u_x}{\partial t}+u_x\dfrac{\partial u_x}{\partial x}+u_y\dfrac{\partial u_x}{\partial y}
-=(4y-6x)(1-6t^2)+4t^2(6y-9x)$ 所得（$a_y$ 同理，把 $u_x$ 换成 $u_y$）。
-\textbf{第（2）问的解答在所给扫描页中缺失}（书 p37 该处的书页内容不可判读），本册不代答；
-请按本节"恒定流/非恒定流"与上文"均匀流/非均匀流"两条判据自行判别。\\
+\begin{liti}{3.2}{书 p38 · 加速度（质点导数）}
+\textbf{题目}（教材原题）：已知平面流动，流速为 $u_x=(4y-6x)t$、$u_y=(6y-9x)t$
+（$u$ 的单位 $\mathrm{m/s}$，$x,y$ 的单位 $\mathrm{m}$，$t$ 的单位 $\mathrm{s}$）。试问：
+（1）当 $t=2$ 时，点 $(2,4)$ 的加速度；（2）判别流动是否为恒定流？是否为均匀流？
+
+\begin{jie}
+\textbf{（1）}按欧拉法，流体质点的加速度为
+\[
+a_x=\frac{\partial u_x}{\partial t}+u_x\frac{\partial u_x}{\partial x}+u_y\frac{\partial u_x}{\partial y},
+\qquad
+a_y=\frac{\partial u_y}{\partial t}+u_x\frac{\partial u_y}{\partial x}+u_y\frac{\partial u_y}{\partial y}.
+\]
+先备齐所需的偏导数（把 $x$、$y$ 当自变量，$t$ 也是自变量）：
+\[
+\frac{\partial u_x}{\partial t}=4y-6x,\qquad
+\frac{\partial u_x}{\partial x}=-6t,\qquad
+\frac{\partial u_x}{\partial y}=4t;
+\]
+\[
+\frac{\partial u_y}{\partial t}=6y-9x,\qquad
+\frac{\partial u_y}{\partial x}=-9t,\qquad
+\frac{\partial u_y}{\partial y}=6t .
+\]
+代回并把速度分量乘上：
+\[
+a_x=(4y-6x)+(4y-6x)t\cdot(-6t)+(6y-9x)t\cdot(4t)
+=(4y-6x)(1-6t^2)+4t^2(6y-9x),
+\]
+\[
+a_y=(6y-9x)+(4y-6x)t\cdot(-9t)+(6y-9x)t\cdot(6t)
+=(6y-9x)(1+6t^2)-9t^2(4y-6x).
+\]
+代入 $t=2$、$x=2$、$y=4$：$4y-6x=16-12=4$，$6y-9x=24-18=6$，$t^2=4$，于是
+\[
+a_x=4(1-6\times4)+4\times4\times6=4\times(-23)+96=-92+96=4\ \mathrm{m/s^2},
+\]
+\[
+a_y=6(1+6\times4)-9\times4\times4=6\times25-144=150-144=6\ \mathrm{m/s^2}.
+\]
+结果与教材一致：$a_x=4\ \mathrm{m/s^2}$、$a_y=6\ \mathrm{m/s^2}$。顺带核对：该瞬时该点的流速为
+$u_x=8\ \mathrm{m/s}$、$u_y=12\ \mathrm{m/s}$，与本题算得的加速度方向恰好相同（都是 $2:3$）；
+这只是本例速度分布使当地加速度项与速度分量成比例造成的巧合，不能当作一般规律——
+加速度由 $\dfrac{\partial\bu}{\partial t}$ 与迁移项共同决定，其方向一般与流速方向无关。
+
+\textbf{（2）}教材第（2）问的解答在所提供的扫描件中缺失，\textbf{本册不代答}。
+
+\begin{tishi}
+本例原书排到第（1）问的 $a_y=6\ \mathrm{m/s^2}$ 就结束，紧接着便是 3.2.9 节
+（扫描件 PDF 第 47 页＝书 p38）；第（2）问的答案在 OCR 文本中\textbf{不存在}，
+本册\textbf{不代答}、也不替教材补编结论。请按本节"恒定流/非恒定流"
+（看 $\partial/\partial t$ 是否为零）与 3.2.8 节"均匀流/非均匀流"（看流线是否为一组平行直线）
+两条判据自行判别。\\
+另：本例书页码以教材页脚为准为 \textbf{p38}（旧稿沿用的 p37 系与 PDF 页码 47 的换算混淆，此处按页脚订正）。
+\end{tishi}
+\end{jie}
+\end{liti}
 
 \textbf{常考题型：}计算题（给 $u_x,u_y,u_z$ 的解析式，求 $\dfrac{\dd u_x}{\dd t}$、$\dfrac{\dd u_y}{\dd t}$）；
 简答/填空（"质点的加速度由\rule{2cm}{0.4pt}和\rule{2cm}{0.4pt}组成"；
@@ -234,13 +283,42 @@ $a_x=\dfrac{\partial u_x}{\partial t}+u_x\dfrac{\partial u_x}{\partial x}+u_y\df
 对应压强则相反——流线疏处压强大。
 \end{enumerate}
 
-\noindent\textbf{教材例 3.1（书 p34，流线方程）}：已知二维非恒定流场的速度分布为 $u_x=x+t$、$u_y=-y+t$。
-试求 $t=0$ 和 $t=2$ 时，过点 $M(-1,-1)$ 的流线方程。\\
-\textbf{教材答案}：$t=0$ 时为 $xy=1$；$t=2$ 时为 $(x+2)(y-2)=-3$。\\
-\textbf{要点}：流线微分方程 $\dfrac{\dd x}{u_x}=\dfrac{\dd y}{u_y}$ 中 $t$ \textbf{当常数}，
-积分得 $(x+t)(y-t)=C$，再把\textbf{该瞬时}的点代入定出 $C$——同一个点、不同时刻落在不同流线上，
-这正是"流线只在某一瞬时才有意义"的最好例证。\textbf{此式只求流线、不叠加 $\dd t$}；
-教材\textbf{没有}把这题当迹线题做。
+\begin{liti}{3.1}{书 p34 · 流线方程}
+\textbf{题目}（教材原题）：已知二维非恒定流场的速度分布为 $u_x=x+t$、$u_y=-y+t$。
+试求：$t=0$ 和 $t=2$ 时，过点 $M(-1,-1)$ 的流线方程。
+
+\begin{jie}
+流线的微分方程是 $\dfrac{\dd x}{u_x}=\dfrac{\dd y}{u_y}$，把速度分布代入得
+\[
+\frac{\dd x}{x+t}=\frac{\dd y}{-y+t}.
+\]
+$t$ 只用来标识\textbf{该瞬时}，积分时\textbf{当常数}处理——这里\textbf{不}叠加 $\dd t$，
+所求的是流线而不是迹线。两边积分：
+\[
+\ln(x+t)=-\ln(y-t)+\ln C
+\qquad\Longrightarrow\qquad
+(x+t)(y-t)=C .
+\]
+常数 $C$ 用\textbf{该瞬时}过 $M(-1,-1)$ 的坐标定出。$t=0$ 时 $C=(-1+0)\times(-1-0)=1$，
+故 $t=0$ 时过点 $M$ 的流线方程为
+\[
+xy=1 .
+\]
+$t=2$ 时 $C=(-1+2)\times(-1-2)=1\times(-3)=-3$，故 $t=2$ 时过点 $M$ 的流线方程为
+\[
+(x+2)(y-2)=-3 .
+\]
+两个结果与教材答案一致。
+
+\textbf{要点}：同一个点 $M$ 在不同时刻落在\textbf{不同}的流线上——流线只对某一瞬时才有意义，
+非恒定流动的流线随时间而变；又因为 $t$ 当常数积分，所以 $C$ 实际上是 $t$ 的函数，
+每个瞬时要用该瞬时的点重新定 $C$。
+
+\tuyi{教材本题未配图（同页的图 3.7「管流流线图」属前面的流线性质一节，不服务于本例）。
+两条流线都是双曲线——$t=0$ 为 $xy=1$；$t=2$ 为 $(x+2)(y-2)=-3$，其中心在 $(-2,2)$。
+$M(-1,-1)$ 同时满足这两个方程，但对应两个不同瞬时，故它不是同一条流线上的点。}
+\end{jie}
+\end{liti}
 
 \begin{center}
 \begin{tabularx}{\textwidth}{@{}lXX@{}}

@@ -137,7 +137,31 @@ $\mathrm{Ma}$、$\mathrm{St}$。\textbf{非定性准则}（待定准则、被定
 \textbf{适用条件：}这条冲突是「模型试验不可能同时满足全部相似准则」的定量依据；实际按主导力取舍，只保证一个准则相等，即\textbf{部分相似（近似相似）}。教材据此指出：按雷诺准则与弗劳德准则设计模型时，各物理量的比尺关系见\textbf{教材表 6.1}（书 p105）。
 \end{gongshi}
 
-\textbf{教材例 6.1（书 p105--106）——模型实验必须靠准则换算：}直径 15 cm 的输油管，$Q_p=0.18\ \mathrm{m^{3}/s}$、油的 $\nu_p=0.13\ \mathrm{cm^{2}/s}$；改用水做模型实验，$\nu_m=0.013\ \mathrm{cm^{2}/s}$，模型管径与原型相同。解分两问：（1）圆管流动主要受黏滞力作用，按\textbf{雷诺准则}（教材式 6.17）得 $Q_m=(\nu_m/\nu_p)Q_p=0.018\ \mathrm{m^{3}/s}$；（2）压降满足\textbf{欧拉准则}（教材式 6.25），由 $\lambda_p=\lambda_\rho\lambda_v^{2}$ 把模型压差换算到原型，书中得 100 m 长输油管两端压强差 $=100$ m 油柱。
+\begin{liti}{6.1}{书 p105--106 · 雷诺准则的模型实验}
+\textbf{题目}（教材原题）已知直径为 15 cm 的输油管，$Q_p=0.18\ \mathrm{m^{3}/s}$，油的运动黏度 $\nu_p=0.13\ \mathrm{cm^{2}/s}$。现用水作模型实验，水的运动黏度 $\nu_m=0.013\ \mathrm{cm^{2}/s}$，模型管径与原型相同。要达到完全相似，求：（1）模型中的流量 $Q_m$；（2）若模型 5 m 长管两端的压强差为 0.05 m（液柱），求原型 100 m 长输油管两端的压强差。
+
+\tuyi{水平输油圆管，直径 $d=15\ \mathrm{cm}$，原型介质为油、模型介质为水，模型与原型管径相同（$\lambda_l=1$）；断面平均流速分别为 $u_p$、$u_m$。}
+
+\begin{jie}
+（1）圆管中流动主要受黏滞力作用，所以应满足\textbf{雷诺相似准则}（教材式 6.17）：
+\[ \frac{u_m l_m}{\nu_m}=\frac{u_p l_p}{\nu_p} \]
+因 $l_m=l_p$，上式简化为 $u_m/\nu_m=u_p/\nu_p$，即速度比尺 $\lambda_v=u_p/u_m=\nu_p/\nu_m$。流量比尺 $\lambda_Q=\lambda_l^{2}\lambda_v=\lambda_v$（因 $\lambda_l=1$），所以模型中水的流量为
+\[ Q_m=\frac{\nu_m}{\nu_p}Q_p=\frac{0.013}{0.13}\times 0.18=0.018\ \mathrm{m^{3}/s} \]
+（2）流动的压降满足\textbf{欧拉准则}（教材式 6.25），压强比尺 $\lambda_p=\lambda_\rho\lambda_v^{2}$，用液柱高度表示时
+\[ \frac{p_p}{\rho_p g}=\frac{p_m}{\rho_m g}\left(\frac{u_p}{u_m}\right)^{2} \]
+原型、模型的断面平均流速由 $u=4Q/(\pi d^{2})$ 得
+\[ u_p=\frac{4\times 0.18}{\pi\times 0.15^{2}}=10.19\ \mathrm{m/s},\qquad u_m=\frac{4\times 0.018}{\pi\times 0.15^{2}}=1.019\ \mathrm{m/s} \]
+则在模型 5 m 长管上量到的压强差换算到原型为
+\[ \frac{p_p}{\rho_p g}=0.05\times\left(\frac{10.19}{1.019}\right)^{2}=0.05\times 100=5\ \mathrm{m}\quad(\text{油柱}) \]
+100 m 长的输油管两端压强差为
+\[ \frac{100}{5}\times 5=100\ \mathrm{m}\quad(\text{油柱}) \]
+即原型 100 m 长输油管两端的压强差为 \textbf{100 m 油柱}。
+\end{jie}
+
+\begin{tishi}
+\textbf{OCR 订正与存疑：}①教材例 6.1 第（2）问的已知值在书 p105 末行被扫描截断（原文只到「要达」二字），教材解答（书 p106）直接以 $0.05$ 代入并按「m（油柱）」报结果；此处照教材解答保留 0.05 m 与「油柱」口径，不另改数值。②教材解答中有一处条件扫描件只能判读为「且 $g_m=g_p$」（疑为 $\gamma_m=\gamma_p$），而模型为水、原型为油，二者并不相等——\textbf{教材此处 OCR 不可判读}；该条件在本式中也用不到：由欧拉准则直接可得两种流体的压强液柱高度之比等于速度平方之比。
+\end{tishi}
+\end{liti}
 
 \begin{banfa}
 \textbf{相似准则的选取套路：}① 判断由哪种力主导——黏性力主导（管流、绕流）选 $\Rey$，重力主导（明渠、堰流、船舶兴波）选 $\Fr$，压缩性主导（高速气流）选 $\mathrm{Ma}$，有周期性选 $\mathrm{St}$；② 检查能否同时满足：$\Rey$ 与 $\Fr$ 对同一试验流体互相矛盾（$\Rey$ 要求流速大、$\Fr$ 要求流速小），一般\textbf{不可能同时满足全部准则}；③ 按主导力取舍、放弃次要准则，做\textbf{局部相似（部分相似）}，必要时改用变黏度液体、风洞加压等手段作近似相似处理。
@@ -249,7 +273,26 @@ $\mathrm{Ma}$、$\mathrm{St}$。\textbf{非定性准则}（待定准则、被定
 \textbf{易错：}瑞利法只适合物理量少的场合——\textbf{教材口径是「有关物理量不超过 4 个、待求的量纲指数不超过 3 个」}（书 p109），变量多时指数方程个数少于未知数个数，解不出唯一结果，必须改用 $\pi$ 定理。另外 $k$ 是无量纲系数，量纲分析只能确定它的存在，不能定出数值，要由实验确定。
 \end{yicuo}
 
-\textbf{教材例 6.2（书 p108--109）——瑞利法标准范例：}恒定有压管流的下临界流速 $u_c$ 与管径 $d$、动力黏度 $\mu$、密度 $\rho$ 有关（共 4 个物理量，正好在教材的瑞利法界线内）。设备 $u_c=kd^{a_1}\rho^{a_2}\mu^{a_3}$，由量纲和谐解得 $a_1=-1$、$a_2=-1$、$a_3=1$，即 $u_c=k\mu/(\rho d)=k\nu/d$，故无量纲数 $k=u_cd/\nu$ 就是\textbf{临界雷诺数 $\Rey_c$}；教材据雷诺实验给出 $\Rey_c=2300$，「可以用来判别层流与紊流」。
+\begin{liti}{6.2}{书 p108--109 · 瑞利法求临界雷诺数}
+\textbf{题目}（教材原题）流动有两种状态，即层流和湍流，流体相互转变时的流速称为临界流速。实验指出，恒定有压管流的下临界流速 $u_c$ 与管径 $d$、流体的动力黏度 $\mu$ 和管内流体密度 $\rho$ 有关。试用瑞利法导出临界雷诺数 $\Rey_c$ 的表达式。
+
+\begin{jie}
+（1）写出待定函数形式：$f(u_c,d,\mu,\rho)=0$，共 4 个物理量，正好在教材瑞利法的界线内。
+（2）按瑞利法将上式改写成指数乘积式：$u_c=k d^{a_1}\rho^{a_2}\mu^{a_3}$。
+（3）写出量纲表达式：$[u_c]=\mathrm{LT^{-1}}$、$[d]=\mathrm{L}$、$[\rho]=\mathrm{ML^{-3}}$、$[\mu]=\mathrm{ML^{-1}T^{-1}}$，故
+\[ \mathrm{LT^{-1}}=\mathrm{L}^{a_1}\left(\mathrm{ML^{-3}}\right)^{a_2}\left(\mathrm{ML^{-1}T^{-1}}\right)^{a_3} \]
+（4）根据量纲和谐原理确定待定指数 $a_1$、$a_2$、$a_3$。对 $\mathrm{L}$、$\mathrm{T}$、$\mathrm{M}$ 分别有
+\[ \mathrm{L}:1=a_1-3a_2-a_3,\qquad \mathrm{T}:-1=-a_3,\qquad \mathrm{M}:0=a_2+a_3 \]
+得 $a_1=-1$、$a_2=-1$、$a_3=1$。
+（5）整理方程式：
+\[ u_c=k d^{-1}\rho^{-1}\mu=k\frac{\mu}{\rho d}=k\frac{\nu}{d}\quad\Longrightarrow\quad k=\frac{u_c d}{\nu} \]
+式中无量纲数 $k$ 称为临界雷诺数，以 $\Rey_c$ 表示，即 $\Rey_c=\dfrac{u_c d}{\nu}$。根据雷诺实验，该值为 2300，可以用来判别层流与紊流。
+\end{jie}
+
+\begin{tishi}
+\textbf{用词提示：}教材例 6.2 的题干写「层流和\textbf{湍流}」，解答末句写「判别层流与\textbf{紊流}」，两词同义，试卷上写哪一个都对。
+\end{tishi}
+\end{liti}
 
 \begin{tishi}
 \textbf{订正（以教材 p109 为准）：}部分辅导资料把瑞利法的界线写成「物理量不超过 5 个」。赵琴教材 p109 的原话是「\textbf{有关物理量不超过 4 个，待求的量纲指数不超过 3 个}」。两说并列时，概念填空按教材写\textbf{4 个}更稳；若题干已明确给出 5 个物理量，按题面作答。同一条界线在 $\pi$ 定理一侧的对应表述是「有关物理量超过 4 个时，则需采用 $\pi$ 定理进行分析」（即 $n>4$，不是 $n>5$），详见考点 9 的适用条件。
@@ -291,9 +334,7 @@ $\mathrm{Ma}$、$\mathrm{St}$。\textbf{非定性准则}（待定准则、被定
 \end{kaodian}
 
 \begin{kaodian}{10}{典型例题一：圆管沿程压强损失 $\Delta p$（教材例 6.3，书 p110--111）}
-\textbf{题目（教材例 6.3 原题）：}不可压缩黏性流体在水平圆管内流动，压强损失 $\Delta p$ 与\textbf{管径 $d$、管长 $l$、管壁粗糙度 $\Delta$、断面平均流速 $v$、动力黏度 $\mu$、密度 $\rho$} 有关——教材比下面的化简版多了一个\textbf{管壁粗糙度 $\Delta$}，所以是 $n=7$、$m=3$、共 $\mathbf{n-m=4}$ 个 $\pi$ 项（下面化简版取 6 个物理量、3 个 $\pi$ 项）。
-
-\textbf{教材例 6.3 的结论（书 p111）：}教材取 $d$、$v$、$\rho$ 为基本量，得 $\pi_2=\mu/(\rho vd)=1/\Rey$、$\pi_3=\Delta/d$、$\pi_4=l/d$；教材原话「\textbf{实验证明，沿程水头损失 $h_f$ 与管长 $l$ 成正比，与管径 $d$ 成反比}」，令 $\lambda=f(\Rey,\Delta/d)$ 即得达西公式——教材称之为「有压管流压强损失的计算公式」，「式中 $\lambda$ 称为沿程阻力系数，与雷诺数 $\Rey$ 和相对粗糙度 $\Delta/d$ 有关，可由实验确定」。
+\textbf{本考点练两个层次。}教材例 6.3 的原题含\textbf{管壁粗糙度 $\Delta$}，共 7 个物理量，故 $n=7$、$m=3$、共 $n-m=4$ 个 $\pi$ 项，原题与完整解答见紧随本考点框之后的绿框；本框内是\emph{化简版}做法（取 6 个物理量、得 3 个 $\pi$ 项），重点在练「解指数」这一步——两种做法不冲突。
 
 \begin{banfa}
 \textbf{解（$\pi$ 定理）}
@@ -327,6 +368,46 @@ $\mathrm{Ma}$、$\mathrm{St}$。\textbf{非定性准则}（待定准则、被定
 
 \textbf{常考题型：}小计算／填空（这一步不必完整推导，能写出 $\pi$ 项与 $\Rey$ 即可）。\quad\textbf{重要度 \xstarfull{4}}\quad\yiju{E2（公式套用）；E3（真题多源于课后习题改编）}\quad\nandu{难}
 \end{kaodian}
+
+\begin{liti}{6.3}{书 p110--111 · $\pi$ 定理求圆管压强损失（达西公式）}
+\textbf{题目}（教材原题）不可压缩黏性流体在水平圆管内流动，根据实验可知，压强损失 $\Delta p$ 与管径 $d$、管长 $l$、管壁粗糙度 $\Delta$、断面平均流速 $v$、流体的动力黏度 $\mu$ 和管内流体密度 $\rho$ 有关。试用 $\pi$ 定理导出其压强损失 $\Delta p$ 的表达式。
+
+\tuyi{水平圆管沿程流动，管内壁绝对粗糙度 $\Delta$、管径 $d$、管长 $l$，断面平均流速 $v$，流体密度 $\rho$、动力黏度 $\mu$。}
+
+\begin{jie}
+（1）写出待定函数关系式：
+\[ f(\Delta p,\ d,\ l,\ \Delta,\ v,\ \mu,\ \rho)=0 \]
+式中 $n=7$ 个物理量，基本量纲 $m=3$（$\mathrm{L}$、$\mathrm{T}$、$\mathrm{M}$）。
+（2）取 $d$、$v$、$\rho$ 为基本量。它们的量纲为 $[d]=\mathrm{L}$、$[v]=\mathrm{LT^{-1}}$、$[\rho]=\mathrm{ML^{-3}}$，指数行列式（三行依次取 $\mathrm{L}$、$\mathrm{T}$、$\mathrm{M}$）
+\[ \begin{vmatrix}1 & 1 & -3\\ 0 & -1 & 0\\ 0 & 0 & 1\end{vmatrix}=-1\neq 0 \]
+故三个基本量的量纲相互独立，可以作为基本量。
+（3）$\pi$ 项的个数为
+\[ n-m=7-3=4 \]
+（4）逐个确定各 $\pi$ 项（设乘幂形式 $\pi_i=x_i d^{a}v^{b}\rho^{c}$，由量纲和谐解指数）：
+
+$\pi_1=\Delta p\,d^{a}v^{b}\rho^{c}$，对 $\mathrm{M}$、$\mathrm{L}$、$\mathrm{T}$ 分别有
+\[ \mathrm{M}:1+c=0,\qquad \mathrm{L}:-1+a+b-3c=0,\qquad \mathrm{T}:-2-b=0 \]
+得 $c=-1$、$b=-2$、$a=0$，故
+\[ \pi_1=\frac{\Delta p}{\rho v^{2}}=\Eu \]
+$\pi_2=\mu d^{a}v^{b}\rho^{c}$，同理由
+\[ \mathrm{M}:1+c=0,\qquad \mathrm{L}:-1+a+b-3c=0,\qquad \mathrm{T}:-1-b=0 \]
+得 $c=-1$、$b=-1$、$a=-1$，故
+\[ \pi_2=\frac{\mu}{\rho v d}=\frac{1}{\Rey} \]
+同理可得（$a=-1$、$b=0$、$c=0$）
+\[ \pi_3=\frac{\Delta}{d},\qquad \pi_4=\frac{l}{d} \]
+（5）根据式（6.38）有
+\[ \Eu=\frac{\Delta p}{\rho v^{2}}=f\!\left(\frac{\Delta}{d},\frac{l}{d},\Rey\right) \]
+实验证明，沿程水头损失 $h_f$ 与管长 $l$ 成正比，与管径 $d$ 成反比，故
+\[ h_f=f\!\left(\Rey,\frac{\Delta}{d}\right)\frac{l}{d}\frac{v^{2}}{2g} \]
+令 $\lambda=f(\Rey,\Delta/d)$，则
+\[ h_f=\lambda\frac{l}{d}\frac{v^{2}}{2g}\quad\Longrightarrow\quad \Delta p=\lambda\frac{l}{d}\frac{\rho v^{2}}{2} \]
+上式即为有压管流压强损失的计算公式，又称\textbf{达西公式}。式中 $\lambda$ 称为\textbf{沿程阻力系数}，与雷诺数 $\Rey$ 和相对粗糙度 $\Delta/d$ 有关，可由实验确定。
+\end{jie}
+
+\begin{tishi}
+\textbf{OCR 订正说明：}教材例 6.3 的扫描件里 $\pi_1$ 的指数方程与求解结果正好落在页码处被截断，OCR 只剩下一行坏码「得 $a=-1,b=0,c_1=0$」，原式已不可判读。本解答按 $d$、$v$、$\rho$ 为基本量用\emph{量纲和谐}重新推得 $\pi_1=\Delta p/(\rho v^{2})$：$\mathrm{M}$、$\mathrm{L}$、$\mathrm{T}$ 三式 $1+c=0$、$-1+a+b-3c=0$、$-2-b=0$ 恰给出 $c=-1$、$b=-2$、$a=0$，与教材把 $\pi_1$ 写成 $\Eu$ 的结论一致。这里给出的是按量纲和谐反推的推导过程，不是教材原文的逐字复制；教材该处 $\pi_1$ 的指数符号已无法判读，一律以量纲和谐的解为准。
+\end{tishi}
+\end{liti}
 
 \begin{kaodian}{11}{典型例题二：绕流阻力与孔口流量}
 \begin{gongshi}{绕流阻力 $\bF$（圆球、圆柱）}
