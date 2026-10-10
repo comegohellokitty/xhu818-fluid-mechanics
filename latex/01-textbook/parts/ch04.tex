@@ -379,7 +379,15 @@ $Q=0.068\ \mathrm{m^3/s}$、$p=54.2\ \mathrm{kPa}$ 与教材答案位数一致�
 \begin{jie}
 \textbf{① 列 1--1、2--2 断面的带泵伯努利方程}（以吸水池液面为基准面，$z_1=0$）：
 \[ z_1+\frac{p_1}{\rho g}+\frac{\alpha_1v_1^2}{2g}+H=z_2+\frac{p_2}{\rho g}+\frac{\alpha_2v_2^2}{2g}+h_w \]
-\textbf{② 化简。}两液面面积很大，$v_1\approx v_2\approx0$；两液面均通大气，取相对压强 $p_1=p_2=0$，且 $z_2-z_1=z$，于是
+\textbf{② 化简。}教材原话："由于 1--1、2--2 过流断面\textbf{面积很大}，故 $v_1\approx0$，$v_2\approx0$"（书 p59）。
+道理是\textbf{连续性方程} $Q=vA$：流量 $Q$ 一定，断面面积 $A$ 很大则液面升降速度 $v$ 就极小——
+注意这里说的是"\textbf{两个速度各自都可以忽略}"，\textbf{不是}说"两速度彼此相等"。
+以本题 $Q=35\ \mathrm{L/s}=0.035\ \mathrm{m^3/s}$ 为例，若吸水池池面为 $2\ \mathrm{m}\times2\ \mathrm{m}=4\ \mathrm{m^2}$，
+则液面下降速度 $v=0.035/4=0.0088\ \mathrm{m/s}$，其流速水头只有 $3.9\times10^{-6}\ \mathrm{m}$，
+与 $H=21.5\ \mathrm{m}$ 相比完全可以略去。\\[2pt]
+\textbf{反面情形（易错）：}若容器的过流断面与管道断面相差不大（小水箱、题给水箱直径的近管径情形），
+就\textbf{不能}把它当作"很大"，必须用连续性方程把 $v_{\text{液面}}=v_{\text{管}}\dfrac{A_{\text{管}}}{A_{\text{容器}}}$ 保留在方程里。\\[2pt]
+两液面均通大气，取相对压强 $p_1=p_2=0$，且 $z_2-z_1=z$，于是
 \[ 0+0+0+H=z+0+0+h_w\ \Longrightarrow\ H=z+h_w=20+1.5=21.5\ \mathrm{m} \]
 \textbf{③ 泵的有效功率（单位时间内传给水的能量）：}
 \[ N_{\text{有效}}=\rho gQH=1000\times9.8\times0.035\times21.5=7374.5\ \mathrm{W}=7.3745\ \mathrm{kW} \]
